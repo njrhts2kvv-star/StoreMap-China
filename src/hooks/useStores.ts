@@ -46,6 +46,96 @@ function normalize(raw: any): Store {
 
 const allStores: Store[] = [...djiRaw, ...instaRaw].map(normalize);
 
+type FilterOptions = {
+  skipProvince?: boolean;
+  skipCity?: boolean;
+};
+
+const applyFilters = (
+  filters: Filters,
+  favorites: string[],
+  userPos: { lat: number; lng: number } | null,
+  options: FilterOptions = {},
+) => {
+  let list = allStores;
+  const kw = filters.keyword.trim().toLowerCase();
+  if (kw) list = list.filter((s) => `${s.storeName} ${s.city} ${s.address}`.toLowerCase().includes(kw));
+
+  if (!options.skipProvince && filters.province && (Array.isArray(filters.province) ? filters.province.length : true)) {
+    list = list.filter((s) =>
+      Array.isArray(filters.province) ? filters.province.includes(s.province) : s.province === filters.province,
+    );
+  }
+
+  if (!options.skipCity && filters.city && (Array.isArray(filters.city) ? filters.city.length : true)) {
+    list = list.filter((s) => (Array.isArray(filters.city) ? filters.city.includes(s.city) : s.city === filters.city));
+  }
+
+  if (filters.brands.length) list = list.filter((s) => filters.brands.includes(s.brand));
+
+  const hasStoreTypeFilter = filters.djiStoreTypes.length > 0 || filters.instaStoreTypes.length > 0;
+  if (hasStoreTypeFilter) {
+    list = list.filter((s) => {
+      if (s.brand === 'DJI' && filters.djiStoreTypes.length) {
+        return filters.djiStoreTypes.some((t) => s.storeType.toLowerCase().includes(t.toLowerCase()));
+      }
+      if (s.brand === 'Insta360' && filters.instaStoreTypes.length) {
+        return filters.instaStoreTypes.some((t) => s.storeType.toLowerCase().includes(t.toLowerCase()));
+      }
+      return false;
+    });
+  }
+
+  if (filters.serviceTags.length)
+    list = list.filter((s) => filters.serviceTags.every((tag) => s.serviceTags.includes(tag)));
+
+  if (filters.favoritesOnly) list = list.filter((s) => favorites.includes(s.id));
+
+  if (filters.experienceOnly) {
+    const djiKeywords = ['ARS', '授权体验店', '新型照材'];
+    const instaKeywords = ['直营店', '授权专卖店', '授权体验店'];
+    list = list.filter((s) => {
+      const st = (s.storeType || '').toLowerCase();
+      if (s.brand === 'DJI') {
+        return djiKeywords.some((k) => st.includes(k.toLowerCase()));
+      }
+      if (s.brand === 'Insta360') {
+        return instaKeywords.some((k) => st.includes(k.toLowerCase()));
+      }
+      return false;
+    });
+  }
+
+  if (filters.competitiveOnly) {
+    const cityScore = list.reduce<Record<string, { dji: number; insta: number }>>((acc, s) => {
+      const key = s.city || s.province || '未知';
+      if (!acc[key]) acc[key] = { dji: 0, insta: 0 };
+      if (s.brand === 'DJI') acc[key].dji += 1;
+      else acc[key].insta += 1;
+      return acc;
+    }, {});
+    list = list.filter((s) => {
+      const stat = cityScore[s.city || s.province || '未知'];
+      if (!stat) return false;
+      const diff = Math.abs(stat.dji - stat.insta);
+      const total = stat.dji + stat.insta;
+      return stat.dji > 0 && stat.insta > 0 && diff <= Math.max(2, Math.round(total * 0.25));
+    });
+  }
+
+  if (userPos && filters.sortBy === 'distance') {
+    return list
+      .map((s) => ({
+        ...s,
+        distanceKm: haversineKm(userPos.lat, userPos.lng, s.latitude, s.longitude),
+      }))
+      .sort((a, b) => (a.distanceKm ?? 0) - (b.distanceKm ?? 0))
+      .map((s) => ({ ...s, favorite: favorites.includes(s.id) }));
+  }
+
+  return list.map((s) => ({ ...s, distanceKm: undefined, favorite: favorites.includes(s.id) }));
+};
+
 const computeStats = (stores: Store[]): StoreStats => {
   const topCitiesMap = stores.reduce<Record<string, number>>((acc, store) => {
     const key = store.city || store.province || '未知';
@@ -116,76 +206,15 @@ export function useStores(userPos: { lat: number; lng: number } | null, filters:
     setFavorites((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
   };
 
-  const filtered = useMemo(() => {
-    let list = allStores;
-    const kw = filters.keyword.trim().toLowerCase();
-    if (kw) list = list.filter((s) => `${s.storeName} ${s.city} ${s.address}`.toLowerCase().includes(kw));
-    if (filters.province && (Array.isArray(filters.province) ? filters.province.length : true))
-      list = list.filter((s) =>
-        Array.isArray(filters.province) ? filters.province.includes(s.province) : s.province === filters.province,
-      );
-    if (filters.city && (Array.isArray(filters.city) ? filters.city.length : true))
-      list = list.filter((s) => (Array.isArray(filters.city) ? filters.city.includes(s.city) : s.city === filters.city));
-    if (filters.brands.length) list = list.filter((s) => filters.brands.includes(s.brand));
-    const hasStoreTypeFilter = filters.djiStoreTypes.length > 0 || filters.instaStoreTypes.length > 0;
-    if (hasStoreTypeFilter) {
-      list = list.filter((s) => {
-        if (s.brand === 'DJI' && filters.djiStoreTypes.length) {
-          return filters.djiStoreTypes.some((t) => s.storeType.toLowerCase().includes(t.toLowerCase()));
-        }
-        if (s.brand === 'Insta360' && filters.instaStoreTypes.length) {
-          return filters.instaStoreTypes.some((t) => s.storeType.toLowerCase().includes(t.toLowerCase()));
-        }
-        return false;
-      });
-    }
-    if (filters.serviceTags.length)
-      list = list.filter((s) => filters.serviceTags.every((tag) => s.serviceTags.includes(tag)));
-    if (filters.favoritesOnly) list = list.filter((s) => favorites.includes(s.id));
-    if (filters.experienceOnly) {
-      const djiKeywords = ['ARS', '授权体验店', '新型照材'];
-      const instaKeywords = ['直营店', '授权专卖店', '授权体验店'];
-      list = list.filter((s) => {
-        const st = (s.storeType || '').toLowerCase();
-        if (s.brand === 'DJI') {
-          return djiKeywords.some((k) => st.includes(k.toLowerCase()));
-        }
-        if (s.brand === 'Insta360') {
-          return instaKeywords.some((k) => st.includes(k.toLowerCase()));
-        }
-        return false;
-      });
-    }
-    if (filters.competitiveOnly) {
-      const cityScore = list.reduce<Record<string, { dji: number; insta: number }>>((acc, s) => {
-        const key = s.city || s.province || '未知';
-        if (!acc[key]) acc[key] = { dji: 0, insta: 0 };
-        if (s.brand === 'DJI') acc[key].dji += 1;
-        else acc[key].insta += 1;
-        return acc;
-      }, {});
-      list = list.filter((s) => {
-        const stat = cityScore[s.city || s.province || '未知'];
-        if (!stat) return false;
-        const diff = Math.abs(stat.dji - stat.insta);
-        const total = stat.dji + stat.insta;
-        return stat.dji > 0 && stat.insta > 0 && diff <= Math.max(2, Math.round(total * 0.25));
-      });
-    }
-
-    if (userPos && filters.sortBy === 'distance') {
-      list = list
-        .map((s) => ({
-          ...s,
-          distanceKm: haversineKm(userPos.lat, userPos.lng, s.latitude, s.longitude),
-        }))
-        .sort((a, b) => (a.distanceKm ?? 0) - (b.distanceKm ?? 0));
-    } else {
-      list = list.map((s) => ({ ...s, distanceKm: undefined }));
-    }
-    // 标记收藏状态，方便地图或列表显示
-    list = list.map((s) => ({ ...s, favorite: favorites.includes(s.id) }));
-    return list;
+  const { filtered, filteredWithoutCity, filteredWithoutProvinceAndCity } = useMemo(() => {
+    const main = applyFilters(filters, favorites, userPos);
+    const withoutCity = applyFilters(filters, favorites, userPos, { skipCity: true });
+    const withoutProvinceCity = applyFilters(filters, favorites, userPos, { skipCity: true, skipProvince: true });
+    return {
+      filtered: main,
+      filteredWithoutCity: withoutCity,
+      filteredWithoutProvinceAndCity: withoutProvinceCity,
+    };
   }, [filters, userPos, favorites]);
 
   const fallbackStats = useMemo(() => {
@@ -195,5 +224,13 @@ export function useStores(userPos: { lat: number; lng: number } | null, filters:
 
   const stats = remoteStats ?? fallbackStats;
 
-  return { filtered, favorites, toggleFavorite, allStores, stats };
+  return {
+    filtered,
+    favorites,
+    toggleFavorite,
+    allStores,
+    stats,
+    storesForCityRanking: filteredWithoutCity,
+    storesForProvinceRanking: filteredWithoutProvinceAndCity,
+  };
 }

@@ -81,7 +81,14 @@ export default function HomePage() {
     return filters;
   }, [appliedFilters, storeFilterMode]);
   
-  const { filtered, favorites, toggleFavorite, allStores } = useStores(userPos, filtersWithMode);
+  const {
+    filtered,
+    favorites,
+    toggleFavorite,
+    allStores,
+    storesForProvinceRanking,
+    storesForCityRanking,
+  } = useStores(userPos, filtersWithMode);
   const [brandSelection, setBrandSelection] = useState<Brand[]>(['DJI', 'Insta360']);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const visibleStores = filtered;
@@ -550,23 +557,31 @@ export default function HomePage() {
             {/* TOP5省份和TOP10城市 */}
             <div className="space-y-3">
               <TopProvinces 
-                stores={visibleStores} 
+                stores={storesForProvinceRanking} 
                 onViewAll={() => setActiveTab('list')}
                 selectedProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
                 onProvinceClick={(province) => {
-                  // 设置省份筛选
-                  updateFilters({ province: [province], city: [] });
+                  const current = pendingFilters.province;
+                  const isSelected = current.length === 1 && current[0] === province;
+                  const nextProvinces = isSelected ? [] : [province];
+                  // 设置省份筛选（支持再次点击取消）
+                  updateFilters({ province: nextProvinces, city: [] });
                   // 触发地图重置，让地图适应新筛选的门店
                   setMapResetToken((token) => token + 1);
                 }}
               />
               <TopCities 
-                stores={visibleStores} 
+                stores={storesForCityRanking} 
                 onViewAll={() => setActiveTab('list')}
-                selectedCity={pendingFilters.city.length === 1 ? pendingFilters.city[0] : null}
+                selectedCities={pendingFilters.city}
                 onCityClick={(city) => {
-                  // 设置城市筛选
-                  updateFilters({ city: [city] });
+                  // 在已有城市筛选基础上执行多选切换
+                  const currentCities = pendingFilters.city;
+                  const isSelected = currentCities.includes(city);
+                  const nextCities = isSelected
+                    ? currentCities.filter((item) => item !== city)
+                    : [...currentCities, city];
+                  updateFilters({ city: nextCities });
                   // 触发地图重置，让地图适应新筛选的门店
                   setMapResetToken((token) => token + 1);
                 }}

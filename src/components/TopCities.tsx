@@ -4,14 +4,14 @@ import type { Store } from '../types/store';
 type Props = {
   stores: Store[];
   onViewAll?: () => void;
-  selectedCity?: string | null;
+  selectedCities?: string[];
   onCityClick?: (city: string) => void;
 };
 
 type BrandFilter = 'all' | 'DJI' | 'Insta360';
 type SortType = 'absolute' | 'ratio';
 
-export function TopCities({ stores, onViewAll, selectedCity, onCityClick }: Props) {
+export function TopCities({ stores, onViewAll, selectedCities, onCityClick }: Props) {
   const [brandFilter, setBrandFilter] = useState<BrandFilter>('all');
   const [sortType, setSortType] = useState<SortType>('absolute');
 
@@ -137,7 +137,7 @@ export function TopCities({ stores, onViewAll, selectedCity, onCityClick }: Prop
 
       <div className="space-y-2">
         {sortedCities.map((item, index) => {
-          const isSelected = selectedCity === item.city;
+          const isSelected = !!selectedCities?.includes(item.city);
           // 排名圆圈颜色：1=红色，2=橙色，3=黄色，4-10=灰色
           // 如果选中，则显示为黄色
           const getRankColor = () => {
@@ -190,4 +190,3 @@ export function TopCities({ stores, onViewAll, selectedCity, onCityClick }: Prop
     </div>
   );
 }
-
