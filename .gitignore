@@ -1,0 +1,40 @@
+# OS
+.DS_Store
+
+# 依赖
+node_modules/
+.venv/
+venv/
+
+# 构建产物
+dist/
+build/
+dist-ssr
+
+# 日志
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 环境变量
+*.local
+.env
+.env.local
+
+# 编辑器/IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

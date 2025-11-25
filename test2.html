@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DJI vs Insta360 门店对比</title>
+    
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 引入 React 和 ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    
+    <!-- 引入 Babel 用于解析 JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 配置 Tailwind 主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            800: '#1f2937',
+                            900: '#111827',
+                        },
+                        yellow: {
+                            400: '#facc15',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 全局样式覆盖 */
+        body {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* 隐藏滚动条 */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 动画定义 */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-out forwards;
+        }
+        @keyframes fade-in-down {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+            animation: fade-in-down 0.3s ease-out forwards;
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translate(-50%, 20px); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(100%); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up {
+            animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes scale-in {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-scale-in {
+            animation: scale-in 0.2s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useMemo } = React;
+
+        // --- 图标组件定义 (内置 SVG，移除外部依赖) ---
+        const Icon = ({ children, size = 24, className = "", ...props }) => (
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width={size} 
+                height={size} 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className={className} 
+                {...props}
+            >
+                {children}
+            </svg>
+        );
+
+        const LayoutGrid = (props) => <Icon {...props}><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></Icon>;
+        const List = (props) => <Icon {...props}><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></Icon>;
+        const MapPin = (props) => <Icon {...props}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></Icon>;
+        const Search = (props) => <Icon {...props}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></Icon>;
+        const Info = (props) => <Icon {...props}><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></Icon>;
+        const ChevronRight = (props) => <Icon {...props}><path d="m9 18 6-6-6-6"/></Icon>;
+        const Navigation = (props) => <Icon {...props}><polygon points="3 11 22 2 13 21 11 13 3 11"/></Icon>;
+        const Star = (props) => <Icon {...props}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></Icon>;
+        const Filter = (props) => <Icon {...props}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></Icon>;
+        const X = (props) => <Icon {...props}><path d="M18 6 6 18"/><path d="m6 6 18 18"/></Icon>;
+        const Phone = (props) => <Icon {...props}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></Icon>;
+        const ArrowLeft = (props) => <Icon {...props}><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></Icon>;
+
+        // --- 数据常量 ---
+        const TOTAL_STATS = {
+            dji: { count: 1523, growth: 12 },
+            insta: { count: 892, growth: 28 },
+        };
+
+        const CITIES_DATA = [
+            { id: 1, name: '深圳', enName: 'SHENZHEN', dji: 128, insta: 96, x: 65, y: 78, isHot: true, region: 'south' },
+            { id: 2, name: '北京', enName: 'BEIJING', dji: 100, insta: 70, x: 70, y: 25, isHot: false, region: 'north' },
+            { id: 3, name: '上海', enName: 'SHANGHAI', dji: 90, insta: 65, x: 82, y: 55, isHot: false, region: 'east' },
+            { id: 4, name: '成都', enName: 'CHENGDU', dji: 80, insta: 50, x: 45, y: 60, isHot: false, region: 'west' },
+            { id: 5, name: '杭州', enName: 'HANGZHOU', dji: 75, insta: 45, x: 78, y: 58, isHot: false, region: 'east' },
+            { id: 6, name: '武汉', enName: 'WUHAN', dji: 70, insta: 40, x: 68, y: 58, isHot: false, region: 'central' },
+            { id: 7, name: '南京', enName: 'NANJING', dji: 65, insta: 35, x: 75, y: 52, isHot: false, region: 'east' },
+            { id: 8, name: '重庆', enName: 'CHONGQING', dji: 60, insta: 30, x: 48, y: 62, isHot: false, region: 'west' },
+        ];
+
+        const STORE_LIST_MOCK = [
+            {
+                id: 1,
+                brand: 'dji',
+                name: 'DJI大疆欢乐海岸旗舰店',
+                tags: ['官方直营', '营业中'],
+                address: '南山区白石路东8号欢乐海岸曲水湾2栋',
+                hours: '周一至周日 10:00 - 22:30',
+                distance: '2.4km',
+                isFlagship: true
+            },
+            {
+                id: 2,
+                brand: 'insta',
+                name: 'Insta360 深圳壹方城店',
+                tags: ['官方直营', '营业中'],
+                address: '宝安区新湖路99号壹方城购物中心L1-038',
+                hours: '10:00 - 22:00',
+                distance: '5.1km',
+                isFlagship: false
+            },
+            {
+                id: 3,
+                brand: 'dji',
+                name: 'DJI大疆 万象天地授权体验店',
+                tags: ['授权店', '休息中'],
+                address: '南山区深南大道9668号万象天地LG层',
+                hours: '10:00 - 22:00',
+                distance: '3.8km',
+                isFlagship: false
+            }
+        ];
+
+        // --- 通用交互组件 ---
+
+        // 1. Toast 提示组件
+        const Toast = ({ message, onClose }) => {
+            useEffect(() => {
+                const timer = setTimeout(onClose, 2000);
+                return () => clearTimeout(timer);
+            }, [onClose]);
+
+            return (
+                <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100] animate-fade-in-up w-max max-w-[80%]">
+                    <div className="bg-gray-800/90 backdrop-blur-md text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 text-sm font-medium">
+                        {message}
+                    </div>
+                </div>
+            );
+        };
+
+        // 2. 模态框组件
+        const Modal = ({ isOpen, onClose, title, children }) => {
+            if (!isOpen) return null;
+            return (
+                <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" onClick={onClose}></div>
+                    <div className="bg-white rounded-3xl w-full max-w-xs p-6 relative z-10 shadow-2xl animate-scale-in">
+                        <div className="flex justify-between items-center mb-4">
+                            <h3 className="text-lg font-bold text-gray-900">{title}</h3>
+                            <button onClick={onClose} className="p-1 hover:bg-gray-100 rounded-full transition-colors">
+                                <X size={20} className="text-gray-400" />
+                            </button>
+                        </div>
+                        {children}
+                    </div>
+                </div>
+            );
+        };
+
+        // --- 基础 UI 组件 ---
+
+        const BrandLogo = ({ brand, size = "md" }) => {
+            const isDji = brand === 'dji';
+            const bgColor = isDji ? 'bg-gray-800' : 'bg-yellow-400';
+            const textColor = isDji ? 'text-white' : 'text-gray-900';
+            const sizeClass = size === "sm" ? "w-6 h-6 text-[10px]" : "w-10 h-10 text-xs";
+            
+            return (
+                <div className={`${bgColor} ${textColor} ${sizeClass} rounded-lg flex items-center justify-center font-bold tracking-tighter shadow-sm`}>
+                    {isDji ? 'DJI' : <div className="w-5 h-5 rounded-full border-2 border-current flex items-center justify-center"><div className="w-1 h-1 bg-current rounded-full"></div></div>}
+                </div>
+            );
+        };
+
+        const ComparisonBar = ({ dji, insta, height = "h-2" }) => {
+            const total = dji + insta;
+            const djiPercent = (dji / total) * 100;
+            
+            return (
+                <div className={`w-full ${height} flex rounded-full overflow-hidden mt-3`}>
+                    <div style={{ width: `${djiPercent}%` }} className="bg-gray-500 h-full transition-all duration-500 ease-out"></div>
+                    <div style={{ width: `${100 - djiPercent}%` }} className="bg-yellow-400 h-full transition-all duration-500 ease-out"></div>
+                </div>
+            );
+        };
+
+        // --- 业务页面组件 ---
+
+        const OverviewTab = ({ onChangeTab, onNavigateToMap, showToast }) => {
+            const [showInfo, setShowInfo] = useState(false);
+            const [activeFilter, setActiveFilter] = useState('全部城市');
+            const [searchQuery, setSearchQuery] = useState('');
+
+            // 筛选逻辑
+            const filteredCities = useMemo(() => {
+                let result = CITIES_DATA;
+
+                // 搜索过滤
+                if (searchQuery) {
+                    result = result.filter(c => c.name.includes(searchQuery) || c.enName.toLowerCase().includes(searchQuery.toLowerCase()));
+                }
+
+                // 标签过滤
+                if (activeFilter === 'DJI 优势区') {
+                    result = result.filter(c => c.dji > c.insta);
+                } else if (activeFilter === 'Insta360 优势区') {
+                    result = result.filter(c => c.insta > c.dji);
+                } else if (activeFilter === '竞争激烈') {
+                    result = result.filter(c => Math.abs(c.dji - c.insta) < 20);
+                }
+
+                return result;
+            }, [activeFilter, searchQuery]);
+
+            return (
+                <div className="space-y-6 pb-24 animate-fade-in">
+                    {/* 头部 */}
+                    <div className="flex justify-between items-start px-4 pt-2">
+                        <div>
+                            <h1 className="text-2xl font-bold text-gray-900">门店分布对比</h1>
+                            <p className="text-xs text-gray-500 mt-1">DJI vs Insta360 全国数据</p>
+                        </div>
+                        <button onClick={() => setShowInfo(true)} className="text-gray-400 p-2 hover:bg-gray-100 rounded-full transition-colors active:scale-95">
+                            <Info size={20} />
+                        </button>
+                    </div>
+
+                    {/* Info Modal */}
+                    <Modal isOpen={showInfo} onClose={() => setShowInfo(false)} title="数据说明">
+                        <div className="text-sm text-gray-600 space-y-3">
+                            <p>本数据来源于各品牌官方公布的门店信息及第三方地图数据，截至 2024 年 5 月。</p>
+                            <div className="flex items-center gap-2">
+                                <div className="w-3 h-3 bg-gray-800 rounded-full"></div>
+                                <span>DJI：包含官方直营店及授权体验店</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                <span>Insta360：包含直营店及零售网点</span>
+                            </div>
+                        </div>
+                    </Modal>
+
+                    {/* KPI 卡片 */}
+                    <div className="px-4">
+                        <div className="bg-white rounded-3xl p-5 shadow-sm border border-gray-100 flex relative overflow-hidden active:scale-[0.99] transition-transform duration-200">
+                            {/* 左侧 DJI */}
+                            <div className="flex-1 pr-4 border-r border-gray-100">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <BrandLogo brand="dji" size="sm" />
+                                    <span className="font-bold text-sm text-gray-700">大疆创新</span>
+                                </div>
+                                <div className="text-4xl font-black text-gray-800 tracking-tight">{TOTAL_STATS.dji.count.toLocaleString()}</div>
+                                <div className="text-[10px] text-gray-400 mt-1">全国门店总数</div>
+                                <div className="mt-4 flex items-center gap-2">
+                                    <div className="h-1.5 w-16 bg-gray-800 rounded-full"></div>
+                                    <span className="text-xs font-bold text-gray-800">+{TOTAL_STATS.dji.growth}%</span>
+                                </div>
+                            </div>
+
+                            {/* 右侧 Insta360 */}
+                            <div className="flex-1 pl-4 text-right flex flex-col items-end">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="font-bold text-sm text-gray-700">Insta360</span>
+                                    <BrandLogo brand="insta" size="sm" />
+                                </div>
+                                <div className="text-4xl font-black text-gray-800 tracking-tight">{TOTAL_STATS.insta.count.toLocaleString()}</div>
+                                <div className="text-[10px] text-gray-400 mt-1">全国门店总数</div>
+                                <div className="mt-4 flex items-center gap-2 justify-end w-full">
+                                    <span className="text-xs font-bold text-yellow-500">+{TOTAL_STATS.insta.growth}%</span>
+                                    <div className="h-1.5 w-16 bg-yellow-400 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 搜索与筛选 */}
+                    <div className="px-4 space-y-3">
+                        <div className="relative group">
+                            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-focus-within:text-gray-800 transition-colors" size={18} />
+                            <input 
+                                type="text" 
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                placeholder="搜索城市 / 区域" 
+                                className="w-full bg-white h-12 rounded-xl pl-12 pr-4 text-sm shadow-sm border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
+                            />
+                            {searchQuery && (
+                                <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                                    <X size={16} />
+                                </button>
+                            )}
+                        </div>
+                        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                            {['全部城市', 'DJI 优势区', 'Insta360 优势区', '竞争激烈'].map((tag, i) => (
+                                <button 
+                                    key={i}
+                                    onClick={() => setActiveFilter(tag)}
+                                    className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all active:scale-95 ${
+                                        activeFilter === tag ? 'bg-gray-800 text-white shadow-md' : 'bg-white text-gray-600 border border-gray-100 hover:bg-gray-50'
+                                    }`}
+                                >
+                                    {tag}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* 分布热力图 */}
+                    <div className="px-4">
+                        <div className="flex justify-between items-center mb-3">
+                            <h2 className="text-lg font-bold text-gray-800">分布热力图</h2>
+                            <button onClick={() => onChangeTab('map')} className="text-xs font-bold text-yellow-500 flex items-center hover:opacity-80 active:scale-95 transition-all">
+                                查看完整地图 <ChevronRight size={14} />
+                            </button>
+                        </div>
+                        
+                        <div 
+                            className="relative w-full aspect-[4/3] bg-gray-100 rounded-3xl overflow-hidden border border-gray-100 shadow-inner active:opacity-90 transition-opacity cursor-pointer group"
+                            onClick={() => onChangeTab('map')}
+                        >
+                            {/* 地图背景 */}
+                            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            <svg viewBox="0 0 100 80" className="absolute w-full h-full text-gray-200 fill-current p-4 drop-shadow-sm group-hover:scale-105 transition-transform duration-700">
+                                <path d="M20,30 Q30,10 50,15 T80,30 Q90,40 85,60 T50,70 Q20,65 20,30 Z" />
+                            </svg>
+
+                            {/* 深圳气泡 */}
+                            <div 
+                                className="absolute bottom-10 right-10 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-gray-100 w-40 transform transition hover:scale-105"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    onNavigateToMap(CITIES_DATA[0]);
+                                }}
+                            >
+                                <div className="flex justify-between items-center mb-2">
+                                    <span className="font-bold text-sm text-gray-800">深圳 Shenzhen</span>
+                                    <div className="w-4 h-4 rounded-full bg-yellow-100 flex items-center justify-center animate-pulse">
+                                        <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <div className="flex items-center justify-between text-xs">
+                                        <span className="text-gray-500">DJI</span>
+                                        <span className="font-bold">128</span>
+                                    </div>
+                                    <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                                        <div className="h-full bg-gray-700 w-[60%]"></div>
+                                    </div>
+                                    <div className="flex items-center justify-between text-xs">
+                                        <span className="text-gray-500">Insta</span>
+                                        <span className="font-bold">96</span>
+                                    </div>
+                                    <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                                        <div className="h-full bg-yellow-400 w-[45%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div className="absolute top-[60%] right-[30%] w-24 h-24 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+                            <div className="absolute top-[55%] right-[25%] w-20 h-20 bg-gray-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+                        </div>
+                    </div>
+                    
+                    {/* 重点城市列表预览 */}
+                    <div className="px-4">
+                        <div className="flex justify-between items-center mb-3">
+                            <h2 className="text-lg font-bold text-gray-800">重点城市列表</h2>
+                        </div>
+                        <div className="space-y-3">
+                            {filteredCities.length > 0 ? (
+                                filteredCities.slice(0, 3).map((city) => (
+                                    <div 
+                                        key={city.id} 
+                                        className="bg-white rounded-2xl p-4 border border-gray-50 shadow-sm flex items-center justify-between active:bg-gray-50 transition-colors cursor-pointer"
+                                        onClick={() => onNavigateToMap(city)}
+                                    >
+                                        <div>
+                                            <div className="font-bold text-gray-800">{city.name}</div>
+                                            <div className="text-[10px] text-gray-400 font-medium tracking-wide">{city.enName}</div>
+                                        </div>
+                                        <div className="w-24">
+                                            <ComparisonBar dji={city.dji} insta={city.insta} height="h-1.5" />
+                                            <div className="flex justify-between text-[10px] text-gray-400 mt-1">
+                                                <span>{Math.round((city.dji / (city.dji + city.insta)) * 100)}%</span>
+                                                <span>{Math.round((city.insta / (city.dji + city.insta)) * 100)}%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            ) : (
+                                <div className="text-center py-8 text-gray-400 text-sm bg-white rounded-2xl border border-dashed border-gray-200">
+                                    无匹配城市数据
+                                </div>
+                            )}
+                        </div>
+                        
+                        {filteredCities.length > 3 && (
+                            <button 
+                                onClick={() => onChangeTab('cities')}
+                                className="w-full mt-4 py-3 bg-gray-50 text-gray-500 text-xs font-bold rounded-xl border border-dashed border-gray-200 hover:bg-gray-100 hover:border-gray-300 transition-all active:scale-[0.98]"
+                            >
+                                查看全部 {filteredCities.length} 个重点城市
+                            </button>
+                        )}
+                    </div>
+                </div>
+            );
+        };
+
+        const CitiesTab = ({ onNavigateToMap, showToast }) => {
+            const [favorites, setFavorites] = useState([]);
+            const [showFilterSheet, setShowFilterSheet] = useState(false);
+
+            const toggleFavorite = (e, id) => {
+                e.stopPropagation();
+                if (favorites.includes(id)) {
+                    setFavorites(prev => prev.filter(fid => fid !== id));
+                    showToast("已取消收藏");
+                } else {
+                    setFavorites(prev => [...prev, id]);
+                    showToast("已添加到重点关注");
+                }
+            };
+
+            return (
+                <div className="pb-24 animate-fade-in relative">
+                    <div className="sticky top-0 bg-gray-50/95 backdrop-blur-md z-10 px-4 py-4 border-b border-gray-100">
+                        <div className="flex justify-between items-center mb-4">
+                            <h1 className="text-xl font-bold text-gray-900">重点城市</h1>
+                            <button 
+                                onClick={() => setShowFilterSheet(true)}
+                                className={`p-2 rounded-full shadow-sm transition-all active:scale-95 ${showFilterSheet ? 'bg-gray-800 text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
+                            >
+                                <Filter size={16} />
+                            </button>
+                        </div>
+                        
+                        {/* 顶部统计卡片 */}
+                        <div className="bg-white rounded-2xl p-4 shadow-sm mb-2">
+                            <div className="flex justify-between items-start mb-1">
+                                <div>
+                                    <div className="text-xs text-gray-400 mb-1">筛选标准</div>
+                                    <div className="font-bold text-gray-800 text-sm">总门店数 ≥ 100家</div>
+                                    <div className="font-bold text-gray-800 text-sm">或品牌竞争激烈的城市</div>
+                                </div>
+                                <div className="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold text-gray-600">共 {CITIES_DATA.length} 个城市</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* 模拟的筛选 Action Sheet */}
+                    <Modal isOpen={showFilterSheet} onClose={() => setShowFilterSheet(false)} title="筛选维度">
+                        <div className="space-y-2">
+                            {['按门店总数排序', '按 DJI 占比排序', '按 Insta360 占比排序', '仅看关注城市'].map((opt, i) => (
+                                <button 
+                                    key={i}
+                                    className="w-full text-left py-3 px-4 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                                    onClick={() => {
+                                        showToast(`已应用：${opt}`);
+                                        setShowFilterSheet(false);
+                                    }}
+                                >
+                                    {opt}
+                                </button>
+                            ))}
+                        </div>
+                    </Modal>
+
+                    <div className="px-4 pt-2 space-y-4">
+                        {CITIES_DATA.map((city) => {
+                            const total = city.dji + city.insta;
+                            const djiPercent = Math.round((city.dji / total) * 100);
+                            const instaPercent = 100 - djiPercent;
+                            const isFav = favorites.includes(city.id);
+                            
+                            return (
+                                <div 
+                                    key={city.id} 
+                                    className="bg-white rounded-3xl p-5 shadow-sm border border-gray-50 active:scale-[0.98] transition-all cursor-pointer group hover:shadow-md"
+                                    onClick={() => onNavigateToMap(city)}
+                                >
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div>
+                                            <h3 className="text-lg font-black text-gray-800">{city.name} <span className="text-xs font-normal text-gray-400 ml-1 tracking-wider">{city.enName}</span></h3>
+                                        </div>
+                                        <button 
+                                            onClick={(e) => toggleFavorite(e, city.id)}
+                                            className={`p-2 rounded-full transition-colors ${isFav ? 'text-yellow-400 bg-yellow-50' : 'text-gray-300 hover:text-gray-400 bg-gray-50'}`}
+                                        >
+                                            <Star size={18} fill={isFav ? "currentColor" : "none"} />
+                                        </button>
+                                    </div>
+
+                                    {/* 胶囊数据展示 */}
+                                    <div className="flex items-center gap-2 mb-3">
+                                        <div className="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-bold text-gray-600 flex items-center gap-1">
+                                            <span className="text-gray-400 font-normal">DJI</span> {city.dji}
+                                        </div>
+                                        <div className="px-3 py-1.5 bg-yellow-50 rounded-lg text-xs font-bold text-yellow-700 flex items-center gap-1">
+                                            <span className="text-yellow-600/60 font-normal">Insta360</span> {city.insta}
+                                        </div>
+                                        <div className="ml-auto px-3 py-1.5 bg-gray-900 rounded-lg text-xs font-bold text-white flex items-center gap-1">
+                                            <span className="text-gray-400 font-normal text-[10px]">总</span> {total}
+                                        </div>
+                                    </div>
+
+                                    {/* 进度条 */}
+                                    <div className="relative pt-1">
+                                        <div className="w-full h-2.5 flex rounded-full overflow-hidden">
+                                            <div style={{ width: `${djiPercent}%` }} className="bg-gray-500"></div>
+                                            <div style={{ width: `${instaPercent}%` }} className="bg-yellow-400"></div>
+                                        </div>
+                                        <div className="flex justify-between text-[10px] text-gray-400 mt-1.5 font-medium">
+                                            <span>DJI {djiPercent}%</span>
+                                            <span>Insta360 {instaPercent}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            );
+        };
+
+        const MapTab = ({ initialCity, onBack, showToast }) => {
+            const [selectedCity, setSelectedCity] = useState(initialCity || CITIES_DATA[0]);
+
+            // 如果 initialCity 变化，更新选中态
+            useEffect(() => {
+                if (initialCity) {
+                    setSelectedCity(initialCity);
+                }
+            }, [initialCity]);
+
+            const handleNavigate = () => {
+                showToast("正在启动第三方地图导航...");
+            };
+            
+            const handleCall = () => {
+                showToast("正在拨打门店电话...");
+            };
+
+            return (
+                <div className="h-screen w-full relative bg-[#F5F6F8] overflow-hidden">
+                    {/* 顶部导航 */}
+                    <div className="absolute top-0 left-0 right-0 z-20 px-4 py-4 flex justify-between items-center pointer-events-none">
+                        <button 
+                            onClick={onBack}
+                            className="pointer-events-auto w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-800 hover:bg-gray-50 active:scale-95 transition-all"
+                        >
+                            <ArrowLeft size={20} />
+                        </button>
+                        <div className="bg-white/90 backdrop-blur shadow-sm px-4 py-2 rounded-full pointer-events-auto animate-fade-in-down">
+                            <span className="font-bold text-gray-800 text-sm">门店分布地图</span>
+                        </div>
+                        <button 
+                            onClick={() => showToast("地图筛选功能开发中")}
+                            className="pointer-events-auto w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-800 hover:bg-gray-50 active:scale-95 transition-all"
+                        >
+                            <Filter size={18} />
+                        </button>
+                    </div>
+
+                    {/* 地图区域 */}
+                    <div className="w-full h-full relative" onClick={() => setSelectedCity(null)}>
+                        {/* 简易地图网格背景 */}
+                        <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                        
+                        {/* 模拟中国地图区域 */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <svg viewBox="0 0 100 80" className="w-[120%] h-auto text-white drop-shadow-xl fill-current transition-transform duration-1000">
+                                <path d="M15,35 Q25,10 50,15 T85,30 Q95,45 80,65 T45,75 Q15,65 15,35 Z" />
+                            </svg>
+                        </div>
+
+                        {/* 城市标记点 */}
+                        {CITIES_DATA.map(city => (
+                            <div 
+                                key={city.id}
+                                className="absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2 group"
+                                style={{ left: `${city.x}%`, top: `${city.y}%` }}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSelectedCity(city);
+                                }}
+                            >   
+                                {/* 标记 */}
+                                <div className={`relative flex flex-col items-center transition-all duration-300 ${selectedCity?.id === city.id ? 'scale-110 z-20' : 'scale-100 z-10'}`}>
+                                    <div className="flex flex-col items-center mb-1">
+                                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md shadow-sm mb-1 transition-all ${selectedCity?.id === city.id ? 'bg-gray-800 text-white' : 'bg-white text-gray-600 opacity-0 group-hover:opacity-100'}`}>
+                                            {city.name}
+                                        </span>
+                                    </div>
+                                    <div className={`w-4 h-4 rounded-full border-2 border-white shadow-md flex items-center justify-center transition-colors ${selectedCity?.id === city.id ? 'bg-gray-800' : 'bg-gray-400'}`}>
+                                        <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
+                                    </div>
+                                    {/* 波纹动画 */}
+                                    {selectedCity?.id === city.id && (
+                                        <div className="absolute w-full h-full rounded-full bg-gray-800 opacity-30 animate-ping"></div>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    
+                    {/* 底部悬浮卡片 */}
+                    {selectedCity && (
+                        <div className="absolute bottom-24 left-4 right-4 z-30 animate-slide-up">
+                            <div className="bg-white rounded-[2rem] p-5 shadow-2xl border border-gray-100 relative">
+                                <div className="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h2 className="text-2xl font-black text-gray-900">{selectedCity.name}市</h2>
+                                        <p className="text-xs text-gray-400 mt-1">{selectedCity.enName}, China</p>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <div className="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold text-gray-600 flex items-center gap-1">
+                                            <div className="w-2 h-2 rounded-full bg-gray-800"></div> DJI {selectedCity.dji}
+                                        </div>
+                                        <div className="px-3 py-1 bg-yellow-50 rounded-full text-xs font-bold text-yellow-700 flex items-center gap-1">
+                                            <div className="w-2 h-2 rounded-full bg-yellow-400"></div> Insta {selectedCity.insta}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* 比例条 */}
+                                <div className="mb-6">
+                                    <div className="flex justify-between text-xs font-bold mb-2 text-gray-600">
+                                        <span>DJI Store</span>
+                                        <span>{Math.round((selectedCity.dji / (selectedCity.dji + selectedCity.insta)) * 100)}%</span>
+                                    </div>
+                                    <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden mb-3">
+                                        <div className="h-full bg-gray-700" style={{ width: `${(selectedCity.dji / (selectedCity.dji + selectedCity.insta)) * 100}%`}}></div>
+                                    </div>
+                                    <div className="flex justify-between text-xs font-bold mb-2 text-gray-600">
+                                        <span>Insta360</span>
+                                        <span>{Math.round((selectedCity.insta / (selectedCity.dji + selectedCity.insta)) * 100)}%</span>
+                                    </div>
+                                    <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                                        <div className="h-full bg-yellow-400" style={{ width: `${(selectedCity.insta / (selectedCity.dji + selectedCity.insta)) * 100}%`}}></div>
+                                    </div>
+                                </div>
+
+                                {/* 门店列表预览 */}
+                                <div className="border-t border-gray-100 pt-4">
+                                    <div className="text-xs text-gray-400 font-bold mb-3">推荐门店</div>
+                                    {STORE_LIST_MOCK.slice(0, 1).map(store => (
+                                        <div key={store.id} className="flex gap-3 items-start">
+                                            <BrandLogo brand={store.brand} />
+                                            <div className="flex-1">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-sm font-bold text-gray-900">{store.name}</span>
+                                                    {store.tags.includes('官方直营') && <span className="text-[9px] bg-gray-800 text-white px-1.5 py-0.5 rounded">官方</span>}
+                                                </div>
+                                                <div className="text-xs text-gray-500 mt-1">{store.address}</div>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <button onClick={handleCall} className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                                                    <Phone size={14} />
+                                                </button>
+                                                <button onClick={handleNavigate} className="w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors shadow-lg shadow-gray-200">
+                                                    <Navigation size={14} className="transform rotate-45"/>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        // --- 主应用组件 ---
+        function App() {
+            const [activeTab, setActiveTab] = useState('overview');
+            const [mapInitialCity, setMapInitialCity] = useState(null);
+            const [toastMsg, setToastMsg] = useState('');
+
+            // 处理从其他页面跳转到地图并选中城市
+            const handleNavigateToMap = (city) => {
+                setMapInitialCity(city);
+                setActiveTab('map');
+            };
+
+            const showToast = (msg) => {
+                setToastMsg(msg);
+            };
+
+            const renderContent = () => {
+                switch (activeTab) {
+                    case 'overview':
+                        return <OverviewTab onChangeTab={setActiveTab} onNavigateToMap={handleNavigateToMap} showToast={showToast} />;
+                    case 'cities':
+                        return <CitiesTab onNavigateToMap={handleNavigateToMap} showToast={showToast} />;
+                    case 'map':
+                        return <MapTab initialCity={mapInitialCity} onBack={() => setActiveTab('overview')} showToast={showToast} />;
+                    default:
+                        return <OverviewTab onChangeTab={setActiveTab} onNavigateToMap={handleNavigateToMap} showToast={showToast} />;
+                }
+            };
+
+            return (
+                <div className="max-w-md mx-auto h-screen bg-gray-50 flex flex-col font-sans relative overflow-hidden text-gray-900 select-none shadow-2xl">
+                    {/* 全局 Toast */}
+                    {toastMsg && <Toast message={toastMsg} onClose={() => setToastMsg('')} />}
+
+                    {/* 内容区域 (可滚动) */}
+                    <div className="flex-1 overflow-y-auto scrollbar-hide">
+                        {renderContent()}
+                    </div>
+
+                    {/* 底部导航栏 */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-6 py-3 pb-6 flex justify-between items-center z-50">
+                        <button 
+                            onClick={() => setActiveTab('overview')}
+                            className={`flex flex-col items-center gap-1 transition-all active:scale-95 ${activeTab === 'overview' ? 'text-gray-900 transform scale-105' : 'text-gray-400'}`}
+                        >
+                            <LayoutGrid size={24} strokeWidth={activeTab === 'overview' ? 2.5 : 2} />
+                            <span className="text-[10px] font-medium">总览</span>
+                        </button>
+                        
+                        <button 
+                            onClick={() => setActiveTab('cities')}
+                            className={`flex flex-col items-center gap-1 transition-all active:scale-95 ${activeTab === 'cities' ? 'text-gray-900 transform scale-105' : 'text-gray-400'}`}
+                        >
+                            <List size={24} strokeWidth={activeTab === 'cities' ? 2.5 : 2} />
+                            <span className="text-[10px] font-medium">城市</span>
+                        </button>
+                        
+                        <button 
+                            onClick={() => setActiveTab('map')}
+                            className={`flex flex-col items-center gap-1 transition-all active:scale-95 ${activeTab === 'map' ? 'text-gray-900 transform scale-105' : 'text-gray-400'}`}
+                        >
+                            <MapPin size={24} strokeWidth={activeTab === 'map' ? 2.5 : 2} />
+                            <span className="text-[10px] font-medium">地图</span>
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

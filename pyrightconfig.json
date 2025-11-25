@@ -1,0 +1,10 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "warning",
+  "reportGeneralTypeIssues": "none",
+  "reportArgumentType": "none",
+  "reportOptionalMemberAccess": "warning",
+  "exclude": ["node_modules", "dist", ".venv"]
+}
