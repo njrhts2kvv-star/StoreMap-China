@@ -8,9 +8,12 @@ from pathlib import Path
 import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parent
-CSV_FILE = BASE_DIR / "all_stores_final.csv"
+CSV_FILE = BASE_DIR / "Store_Master_Cleaned.csv"
+ORIGINAL_CSV = BASE_DIR / "all_stores_final.csv"  # 用于获取 serviceTags
+MALL_CSV = BASE_DIR / "Mall_Master_Cleaned.csv"
 DJI_JSON = BASE_DIR / "src/data/dji_stores.json"
 INSTA_JSON = BASE_DIR / "src/data/insta360_stores.json"
+MALL_JSON = BASE_DIR / "src/data/malls.json"
 
 
 def parse_raw_source(raw_source: str) -> tuple[list[str], str]:
@@ -56,8 +59,29 @@ def csv_to_json():
     print(f"[信息] 读取CSV文件: {CSV_FILE}")
     df = pd.read_csv(CSV_FILE)
     
+    # 读取原始CSV文件以获取 serviceTags
+    original_df = None
+    service_tags_map = {}
+    if ORIGINAL_CSV.exists():
+        print(f"[信息] 读取原始CSV文件以获取服务标签: {ORIGINAL_CSV}")
+        original_df = pd.read_csv(ORIGINAL_CSV)
+        for _, row in original_df.iterrows():
+            uuid = str(row.get("uuid", "")).strip()
+            raw_source = row.get("raw_source", "")
+            if uuid and raw_source:
+                _, store_type = parse_raw_source(raw_source)
+                tags, _ = parse_raw_source(raw_source)
+                service_tags_map[uuid] = tags
+    
+    # 读取商场数据
+    mall_df = None
+    if MALL_CSV.exists():
+        print(f"[信息] 读取商场数据: {MALL_CSV}")
+        mall_df = pd.read_csv(MALL_CSV)
+        print(f"  商场数: {len(mall_df)}")
+    
     # 检查必需的列
-    required_columns = ["uuid", "brand", "name", "lat", "lng", "address", "province", "city"]
+    required_columns = ["store_id", "brand", "name", "corrected_lat", "corrected_lng", "address", "province", "city"]
     missing_columns = [col for col in required_columns if col not in df.columns]
     if missing_columns:
         print(f"[错误] CSV文件缺少必需的列: {missing_columns}")
@@ -71,23 +95,41 @@ def csv_to_json():
         if brand not in ["DJI", "Insta360"]:
             continue
         
-        # 解析服务标签和门店类型
-        raw_source = row.get("raw_source", "")
-        service_tags, store_type = parse_raw_source(raw_source)
+        # 获取商场信息
+        mall_id = row.get("mall_id", "")
+        mall_name = row.get("mall_name", "")
+        if pd.isna(mall_id):
+            mall_id = None
+        else:
+            mall_id = str(mall_id).strip()
+        if pd.isna(mall_name):
+            mall_name = None
+        else:
+            mall_name = str(mall_name).strip()
+        
+        # 获取服务标签
+        store_id = str(row.get("store_id", "")).strip()
+        service_tags = service_tags_map.get(store_id, [])
         
         # 构建门店对象
         store = {
-            "id": str(row.get("uuid", "")).strip(),
+            "id": store_id,
             "brand": brand,
             "storeName": str(row.get("name", "")).strip(),
             "province": str(row.get("province", "")).strip(),
             "city": str(row.get("city", "")).strip(),
             "address": str(row.get("address", "")).strip(),
-            "latitude": float(row.get("lat", 0)),
-            "longitude": float(row.get("lng", 0)),
-            "storeType": store_type,
+            "latitude": float(row.get("corrected_lat", 0)),
+            "longitude": float(row.get("corrected_lng", 0)),
+            "storeType": str(row.get("store_type", "")).strip(),
             "serviceTags": service_tags,
         }
+        
+        # 添加商场信息
+        if mall_id:
+            store["mallId"] = mall_id
+        if mall_name:
+            store["mallName"] = mall_name
         
         # 添加可选字段
         phone = row.get("phone", "")
@@ -115,6 +157,41 @@ def csv_to_json():
     with open(INSTA_JSON, "w", encoding="utf-8") as f:
         json.dump(insta_stores, f, ensure_ascii=False, indent=2)
     print(f"[完成] 已保存: {INSTA_JSON}")
+    
+    # 生成商场JSON（包含品牌进驻信息）
+    if mall_df is not None:
+        print(f"\n[信息] 生成商场JSON...")
+        malls = []
+        for _, mall_row in mall_df.iterrows():
+            mall_id = str(mall_row.get("mall_id", "")).strip()
+            mall_name = str(mall_row.get("mall_name", "")).strip()
+            city = str(mall_row.get("city", "")).strip()
+            
+            # 统计该商场的品牌进驻情况
+            stores_in_mall = df[df["mall_id"] == mall_id]
+            has_dji = len(stores_in_mall[stores_in_mall["brand"] == "DJI"]) > 0
+            has_insta = len(stores_in_mall[stores_in_mall["brand"] == "Insta360"]) > 0
+            
+            mall_data = {
+                "mallId": mall_id,
+                "mallName": mall_name,
+                "city": city,
+                "hasDJI": has_dji,
+                "hasInsta360": has_insta,
+            }
+            
+            # 添加坐标（如果有）
+            mall_lat = mall_row.get("mall_lat")
+            mall_lng = mall_row.get("mall_lng")
+            if pd.notna(mall_lat) and pd.notna(mall_lng):
+                mall_data["latitude"] = float(mall_lat)
+                mall_data["longitude"] = float(mall_lng)
+            
+            malls.append(mall_data)
+        
+        with open(MALL_JSON, "w", encoding="utf-8") as f:
+            json.dump(malls, f, ensure_ascii=False, indent=2)
+        print(f"[完成] 已保存: {MALL_JSON} ({len(malls)} 个商场)")
     
     print(f"\n[统计] DJI门店: {len(dji_stores)} 条")
     print(f"[统计] Insta360门店: {len(insta_stores)} 条")

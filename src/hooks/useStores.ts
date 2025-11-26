@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import djiRaw from '../data/dji_stores.json';
 import instaRaw from '../data/insta360_stores.json';
-import type { Brand, ServiceTag, Store } from '../types/store';
+import mallsRaw from '../data/malls.json';
+import type { Brand, ServiceTag, Store, Mall } from '../types/store';
 import type { StoreStats } from '../types/stats';
 import { haversineKm } from '../utils/distance';
 
@@ -41,10 +42,21 @@ function normalize(raw: any): Store {
     serviceTags: raw.serviceTags || [],
     openingHours: raw.openingHours,
     phone: raw.phone,
+    mallId: raw.mallId || undefined,
+    mallName: raw.mallName || undefined,
   };
 }
 
 const allStores: Store[] = [...djiRaw, ...instaRaw].map(normalize);
+const allMalls: Mall[] = (mallsRaw as any[]).map((m) => ({
+  mallId: m.mallId,
+  mallName: m.mallName,
+  city: m.city,
+  hasDJI: m.hasDJI || false,
+  hasInsta360: m.hasInsta360 || false,
+  latitude: m.latitude,
+  longitude: m.longitude,
+}));
 
 type FilterOptions = {
   skipProvince?: boolean;
@@ -229,6 +241,7 @@ export function useStores(userPos: { lat: number; lng: number } | null, filters:
     favorites,
     toggleFavorite,
     allStores,
+    allMalls,
     stats,
     storesForCityRanking: filteredWithoutCity,
     storesForProvinceRanking: filteredWithoutProvinceAndCity,

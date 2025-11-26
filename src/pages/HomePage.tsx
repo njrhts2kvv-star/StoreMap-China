@@ -41,7 +41,7 @@ type FilterState = {
 };
 
 // 体验店对比的门店类别
-const EXPERIENCE_DJI_STORE_TYPES = ['ARS'];
+const EXPERIENCE_DJI_STORE_TYPES = ['授权体验店', 'ARS'];
 const EXPERIENCE_INSTA_STORE_TYPES = ['直营店', '授权专卖店'];
 
 const initialFilters: FilterState = {
@@ -86,6 +86,7 @@ export default function HomePage() {
     favorites,
     toggleFavorite,
     allStores,
+    allMalls,
     storesForProvinceRanking,
     storesForCityRanking,
   } = useStores(userPos, filtersWithMode);
@@ -657,6 +658,7 @@ export default function HomePage() {
               ) : (
                 <RegionList
                   stores={visibleStores}
+                  malls={allMalls}
                   favorites={favorites}
                   onToggleFavorite={toggleFavorite}
                   onSelect={handleSelect}

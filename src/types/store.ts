@@ -17,4 +17,16 @@ export interface Store {
   phone?: string;
   distanceKm?: number;
   favorite?: boolean;
+  mallId?: string;
+  mallName?: string;
+}
+
+export interface Mall {
+  mallId: string;
+  mallName: string;
+  city: string;
+  hasDJI: boolean;
+  hasInsta360: boolean;
+  latitude?: number;
+  longitude?: number;
 }
