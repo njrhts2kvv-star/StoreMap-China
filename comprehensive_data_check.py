@@ -316,6 +316,10 @@ def check_json_csv_consistency():
             csv_mall_id = csv_store.iloc[0].get('mall_id')
             csv_mall_name = csv_store.iloc[0].get('mall_name')
             
+            # 允许两边都缺失 mall 信息（NaN vs None）
+            if pd.isna(csv_mall_id) and json_mall_id in (None, "", "nan") and pd.isna(csv_mall_name) and not json_mall_name:
+                continue
+            
             if str(json_mall_id) != str(csv_mall_id) or str(json_mall_name) != str(csv_mall_name):
                 id_mismatches += 1
     

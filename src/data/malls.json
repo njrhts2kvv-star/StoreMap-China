@@ -298,12 +298,12 @@
   },
   {
     "mallId": "MALL_00036",
-    "mallName": "西咸万象城",
+    "mallName": "西安万象城",
     "city": "西安市",
     "hasDJI": true,
     "hasInsta360": true,
-    "latitude": 34.290542,
-    "longitude": 108.829339
+    "latitude": 34.195779,
+    "longitude": 108.949454
   },
   {
     "mallId": "MALL_00037",
@@ -796,7 +796,7 @@
     "mallName": "SM厦门海沧城市广场",
     "city": "厦门市",
     "hasDJI": true,
-    "hasInsta360": true,
+    "hasInsta360": false,
     "latitude": 24.5394,
     "longitude": 117.956546
   },
@@ -1666,12 +1666,12 @@
   },
   {
     "mallId": "MALL_00199",
-    "mallName": "协信星光广场",
+    "mallName": "PARK108国泰优活城市广场",
     "city": "重庆市",
     "hasDJI": true,
     "hasInsta360": true,
-    "latitude": 29.363761,
-    "longitude": 105.941175
+    "latitude": 29.558996,
+    "longitude": 106.576213
   },
   {
     "mallId": "MALL_00200",
@@ -1990,12 +1990,12 @@
   },
   {
     "mallId": "MALL_00236",
-    "mallName": "龙湖济南奥体天街",
+    "mallName": "龙湖济南西城天街",
     "city": "济南市",
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 36.66791,
-    "longitude": 117.109674
+    "latitude": 36.652946,
+    "longitude": 116.908122
   },
   {
     "mallId": "MALL_00237",
@@ -2119,7 +2119,7 @@
     "mallName": "郑州二七万象城",
     "city": "郑州市",
     "hasDJI": true,
-    "hasInsta360": true,
+    "hasInsta360": false,
     "latitude": 34.754929,
     "longitude": 113.661854
   },
@@ -2647,12 +2647,12 @@
   },
   {
     "mallId": "MALL_00317",
-    "mallName": "映月湖环宇城",
+    "mallName": "千灯湖环宇城",
     "city": "佛山市",
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 23.033128,
-    "longitude": 113.187694
+    "latitude": 23.043588,
+    "longitude": 113.156846
   },
   {
     "mallId": "MALL_00318",
@@ -3025,12 +3025,12 @@
   },
   {
     "mallId": "MALL_00360",
-    "mallName": "贵阳万象汇",
+    "mallName": "贵阳万象城",
     "city": "贵阳市",
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 26.620558,
-    "longitude": 106.621622
+    "latitude": 26.560943,
+    "longitude": 106.703573
   },
   {
     "mallId": "MALL_00361",
@@ -3946,7 +3946,7 @@
     "mallName": "郑州郑东万象城",
     "city": "郑州市",
     "hasDJI": true,
-    "hasInsta360": false,
+    "hasInsta360": true,
     "latitude": 34.765546,
     "longitude": 113.764208
   },
@@ -4753,12 +4753,12 @@
   },
   {
     "mallId": "MALL_00580",
-    "mallName": "万达广场(兰州南滨河店)",
+    "mallName": "万达广场(兰州城关店)",
     "city": "兰州市",
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 36.076841,
-    "longitude": 103.866454
+    "latitude": 36.063449,
+    "longitude": 103.86313
   },
   {
     "mallId": "MALL_00581",
@@ -5098,7 +5098,7 @@
     "mallName": "厦门SM新生活广场",
     "city": "厦门市",
     "hasDJI": true,
-    "hasInsta360": false,
+    "hasInsta360": true,
     "latitude": 24.500043,
     "longitude": 118.125368
   },
