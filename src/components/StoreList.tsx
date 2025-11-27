@@ -12,9 +12,20 @@ type Props = {
 };
 
 export default function StoreList({ stores, favorites, onToggleFavorite, onSelect, selectedId }: Props) {
+  const isNewThisMonth = (s: Store): boolean => {
+    if (!s.openedAt || s.openedAt === 'historical') return false;
+    const opened = s.openedAt.split('T')[0];
+    if (!opened || opened.length < 7) return false;
+    const monthStr = opened.slice(0, 7);
+    const now = new Date();
+    const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    return monthStr === currentMonth;
+  };
+
   const itemContent = (s: Store, index: number) => {
     const rank = index + 1;
     const isFavorite = favorites.includes(s.id);
+    const isNew = isNewThisMonth(s);
     return (
       <div
         className={`relative overflow-hidden rounded-[24px] p-3 border transition shadow-[0_12px_30px_rgba(15,23,42,0.06)] ${
@@ -35,6 +46,11 @@ export default function StoreList({ stores, favorites, onToggleFavorite, onSelec
               >
                 {s.brand}
               </span>
+              {isNew && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500 text-white font-semibold shadow-sm">
+                  NEW
+                </span>
+              )}
             </div>
             <div className="text-xs text-slate-500 truncate mt-0.5">
               {s.distanceKm !== undefined && <span className="text-slate-900 font-semibold mr-1">{s.distanceKm.toFixed(1)} km ·</span>}

@@ -15,6 +15,8 @@ export interface Store {
   serviceTags: ServiceTag[];
   openingHours?: string;
   phone?: string;
+  openedAt?: string;
+  status?: "营业中" | "已闭店";
   distanceKm?: number;
   favorite?: boolean;
   mallId?: string;

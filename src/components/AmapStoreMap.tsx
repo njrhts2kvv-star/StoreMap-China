@@ -5,6 +5,7 @@ import type { Store } from '../types/store';
 import { loadAmap } from '../utils/loadAmap';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
+import type { Store as StoreType } from '../types/store';
 
 type Props = {
   stores: Store[];
@@ -34,6 +35,24 @@ const toLngLat = (store: Store): [number, number] | null => {
   return [lng, lat];
 };
 
+const isInChinaRough = (store: StoreType): boolean => {
+  const lat = (store as any).lat ?? store.latitude;
+  const lng = (store as any).lng ?? store.longitude;
+  if (typeof lat !== 'number' || typeof lng !== 'number') return false;
+  // 中国大致范围：纬度 18-54，经度 73-135
+  return lat >= 18 && lat <= 54 && lng >= 73 && lng <= 135;
+};
+
+const isNewThisMonth = (store: StoreType): boolean => {
+  if (!store.openedAt || store.openedAt === 'historical') return false;
+  const opened = store.openedAt.split('T')[0];
+  if (!opened || opened.length < 7) return false;
+  const monthStr = opened.slice(0, 7);
+  const now = new Date();
+  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  return monthStr === currentMonth;
+};
+
 export function AmapStoreMap({
   stores,
   selectedId,
@@ -51,10 +70,11 @@ export function AmapStoreMap({
   initialZoom = DEFAULT_ZOOM,
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const mapRef = useRef<any>(null);
-  const markersRef = useRef<any[]>([]);
-  const userMarkerRef = useRef<any | null>(null);
-  const amapRef = useRef<any>(null);
+  const mapRef = useRef<AMap.Map | null>(null);
+  const markersRef = useRef<AMap.Marker[]>([]);
+  const userMarkerRef = useRef<AMap.Marker | null>(null);
+  const amapRef = useRef<typeof AMap | null>(null);
+  const clusterRef = useRef<AMap.MarkerCluster | AMap.MarkerClusterer | null>(null);
   const favoritesSet = useMemo(() => new Set(favorites), [favorites]);
   const [ready, setReady] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -69,6 +89,18 @@ export function AmapStoreMap({
   }, [selectedId]);
 
   const destroyMap = useCallback(() => {
+    const cluster = clusterRef.current as AMap.MarkerCluster | AMap.MarkerClusterer | null;
+    if (cluster) {
+      if (typeof (cluster as any).clearMarkers === 'function') {
+        (cluster as any).clearMarkers();
+      } else if (typeof (cluster as any).setData === 'function') {
+        (cluster as any).setData([]);
+      }
+      if (typeof cluster.setMap === 'function') {
+        cluster.setMap(null as unknown as AMap.Map);
+      }
+      clusterRef.current = null;
+    }
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
     if (userMarkerRef.current) {
@@ -120,28 +152,56 @@ export function AmapStoreMap({
 
   useEffect(() => {
     if (!ready || !mapRef.current || !amapRef.current) return;
+    const cluster = clusterRef.current as AMap.MarkerCluster | AMap.MarkerClusterer | null;
+    if (cluster) {
+      if (typeof (cluster as any).clearMarkers === 'function') {
+        (cluster as any).clearMarkers();
+      } else if (typeof (cluster as any).setData === 'function') {
+        (cluster as any).setData([]);
+      }
+      if (typeof cluster.setMap === 'function') {
+        cluster.setMap(null as unknown as AMap.Map);
+      }
+      clusterRef.current = null;
+    }
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
-    const nextMarkers: any[] = [];
+    const AMapLib = amapRef.current;
+    const nextMarkers: AMap.Marker[] = [];
 
     stores.forEach((store) => {
+      // 只绘制中国境内门店，避免越界点干扰视图
+      if (!isInChinaRough(store)) return;
       const point = toLngLat(store);
       if (!point) return;
       const isFavorite = favoritesSet.has(store.id);
       const isSelected = selectedId === store.id;
+      const isNew = isNewThisMonth(store);
       const markerEl = document.createElement('div');
-      const brandClass = store.brand === 'DJI' ? 'store-marker--dji' : 'store-marker--insta';
-      const favoriteClass = isFavorite ? (store.brand === 'DJI' ? 'store-marker--favorite-dji' : 'store-marker--favorite-insta') : '';
-      markerEl.className = `store-marker ${brandClass} ${isFavorite ? 'store-marker--favorite' : ''} ${favoriteClass}`.trim();
+      let markerClass = 'store-marker';
+      if (isNew) {
+        markerClass += ' store-marker--new';
+      } else {
+        markerClass += store.brand === 'DJI' ? ' store-marker--dji' : ' store-marker--insta';
+      }
+      if (isFavorite) {
+        markerClass += ' store-marker--favorite';
+        if (isNew) {
+          markerClass += ' store-marker--favorite-new';
+        } else {
+          markerClass += store.brand === 'DJI' ? ' store-marker--favorite-dji' : ' store-marker--favorite-insta';
+        }
+      }
+      markerEl.className = markerClass.trim();
       if (isSelected) markerEl.classList.add('store-marker--selected');
       markerEl.title = store.storeName;
 
-      const marker = new amapRef.current.Marker({
+      const marker = new AMapLib.Marker({
         position: point,
         content: markerEl,
-        offset: new amapRef.current.Pixel(-7, -7),
-        zIndex: isSelected ? 120 : isFavorite ? 110 : 100,
+        offset: new AMapLib.Pixel(-7, -7),
+        zIndex: isSelected ? 140 : isNew ? 130 : isFavorite ? 120 : 100,
       });
       marker.setExtData(store);
 
@@ -156,16 +216,27 @@ export function AmapStoreMap({
         }
       });
 
-      marker.setMap(mapRef.current);
       nextMarkers.push(marker);
     });
 
     markersRef.current = nextMarkers;
+    (window as any).__storeMarkers = nextMarkers;
+    console.info('[Map] markers prepared:', nextMarkers.length);
 
-    const shouldFitAll = !selectedId && (fitToStores || autoFitOnClear);
-    if (mapRef.current && nextMarkers.length && shouldFitAll) {
-      mapRef.current.setFitView(nextMarkers, false, [80, 40, 80, 80]);
-    } else if (!nextMarkers.length) {
+    const adjustView = () => {
+      const shouldFitAll = !selectedId && (fitToStores || autoFitOnClear);
+      if (mapRef.current && nextMarkers.length && shouldFitAll) {
+        mapRef.current.setFitView(nextMarkers, false, [80, 40, 80, 80]);
+      } else if (!nextMarkers.length) {
+        recenter();
+      }
+    };
+
+    // 暂时禁用聚合，直接渲染所有点，保证可见性
+    if (nextMarkers.length && mapRef.current) {
+      nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
+      adjustView();
+    } else {
       recenter();
     }
   }, [ready, stores, favoritesSet, selectedId, autoFitOnClear, fitToStores, onSelect, recenter]);
@@ -341,7 +412,7 @@ export function AmapStoreMap({
             </button>
             <div className="p-4 pr-12">
               <div className="flex gap-3 items-start mb-2">
-                <div
+              <div
                   className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm ${
                     selectedStore.brand === 'DJI' ? 'bg-white border border-slate-900' : 'bg-white border border-amber-300'
                   }`}
@@ -349,7 +420,16 @@ export function AmapStoreMap({
                   <img src={selectedStore.brand === 'DJI' ? djiLogoWhite : instaLogoYellow} alt={selectedStore.brand} className="w-9 h-9" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-bold text-slate-900 leading-tight mb-0.5">{selectedStore.storeName}</div>
+                  <div className="flex items-center gap-2">
+                    <div className="text-sm font-bold text-slate-900 leading-tight mb-0.5 truncate">
+                      {selectedStore.storeName}
+                    </div>
+                    {isNewThisMonth(selectedStore) && (
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-rose-500 text-white shadow-sm">
+                        NEW
+                      </span>
+                    )}
+                  </div>
                   <div className="text-xs text-slate-500 line-clamp-1">{selectedStore.address}</div>
                 </div>
               </div>

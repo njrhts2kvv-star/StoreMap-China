@@ -7,9 +7,11 @@
 .store-marker::after { content:none; }
 .store-marker--dji { background:#111827; }
 .store-marker--insta { background:#facc15; border-color:#111827; box-shadow:0 8px 18px rgba(250,204,21,0.25); }
+.store-marker--new { background:#fb7185; border-color:#fff; box-shadow:0 10px 22px rgba(251,113,133,0.35); }
 .store-marker--favorite { width:18px; height:18px; font-size:13px; line-height:1; }
 .store-marker--favorite::before { content:'★'; }
 .store-marker--favorite-dji { background:#111827; border-color:#fff; color:#fff; box-shadow:0 10px 22px rgba(15,23,42,0.3); }
 .store-marker--favorite-insta { background:#facc15; border-color:#111827; color:#111827; box-shadow:0 12px 24px rgba(250,204,21,0.3); }
+.store-marker--favorite-new { background:#fb7185; border-color:#fff; color:#fff; box-shadow:0 12px 24px rgba(251,113,133,0.4); }
 .store-marker--selected { box-shadow:0 0 0 4px rgba(99,102,241,0.15),0 10px 24px rgba(15,23,42,0.22); }
 .store-marker--user { background:#0ea5e9; border-color:#fff; box-shadow:0 8px 16px rgba(14,165,233,0.3); }

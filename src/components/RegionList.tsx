@@ -75,6 +75,16 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
   const [mallPage, setMallPage] = useState<Record<string, number>>({});
   const [storePage, setStorePage] = useState<Record<string, number>>({});
 
+  const isNewThisMonth = (s: Store): boolean => {
+    if (!s.openedAt || s.openedAt === 'historical') return false;
+    const opened = s.openedAt.split('T')[0];
+    if (!opened || opened.length < 7) return false;
+    const monthStr = opened.slice(0, 7);
+    const now = new Date();
+    const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    return monthStr === currentMonth;
+  };
+
   const provinces = useMemo<ProvinceGroup[]>(() => {
     const group: Record<string, ProvinceGroup> = {};
     
@@ -257,7 +267,7 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
                               {/* 商场列表 */}
                               {c.malls
                                 .slice((mallPage[cityKey] ?? 0) * 5, (mallPage[cityKey] ?? 0) * 5 + 5)
-                                .map((m, mallIdx) => {
+                                .map((m) => {
                                   const mallKey = `${cityKey}-${m.mallId}`;
                                   const mallOpen = openMall === mallKey;
                                   const mallStatus = getMallStatus(m);
@@ -287,6 +297,7 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
                                             .slice((storePage[mallKey] ?? 0) * 8, (storePage[mallKey] ?? 0) * 8 + 8)
                                             .map((s) => {
                                               const isFav = favorites.includes(s.id);
+                                              const isNew = isNewThisMonth(s);
                                               const brandLogo = s.brand === 'DJI' ? djiLogoWhite : instaLogoYellow;
                                               const brandStyle =
                                                 s.brand === 'DJI'
@@ -302,7 +313,14 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
                                                     <img src={brandLogo} alt={s.brand} className="w-9 h-9" />
                                                   </div>
                                                   <div className="flex-1 min-w-0">
-                                                    <div className="text-sm font-semibold text-slate-900 truncate">{s.storeName}</div>
+                                                    <div className="flex items-center gap-2">
+                                                      <div className="text-sm font-semibold text-slate-900 truncate">{s.storeName}</div>
+                                                      {isNew && (
+                                                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500 text-white font-semibold shadow-sm">
+                                                          NEW
+                                                        </span>
+                                                      )}
+                                                    </div>
                                                     <div className="text-[12px] text-slate-500 truncate mt-0.5">{s.address}</div>
                                                     <div className="flex flex-wrap gap-1 mt-1">
                                                       {s.serviceTags.map((t) => (
@@ -401,7 +419,14 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
                                             <img src={brandLogo} alt={s.brand} className="w-9 h-9" />
                                           </div>
                                           <div className="flex-1 min-w-0">
-                                            <div className="text-sm font-semibold text-slate-900 truncate">{s.storeName}</div>
+                                            <div className="flex items-center gap-2">
+                                              <div className="text-sm font-semibold text-slate-900 truncate">{s.storeName}</div>
+                                              {isNewThisMonth(s) && (
+                                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500 text-white font-semibold shadow-sm">
+                                                  NEW
+                                                </span>
+                                              )}
+                                            </div>
                                             <div className="text-[12px] text-slate-500 truncate mt-0.5">{s.address}</div>
                                             <div className="flex flex-wrap gap-1 mt-1">
                                               {s.serviceTags.map((t) => (

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import djiRaw from '../data/dji_stores.json';
 import instaRaw from '../data/insta360_stores.json';
 import mallsRaw from '../data/malls.json';
+import statsData from '../data/stats.json';
 import type { Brand, ServiceTag, Store, Mall } from '../types/store';
 import type { StoreStats } from '../types/stats';
 import { haversineKm } from '../utils/distance';
@@ -18,9 +19,19 @@ type Filters = {
   favoritesOnly: boolean;
   competitiveOnly: boolean;
   experienceOnly: boolean;
+  newThisMonth: boolean;
 };
 
 const isInCn = (lat: number, lng: number) => lat >= 15 && lat <= 55 && lng >= 70 && lng <= 135;
+const isNewStore = (store: Store) => {
+  if (!store.openedAt || store.openedAt === 'historical') return false;
+  const opened = store.openedAt.split('T')[0];
+  if (!opened || opened.length < 7) return false;
+  const monthStr = opened.slice(0, 7);
+  const now = new Date();
+  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  return monthStr === currentMonth;
+};
 
 function normalize(raw: any): Store {
   let { latitude, longitude } = raw;
@@ -42,6 +53,8 @@ function normalize(raw: any): Store {
     serviceTags: raw.serviceTags || [],
     openingHours: raw.openingHours,
     phone: raw.phone,
+    openedAt: raw.openedAt,
+    status: raw.status,
     mallId: raw.mallId || undefined,
     mallName: raw.mallName || undefined,
   };
@@ -102,6 +115,7 @@ const applyFilters = (
     list = list.filter((s) => filters.serviceTags.every((tag) => s.serviceTags.includes(tag)));
 
   if (filters.favoritesOnly) list = list.filter((s) => favorites.includes(s.id));
+  if (filters.newThisMonth) list = list.filter(isNewStore);
 
   if (filters.experienceOnly) {
     const djiKeywords = ['ARS', '授权体验店', '新型照材'];
@@ -148,71 +162,15 @@ const applyFilters = (
   return list.map((s) => ({ ...s, distanceKm: undefined, favorite: favorites.includes(s.id) }));
 };
 
-const computeStats = (stores: Store[]): StoreStats => {
-  const topCitiesMap = stores.reduce<Record<string, number>>((acc, store) => {
-    const key = store.city || store.province || '未知';
-    acc[key] = (acc[key] || 0) + 1;
-    return acc;
-  }, {});
-
-  const topCities = Object.entries(topCitiesMap)
-    .map(([city, count]) => ({ city, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 10);
-
-  const provinceRankingMap = stores.reduce<Record<string, { dji: number; insta: number }>>((acc, store) => {
-    const key = store.province || '未知';
-    if (!acc[key]) acc[key] = { dji: 0, insta: 0 };
-    if (store.brand === 'DJI') acc[key].dji += 1;
-    else acc[key].insta += 1;
-    return acc;
-  }, {});
-
-  const provinceRanking = Object.entries(provinceRankingMap)
-    .map(([province, value]) => ({
-      province,
-      ...value,
-      total: value.dji + value.insta,
-    }))
-    .sort((a, b) => b.total - a.total);
-
-  return {
-    totalStores: stores.length,
-    topCities,
-    provinceRanking,
-    updatedAt: new Date().toISOString(),
-  };
-};
-
 export function useStores(userPos: { lat: number; lng: number } | null, filters: Filters) {
   const [favorites, setFavorites] = useState<string[]>(() => {
     const saved = localStorage.getItem('favorites');
     return saved ? JSON.parse(saved) : [];
   });
-  const [remoteStats, setRemoteStats] = useState<StoreStats | null>(null);
-  const [statsError, setStatsError] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch('/data/stats.json')
-      .then((res) => {
-        if (!res.ok) throw new Error('Stats load failed');
-        return res.json();
-      })
-      .then((data: StoreStats) => {
-        if (!cancelled) setRemoteStats(data);
-      })
-      .catch(() => {
-        if (!cancelled) setStatsError(true);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   const toggleFavorite = (id: string) => {
     setFavorites((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
@@ -222,6 +180,14 @@ export function useStores(userPos: { lat: number; lng: number } | null, filters:
     const main = applyFilters(filters, favorites, userPos);
     const withoutCity = applyFilters(filters, favorites, userPos, { skipCity: true });
     const withoutProvinceCity = applyFilters(filters, favorites, userPos, { skipCity: true, skipProvince: true });
+    if (typeof window !== 'undefined') {
+      (window as any).__storesDebug = {
+        filtered: main.length,
+        withoutCity: withoutCity.length,
+        withoutProvinceCity: withoutProvinceCity.length,
+        filters,
+      };
+    }
     return {
       filtered: main,
       filteredWithoutCity: withoutCity,
@@ -229,12 +195,7 @@ export function useStores(userPos: { lat: number; lng: number } | null, filters:
     };
   }, [filters, userPos, favorites]);
 
-  const fallbackStats = useMemo(() => {
-    if (!statsError) return null;
-    return computeStats(allStores);
-  }, [statsError]);
-
-  const stats = remoteStats ?? fallbackStats;
+  const stats = statsData as StoreStats;
 
   return {
     filtered,

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Set
 
 import pandas as pd
 from geopy.distance import geodesic
@@ -126,7 +126,7 @@ def find_mall_clusters(df: pd.DataFrame) -> dict[str, list[int]]:
     return merged_clusters
 
 
-def unify_mall_names(csv_path: Path, dry_run: bool = False):
+def unify_mall_names(csv_path: Path, dry_run: bool = False, target_ids: Optional[Set[str]] = None):
     """
     统一商场名称，确保同一商场的门店使用完全相同的商场名称
     
@@ -151,6 +151,10 @@ def unify_mall_names(csv_path: Path, dry_run: bool = False):
     print(f"[信息] 总计门店: {len(df)} 条")
     print(f"[信息] 模式: {'预览模式（不会修改文件）' if dry_run else '更新模式'}")
     print("-" * 80)
+
+    target_set = None
+    if target_ids:
+        target_set = {sid.strip() for sid in target_ids if sid and sid.strip()}
     
     # 创建备份
     if not dry_run:
@@ -171,18 +175,27 @@ def unify_mall_names(csv_path: Path, dry_run: bool = False):
         if not standard_mall_name:
             continue
         
-        print(f"\n[集群] {standard_mall_name}: {len(indices)} 个门店")
+        effective_indices = indices
+        if target_set:
+            filtered = [i for i in indices if str(df.at[i, "uuid"]).strip() in target_set]
+            if not filtered:
+                continue
+            effective_indices = filtered
+        total_members = len(indices)
+        active_members = len(effective_indices)
+        label = f"{active_members}/{total_members}" if target_set else f"{active_members}"
+        print(f"\n[集群] {standard_mall_name}: {label} 个门店")
         
         # 统计这个商场的品牌分布
         brands = {}
-        for idx in indices:
+        for idx in effective_indices:
             brand = str(df.at[idx, "brand"]).strip()
             brands[brand] = brands.get(brand, 0) + 1
         
         print(f"  品牌分布: {', '.join([f'{k}({v})' for k, v in brands.items()])}")
         
         # 统一商场名称
-        for idx in indices:
+        for idx in effective_indices:
             current_mall_name = str(df.at[idx, "mall_name"]).strip()
             current_mall_name_normalized = normalize_mall_name(current_mall_name)
             
@@ -201,7 +214,7 @@ def unify_mall_names(csv_path: Path, dry_run: bool = False):
                     print(f"    [预览] 将更新为: {standard_mall_name}")
                     updated_count += 1
         
-        stats[standard_mall_name] = len(indices)
+        stats[standard_mall_name] = len(effective_indices)
     
     print("\n" + "=" * 80)
     print(f"[统计] 商场集群数: {len(clusters)}")

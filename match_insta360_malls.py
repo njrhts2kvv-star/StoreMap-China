@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 import time
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Set
 
 import pandas as pd
 import requests
@@ -17,6 +17,7 @@ CSV_FILE = BASE_DIR / "all_stores_final.csv"
 BACKUP_FILE = BASE_DIR / "all_stores_final.csv.backup"
 
 AMAP_TEXT_API = "https://restapi.amap.com/v3/place/text"
+AMAP_AROUND_API = "https://restapi.amap.com/v3/place/around"
 AMAP_TYPES = "060100|060101|060102|060200|060400|060500"  # 商场类型码
 
 # 经纬度匹配阈值（米）：如果两个门店距离小于这个值，认为是同一商场
@@ -149,6 +150,63 @@ def search_mall_by_name(mall_name: str, city: str) -> Optional[dict]:
         
     except Exception as e:
         print(f"[错误] 搜索商场 '{keyword}' 时出错: {e}")
+        return None
+
+
+def search_nearby_malls(lat: float, lng: float, city: str, store_name: str) -> Optional[dict]:
+    """通过周边搜索寻找与门店匹配的商场。"""
+    require_key()
+    params = {
+        "key": AMAP_KEY,
+        "location": f"{lng},{lat}",
+        "types": AMAP_TYPES,
+        "radius": 1500,
+        "sortrule": "distance",
+        "offset": 20,
+        "page": 1,
+    }
+    try:
+        resp = requests.get(AMAP_AROUND_API, params=params, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("status") != "1":
+            return None
+        pois = data.get("pois") or []
+        best = None
+        best_score = 0
+        store_name_low = store_name.lower()
+        for poi in pois:
+            loc = poi.get("location", "")
+            if "," not in loc:
+                continue
+            try:
+                poi_lng, poi_lat = map(float, loc.split(",", 1))
+            except Exception:
+                continue
+            try:
+                dist = geodesic((lat, lng), (poi_lat, poi_lng)).meters
+            except Exception:
+                dist = float(poi.get("distance") or 9999)
+            name = poi.get("name", "")
+            if not name:
+                continue
+            name_score = fuzz.partial_ratio(name.lower(), store_name_low)
+            distance_score = max(0.0, 1 - dist / 2000) * 40
+            score = name_score * 0.6 + distance_score
+            if score > best_score:
+                best_score = score
+                best = {
+                    "mall_name": name,
+                    "lat": poi_lat,
+                    "lng": poi_lng,
+                    "address": poi.get("address", ""),
+                    "score": score,
+                }
+        if best and best_score >= 45:
+            return best
+        return None
+    except Exception as e:
+        print(f"[错误] 周边商场搜索失败: {e}")
         return None
 
 
@@ -358,7 +416,7 @@ def find_matching_dji_store(
     return None
 
 
-def match_insta360_malls(csv_path: Path, dry_run: bool = False):
+def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Optional[Set[str]] = None):
     """
     匹配Insta360门店的商场名称
     
@@ -390,181 +448,130 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False):
     if "is_manual_confirmed" not in df.columns:
         df["is_manual_confirmed"] = ""
     
-    # 分离DJI和Insta360门店
+        # 选择需要处理的门店
     dji_stores = df[df["brand"] == "DJI"].copy()
-    insta_stores = df[df["brand"] == "Insta360"].copy()
-    
+    if target_ids:
+        target_set: Optional[Set[str]] = {sid.strip() for sid in target_ids if sid and sid.strip()}
+        target_rows = df[df["uuid"].astype(str).str.strip().isin(target_set)].copy()
+        if target_rows.empty:
+            print("[提示] 没有需要匹配的新增门店，跳过。")
+            return
+    else:
+        target_set = None
+        target_rows = df[df["brand"] == "Insta360"].copy()
+
     print(f"[信息] DJI门店: {len(dji_stores)} 条")
-    print(f"[信息] Insta360门店: {len(insta_stores)} 条")
+    print(f"[信息] 目标门店: {len(target_rows)} 条")
     print(f"[信息] 模式: {'预览模式（不会修改文件）' if dry_run else '更新模式'}")
     print("-" * 80)
-    
-    # 创建备份
     if not dry_run:
         print(f"[信息] 创建备份文件: {BACKUP_FILE}")
         df.to_csv(BACKUP_FILE, index=False, encoding="utf-8-sig")
     
-    total = len(insta_stores)
+    total = len(target_rows)
     updated_coords = 0
     matched_malls = 0
     skipped_count = 0
     error_count = 0
-    
-    for idx, insta_row in insta_stores.iterrows():
-        store_name = str(insta_row.get("name", "")).strip()
-        city = str(insta_row.get("city", "")).strip()
-        current_lat = insta_row.get("lat")
-        current_lng = insta_row.get("lng")
-        current_mall_name = str(insta_row.get("mall_name", "")).strip()
-        
+
+    for seq_idx, (idx, row) in enumerate(target_rows.iterrows(), start=1):
+        uuid = str(row.get("uuid", "")).strip()
+        store_name = str(row.get("name", "")).strip()
+        city = str(row.get("city", "")).strip()
+        current_lat = row.get("lat")
+        current_lng = row.get("lng")
+        current_mall_name = str(row.get("mall_name", "")).strip()
+        brand = str(row.get("brand", "")).strip()
+
         if not store_name or not city:
             skipped_count += 1
             continue
-        
-        print(f"\n[{insta_stores.index.get_loc(idx) + 1}/{total}] Insta360 - {store_name} ({city})")
+
+        print(f"\n[{seq_idx}/{total}] {brand or '门店'} - {store_name} ({city})")
         print(f"  当前坐标: lat={current_lat}, lng={current_lng}")
         print(f"  当前商场: {current_mall_name if current_mall_name else '(未匹配)'}")
-        
+
         try:
-            # 步骤1: 通过门店名称搜索获取精准经纬度
-            location_result = search_store_by_name(store_name, city, "Insta360")
-            
+            location_result = search_store_by_name(store_name, city, brand or "Insta360")
+
             if location_result:
                 new_lat = location_result["lat"]
                 new_lng = location_result["lng"]
                 amap_name = location_result["amap_name"]
                 amap_address = location_result["amap_address"]
-                
+
                 print(f"  ✓ 获取精准坐标: lat={new_lat}, lng={new_lng}")
                 print(f"  高德名称: {amap_name}")
                 print(f"  高德地址: {amap_address}")
-                
-                # 更新门店坐标
+
                 if not dry_run:
                     df.at[idx, "lat"] = new_lat
                     df.at[idx, "lng"] = new_lng
                     updated_coords += 1
-                
-                # 步骤2: 在DJI门店中查找匹配的门店
-                match_result = find_matching_dji_store(insta_row, new_lat, new_lng, dji_stores)
-                
-                if match_result:
+
+                reference_set = df[
+                    (df["mall_name"].astype(str).str.strip() != "")
+                    & (df.index != idx)
+                ]
+                match_result = find_matching_dji_store(row, new_lat, new_lng, reference_set)
+
+                if match_result and match_result.get("dji_mall_name"):
                     matched_mall_name = match_result["dji_mall_name"]
                     distance = match_result["distance"]
                     name_sim = match_result["name_similarity"]
                     addr_sim = match_result["address_similarity"]
                     total_score = match_result["total_score"]
-                    
-                    print(f"  ✓ 找到匹配的DJI门店!")
-                    print(f"  DJI门店: {match_result['dji_name']}")
-                    print(f"  距离: {distance:.0f}m")
-                    print(f"  名称相似度: {name_sim:.1f}%")
-                    print(f"  地址相似度: {addr_sim:.1f}%")
-                    print(f"  综合分数: {total_score:.1f}")
-                    print(f"  匹配商场: {matched_mall_name}")
-                    
-                    # 检查DJI门店的匹配方式
-                    dji_idx = dji_stores[dji_stores["name"] == match_result["dji_name"]].index
-                    if len(dji_idx) > 0:
-                        dji_row = dji_stores.loc[dji_idx[0]]
-                        dji_is_manual = str(dji_row.get("is_manual_confirmed", "")).strip() == "True"
-                        dji_match_method = str(dji_row.get("match_method", "")).strip()
-                        
-                        # 如果DJI门店是手动匹配，我们也使用手动匹配方式
-                        # 否则使用自动匹配方式
-                        match_method = "manual" if dji_is_manual else "auto"
-                        
-                        if match_method == "auto":
-                            # 自动匹配：使用高德地图的商场名称和商场的经纬度
-                            print(f"  [自动匹配] 搜索商场 '{matched_mall_name}' 的经纬度...")
-                            mall_location = search_mall_by_name(matched_mall_name, city)
-                            
-                            if mall_location:
-                                mall_lat = mall_location["lat"]
-                                mall_lng = mall_location["lng"]
-                                amap_mall_name = mall_location["amap_name"]
-                                
-                                print(f"  ✓ 找到商场坐标: lat={mall_lat}, lng={mall_lng}")
-                                print(f"  高德商场名称: {amap_mall_name}")
-                                
-                                if not dry_run:
-                                    df.at[idx, "mall_name"] = amap_mall_name
-                                    df.at[idx, "mall_lat"] = mall_lat
-                                    df.at[idx, "mall_lng"] = mall_lng
-                                    df.at[idx, "match_method"] = "auto"
-                                    matched_malls += 1
-                                else:
-                                    print(f"  [预览] 将更新:")
-                                    print(f"    商场名称: {amap_mall_name}")
-                                    print(f"    商场坐标: lat={mall_lat}, lng={mall_lng}")
-                                    print(f"    匹配方式: auto")
-                                    matched_malls += 1
-                            else:
-                                print(f"  ✗ 未找到商场 '{matched_mall_name}' 的坐标，使用门店坐标")
-                                if not dry_run:
-                                    df.at[idx, "mall_name"] = matched_mall_name
-                                    df.at[idx, "mall_lat"] = new_lat
-                                    df.at[idx, "mall_lng"] = new_lng
-                                    df.at[idx, "match_method"] = "auto"
-                                    matched_malls += 1
-                        else:
-                            # 手动匹配：使用手动输入的商场名称，但使用门店的高德经纬度
-                            print(f"  [手动匹配] 使用手动输入的商场名称，门店坐标作为商场坐标")
-                            if not dry_run:
-                                df.at[idx, "mall_name"] = matched_mall_name
-                                df.at[idx, "mall_lat"] = new_lat
-                                df.at[idx, "mall_lng"] = new_lng
-                                df.at[idx, "match_method"] = "manual"
-                                matched_malls += 1
-                            else:
-                                print(f"  [预览] 将更新:")
-                                print(f"    商场名称: {matched_mall_name}")
-                                print(f"    商场坐标: lat={new_lat}, lng={new_lng} (使用门店坐标)")
-                                print(f"    匹配方式: manual")
-                                matched_malls += 1
+
+                    print(f"  ✓ 找到匹配门店/商场: {matched_mall_name}")
+                    print(f"  距离: {distance:.0f}m, 名称相似: {name_sim:.1f}%, 地址相似: {addr_sim:.1f}% (score {total_score:.1f})")
+
+                    mall_location = search_mall_by_name(matched_mall_name, city)
+                    if mall_location:
+                        mall_lat = mall_location["lat"]
+                        mall_lng = mall_location["lng"]
+                        amap_mall_name = mall_location["amap_name"]
                     else:
-                        # 如果找不到DJI门店，使用自动匹配方式
-                        print(f"  [自动匹配] 搜索商场 '{matched_mall_name}' 的经纬度...")
-                        mall_location = search_mall_by_name(matched_mall_name, city)
-                        
-                        if mall_location:
-                            mall_lat = mall_location["lat"]
-                            mall_lng = mall_location["lng"]
-                            amap_mall_name = mall_location["amap_name"]
-                            
-                            print(f"  ✓ 找到商场坐标: lat={mall_lat}, lng={mall_lng}")
-                            print(f"  高德商场名称: {amap_mall_name}")
-                            
-                            if not dry_run:
-                                df.at[idx, "mall_name"] = amap_mall_name
-                                df.at[idx, "mall_lat"] = mall_lat
-                                df.at[idx, "mall_lng"] = mall_lng
-                                df.at[idx, "match_method"] = "auto"
-                                matched_malls += 1
-                        else:
-                            if not dry_run:
-                                df.at[idx, "mall_name"] = matched_mall_name
-                                df.at[idx, "mall_lat"] = new_lat
-                                df.at[idx, "mall_lng"] = new_lng
-                                df.at[idx, "match_method"] = "auto"
-                                matched_malls += 1
+                        mall_lat, mall_lng = new_lat, new_lng
+                        amap_mall_name = matched_mall_name
+
+                    if not dry_run:
+                        df.at[idx, "mall_name"] = amap_mall_name
+                        df.at[idx, "mall_lat"] = mall_lat
+                        df.at[idx, "mall_lng"] = mall_lng
+                        df.at[idx, "match_method"] = "auto"
+                        matched_malls += 1
+                    else:
+                        print(f"  [预览] 将更新商场为: {amap_mall_name}")
+                        matched_malls += 1
                 else:
-                    print(f"  ✗ 未找到匹配的DJI门店")
-                    if current_mall_name:
-                        print(f"  [保留] 保持现有商场名称: {current_mall_name}")
+                    print("  ✗ 未找到可复用的商场，尝试周边搜索")
+                    nearby = search_nearby_malls(new_lat, new_lng, city, store_name)
+                    if nearby:
+                        print(f"  ✓ 周边商场匹配: {nearby['mall_name']} (score {nearby['score']:.1f})")
+                        if not dry_run:
+                            df.at[idx, "mall_name"] = nearby["mall_name"]
+                            df.at[idx, "mall_lat"] = nearby["lat"]
+                            df.at[idx, "mall_lng"] = nearby["lng"]
+                            df.at[idx, "match_method"] = "amap_nearby"
+                            matched_malls += 1
+                        else:
+                            print(f"  [预览] 将更新为: {nearby['mall_name']}")
+                            matched_malls += 1
                     else:
-                        print(f"  [提示] 需要手动匹配或使用其他方法匹配商场")
+                        print("  ✗ 周边搜索也未匹配成功")
+                        if current_mall_name:
+                            print(f"  [保留] 使用现有商场: {current_mall_name}")
+                        else:
+                            print("  [提示] 仍需人工确认商场")
             else:
-                print(f"  ✗ 未找到精准坐标")
+                print("  ✗ 未找到精准坐标")
                 skipped_count += 1
-            
-            # 避免请求过快
+
             time.sleep(0.3)
-            
+
         except Exception as e:
             print(f"  [错误] {e}")
             error_count += 1
-    
     print("\n" + "=" * 80)
     print(f"[统计] 总计: {total} 条")
     print(f"[统计] 更新坐标: {updated_coords} 条")
@@ -597,4 +604,3 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
         sys.exit(1)
-

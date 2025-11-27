@@ -1,9 +1,10 @@
-"""将CSV文件转换为前端需要的JSON格式"""
+"""将CSV文件转换为前端需要的JSON格式，并预计算统计数据"""
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
+from datetime import datetime
 
 import pandas as pd
 
@@ -14,6 +15,7 @@ MALL_CSV = BASE_DIR / "Mall_Master_Cleaned.csv"
 DJI_JSON = BASE_DIR / "src/data/dji_stores.json"
 INSTA_JSON = BASE_DIR / "src/data/insta360_stores.json"
 MALL_JSON = BASE_DIR / "src/data/malls.json"
+STATS_JSON = BASE_DIR / "src/data/stats.json"
 
 
 def parse_raw_source(raw_source: str) -> tuple[list[str], str]:
@@ -50,11 +52,66 @@ def parse_raw_source(raw_source: str) -> tuple[list[str], str]:
         return [], ""
 
 
+def normalize_city(city: str, province: str) -> str:
+    """与前端保持一致的城市归一化规则"""
+    city = (city or "").strip()
+    province = (province or "").strip()
+    if city == "市辖区":
+        return province or "未知"
+    return city or province or "未知"
+
+
+def compute_stats(dji_stores: list[dict], insta_stores: list[dict]) -> dict:
+    """基于最终门店列表预计算统计数据"""
+    stores = dji_stores + insta_stores
+
+    top_cities_map: dict[str, int] = {}
+    for store in stores:
+        city = normalize_city(store.get("city", ""), store.get("province", ""))
+        top_cities_map[city] = top_cities_map.get(city, 0) + 1
+
+    top_cities = (
+        sorted(top_cities_map.items(), key=lambda x: x[1], reverse=True)[:10]
+        if top_cities_map
+        else []
+    )
+
+    province_ranking_map: dict[str, dict[str, int]] = {}
+    for store in stores:
+        province = (store.get("province") or "未知").strip()
+        if province not in province_ranking_map:
+            province_ranking_map[province] = {"dji": 0, "insta": 0}
+        if store.get("brand") == "DJI":
+            province_ranking_map[province]["dji"] += 1
+        elif store.get("brand") == "Insta360":
+            province_ranking_map[province]["insta"] += 1
+
+    province_ranking = [
+        {
+            "province": province,
+            "dji": values["dji"],
+            "insta": values["insta"],
+            "total": values["dji"] + values["insta"],
+        }
+        for province, values in province_ranking_map.items()
+    ]
+    province_ranking.sort(key=lambda x: x["total"], reverse=True)
+
+    return {
+        "totalStores": len(stores),
+        "topCities": [{"city": city, "count": count} for city, count in top_cities],
+        "provinceRanking": province_ranking,
+        "updatedAt": datetime.utcnow().isoformat(),
+    }
+
+
 def csv_to_json():
     """将CSV文件转换为JSON格式"""
     if not CSV_FILE.exists():
         print(f"[错误] CSV文件不存在: {CSV_FILE}")
         return
+    
+    STATS_JSON.parent.mkdir(parents=True, exist_ok=True)
     
     print(f"[信息] 读取CSV文件: {CSV_FILE}")
     df = pd.read_csv(CSV_FILE)
@@ -110,6 +167,10 @@ def csv_to_json():
         # 获取服务标签
         store_id = str(row.get("store_id", "")).strip()
         service_tags = service_tags_map.get(store_id, [])
+        opened_at = str(row.get("opened_at", "")).strip() if "opened_at" in df.columns else ""
+        opened_at = opened_at or "historical"
+        status = str(row.get("status", "")).strip() if "status" in df.columns else ""
+        status = status or "营业中"
         
         # 构建门店对象
         store = {
@@ -123,6 +184,8 @@ def csv_to_json():
             "longitude": float(row.get("corrected_lng", 0)),
             "storeType": str(row.get("store_type", "")).strip(),
             "serviceTags": service_tags,
+            "openedAt": opened_at,
+            "status": status,
         }
         
         # 添加商场信息
@@ -193,6 +256,13 @@ def csv_to_json():
             json.dump(malls, f, ensure_ascii=False, indent=2)
         print(f"[完成] 已保存: {MALL_JSON} ({len(malls)} 个商场)")
     
+    # 预计算统计数据
+    stats = compute_stats(dji_stores, insta_stores)
+    print(f"\n[信息] 生成统计数据: totalStores={stats['totalStores']}")
+    with open(STATS_JSON, "w", encoding="utf-8") as f:
+        json.dump(stats, f, ensure_ascii=False, indent=2)
+    print(f"[完成] 已保存: {STATS_JSON}")
+    
     print(f"\n[统计] DJI门店: {len(dji_stores)} 条")
     print(f"[统计] Insta360门店: {len(insta_stores)} 条")
     print(f"[统计] 总计: {len(dji_stores) + len(insta_stores)} 条")
@@ -205,4 +275,3 @@ if __name__ == "__main__":
         print(f"[错误] {e}")
         import traceback
         traceback.print_exc()
-

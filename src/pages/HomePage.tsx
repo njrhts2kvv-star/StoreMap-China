@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Search, RotateCcw, X } from 'lucide-react';
-import type { Brand, ServiceTag } from '../types/store';
+import type { Brand, ServiceTag, Store } from '../types/store';
 import { useStores } from '../hooks/useStores';
 import { useGeo } from '../hooks/useGeo';
 import { AmapStoreMap } from '../components/AmapStoreMap';
@@ -10,6 +10,7 @@ import { SegmentControl } from '../components/SegmentControl';
 import { CoverageStats } from '../components/CoverageStats';
 import { TopProvinces } from '../components/TopProvinces';
 import { TopCities } from '../components/TopCities';
+import { NewStoresThisMonth } from '../components/NewStoresThisMonth';
 import { Card, Button } from '../components/ui';
 
 const sortStoreTypeOptions = (options: string[], priority: string[] = []) => {
@@ -38,6 +39,7 @@ type FilterState = {
   favoritesOnly: boolean;
   competitiveOnly: boolean;
   experienceOnly: boolean;
+  newThisMonth: boolean;
 };
 
 // 体验店对比的门店类别
@@ -56,6 +58,7 @@ const initialFilters: FilterState = {
   favoritesOnly: false,
   competitiveOnly: false,
   experienceOnly: false,
+  newThisMonth: false,
 };
 
 type StoreFilterMode = 'all' | 'experience';
@@ -93,7 +96,7 @@ export default function HomePage() {
   const [brandSelection, setBrandSelection] = useState<Brand[]>(['DJI', 'Insta360']);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const visibleStores = filtered;
-  const [quickFilter, setQuickFilter] = useState<'all' | 'favorites'>('all');
+  const [quickFilter, setQuickFilter] = useState<'all' | 'favorites' | 'new'>('all');
   const [showProvinceDropdown, setShowProvinceDropdown] = useState(false);
   const [showCityDropdown, setShowCityDropdown] = useState(false);
   const [showStoreTypeDropdown, setShowStoreTypeDropdown] = useState(false);
@@ -175,13 +178,23 @@ export default function HomePage() {
   const applyQuickFilter = (key: typeof quickFilter) => {
     setQuickFilter(key);
     setPendingFilters((f) => {
-      const base = { ...f, favoritesOnly: false };
-      let next = base;
+      let next: FilterState = {
+        ...f,
+        favoritesOnly: false,
+        newThisMonth: false,
+      };
       if (key === 'favorites') {
-        next = { ...base, favoritesOnly: true };
-      }
-      if (key === 'all') {
-        next = { ...next, province: [], city: [], djiStoreTypes: [], instaStoreTypes: [] };
+        next = { ...next, favoritesOnly: true };
+      } else if (key === 'new') {
+        next = { ...next, newThisMonth: true };
+      } else if (key === 'all') {
+        next = {
+          ...next,
+          province: [],
+          city: [],
+          djiStoreTypes: [],
+          instaStoreTypes: [],
+        };
         setShowProvinceDropdown(false);
         setShowCityDropdown(false);
         setShowStoreTypeDropdown(false);
@@ -199,6 +212,16 @@ export default function HomePage() {
     setSelectedId(null);
   };
 
+  const handleNewStoreSelect = (store: Store) => {
+    const provinceValue = store.province ? [store.province] : [];
+    const cityValue = store.city ? [store.city] : [];
+    updateFilters({ province: provinceValue, city: cityValue });
+    handleSelect(store.id);
+    setMapResetToken((token) => token + 1);
+  };
+
+  const storeTypeButtonLabel = '门店类别';
+
   const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
     const wrapperClass =
       variant === 'floating'
@@ -214,83 +237,91 @@ export default function HomePage() {
 
     return (
       <div className={wrapperClass}>
-        <div className={`grid grid-cols-6 gap-2 ${padding}`}>
-          {[
-            { key: 'all', label: '全部' },
-            { key: 'favorites', label: '我的收藏' },
-            { key: 'storeTypes', label: '门店类别' },
-            { key: 'province', label: '全部省份' },
-            { key: 'city', label: '全部城市' },
-            { key: 'confirm', label: '应用筛选' },
-          ].map((item) => (
-            item.key === 'province' ? (
+        <div className={padding}>
+          <div className="grid grid-cols-6 gap-2">
+            {[
+              { key: 'all', label: '全部' },
+              { key: 'favorites', label: '我的收藏' },
+              { key: 'new', label: '本月新增' },
+              { key: 'storeTypes', label: '门店类别' },
+              { key: 'province', label: '全部省份' },
+              { key: 'city', label: '全部城市' },
+            ].map((item) => (
+              item.key === 'province' ? (
+                <button
+                  key={item.key}
+                  type="button"
+                  onClick={() => {
+                    setShowProvinceDropdown((v) => !v);
+                    setShowCityDropdown(false);
+                    setShowStoreTypeDropdown(false);
+                  }}
+                  className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
+                >
+                  {provinceFilterValues.length ? `${provinceFilterValues.length} 个省份` : '全部省份'}
+                </button>
+              ) : item.key === 'city' ? (
+                <button
+                  key={item.key}
+                  type="button"
+                  onClick={() => {
+                    setShowCityDropdown((v) => !v);
+                    setShowProvinceDropdown(false);
+                    setShowStoreTypeDropdown(false);
+                  }}
+                  className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
+                >
+                  {cityFilterValues.length ? `${cityFilterValues.length} 个城市` : '全部城市'}
+                </button>
+              ) : item.key === 'storeTypes' ? (
+                <button
+                  key={item.key}
+                  type="button"
+                  onClick={() => {
+                    setShowStoreTypeDropdown((v) => !v);
+                    setShowProvinceDropdown(false);
+                    setShowCityDropdown(false);
+                  }}
+                className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
+              >
+                  {storeTypeButtonLabel}
+                </button>
+              ) : (
+                <button
+                  key={item.key}
+                  onClick={() => applyQuickFilter(item.key as typeof quickFilter)}
+                  className={`w-full px-3 py-2 rounded-xl text-xs font-semibold border transition whitespace-nowrap text-center flex items-center justify-center ${
+                    item.key === 'favorites'
+                      ? pendingFilters.favoritesOnly
+                        ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
+                        : 'bg-white text-slate-600 border-slate-200'
+                      : item.key === 'new'
+                        ? pendingFilters.newThisMonth
+                          ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
+                          : 'bg-white text-slate-600 border-slate-200'
+                        : quickFilter === item.key
+                          ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
+                          : 'bg-white text-slate-600 border-slate-200'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
+            ))}
+            <div className="col-span-6 flex justify-end">
               <button
-                key={item.key}
                 type="button"
                 onClick={() => {
-                  setShowProvinceDropdown((v) => !v);
+                  setShowProvinceDropdown(false);
                   setShowCityDropdown(false);
                   setShowStoreTypeDropdown(false);
                 }}
-                className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
+                className="text-xs font-semibold text-slate-900 hover:text-amber-600"
               >
-                {provinceFilterValues.length ? `${provinceFilterValues.length} 个省份` : '全部省份'}
+                应用筛选
               </button>
-            ) : item.key === 'city' ? (
-              <button
-                key={item.key}
-                type="button"
-                onClick={() => {
-                  setShowCityDropdown((v) => !v);
-                  setShowProvinceDropdown(false);
-                  setShowStoreTypeDropdown(false);
-                }}
-                className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
-              >
-                {cityFilterValues.length ? `${cityFilterValues.length} 个城市` : '全部城市'}
-              </button>
-            ) : item.key === 'storeTypes' ? (
-              <button
-                key={item.key}
-                type="button"
-                onClick={() => {
-                  setShowStoreTypeDropdown((v) => !v);
-                  setShowProvinceDropdown(false);
-                  setShowCityDropdown(false);
-                }}
-                className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
-              >
-                {pendingFilters.djiStoreTypes.length || pendingFilters.instaStoreTypes.length
-                  ? `已选 ${pendingFilters.djiStoreTypes.length + pendingFilters.instaStoreTypes.length}`
-                  : '门店类别'}
-              </button>
-            ) : item.key === 'confirm' ? (
-              <button
-                key={item.key}
-                type="button"
-                onClick={() => {
-                  setShowProvinceDropdown(false);
-                  setShowCityDropdown(false);
-                  setShowStoreTypeDropdown(false);
-                }}
-                className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border border-transparent text-slate-900 whitespace-nowrap text-center flex items-center justify-center hover:text-amber-600"
-              >
-                {item.label}
-              </button>
-            ) : (
-              <button
-                key={item.key}
-                onClick={() => applyQuickFilter(item.key as typeof quickFilter)}
-                className={`w-full px-3 py-2 rounded-xl text-xs font-semibold border transition whitespace-nowrap text-center flex items-center justify-center ${
-                  quickFilter === item.key
-                    ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
-                    : 'bg-white text-slate-600 border-slate-200'
-                }`}
-              >
-                {item.label}
-              </button>
-            )
-          ))}
+            </div>
+          </div>
         </div>
         {showProvinceDropdown && (
           <div className={padding}>
@@ -586,6 +617,12 @@ export default function HomePage() {
                   // 触发地图重置，让地图适应新筛选的门店
                   setMapResetToken((token) => token + 1);
                 }}
+              />
+              {/* 本月新增门店 */}
+              <NewStoresThisMonth
+                stores={visibleStores}
+                selectedId={selectedId}
+                onStoreSelect={handleNewStoreSelect}
               />
             </div>
           </>

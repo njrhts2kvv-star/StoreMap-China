@@ -161,25 +161,39 @@ def parse_raw_source(raw_source_str) -> dict:
             result["wechat_qr_code"] = str(wechat).strip()
         
         # 提取门店类别
-        # DJI: 优先使用 channel_type，否则使用 store_type
-        # Insta360: 使用 chainStore
+        # DJI: 优先使用 channel_type / store_type 代码，并映射为中文
+        # Insta360: 使用 chainStore，并按统一规则映射
+        brand = str(raw_data.get("brand") or "").strip()
         channel_type = raw_data.get("channel_type")
         store_type_code = raw_data.get("store_type")
         chain_store = raw_data.get("chainStore")
-        
-        if channel_type and pd.notna(channel_type) and str(channel_type).strip():
-            result["store_type"] = str(channel_type).strip()
-        elif store_type_code and pd.notna(store_type_code):
-            # 将数字代码转换为可读文本
-            code_str = str(store_type_code).strip()
-            if code_str == "6":
-                result["store_type"] = "ARS"
-            elif code_str == "7":
-                result["store_type"] = "新型照材"
-            else:
-                result["store_type"] = code_str
-        elif chain_store and pd.notna(chain_store) and str(chain_store).strip():
-            result["store_type"] = str(chain_store).strip()
+
+        if brand == "DJI":
+            chan = str(channel_type or "").lower()
+            code_str = str(store_type_code or "").strip()
+            if chan:
+                if "new" in chan:
+                    result["store_type"] = "新型照材"
+                elif "ars" in chan:
+                    result["store_type"] = "授权体验店"
+            if not result["store_type"] and code_str:
+                if code_str == "6":
+                    result["store_type"] = "授权体验店"
+                elif code_str == "7":
+                    result["store_type"] = "新型照材"
+                else:
+                    result["store_type"] = code_str
+        else:
+            if chain_store and pd.notna(chain_store) and str(chain_store).strip():
+                chain = str(chain_store).strip()
+                if chain == "直营店":
+                    result["store_type"] = "直营店"
+                elif chain in ("授权体验店", "授权专卖店"):
+                    result["store_type"] = "授权专卖店"
+                elif chain == "合作体验点":
+                    result["store_type"] = "合作体验点"
+                else:
+                    result["store_type"] = "合作体验点"
         
     except (json.JSONDecodeError, ValueError, TypeError) as e:
         # 解析失败，返回空值
@@ -631,4 +645,3 @@ if __name__ == "__main__":
         print(f"\n[错误] {e}")
         import traceback
         traceback.print_exc()
-
