@@ -402,8 +402,8 @@
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 36.084191,
-    "longitude": 111.523586
+    "latitude": 36.093175,
+    "longitude": 111.540265
   },
   {
     "mallId": "MALL_00032",
@@ -1224,7 +1224,7 @@
     "djiOpened": true,
     "instaOpened": false,
     "djiReported": false,
-    "djiExclusive": false,
+    "djiExclusive": true,
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
@@ -1421,7 +1421,7 @@
     "instaOpened": true,
     "djiReported": false,
     "djiExclusive": false,
-    "djiTarget": false,
+    "djiTarget": true,
     "hasDJI": true,
     "hasInsta360": true,
     "latitude": 28.700499,
@@ -1476,7 +1476,7 @@
     "djiOpened": true,
     "instaOpened": false,
     "djiReported": false,
-    "djiExclusive": false,
+    "djiExclusive": true,
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
@@ -1571,12 +1571,12 @@
     "mallId": "MALL_00120",
     "mallName": "悦府广场(天津大悦城南区)",
     "city": "天津市",
-    "djiOpened": false,
+    "djiOpened": true,
     "instaOpened": true,
     "djiReported": true,
     "djiExclusive": false,
     "djiTarget": false,
-    "hasDJI": false,
+    "hasDJI": true,
     "hasInsta360": true,
     "latitude": 39.13301,
     "longitude": 117.17966
@@ -1602,8 +1602,8 @@
     "djiOpened": true,
     "instaOpened": false,
     "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
+    "djiExclusive": true,
+    "djiTarget": true,
     "hasDJI": true,
     "hasInsta360": false,
     "latitude": 39.022929,
@@ -1796,12 +1796,12 @@
     "mallName": "万达广场(南昌红谷滩店)",
     "city": "南昌市",
     "djiOpened": true,
-    "instaOpened": false,
+    "instaOpened": true,
     "djiReported": false,
     "djiExclusive": false,
     "djiTarget": false,
     "hasDJI": true,
-    "hasInsta360": false,
+    "hasInsta360": true,
     "latitude": 28.692923,
     "longitude": 115.848837
   },
@@ -2059,7 +2059,7 @@
   },
   {
     "mallId": "MALL_00160",
-    "mallName": "IFS国金购物中心",
+    "mallName": "长沙万象城",
     "city": "长沙市",
     "djiOpened": true,
     "instaOpened": true,
@@ -2163,7 +2163,7 @@
     "instaOpened": false,
     "djiReported": false,
     "djiExclusive": true,
-    "djiTarget": false,
+    "djiTarget": true,
     "hasDJI": true,
     "hasInsta360": false,
     "latitude": 23.142878,
@@ -2383,12 +2383,12 @@
     "mallId": "MALL_00183",
     "mallName": "Paradise Walk(龙湖杭州滨江天街店)",
     "city": "杭州市",
-    "djiOpened": false,
+    "djiOpened": true,
     "instaOpened": true,
     "djiReported": false,
     "djiExclusive": false,
     "djiTarget": false,
-    "hasDJI": false,
+    "hasDJI": true,
     "hasInsta360": true,
     "latitude": 30.200993,
     "longitude": 120.203008
@@ -3464,7 +3464,7 @@
     "djiOpened": true,
     "instaOpened": false,
     "djiReported": false,
-    "djiExclusive": false,
+    "djiExclusive": true,
     "djiTarget": true,
     "hasDJI": true,
     "hasInsta360": false,
@@ -4047,7 +4047,7 @@
   },
   {
     "mallId": "MALL_00312",
-    "mallName": "温州万象城",
+    "mallName": "温州滨江万象城",
     "city": "温州市",
     "djiOpened": true,
     "instaOpened": true,
@@ -4117,12 +4117,12 @@
   },
   {
     "mallId": "MALL_00317",
-    "mallName": "映月湖环宇城",
+    "mallName": "中海寰宇天地(千灯湖环宇城店)",
     "city": "佛山市",
     "djiOpened": true,
     "instaOpened": false,
     "djiReported": false,
-    "djiExclusive": false,
+    "djiExclusive": true,
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
@@ -4234,7 +4234,7 @@
     "djiOpened": true,
     "instaOpened": false,
     "djiReported": false,
-    "djiExclusive": false,
+    "djiExclusive": true,
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
@@ -4705,7 +4705,7 @@
   },
   {
     "mallId": "MALL_00360",
-    "mallName": "贵阳万象汇",
+    "mallName": "贵阳万象城",
     "city": "贵阳市",
     "djiOpened": true,
     "instaOpened": false,
@@ -4714,8 +4714,8 @@
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 26.560943,
-    "longitude": 106.703573
+    "latitude": 26.567594,
+    "longitude": 106.713222
   },
   {
     "mallId": "MALL_00361",
@@ -4791,12 +4791,12 @@
     "mallId": "MALL_00366",
     "mallName": "禾巷东区购物中心(泰禾广场西区店)",
     "city": "福州市",
-    "djiOpened": false,
+    "djiOpened": true,
     "instaOpened": true,
     "djiReported": false,
     "djiExclusive": false,
     "djiTarget": false,
-    "hasDJI": false,
+    "hasDJI": true,
     "hasInsta360": true,
     "latitude": 26.09015,
     "longitude": 119.336944
@@ -6133,7 +6133,7 @@
   },
   {
     "mallId": "MALL_00467",
-    "mallName": "郑州二七万象城",
+    "mallName": "郑州郑东万象城",
     "city": "郑州市",
     "djiOpened": true,
     "instaOpened": true,
@@ -6623,7 +6623,7 @@
   },
   {
     "mallId": "MALL_00506",
-    "mallName": "武商梦时代A区",
+    "mallName": "武商梦时代",
     "city": "武汉市",
     "djiOpened": true,
     "instaOpened": true,
@@ -6632,8 +6632,8 @@
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": true,
-    "latitude": 30.528669,
-    "longitude": 114.338864
+    "latitude": 30.528691,
+    "longitude": 114.3408
   },
   {
     "mallId": "MALL_00507",
@@ -7399,7 +7399,7 @@
     "instaOpened": false,
     "djiReported": false,
     "djiExclusive": false,
-    "djiTarget": false,
+    "djiTarget": true,
     "hasDJI": true,
     "hasInsta360": false,
     "latitude": 36.063449,
@@ -7420,20 +7420,6 @@
     "longitude": 106.530868
   },
   {
-    "mallId": "MALL_00582",
-    "mallName": "悦府广场(天津大悦城南区)",
-    "city": "天津市",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 39.133317,
-    "longitude": 117.17982
-  },
-  {
     "mallId": "MALL_00583",
     "mallName": "南通CBD大有境A座",
     "city": "南通市",
@@ -7446,20 +7432,6 @@
     "hasInsta360": false,
     "latitude": 31.969084,
     "longitude": 120.894041
-  },
-  {
-    "mallId": "MALL_00584",
-    "mallName": "Paradise Walk(龙湖杭州滨江天街店)",
-    "city": "杭州市",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 30.200758,
-    "longitude": 120.203853
   },
   {
     "mallId": "MALL_00585",
@@ -7532,20 +7504,6 @@
     "longitude": 113.601543
   },
   {
-    "mallId": "MALL_00590",
-    "mallName": "禾巷东区购物中心(泰禾广场西区店)",
-    "city": "福州市",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 26.090578,
-    "longitude": 119.335653
-  },
-  {
     "mallId": "MALL_00591",
     "mallName": "诺仕达商业广场",
     "city": "昆明市",
@@ -7574,22 +7532,8 @@
     "longitude": 121.481489
   },
   {
-    "mallId": "MALL_00594",
-    "mallName": "万达广场(南昌红谷滩店)",
-    "city": "南昌市",
-    "djiOpened": false,
-    "instaOpened": true,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": true,
-    "latitude": 28.690306,
-    "longitude": 115.847204
-  },
-  {
     "mallId": "MALL_00595",
-    "mallName": "环球购物中心B馆",
+    "mallName": "成都世茂广场",
     "city": "成都市",
     "djiOpened": false,
     "instaOpened": true,
@@ -7614,62 +7558,6 @@
     "hasInsta360": true,
     "latitude": 30.64845,
     "longitude": 103.996202
-  },
-  {
-    "mallId": "MALL_00631",
-    "mallName": "西安曲江金池",
-    "city": "西安市",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": true,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 34.203397,
-    "longitude": 108.988435
-  },
-  {
-    "mallId": "MALL_00632",
-    "mallName": "西安龙湖长乐天街",
-    "city": "西安市",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 34.282206,
-    "longitude": 109.013641
-  },
-  {
-    "mallId": "MALL_00634",
-    "mallName": "泰华城新天地",
-    "city": "潍坊市",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": true,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 36.709991,
-    "longitude": 119.111977
-  },
-  {
-    "mallId": "MALL_00639",
-    "mallName": "甘露山",
-    "city": "武汉市",
-    "djiOpened": false,
-    "instaOpened": true,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": true,
-    "latitude": 30.885525,
-    "longitude": 114.403875
   },
   {
     "mallId": "MALL_00597",
@@ -7869,7 +7757,7 @@
   },
   {
     "mallId": "MALL_00611",
-    "mallName": "深圳前海壹方城",
+    "mallName": "前海壹方汇",
     "city": "深圳市",
     "djiOpened": false,
     "instaOpened": true,
@@ -7883,7 +7771,7 @@
   },
   {
     "mallId": "MALL_00612",
-    "mallName": "重庆万象城南区",
+    "mallName": "龙湖重庆时代天街",
     "city": "重庆市",
     "djiOpened": false,
     "instaOpened": true,
@@ -7892,12 +7780,12 @@
     "djiTarget": false,
     "hasDJI": false,
     "hasInsta360": true,
-    "latitude": 29.535758,
-    "longitude": 106.512418
+    "latitude": 29.536162,
+    "longitude": 106.512526
   },
   {
     "mallId": "MALL_00613",
-    "mallName": "重庆万象城南区",
+    "mallName": "中央公园光环花园城",
     "city": "重庆市",
     "djiOpened": false,
     "instaOpened": true,
@@ -7925,7 +7813,7 @@
   },
   {
     "mallId": "MALL_00615",
-    "mallName": "SM厦门海沧城市广场",
+    "mallName": "SM新生活广场(厦门思明店)",
     "city": "厦门市",
     "djiOpened": true,
     "instaOpened": true,
@@ -7934,8 +7822,8 @@
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": true,
-    "latitude": 24.500043,
-    "longitude": 118.125368
+    "latitude": 24.499558,
+    "longitude": 118.125018
   },
   {
     "mallId": "MALL_00616",
@@ -7953,7 +7841,7 @@
   },
   {
     "mallId": "MALL_00617",
-    "mallName": "天河领展广场",
+    "mallName": "广州荔湾领展广场",
     "city": "广州市",
     "djiOpened": true,
     "instaOpened": false,
@@ -7962,8 +7850,8 @@
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 23.110451,
-    "longitude": 113.240315
+    "latitude": 23.110406,
+    "longitude": 113.240316
   },
   {
     "mallId": "MALL_00618",
@@ -7995,7 +7883,7 @@
   },
   {
     "mallId": "MALL_00620",
-    "mallName": "万达广场(大庆萨尔图店)",
+    "mallName": "万达广场(大庆让胡路店)",
     "city": "大庆市",
     "djiOpened": true,
     "instaOpened": false,
@@ -8009,7 +7897,7 @@
   },
   {
     "mallId": "MALL_00621",
-    "mallName": "福州万象城",
+    "mallName": "福建省福州市仓山区福州烟台山商业漫步街区",
     "city": "福州市",
     "djiOpened": false,
     "instaOpened": true,
@@ -8018,8 +7906,8 @@
     "djiTarget": false,
     "hasDJI": false,
     "hasInsta360": true,
-    "latitude": 26.04588,
-    "longitude": 119.313328
+    "latitude": 26.043943,
+    "longitude": 119.309603
   },
   {
     "mallId": "MALL_00622",
@@ -8051,7 +7939,7 @@
   },
   {
     "mallId": "MALL_00625",
-    "mallName": "深业上城商场",
+    "mallName": "深圳大运天地",
     "city": "深圳市",
     "djiOpened": true,
     "instaOpened": true,
@@ -8132,6 +8020,62 @@
     "hasInsta360": false,
     "latitude": 23.174628,
     "longitude": 113.331028
+  },
+  {
+    "mallId": "MALL_00631",
+    "mallName": "西安曲江金池",
+    "city": "西安市",
+    "djiOpened": true,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": true,
+    "djiTarget": false,
+    "hasDJI": true,
+    "hasInsta360": false,
+    "latitude": 34.203397,
+    "longitude": 108.988435
+  },
+  {
+    "mallId": "MALL_00632",
+    "mallName": "西安龙湖长乐天街",
+    "city": "西安市",
+    "djiOpened": true,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": true,
+    "hasInsta360": false,
+    "latitude": 34.282206,
+    "longitude": 109.013641
+  },
+  {
+    "mallId": "MALL_00634",
+    "mallName": "泰华城新天地",
+    "city": "潍坊市",
+    "djiOpened": true,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": true,
+    "hasDJI": true,
+    "hasInsta360": false,
+    "latitude": 36.709991,
+    "longitude": 119.111977
+  },
+  {
+    "mallId": "MALL_00639",
+    "mallName": "甘露山",
+    "city": "武汉市",
+    "djiOpened": false,
+    "instaOpened": true,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": true,
+    "latitude": 30.885525,
+    "longitude": 114.403875
   },
   {
     "mallId": "MALL_00640",
@@ -8527,7 +8471,7 @@
   },
   {
     "mallId": "MALL_00668",
-    "mallName": "万达广场(营口店)",
+    "mallName": "乐都汇(市府路店)",
     "city": "营口",
     "djiOpened": false,
     "instaOpened": false,
@@ -8536,8 +8480,8 @@
     "djiTarget": false,
     "hasDJI": false,
     "hasInsta360": false,
-    "latitude": 40.664782,
-    "longitude": 122.235863
+    "latitude": 40.665121,
+    "longitude": 122.237716
   },
   {
     "mallId": "MALL_00669",
@@ -9478,20 +9422,6 @@
     "longitude": 103.400425
   },
   {
-    "mallId": "MALL_00736",
-    "mallName": "成都银泰中心",
-    "city": "成都市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": true,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 30.584862,
-    "longitude": 104.069693
-  },
-  {
     "mallId": "MALL_00737",
     "mallName": "深圳大运天地",
     "city": "深圳市",
@@ -9504,62 +9434,6 @@
     "hasInsta360": false,
     "latitude": 22.69608,
     "longitude": 114.218563
-  },
-  {
-    "mallId": "MALL_00738",
-    "mallName": "上海ifc商场",
-    "city": "上海市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": true,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 31.236165,
-    "longitude": 121.502326
-  },
-  {
-    "mallId": "MALL_00739",
-    "mallName": "银泰百货(温岭店)",
-    "city": "台州市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": true,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 28.392702,
-    "longitude": 121.361636
-  },
-  {
-    "mallId": "MALL_00740",
-    "mallName": "映月湖环宇城",
-    "city": "佛山市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": true,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 23.033128,
-    "longitude": 113.187694
-  },
-  {
-    "mallId": "MALL_00741",
-    "mallName": "八佰伴中心",
-    "city": "无锡市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": true,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 31.584992,
-    "longitude": 120.349249
   },
   {
     "mallId": "MALL_00742",
@@ -9646,20 +9520,6 @@
     "longitude": 103.708462
   },
   {
-    "mallId": "MALL_00748",
-    "mallName": "天津K11购物艺术中心",
-    "city": "天津市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": true,
-    "djiTarget": true,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 39.022929,
-    "longitude": 117.704055
-  },
-  {
     "mallId": "MALL_00749",
     "mallName": "环球中心",
     "city": "成都",
@@ -9726,8 +9586,8 @@
     "djiTarget": true,
     "hasDJI": false,
     "hasInsta360": false,
-    "latitude": 30.684792,
-    "longitude": 104.071414
+    "latitude": 30.685145,
+    "longitude": 104.072018
   },
   {
     "mallId": "MALL_00754",
@@ -10290,20 +10150,6 @@
     "longitude": 115.891407
   },
   {
-    "mallId": "MALL_00794",
-    "mallName": "南昌T16购物中心",
-    "city": "南昌市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": true,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 28.700499,
-    "longitude": 115.86819
-  },
-  {
     "mallId": "MALL_00795",
     "mallName": "南昌大悦城",
     "city": "南昌",
@@ -10666,20 +10512,6 @@
     "hasInsta360": false,
     "latitude": 22.834076,
     "longitude": 113.683507
-  },
-  {
-    "mallId": "MALL_00821",
-    "mallName": "金沙洲金铂天地",
-    "city": "佛山市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": true,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 23.142878,
-    "longitude": 113.199601
   },
   {
     "mallId": "MALL_00822",
@@ -11046,20 +10878,6 @@
     "longitude": 117.304565
   },
   {
-    "mallId": "MALL_00848",
-    "mallName": "万达广场(兰州城关店)",
-    "city": "兰州市",
-    "djiOpened": false,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": true,
-    "hasDJI": false,
-    "hasInsta360": false,
-    "latitude": 36.063449,
-    "longitude": 103.86313
-  },
-  {
     "mallId": "MALL_00849",
     "mallName": "MOMOPARK艺术购物中心",
     "city": "西安",
@@ -11296,5 +11114,75 @@
     "hasInsta360": false,
     "latitude": 38.932816,
     "longitude": 116.922271
+  },
+  {
+    "mallId": "MALL_00868",
+    "mallName": "龙华天虹购物中心",
+    "city": "深圳市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 22.623052,
+    "longitude": 114.024815
+  },
+  {
+    "mallId": "MALL_00871",
+    "mallName": "西亚城",
+    "city": "信阳市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 32.113379,
+    "longitude": 114.118961
+  },
+  {
+    "mallId": "MALL_00876",
+    "mallName": "日照万象汇",
+    "city": "日照市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 35.420553,
+    "longitude": 119.532508
+  },
+  {
+    "mallId": "MALL_00877",
+    "mallName": "成都来福士广场",
+    "city": "成都市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 30.636535,
+    "longitude": 104.07273
+  },
+  {
+    "mallId": "MALL_00878",
+    "mallName": "华联金街购物中心(顺义金街BHG)",
+    "city": "北京市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 40.132462,
+    "longitude": 116.661162
   }
 ]

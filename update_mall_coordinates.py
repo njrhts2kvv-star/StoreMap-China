@@ -84,6 +84,18 @@ def _load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
             default = 0 if col == "store_count" else ""
             mall_df[col] = default
 
+    # 规范城市：市辖区/空 -> 省份
+    if "city" in all_df.columns and "province" in all_df.columns:
+        all_df["city"] = all_df.apply(
+            lambda r: r["province"] if str(r.get("city", "")).strip() in ("", "市辖区") else r["city"],
+            axis=1,
+        )
+    if "city" in store_df.columns and "province" in store_df.columns:
+        store_df["city"] = store_df.apply(
+            lambda r: r["province"] if str(r.get("city", "")).strip() in ("", "市辖区") else r["city"],
+            axis=1,
+        )
+
     return all_df, store_df, mall_df
 
 

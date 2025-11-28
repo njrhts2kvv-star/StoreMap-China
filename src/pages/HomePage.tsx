@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Search, RotateCcw, X } from 'lucide-react';
 import type { Brand, ServiceTag, Store, Mall, MallStatus } from '../types/store';
 import { useStores } from '../hooks/useStores';
@@ -47,12 +47,14 @@ type FilterState = {
   mallStatuses: MallStatus[];
 };
 
+const DEFAULT_DJI_EXPERIENCE = ['授权体验店', 'ARS'];
+
 const initialFilters: FilterState = {
   keyword: '',
   province: [],
   city: [],
   brands: ['DJI', 'Insta360'],
-  djiStoreTypes: [...EXPERIENCE_STORE_TYPES.DJI],
+  djiStoreTypes: [...DEFAULT_DJI_EXPERIENCE], // 默认不选“新型照材”
   instaStoreTypes: [...EXPERIENCE_STORE_TYPES.Insta360],
   serviceTags: [],
   sortBy: 'default',
@@ -67,6 +69,10 @@ type StoreFilterMode = 'all' | 'experience';
 
 export default function HomePage() {
   const { position: userPos } = useGeo();
+  const quickFilterRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const setQuickFilterRef = (index: number) => (el: HTMLDivElement | null) => {
+    quickFilterRefs.current[index] = el;
+  };
   const [pendingFilters, setPendingFilters] = useState<FilterState>(initialFilters);
   const [appliedFilters, setAppliedFilters] = useState<FilterState>(initialFilters);
   const [storeFilterMode, setStoreFilterMode] = useState<StoreFilterMode>('experience');
@@ -80,9 +86,13 @@ export default function HomePage() {
       filters.djiStoreTypes = [];
       filters.instaStoreTypes = [];
     } else {
-      // 体验店对比：使用体验店类别
-      filters.djiStoreTypes = [...EXPERIENCE_STORE_TYPES.DJI];
-      filters.instaStoreTypes = [...EXPERIENCE_STORE_TYPES.Insta360];
+      // 体验店对比：使用当前选择，如为空则回落到默认体验店选项
+      if (!filters.djiStoreTypes.length) {
+        filters.djiStoreTypes = [...DEFAULT_DJI_EXPERIENCE];
+      }
+      if (!filters.instaStoreTypes.length) {
+        filters.instaStoreTypes = [...EXPERIENCE_STORE_TYPES.Insta360];
+      }
     }
     return filters;
   }, [appliedFilters, storeFilterMode]);
@@ -188,6 +198,22 @@ export default function HomePage() {
       setMapResetToken((token) => token + 1);
     }
   }, [quickFilter, selectedId, favorites]);
+
+  // 点击外部区域收起下拉
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!showProvinceDropdown && !showCityDropdown && !showStoreTypeDropdown) return;
+      const target = e.target as Node;
+      const inside = quickFilterRefs.current.some((ref) => ref && ref.contains(target));
+      if (!inside) {
+        setShowProvinceDropdown(false);
+        setShowCityDropdown(false);
+        setShowStoreTypeDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showProvinceDropdown, showCityDropdown, showStoreTypeDropdown]);
   const resetFilters = () => {
     const base: FilterState = { ...initialFilters };
     setPendingFilters(base);
@@ -304,8 +330,10 @@ export default function HomePage() {
           : 'rounded-[28px] bg-white border border-slate-100 shadow-[0_16px_30px_rgba(15,23,42,0.08)]'
       } p-4 ${maxHeight} overflow-y-auto`;
 
+    const refIndex = variant === 'floating' ? 1 : 0;
+
     return (
-      <div className={wrapperClass}>
+      <div className={wrapperClass} ref={setQuickFilterRef(refIndex)}>
         <div className={padding}>
           <div className="grid grid-cols-6 gap-2">
             {[
@@ -377,19 +405,6 @@ export default function HomePage() {
                 </button>
               )
             ))}
-            <div className="col-span-6 flex justify-end">
-              <button
-                type="button"
-                onClick={() => {
-                  setShowProvinceDropdown(false);
-                  setShowCityDropdown(false);
-                  setShowStoreTypeDropdown(false);
-                }}
-                className="text-xs font-semibold text-slate-900 hover:text-amber-600"
-              >
-                应用筛选
-              </button>
-            </div>
           </div>
         </div>
         {showProvinceDropdown && (
@@ -466,7 +481,7 @@ export default function HomePage() {
                     setStoreFilterMode('experience');
                     // 切换到体验店对比时，恢复默认体验店选项
                     updateFilters({ 
-                      djiStoreTypes: [...EXPERIENCE_STORE_TYPES.DJI],
+                      djiStoreTypes: [...DEFAULT_DJI_EXPERIENCE],
                       instaStoreTypes: [...EXPERIENCE_STORE_TYPES.Insta360]
                     });
                   }}
@@ -493,14 +508,14 @@ export default function HomePage() {
                             setStoreFilterMode('experience');
                             // 从所有选项中移除当前选项，保留其他选项
                             const next = djiStoreOptions.filter((x) => x !== type);
-                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.DJI] });
+                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...DEFAULT_DJI_EXPERIENCE] });
                           } else {
                             // 体验店对比模式下，正常切换选项
                             const next = pendingFilters.djiStoreTypes.includes(type)
                               ? pendingFilters.djiStoreTypes.filter((x) => x !== type)
                               : [...pendingFilters.djiStoreTypes, type];
                             // 如果移除后为空，恢复默认值
-                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.DJI] });
+                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...DEFAULT_DJI_EXPERIENCE] });
                           }
                         }}
                       >
@@ -589,8 +604,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center bg-[#f6f7fb]">
-      <div className="w-full max-w-[440px] min-w-[360px] min-h-screen flex flex-col gap-4 px-4 pb-24 pt-6">
+      <div className="min-h-screen flex justify-center bg-[#f6f7fb]">
+        <div className="w-full max-w-[440px] min-w-[360px] min-h-screen flex flex-col gap-4 px-4 pb-24 pt-6">
         <header className="flex items-center justify-between sticky top-0 bg-[#f6f7fb] z-20 pb-2">
           <div>
             <div className="text-2xl font-black leading-tight text-slate-900">门店分布对比</div>

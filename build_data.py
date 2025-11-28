@@ -174,7 +174,7 @@ def main():
         ("统一商场名称", lambda: run_unify_mall_names(target_ids)),
         (
             "同步新增门店的商场/坐标到主表",
-            lambda: __import__("update_mall_coordinates").update_mall_coordinates.update_mall_coordinates(
+            lambda: __import__("update_mall_coordinates").update_mall_coordinates(
                 target_ids=target_ids, dry_run=False
             ),
         ),

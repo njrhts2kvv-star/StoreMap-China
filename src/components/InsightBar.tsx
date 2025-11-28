@@ -4,6 +4,7 @@ import djiLogoBlack from '../assets/dji_logo_black_small.svg';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoBlack from '../assets/insta360_logo_black_small.svg';
 import instaLogoWhite from '../assets/insta360_logo_white_small.svg';
+import { isNewThisMonth } from '../utils/storeRules';
 
 type Props = {
   stores: Store[];
@@ -15,6 +16,8 @@ export function InsightBar({ stores, selectedBrands, onToggle }: Props) {
   const total = stores.length || 1;
   const dji = stores.filter((s) => s.brand === 'DJI').length;
   const insta = stores.filter((s) => s.brand === 'Insta360').length;
+  const djiNew = stores.filter((s) => s.brand === 'DJI' && isNewThisMonth(s)).length;
+  const instaNew = stores.filter((s) => s.brand === 'Insta360' && isNewThisMonth(s)).length;
   const djiPct = Math.round((dji / total) * 100);
   const instaPct = 100 - djiPct;
   const isDji = selectedBrands.includes('DJI');
@@ -54,8 +57,17 @@ export function InsightBar({ stores, selectedBrands, onToggle }: Props) {
           <div className="text-base font-bold">DJI 大疆</div>
         </div>
         <div className="text-3xl font-black leading-none">
-          {dji}
-          <span className="text-base font-semibold ml-1">家</span>
+          <span className="mr-2">{dji}</span>
+          <span className="text-base font-semibold">家</span>
+          {djiNew > 0 && (
+            <span
+              className={`ml-2 inline-flex items-center gap-1 text-[11px] font-semibold ${
+                djiCardBgIsDark ? 'text-emerald-300' : 'text-emerald-600'
+              }`}
+            >
+              ↗ 新增 {djiNew}
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2 mt-2">
           <span className={`px-3 py-1 rounded-lg text-xs font-semibold ${isDji ? 'bg-slate-900 text-white' : 'bg-slate-200 text-slate-600'}`}>
@@ -81,8 +93,17 @@ export function InsightBar({ stores, selectedBrands, onToggle }: Props) {
           <div className="text-base font-bold">Insta360</div>
         </div>
         <div className="text-3xl font-black leading-none">
-          {insta}
-          <span className="text-base font-semibold ml-1">家</span>
+          <span className="mr-2">{insta}</span>
+          <span className="text-base font-semibold">家</span>
+          {instaNew > 0 && (
+            <span
+              className={`ml-2 inline-flex items-center gap-1 text-[11px] font-semibold ${
+                instaActive ? 'text-emerald-700' : 'text-emerald-600'
+              }`}
+            >
+              ↗ 新增 {instaNew}
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2 mt-2">
           <span className={`px-3 py-1 rounded-lg text-xs font-semibold ${isInsta ? 'bg-amber-200 text-black' : 'bg-amber-200/60 text-amber-700'}`}>
