@@ -1,17 +1,21 @@
 // 用高德 JS API 重写门店地图，复刻原有交互和视觉
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Crosshair, Minus, Plus, Star, X } from 'lucide-react';
-import type { Store } from '../types/store';
+import type { Mall, Store } from '../types/store';
 import { loadAmap } from '../utils/loadAmap';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
-import type { Store as StoreType } from '../types/store';
 import { isNewThisMonth } from '../utils/storeRules';
+import { MALL_STATUS_COLORS } from '../config/competitionColors';
 
 type Props = {
+  viewMode?: 'stores' | 'malls' | 'competition';
   stores: Store[];
+  malls?: Mall[];
   selectedId?: string;
+  selectedMallId?: string;
   onSelect: (id: string) => void;
+  onMallClick?: (mall: Mall) => void;
   userPos?: { lat: number; lng: number } | null;
   favorites?: string[];
   onToggleFavorite?: (id: string) => void;
@@ -29,25 +33,32 @@ const DEFAULT_CENTER: [number, number] = [35.5, 103.5];
 const DEFAULT_ZOOM = 4;
 const MIN_FOCUS_ZOOM = 11;
 
-const toLngLat = (store: Store): [number, number] | null => {
-  const lat = (store as Store & { lat?: number }).lat ?? store.latitude;
-  const lng = (store as Store & { lng?: number }).lng ?? store.longitude;
+const toLngLat = (coords: { latitude?: number; longitude?: number; lat?: number; lng?: number }): [number, number] | null => {
+  const lat = coords.lat ?? coords.latitude;
+  const lng = coords.lng ?? coords.longitude;
   if (typeof lat !== 'number' || typeof lng !== 'number') return null;
   return [lng, lat];
 };
 
-const isInChinaRough = (store: StoreType): boolean => {
-  const lat = (store as any).lat ?? store.latitude;
-  const lng = (store as any).lng ?? store.longitude;
+const toStoreLngLat = (store: Store) => toLngLat({ latitude: store.latitude, longitude: store.longitude, lat: (store as any).lat, lng: (store as any).lng });
+const toMallLngLat = (mall: Mall) => toLngLat({ latitude: mall.latitude, longitude: mall.longitude });
+
+const isInChinaRough = (point: { latitude?: number; longitude?: number; lat?: number; lng?: number }): boolean => {
+  const lat = point.lat ?? point.latitude;
+  const lng = point.lng ?? point.longitude;
   if (typeof lat !== 'number' || typeof lng !== 'number') return false;
   // 中国大致范围：纬度 18-54，经度 73-135
   return lat >= 18 && lat <= 54 && lng >= 73 && lng <= 135;
 };
 
 export function AmapStoreMap({
+  viewMode = 'stores',
   stores,
+  malls = [],
   selectedId,
+  selectedMallId,
   onSelect,
+  onMallClick,
   userPos = null,
   favorites = [],
   onToggleFavorite,
@@ -65,7 +76,6 @@ export function AmapStoreMap({
   const markersRef = useRef<AMap.Marker[]>([]);
   const userMarkerRef = useRef<AMap.Marker | null>(null);
   const amapRef = useRef<typeof AMap | null>(null);
-  const clusterRef = useRef<AMap.MarkerCluster | AMap.MarkerClusterer | null>(null);
   const favoritesSet = useMemo(() => new Set(favorites), [favorites]);
   const [ready, setReady] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -73,25 +83,16 @@ export function AmapStoreMap({
     const [lat = DEFAULT_CENTER[0], lng = DEFAULT_CENTER[1]] = initialCenter ?? DEFAULT_CENTER;
     return [lng, lat];
   }, [initialCenter]);
-  const selectedStore = useMemo(() => (selectedId && selectedId.trim() ? stores.find((s) => s.id === selectedId) : null), [stores, selectedId]);
+  const selectedStore = useMemo(
+    () => (viewMode === 'stores' && selectedId && selectedId.trim() ? stores.find((s) => s.id === selectedId) : null),
+    [viewMode, stores, selectedId],
+  );
   const [showNavSelector, setShowNavSelector] = useState(false);
   useEffect(() => {
     setShowNavSelector(false);
-  }, [selectedId]);
+  }, [selectedId, viewMode]);
 
   const destroyMap = useCallback(() => {
-    const cluster = clusterRef.current as AMap.MarkerCluster | AMap.MarkerClusterer | null;
-    if (cluster) {
-      if (typeof (cluster as any).clearMarkers === 'function') {
-        (cluster as any).clearMarkers();
-      } else if (typeof (cluster as any).setData === 'function') {
-        (cluster as any).setData([]);
-      }
-      if (typeof cluster.setMap === 'function') {
-        cluster.setMap(null as unknown as AMap.Map);
-      }
-      clusterRef.current = null;
-    }
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
     if (userMarkerRef.current) {
@@ -143,94 +144,115 @@ export function AmapStoreMap({
 
   useEffect(() => {
     if (!ready || !mapRef.current || !amapRef.current) return;
-    const cluster = clusterRef.current as AMap.MarkerCluster | AMap.MarkerClusterer | null;
-    if (cluster) {
-      if (typeof (cluster as any).clearMarkers === 'function') {
-        (cluster as any).clearMarkers();
-      } else if (typeof (cluster as any).setData === 'function') {
-        (cluster as any).setData([]);
-      }
-      if (typeof cluster.setMap === 'function') {
-        cluster.setMap(null as unknown as AMap.Map);
-      }
-      clusterRef.current = null;
-    }
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
     const AMapLib = amapRef.current;
     const nextMarkers: AMap.Marker[] = [];
 
-    stores.forEach((store) => {
-      // 只绘制中国境内门店，避免越界点干扰视图
-      if (!isInChinaRough(store)) return;
-      const point = toLngLat(store);
-      if (!point) return;
-      const isFavorite = favoritesSet.has(store.id);
-      const isSelected = selectedId === store.id;
-      const isNew = isNewThisMonth(store);
-      const markerEl = document.createElement('div');
-      let markerClass = 'store-marker';
-      if (isNew) {
-        markerClass += ' store-marker--new';
-      } else {
-        markerClass += store.brand === 'DJI' ? ' store-marker--dji' : ' store-marker--insta';
-      }
-      if (isFavorite) {
-        markerClass += ' store-marker--favorite';
+    if (viewMode === 'stores') {
+      stores.forEach((store) => {
+        if (!isInChinaRough(store)) return;
+        const point = toStoreLngLat(store);
+        if (!point) return;
+        const isFavorite = favoritesSet.has(store.id);
+        const isSelected = selectedId === store.id;
+        const isNew = isNewThisMonth(store);
+        const markerEl = document.createElement('div');
+        let markerClass = 'store-marker';
         if (isNew) {
-          markerClass += ' store-marker--favorite-new';
+          markerClass += ' store-marker--new';
         } else {
-          markerClass += store.brand === 'DJI' ? ' store-marker--favorite-dji' : ' store-marker--favorite-insta';
+          markerClass += store.brand === 'DJI' ? ' store-marker--dji' : ' store-marker--insta';
         }
-      }
-      markerEl.className = markerClass.trim();
-      if (isSelected) markerEl.classList.add('store-marker--selected');
-      markerEl.title = store.storeName;
-
-      const marker = new AMapLib.Marker({
-        position: point,
-        content: markerEl,
-        offset: new AMapLib.Pixel(-7, -7),
-        zIndex: isSelected ? 140 : isNew ? 130 : isFavorite ? 120 : 100,
-      });
-      marker.setExtData(store);
-
-      marker.on('click', () => {
-        onSelect(store.id);
-        if (mapRef.current) {
-          const currentZoom = mapRef.current.getZoom();
-          if (currentZoom < MIN_FOCUS_ZOOM) {
-            mapRef.current.setZoom(MIN_FOCUS_ZOOM, true);
+        if (isFavorite) {
+          markerClass += ' store-marker--favorite';
+          if (isNew) {
+            markerClass += ' store-marker--favorite-new';
+          } else {
+            markerClass += store.brand === 'DJI' ? ' store-marker--favorite-dji' : ' store-marker--favorite-insta';
           }
-          mapRef.current.setCenter(point, true);
         }
-      });
+        markerEl.className = markerClass.trim();
+        if (isSelected) markerEl.classList.add('store-marker--selected');
+        markerEl.title = store.storeName;
 
-      nextMarkers.push(marker);
-    });
+        const marker = new AMapLib.Marker({
+          position: point,
+          content: markerEl,
+          offset: new AMapLib.Pixel(-7, -7),
+          zIndex: isSelected ? 140 : isNew ? 130 : isFavorite ? 120 : 100,
+        });
+        marker.setExtData(store);
+
+        marker.on('click', () => {
+          onSelect(store.id);
+          if (mapRef.current) {
+            const currentZoom = mapRef.current.getZoom();
+            if (currentZoom < MIN_FOCUS_ZOOM) {
+              mapRef.current.setZoom(MIN_FOCUS_ZOOM, true);
+            }
+            mapRef.current.setCenter(point, true);
+          }
+        });
+
+        nextMarkers.push(marker);
+      });
+    } else {
+      malls.forEach((mall) => {
+        if (!isInChinaRough(mall)) return;
+        const point = toMallLngLat(mall);
+        if (!point) return;
+        const isSelected = selectedMallId === mall.mallId;
+        const markerEl = document.createElement('div');
+        markerEl.className = 'mall-marker';
+        const color = viewMode === 'competition' ? MALL_STATUS_COLORS[mall.status] : '#2563eb';
+        markerEl.style.backgroundColor = color;
+        if (isSelected) markerEl.classList.add('mall-marker--selected');
+        markerEl.title = mall.mallName;
+
+        const marker = new AMapLib.Marker({
+          position: point,
+          content: markerEl,
+          offset: new AMapLib.Pixel(-8, -8),
+          zIndex: isSelected ? 150 : 120,
+        });
+        marker.setExtData(mall);
+        marker.on('click', () => {
+          onMallClick?.(mall);
+          if (mapRef.current) {
+            const currentZoom = mapRef.current.getZoom();
+            if (currentZoom < MIN_FOCUS_ZOOM) {
+              mapRef.current.setZoom(MIN_FOCUS_ZOOM, true);
+            }
+            mapRef.current.setCenter(point, true);
+          }
+        });
+        nextMarkers.push(marker);
+      });
+    }
 
     markersRef.current = nextMarkers;
     (window as any).__storeMarkers = nextMarkers;
     console.info('[Map] markers prepared:', nextMarkers.length);
 
-    const adjustView = () => {
-      const shouldFitAll = !selectedId && (fitToStores || autoFitOnClear);
-      if (mapRef.current && nextMarkers.length && shouldFitAll) {
-        mapRef.current.setFitView(nextMarkers, false, [80, 40, 80, 80]);
-      } else if (!nextMarkers.length) {
-        recenter();
-      }
-    };
+    const hasSelection = viewMode === 'stores' ? selectedId : selectedMallId;
+    const shouldFitAll = !hasSelection && (fitToStores || autoFitOnClear);
+    if (mapRef.current && nextMarkers.length && shouldFitAll) {
+      mapRef.current.setFitView(nextMarkers, false, [80, 40, 80, 80]);
+    } else if (!nextMarkers.length) {
+      recenter();
+    }
 
-    // 暂时禁用聚合，直接渲染所有点，保证可见性
     if (nextMarkers.length && mapRef.current) {
       nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
-      adjustView();
+      if (!shouldFitAll && !hasSelection && !fitToStores && !autoFitOnClear) {
+        recenter();
+      }
     } else {
       recenter();
     }
-  }, [ready, stores, favoritesSet, selectedId, autoFitOnClear, fitToStores, onSelect, recenter]);
+  }, [ready, viewMode, stores, malls, favoritesSet, selectedId, selectedMallId, autoFitOnClear, fitToStores, onSelect, onMallClick, recenter]);
 
   useEffect(() => {
     if (!ready || !userPos || !amapRef.current || !mapRef.current) {
@@ -260,16 +282,16 @@ export function AmapStoreMap({
   }, [ready, userPos]);
 
   useEffect(() => {
-    if (!ready || !selectedId || !mapRef.current) return;
+    if (!ready || viewMode !== 'stores' || !selectedId || !mapRef.current) return;
     const target = stores.find((s) => s.id === selectedId);
-    const point = target ? toLngLat(target) : null;
+    const point = target ? toStoreLngLat(target) : null;
     if (!point) return;
     const currentZoom = mapRef.current.getZoom();
     if (currentZoom < MIN_FOCUS_ZOOM) {
       mapRef.current.setZoom(MIN_FOCUS_ZOOM, true);
     }
     mapRef.current.setCenter(point, true);
-  }, [ready, selectedId, stores]);
+  }, [ready, viewMode, selectedId, stores]);
 
   useEffect(() => {
     if (resetToken > 0) {
@@ -389,7 +411,7 @@ export function AmapStoreMap({
           <p className="text-xs text-slate-400">请检查高德 Key 设置或网络连接后重试。</p>
         </div>
       )}
-      {showPopup && selectedStore && (
+      {showPopup && viewMode === 'stores' && selectedStore && (
         <div className="absolute bottom-4 left-4 right-4 z-[200] animate-slide-up pointer-events-auto max-h-[50vh] overflow-y-auto" style={{ willChange: 'transform' }}>
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden pointer-events-auto">
             <button

@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import djiRaw from '../data/dji_stores.json';
 import instaRaw from '../data/insta360_stores.json';
-import mallsRaw from '../data/malls.json';
 import statsData from '../data/stats.json';
-import type { Brand, ServiceTag, Store, Mall } from '../types/store';
+import type { Brand, ServiceTag, Store } from '../types/store';
 import type { StoreStats } from '../types/stats';
 import { haversineKm } from '../utils/distance';
 import { isNewThisMonth } from '../utils/storeRules';
 import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
+import { useMalls } from './useMalls';
 
 type Filters = {
   keyword: string;
@@ -53,15 +53,6 @@ function normalize(raw: any): Store {
 }
 
 const allStores: Store[] = [...djiRaw, ...instaRaw].map(normalize);
-const allMalls: Mall[] = (mallsRaw as any[]).map((m) => ({
-  mallId: m.mallId,
-  mallName: m.mallName,
-  city: m.city,
-  hasDJI: m.hasDJI || false,
-  hasInsta360: m.hasInsta360 || false,
-  latitude: m.latitude,
-  longitude: m.longitude,
-}));
 
 type FilterOptions = {
   skipProvince?: boolean;
@@ -159,6 +150,7 @@ export function useStores(userPos: { lat: number; lng: number } | null, filters:
     const saved = localStorage.getItem('favorites');
     return saved ? JSON.parse(saved) : [];
   });
+  const allMalls = useMalls();
 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));

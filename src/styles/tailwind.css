@@ -15,3 +15,6 @@
 .store-marker--favorite-new { background:#fb7185; border-color:#fff; color:#fff; box-shadow:0 12px 24px rgba(251,113,133,0.4); }
 .store-marker--selected { box-shadow:0 0 0 4px rgba(99,102,241,0.15),0 10px 24px rgba(15,23,42,0.22); }
 .store-marker--user { background:#0ea5e9; border-color:#fff; box-shadow:0 8px 16px rgba(14,165,233,0.3); }
+
+.mall-marker { width:16px; height:16px; border-radius:999px; border:2px solid #fff; box-shadow:0 10px 22px rgba(15,23,42,0.18); }
+.mall-marker--selected { box-shadow:0 0 0 4px rgba(59,130,246,0.2),0 12px 26px rgba(15,23,42,0.24); }

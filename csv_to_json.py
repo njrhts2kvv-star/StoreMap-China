@@ -8,6 +8,18 @@ from datetime import datetime
 
 import pandas as pd
 
+
+def to_bool(value) -> bool:
+    """Normalize truthy values from CSV into a real bool."""
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return value > 0
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "y", "yes", "是"}
+    return bool(value)
+
+
 BASE_DIR = Path(__file__).resolve().parent
 CSV_FILE = BASE_DIR / "Store_Master_Cleaned.csv"
 ORIGINAL_CSV = BASE_DIR / "all_stores_final.csv"  # 用于获取 serviceTags
@@ -126,7 +138,6 @@ def csv_to_json():
             uuid = str(row.get("uuid", "")).strip()
             raw_source = row.get("raw_source", "")
             if uuid and raw_source:
-                _, store_type = parse_raw_source(raw_source)
                 tags, _ = parse_raw_source(raw_source)
                 service_tags_map[uuid] = tags
     
@@ -229,18 +240,19 @@ def csv_to_json():
             mall_id = str(mall_row.get("mall_id", "")).strip()
             mall_name = str(mall_row.get("mall_name", "")).strip()
             city = str(mall_row.get("city", "")).strip()
-            
-            # 统计该商场的品牌进驻情况
-            stores_in_mall = df[df["mall_id"] == mall_id]
-            has_dji = len(stores_in_mall[stores_in_mall["brand"] == "DJI"]) > 0
-            has_insta = len(stores_in_mall[stores_in_mall["brand"] == "Insta360"]) > 0
-            
+
             mall_data = {
                 "mallId": mall_id,
                 "mallName": mall_name,
                 "city": city,
-                "hasDJI": has_dji,
-                "hasInsta360": has_insta,
+                "djiOpened": to_bool(mall_row.get("dji_opened", 0)),
+                "instaOpened": to_bool(mall_row.get("insta_opened", 0)),
+                "djiReported": to_bool(mall_row.get("dji_reported", 0)),
+                "djiExclusive": to_bool(mall_row.get("dji_exclusive", 0)),
+                "djiTarget": to_bool(mall_row.get("dji_target", 0)),
+                # 兼容旧前端字段
+                "hasDJI": to_bool(mall_row.get("dji_opened", 0)),
+                "hasInsta360": to_bool(mall_row.get("insta_opened", 0)),
             }
             
             # 添加坐标（如果有）

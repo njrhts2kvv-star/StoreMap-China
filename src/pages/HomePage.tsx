@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Search, RotateCcw, X } from 'lucide-react';
-import type { Brand, ServiceTag, Store } from '../types/store';
+import type { Brand, ServiceTag, Store, Mall, MallStatus } from '../types/store';
 import { useStores } from '../hooks/useStores';
 import { useGeo } from '../hooks/useGeo';
+import { useCompetition } from '../hooks/useCompetition';
 import { AmapStoreMap } from '../components/AmapStoreMap';
 import { InsightBar } from '../components/InsightBar';
 import { RegionList } from '../components/RegionList';
@@ -13,6 +14,8 @@ import { TopCities } from '../components/TopCities';
 import { NewStoresThisMonth } from '../components/NewStoresThisMonth';
 import { Card, Button } from '../components/ui';
 import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
+import { CompetitionDashboard } from '../components/CompetitionDashboard';
+import { MallDetail } from '../components/MallDetail';
 
 const sortStoreTypeOptions = (options: string[], priority: string[] = []) => {
   const list = options.filter(Boolean);
@@ -41,6 +44,7 @@ type FilterState = {
   competitiveOnly: boolean;
   experienceOnly: boolean;
   newThisMonth: boolean;
+  mallStatuses: MallStatus[];
 };
 
 const initialFilters: FilterState = {
@@ -56,6 +60,7 @@ const initialFilters: FilterState = {
   competitiveOnly: false,
   experienceOnly: false,
   newThisMonth: false,
+  mallStatuses: [],
 };
 
 type StoreFilterMode = 'all' | 'experience';
@@ -65,6 +70,7 @@ export default function HomePage() {
   const [pendingFilters, setPendingFilters] = useState<FilterState>(initialFilters);
   const [appliedFilters, setAppliedFilters] = useState<FilterState>(initialFilters);
   const [storeFilterMode, setStoreFilterMode] = useState<StoreFilterMode>('experience');
+  const [activeTab, setActiveTab] = useState<'overview' | 'map' | 'list' | 'competition'>('overview');
   
   // 根据模式应用门店类别筛选
   const filtersWithMode = useMemo(() => {
@@ -92,13 +98,13 @@ export default function HomePage() {
   } = useStores(userPos, filtersWithMode);
   const [brandSelection, setBrandSelection] = useState<Brand[]>(['DJI', 'Insta360']);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedMallId, setSelectedMallId] = useState<string | null>(null);
   const visibleStores = filtered;
   const [quickFilter, setQuickFilter] = useState<'all' | 'favorites' | 'new'>('all');
   const [showProvinceDropdown, setShowProvinceDropdown] = useState(false);
   const [showCityDropdown, setShowCityDropdown] = useState(false);
   const [showStoreTypeDropdown, setShowStoreTypeDropdown] = useState(false);
   const [mapResetToken, setMapResetToken] = useState(0);
-  const [activeTab, setActiveTab] = useState<'overview' | 'map' | 'list'>('overview');
   const hasRegionFilter = pendingFilters.city.length > 0 || pendingFilters.province.length > 0;
   const mapUserPos = hasRegionFilter ? null : userPos;
   const handleSelect = useCallback((id: string) => setSelectedId(id || null), []);
@@ -154,6 +160,28 @@ export default function HomePage() {
     },
     [allStores],
   );
+  const filteredMalls = useMemo(() => {
+    const cityFilters =
+      Array.isArray(filtersWithMode.city) && filtersWithMode.city.length > 0
+        ? filtersWithMode.city
+        : typeof filtersWithMode.city === 'string' && filtersWithMode.city
+          ? [filtersWithMode.city]
+          : [];
+    return allMalls.filter((mall) => {
+      const cityMatch = cityFilters.length ? cityFilters.includes(mall.city) : true;
+      const statusMatch = filtersWithMode.mallStatuses.length ? filtersWithMode.mallStatuses.includes(mall.status) : true;
+      return cityMatch && statusMatch;
+    });
+  }, [allMalls, filtersWithMode.city, filtersWithMode.mallStatuses]);
+  const competitionStats = useCompetition(filteredMalls);
+  const selectedMall = useMemo(
+    () => allMalls.find((mall) => mall.mallId === selectedMallId) ?? null,
+    [allMalls, selectedMallId],
+  );
+  const storesInSelectedMall = useMemo(
+    () => (selectedMall ? allStores.filter((s) => s.mallId === selectedMall.mallId) : []),
+    [allStores, selectedMall],
+  );
   useEffect(() => {
     if (quickFilter === 'favorites' && selectedId && !favorites.includes(selectedId)) {
       setSelectedId(null);
@@ -166,6 +194,7 @@ export default function HomePage() {
     setAppliedFilters(base);
     setStoreFilterMode('experience');
     setSelectedId(null);
+    setSelectedMallId(null);
     setQuickFilter('all');
     setShowProvinceDropdown(false);
     setShowCityDropdown(false);
@@ -174,6 +203,7 @@ export default function HomePage() {
 
   const applyQuickFilter = (key: typeof quickFilter) => {
     setQuickFilter(key);
+    setSelectedMallId(null);
     setPendingFilters((f) => {
       let next: FilterState = {
         ...f,
@@ -207,6 +237,7 @@ export default function HomePage() {
     setPendingFilters(next);
     setAppliedFilters(next);
     setSelectedId(null);
+    setSelectedMallId(null);
   };
 
   const handleNewStoreSelect = (store: Store) => {
@@ -215,6 +246,47 @@ export default function HomePage() {
     updateFilters({ province: provinceValue, city: cityValue });
     handleSelect(store.id);
     setMapResetToken((token) => token + 1);
+    setSelectedMallId(null);
+  };
+
+  const handleMallClick = (mall: Mall) => {
+    setSelectedMallId(mall.mallId);
+  };
+
+  const resetMallFilters = () => {
+    updateFilters({ mallStatuses: [], city: [] });
+    setSelectedMallId(null);
+    setMapResetToken((token) => token + 1);
+  };
+
+  const isSameStatuses = (arr: MallStatus[], target: MallStatus[]) =>
+    arr.length === target.length && target.every((s) => arr.includes(s));
+
+  const applyCompetitionQuick = (key: 'target' | MallStatus | 'all') => {
+    if (key === 'all') {
+      resetMallFilters();
+      return;
+    }
+    const targetStatuses =
+      key === 'target' ? (['captured', 'gap', 'blocked', 'opportunity'] as MallStatus[]) : ([key] as MallStatus[]);
+    updateFilters({
+      mallStatuses: isSameStatuses(filtersWithMode.mallStatuses, targetStatuses) ? [] : targetStatuses,
+      city: filtersWithMode.city,
+    });
+    setSelectedMallId(null);
+    setMapResetToken((token) => token + 1);
+  };
+
+  const handleCompetitionDashboardFilter = (statuses: MallStatus[]) => {
+    if (!statuses.length) {
+      applyCompetitionQuick('all');
+      return;
+    }
+    if (statuses.length > 1) {
+      applyCompetitionQuick('target');
+      return;
+    }
+    applyCompetitionQuick(statuses[0]);
   };
 
   const storeTypeButtonLabel = '门店类别';
@@ -394,8 +466,8 @@ export default function HomePage() {
                     setStoreFilterMode('experience');
                     // 切换到体验店对比时，恢复默认体验店选项
                     updateFilters({ 
-                      djiStoreTypes: [...EXPERIENCE_DJI_STORE_TYPES],
-                      instaStoreTypes: [...EXPERIENCE_INSTA_STORE_TYPES]
+                      djiStoreTypes: [...EXPERIENCE_STORE_TYPES.DJI],
+                      instaStoreTypes: [...EXPERIENCE_STORE_TYPES.Insta360]
                     });
                   }}
                 >
@@ -421,14 +493,14 @@ export default function HomePage() {
                             setStoreFilterMode('experience');
                             // 从所有选项中移除当前选项，保留其他选项
                             const next = djiStoreOptions.filter((x) => x !== type);
-                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_DJI_STORE_TYPES] });
+                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.DJI] });
                           } else {
                             // 体验店对比模式下，正常切换选项
                             const next = pendingFilters.djiStoreTypes.includes(type)
                               ? pendingFilters.djiStoreTypes.filter((x) => x !== type)
                               : [...pendingFilters.djiStoreTypes, type];
                             // 如果移除后为空，恢复默认值
-                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_DJI_STORE_TYPES] });
+                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.DJI] });
                           }
                         }}
                       >
@@ -457,14 +529,14 @@ export default function HomePage() {
                             setStoreFilterMode('experience');
                             // 从所有选项中移除当前选项，保留其他选项
                             const next = instaStoreOptions.filter((x) => x !== type);
-                            updateFilters({ instaStoreTypes: next.length > 0 ? next : [...EXPERIENCE_INSTA_STORE_TYPES] });
+                            updateFilters({ instaStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.Insta360] });
                           } else {
                             // 体验店对比模式下，正常切换选项
                             const next = pendingFilters.instaStoreTypes.includes(type)
                               ? pendingFilters.instaStoreTypes.filter((x) => x !== type)
                               : [...pendingFilters.instaStoreTypes, type];
                             // 如果移除后为空，恢复默认值
-                            updateFilters({ instaStoreTypes: next.length > 0 ? next : [...EXPERIENCE_INSTA_STORE_TYPES] });
+                            updateFilters({ instaStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.Insta360] });
                           }
                         }}
                       >
@@ -661,6 +733,67 @@ export default function HomePage() {
           </div>
         )}
 
+        {activeTab === 'competition' && (
+          <div className="space-y-3 pb-24">
+            <div className="flex items-center justify-between px-1 pt-2">
+              <div className="text-lg font-extrabold text-slate-900">竞争红绿灯</div>
+              <button className="text-xs text-amber-600 font-semibold" onClick={resetMallFilters}>
+                重置
+              </button>
+            </div>
+            <div className="px-1">
+              <div className="flex flex-nowrap gap-2 overflow-x-auto no-scrollbar">
+                {[
+                  { key: 'all' as const, label: '全部省份', width: 'w-[96px]' },
+                  { key: 'target' as const, label: '目标商场', width: 'w-[92px]' },
+                  { key: 'gap' as const, label: '缺口', width: 'w-[72px]' },
+                  { key: 'blocked' as const, label: '排他', width: 'w-[72px]' },
+                  { key: 'opportunity' as const, label: '高潜', width: 'w-[72px]' },
+                  { key: 'blue_ocean' as const, label: '蓝海', width: 'w-[72px]' },
+                ].map((item) => {
+                  const active =
+                    item.key === 'all'
+                      ? filtersWithMode.mallStatuses.length === 0 && cityFilterValues.length === 0
+                      : item.key === 'target'
+                        ? isSameStatuses(filtersWithMode.mallStatuses, ['captured', 'gap', 'blocked', 'opportunity'])
+                        : isSameStatuses(filtersWithMode.mallStatuses, [item.key as MallStatus]);
+                  return (
+                    <button
+                      key={item.key}
+                      type="button"
+                      className={`${item.width} text-center px-2 py-2 rounded-xl text-[10px] font-semibold border transition ${
+                        active ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-600 border-slate-200'
+                      }`}
+                      onClick={() => applyCompetitionQuick(item.key)}
+                    >
+                      {item.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+            <CompetitionDashboard stats={competitionStats} onStatusFilter={handleCompetitionDashboardFilter} />
+            <Card className="relative border border-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+              <div className="h-[520px] w-full relative overflow-visible">
+                <AmapStoreMap
+                  viewMode="competition"
+                  stores={visibleStores}
+                  malls={filteredMalls}
+                  selectedMallId={selectedMallId || undefined}
+                  onSelect={handleSelect}
+                  onMallClick={handleMallClick}
+                  showPopup={false}
+                  resetToken={mapResetToken}
+                  mapId="competition-map-standalone"
+                  showControls
+                  autoFitOnClear
+                  fitToStores
+                />
+              </div>
+            </Card>
+          </div>
+        )}
+
         {activeTab === 'list' && (
           <>
             {/* 上：搜索门店、城市、省份 */}
@@ -702,6 +835,7 @@ export default function HomePage() {
           </>
         )}
 
+        <MallDetail mall={selectedMall} stores={storesInSelectedMall} onClose={() => setSelectedMallId(null)} />
         <SegmentControl value={activeTab} onChange={setActiveTab} />
       </div>
     </div>

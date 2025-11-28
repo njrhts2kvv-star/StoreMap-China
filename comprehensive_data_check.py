@@ -6,14 +6,26 @@
 3. 商场的 store_count 是否准确
 4. 坐标合理性检查
 5. 城市匹配性检查
-6. 前端 JSON 与 CSV 数据一致性
-7. 商场名称与原始名称的异常差异
+6. 竞争字段合法性与业务约束
+7. 前端 JSON 与 CSV 数据一致性
+8. 商场名称与原始名称的异常差异
 """
 
 from pathlib import Path
 import pandas as pd
 import json
 from geopy.distance import geodesic
+
+
+def to_bool(value):
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return value > 0
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "0", "false", "y", "yes", "是"}
+    return bool(value)
+
 
 BASE_DIR = Path(__file__).resolve().parent
 MALL_CSV = BASE_DIR / "Mall_Master_Cleaned.csv"
@@ -252,10 +264,72 @@ def check_city_consistency(store_df, mall_df):
         return True
 
 
+def check_competition_fields(mall_df):
+    """检查竞争字段合法性及排他约束"""
+    print("\n" + "=" * 70)
+    print("6. 检查竞争字段取值合法性")
+    print("=" * 70)
+
+    flag_columns = ["dji_reported", "dji_exclusive", "dji_target", "dji_opened", "insta_opened"]
+
+    def is_valid_flag(value):
+        if pd.isna(value):
+            return False
+        if isinstance(value, bool):
+            return True
+        if isinstance(value, (int, float)):
+            return value in (0, 1)
+        if isinstance(value, str):
+            return value.strip().lower() in {"true", "false", "0", "1", "y", "yes", "是"}
+        return False
+
+    invalid_values = []
+    exclusive_issues = []
+
+    for _, row in mall_df.iterrows():
+        mall_id = row.get("mall_id")
+        for col in flag_columns:
+            val = row.get(col)
+            if not is_valid_flag(val):
+                invalid_values.append({
+                    "mall_id": mall_id,
+                    "mall_name": row.get("mall_name"),
+                    "field": col,
+                    "value": val,
+                })
+        if to_bool(row.get("dji_exclusive", False)) and not (
+            to_bool(row.get("dji_opened", False)) or to_bool(row.get("dji_reported", False))
+        ):
+            exclusive_issues.append({
+                "mall_id": mall_id,
+                "mall_name": row.get("mall_name"),
+                "dji_opened": row.get("dji_opened"),
+                "dji_reported": row.get("dji_reported"),
+            })
+
+    if invalid_values:
+        print(f"❌ 发现 {len(invalid_values)} 个竞争字段值异常（非 TRUE/FALSE/0/1）:")
+        for item in invalid_values[:10]:
+            print(f"  {item['mall_id']} {item['mall_name']} -> {item['field']} = {item['value']}")
+    else:
+        print("✅ 竞争字段取值合法 (TRUE/FALSE 或 0/1)")
+
+    if exclusive_issues:
+        print(f"❌ 发现 {len(exclusive_issues)} 个排他标记未配套报店/开店:")
+        for item in exclusive_issues[:10]:
+            print(
+                f"  {item['mall_id']} {item['mall_name']}: dji_exclusive=TRUE 但 dji_opened={item['dji_opened']} / dji_reported={item['dji_reported']}"
+            )
+    else:
+        print("✅ 排他商场均有报店或开店记录")
+
+    return not (invalid_values or exclusive_issues)
+
+
 def check_json_csv_consistency():
     """检查前端 JSON 与 CSV 数据一致性"""
     print("\n" + "=" * 70)
-    print("6. 检查前端 JSON 与 CSV 数据一致性")
+    print("7. 检查前端 JSON 与 CSV 数据一致性")
     print("=" * 70)
     
     # 读取 CSV
@@ -335,7 +409,7 @@ def check_json_csv_consistency():
 def check_mall_name_anomalies(mall_df):
     """检查商场名称异常"""
     print("\n" + "=" * 70)
-    print("7. 检查商场名称异常")
+    print("8. 检查商场名称异常")
     print("=" * 70)
     
     anomalies = []
@@ -391,6 +465,7 @@ def main():
     results.append(("store_count 准确性", check_store_count(store_df, mall_df)))
     results.append(("坐标合理性", check_coordinates(store_df, mall_df)))
     results.append(("城市一致性", check_city_consistency(store_df, mall_df)))
+    results.append(("竞争字段有效性", check_competition_fields(mall_df)))
     results.append(("JSON-CSV 一致性", check_json_csv_consistency()))
     results.append(("商场名称正常性", check_mall_name_anomalies(mall_df)))
     
@@ -416,7 +491,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 
