@@ -6,6 +6,7 @@ import { loadAmap } from '../utils/loadAmap';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
 import type { Store as StoreType } from '../types/store';
+import { isNewThisMonth } from '../utils/storeRules';
 
 type Props = {
   stores: Store[];
@@ -41,16 +42,6 @@ const isInChinaRough = (store: StoreType): boolean => {
   if (typeof lat !== 'number' || typeof lng !== 'number') return false;
   // 中国大致范围：纬度 18-54，经度 73-135
   return lat >= 18 && lat <= 54 && lng >= 73 && lng <= 135;
-};
-
-const isNewThisMonth = (store: StoreType): boolean => {
-  if (!store.openedAt || store.openedAt === 'historical') return false;
-  const opened = store.openedAt.split('T')[0];
-  if (!opened || opened.length < 7) return false;
-  const monthStr = opened.slice(0, 7);
-  const now = new Date();
-  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-  return monthStr === currentMonth;
 };
 
 export function AmapStoreMap({

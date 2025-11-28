@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Optional, Set
 
 import pandas as pd
+from geopy.distance import geodesic
 
 BASE_DIR = Path(__file__).resolve().parent
 ALL_CSV = BASE_DIR / "all_stores_final.csv"
@@ -25,6 +26,20 @@ def _normalize_str(value) -> str:
     if pd.isna(value):
         return ""
     return str(value).strip()
+
+
+def _safe_float(value) -> Optional[float]:
+    try:
+        return float(value)
+    except Exception:
+        return None
+
+
+def _calculate_distance(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+    try:
+        return geodesic((lat1, lng1), (lat2, lng2)).meters
+    except Exception:
+        return 999999.0
 
 
 def _load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -136,6 +151,7 @@ def update_mall_coordinates(
     updated_store_rows = 0
     created_malls = 0
     updated_mall_rows = 0
+    coord_conflicts: list[dict[str, str]] = []
 
     # 逐店同步
     for idx, store_row in store_df.iterrows():
@@ -175,17 +191,35 @@ def update_mall_coordinates(
 
         changed = False
 
-        # 同步门店坐标（以 all_stores_final 为准）
-        if pd.notna(lat) and pd.notna(lng):
-            if pd.isna(cur_lat) or pd.isna(cur_lng) or float(cur_lat) != float(lat) or float(cur_lng) != float(lng):
+        # 同步门店坐标：只补缺失，差异>50m 记冲突，不直接覆盖
+        src_lat = _safe_float(lat)
+        src_lng = _safe_float(lng)
+        cur_lat_f = _safe_float(cur_lat)
+        cur_lng_f = _safe_float(cur_lng)
+        if src_lat is not None and src_lng is not None:
+            if cur_lat_f is None or cur_lng_f is None:
                 if dry_run:
-                    print(f"[预览] 更新门店坐标: {brand} - {name} ({city})")
-                    print(f"  原: lat={cur_lat}, lng={cur_lng}")
-                    print(f"  新: lat={lat}, lng={lng}")
+                    print(f"[预览] 填充缺失坐标: {brand} - {name} ({city}) -> lat={src_lat}, lng={src_lng}")
                 else:
-                    store_df.at[idx, "corrected_lat"] = float(lat)
-                    store_df.at[idx, "corrected_lng"] = float(lng)
+                    store_df.at[idx, "corrected_lat"] = src_lat
+                    store_df.at[idx, "corrected_lng"] = src_lng
                 changed = True
+            else:
+                gap = _calculate_distance(cur_lat_f, cur_lng_f, src_lat, src_lng)
+                if gap > 50:
+                    coord_conflicts.append(
+                        {
+                            "store_id": store_id,
+                            "brand": brand,
+                            "name": name,
+                            "city": city,
+                            "old_lat": cur_lat,
+                            "old_lng": cur_lng,
+                            "new_lat": src_lat,
+                            "new_lng": src_lng,
+                            "gap_m": f"{gap:.0f}",
+                        }
+                    )
 
         # 没有商场名称则不处理 mall 相关逻辑
         if not has_mall:
@@ -283,6 +317,16 @@ def update_mall_coordinates(
     print(f"[统计] 更新门店记录: {updated_store_rows} 条")
     print(f"[统计] 新增商场记录: {created_malls} 个")
     print(f"[统计] 更新商场记录: {updated_mall_rows} 条")
+    if coord_conflicts:
+        print(f"[警告] 坐标冲突 {len(coord_conflicts)} 条（>50m 未覆盖）")
+        for item in coord_conflicts[:5]:
+            print(
+                f"  {item['brand']} - {item['name']} ({item['city']}): "
+                f"旧({item['old_lat']},{item['old_lng']}) -> 新({item['new_lat']},{item['new_lng']}) 差 {item['gap_m']}m"
+            )
+        if len(coord_conflicts) > 5:
+            print("  ...")
+        print("  请人工确认后手动修正。")
 
     if dry_run:
         print("\n[提示] 预览模式，未修改任何 CSV 文件")

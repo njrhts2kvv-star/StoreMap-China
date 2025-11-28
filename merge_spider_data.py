@@ -16,6 +16,8 @@ DJI_RAW = BASE / "dji_offline_stores.csv"
 INSTA_RAW = BASE / "insta360_offline_stores.csv"
 BACKUP_SUFFIX = ".backup_spider"
 BRANDS = {"DJI", "Insta360"}
+MISSING_TRACKER = BASE / "missing_store_tracker.json"
+UNKNOWN_STORE_TYPES: set[tuple[str, str, str]] = set()
 
 
 def normalize_opened_at(value: Optional[str]) -> str:
@@ -34,7 +36,22 @@ def ensure_columns(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def derive_store_type(raw_source: str, brand: str) -> str:
+def load_missing_tracker() -> dict[tuple[str, str, str], int]:
+    if not MISSING_TRACKER.exists():
+        return {}
+    try:
+        raw = json.loads(MISSING_TRACKER.read_text(encoding="utf-8"))
+        return {tuple(k.split("|||")): int(v) for k, v in raw.items()}
+    except Exception:
+        return {}
+
+
+def save_missing_tracker(data: dict[tuple[str, str, str], int]) -> None:
+    serialized = {"|||".join(k): v for k, v in data.items()}
+    MISSING_TRACKER.write_text(json.dumps(serialized, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def derive_store_type(raw_source: str, brand: str, name: str = "", address: str = "") -> str:
     if not raw_source or not isinstance(raw_source, str):
         return ""
     try:
@@ -52,7 +69,8 @@ def derive_store_type(raw_source: str, brand: str) -> str:
             return "新型照材"
         if store_code == "6":
             return "授权体验店"
-        return "授权体验店"
+        UNKNOWN_STORE_TYPES.add((brand, name, address))
+        return ""
     else:
         chain = str(data.get("chainStore") or "").strip()
         # Insta360 映射规则：
@@ -64,9 +82,8 @@ def derive_store_type(raw_source: str, brand: str) -> str:
             return "授权专卖店"
         if chain == "合作体验点":
             return "合作体验点"
-        # 其他任何值一律视为合作体验点
         if chain:
-            return "合作体验点"
+            UNKNOWN_STORE_TYPES.add((brand, name, address))
         return ""
 
 
@@ -120,7 +137,7 @@ def merge_from_spiders() -> None:
             spider_keys.add(key)
             opened_at = normalize_opened_at(row.get("opened_at", "historical"))
             raw_source = row.get("raw_source") or row.get("raw") or ""
-            store_type = derive_store_type(raw_source, brand) or str(row.get("store_type") or "").strip()
+            store_type = derive_store_type(raw_source, brand, name=name, address=address) or str(row.get("store_type") or "").strip()
             uuid = (
                 str(row.get("uuid", "")).strip()
                 or str(row.get("store_id", "")).strip()
@@ -210,29 +227,48 @@ def merge_from_spiders() -> None:
         master_df.to_csv(MASTER_PATH, index=False, encoding="utf-8-sig")
         print(f"[写入] Store_Master_Cleaned.csv 共 {len(master_df)} 条（备份: {backup_master.name}）")
         changed = True
-
+    missing_tracker = load_missing_tracker()
     if spider_keys:
-        def mark_closed(df: pd.DataFrame) -> int:
+        valid_keys: set[tuple[str, str, str]] = set()
+
+        def mark_closed(df: pd.DataFrame, tracker: dict[tuple[str, str, str], int]) -> int:
             updated = 0
             if "status" not in df.columns:
                 df["status"] = "营业中"
             for idx, row in df.iterrows():
                 brand = str(row.get("brand", "")).strip()
                 key = (brand, str(row.get("name", "")).strip(), str(row.get("address", "")).strip())
-                if brand in BRANDS and key not in spider_keys and str(row.get("status", "")).strip() != "已闭店":
+                valid_keys.add(key)
+                if brand not in BRANDS:
+                    continue
+                if key in spider_keys:
+                    tracker[key] = 0
+                    continue
+                tracker[key] = tracker.get(key, 0) + 1
+                if tracker[key] >= 2 and str(row.get("status", "")).strip() != "已闭店":
                     df.at[idx, "status"] = "已闭店"
                     updated += 1
             return updated
 
-        updated_all = mark_closed(all_df)
-        updated_master = mark_closed(master_df)
+        updated_all = mark_closed(all_df, missing_tracker)
+        updated_master = mark_closed(master_df, missing_tracker)
+
+        # 仅保留当前数据表中的键，避免历史垃圾数据
+        missing_tracker = {k: v for k, v in missing_tracker.items() if k in valid_keys}
+        save_missing_tracker(missing_tracker)
+
         if updated_all:
             all_df.to_csv(ALL_PATH, index=False, encoding="utf-8-sig")
             changed = True
         if updated_master:
             master_df.to_csv(MASTER_PATH, index=False, encoding="utf-8-sig")
             changed = True
-        print(f"[闭店标记] all_stores_final: {updated_all} 条, Store_Master_Cleaned: {updated_master} 条")
+        print(f"[闭店标记] all_stores_final: {updated_all} 条, Store_Master_Cleaned: {updated_master} 条（需连续2次缺失才判闭店）")
+
+    if UNKNOWN_STORE_TYPES:
+        samples = list(UNKNOWN_STORE_TYPES)[:5]
+        preview = "; ".join([f"{b}-{n}-{a}" for b, n, a in samples])
+        print(f"[警告] 检测到 {len(UNKNOWN_STORE_TYPES)} 条门店类型未识别，需要人工确认。示例: {preview}")
 
     if not changed:
         print("[提示] 本次爬虫无新增/闭店变化，无文件改动")

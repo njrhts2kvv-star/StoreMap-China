@@ -6,6 +6,8 @@ import statsData from '../data/stats.json';
 import type { Brand, ServiceTag, Store, Mall } from '../types/store';
 import type { StoreStats } from '../types/stats';
 import { haversineKm } from '../utils/distance';
+import { isNewThisMonth } from '../utils/storeRules';
+import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
 
 type Filters = {
   keyword: string;
@@ -23,16 +25,6 @@ type Filters = {
 };
 
 const isInCn = (lat: number, lng: number) => lat >= 15 && lat <= 55 && lng >= 70 && lng <= 135;
-const isNewStore = (store: Store) => {
-  if (!store.openedAt || store.openedAt === 'historical') return false;
-  const opened = store.openedAt.split('T')[0];
-  if (!opened || opened.length < 7) return false;
-  const monthStr = opened.slice(0, 7);
-  const now = new Date();
-  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-  return monthStr === currentMonth;
-};
-
 function normalize(raw: any): Store {
   let { latitude, longitude } = raw;
   if (!isInCn(latitude, longitude) && isInCn(longitude, latitude)) {
@@ -115,18 +107,18 @@ const applyFilters = (
     list = list.filter((s) => filters.serviceTags.every((tag) => s.serviceTags.includes(tag)));
 
   if (filters.favoritesOnly) list = list.filter((s) => favorites.includes(s.id));
-  if (filters.newThisMonth) list = list.filter(isNewStore);
+  if (filters.newThisMonth) list = list.filter(isNewThisMonth);
 
   if (filters.experienceOnly) {
-    const djiKeywords = ['ARS', '授权体验店', '新型照材'];
-    const instaKeywords = ['直营店', '授权专卖店', '授权体验店'];
+    const djiKeywords = EXPERIENCE_STORE_TYPES.DJI.map((k) => k.toLowerCase());
+    const instaKeywords = EXPERIENCE_STORE_TYPES.Insta360.map((k) => k.toLowerCase());
     list = list.filter((s) => {
       const st = (s.storeType || '').toLowerCase();
       if (s.brand === 'DJI') {
-        return djiKeywords.some((k) => st.includes(k.toLowerCase()));
+        return djiKeywords.some((k) => st.includes(k));
       }
       if (s.brand === 'Insta360') {
-        return instaKeywords.some((k) => st.includes(k.toLowerCase()));
+        return instaKeywords.some((k) => st.includes(k));
       }
       return false;
     });

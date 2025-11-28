@@ -12,6 +12,7 @@ import { TopProvinces } from '../components/TopProvinces';
 import { TopCities } from '../components/TopCities';
 import { NewStoresThisMonth } from '../components/NewStoresThisMonth';
 import { Card, Button } from '../components/ui';
+import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
 
 const sortStoreTypeOptions = (options: string[], priority: string[] = []) => {
   const list = options.filter(Boolean);
@@ -42,17 +43,13 @@ type FilterState = {
   newThisMonth: boolean;
 };
 
-// 体验店对比的门店类别
-const EXPERIENCE_DJI_STORE_TYPES = ['授权体验店', 'ARS'];
-const EXPERIENCE_INSTA_STORE_TYPES = ['直营店', '授权专卖店'];
-
 const initialFilters: FilterState = {
   keyword: '',
   province: [],
   city: [],
   brands: ['DJI', 'Insta360'],
-  djiStoreTypes: EXPERIENCE_DJI_STORE_TYPES,
-  instaStoreTypes: EXPERIENCE_INSTA_STORE_TYPES,
+  djiStoreTypes: [...EXPERIENCE_STORE_TYPES.DJI],
+  instaStoreTypes: [...EXPERIENCE_STORE_TYPES.Insta360],
   serviceTags: [],
   sortBy: 'default',
   favoritesOnly: false,
@@ -78,8 +75,8 @@ export default function HomePage() {
       filters.instaStoreTypes = [];
     } else {
       // 体验店对比：使用体验店类别
-      filters.djiStoreTypes = [...EXPERIENCE_DJI_STORE_TYPES];
-      filters.instaStoreTypes = [...EXPERIENCE_INSTA_STORE_TYPES];
+      filters.djiStoreTypes = [...EXPERIENCE_STORE_TYPES.DJI];
+      filters.instaStoreTypes = [...EXPERIENCE_STORE_TYPES.Insta360];
     }
     return filters;
   }, [appliedFilters, storeFilterMode]);

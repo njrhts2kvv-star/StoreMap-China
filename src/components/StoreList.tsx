@@ -1,6 +1,7 @@
 import { Phone, Navigation, Star } from 'lucide-react';
 import { Virtuoso } from 'react-virtuoso';
 import type { Store } from '../types/store';
+import { isNewThisMonth } from '../utils/storeRules';
 
 type Props = {
   stores: Store[];
@@ -12,16 +13,6 @@ type Props = {
 };
 
 export default function StoreList({ stores, favorites, onToggleFavorite, onSelect, selectedId }: Props) {
-  const isNewThisMonth = (s: Store): boolean => {
-    if (!s.openedAt || s.openedAt === 'historical') return false;
-    const opened = s.openedAt.split('T')[0];
-    if (!opened || opened.length < 7) return false;
-    const monthStr = opened.slice(0, 7);
-    const now = new Date();
-    const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-    return monthStr === currentMonth;
-  };
-
   const itemContent = (s: Store, index: number) => {
     const rank = index + 1;
     const isFavorite = favorites.includes(s.id);

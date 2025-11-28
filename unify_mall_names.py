@@ -28,6 +28,23 @@ def calculate_distance(lat1: float, lng1: float, lat2: float, lng2: float) -> fl
         return 999999.0
 
 
+def normalize_city(city: str) -> str:
+    if not city:
+        return ""
+    return city.strip().replace("市", "")
+
+
+def median(nums: list[float]) -> float:
+    if not nums:
+        return 0.0
+    nums_sorted = sorted(nums)
+    n = len(nums_sorted)
+    mid = n // 2
+    if n % 2 == 1:
+        return nums_sorted[mid]
+    return (nums_sorted[mid - 1] + nums_sorted[mid]) / 2
+
+
 def normalize_mall_name(mall_name: str) -> str:
     """标准化商场名称（去除空格、统一格式等）"""
     if not mall_name:
@@ -67,16 +84,15 @@ def find_mall_clusters(df: pd.DataFrame) -> dict[str, list[int]]:
         if not indices:
             continue
         
-        # 找到这个商场的主要坐标（取第一个门店的坐标）
+        # 基准城市与坐标（城市需一致，坐标取中位数避免单点偏差）
         main_idx = indices[0]
-        main_lat = df.at[main_idx, "lat"]
-        main_lng = df.at[main_idx, "lng"]
-        
-        if pd.isna(main_lat) or pd.isna(main_lng):
+        main_city = normalize_city(str(df.at[main_idx, "city"]))
+        lats = [float(df.at[i, "lat"]) for i in indices if pd.notna(df.at[i, "lat"])]
+        lngs = [float(df.at[i, "lng"]) for i in indices if pd.notna(df.at[i, "lng"])]
+        if not lats or not lngs:
             continue
-        
-        main_lat = float(main_lat)
-        main_lng = float(main_lng)
+        main_lat = median(lats)
+        main_lng = median(lngs)
         
         # 查找附近的其他门店（可能是不同品牌或不同商场名称）
         cluster_indices = list(indices)
@@ -88,6 +104,7 @@ def find_mall_clusters(df: pd.DataFrame) -> dict[str, list[int]]:
             other_mall_name = str(other_row.get("mall_name", "")).strip()
             other_lat = other_row.get("lat")
             other_lng = other_row.get("lng")
+            other_city = normalize_city(str(other_row.get("city", "")))
             
             if pd.isna(other_lat) or pd.isna(other_lng):
                 continue
@@ -95,6 +112,10 @@ def find_mall_clusters(df: pd.DataFrame) -> dict[str, list[int]]:
             other_lat = float(other_lat)
             other_lng = float(other_lng)
             
+            # 城市不同则不合并
+            if other_city != main_city:
+                continue
+
             # 计算距离
             distance = calculate_distance(main_lat, main_lng, other_lat, other_lng)
             
@@ -105,10 +126,13 @@ def find_mall_clusters(df: pd.DataFrame) -> dict[str, list[int]]:
                 # 如果其他门店也有商场名称，检查是否相似
                 if other_mall_name:
                     similarity = fuzz.ratio(mall_name.lower(), other_mall_name_normalized.lower())
-                    if similarity >= MALL_NAME_SIMILARITY_THRESHOLD:
-                        # 使用更完整的商场名称
-                        if len(mall_name) < len(other_mall_name_normalized):
-                            mall_name = other_mall_name_normalized
+                    if similarity < MALL_NAME_SIMILARITY_THRESHOLD:
+                        continue
+                    if len(mall_name) < len(other_mall_name_normalized):
+                        mall_name = other_mall_name_normalized
+                else:
+                    # 没有名称，不合并，避免误吞
+                    continue
                 
                 cluster_indices.append(other_idx)
                 processed_indices.add(other_idx)
@@ -253,4 +277,3 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
         sys.exit(1)
-

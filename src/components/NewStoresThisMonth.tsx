@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Store } from '../types/store';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
+import { isNewThisMonth } from '../utils/storeRules';
 
 type Props = {
   stores: Store[];
@@ -12,16 +13,6 @@ type Props = {
 type BrandFilter = 'all' | 'DJI' | 'Insta360';
 
 const PAGE_SIZE = 5;
-
-const isNewThisMonth = (store: Store): boolean => {
-  if (!store.openedAt || store.openedAt === 'historical') return false;
-  const opened = store.openedAt.split('T')[0];
-  if (!opened || opened.length < 7) return false;
-  const monthStr = opened.slice(0, 7);
-  const now = new Date();
-  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-  return monthStr === currentMonth;
-};
 
 export function NewStoresThisMonth({ stores, selectedId, onStoreSelect }: Props) {
   const [brandFilter, setBrandFilter] = useState<BrandFilter>('all');

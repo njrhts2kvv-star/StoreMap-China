@@ -3,6 +3,7 @@ import { ChevronDown, MapPin, Star } from 'lucide-react';
 import type { Store, Mall } from '../types/store';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
+import { isNewThisMonth } from '../utils/storeRules';
 
 type Props = {
   stores: Store[];
@@ -74,16 +75,6 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
   const [cityPage, setCityPage] = useState<Record<string, number>>({});
   const [mallPage, setMallPage] = useState<Record<string, number>>({});
   const [storePage, setStorePage] = useState<Record<string, number>>({});
-
-  const isNewThisMonth = (s: Store): boolean => {
-    if (!s.openedAt || s.openedAt === 'historical') return false;
-    const opened = s.openedAt.split('T')[0];
-    if (!opened || opened.length < 7) return false;
-    const monthStr = opened.slice(0, 7);
-    const now = new Date();
-    const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-    return monthStr === currentMonth;
-  };
 
   const provinces = useMemo<ProvinceGroup[]>(() => {
     const group: Record<string, ProvinceGroup> = {};

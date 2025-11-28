@@ -1,11 +1,13 @@
-"""Insta360门店商场匹配脚本：优先匹配DJI门店的商场名称"""
+"""Insta360门店商场匹配脚本：先找门店POI，再用坐标搜附近商场"""
 
 from __future__ import annotations
 
+import json
 import os
 import time
+from datetime import datetime
 from pathlib import Path
-from typing import Optional, Set
+from typing import Dict, List, Optional, Set
 
 import pandas as pd
 import requests
@@ -15,13 +17,18 @@ from rapidfuzz import fuzz
 BASE_DIR = Path(__file__).resolve().parent
 CSV_FILE = BASE_DIR / "all_stores_final.csv"
 BACKUP_FILE = BASE_DIR / "all_stores_final.csv.backup"
+LOG_DIR = BASE_DIR / "logs"
+LOG_FILE = LOG_DIR / "llm_decisions.log"
 
 AMAP_TEXT_API = "https://restapi.amap.com/v3/place/text"
 AMAP_AROUND_API = "https://restapi.amap.com/v3/place/around"
 AMAP_TYPES = "060100|060101|060102|060200|060400|060500"  # 商场类型码
 
-# 经纬度匹配阈值（米）：如果两个门店距离小于这个值，认为是同一商场
-DISTANCE_THRESHOLD = 500  # 500米内认为是同一商场
+# 经纬度匹配阈值（米）：商场与门店距离的接受阈值（自动通过）
+DISTANCE_THRESHOLD = 500  # 500米内才认为是同一商场
+
+# LLM 配置（用于坐标/距离冲突判断）
+LLM_BASE_URL = os.getenv("BAILIAN_BASE_URL") or "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
 # 名称相似度阈值：0-100，越高越相似
 NAME_SIMILARITY_THRESHOLD = 60
@@ -58,6 +65,44 @@ def load_env_key() -> Optional[str]:
 AMAP_KEY = load_env_key()
 
 
+def load_llm_key() -> Optional[str]:
+    key = os.getenv("BAILIAN_API_KEY")
+    if key:
+        return key
+    env_path = BASE_DIR / ".env.local"
+    if not env_path.exists():
+        return None
+    with open(env_path, "r", encoding="utf-8") as f:
+        for raw in f:
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            k, v = raw.split("=", 1)
+            if k.strip() == "BAILIAN_API_KEY" and v.strip():
+                return v.strip().strip('"')
+    return None
+
+
+LLM_KEY = load_llm_key()
+
+
+def log_llm_decision(action: str, decision: str, payload: dict) -> None:
+    """将 LLM 决策写入日志，便于回溯/审计"""
+    try:
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        record = {
+            "ts": datetime.utcnow().isoformat(),
+            "action": action,
+            "decision": decision,
+            **payload,
+        }
+        with open(LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception:
+        # 记录失败不阻断主流程
+        pass
+
+
 def require_key():
     """检查API Key是否存在"""
     if not AMAP_KEY:
@@ -68,13 +113,203 @@ def require_key():
         )
 
 
-def search_mall_by_name(mall_name: str, city: str) -> Optional[dict]:
+def call_llm(messages: List[Dict[str, str]]) -> Optional[str]:
+    """调用百炼 LLM，返回内容字符串"""
+    if not LLM_KEY:
+        return None
+    url = LLM_BASE_URL.rstrip("/") + "/chat/completions"
+    payload = {
+        "model": "qwen-max",
+        "messages": messages,
+        "temperature": 0,
+    }
+    headers = {
+        "Authorization": f"Bearer {LLM_KEY}",
+        "Content-Type": "application/json",
+    }
+    try:
+        resp = requests.post(url, headers=headers, data=json.dumps(payload), timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+        content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+        return content.strip() if content else None
+    except Exception as exc:
+        print(f"[LLM] 调用失败: {exc}")
+        return None
+
+
+def llm_should_override_coord(store_name: str, city: str, address: str, old_lat, old_lng, new_lat, new_lng, distance: float) -> bool:
+    """坐标差异较大时交给 LLM 决策是否覆盖"""
+    content = call_llm(
+        [
+            {"role": "system", "content": "你是门店坐标校验助手，只返回 JSON，格式如 {\"decision\":\"use_new\"} 或 {\"decision\":\"keep_old\"}"},
+            {
+                "role": "user",
+                "content": (
+                    f"门店: {store_name} | 城市: {city} | 地址: {address}\n"
+                    f"现有坐标: lat={old_lat}, lng={old_lng}\n"
+                    f"高德搜索坐标: lat={new_lat}, lng={new_lng}\n"
+                    f"两者相距约 {distance:.0f} 米。是否用高德坐标覆盖？"
+                ),
+            },
+        ]
+    )
+    if not content:
+        return False
+    try:
+        payload = json.loads(content)
+    except json.JSONDecodeError:
+        start = content.find("{")
+        end = content.rfind("}")
+        if start != -1 and end != -1:
+            try:
+                payload = json.loads(content[start : end + 1])
+            except Exception:
+                return False
+        else:
+            return False
+    decision = payload.get("decision")
+    if decision:
+        log_llm_decision(
+            "coord_override",
+            decision,
+            {
+                "store_name": store_name,
+                "city": city,
+                "address": address,
+                "old_lat": old_lat,
+                "old_lng": old_lng,
+                "new_lat": new_lat,
+                "new_lng": new_lng,
+                "distance": distance,
+            },
+        )
+    return decision == "use_new"
+
+
+def llm_accept_far_mall(store_row: pd.Series, candidate: dict) -> bool:
+    """商场距离较远时交给 LLM 判断是否接受"""
+    content = call_llm(
+        [
+            {"role": "system", "content": "你是商场匹配助手，只返回 JSON，格式如 {\"decision\":\"accept\"} 或 {\"decision\":\"reject\"}"},
+            {
+                "role": "user",
+                "content": (
+                    f"门店: {store_row.get('name', '')} | 品牌: {store_row.get('brand', '')} | 城市: {store_row.get('city', '')}\n"
+                    f"地址: {store_row.get('address', '')}\n"
+                    f"门店坐标: lat={store_row.get('lat')}, lng={store_row.get('lng')}\n"
+                    f"候选商场: {candidate.get('mall_name')} | 地址: {candidate.get('address', '')}\n"
+                    f"商场坐标: lat={candidate.get('lat')}, lng={candidate.get('lng')} | 距离门店约 {candidate.get('distance')} 米\n"
+                    "是否接受这个商场匹配？"
+                ),
+            },
+        ]
+    )
+    if not content:
+        return False
+    try:
+        payload = json.loads(content)
+    except json.JSONDecodeError:
+        start = content.find("{")
+        end = content.rfind("}")
+        if start != -1 and end != -1:
+            try:
+                payload = json.loads(content[start : end + 1])
+            except Exception:
+                return False
+        else:
+            return False
+    decision = payload.get("decision")
+    if decision:
+        log_llm_decision(
+            "far_mall_nearby",
+            decision,
+            {
+                "store_name": store_row.get("name", ""),
+                "brand": store_row.get("brand", ""),
+                "city": store_row.get("city", ""),
+                "address": store_row.get("address", ""),
+                "store_lat": store_row.get("lat"),
+                "store_lng": store_row.get("lng"),
+                "candidate": candidate,
+            },
+        )
+    return decision == "accept"
+
+
+def llm_accept_far_mall_by_name(
+    mall_name: str,
+    city: str,
+    store_name: str,
+    store_address: str,
+    store_lat,
+    store_lng,
+    candidate: dict,
+) -> bool:
+    """商场文本搜索结果距离较远时，交给 LLM 决策是否接受"""
+    content = call_llm(
+        [
+            {"role": "system", "content": "你是商场匹配助手，只返回 JSON，格式如 {\"decision\":\"accept\"} 或 {\"decision\":\"reject\"}"},
+            {
+                "role": "user",
+                "content": (
+                    f"门店: {store_name} | 城市: {city} | 地址: {store_address}\n"
+                    f"门店坐标: lat={store_lat}, lng={store_lng}\n"
+                    f"候选商场: {candidate.get('amap_name', candidate.get('mall_name'))} | 地址: {candidate.get('amap_address', candidate.get('address', ''))}\n"
+                    f"商场坐标: lat={candidate.get('lat')} lng={candidate.get('lng')} | 距离门店约 {candidate.get('distance')} 米\n"
+                    f"商场名称相似度: {candidate.get('name_score', 0)}\n"
+                    "是否接受这个商场匹配？"
+                ),
+            },
+        ]
+    )
+    if not content:
+        return False
+    try:
+        payload = json.loads(content)
+    except json.JSONDecodeError:
+        start = content.find("{")
+        end = content.rfind("}")
+        if start != -1 and end != -1:
+            try:
+                payload = json.loads(content[start : end + 1])
+            except Exception:
+                return False
+        else:
+            return False
+    decision = payload.get("decision")
+    if decision:
+        log_llm_decision(
+            "far_mall_by_name",
+            decision,
+            {
+                "mall_name": mall_name,
+                "city": city,
+                "store_name": store_name,
+                "store_address": store_address,
+                "store_lat": store_lat,
+                "store_lng": store_lng,
+                "candidate": candidate,
+            },
+        )
+    return decision == "accept"
+
+
+def search_mall_by_name(
+    mall_name: str,
+    city: str,
+    store_lat: Optional[float] = None,
+    store_lng: Optional[float] = None,
+    store_name: str = "",
+    store_address: str = "",
+) -> Optional[dict]:
     """
     通过商场名称搜索商场的精准经纬度
     
     Args:
         mall_name: 商场名称
         city: 城市名称
+        store_lat/lng: 门店坐标（用于距离校验）
     
     Returns:
         如果找到商场，返回包含 lat, lng, amap_name, amap_address 的字典
@@ -110,51 +345,78 @@ def search_mall_by_name(mall_name: str, city: str) -> Optional[dict]:
         pois = data.get("pois", []) or []
         if not pois:
             return None
-        
-        # 找到最匹配的POI
+
         best_match = None
         best_score = 0
+        store_lat_f = safe_float(store_lat)
+        store_lng_f = safe_float(store_lng)
         
         for poi in pois:
-            poi_name = poi.get("name", "")
-            
-            # 计算名称相似度
-            name_match = (
-                mall_name in poi_name or 
-                poi_name in mall_name
-            )
-            
-            if name_match:
-                score = 10
-                if city in poi_name:
-                    score += 5
-                
-                if score > best_score:
-                    best_score = score
-                    best_match = poi
-        
-        if best_match and best_score >= 10:
-            loc = best_match.get("location", "")
+            poi_name = poi.get("name", "") or ""
+            if not poi_name:
+                continue
+
+            name_score = fuzz.partial_ratio(mall_name.lower(), poi_name.lower())
+            if name_score < 50:
+                continue
+
+            loc = poi.get("location", "")
             if "," not in loc:
-                return None
-            
-            lng_str, lat_str = loc.split(",", 1)
-            return {
-                "lat": float(lat_str),
-                "lng": float(lng_str),
-                "amap_name": best_match.get("name", ""),
-                "amap_address": best_match.get("address", ""),
-            }
-        
-        return None
+                continue
+            try:
+                poi_lng, poi_lat = map(float, loc.split(",", 1))
+            except Exception:
+                continue
+
+            distance = None
+            if store_lat_f is not None and store_lng_f is not None:
+                distance = calculate_distance(store_lat_f, store_lng_f, poi_lat, poi_lng)
+
+            distance_score = 0.0
+            if distance is not None:
+                # 距离越近得分越高，2km 以外影响很弱
+                distance_score = max(0.0, 1 - min(distance, 2000) / 2000) * 30
+
+            score = name_score * 0.7 + distance_score
+
+            if score > best_score:
+                best_score = score
+                best_match = {
+                    "lat": poi_lat,
+                    "lng": poi_lng,
+                    "amap_name": poi_name,
+                    "amap_address": poi.get("address", ""),
+                    "distance": distance,
+                    "name_score": name_score,
+                }
+
+        if not best_match:
+            return None
+
+        distance = best_match.get("distance")
+        # 距离太远时，交给 LLM 决策；无 LLM 则拒绝
+        if distance is not None and distance > DISTANCE_THRESHOLD:
+            if llm_accept_far_mall_by_name(
+                mall_name=mall_name,
+                city=city,
+                store_name=store_name,
+                store_address=store_address,
+                store_lat=store_lat,
+                store_lng=store_lng,
+                candidate=best_match,
+            ):
+                return best_match
+            return None
+
+        return best_match
         
     except Exception as e:
         print(f"[错误] 搜索商场 '{keyword}' 时出错: {e}")
         return None
 
 
-def search_nearby_malls(lat: float, lng: float, city: str, store_name: str) -> Optional[dict]:
-    """通过周边搜索寻找与门店匹配的商场。"""
+def search_nearby_malls(lat: float, lng: float, city: str, store_name: str, store_address: str) -> Optional[dict]:
+    """通过周边搜索寻找与门店匹配的商场（返回最佳候选及候选列表）。"""
     require_key()
     params = {
         "key": AMAP_KEY,
@@ -175,6 +437,8 @@ def search_nearby_malls(lat: float, lng: float, city: str, store_name: str) -> O
         best = None
         best_score = 0
         store_name_low = store_name.lower()
+        store_address_low = store_address.lower() if store_address else ""
+        candidates: List[dict] = []
         for poi in pois:
             loc = poi.get("location", "")
             if "," not in loc:
@@ -191,18 +455,28 @@ def search_nearby_malls(lat: float, lng: float, city: str, store_name: str) -> O
             if not name:
                 continue
             name_score = fuzz.partial_ratio(name.lower(), store_name_low)
+            addr_score = 0
+            if store_address_low:
+                addr_score = fuzz.partial_ratio((poi.get("address", "") or "").lower(), store_address_low)
             distance_score = max(0.0, 1 - dist / 2000) * 40
-            score = name_score * 0.6 + distance_score
+            score = name_score * 0.45 + addr_score * 0.25 + distance_score
+            candidate = {
+                "mall_name": name,
+                "lat": poi_lat,
+                "lng": poi_lng,
+                "address": poi.get("address", ""),
+                "distance": dist,
+                "score": score,
+                "name_score": name_score,
+                "addr_score": addr_score,
+            }
+            candidates.append(candidate)
             if score > best_score:
                 best_score = score
-                best = {
-                    "mall_name": name,
-                    "lat": poi_lat,
-                    "lng": poi_lng,
-                    "address": poi.get("address", ""),
-                    "score": score,
-                }
+                best = candidate
         if best and best_score >= 45:
+            # 附带前5个候选供 LLM 参考
+            best["candidates"] = sorted(candidates, key=lambda x: x["score"], reverse=True)[:5]
             return best
         return None
     except Exception as e:
@@ -318,6 +592,13 @@ def calculate_distance(lat1: float, lng1: float, lat2: float, lng2: float) -> fl
         return geodesic((lat1, lng1), (lat2, lng2)).meters
     except Exception:
         return 999999.0
+
+
+def safe_float(value) -> Optional[float]:
+    try:
+        return float(value)
+    except Exception:
+        return None
 
 
 def find_matching_dji_store(
@@ -447,9 +728,8 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
         df["match_method"] = ""
     if "is_manual_confirmed" not in df.columns:
         df["is_manual_confirmed"] = ""
-    
-        # 选择需要处理的门店
-    dji_stores = df[df["brand"] == "DJI"].copy()
+
+    # 选择需要处理的门店
     if target_ids:
         target_set: Optional[Set[str]] = {sid.strip() for sid in target_ids if sid and sid.strip()}
         target_rows = df[df["uuid"].astype(str).str.strip().isin(target_set)].copy()
@@ -460,7 +740,6 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
         target_set = None
         target_rows = df[df["brand"] == "Insta360"].copy()
 
-    print(f"[信息] DJI门店: {len(dji_stores)} 条")
     print(f"[信息] 目标门店: {len(target_rows)} 条")
     print(f"[信息] 模式: {'预览模式（不会修改文件）' if dry_run else '更新模式'}")
     print("-" * 80)
@@ -480,6 +759,7 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
         city = str(row.get("city", "")).strip()
         current_lat = row.get("lat")
         current_lng = row.get("lng")
+        store_address = str(row.get("address", "")).strip()
         current_mall_name = str(row.get("mall_name", "")).strip()
         brand = str(row.get("brand", "")).strip()
 
@@ -494,78 +774,92 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
         try:
             location_result = search_store_by_name(store_name, city, brand or "Insta360")
 
+            search_lat = current_lat
+            search_lng = current_lng
+            write_lat = current_lat
+            write_lng = current_lng
+
             if location_result:
-                new_lat = location_result["lat"]
-                new_lng = location_result["lng"]
+                search_lat = location_result["lat"]
+                search_lng = location_result["lng"]
                 amap_name = location_result["amap_name"]
                 amap_address = location_result["amap_address"]
 
-                print(f"  ✓ 获取精准坐标: lat={new_lat}, lng={new_lng}")
+                print(f"  ✓ 获取高德坐标: lat={search_lat}, lng={search_lng}")
                 print(f"  高德名称: {amap_name}")
                 print(f"  高德地址: {amap_address}")
 
-                if not dry_run:
-                    df.at[idx, "lat"] = new_lat
-                    df.at[idx, "lng"] = new_lng
-                    updated_coords += 1
-
-                reference_set = df[
-                    (df["mall_name"].astype(str).str.strip() != "")
-                    & (df.index != idx)
-                ]
-                match_result = find_matching_dji_store(row, new_lat, new_lng, reference_set)
-
-                if match_result and match_result.get("dji_mall_name"):
-                    matched_mall_name = match_result["dji_mall_name"]
-                    distance = match_result["distance"]
-                    name_sim = match_result["name_similarity"]
-                    addr_sim = match_result["address_similarity"]
-                    total_score = match_result["total_score"]
-
-                    print(f"  ✓ 找到匹配门店/商场: {matched_mall_name}")
-                    print(f"  距离: {distance:.0f}m, 名称相似: {name_sim:.1f}%, 地址相似: {addr_sim:.1f}% (score {total_score:.1f})")
-
-                    mall_location = search_mall_by_name(matched_mall_name, city)
-                    if mall_location:
-                        mall_lat = mall_location["lat"]
-                        mall_lng = mall_location["lng"]
-                        amap_mall_name = mall_location["amap_name"]
+                if pd.notna(current_lat) and pd.notna(current_lng):
+                    try:
+                        coord_gap = calculate_distance(float(current_lat), float(current_lng), float(search_lat), float(search_lng))
+                    except Exception:
+                        coord_gap = None
+                    if coord_gap is not None and coord_gap > 50:
+                        print(f"  [警告] 新旧坐标相距 {coord_gap:.0f}m，交给 LLM 判断是否覆盖")
+                        use_new = llm_should_override_coord(store_name, city, store_address, current_lat, current_lng, search_lat, search_lng, coord_gap)
+                        if use_new:
+                            write_lat = search_lat
+                            write_lng = search_lng
+                            print("  [通过] LLM 同意覆盖坐标")
+                        else:
+                            print("  [保留] LLM 未同意覆盖，保留现有坐标")
                     else:
-                        mall_lat, mall_lng = new_lat, new_lng
-                        amap_mall_name = matched_mall_name
-
-                    if not dry_run:
-                        df.at[idx, "mall_name"] = amap_mall_name
-                        df.at[idx, "mall_lat"] = mall_lat
-                        df.at[idx, "mall_lng"] = mall_lng
-                        df.at[idx, "match_method"] = "auto"
-                        matched_malls += 1
-                    else:
-                        print(f"  [预览] 将更新商场为: {amap_mall_name}")
-                        matched_malls += 1
+                        print("  [提示] 坐标差距小于等于50m，保留现有坐标")
+                        write_lat = current_lat
+                        write_lng = current_lng
                 else:
-                    print("  ✗ 未找到可复用的商场，尝试周边搜索")
-                    nearby = search_nearby_malls(new_lat, new_lng, city, store_name)
-                    if nearby:
-                        print(f"  ✓ 周边商场匹配: {nearby['mall_name']} (score {nearby['score']:.1f})")
-                        if not dry_run:
-                            df.at[idx, "mall_name"] = nearby["mall_name"]
-                            df.at[idx, "mall_lat"] = nearby["lat"]
-                            df.at[idx, "mall_lng"] = nearby["lng"]
-                            df.at[idx, "match_method"] = "amap_nearby"
-                            matched_malls += 1
-                        else:
-                            print(f"  [预览] 将更新为: {nearby['mall_name']}")
-                            matched_malls += 1
-                    else:
-                        print("  ✗ 周边搜索也未匹配成功")
-                        if current_mall_name:
-                            print(f"  [保留] 使用现有商场: {current_mall_name}")
-                        else:
-                            print("  [提示] 仍需人工确认商场")
+                    write_lat = search_lat
+                    write_lng = search_lng
+
+                old_lat_f = safe_float(current_lat)
+                old_lng_f = safe_float(current_lng)
+                new_lat_f = safe_float(write_lat)
+                new_lng_f = safe_float(write_lng)
+                if not dry_run and new_lat_f is not None and new_lng_f is not None:
+                    if old_lat_f is None or old_lng_f is None or new_lat_f != old_lat_f or new_lng_f != old_lng_f:
+                        df.at[idx, "lat"] = write_lat
+                        df.at[idx, "lng"] = write_lng
+                        updated_coords += 1
             else:
-                print("  ✗ 未找到精准坐标")
+                print("  ✗ 未找到高德坐标，改用现有坐标")
+
+            if pd.isna(search_lat) or pd.isna(search_lng):
+                print("  ✗ 无坐标可用于周边搜索，跳过")
                 skipped_count += 1
+                continue
+
+            prompt_row = row.copy()
+            prompt_row["lat"] = search_lat
+            prompt_row["lng"] = search_lng
+
+            nearby = search_nearby_malls(float(search_lat), float(search_lng), city, store_name, store_address)
+            if nearby:
+                dist_val = nearby.get("distance")
+                dist_display = dist_val if isinstance(dist_val, (int, float)) else 0.0
+                need_llm = isinstance(dist_val, (int, float)) and dist_val > DISTANCE_THRESHOLD
+                if need_llm:
+                    print(f"  [警告] 周边候选距离 {dist_display:.0f}m，交给 LLM 复核商场是否匹配")
+                    accept = llm_accept_far_mall(prompt_row, nearby)
+                    if not accept:
+                        print("  [保留] LLM 未通过，保留现状")
+                        time.sleep(0.3)
+                        continue
+                print(f"  [匹配] 周边商场: {nearby['mall_name']} 距离{dist_display:.0f}m (score {nearby['score']:.1f})")
+                if not dry_run:
+                    df.at[idx, "mall_name"] = nearby["mall_name"]
+                    df.at[idx, "mall_lat"] = nearby["lat"]
+                    df.at[idx, "mall_lng"] = nearby["lng"]
+                    df.at[idx, "match_method"] = "amap_nearby" if not need_llm else "amap_nearby_llm"
+                    matched_malls += 1
+                else:
+                    print(f"  [预览] 将更新为: {nearby['mall_name']}")
+                    matched_malls += 1
+            else:
+                print("  ✗ 周边搜索未找到合适商场")
+                if current_mall_name:
+                    print(f"  [保留] 使用现有商场: {current_mall_name}")
+                else:
+                    print("  [提示] 仍需人工确认商场")
 
             time.sleep(0.3)
 
