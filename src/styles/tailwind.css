@@ -2,19 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 高德自定义圆点样式，适当减小尺寸并去掉呼吸动画 */
-.store-marker { width:14px; height:14px; border-radius:999px; border:1px solid #fff; display:flex; align-items:center; justify-content:center; position:relative; box-shadow:0 6px 14px rgba(15,23,42,0.12); color:#0f172a; font-size:11px; font-weight:700; }
-.store-marker::after { content:none; }
-.store-marker--dji { background:#111827; }
-.store-marker--insta { background:#facc15; border-color:#111827; box-shadow:0 8px 18px rgba(250,204,21,0.25); }
-.store-marker--new { background:#fb7185; border-color:#fff; box-shadow:0 10px 22px rgba(251,113,133,0.35); }
-.store-marker--favorite { width:18px; height:18px; font-size:13px; line-height:1; }
-.store-marker--favorite::before { content:'★'; }
-.store-marker--favorite-dji { background:#111827; border-color:#fff; color:#fff; box-shadow:0 10px 22px rgba(15,23,42,0.3); }
-.store-marker--favorite-insta { background:#facc15; border-color:#111827; color:#111827; box-shadow:0 12px 24px rgba(250,204,21,0.3); }
-.store-marker--favorite-new { background:#fb7185; border-color:#fff; color:#fff; box-shadow:0 12px 24px rgba(251,113,133,0.4); }
-.store-marker--selected { box-shadow:0 0 0 4px rgba(99,102,241,0.15),0 10px 24px rgba(15,23,42,0.22); }
-.store-marker--user { background:#0ea5e9; border-color:#fff; box-shadow:0 8px 16px rgba(14,165,233,0.3); }
+/* 高德自定义圆点样式：品牌 logo 为主，去掉阴影但保留圆形裁剪，基准 16px */
+.store-marker { --brand-main:#111827; --marker-bg:var(--brand-main); --marker-size:16px; width:var(--marker-size); height:var(--marker-size); border-radius:999px; border:0; display:inline-flex; align-items:center; justify-content:center; position:relative; background:var(--marker-bg); box-shadow:none; overflow:hidden; transform:translateZ(0); transition:transform 120ms ease; }
+.store-marker__logo { width:12px; height:12px; pointer-events:none; border-radius:999px; object-fit:contain; }
+.store-marker__logo--full { width:14px; height:14px; }
+.store-marker--dji { --brand-main:#111827; --marker-bg:transparent; } /* 普通 / 收藏 DJI：透明底 logo */
+.store-marker--dji-new { --marker-bg:#ffffff; } /* 新增 DJI：白底黑 logo */
+.store-marker--insta { --brand-main:#facc15; --marker-bg:transparent; } /* 普通 / 收藏 Insta：透明底白 logo */
+.store-marker--insta-new { --marker-bg:transparent; } /* 新增 Insta：透明底黄 logo */
+.store-marker--favorite { --marker-size:16px; } /* 收藏尺寸与普通一致，不改底色 */
+.store-marker--new { box-shadow:none; transform:scale(1); }
+.store-marker--selected { box-shadow:0 0 0 1px #ffffff,0 3px 8px rgba(15,23,42,0.15); transform:translateZ(0) scale(1.06); }
+.store-marker--user { --marker-size:18px; background:#0ea5e9; box-shadow:0 4px 10px rgba(14,165,233,0.25); }
+
+.store-cluster { min-width:30px; height:30px; padding:0 8px; border-radius:999px; background:linear-gradient(135deg,#1f2937,#111827); color:#fff; border:1.5px solid #fff; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; box-shadow:0 6px 16px rgba(15,23,42,0.22); letter-spacing:0.3px; }
 
 .mall-marker { width:16px; height:16px; border-radius:999px; border:2px solid #fff; box-shadow:0 10px 22px rgba(15,23,42,0.18); }
 .mall-marker--selected { box-shadow:0 0 0 4px rgba(59,130,246,0.2),0 12px 26px rgba(15,23,42,0.24); }

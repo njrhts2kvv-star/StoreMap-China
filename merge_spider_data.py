@@ -1,13 +1,23 @@
-"""将爬虫输出的门店数据合并到 all_stores_final.csv 和 Store_Master_Cleaned.csv，支持 opened_at/status 和闭店标记。"""
+"""将爬虫输出的门店数据合并到 all_stores_final.csv 和 Store_Master_Cleaned.csv，支持 opened_at/status 和闭店标记。
+
+新增功能：省份验证和自动修复
+- 对新增门店进行省份验证（坐标是否在声明的省份内）
+- 发现不匹配时自动尝试修复
+- 记录修复日志到 logs/province_mismatch.csv
+"""
 
 from __future__ import annotations
 
+import argparse
 import json
+import os
+import time
 from datetime import date
 from pathlib import Path
 from typing import Optional
 
 import pandas as pd
+import requests
 
 BASE = Path(__file__).resolve().parent
 ALL_PATH = BASE / "all_stores_final.csv"
@@ -17,7 +27,178 @@ INSTA_RAW = BASE / "insta360_offline_stores.csv"
 BACKUP_SUFFIX = ".backup_spider"
 BRANDS = {"DJI", "Insta360"}
 MISSING_TRACKER = BASE / "missing_store_tracker.json"
+LOG_DIR = BASE / "logs"
+PROVINCE_MISMATCH_LOG = LOG_DIR / "province_mismatch.csv"
 UNKNOWN_STORE_TYPES: set[tuple[str, str, str]] = set()
+
+# 高德 API
+AMAP_REGEO_API = "https://restapi.amap.com/v3/geocode/regeo"
+AMAP_TEXT_API = "https://restapi.amap.com/v3/place/text"
+
+# 省份名称标准化映射
+PROVINCE_ALIASES = {
+    "北京": "北京市", "天津": "天津市", "上海": "上海市", "重庆": "重庆市",
+    "河北": "河北省", "山西": "山西省", "辽宁": "辽宁省", "吉林": "吉林省",
+    "黑龙江": "黑龙江省", "江苏": "江苏省", "浙江": "浙江省", "安徽": "安徽省",
+    "福建": "福建省", "江西": "江西省", "山东": "山东省", "河南": "河南省",
+    "湖北": "湖北省", "湖南": "湖南省", "广东": "广东省", "海南": "海南省",
+    "四川": "四川省", "贵州": "贵州省", "云南": "云南省", "陕西": "陕西省",
+    "甘肃": "甘肃省", "青海": "青海省", "台湾": "台湾省",
+    "内蒙古": "内蒙古自治区", "广西": "广西壮族自治区", "西藏": "西藏自治区",
+    "宁夏": "宁夏回族自治区", "新疆": "新疆维吾尔自治区",
+    "香港": "香港特别行政区", "澳门": "澳门特别行政区",
+}
+
+
+def _load_amap_key() -> Optional[str]:
+    """从环境变量或.env.local文件加载高德地图API Key"""
+    key = os.getenv("AMAP_WEB_KEY")
+    if key:
+        return key
+    env_path = BASE / ".env.local"
+    if not env_path.exists():
+        return None
+    parsed: dict[str, str] = {}
+    with open(env_path, "r", encoding="utf-8") as f:
+        for raw in f:
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            k, v = line.split("=", 1)
+            parsed[k.strip()] = v.strip().strip('"')
+    if "AMAP_WEB_KEY" in parsed and parsed["AMAP_WEB_KEY"]:
+        os.environ["AMAP_WEB_KEY"] = parsed["AMAP_WEB_KEY"]
+        return parsed["AMAP_WEB_KEY"]
+    return None
+
+
+AMAP_KEY = _load_amap_key()
+
+
+def normalize_province(province: str) -> str:
+    """标准化省份名称"""
+    if not province:
+        return ""
+    province = province.strip()
+    if province in PROVINCE_ALIASES:
+        return PROVINCE_ALIASES[province]
+    if province in PROVINCE_ALIASES.values():
+        return province
+    for alias, standard in PROVINCE_ALIASES.items():
+        if province.startswith(alias):
+            return standard
+    return province
+
+
+def reverse_geocode(lat: float, lng: float) -> Optional[dict]:
+    """使用高德逆地理编码API根据坐标获取地址信息"""
+    if not AMAP_KEY:
+        return None
+    params = {
+        "key": AMAP_KEY,
+        "location": f"{lng},{lat}",
+        "extensions": "base",
+        "output": "json",
+    }
+    try:
+        resp = requests.get(AMAP_REGEO_API, params=params, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("status") != "1":
+            return None
+        regeo = data.get("regeocode", {})
+        if not regeo:
+            return None
+        address_component = regeo.get("addressComponent", {})
+        return {
+            "province": address_component.get("province", ""),
+            "city": address_component.get("city", "") or address_component.get("province", ""),
+            "district": address_component.get("district", ""),
+            "address": regeo.get("formatted_address", ""),
+        }
+    except Exception:
+        return None
+
+
+def check_province_match(declared_province: str, actual_province: str) -> bool:
+    """检查声明的省份与实际省份是否匹配"""
+    if not declared_province or not actual_province:
+        return True
+    norm_declared = normalize_province(declared_province)
+    norm_actual = normalize_province(actual_province)
+    if norm_declared == norm_actual:
+        return True
+    if norm_declared in ["北京市", "天津市", "上海市", "重庆市"]:
+        if norm_actual.startswith(norm_declared.replace("市", "")):
+            return True
+    return False
+
+
+def search_store_by_name(store_name: str, city: str, brand: str) -> Optional[dict]:
+    """通过门店名称搜索精准的经纬度"""
+    if not AMAP_KEY or not store_name or not city:
+        return None
+    keywords_list = [
+        f"{brand} {city} {store_name}".strip(),
+        f"{city} {store_name}".strip(),
+        store_name.strip(),
+    ]
+    for keyword in keywords_list:
+        params = {
+            "key": AMAP_KEY,
+            "keywords": keyword,
+            "city": city,
+            "citylimit": "true",
+            "extensions": "all",
+            "offset": 5,
+            "page": 1,
+        }
+        try:
+            resp = requests.get(AMAP_TEXT_API, params=params, timeout=15)
+            resp.raise_for_status()
+            data = resp.json()
+            if data.get("status") != "1":
+                continue
+            pois = data.get("pois", []) or []
+            if not pois:
+                continue
+            best_match = None
+            best_score = 0
+            for poi in pois:
+                poi_name = poi.get("name", "")
+                poi_address = poi.get("address", "")
+                name_match = (
+                    store_name in poi_name or
+                    poi_name in store_name or
+                    store_name.replace("授权体验店", "").replace("照材店", "").strip() in poi_name
+                )
+                brand_match = brand.lower() in poi_name.lower() or brand.lower() in poi_address.lower()
+                score = 0
+                if name_match:
+                    score += 10
+                if brand_match:
+                    score += 5
+                if city in poi_address or city in poi_name:
+                    score += 3
+                if score > best_score:
+                    best_score = score
+                    best_match = poi
+            if best_match and best_score >= 10:
+                loc = best_match.get("location", "")
+                if "," not in loc:
+                    continue
+                lng_str, lat_str = loc.split(",", 1)
+                return {
+                    "lat": float(lat_str),
+                    "lng": float(lng_str),
+                    "amap_name": best_match.get("name", ""),
+                    "amap_address": best_match.get("address", ""),
+                    "amap_province": best_match.get("pname", ""),
+                }
+            time.sleep(0.2)
+        except Exception:
+            continue
+    return None
 
 
 def normalize_opened_at(value: Optional[str]) -> str:
@@ -273,7 +454,171 @@ def merge_from_spiders() -> None:
     if not changed:
         print("[提示] 本次爬虫无新增/闭店变化，无文件改动")
     print("[完成] 合并结束")
+    
+    return new_rows_all  # 返回新增的门店，供省份验证使用
+
+
+def validate_and_fix_provinces(
+    new_stores: list[dict],
+    all_df: pd.DataFrame,
+    master_df: pd.DataFrame,
+) -> tuple[int, int, list[dict]]:
+    """
+    验证新增门店的省份并自动修复
+    
+    Returns:
+        (validated_count, fixed_count, mismatch_records)
+    """
+    if not new_stores:
+        return 0, 0, []
+    
+    if not AMAP_KEY:
+        print("[跳过] 未配置高德API Key，跳过省份验证")
+        return 0, 0, []
+    
+    LOG_DIR.mkdir(exist_ok=True)
+    
+    validated = 0
+    fixed = 0
+    mismatch_records: list[dict] = []
+    
+    print(f"\n[省份验证] 开始验证 {len(new_stores)} 条新增门店...")
+    
+    for store in new_stores:
+        uuid = store.get("uuid", "")
+        name = store.get("name", "")
+        brand = store.get("brand", "")
+        declared_province = store.get("province", "")
+        city = store.get("city", "")
+        lat = store.get("lat")
+        lng = store.get("lng")
+        
+        if lat is None or lng is None or not declared_province:
+            continue
+        
+        # 逆地理编码获取实际省份
+        regeo = reverse_geocode(lat, lng)
+        if not regeo:
+            continue
+        
+        validated += 1
+        actual_province = regeo.get("province", "")
+        
+        # 检查省份是否匹配
+        if check_province_match(declared_province, actual_province):
+            continue
+        
+        # 发现不匹配
+        print(f"  [警告] 省份不匹配: {name}")
+        print(f"    声明: {declared_province}, 实际: {actual_province}")
+        
+        mismatch_record = {
+            "store_id": uuid,
+            "brand": brand,
+            "name": name,
+            "declared_province": declared_province,
+            "declared_city": city,
+            "actual_province": actual_province,
+            "actual_address": regeo.get("address", ""),
+            "old_lat": lat,
+            "old_lng": lng,
+            "new_lat": None,
+            "new_lng": None,
+            "fixed": False,
+            "fix_method": None,
+        }
+        
+        # 尝试修复
+        result = search_store_by_name(name, city, brand)
+        if result:
+            new_lat = result["lat"]
+            new_lng = result["lng"]
+            
+            # 验证新坐标的省份
+            new_regeo = reverse_geocode(new_lat, new_lng)
+            if new_regeo and check_province_match(declared_province, new_regeo.get("province", "")):
+                print(f"    ✓ 自动修复成功: ({new_lat:.6f}, {new_lng:.6f})")
+                
+                # 更新 all_df
+                all_mask = all_df["uuid"].astype(str) == str(uuid)
+                if all_mask.any():
+                    all_df.loc[all_mask, "lat"] = new_lat
+                    all_df.loc[all_mask, "lng"] = new_lng
+                
+                # 更新 master_df
+                master_mask = master_df["store_id"].astype(str) == str(uuid)
+                if master_mask.any():
+                    master_df.loc[master_mask, "corrected_lat"] = new_lat
+                    master_df.loc[master_mask, "corrected_lng"] = new_lng
+                
+                mismatch_record["new_lat"] = new_lat
+                mismatch_record["new_lng"] = new_lng
+                mismatch_record["fixed"] = True
+                mismatch_record["fix_method"] = "amap_search"
+                fixed += 1
+            else:
+                print(f"    ✗ 搜索到的坐标仍不匹配，需手动修复")
+        else:
+            print(f"    ✗ 高德搜索未找到，需手动修复")
+        
+        mismatch_records.append(mismatch_record)
+        time.sleep(0.3)
+    
+    # 保存不匹配记录
+    if mismatch_records:
+        # 如果已有记录，追加而不是覆盖
+        if PROVINCE_MISMATCH_LOG.exists():
+            existing_df = pd.read_csv(PROVINCE_MISMATCH_LOG)
+            mismatch_df = pd.concat([existing_df, pd.DataFrame(mismatch_records)], ignore_index=True)
+        else:
+            mismatch_df = pd.DataFrame(mismatch_records)
+        mismatch_df.to_csv(PROVINCE_MISMATCH_LOG, index=False, encoding="utf-8-sig")
+    
+    print(f"[省份验证] 完成: 验证 {validated} 条, 发现不匹配 {len(mismatch_records)} 条, 自动修复 {fixed} 条")
+    
+    return validated, fixed, mismatch_records
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="合并爬虫数据并验证省份")
+    parser.add_argument(
+        "--skip-province-check",
+        action="store_true",
+        help="跳过省份验证（快速合并）"
+    )
+    parser.add_argument(
+        "--validate-all",
+        action="store_true",
+        help="验证所有门店的省份（不仅是新增的）"
+    )
+    args = parser.parse_args()
+    
+    # 执行合并
+    new_stores = merge_from_spiders()
+    
+    # 省份验证
+    if args.skip_province_check:
+        print("[跳过] 省份验证已禁用")
+    elif args.validate_all:
+        # 验证所有门店
+        print("\n[提示] 验证所有门店，请运行: python validate_store_province.py")
+    elif new_stores:
+        # 只验证新增门店
+        all_df = pd.read_csv(ALL_PATH)
+        master_df = pd.read_csv(MASTER_PATH)
+        
+        validated, fixed, mismatches = validate_and_fix_provinces(new_stores, all_df, master_df)
+        
+        # 如果有修复，保存更新后的数据
+        if fixed > 0:
+            all_df.to_csv(ALL_PATH, index=False, encoding="utf-8-sig")
+            master_df.to_csv(MASTER_PATH, index=False, encoding="utf-8-sig")
+            print(f"[保存] 已更新 {fixed} 条门店的坐标")
+        
+        if mismatches and len(mismatches) > fixed:
+            unfixed = len(mismatches) - fixed
+            print(f"\n[提示] 有 {unfixed} 条门店需要手动修复，详见: {PROVINCE_MISMATCH_LOG}")
 
 
 if __name__ == "__main__":
-    merge_from_spiders()
+    main()

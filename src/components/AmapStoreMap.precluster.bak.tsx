@@ -5,6 +5,7 @@ import type { Mall, Store } from '../types/store';
 import { loadAmap } from '../utils/loadAmap';
 import djiLogoBlack from '../assets/dji_logo_black_small.svg';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
+import instaLogoBlack from '../assets/insta360_logo_black_small.svg';
 import instaLogoWhite from '../assets/insta360_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
 import { isNewThisMonth } from '../utils/storeRules';
@@ -41,8 +42,6 @@ const CITY_MAX_ZOOM = 10; // 城市层最高放大，避免直接落到街道级
 const DJI_COLOR = '#111827';
 const INSTA_COLOR = '#facc15';
 const NO_DATA_COLOR = '#e5e7eb';
-const CLUSTER_ZOOM_THRESHOLD = 9;
-const CLUSTER_GRID_SIZE = 80;
 
 type RegionShape = {
   name: string;
@@ -215,7 +214,6 @@ export function AmapStoreMap({
   const markersRef = useRef<AMap.Marker[]>([]);
   const userMarkerRef = useRef<AMap.Marker | null>(null);
   const amapRef = useRef<typeof AMap | null>(null);
-  const clusterRef = useRef<AMap.MarkerClusterer | null>(null);
   const favoritesSet = useMemo(() => new Set(favorites), [favorites]);
   const [ready, setReady] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -294,10 +292,6 @@ export function AmapStoreMap({
   }, [selectedId, viewMode]);
 
   const destroyMap = useCallback(() => {
-    if (clusterRef.current) {
-      clusterRef.current.setMap(null);
-      clusterRef.current = null;
-    }
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
     regionPolygonsRef.current.forEach((p) => p.setMap(null));
@@ -497,10 +491,6 @@ export function AmapStoreMap({
 
   useEffect(() => {
     if (!ready || !mapRef.current || !amapRef.current) return;
-    if (clusterRef.current) {
-      clusterRef.current.setMap(null);
-      clusterRef.current = null;
-    }
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
@@ -521,10 +511,10 @@ export function AmapStoreMap({
         let markerClass = `store-marker ${brandClass}`;
         if (isNew) {
           markerClass += ' store-marker--new';
-          markerClass += store.brand === 'DJI' ? ' store-marker--dji-new' : ' store-marker--insta-new';
         }
         if (isFavorite) {
           markerClass += ' store-marker--favorite';
+          markerClass += store.brand === 'DJI' ? ' store-marker--favorite-dji' : ' store-marker--favorite-insta';
         }
         markerEl.className = markerClass.trim();
         if (isSelected) markerEl.classList.add('store-marker--selected');
@@ -532,22 +522,20 @@ export function AmapStoreMap({
 
         const logoImg = document.createElement('img');
         logoImg.className = 'store-marker__logo';
-        const logoSrc = isNew
-          ? store.brand === 'DJI'
-            ? djiLogoBlack
-            : instaLogoYellow
-          : store.brand === 'DJI'
-            ? djiLogoWhite
-            : instaLogoWhite;
+        const logoSrc =
+          store.brand === 'DJI'
+            ? isFavorite
+              ? djiLogoBlack
+              : djiLogoWhite
+            : isFavorite
+              ? instaLogoWhite
+              : instaLogoBlack;
         logoImg.src = logoSrc;
         logoImg.alt = store.brand;
-        if (isNew && store.brand === 'Insta360') {
-          logoImg.classList.add('store-marker__logo--full');
-        }
         markerEl.appendChild(logoImg);
 
-        const baseSize = 16;
-        const ringExtra = 0;
+        const baseSize = isFavorite ? 22 : 20;
+        const ringExtra = isNew ? 4 : 0; // 双环描边向外延伸的尺寸
         const offsetVal = -(baseSize / 2 + ringExtra);
 
         const marker = new AMapLib.Marker({
@@ -612,45 +600,18 @@ export function AmapStoreMap({
     const hasSelection = viewMode === 'stores' ? selectedId : selectedMallId;
     const allowAutoFit = !(viewMode === 'stores' && drillLevel === 'city'); // 城市层不自动按照门店点位缩放
     const shouldFitAll = allowAutoFit && !hasSelection && (fitToStores || autoFitOnClear);
-
-    if (showStoreMarkers && nextMarkers.length && mapRef.current) {
-      const ClusterCtor = (AMapLib as any).MarkerClusterer || (AMapLib as any).MarkerCluster;
-      if (ClusterCtor) {
-        const renderClusterMarker = (context: { count: number; marker: AMap.Marker }) => {
-          const size = Math.max(28, Math.min(48, 18 + Math.log(context.count + 1) * 10));
-          const div = document.createElement('div');
-          div.className = 'store-cluster';
-          div.style.width = `${size}px`;
-          div.style.height = `${size}px`;
-          div.textContent = String(context.count);
-          context.marker.setContent(div);
-          context.marker.setOffset(new AMapLib.Pixel(-size / 2, -size / 2));
-        };
-
-        clusterRef.current = new ClusterCtor(mapRef.current, nextMarkers, {
-          gridSize: CLUSTER_GRID_SIZE,
-          minClusterSize: 2,
-          renderClusterMarker,
-          maxZoom: CLUSTER_ZOOM_THRESHOLD,
-        } as any);
-      } else {
-        nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
-      }
-    } else if (nextMarkers.length && mapRef.current) {
-      nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
-    }
-
     if (mapRef.current && nextMarkers.length && shouldFitAll) {
-      const fitTargets: any[] = [];
-      if (showStoreMarkers && clusterRef.current) {
-        fitTargets.push(clusterRef.current);
-      } else {
-        fitTargets.push(...nextMarkers);
-      }
-      mapRef.current.setFitView(fitTargets, false, [80, 40, 80, 80]);
+      mapRef.current.setFitView(nextMarkers, false, [80, 40, 80, 80]);
     } else if (!nextMarkers.length && viewMode !== 'stores') {
       recenter();
-    } else if (!shouldFitAll && !hasSelection && !fitToStores && !autoFitOnClear && viewMode !== 'stores') {
+    }
+
+    if (nextMarkers.length && mapRef.current) {
+      nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
+      if (!shouldFitAll && !hasSelection && !fitToStores && !autoFitOnClear && viewMode !== 'stores') {
+        recenter();
+      }
+    } else if (viewMode !== 'stores') {
       recenter();
     }
   }, [
@@ -790,6 +751,30 @@ export function AmapStoreMap({
           </button>
         </div>
       )}
+      {viewMode === 'stores' && regionMode === 'none' && (
+        <div className="absolute top-4 left-4 z-[95] pointer-events-none">
+          <div className="bg-white/90 backdrop-blur-md border border-white/70 shadow-lg rounded-2xl px-3 py-2 flex flex-col gap-2 text-[11px] font-semibold text-slate-700 pointer-events-auto min-w-[160px]">
+            <div className="flex items-center gap-2">
+              <span className="store-marker store-marker--dji">
+                <img src={djiLogoWhite} alt="DJI" className="store-marker__logo" />
+              </span>
+              <span>DJI 门店</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="store-marker store-marker--insta">
+                <img src={instaLogoBlack} alt="Insta360" className="store-marker__logo" />
+              </span>
+              <span>Insta 门店</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="store-marker store-marker--dji store-marker--new">
+                <img src={djiLogoWhite} alt="本月新增" className="store-marker__logo" />
+              </span>
+              <span>本月新增（双环高亮）</span>
+            </div>
+          </div>
+        </div>
+      )}
       {showNavSelector && selectedStore && (
         <div className="absolute inset-0 z-[250] bg-black/30 backdrop-blur-sm flex items-center justify-center px-4">
           <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 w-full max-w-sm p-5 space-y-5">
@@ -918,7 +903,7 @@ export function AmapStoreMap({
                       {selectedStore.storeName}
                     </div>
                     {isNewThisMonth(selectedStore) && (
-                      <span className="px-2 py-[1px] rounded-full text-[9px] font-semibold bg-[#1f232f] text-white shadow-sm relative -top-[1px]">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-rose-500 text-white shadow-sm">
                         NEW
                       </span>
                     )}
@@ -936,10 +921,8 @@ export function AmapStoreMap({
                 >
                   <Star
                     className={`w-4 h-4 ${
-                      isFavorite(selectedStore.id)
-                        ? 'fill-current text-inherit stroke-inherit'
-                        : 'text-slate-900 stroke-slate-900'
-                    }`}
+                      isFavorite(selectedStore.id) ? 'fill-current' : ''
+                    } ${selectedStore.brand === 'DJI' ? 'text-white stroke-white' : 'text-amber-700 stroke-amber-700'}`}
                   />
                   收藏
                 </button>
@@ -954,7 +937,7 @@ export function AmapStoreMap({
                   拨打电话
                 </button>
                 <button
-                  className="flex-1 h-9 rounded-lg bg-slate-100 text-slate-900 text-xs font-bold border border-slate-200 hover:bg-slate-200 active:bg-slate-300 transition-colors disabled:opacity-40"
+                  className="flex-1 h-9 rounded-lg bg-slate-900 text-white text-xs font-bold border border-slate-900 hover:bg-slate-800 active:bg-slate-700 transition-colors disabled:opacity-40"
                   onClick={(e) => {
                     e.stopPropagation();
                     if (!hasCoord) return;

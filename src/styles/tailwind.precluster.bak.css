@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 高德自定义圆点样式：品牌 logo + 双环描边（新增店）+ 反色收藏态 */
+.store-marker { --brand-main:#111827; --marker-bg:var(--brand-main); --marker-size:20px; --marker-shadow:0 6px 14px rgba(15,23,42,0.12); width:var(--marker-size); height:var(--marker-size); border-radius:999px; border:1.5px solid #fff; display:inline-flex; align-items:center; justify-content:center; position:relative; background:var(--marker-bg); box-shadow:var(--marker-shadow); color:#0f172a; overflow:hidden; transform:translateZ(0); }
+.store-marker__logo { width:13px; height:13px; pointer-events:none; }
+.store-marker--dji { --brand-main:#111827; --marker-bg:#111827; --marker-shadow:0 6px 14px rgba(15,23,42,0.18); }
+.store-marker--insta { --brand-main:#facc15; --marker-bg:#facc15; border-color:#111827; --marker-shadow:0 8px 18px rgba(250,204,21,0.28); }
+.store-marker--favorite { --marker-size:22px; border-width:2px; }
+.store-marker--favorite-dji { --marker-bg:#ffffff; border-color:#111827; --marker-shadow:0 10px 22px rgba(15,23,42,0.24); }
+.store-marker--favorite-insta { --marker-bg:#111827; border-color:#facc15; --marker-shadow:0 12px 24px rgba(17,24,39,0.28); }
+.store-marker--new { --marker-shadow:0 0 0 2px var(--brand-main),0 0 0 4px #f59e0b,0 12px 24px rgba(15,23,42,0.18); }
+.store-marker--selected { box-shadow:var(--marker-shadow),0 0 0 3px rgba(99,102,241,0.22); }
+.store-marker--user { --marker-size:18px; background:#0ea5e9; border-color:#fff; box-shadow:0 8px 16px rgba(14,165,233,0.3); }
+
+.mall-marker { width:16px; height:16px; border-radius:999px; border:2px solid #fff; box-shadow:0 10px 22px rgba(15,23,42,0.18); }
+.mall-marker--selected { box-shadow:0 0 0 4px rgba(59,130,246,0.2),0 12px 26px rgba(15,23,42,0.24); }

@@ -6,13 +6,14 @@ type Props = {
   onViewAll?: () => void;
   selectedCities?: string[];
   onCityClick?: (city: string) => void;
+  activeProvince?: string | null;
 };
 
 type BrandFilter = 'all' | 'DJI' | 'Insta360';
 type SortType = 'absolute' | 'ratio';
 const PAGE_SIZE = 5;
 
-export function TopCities({ stores, onViewAll, selectedCities, onCityClick }: Props) {
+export function TopCities({ stores, onViewAll, selectedCities, onCityClick, activeProvince }: Props) {
   const [brandFilter, setBrandFilter] = useState<BrandFilter>('all');
   const [sortType, setSortType] = useState<SortType>('absolute');
   const [page, setPage] = useState(0);
@@ -66,7 +67,9 @@ export function TopCities({ stores, onViewAll, selectedCities, onCityClick }: Pr
   return (
     <div className="bg-white rounded-[24px] p-4 border border-slate-100 shadow-sm">
       <div className="flex items-center justify-between mb-4">
-        <div className="text-lg font-extrabold text-slate-900">Top20城市</div>
+        <div className="text-lg font-extrabold text-slate-900">
+          {activeProvince ? `${activeProvince} 城市` : 'Top20城市'}
+        </div>
         {onViewAll && (
           <button onClick={onViewAll} className="text-xs text-blue-600 font-medium">
             查看全部

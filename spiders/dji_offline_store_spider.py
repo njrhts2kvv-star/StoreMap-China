@@ -81,9 +81,31 @@ class DJIOfflineStoreSpider(BaseStoreSpider):
 
 
 def main() -> None:
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="DJI 线下门店爬虫")
+    parser.add_argument(
+        "--validate-province",
+        action="store_true",
+        help="验证门店坐标与省份是否匹配"
+    )
+    parser.add_argument(
+        "--output", "-o",
+        default="dji_offline_stores.csv",
+        help="输出文件路径"
+    )
+    args = parser.parse_args()
+    
     spider = DJIOfflineStoreSpider()
     items = spider.fetch_items()
-    spider.save_to_csv(items, "dji_offline_stores.csv")
+    
+    invalid_path = args.output.replace(".csv", "_province_mismatch.csv") if args.validate_province else None
+    spider.save_to_csv(
+        items,
+        args.output,
+        validate_province=args.validate_province,
+        invalid_path=invalid_path,
+    )
     print(f"DJI 导出 {len(items)} 条门店")
 
 

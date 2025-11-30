@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Search, RotateCcw, X } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Search, RotateCcw, X, SlidersHorizontal } from 'lucide-react';
 import type { Brand, ServiceTag, Store, Mall, MallStatus } from '../types/store';
 import { useStores } from '../hooks/useStores';
 import { useGeo } from '../hooks/useGeo';
@@ -47,12 +47,14 @@ type FilterState = {
   mallStatuses: MallStatus[];
 };
 
+const DEFAULT_DJI_EXPERIENCE = ['授权体验店', 'ARS'];
+
 const initialFilters: FilterState = {
   keyword: '',
   province: [],
   city: [],
   brands: ['DJI', 'Insta360'],
-  djiStoreTypes: [...EXPERIENCE_STORE_TYPES.DJI],
+  djiStoreTypes: [...DEFAULT_DJI_EXPERIENCE], // 默认不选“新型照材”
   instaStoreTypes: [...EXPERIENCE_STORE_TYPES.Insta360],
   serviceTags: [],
   sortBy: 'default',
@@ -67,6 +69,10 @@ type StoreFilterMode = 'all' | 'experience';
 
 export default function HomePage() {
   const { position: userPos } = useGeo();
+  const quickFilterRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const setQuickFilterRef = (index: number) => (el: HTMLDivElement | null) => {
+    quickFilterRefs.current[index] = el;
+  };
   const [pendingFilters, setPendingFilters] = useState<FilterState>(initialFilters);
   const [appliedFilters, setAppliedFilters] = useState<FilterState>(initialFilters);
   const [storeFilterMode, setStoreFilterMode] = useState<StoreFilterMode>('experience');
@@ -80,9 +86,13 @@ export default function HomePage() {
       filters.djiStoreTypes = [];
       filters.instaStoreTypes = [];
     } else {
-      // 体验店对比：使用体验店类别
-      filters.djiStoreTypes = [...EXPERIENCE_STORE_TYPES.DJI];
-      filters.instaStoreTypes = [...EXPERIENCE_STORE_TYPES.Insta360];
+      // 体验店对比：使用当前选择，如为空则回落到默认体验店选项
+      if (!filters.djiStoreTypes.length) {
+        filters.djiStoreTypes = [...DEFAULT_DJI_EXPERIENCE];
+      }
+      if (!filters.instaStoreTypes.length) {
+        filters.instaStoreTypes = [...EXPERIENCE_STORE_TYPES.Insta360];
+      }
     }
     return filters;
   }, [appliedFilters, storeFilterMode]);
@@ -100,10 +110,25 @@ export default function HomePage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedMallId, setSelectedMallId] = useState<string | null>(null);
   const visibleStores = filtered;
-  const [quickFilter, setQuickFilter] = useState<'all' | 'favorites' | 'new'>('all');
+  const [quickFilter, setQuickFilter] = useState<'all' | 'favorites' | 'new' | 'dji' | 'insta'>('all');
   const [showProvinceDropdown, setShowProvinceDropdown] = useState(false);
   const [showCityDropdown, setShowCityDropdown] = useState(false);
   const [showStoreTypeDropdown, setShowStoreTypeDropdown] = useState(false);
+  const [showSearchFilters, setShowSearchFilters] = useState(false);
+  // 分栏筛选面板状态
+  type FilterTab = 'storeType' | 'province' | 'city';
+  const [activeFilterTab, setActiveFilterTab] = useState<FilterTab>('storeType');
+  const [tempFilters, setTempFilters] = useState<{
+    djiStoreTypes: string[];
+    instaStoreTypes: string[];
+    province: string[];
+    city: string[];
+  }>({
+    djiStoreTypes: [...pendingFilters.djiStoreTypes],
+    instaStoreTypes: [...pendingFilters.instaStoreTypes],
+    province: [...pendingFilters.province],
+    city: [...pendingFilters.city],
+  });
   const [mapResetToken, setMapResetToken] = useState(0);
   const hasRegionFilter = pendingFilters.city.length > 0 || pendingFilters.province.length > 0;
   const mapUserPos = hasRegionFilter ? null : userPos;
@@ -188,10 +213,41 @@ export default function HomePage() {
       setMapResetToken((token) => token + 1);
     }
   }, [quickFilter, selectedId, favorites]);
+
+  // 筛选面板打开时，锁定背景滚动
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const originalOverflow = document.body.style.overflow;
+    if (showSearchFilters) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = originalOverflow || '';
+    }
+    return () => {
+      document.body.style.overflow = originalOverflow || '';
+    };
+  }, [showSearchFilters]);
+
+  // 点击外部区域收起下拉
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!showProvinceDropdown && !showCityDropdown && !showStoreTypeDropdown) return;
+      const target = e.target as Node;
+      const inside = quickFilterRefs.current.some((ref) => ref && ref.contains(target));
+      if (!inside) {
+        setShowProvinceDropdown(false);
+        setShowCityDropdown(false);
+        setShowStoreTypeDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showProvinceDropdown, showCityDropdown, showStoreTypeDropdown]);
   const resetFilters = () => {
     const base: FilterState = { ...initialFilters };
     setPendingFilters(base);
     setAppliedFilters(base);
+    setBrandSelection(['DJI', 'Insta360']);
     setStoreFilterMode('experience');
     setSelectedId(null);
     setSelectedMallId(null);
@@ -199,32 +255,36 @@ export default function HomePage() {
     setShowProvinceDropdown(false);
     setShowCityDropdown(false);
     setShowStoreTypeDropdown(false);
+    setShowSearchFilters(false);
+    setMapResetToken((token) => token + 1);
   };
 
   const applyQuickFilter = (key: typeof quickFilter) => {
-    setQuickFilter(key);
     setSelectedMallId(null);
     setPendingFilters((f) => {
-      let next: FilterState = {
-        ...f,
-        favoritesOnly: false,
-        newThisMonth: false,
-      };
+      let next: FilterState = { ...f };
       if (key === 'favorites') {
-        next = { ...next, favoritesOnly: true };
+        next = { ...next, favoritesOnly: !f.favoritesOnly };
+        setQuickFilter(next.favoritesOnly ? 'favorites' : quickFilter);
       } else if (key === 'new') {
-        next = { ...next, newThisMonth: true };
+        next = { ...next, newThisMonth: !f.newThisMonth };
+        setQuickFilter(next.newThisMonth ? 'new' : quickFilter);
+      } else if (key === 'dji') {
+        next = { ...next, brands: ['DJI'] };
+        setBrandSelection(['DJI']);
+        setQuickFilter('dji');
+      } else if (key === 'insta') {
+        next = { ...next, brands: ['Insta360'] };
+        setBrandSelection(['Insta360']);
+        setQuickFilter('insta');
       } else if (key === 'all') {
-        next = {
-          ...next,
-          province: [],
-          city: [],
-          djiStoreTypes: [],
-          instaStoreTypes: [],
-        };
-        setShowProvinceDropdown(false);
-        setShowCityDropdown(false);
-        setShowStoreTypeDropdown(false);
+        next = { ...next, brands: ['DJI', 'Insta360'], favoritesOnly: false, newThisMonth: false };
+        setBrandSelection(['DJI', 'Insta360']);
+        setQuickFilter('all');
+      }
+      // 如果收藏/新增都关闭且品牌为双品牌，则确保 quickFilter 落在 all
+      if (!next.favoritesOnly && !next.newThisMonth && next.brands.length === 2) {
+        setQuickFilter('all');
       }
       setAppliedFilters(next);
       return next;
@@ -291,314 +351,297 @@ export default function HomePage() {
 
   const storeTypeButtonLabel = '门店类别';
 
-  const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
-    const wrapperClass =
+  
+  
+const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
+  const wrapperClass =
+    variant === 'floating'
+      ? 'space-y-3 bg-white/90 backdrop-blur-md border border-white/50 rounded-[28px] p-4 shadow-[0_25px_40px_rgba(15,23,42,0.18)] max-w-[520px]'
+      : 'space-y-3';
+  const padding = variant === 'floating' ? '' : 'px-1';
+  const dropdownCard = (maxHeight: string) =>
+    `${
       variant === 'floating'
-        ? 'space-y-3 bg-white/90 backdrop-blur-md border border-white/50 rounded-[28px] p-4 shadow-[0_25px_40px_rgba(15,23,42,0.18)] max-w-[430px]'
-        : 'space-y-3';
-    const padding = variant === 'floating' ? '' : 'px-1';
-    const dropdownCard = (maxHeight: string) =>
-      `${
-        variant === 'floating'
-          ? 'rounded-[24px] bg-white border border-slate-100 shadow-[0_12px_30px_rgba(15,23,42,0.12)]'
-          : 'rounded-[28px] bg-white border border-slate-100 shadow-[0_16px_30px_rgba(15,23,42,0.08)]'
-      } p-4 ${maxHeight} overflow-y-auto`;
+        ? 'rounded-[24px] bg-white border border-slate-100 shadow-[0_12px_30px_rgba(15,23,42,0.12)]'
+        : 'rounded-[28px] bg-white border border-slate-100 shadow-[0_16px_30px_rgba(15,23,42,0.08)]'
+    } p-4 ${maxHeight} overflow-y-auto`;
 
-    return (
-      <div className={wrapperClass}>
-        <div className={padding}>
-          <div className="grid grid-cols-6 gap-2">
-            {[
-              { key: 'all', label: '全部' },
-              { key: 'favorites', label: '我的收藏' },
-              { key: 'new', label: '本月新增' },
-              { key: 'storeTypes', label: '门店类别' },
-              { key: 'province', label: '全部省份' },
-              { key: 'city', label: '全部城市' },
-            ].map((item) => (
-              item.key === 'province' ? (
-                <button
-                  key={item.key}
-                  type="button"
-                  onClick={() => {
-                    setShowProvinceDropdown((v) => !v);
-                    setShowCityDropdown(false);
-                    setShowStoreTypeDropdown(false);
-                  }}
-                  className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
-                >
-                  {provinceFilterValues.length ? `${provinceFilterValues.length} 个省份` : '全部省份'}
-                </button>
-              ) : item.key === 'city' ? (
-                <button
-                  key={item.key}
-                  type="button"
-                  onClick={() => {
-                    setShowCityDropdown((v) => !v);
-                    setShowProvinceDropdown(false);
-                    setShowStoreTypeDropdown(false);
-                  }}
-                  className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
-                >
-                  {cityFilterValues.length ? `${cityFilterValues.length} 个城市` : '全部城市'}
-                </button>
-              ) : item.key === 'storeTypes' ? (
-                <button
-                  key={item.key}
-                  type="button"
-                  onClick={() => {
-                    setShowStoreTypeDropdown((v) => !v);
-                    setShowProvinceDropdown(false);
-                    setShowCityDropdown(false);
-                  }}
-                className="w-full px-3 py-2 rounded-xl text-[11px] font-semibold border bg-white text-slate-600 border-slate-200 whitespace-nowrap flex items-center justify-center"
-              >
-                  {storeTypeButtonLabel}
-                </button>
-              ) : (
-                <button
-                  key={item.key}
-                  onClick={() => applyQuickFilter(item.key as typeof quickFilter)}
-                  className={`w-full px-3 py-2 rounded-xl text-xs font-semibold border transition whitespace-nowrap text-center flex items-center justify-center ${
-                    item.key === 'favorites'
-                      ? pendingFilters.favoritesOnly
-                        ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
-                        : 'bg-white text-slate-600 border-slate-200'
-                      : item.key === 'new'
-                        ? pendingFilters.newThisMonth
-                          ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
-                          : 'bg-white text-slate-600 border-slate-200'
-                        : quickFilter === item.key
-                          ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
-                          : 'bg-white text-slate-600 border-slate-200'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              )
-            ))}
-            <div className="col-span-6 flex justify-end">
-              <button
-                type="button"
-                onClick={() => {
-                  setShowProvinceDropdown(false);
-                  setShowCityDropdown(false);
-                  setShowStoreTypeDropdown(false);
-                }}
-                className="text-xs font-semibold text-slate-900 hover:text-amber-600"
-              >
-                应用筛选
-              </button>
-            </div>
-          </div>
-        </div>
-        {showProvinceDropdown && (
-          <div className={padding}>
-            <div className={dropdownCard('max-h-56')}>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold ${
-                    provinceFilterValues.length === 0 ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 border border-slate-200'
-                  }`}
-                  onClick={() => {
-                    const allowed = new Set(getAllowedCities([]));
-                    const preserved = cityFilterValues.filter((city) => allowed.has(city));
-                    updateFilters({ province: [], city: preserved });
-                  }}
-                >
-                  全部省份
-                </button>
-                {provinces.map((p) => {
-                  const active = provinceFilterValues.includes(p);
-                  return (
-                    <button
-                      key={p}
-                      type="button"
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold border ${
-                        active ? 'bg-slate-900 text-white border-slate-900' : 'bg-slate-50 text-slate-700 border-slate-200'
-                      }`}
-                      onClick={() => {
-                        const next = active ? provinceFilterValues.filter((x) => x !== p) : [...provinceFilterValues, p];
-                        const allowed = new Set(getAllowedCities(next));
-                        const preserved = cityFilterValues.filter((city) => allowed.has(city));
-                        updateFilters({ province: next, city: preserved });
-                      }}
-                    >
-                      {p}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        )}
-        {showStoreTypeDropdown && (
-          <div className={padding}>
-            <div className={`${dropdownCard('max-h-60')} space-y-4`}>
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  className={`flex-1 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
-                    storeFilterMode === 'all'
-                      ? 'bg-slate-900 text-white'
-                      : 'bg-slate-50 text-slate-700 border border-slate-200'
-                  }`}
-                  onClick={() => {
-                    setStoreFilterMode('all');
-                    // 选择全部门店时，自动选中所有选项
-                    updateFilters({ 
-                      djiStoreTypes: [...djiStoreOptions],
-                      instaStoreTypes: [...instaStoreOptions]
-                    });
-                  }}
-                >
-                  全部门店
-                </button>
-                <button
-                  type="button"
-                  className={`flex-1 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
-                    storeFilterMode === 'experience'
-                      ? 'bg-slate-900 text-white'
-                      : 'bg-slate-50 text-slate-700 border border-slate-200'
-                  }`}
-                  onClick={() => {
-                    setStoreFilterMode('experience');
-                    // 切换到体验店对比时，恢复默认体验店选项
-                    updateFilters({ 
-                      djiStoreTypes: [...EXPERIENCE_STORE_TYPES.DJI],
-                      instaStoreTypes: [...EXPERIENCE_STORE_TYPES.Insta360]
-                    });
-                  }}
-                >
-                  体验店对比
-                </button>
-              </div>
-              <div>
-                <div className="text-[11px] text-slate-500 font-semibold mb-2">DJI 门店</div>
-                <div className="flex flex-wrap gap-2">
-                  {djiStoreOptions.map((type) => {
-                    // 判断是否激活：在全部门店模式下，所有选项都激活；在体验店对比模式下，检查是否在列表中
-                    const active = storeFilterMode === 'all' || (storeFilterMode === 'experience' && pendingFilters.djiStoreTypes.includes(type));
-                    return (
-                      <button
-                        key={type}
-                        type="button"
-                        className={`px-3 py-1.5 rounded-full text-xs font-semibold border ${
-                          active ? 'bg-slate-900 text-white border-slate-900' : 'bg-slate-50 text-slate-700 border-slate-200'
-                        }`}
-                        onClick={() => {
-                          // 如果当前是全部门店模式，点击任何选项都会切换到体验店对比模式
-                          if (storeFilterMode === 'all') {
-                            setStoreFilterMode('experience');
-                            // 从所有选项中移除当前选项，保留其他选项
-                            const next = djiStoreOptions.filter((x) => x !== type);
-                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.DJI] });
-                          } else {
-                            // 体验店对比模式下，正常切换选项
-                            const next = pendingFilters.djiStoreTypes.includes(type)
-                              ? pendingFilters.djiStoreTypes.filter((x) => x !== type)
-                              : [...pendingFilters.djiStoreTypes, type];
-                            // 如果移除后为空，恢复默认值
-                            updateFilters({ djiStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.DJI] });
-                          }
-                        }}
-                      >
-                        {type}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-              <div>
-                <div className="text-[11px] text-slate-500 font-semibold mb-2">Insta360 门店</div>
-                <div className="flex flex-wrap gap-2">
-                  {instaStoreOptions.map((type) => {
-                    // 判断是否激活：在全部门店模式下，所有选项都激活；在体验店对比模式下，检查是否在列表中
-                    const active = storeFilterMode === 'all' || (storeFilterMode === 'experience' && pendingFilters.instaStoreTypes.includes(type));
-                    return (
-                      <button
-                        key={type}
-                        type="button"
-                        className={`px-3 py-1.5 rounded-full text-xs font-semibold border ${
-                          active ? 'bg-slate-900 text-white border-slate-900' : 'bg-slate-50 text-slate-700 border-slate-200'
-                        }`}
-                        onClick={() => {
-                          // 如果当前是全部门店模式，点击任何选项都会切换到体验店对比模式
-                          if (storeFilterMode === 'all') {
-                            setStoreFilterMode('experience');
-                            // 从所有选项中移除当前选项，保留其他选项
-                            const next = instaStoreOptions.filter((x) => x !== type);
-                            updateFilters({ instaStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.Insta360] });
-                          } else {
-                            // 体验店对比模式下，正常切换选项
-                            const next = pendingFilters.instaStoreTypes.includes(type)
-                              ? pendingFilters.instaStoreTypes.filter((x) => x !== type)
-                              : [...pendingFilters.instaStoreTypes, type];
-                            // 如果移除后为空，恢复默认值
-                            updateFilters({ instaStoreTypes: next.length > 0 ? next : [...EXPERIENCE_STORE_TYPES.Insta360] });
-                          }
-                        }}
-                      >
-                        {type}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        {showCityDropdown && (
-          <div className={padding}>
-            <div className={dropdownCard('max-h-56')}>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold ${
-                    cityFilterValues.length === 0 ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 border border-slate-200'
-                  }`}
-                  onClick={() => updateFilters({ city: [] })}
-                >
-                  全部城市
-                </button>
-                {cities.map((c) => {
-                  const active = cityFilterValues.includes(c);
-                  return (
-                    <button
-                      key={c}
-                      type="button"
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold border ${
-                        active ? 'bg-slate-900 text-white border-slate-900' : 'bg-slate-50 text-slate-700 border-slate-200'
-                      }`}
-                      onClick={() => {
-                        const next = active ? cityFilterValues.filter((x) => x !== c) : [...cityFilterValues, c];
-                        updateFilters({ city: next });
-                      }}
-                    >
-                      {c}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
+  const refIndex = variant === 'floating' ? 1 : 0;
+
+  const quickButtons = [
+    { key: 'all' as const, label: '全部' },
+    { key: 'favorites' as const, label: '我的收藏' },
+    { key: 'new' as const, label: '本月新增' },
+    { key: 'dji' as const, label: '只看大疆' },
+    { key: 'insta' as const, label: '只看影石' },
+  ];
+
+  const quickBtnClass = (active: boolean) =>
+    `w-full px-3 py-[7px] rounded-xl text-[11px] font-semibold border transition whitespace-nowrap text-center flex items-center justify-center ${
+      active
+        ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
+        : 'bg-white text-slate-600 border-slate-200'
+    }`;
 
   return (
-    <div className="min-h-screen flex justify-center bg-[#f6f7fb]">
-      <div className="w-full max-w-[440px] min-w-[360px] min-h-screen flex flex-col gap-4 px-4 pb-24 pt-6">
-        <header className="flex items-center justify-between sticky top-0 bg-[#f6f7fb] z-20 pb-2">
+    <div className={wrapperClass} ref={setQuickFilterRef(refIndex)}>
+      {variant === 'default' && (
+        <div className={padding}>
+          <div className="grid grid-cols-5 gap-2">
+            {quickButtons.map((item) => {
+              const active =
+                item.key === 'favorites'
+                  ? pendingFilters.favoritesOnly
+                  : item.key === 'new'
+                    ? pendingFilters.newThisMonth
+                    : item.key === 'dji'
+                      ? brandSelection.length === 1 && brandSelection[0] === 'DJI'
+                      : item.key === 'insta'
+                        ? brandSelection.length === 1 && brandSelection[0] === 'Insta360'
+                        : !pendingFilters.favoritesOnly && !pendingFilters.newThisMonth && brandSelection.length === 2;
+              return (
+                <button key={item.key} onClick={() => applyQuickFilter(item.key)} className={quickBtnClass(active)}>
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {variant === 'floating' && (
+        <div className="flex flex-col gap-3">
+          {/* 左右布局：左侧胶囊按钮 + 右侧内容框 */}
+          <div className="flex gap-3">
+            {/* 左侧：三个独立胶囊按钮 */}
+            <div className="flex flex-col gap-[15px] mt-[23px]">
+              {[
+                { key: 'storeType' as FilterTab, label: '门店类别' },
+                { key: 'province' as FilterTab, label: '全部省份' },
+                { key: 'city' as FilterTab, label: '全部城市' },
+              ].map((tab) => {
+                const isActive = activeFilterTab === tab.key;
+                return (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    className={`px-[14px] py-[9px] rounded-full text-xs font-medium transition whitespace-nowrap ${
+                      isActive
+                        ? 'bg-slate-900 text-white shadow-md'
+                        : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300'
+                    }`}
+                    onClick={() => setActiveFilterTab(tab.key)}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* 右侧：独立内容框 */}
+            <div className="w-[280px] bg-white rounded-2xl shadow-lg border border-slate-100 px-4 pb-4 pt-[26px] overflow-y-auto h-[450px]">
+              {/* 门店类别 */}
+              {activeFilterTab === 'storeType' && (
+                <div className="space-y-4">
+                  {/* DJI 门店类别 */}
+                  <div>
+                    <div className="text-sm font-semibold text-slate-900 mb-2">DJI</div>
+                    <div className="flex flex-wrap gap-2">
+                      {['授权体验店', '新型照材'].map((type) => {
+                        const active = tempFilters.djiStoreTypes.includes(type);
+                        return (
+                          <button
+                            key={type}
+                            type="button"
+                        className={`px-[11px] py-2 rounded-lg text-xs font-medium border transition ${
+                          active
+                            ? 'bg-slate-900 text-white border-slate-900'
+                            : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                        }`}
+                            onClick={() => {
+                              setTempFilters((prev) => ({
+                                ...prev,
+                                djiStoreTypes: active
+                                  ? prev.djiStoreTypes.filter((x) => x !== type)
+                                  : [...prev.djiStoreTypes, type],
+                              }));
+                            }}
+                          >
+                            {type}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  {/* Insta360 门店类别 */}
+                  <div>
+                    <div className="text-sm font-semibold text-slate-900 mb-2">Insta360</div>
+                    <div className="flex flex-wrap gap-2">
+                      {['直营店', '授权专卖店', '合作体验点'].map((type) => {
+                        const active = tempFilters.instaStoreTypes.includes(type);
+                        return (
+                          <button
+                            key={type}
+                            type="button"
+                        className={`px-[11px] py-2 rounded-lg text-xs font-medium border transition ${
+                          active
+                            ? 'bg-slate-900 text-white border-slate-900'
+                            : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                        }`}
+                            onClick={() => {
+                              setTempFilters((prev) => ({
+                                ...prev,
+                                instaStoreTypes: active
+                                  ? prev.instaStoreTypes.filter((x) => x !== type)
+                                  : [...prev.instaStoreTypes, type],
+                              }));
+                            }}
+                          >
+                            {type}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 省份 */}
+              {activeFilterTab === 'province' && (
+                <div>
+                  <div className="text-sm font-semibold text-slate-900 mb-3">选择省份</div>
+                  <div className="flex flex-wrap gap-2">
+                    {provinces.map((province) => {
+                      const active = tempFilters.province.includes(province);
+                      return (
+                        <button
+                          key={province}
+                          type="button"
+                        className={`px-[11px] py-2 rounded-lg text-xs font-medium border transition ${
+                          active
+                            ? 'bg-slate-900 text-white border-slate-900'
+                            : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                        }`}
+                          onClick={() => {
+                            setTempFilters((prev) => {
+                              const current = new Set(prev.province);
+                              if (current.has(province)) current.delete(province);
+                              else current.add(province);
+                              // 省份变化时，重新计算可用城市并清除不在范围内的城市
+                              const newProvinces = Array.from(current);
+                              const allowedCities = getAllowedCities(newProvinces);
+                              const newCities = prev.city.filter((c) => allowedCities.includes(c));
+                              return { ...prev, province: newProvinces, city: newCities };
+                            });
+                          }}
+                        >
+                          {province}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* 城市 */}
+              {activeFilterTab === 'city' && (
+                <div>
+                  <div className="text-sm font-semibold text-slate-900 mb-3">选择城市</div>
+                  {(() => {
+                    const allowedCities = getAllowedCities(tempFilters.province);
+                    return allowedCities.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {allowedCities.map((c) => {
+                          const active = tempFilters.city.includes(c);
+                          return (
+                            <button
+                              key={c}
+                              type="button"
+                              className={`px-3 py-2 rounded-lg text-xs font-medium border transition ${
+                                active
+                                  ? 'bg-slate-900 text-white border-slate-900'
+                                  : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                              }`}
+                              onClick={() => {
+                                setTempFilters((prev) => {
+                                  const next = active
+                                    ? prev.city.filter((item) => item !== c)
+                                    : [...prev.city, c];
+                                  return { ...prev, city: next };
+                                });
+                              }}
+                            >
+                              {c}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="text-sm text-slate-400">请先选择省份</div>
+                    );
+                  })()}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* 底部：两个独立胶囊按钮 */}
+          <div className="flex gap-3 mt-[6px]">
+            <button
+              type="button"
+              className="flex items-center justify-center gap-2 px-[16px] py-[8px] rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm"
+              onClick={() => {
+                // 重置临时筛选
+                setTempFilters({
+                  djiStoreTypes: [...DEFAULT_DJI_EXPERIENCE],
+                  instaStoreTypes: [...EXPERIENCE_STORE_TYPES.Insta360],
+                  province: [],
+                  city: [],
+                });
+              }}
+            >
+              <RotateCcw className="w-4 h-4" />
+              重置
+            </button>
+            <button
+              type="button"
+              className="flex-1 flex items-center justify-center gap-2 px-[19px] py-[8px] rounded-full text-sm font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-md"
+              onClick={() => {
+                // 应用筛选
+                updateFilters({
+                  djiStoreTypes: tempFilters.djiStoreTypes,
+                  instaStoreTypes: tempFilters.instaStoreTypes,
+                  province: tempFilters.province,
+                  city: tempFilters.city,
+                });
+                setShowSearchFilters(false);
+              }}
+            >
+              <span className="text-base">✓</span>
+              完成
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+  return (
+      <div className="min-h-screen flex justify-center bg-[#f6f7fb]">
+        <div className="w-full max-w-[440px] min-w-[360px] min-h-screen flex flex-col gap-4 px-4 pb-24 pt-6">
+        <header
+          className={`flex items-start justify-between sticky top-0 bg-[#f6f7fb] z-20 pb-2 transition ${
+            showSearchFilters ? 'opacity-60 blur-sm pointer-events-none' : ''
+          }`}
+        >
           <div>
             <div className="text-2xl font-black leading-tight text-slate-900">门店分布对比</div>
             <div className="text-sm text-slate-500">DJI vs Insta360 全国数据</div>
           </div>
           <button
             onClick={resetFilters}
-            className="flex items-center gap-1 text-slate-900 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
+            className="flex items-center gap-1 text-slate-900 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100 mt-[2px]"
             title="重置筛选"
           >
             <RotateCcw className="w-4 h-4" />
@@ -610,16 +653,50 @@ export default function HomePage() {
         {activeTab === 'overview' && (
           <>
             {/* 搜索栏 */}
-            <div className="px-1">
-              <div className="flex items-center gap-3 rounded-full bg-white px-4 py-3 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
+            <div className="px-1 space-y-2">
+              <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
                 <Search className="w-5 h-5 text-slate-300" />
                 <input
-                  className="flex-1 bg-transparent outline-none text-base text-slate-700 placeholder:text-slate-400"
+                  className="flex-1 bg-transparent outline-none text-sm text-slate-700 placeholder:text-slate-400"
                   placeholder="搜索门店、城市或省份..."
                   value={pendingFilters.keyword}
                   onChange={(e) => updateFilters({ keyword: e.target.value })}
                 />
+                <button
+                  type="button"
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
+                  onClick={() => {
+                    const willShow = !showSearchFilters;
+                    if (willShow) {
+                      // 打开面板时同步当前筛选状态到临时状态
+                      setTempFilters({
+                        djiStoreTypes: [...pendingFilters.djiStoreTypes],
+                        instaStoreTypes: [...pendingFilters.instaStoreTypes],
+                        province: [...pendingFilters.province],
+                        city: [...pendingFilters.city],
+                      });
+                      setActiveFilterTab('storeType');
+                    }
+                    setShowSearchFilters(willShow);
+                  }}
+                  title="更多筛选"
+                >
+                  <SlidersHorizontal className="w-5 h-5" />
+                </button>
               </div>
+              {showSearchFilters && (
+                <>
+                  {/* 背景遮罩 */}
+                  <div 
+                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-10"
+                    onClick={() => setShowSearchFilters(false)}
+                  />
+                  {/* 筛选面板 */}
+                  <div className="relative z-20">
+                    {renderQuickFilters('floating')}
+                  </div>
+                </>
+              )}
             </div>
 
             {renderQuickFilters()}
@@ -637,9 +714,11 @@ export default function HomePage() {
                 </button>
               </div>
               <Card className="relative border border-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="h-80 w-full relative overflow-visible">
+                <div className="h-96 w-full relative overflow-visible">
                   <AmapStoreMap
                     stores={visibleStores}
+                    colorBaseStores={allStores}
+                    regionMode="none"
                     selectedId={selectedId || undefined}
                     onSelect={handleSelect}
                     userPos={mapUserPos}
@@ -675,6 +754,7 @@ export default function HomePage() {
                 stores={storesForCityRanking} 
                 onViewAll={() => setActiveTab('list')}
                 selectedCities={pendingFilters.city}
+                activeProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
                 onCityClick={(city) => {
                   // 在已有城市筛选基础上执行多选切换
                   const currentCities = pendingFilters.city;
@@ -714,6 +794,7 @@ export default function HomePage() {
             <div className="flex-1 relative pb-20">
               <AmapStoreMap
                 stores={visibleStores}
+                colorBaseStores={allStores}
                 selectedId={selectedId || undefined}
                 onSelect={handleSelect}
                 userPos={mapUserPos}

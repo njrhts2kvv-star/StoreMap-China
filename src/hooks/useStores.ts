@@ -188,7 +188,8 @@ export function useStores(userPos: { lat: number; lng: number } | null, filters:
     allStores,
     allMalls,
     stats,
+    // 排行榜随筛选变化：省份榜使用当前筛选结果，城市榜忽略城市筛选但保留省份/其他筛选
     storesForCityRanking: filteredWithoutCity,
-    storesForProvinceRanking: filteredWithoutProvinceAndCity,
+    storesForProvinceRanking: filtered,
   };
 }

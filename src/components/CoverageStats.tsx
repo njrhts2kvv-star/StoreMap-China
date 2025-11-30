@@ -37,54 +37,63 @@ export function CoverageStats({ stores }: Props) {
   const totalCities = cities.size;
   const totalProvinces = provinces.size;
 
+  // 计算柱状图高度比例（基于最大值）
+  const maxProvinceCount = Math.max(djiProvinces.size, instaProvinces.size, 1);
+  const maxCityCount = Math.max(djiCities.size, instaCities.size, 1);
+  const barMaxHeight = 28; // 最大柱高 px
+
   return (
     <div className="grid grid-cols-2 gap-3">
       {/* 覆盖省份数 */}
-      <div className="bg-white rounded-[24px] p-4 border border-slate-100 shadow-sm">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-2 h-2 rounded-full bg-slate-900"></div>
-          <div className="text-sm text-slate-600 font-medium">覆盖省份数</div>
+      <div className="bg-white rounded-[24px] px-4 py-3 border border-slate-100 shadow-sm">
+        <div className="flex items-center gap-1.5 mb-1">
+          <div className="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+          <div className="text-xs text-slate-500 font-medium">覆盖省份数</div>
         </div>
         <div className="flex items-end justify-between">
-          <div className="flex items-end gap-1">
-            <div className="text-3xl font-black text-slate-900 leading-[1]">{totalProvinces}</div>
-            <div className="text-base text-slate-400 leading-[1]">个</div>
-          </div>
-          <div className="flex items-end gap-3 text-xs text-slate-500 leading-[1]">
-            <div className="flex items-end gap-1">
-              <div className="w-3 h-3 rounded bg-slate-900 flex-shrink-0 mb-[2px]"></div>
-              <span>{djiProvinces.size}</span>
-            </div>
-            <div className="w-px h-3 bg-slate-200"></div>
-            <div className="flex items-end gap-1">
-              <div className="w-3 h-3 rounded bg-yellow-400 flex-shrink-0 mb-[2px]"></div>
-              <span>{instaProvinces.size}</span>
-            </div>
+          <div className="text-[28px] font-black text-slate-900 leading-none">{totalProvinces}</div>
+          <div className="flex items-end gap-1 pb-[2px]">
+            {/* DJI 柱状图 */}
+            <div
+              className="w-[10px] bg-slate-900 rounded-[4px]"
+              style={{ height: `${(djiProvinces.size / maxProvinceCount) * barMaxHeight}px`, minHeight: '8px' }}
+            ></div>
+            <span className="text-[11px] text-slate-400 leading-none">{djiProvinces.size}</span>
+            {/* 分割线 */}
+            <div className="w-px h-[14px] bg-slate-200 mx-1"></div>
+            {/* Insta360 柱状图 */}
+            <div
+              className="w-[10px] bg-yellow-400 rounded-[4px]"
+              style={{ height: `${(instaProvinces.size / maxProvinceCount) * barMaxHeight}px`, minHeight: '8px' }}
+            ></div>
+            <span className="text-[11px] text-slate-400 leading-none">{instaProvinces.size}</span>
           </div>
         </div>
       </div>
 
       {/* 覆盖城市数 */}
-      <div className="bg-white rounded-[24px] p-4 border border-slate-100 shadow-sm">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-2 h-2 rounded-full bg-slate-900"></div>
-          <div className="text-sm text-slate-600 font-medium">覆盖城市数</div>
+      <div className="bg-white rounded-[24px] px-4 py-3 border border-slate-100 shadow-sm">
+        <div className="flex items-center gap-1.5 mb-1">
+          <div className="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+          <div className="text-xs text-slate-500 font-medium">覆盖城市数</div>
         </div>
         <div className="flex items-end justify-between">
-          <div className="flex items-end gap-1">
-            <div className="text-3xl font-black text-slate-900 leading-[1]">{totalCities}</div>
-            <div className="text-base text-slate-400 leading-[1]">个</div>
-          </div>
-          <div className="flex items-end gap-3 text-xs text-slate-500 leading-[1]">
-            <div className="flex items-end gap-1">
-              <div className="w-3 h-3 rounded bg-slate-900 flex-shrink-0 mb-[2px]"></div>
-              <span>{djiCities.size}</span>
-            </div>
-            <div className="w-px h-3 bg-slate-200"></div>
-            <div className="flex items-end gap-1">
-              <div className="w-3 h-3 rounded bg-yellow-400 flex-shrink-0 mb-[2px]"></div>
-              <span>{instaCities.size}</span>
-            </div>
+          <div className="text-[28px] font-black text-slate-900 leading-none">{totalCities}</div>
+          <div className="flex items-end gap-1 pb-[2px]">
+            {/* DJI 柱状图 */}
+            <div
+              className="w-[10px] bg-slate-900 rounded-[4px]"
+              style={{ height: `${(djiCities.size / maxCityCount) * barMaxHeight}px`, minHeight: '8px' }}
+            ></div>
+            <span className="text-[11px] text-slate-400 leading-none">{djiCities.size}</span>
+            {/* 分割线 */}
+            <div className="w-px h-[14px] bg-slate-200 mx-1"></div>
+            {/* Insta360 柱状图 */}
+            <div
+              className="w-[10px] bg-yellow-400 rounded-[4px]"
+              style={{ height: `${(instaCities.size / maxCityCount) * barMaxHeight}px`, minHeight: '8px' }}
+            ></div>
+            <span className="text-[11px] text-slate-400 leading-none">{instaCities.size}</span>
           </div>
         </div>
       </div>
