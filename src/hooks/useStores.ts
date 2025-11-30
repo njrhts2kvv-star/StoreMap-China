@@ -6,7 +6,7 @@ import statsData from '../data/stats.json';
 import type { Brand, ServiceTag, Store } from '../types/store';
 import type { StoreStats } from '../types/stats';
 import { haversineKm } from '../utils/distance';
-import { isNewThisMonth } from '../utils/storeRules';
+import { isNewThisMonth, isNewLastMonth, isNewLastThreeMonths } from '../utils/storeRules';
 import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
 import { useMalls } from './useMalls';
 
@@ -22,7 +22,7 @@ type Filters = {
   favoritesOnly: boolean;
   competitiveOnly: boolean;
   experienceOnly: boolean;
-  newThisMonth: boolean;
+  newAddedRange: 'none' | 'this_month' | 'last_month' | 'last_three_months';
 };
 
 const isInCn = (lat: number, lng: number) => lat >= 15 && lat <= 55 && lng >= 70 && lng <= 135;
@@ -99,7 +99,11 @@ const applyFilters = (
     list = list.filter((s) => filters.serviceTags.every((tag) => s.serviceTags.includes(tag)));
 
   if (filters.favoritesOnly) list = list.filter((s) => favorites.includes(s.id));
-  if (filters.newThisMonth) list = list.filter(isNewThisMonth);
+  if (filters.newAddedRange && filters.newAddedRange !== 'none') {
+    if (filters.newAddedRange === 'this_month') list = list.filter(isNewThisMonth);
+    else if (filters.newAddedRange === 'last_month') list = list.filter(isNewLastMonth);
+    else if (filters.newAddedRange === 'last_three_months') list = list.filter(isNewLastThreeMonths);
+  }
 
   if (filters.experienceOnly) {
     const djiKeywords = EXPERIENCE_STORE_TYPES.DJI.map((k) => k.toLowerCase());

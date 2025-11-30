@@ -39,6 +39,7 @@ type Props = {
 
 const DEFAULT_CENTER: [number, number] = [35.5, 103.5];
 const DEFAULT_ZOOM = 5.4; // 总览放大一级
+const CHINA_BOUNDS = { sw: [73, 15] as [number, number], ne: [135, 54] as [number, number] };
 const MIN_FOCUS_ZOOM = 11;
 const CITY_MAX_ZOOM = 10; // 城市层最高放大，避免直接落到街道级
 const DJI_COLOR = '#111827';
@@ -264,6 +265,28 @@ export function AmapStoreMap({
       (s) => s.province === activeProvince && (s.city === activeCity || isSameCityName(s.city, activeCity)),
     );
   }, [stores, drillLevel, activeProvince, activeCity, isSameCityName, regionEnabled]);
+
+  // 重置视野到中国边界
+  function recenter() {
+    if (!mapRef.current) return;
+    if (amapRef.current) {
+      try {
+        const bounds = new (amapRef.current as any).Bounds(CHINA_BOUNDS.sw, CHINA_BOUNDS.ne);
+        mapRef.current.setLimitBounds(bounds);
+      } catch (e) {
+        // ignore bounds errors
+      }
+      mapRef.current.setZoomAndCenter(4.55, normalizedCenter, true);
+      return;
+    }
+    mapRef.current.setZoomAndCenter(initialZoom, normalizedCenter, true);
+  }
+
+  // 初始进入时将视野对齐中国边界
+  useEffect(() => {
+    if (ready) recenter();
+  }, [ready, normalizedCenter, initialZoom]);
+
   const provinceFilteredStats = useMemo(
     () => (activeProvince ? getProvinceFiltered(activeProvince) : EMPTY_STATS),
     [activeProvince, getProvinceFiltered],
@@ -365,11 +388,6 @@ export function AmapStoreMap({
         console.warn('[Map] load province geojson failed', err);
       });
   }, [ready, provinceShapes.length, regionEnabled]);
-
-  const recenter = useCallback(() => {
-    if (!mapRef.current) return;
-    mapRef.current.setZoomAndCenter(initialZoom, normalizedCenter, true);
-  }, [initialZoom, normalizedCenter]);
 
   const clearRegionOverlays = useCallback(() => {
     regionPolygonsRef.current.forEach((p) => p.setMap(null));

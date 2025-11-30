@@ -19,10 +19,67 @@ CSV_FILE = BASE_DIR / "all_stores_final.csv"
 BACKUP_FILE = BASE_DIR / "all_stores_final.csv.backup"
 LOG_DIR = BASE_DIR / "logs"
 LOG_FILE = LOG_DIR / "llm_decisions.log"
+MALL_MASTER_FILE = BASE_DIR / "Mall_Master_Cleaned.csv"
+POI_MEMORY_FILE = BASE_DIR / "poi_memory.csv"
 
 AMAP_TEXT_API = "https://restapi.amap.com/v3/place/text"
 AMAP_AROUND_API = "https://restapi.amap.com/v3/place/around"
 AMAP_TYPES = "060100|060101|060102|060200|060400|060500"  # 商场类型码
+
+# 简单的“非商场”过滤关键词：命中则强制跳过（避免匹配便利店/鲜花店等）
+NO_MALL_KEYWORDS = [
+    "便利店",
+    "超市",
+    "鲜花",
+    "花店",
+    "商行",
+    "小吃",
+    "餐厅",
+    "奶茶",
+    "药房",
+    "药店",
+    "KKV",
+    "无人便利",
+    "罗森",
+    "711",
+    "7-ELEVEN",
+    "7-11",
+]
+# “像商场”的正向关键词，二者都不命中时将降权
+MALL_HINT_KEYWORDS = [
+    "广场",
+    "中心",
+    "购物",
+    "城",
+    "天地",
+    "商场",
+    "mall",
+    "MALL",
+    "百货",
+    "天街",
+    "万达",
+    "万象",
+    "吾悦",
+    "来福士",
+    "K11",
+    "天街",
+    "天虹",
+    "mall",
+    "MALL",
+]
+
+# 连锁白名单（遇到这些关键词且同城近距离时优先复用）
+CHAIN_WHITELIST = [
+    "万达",
+    "万象",
+    "吾悦",
+    "来福士",
+    "K11",
+    "天街",
+    "天虹",
+    "龙湖",
+    "凯德",
+]
 
 # 经纬度匹配阈值（米）：商场与门店距离的接受阈值（自动通过）
 DISTANCE_THRESHOLD = 500  # 500米内才认为是同一商场
@@ -235,6 +292,105 @@ def llm_accept_far_mall(store_row: pd.Series, candidate: dict) -> bool:
             },
         )
     return decision == "accept"
+
+
+# ------------------ 数据加载与本地优先匹配 ------------------ #
+
+def load_mall_master() -> pd.DataFrame:
+    """加载商场主表，供本地优先匹配使用"""
+    if not MALL_MASTER_FILE.exists():
+        return pd.DataFrame()
+    df = pd.read_csv(MALL_MASTER_FILE)
+    return df[df["mall_lat"].notna() & df["mall_lng"].notna()].copy()
+
+
+def load_poi_memory() -> pd.DataFrame:
+    """加载记忆库，用于锁定已确认的商场"""
+    if not POI_MEMORY_FILE.exists():
+        return pd.DataFrame()
+    df = pd.read_csv(POI_MEMORY_FILE)
+    df = df[df.get("is_manual_confirmed", False) == True]
+    return df
+
+
+def is_bad_mall_name(name: str) -> bool:
+    return any(k in name for k in NO_MALL_KEYWORDS)
+
+
+def is_mall_like(name: str) -> bool:
+    return any(k in name for k in MALL_HINT_KEYWORDS)
+
+
+def match_existing_mall(
+    mall_df: pd.DataFrame,
+    mem_df: pd.DataFrame,
+    lat: float,
+    lng: float,
+    city: str,
+    store_name: str,
+    store_address: str,
+    radius: float = DISTANCE_THRESHOLD,
+) -> Optional[dict]:
+    """
+    优先在已有 Mall_Master / 记忆库中找匹配的商场：
+    - 同城
+    - 距离半径内（默认 500m）
+    - 名称相似度（partial_ratio）≥ 40 或距离 < 200m
+    """
+    candidates = []
+    city_norm = city or ""
+
+    def add_candidates(df: pd.DataFrame, name_field: str, lat_field: str, lng_field: str, source: str):
+        for _, row in df.iterrows():
+            if city_norm and str(row.get("city", "")) != city_norm:
+                continue
+            mname = str(row.get(name_field, "")).strip()
+            if not mname or is_bad_mall_name(mname):
+                continue
+            try:
+                mlat = float(row.get(lat_field))
+                mlng = float(row.get(lng_field))
+            except Exception:
+                continue
+            try:
+                dist = geodesic((lat, lng), (mlat, mlng)).meters
+            except Exception:
+                dist = 9999
+            if dist > radius * 2:  # 超出两倍半径直接放弃
+                continue
+            name_score = fuzz.partial_ratio(store_name.lower(), mname.lower())
+            addr_score = fuzz.partial_ratio((store_address or "").lower(), (row.get("address", "") or "").lower())
+            chain_boost = 1.2 if any(k in mname for k in CHAIN_WHITELIST) else 1.0
+            score = (name_score * 0.6 + max(0.0, 1 - dist / 2000) * 40 + addr_score * 0.1) * chain_boost
+            candidates.append(
+                {
+                    "mall_name": mname,
+                    "lat": mlat,
+                    "lng": mlng,
+                    "distance": dist,
+                    "name_score": name_score,
+                    "source": source,
+                    "chain_boost": chain_boost,
+                }
+            )
+
+    if not mall_df.empty:
+        add_candidates(mall_df, "mall_name", "mall_lat", "mall_lng", "mall_master")
+    if not mem_df.empty:
+        add_candidates(mem_df, "confirmed_mall_name", "mall_lat", "mall_lng", "memory")
+
+    if not candidates:
+        return None
+
+    # 筛选：距离 < 600m 且 (距离 < 200m 或 名称相似度 >= 40)
+    filtered = [
+        c for c in candidates if c["distance"] < radius * 1.2 and (c["distance"] < 200 or c["name_score"] >= 40)
+    ]
+    if not filtered:
+        return None
+
+    filtered.sort(key=lambda x: (-x["name_score"], x["distance"]))
+    return filtered[0]
 
 
 def llm_accept_far_mall_by_name(
@@ -454,12 +610,19 @@ def search_nearby_malls(lat: float, lng: float, city: str, store_name: str, stor
             name = poi.get("name", "")
             if not name:
                 continue
+            # 过滤明显不是商场的 POI
+            if any(bad in name for bad in NO_MALL_KEYWORDS):
+                continue
+            mall_like = any(hint in name for hint in MALL_HINT_KEYWORDS)
+            chain_boost = 1.2 if any(k in name for k in CHAIN_WHITELIST) else 1.0
             name_score = fuzz.partial_ratio(name.lower(), store_name_low)
             addr_score = 0
             if store_address_low:
                 addr_score = fuzz.partial_ratio((poi.get("address", "") or "").lower(), store_address_low)
             distance_score = max(0.0, 1 - dist / 2000) * 40
-            score = name_score * 0.45 + addr_score * 0.25 + distance_score
+            # 如果缺少商场提示词，降权 0.8
+            type_factor = 1.0 if mall_like else 0.8
+            score = (name_score * 0.45 + addr_score * 0.25 + distance_score) * type_factor * chain_boost
             candidate = {
                 "mall_name": name,
                 "lat": poi_lat,
@@ -469,6 +632,7 @@ def search_nearby_malls(lat: float, lng: float, city: str, store_name: str, stor
                 "score": score,
                 "name_score": name_score,
                 "addr_score": addr_score,
+                "chain_boost": chain_boost,
             }
             candidates.append(candidate)
             if score > best_score:
@@ -711,6 +875,8 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
     
     print(f"[信息] 读取CSV文件: {csv_path}")
     df = pd.read_csv(csv_path)
+    mall_master_df = load_mall_master()
+    mem_df = load_poi_memory()
     
     # 检查必需的列
     required_columns = ["uuid", "brand", "name", "lat", "lng", "address", "province", "city", "mall_name"]
@@ -719,6 +885,13 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
         print(f"[错误] CSV文件缺少必需的列: {missing_columns}")
         return
     
+    # 规范城市：市辖区/空 -> 省份
+    if "city" in df.columns and "province" in df.columns:
+        df["city"] = df.apply(
+            lambda r: r["province"] if str(r.get("city", "")).strip() in ("", "市辖区") else r["city"],
+            axis=1,
+        )
+
     # 确保有商场经纬度和匹配方式列
     if "mall_lat" not in df.columns:
         df["mall_lat"] = ""
@@ -831,6 +1004,32 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
             prompt_row = row.copy()
             prompt_row["lat"] = search_lat
             prompt_row["lng"] = search_lng
+
+            # Step 1: 优先匹配已有商场（Mall_Master / 记忆库）
+            existing = match_existing_mall(
+                mall_master_df,
+                mem_df,
+                float(search_lat),
+                float(search_lng),
+                city,
+                store_name,
+                store_address,
+            )
+            if existing:
+                print(
+                    f"  [优先匹配] 复用已有商场: {existing['mall_name']} 距离{existing['distance']:.0f}m "
+                    f"(name_score={existing['name_score']}) 来源={existing['source']}"
+                )
+                if not dry_run:
+                    df.at[idx, "mall_name"] = existing["mall_name"]
+                    df.at[idx, "mall_lat"] = existing["lat"]
+                    df.at[idx, "mall_lng"] = existing["lng"]
+                    df.at[idx, "match_method"] = "existing_mall"
+                    matched_malls += 1
+                else:
+                    matched_malls += 1
+                time.sleep(0.1)
+                continue
 
             nearby = search_nearby_malls(float(search_lat), float(search_lng), city, store_name, store_address)
             if nearby:

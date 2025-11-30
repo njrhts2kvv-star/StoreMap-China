@@ -46,7 +46,7 @@ type FilterState = {
   favoritesOnly: boolean;
   competitiveOnly: boolean;
   experienceOnly: boolean;
-  newThisMonth: boolean;
+  newAddedRange: 'none' | 'this_month' | 'last_month' | 'last_three_months';
   mallStatuses: MallStatus[];
 };
 
@@ -64,7 +64,7 @@ const initialFilters: FilterState = {
   favoritesOnly: false,
   competitiveOnly: false,
   experienceOnly: false,
-  newThisMonth: false,
+  newAddedRange: 'none',
   mallStatuses: [],
 };
 
@@ -73,6 +73,7 @@ type StoreFilterMode = 'all' | 'experience';
 export default function HomePage() {
   const { position: userPos } = useGeo();
   const quickFilterRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const newAddedPopoverRef = useRef<HTMLDivElement | null>(null);
   const setQuickFilterRef = (index: number) => (el: HTMLDivElement | null) => {
     quickFilterRefs.current[index] = el;
   };
@@ -132,6 +133,7 @@ export default function HomePage() {
     province: [...pendingFilters.province],
     city: [...pendingFilters.city],
   });
+  const [showNewAddedPopover, setShowNewAddedPopover] = useState(false);
   const [mapResetToken, setMapResetToken] = useState(0);
   const hasRegionFilter = pendingFilters.city.length > 0 || pendingFilters.province.length > 0;
   const mapUserPos = hasRegionFilter ? null : userPos;
@@ -231,21 +233,22 @@ export default function HomePage() {
     };
   }, [showSearchFilters]);
 
-  // 点击外部区域收起下拉
+  // 点击外部区域收起下拉/新增弹层
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (!showProvinceDropdown && !showCityDropdown && !showStoreTypeDropdown) return;
+      if (!showProvinceDropdown && !showCityDropdown && !showStoreTypeDropdown && !showNewAddedPopover) return;
       const target = e.target as Node;
-      const inside = quickFilterRefs.current.some((ref) => ref && ref.contains(target));
-      if (!inside) {
-        setShowProvinceDropdown(false);
-        setShowCityDropdown(false);
-        setShowStoreTypeDropdown(false);
-      }
+      const insideQuick = quickFilterRefs.current.some((ref) => ref && ref.contains(target));
+      const insideNewPopover = newAddedPopoverRef.current && newAddedPopoverRef.current.contains(target);
+      if (insideQuick || insideNewPopover) return;
+      setShowProvinceDropdown(false);
+      setShowCityDropdown(false);
+      setShowStoreTypeDropdown(false);
+      setShowNewAddedPopover(false);
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [showProvinceDropdown, showCityDropdown, showStoreTypeDropdown]);
+  }, [showProvinceDropdown, showCityDropdown, showStoreTypeDropdown, showNewAddedPopover]);
   const resetFilters = () => {
     const base: FilterState = { ...initialFilters };
     setPendingFilters(base);
@@ -259,6 +262,7 @@ export default function HomePage() {
     setShowCityDropdown(false);
     setShowStoreTypeDropdown(false);
     setShowSearchFilters(false);
+    setShowNewAddedPopover(false);
     setMapResetToken((token) => token + 1);
   };
 
@@ -269,24 +273,32 @@ export default function HomePage() {
       if (key === 'favorites') {
         next = { ...next, favoritesOnly: !f.favoritesOnly };
         setQuickFilter(next.favoritesOnly ? 'favorites' : quickFilter);
+        setShowNewAddedPopover(false);
       } else if (key === 'new') {
-        next = { ...next, newThisMonth: !f.newThisMonth };
-        setQuickFilter(next.newThisMonth ? 'new' : quickFilter);
+        const isActive = f.newAddedRange !== 'none';
+        const willOpen = !isActive || !showNewAddedPopover;
+        const targetRange = isActive ? f.newAddedRange : 'this_month';
+        next = { ...next, newAddedRange: targetRange };
+        setQuickFilter('new');
+        setShowNewAddedPopover(willOpen);
       } else if (key === 'dji') {
         next = { ...next, brands: ['DJI'] };
         setBrandSelection(['DJI']);
         setQuickFilter('dji');
+        setShowNewAddedPopover(false);
       } else if (key === 'insta') {
         next = { ...next, brands: ['Insta360'] };
         setBrandSelection(['Insta360']);
         setQuickFilter('insta');
+        setShowNewAddedPopover(false);
       } else if (key === 'all') {
-        next = { ...next, brands: ['DJI', 'Insta360'], favoritesOnly: false, newThisMonth: false };
+        next = { ...next, brands: ['DJI', 'Insta360'], favoritesOnly: false, newAddedRange: 'none' };
         setBrandSelection(['DJI', 'Insta360']);
         setQuickFilter('all');
+        setShowNewAddedPopover(false);
       }
       // 如果收藏/新增都关闭且品牌为双品牌，则确保 quickFilter 落在 all
-      if (!next.favoritesOnly && !next.newThisMonth && next.brands.length === 2) {
+      if (!next.favoritesOnly && next.newAddedRange === 'none' && next.brands.length === 2) {
         setQuickFilter('all');
       }
       setAppliedFilters(next);
@@ -396,16 +408,48 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
                 item.key === 'favorites'
                   ? pendingFilters.favoritesOnly
                   : item.key === 'new'
-                    ? pendingFilters.newThisMonth
+                    ? pendingFilters.newAddedRange !== 'none'
                     : item.key === 'dji'
                       ? brandSelection.length === 1 && brandSelection[0] === 'DJI'
                       : item.key === 'insta'
                         ? brandSelection.length === 1 && brandSelection[0] === 'Insta360'
-                        : !pendingFilters.favoritesOnly && !pendingFilters.newThisMonth && brandSelection.length === 2;
+                        : !pendingFilters.favoritesOnly && pendingFilters.newAddedRange === 'none' && brandSelection.length === 2;
               return (
-                <button key={item.key} onClick={() => applyQuickFilter(item.key)} className={quickBtnClass(active)}>
-                  {item.label}
-                </button>
+                <div key={item.key} className="relative">
+                  <button onClick={() => applyQuickFilter(item.key)} className={quickBtnClass(active)}>
+                    {item.label}
+                  </button>
+                  {item.key === 'new' && showNewAddedPopover && (
+                    <div
+                      ref={newAddedPopoverRef}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[160px] rounded-2xl bg-white border border-slate-100 shadow-[0_14px_30px_rgba(15,23,42,0.12)] z-30 overflow-hidden"
+                    >
+                      {[
+                        { key: 'this_month' as const, label: '本月新增' },
+                        { key: 'last_month' as const, label: '上月新增' },
+                        { key: 'last_three_months' as const, label: '近三月新增' },
+                      ].map((opt) => {
+                        const activeOpt = pendingFilters.newAddedRange === opt.key;
+                        return (
+                          <button
+                            key={opt.key}
+                            className={`w-full text-left px-4 py-2 text-sm font-medium transition ${
+                              activeOpt ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50'
+                            }`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              updateFilters({ newAddedRange: opt.key });
+                              setQuickFilter('new');
+                              setShowNewAddedPopover(false);
+                            }}
+                          >
+                            {opt.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
