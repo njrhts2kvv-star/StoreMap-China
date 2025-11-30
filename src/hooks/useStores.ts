@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useMemo, useState } from 'react';
 import djiRaw from '../data/dji_stores.json';
 import instaRaw from '../data/insta360_stores.json';

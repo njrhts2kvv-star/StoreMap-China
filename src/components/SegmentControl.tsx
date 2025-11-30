@@ -8,57 +8,45 @@ type Props = {
 const cx = (...args: Array<string | false | undefined>) => args.filter(Boolean).join(' ');
 
 export function SegmentControl({ value, onChange }: Props) {
+  const tabs = [
+    { key: 'overview' as const, label: '总览', icon: LayoutGrid },
+    { key: 'map' as const, label: '地图', icon: MapPin },
+    { key: 'competition' as const, label: '竞争', icon: Shield },
+    { key: 'list' as const, label: '列表', icon: List },
+  ];
+  const activeIndex = tabs.findIndex((t) => t.key === value);
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-100 bg-white/95 backdrop-blur">
-      <div className="max-w-[620px] mx-auto grid grid-cols-4 gap-3 px-6 py-3">
-        <button
-          onClick={() => onChange('overview')}
-          className={cx(
-            'flex items-center justify-center gap-2 rounded-2xl py-2.5 text-sm font-semibold shadow-sm transition',
-            value === 'overview'
-              ? 'bg-slate-900 text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)]'
-              : 'bg-slate-100 text-slate-600'
+    <div className="fixed bottom-2 left-0 right-0 z-50 flex justify-center px-4">
+      <div className="relative w-full max-w-[560px] rounded-[28px] bg-white shadow-[0_16px_36px_rgba(15,23,42,0.14)] border border-white/70 backdrop-blur-md px-2 py-2">
+        <div className="grid grid-cols-4 gap-1 relative">
+          {activeIndex >= 0 && (
+            <div
+              className="absolute inset-y-1 rounded-2xl bg-slate-900 transition-all duration-200"
+              style={{
+                left: `calc(${activeIndex * 25}% + 4px)`,
+                right: `calc(${(3 - activeIndex) * 25}% + 4px)`,
+              }}
+            />
           )}
-        >
-          <LayoutGrid className="w-4 h-4" />
-          总览
-        </button>
-        <button
-          onClick={() => onChange('map')}
-          className={cx(
-            'flex items-center justify-center gap-2 rounded-2xl py-2.5 text-sm font-semibold shadow-sm transition',
-            value === 'map'
-              ? 'bg-amber-400 text-slate-900 shadow-[0_14px_30px_rgba(253,224,71,0.35)]'
-              : 'bg-slate-100 text-slate-600'
-          )}
-        >
-          <MapPin className="w-4 h-4" />
-          地图
-        </button>
-        <button
-          onClick={() => onChange('competition')}
-          className={cx(
-            'flex items-center justify-center gap-2 rounded-2xl py-2.5 text-sm font-semibold shadow-sm transition',
-            value === 'competition'
-              ? 'bg-amber-400 text-slate-900 shadow-[0_14px_30px_rgba(253,224,71,0.35)]'
-              : 'bg-slate-100 text-slate-600'
-          )}
-        >
-          <Shield className="w-4 h-4" />
-          竞争
-        </button>
-        <button
-          onClick={() => onChange('list')}
-          className={cx(
-            'flex items-center justify-center gap-2 rounded-2xl py-2.5 text-sm font-semibold shadow-sm transition',
-            value === 'list'
-              ? 'bg-amber-400 text-slate-900 shadow-[0_14px_30px_rgba(253,224,71,0.35)]'
-              : 'bg-slate-100 text-slate-600'
-          )}
-        >
-          <List className="w-4 h-4" />
-          列表
-        </button>
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            const active = tab.key === value;
+            return (
+              <button
+                key={tab.key}
+                onClick={() => onChange(tab.key)}
+                className={cx(
+                  'relative z-10 flex flex-col items-center justify-center gap-1 rounded-2xl py-2 text-xs font-semibold transition-colors',
+                  active ? 'text-white' : 'text-slate-500'
+                )}
+              >
+                <Icon className="w-[18px] h-[18px]" />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

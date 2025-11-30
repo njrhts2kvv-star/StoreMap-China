@@ -38,7 +38,7 @@ export default function StoreList({ stores, favorites, onToggleFavorite, onSelec
                 {s.brand}
               </span>
               {isNew && (
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500 text-white font-semibold shadow-sm">
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#ef4444] text-white font-semibold shadow-sm">
                   NEW
                 </span>
               )}

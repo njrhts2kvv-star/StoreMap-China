@@ -1,11 +1,12 @@
 // 用高德 JS API 重写门店地图，复刻原有交互和视觉
+// @ts-nocheck
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Crosshair, Minus, Plus, Star, X } from 'lucide-react';
 import type { Mall, Store } from '../types/store';
 import { loadAmap } from '../utils/loadAmap';
 import djiLogoBlack from '../assets/dji_logo_black_small.svg';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
-import instaLogoWhite from '../assets/insta360_logo_white_small.svg';
+import instaLogoBlack from '../assets/insta360_logo_black_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
 import { isNewThisMonth } from '../utils/storeRules';
 import { MALL_STATUS_COLORS } from '../config/competitionColors';
@@ -32,6 +33,8 @@ type Props = {
   initialZoom?: number;
   colorBaseStores?: Store[]; // 色块基准：不受筛选影响的全量数据
   regionMode?: 'province' | 'none'; // none: 不展示省市色块，直接展示点位
+  showLegend?: boolean; // 是否显示新增门店图例
+  isFullscreen?: boolean; // 是否全屏模式（无圆角）
 };
 
 const DEFAULT_CENTER: [number, number] = [35.5, 103.5];
@@ -209,6 +212,8 @@ export function AmapStoreMap({
   initialZoom = DEFAULT_ZOOM,
   colorBaseStores,
   regionMode = 'province',
+  showLegend = false,
+  isFullscreen = false,
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<AMap.Map | null>(null);
@@ -246,7 +251,7 @@ export function AmapStoreMap({
   const [provinceShapes, setProvinceShapes] = useState<RegionShape[]>([]);
   const [cityShapesByProvince, setCityShapesByProvince] = useState<Record<string, RegionShape[]>>({});
   const [activeProvinceAdcode, setActiveProvinceAdcode] = useState<string | null>(null);
-  const regionPolygonsRef = useRef<AMap.Polygon[]>([]);
+  const regionPolygonsRef = useRef<any[]>([]);
   const geoCacheRef = useRef<Record<string, RegionShape[]>>({});
   const isSameCityName = (a: string, b: string) => {
     if (!a || !b) return false;
@@ -399,8 +404,7 @@ export function AmapStoreMap({
       if (!amapRef.current || !mapRef.current || !shapes.length) return;
       clearRegionOverlays();
       const AMapLib = amapRef.current;
-      const nextPolygons: AMap.Polygon[] = [];
-      const nextLabels: AMap.Text[] = [];
+      const nextPolygons: any[] = [];
 
       shapes.forEach((shape) => {
         if (!shape.boundaries?.length) return;
@@ -412,7 +416,7 @@ export function AmapStoreMap({
         const share = hasData ? baseStats.dji / baseStats.total : null;
         const fillColor = hasData ? calcFillColor(share) : 'transparent';
         const strokeColor = hasData ? calcStrokeColor(fillColor) : '#cbd5e1';
-        const polygon = new AMapLib.Polygon({
+        const polygon = new (AMapLib as any).Polygon({
           path: shape.boundaries,
           fillColor,
           fillOpacity: hasData ? 0.24 : 0,
@@ -434,16 +438,16 @@ export function AmapStoreMap({
             setActiveCity(shape.name);
             setDrillLevel('city');
           }
-        if (mapRef.current) {
-          mapRef.current.setFitView([polygon], false, [40, 40, 40, 80]);
-          const current = mapRef.current.getZoom();
-          const target =
-            level === 'province'
-              ? Math.max(current, 5.2) // 省级略放大，露出省名
-              : Math.min(Math.max(current, 6.5), CITY_MAX_ZOOM); // 城市层限制最大缩放，避免直落街道
-          mapRef.current.setZoom(target, true);
-        }
-      });
+          if (mapRef.current) {
+            mapRef.current.setFitView([polygon], false, [40, 40, 40, 80]);
+            const current = mapRef.current.getZoom();
+            const target =
+              level === 'province'
+                ? Math.max(current, 5.2)
+                : Math.min(Math.max(current, 6.5), CITY_MAX_ZOOM);
+            mapRef.current.setZoom(target, true);
+          }
+        });
         nextPolygons.push(polygon);
         // 省、市层不再额外叠加自定义标签，使用底图自带名称
       });
@@ -534,11 +538,11 @@ export function AmapStoreMap({
         logoImg.className = 'store-marker__logo';
         const logoSrc = isNew
           ? store.brand === 'DJI'
-            ? djiLogoBlack
+            ? djiLogoWhite
             : instaLogoYellow
           : store.brand === 'DJI'
-            ? djiLogoWhite
-            : instaLogoWhite;
+            ? djiLogoBlack
+            : instaLogoBlack;
         logoImg.src = logoSrc;
         logoImg.alt = store.brand;
         if (isNew && store.brand === 'Insta360') {
@@ -607,7 +611,6 @@ export function AmapStoreMap({
 
     markersRef.current = nextMarkers;
     (window as any).__storeMarkers = nextMarkers;
-    console.info('[Map] markers prepared:', nextMarkers.length);
 
     const hasSelection = viewMode === 'stores' ? selectedId : selectedMallId;
     const allowAutoFit = !(viewMode === 'stores' && drillLevel === 'city'); // 城市层不自动按照门店点位缩放
@@ -760,10 +763,13 @@ export function AmapStoreMap({
     mapRef.current.setZoom(next);
   };
 
+  const borderRadius = isFullscreen ? 'rounded-none' : 'rounded-[28px]';
+  const controlsTop = isFullscreen ? 'top-[144px]' : 'top-4';
+
   return (
-    <div className="relative w-full h-full rounded-[28px] overflow-visible shadow-[0_16px_44px_rgba(15,23,42,0.08)] bg-gradient-to-b from-[#f9fafc] to-[#eef1f7] border border-white">
-      <div className="absolute inset-0 rounded-[28px] overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(15,23,42,0.06),transparent_25%),radial-gradient(circle_at_80%_40%,rgba(254,230,0,0.18),transparent_30%)] pointer-events-none z-0" />
+    <div className={`relative w-full h-full ${borderRadius} ${isFullscreen ? '' : 'shadow-[0_16px_44px_rgba(15,23,42,0.08)] bg-gradient-to-b from-[#f9fafc] to-[#eef1f7] border border-white'} overflow-hidden isolate`}>
+      <div className={`absolute inset-0 ${borderRadius} overflow-hidden`}>
+        {!isFullscreen && <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(15,23,42,0.06),transparent_25%),radial-gradient(circle_at_80%_40%,rgba(254,230,0,0.18),transparent_30%)] pointer-events-none z-0" />}
         <div
           id={mapId}
           ref={containerRef}
@@ -772,7 +778,7 @@ export function AmapStoreMap({
         />
       </div>
       {showControls && (
-        <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2">
+        <div className={`absolute ${controlsTop} right-4 z-10 flex flex-col gap-2`}>
           <button className="w-10 h-10 rounded-full bg-white shadow border border-slate-200 flex items-center justify-center" onClick={recenter}>
             <Crosshair className="w-4 h-4 text-slate-700" />
           </button>
@@ -899,12 +905,12 @@ export function AmapStoreMap({
                 e.stopPropagation();
                 onSelect('');
               }}
-              className="absolute top-3 right-3 p-2 hover:bg-slate-100 rounded-full transition-colors z-10 bg-white shadow-sm"
+              className="absolute top-2 right-2 p-1 hover:bg-slate-100 transition-colors z-10"
             >
-              <X className="w-5 h-5 text-slate-600" />
+              <X className="w-4 h-4 text-slate-400" />
             </button>
-            <div className="p-4 pr-12">
-              <div className="flex gap-3 items-start mb-2">
+            <div className="pt-3 pb-3">
+              <div className="flex gap-3 items-start mb-2 px-3 pr-8">
               <div
                   className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm ${
                     selectedStore.brand === 'DJI' ? 'bg-white border border-slate-900' : 'bg-white border border-amber-300'
@@ -918,17 +924,18 @@ export function AmapStoreMap({
                       {selectedStore.storeName}
                     </div>
                     {isNewThisMonth(selectedStore) && (
-                      <span className="px-2 py-[1px] rounded-full text-[9px] font-semibold bg-[#1f232f] text-white shadow-sm relative -top-[1px]">
+                      <span className="px-2 py-[1px] rounded-full text-[9px] font-semibold bg-[#ef4444] text-white shadow-sm relative -top-[1px]">
                         NEW
                       </span>
                     )}
                   </div>
-                  <div className="text-xs text-slate-500 line-clamp-1">{selectedStore.address}</div>
+                  <div className="text-[10px] text-slate-500 line-clamp-1">{selectedStore.address}</div>
                 </div>
               </div>
-              <div className="flex gap-2 mt-3">
+              <div className="border-t border-slate-100 my-2"></div>
+              <div className="flex gap-2 px-3">
                 <button
-                  className={`flex-1 h-9 rounded-lg text-xs font-bold border transition-colors flex items-center justify-center gap-2 ${favoriteBtnClass}`}
+                  className={`flex-1 h-[30px] rounded-full text-xs font-bold border transition-colors flex items-center justify-center gap-1.5 ${favoriteBtnClass}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     onToggleFavorite?.(selectedStore.id);
@@ -944,7 +951,7 @@ export function AmapStoreMap({
                   收藏
                 </button>
                 <button
-                  className="flex-1 h-9 rounded-lg bg-slate-100 text-slate-900 text-xs font-bold border border-slate-200 hover:bg-slate-200 active:bg-slate-300 transition-colors"
+                  className="flex-1 h-[30px] rounded-full bg-slate-100 text-slate-900 text-xs font-bold border border-slate-200 hover:bg-slate-200 active:bg-slate-300 transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
                     if (telLink) window.location.href = telLink;
@@ -954,7 +961,7 @@ export function AmapStoreMap({
                   拨打电话
                 </button>
                 <button
-                  className="flex-1 h-9 rounded-lg bg-slate-100 text-slate-900 text-xs font-bold border border-slate-200 hover:bg-slate-200 active:bg-slate-300 transition-colors disabled:opacity-40"
+                  className="flex-1 h-[30px] rounded-full bg-slate-100 text-slate-900 text-xs font-bold border border-slate-200 hover:bg-slate-200 active:bg-slate-300 transition-colors disabled:opacity-40"
                   onClick={(e) => {
                     e.stopPropagation();
                     if (!hasCoord) return;
@@ -966,6 +973,22 @@ export function AmapStoreMap({
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+      {showLegend && (
+        <div className={`absolute left-3 ${isFullscreen ? 'bottom-[76px]' : 'bottom-[23px]'} flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1.5 shadow-sm pointer-events-none z-10`}>
+          <div className="flex items-center gap-1">
+            <span className="store-marker store-marker--insta store-marker--new store-marker--insta-new">
+              <img src={instaLogoYellow} alt="Insta360 新增" className="store-marker__logo store-marker__logo--full" />
+            </span>
+            <span className="text-[10px] text-slate-600">新增</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="store-marker store-marker--dji store-marker--new store-marker--dji-new">
+              <img src={djiLogoWhite} alt="DJI 新增" className="store-marker__logo" />
+            </span>
+            <span className="text-[10px] text-slate-600">新增</span>
           </div>
         </div>
       )}

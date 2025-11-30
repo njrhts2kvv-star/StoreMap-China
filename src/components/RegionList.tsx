@@ -307,7 +307,7 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
                                                     <div className="flex items-center gap-2">
                                                       <div className="text-sm font-semibold text-slate-900 truncate">{s.storeName}</div>
                                                       {isNew && (
-                                                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500 text-white font-semibold shadow-sm">
+                                                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#ef4444] text-white font-semibold shadow-sm">
                                                           NEW
                                                         </span>
                                                       )}
@@ -413,7 +413,7 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
                                             <div className="flex items-center gap-2">
                                               <div className="text-sm font-semibold text-slate-900 truncate">{s.storeName}</div>
                                               {isNewThisMonth(s) && (
-                                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500 text-white font-semibold shadow-sm">
+                                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#ef4444] text-white font-semibold shadow-sm">
                                                   NEW
                                                 </span>
                                               )}

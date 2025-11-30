@@ -4,12 +4,12 @@
 
 /* 高德自定义圆点样式：品牌 logo 为主，去掉阴影但保留圆形裁剪，基准 16px */
 .store-marker { --brand-main:#111827; --marker-bg:var(--brand-main); --marker-size:16px; width:var(--marker-size); height:var(--marker-size); border-radius:999px; border:0; display:inline-flex; align-items:center; justify-content:center; position:relative; background:var(--marker-bg); box-shadow:none; overflow:hidden; transform:translateZ(0); transition:transform 120ms ease; }
-.store-marker__logo { width:12px; height:12px; pointer-events:none; border-radius:999px; object-fit:contain; }
-.store-marker__logo--full { width:14px; height:14px; }
-.store-marker--dji { --brand-main:#111827; --marker-bg:transparent; } /* 普通 / 收藏 DJI：透明底 logo */
-.store-marker--dji-new { --marker-bg:#ffffff; } /* 新增 DJI：白底黑 logo */
-.store-marker--insta { --brand-main:#facc15; --marker-bg:transparent; } /* 普通 / 收藏 Insta：透明底白 logo */
-.store-marker--insta-new { --marker-bg:transparent; } /* 新增 Insta：透明底黄 logo */
+.store-marker__logo { width:13px; height:13px; pointer-events:none; border-radius:999px; object-fit:contain; }
+.store-marker__logo--full { width:15px; height:15px; }
+.store-marker--dji { --brand-main:#111827; --marker-bg:#ffffff; box-shadow:none; } /* 普通 / 收藏 DJI：白底黑 logo，无额外边框 */
+.store-marker--dji-new { --marker-bg:transparent; box-shadow:none; } /* 新增 DJI：透明底黑 logo，无描边 */
+.store-marker--insta { --brand-main:#facc15; --marker-bg:#ffffff; box-shadow:none; } /* 普通 / 收藏 Insta：白底黑/黄 logo */
+.store-marker--insta-new { --marker-bg:transparent; box-shadow:none; } /* 新增 Insta：透明底黄 logo，无描边 */
 .store-marker--favorite { --marker-size:16px; } /* 收藏尺寸与普通一致，不改底色 */
 .store-marker--new { box-shadow:none; transform:scale(1); }
 .store-marker--selected { box-shadow:0 0 0 1px #ffffff,0 3px 8px rgba(15,23,42,0.15); transform:translateZ(0) scale(1.06); }
