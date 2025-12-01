@@ -11,6 +11,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Optional, Set
 
+import os
+import requests
 import pandas as pd
 from geopy.distance import geodesic
 
@@ -20,6 +22,78 @@ STORE_CSV = BASE_DIR / "Store_Master_Cleaned.csv"
 MALL_CSV = BASE_DIR / "Mall_Master_Cleaned.csv"
 STORE_BACKUP = BASE_DIR / "Store_Master_Cleaned.csv.backup_coords"
 MALL_BACKUP = BASE_DIR / "Mall_Master_Cleaned.csv.backup_coords"
+
+# 高德商场搜索配置（与 Insta 匹配脚本保持一致的类型码）
+AMAP_AROUND_API = "https://restapi.amap.com/v3/place/around"
+AMAP_TYPES_MALL = "060100|060101|060102|060200|060400|060500"
+
+# 简单的“非商场”过滤关键词：命中则强制跳过（避免匹配便利店/超市等）
+NO_MALL_KEYWORDS = (
+    "便利店",
+    "超市",
+    "鲜花",
+    "花店",
+    "商行",
+    "小吃",
+    "餐厅",
+    "奶茶",
+    "药房",
+    "药店",
+    "KKV",
+    "无人便利",
+    "罗森",
+    "711",
+    "7-ELEVEN",
+    "7-11",
+)
+
+# “像商场”的正向关键词，命中会加权
+MALL_HINT_KEYWORDS = (
+    "广场",
+    "中心",
+    "购物",
+    "商场",
+    "mall",
+    "MALL",
+    "百货",
+    "天街",
+    "万达",
+    "万象",
+    "吾悦",
+    "来福士",
+    "K11",
+    "天虹",
+    "龙湖",
+    "凯德",
+)
+
+
+def _load_amap_key() -> Optional[str]:
+  """从环境变量或 .env.local 中加载高德 Key（与其他脚本保持一致）。"""
+  key = os.getenv("AMAP_WEB_KEY")
+  if key:
+      return key
+  env_path = BASE_DIR / ".env.local"
+  if not env_path.exists():
+      return None
+  parsed: dict[str, str] = {}
+  try:
+      with open(env_path, "r", encoding="utf-8") as f:
+          for raw in f:
+              line = raw.strip()
+              if not line or line.startswith("#") or "=" not in line:
+                  continue
+              k, v = line.split("=", 1)
+              parsed[k.strip()] = v.strip().strip('"')
+  except Exception:
+      return None
+  if parsed.get("AMAP_WEB_KEY"):
+      os.environ["AMAP_WEB_KEY"] = parsed["AMAP_WEB_KEY"]
+      return parsed["AMAP_WEB_KEY"]
+  return None
+
+
+AMAP_KEY = _load_amap_key()
 
 
 def _normalize_str(value) -> str:
@@ -40,6 +114,115 @@ def _calculate_distance(lat1: float, lng1: float, lat2: float, lng2: float) -> f
         return geodesic((lat1, lng1), (lat2, lng2)).meters
     except Exception:
         return 999999.0
+
+
+def _search_nearby_mall(
+    store_name: str,
+    city: str,
+    lat: Optional[float],
+    lng: Optional[float],
+) -> Optional[tuple[str, Optional[float], Optional[float]]]:
+    """根据门店坐标在高德中搜索附近商场，用于为没有 mall_name 的门店兜底匹配商场。
+
+    返回 (mall_name, mall_lat, mall_lng)，失败时返回 None。
+    该逻辑是 DJI/Insta 新门店的自动兜底，不会覆盖已有 mall 关联。
+    """
+    if not AMAP_KEY or lat is None or lng is None:
+        return None
+
+    try:
+        params = {
+            "key": AMAP_KEY,
+            "location": f"{lng},{lat}",
+            "radius": 1200,
+            "types": AMAP_TYPES_MALL,
+            "sortrule": "distance",
+            "output": "json",
+        }
+        resp = requests.get(AMAP_AROUND_API, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("status") != "1":
+            return None
+        pois = data.get("pois") or []
+        if not pois:
+            return None
+
+        # 归一化店名，去掉“授权体验店/专区”等尾缀，提升匹配效果
+        base_name = (
+            store_name.replace("授权高级体验店", "")
+            .replace("授权体验专区", "")
+            .replace("授权体验店", "")
+            .replace("授权专卖店", "")
+            .replace("直营店", "")
+            .replace("专营店", "")
+            .replace("专卖店", "")
+            .replace("店", "")
+            .strip()
+        )
+
+        best = None
+        best_score = -1.0
+
+        for poi in pois:
+            name = str(poi.get("name") or "").strip()
+            if not name:
+                continue
+            if any(k in name for k in NO_MALL_KEYWORDS):
+                continue
+
+            loc = str(poi.get("location") or "")
+            if "," not in loc:
+                continue
+            lng_str, lat_str = loc.split(",", 1)
+            try:
+                poi_lng = float(lng_str)
+                poi_lat = float(lat_str)
+            except Exception:
+                continue
+
+            # 高德会返回 distance 字段（米），如果没有就自己算
+            try:
+                dist = float(poi.get("distance") or 0.0)
+            except Exception:
+                dist = _calculate_distance(lat, lng, poi_lat, poi_lng)
+
+            # 基础分：距离越近越好
+            score = max(0.0, 1000.0 - dist)
+
+            # 名称包含关系加权（例如“济宁龙贵购物广场授权体验店” → “济宁龙贵购物广场”）
+            if base_name and (base_name in name or name in base_name):
+                score += 300.0
+
+            # 命中“像商场”的关键词加权
+            if any(k in name for k in MALL_HINT_KEYWORDS):
+                score += 100.0
+
+            if score > best_score:
+                best_score = score
+                best = (name, poi_lat, poi_lng, dist)
+
+        if not best:
+            return None
+
+        best_name, best_lat, best_lng, best_dist = best
+
+        # 候选名称本身也要像“商场/购物中心”
+        if not any(k in best_name for k in MALL_HINT_KEYWORDS):
+            return None
+
+        # 只有当商场名称与门店名称高度相关时才接受：要求互为子串之一
+        if base_name and not (base_name in best_name or best_name in base_name):
+            return None
+
+        # 距离过远则放弃（>1.5km 基本可以认为不是同一商圈）
+        if best_dist > 1500:
+            return None
+
+        return best_name, best_lat, best_lng
+    except Exception as exc:
+        print(f"[警告] 高德附近商场搜索失败: {exc}")
+        return None
 
 
 def _load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -65,6 +248,7 @@ def _load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
                 "city",
                 "source",
                 "store_count",
+                "province",
             ]
         )
 
@@ -79,6 +263,7 @@ def _load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         "city",
         "source",
         "store_count",
+        "province",
     ]:
         if col not in mall_df.columns:
             default = 0 if col == "store_count" else ""
@@ -186,15 +371,13 @@ def update_mall_coordinates(
         name = _normalize_str(store_row.get("name"))
         city = _normalize_str(store_row.get("city"))
         city_key = city.replace("市", "")
+        store_province = _normalize_str(store_row.get("province"))
 
         lat = raw_row.get("lat")
         lng = raw_row.get("lng")
         mall_name = _normalize_str(raw_row.get("mall_name"))
         mall_lat = raw_row.get("mall_lat")
         mall_lng = raw_row.get("mall_lng")
-
-        # 若 all_stores 中没有商场名称，则只同步门店坐标
-        has_mall = bool(mall_name)
 
         cur_lat = store_row.get("corrected_lat")
         cur_lng = store_row.get("corrected_lng")
@@ -233,6 +416,19 @@ def update_mall_coordinates(
                         }
                     )
 
+        # 若还没有商场名称，则尝试通过高德附近搜索自动匹配一次（DJI/Insta 新门店兜底）
+        has_mall = bool(mall_name)
+        if not has_mall and src_lat is not None and src_lng is not None and brand in {"DJI", "Insta360"}:
+            inferred = _search_nearby_mall(name, city, src_lat, src_lng)
+            if inferred is not None:
+                inferred_name, inferred_lat, inferred_lng = inferred
+                mall_name = inferred_name
+                mall_lat = inferred_lat
+                mall_lng = inferred_lng
+                has_mall = True
+                if dry_run:
+                    print(f"[预览] 自动匹配商场: {brand} - {name} ({city}) -> {mall_name} (约 {int(_calculate_distance(src_lat, src_lng, inferred_lat or src_lat, inferred_lng or src_lng))}m)")
+
         # 没有商场名称则不处理 mall 相关逻辑
         if not has_mall:
             if changed:
@@ -258,6 +454,7 @@ def update_mall_coordinates(
                 "city": city,
                 "source": "amap_auto",
                 "store_count": 0,  # 稍后统一重算
+                "province": store_province,
             }
             if dry_run:
                 print(f"[预览] 新增商场: {mall_id} - {mall_name} ({city})")
@@ -273,6 +470,7 @@ def update_mall_coordinates(
                 m_lat = mrow.get("mall_lat")
                 m_lng = mrow.get("mall_lng")
                 m_name = _normalize_str(mrow.get("mall_name"))
+                m_province = _normalize_str(mrow.get("province"))
 
                 # 同步商场名称（以 all_stores 的 mall_name 为主）
                 need_name_update = mall_name and m_name != mall_name
@@ -282,20 +480,25 @@ def update_mall_coordinates(
                     or float(m_lat) != float(mall_lat)
                     or float(m_lng) != float(mall_lng)
                 )
+                need_province_update = bool(store_province) and not m_province
 
-                if need_name_update or need_coord_update:
+                if need_name_update or need_coord_update or need_province_update:
                     if dry_run:
                         print(f"[预览] 更新商场: {mall_id}")
                         if need_name_update:
                             print(f"  名称: {m_name} -> {mall_name}")
                         if need_coord_update:
                             print(f"  坐标: ({m_lat}, {m_lng}) -> ({mall_lat}, {mall_lng})")
+                        if need_province_update:
+                            print(f"  省份: {m_province or '空'} -> {store_province}")
                     else:
                         if need_name_update:
                             mall_df.loc[mall_mask, "mall_name"] = mall_name
                         if need_coord_update:
                             mall_df.loc[mall_mask, "mall_lat"] = float(mall_lat)
                             mall_df.loc[mall_mask, "mall_lng"] = float(mall_lng)
+                        if need_province_update:
+                            mall_df.loc[mall_mask, "province"] = store_province
                     updated_mall_rows += 1
 
         # 回写到门店主表

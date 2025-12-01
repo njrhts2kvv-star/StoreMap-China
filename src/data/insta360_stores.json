@@ -12,6 +12,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00007",
     "mallName": "深圳前海壹方城",
     "phone": "19925294205",
@@ -29,7 +30,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "01080a11-6c3e-44f0-b46e-b625e5af45ad",
@@ -43,7 +45,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "011dee3a-c57f-4d6b-9e7c-a13f98c87b88",
@@ -57,7 +60,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "03e59b26-b7b7-473b-8e40-dd02fc56c86f",
@@ -72,6 +76,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18653186550"
   },
   {
@@ -87,6 +92,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00647",
     "mallName": "Isnta360上海环龙商场照材",
     "phone": "15021912968",
@@ -104,7 +110,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "046bde15-aff0-457f-bce0-6ef5fa6a8bd3",
@@ -118,7 +125,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "04977458-c3ae-4d78-bed8-df48d89fde7e",
@@ -133,8 +141,9 @@
     "serviceTags": [],
     "openedAt": "2025-11-28",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00878",
-    "mallName": "华联金街购物中心(顺义金街BHG)",
+    "mallName": "无人便利店",
     "phone": "15313729099",
     "openingHours": "10:00-22:00"
   },
@@ -150,7 +159,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0608353b-5190-4e13-ae28-a54411997904",
@@ -165,6 +175,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00472",
     "mallName": "青岛凯德MALL",
     "phone": "13730949877",
@@ -182,7 +193,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "08373bf2-2aab-4f18-87fc-5242c1a0e42c",
@@ -190,13 +202,14 @@
     "storeName": "影石Insta360成都华凌摄影城照材专卖店",
     "province": "四川省",
     "city": "成都市",
-    "address": "四川省成都市金牛区文家巷12号华凌婚纱摄影器材城一楼A27 ",
+    "address": "四川省成都市金牛区文家巷12号华凌婚纱摄影器材城一楼A27",
     "latitude": 30.687565,
     "longitude": 104.052474,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19108190448",
     "openingHours": "09:00-18:30"
   },
@@ -213,6 +226,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15388090416",
     "openingHours": "09:00-18:30"
   },
@@ -228,7 +242,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0a1626bf-81d8-497e-873f-2ca75604ad89",
@@ -242,7 +257,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0a78ede3-8a68-416a-8c00-5cbc533f50a7",
@@ -256,7 +272,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0ae47c5b-06d8-41f3-99ad-e3f43bec674c",
@@ -271,6 +288,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00042",
     "mallName": "吾悦广场(常州钟楼店)",
     "phone": "18052719285",
@@ -288,7 +306,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0bccf1d8-40c3-46b9-a7c8-4e2f98a72ac8",
@@ -303,6 +322,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00534",
     "mallName": "三里屯太古里",
     "phone": "17301391892",
@@ -320,7 +340,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0d065d54-bbed-46ef-83d9-8c581629aaae",
@@ -334,7 +355,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0d3c8980-6069-47ff-b22f-5a7c9f9a31ac",
@@ -349,6 +371,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00614",
     "mallName": "深圳宝安机场",
     "phone": "19926804416",
@@ -360,13 +383,14 @@
     "storeName": "影石Insta360常州万象城授权体验店",
     "province": "江苏省",
     "city": "常州市",
-    "address": "离宫路329号华润国际花园100 幢常州万象城1号门外街L114a ",
+    "address": "离宫路329号华润国际花园100 幢常州万象城1号门外街L114a",
     "latitude": 31.749838,
     "longitude": 119.958999,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00131",
     "mallName": "常州万象城",
     "phone": "15312563235",
@@ -384,7 +408,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0e9f6d82-9351-4a16-a95c-51b9634d860d",
@@ -399,6 +424,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00535",
     "mallName": "北京超极合生汇",
     "phone": "15611127757",
@@ -416,7 +442,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0fbf940e-2cd5-42bc-b892-96b2b9a2fdd3",
@@ -430,7 +457,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "0fc3bd6c-c0b8-4ed7-a1d7-80fc6b4e8bc8",
@@ -444,7 +472,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "1016c001-07a9-43a5-bf47-e460ee1c0280",
@@ -459,6 +488,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00195",
     "mallName": "广州塔广场",
     "phone": "19926007927",
@@ -476,7 +506,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "120458e7-d7c5-43e5-b7cb-30e01dc14cf3",
@@ -491,6 +522,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00610",
     "mallName": "河北保定市西大街",
     "phone": "19931256777"
@@ -508,6 +540,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00200",
     "mallName": "华润·铁西万象汇",
     "phone": "15102405592",
@@ -526,6 +559,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00612",
     "mallName": "龙湖重庆时代天街",
     "phone": "15310326067",
@@ -544,6 +578,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15287131837",
     "openingHours": "09:30-18:00"
   },
@@ -559,7 +594,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "1473082c-628b-463c-a7a9-eef4015708fd",
@@ -573,7 +609,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "14c7c222-3b69-4a28-bf7f-ad2152b22917",
@@ -588,6 +625,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00296",
     "mallName": "杭州亚奥万象天地",
     "phone": "17328896877",
@@ -606,6 +644,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00556",
     "mallName": "徐州彭城苏宁广场",
     "phone": "17712122284",
@@ -624,6 +663,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00050",
     "mallName": "曲江创意谷",
     "phone": "18191550679",
@@ -642,6 +682,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00492",
     "mallName": "探十里(升龙金中环财富中心店)",
     "phone": "15515815705",
@@ -660,6 +701,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "020-83738896",
     "openingHours": "10:00-22:00"
   },
@@ -675,7 +717,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "17225309-e416-4180-b829-f00094deb0e3",
@@ -690,6 +733,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00320",
     "mallName": "扬州万象汇",
     "phone": "19975077153",
@@ -708,6 +752,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18364070108",
     "openingHours": "10：00-22：00"
   },
@@ -724,6 +769,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00639",
     "mallName": "甘露山",
     "phone": "13971272669",
@@ -735,13 +781,14 @@
     "storeName": "邢台中华科技大厦彭朋电子售点1",
     "province": "河北省",
     "city": "邢台市",
-    "address": "河北省邢台市信都区中华科技大厦一层112号  ",
+    "address": "河北省邢台市信都区中华科技大厦一层112号",
     "latitude": 37.080528,
     "longitude": 114.495967,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "18554ccb-95b3-446d-8208-883b4fd93b79",
@@ -756,6 +803,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00522",
     "mallName": "星河COCO Park(福田店)",
     "phone": "18145767381",
@@ -774,6 +822,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00467",
     "mallName": "郑州郑东万象城",
     "phone": "18638546739",
@@ -791,7 +840,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "1bd3df9a-00da-4c88-a4a7-aadb1d4019ff",
@@ -805,7 +855,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "1c893b34-8b7d-4f45-b9d5-788ccee253cb",
@@ -819,7 +870,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "1d376712-d644-42bd-a052-67bf41d907ab",
@@ -834,6 +886,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00615",
     "mallName": "SM新生活广场(厦门思明店)",
     "phone": "18050237915",
@@ -852,6 +905,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00657",
     "mallName": "绍兴银泰",
     "phone": "17398010377",
@@ -870,6 +924,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15536501051",
     "openingHours": "冬季早9点到下午6点，夏季早9点到下午7点"
   },
@@ -886,6 +941,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00398",
     "mallName": "成都SKP",
     "phone": "15928541284",
@@ -903,7 +959,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "1fea0eef-8c74-4788-8857-06392a104a72",
@@ -918,6 +975,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00503",
     "mallName": "龙湖海南海口天街",
     "phone": "18689511411",
@@ -935,7 +993,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "21b59408-a37c-4c1c-9def-1c8b2c597423",
@@ -950,6 +1009,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00369",
     "mallName": "西安DT51",
     "phone": "17352684277",
@@ -967,7 +1027,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "21f4cb19-f149-4b32-aab0-6b2a9af4ab81",
@@ -975,13 +1036,14 @@
     "storeName": "华洋数码影石体验点",
     "province": "山西省",
     "city": "朔州市",
-    "address": "南城街道鄯阳街华洋数码相机 ",
+    "address": "南城街道鄯阳街华洋数码相机",
     "latitude": 39.325948,
     "longitude": 112.44446,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "2203bdd6-3c95-4dff-88e2-84c5b0341185",
@@ -996,6 +1058,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00108",
     "mallName": "长宁来福士",
     "phone": "19539481977",
@@ -1013,7 +1076,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "22aecbb1-36d8-44fc-a04c-39f575591488",
@@ -1028,6 +1092,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00045",
     "mallName": "深圳宝安国际机场T3",
     "phone": "19068088793",
@@ -1046,6 +1111,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "17302912592",
     "openingHours": "09:00-19:00"
   },
@@ -1062,6 +1128,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00506",
     "mallName": "武商梦时代",
     "phone": "19036916602",
@@ -1079,7 +1146,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "238ea205-3ebe-43b5-97f6-8105b6caa1c5",
@@ -1094,6 +1162,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13121193161",
     "openingHours": "09:30-17:20"
   },
@@ -1109,7 +1178,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "2542c79b-44b2-4e91-a741-775f7700510f",
@@ -1124,6 +1194,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00547",
     "mallName": "新天地东台里",
     "phone": "17621776156",
@@ -1135,13 +1206,14 @@
     "storeName": "成都数码广场照材店B",
     "province": "四川省",
     "city": "成都市",
-    "address": "四川省成都市武侯区人民南路四段1号 成都数码广场一楼 B11-B13 ",
+    "address": "四川省成都市武侯区人民南路四段1号 成都数码广场一楼 B11-B13",
     "latitude": 30.637577,
     "longitude": 104.072514,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13808028046",
     "openingHours": "09:00-18:30"
   },
@@ -1158,6 +1230,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00396",
     "mallName": "杭州萧山万象汇",
     "phone": "18967190850",
@@ -1175,7 +1248,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "26978503-b0cb-4cf4-abd5-9f47039b3692",
@@ -1183,13 +1257,14 @@
     "storeName": "影石Insta360 无锡万象城授权体验店",
     "province": "江苏省",
     "city": "无锡市",
-    "address": "金石路88号万象城一楼L1 73-74 ",
+    "address": "金石路88号万象城一楼L1 73-74",
     "latitude": 31.51753,
     "longitude": 120.293724,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00175",
     "mallName": "无锡万象城",
     "phone": "18115365881",
@@ -1208,6 +1283,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00572",
     "mallName": "天府和悦广场",
     "phone": "15208244550",
@@ -1225,7 +1301,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "27f4367b-6ddb-473c-b658-34a795c1b4f0",
@@ -1239,7 +1316,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "27fc5261-e0d0-4959-aad5-6c127506ab00",
@@ -1254,6 +1332,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00386",
     "mallName": "杭州万象城商场",
     "phone": "19032589733",
@@ -1271,7 +1350,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "2a575d51-4522-47ce-98fb-d0ba2e49b1eb",
@@ -1285,7 +1365,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "2d73071a-2e49-41a4-8848-1d5710fbf2ae",
@@ -1299,7 +1380,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "2e70302b-d264-476c-8d7c-db5a9c7f8f3a",
@@ -1307,13 +1389,14 @@
     "storeName": "影石Insta360南宁万锦电脑城照材专区",
     "province": "广西壮族自治区",
     "city": "南宁市",
-    "address": "广西南宁市青秀区星湖北一里万锦电脑城1A07、1A10铺 ",
+    "address": "广西南宁市青秀区星湖北一里万锦电脑城1A07、1A10铺",
     "latitude": 22.810589,
     "longitude": 108.350708,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15977703464"
   },
   {
@@ -1329,6 +1412,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-28",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00360",
     "mallName": "贵阳万象城",
     "phone": "18085006401",
@@ -1347,6 +1431,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "17391881158",
     "openingHours": "10:00-22:00"
   },
@@ -1362,7 +1447,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "2f82677b-a2d2-4f51-a506-e34f56ab2282",
@@ -1377,6 +1463,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00057",
     "mallName": "郑州正弘城",
     "phone": "13598605739",
@@ -1395,6 +1482,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00532",
     "mallName": "西单大悦城",
     "phone": "18522323191",
@@ -1413,6 +1501,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13407913078"
   },
   {
@@ -1428,6 +1517,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13052083193",
     "openingHours": "09:00-19:00"
   },
@@ -1444,6 +1534,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00077",
     "mallName": "泉州浦西万达广场",
     "phone": "18060561060",
@@ -1461,7 +1552,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "31ef4fde-1188-4441-9770-af98a0b71421",
@@ -1475,7 +1567,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "322a5a62-944d-47e0-afe3-5412eb1b4f0b",
@@ -1490,6 +1583,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00625",
     "mallName": "深圳大运天地",
     "phone": "18123756437",
@@ -1507,7 +1601,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "32ab5da3-040a-470a-868b-c0a0b1c3e085",
@@ -1521,7 +1616,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "32e3f5d7-0f2a-42e4-b7ca-335faeaac2c6",
@@ -1535,7 +1631,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "331d0259-80ad-4ffd-ae26-2557f90793e6",
@@ -1543,13 +1640,14 @@
     "storeName": "影石Insta360重庆石桥铺赛博广场照材专卖店",
     "province": "重庆市",
     "city": "重庆市",
-    "address": "重庆市九龙坡区渝州路6号石桥铺赛博数码广场1楼1013  ",
+    "address": "重庆市九龙坡区渝州路6号石桥铺赛博数码广场1楼1013",
     "latitude": 29.53731,
     "longitude": 106.493878,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18723482272",
     "openingHours": "09:30-18:30"
   },
@@ -1566,6 +1664,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00183",
     "mallName": "Paradise Walk(龙湖杭州滨江天街店)",
     "phone": "18158717205",
@@ -1583,7 +1682,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "36c73b3f-abc2-454c-a6aa-067d761d06e0",
@@ -1591,13 +1691,14 @@
     "storeName": "济南悦杨体验店",
     "province": "山东省",
     "city": "济南市",
-    "address": "解放路43号赛博数码广场1楼A07号索尼专卖店 ",
+    "address": "解放路43号赛博数码广场1楼A07号索尼专卖店",
     "latitude": 36.673145,
     "longitude": 117.069568,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "37df1216-dd04-4f77-9e17-fe6bd8d91d68",
@@ -1612,6 +1713,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18661314123",
     "openingHours": "09:00-19:00"
   },
@@ -1627,7 +1729,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "3938716f-825e-43e9-a14d-e1eb9f81a439",
@@ -1641,7 +1744,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "398e09e2-69f3-45b5-a4c1-0f2ef996adcb",
@@ -1656,6 +1760,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00332",
     "mallName": "上海万象城",
     "phone": "18951570987",
@@ -1673,7 +1778,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "3afdebee-9759-4321-a454-db622b91f8f7",
@@ -1688,6 +1794,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00651",
     "mallName": "成都滨江天街",
     "phone": "17323179361",
@@ -1705,7 +1812,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "3b26ea47-e40f-4eef-9a13-c8f424635730",
@@ -1719,7 +1827,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "3c19cd3a-429d-4191-9af4-6e59d9ec91c5",
@@ -1733,7 +1842,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "3c801ac2-c520-4313-87d5-92bfb13fa3c3",
@@ -1747,7 +1857,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "3c8c28ff-86cf-4814-88f7-9814ad769f5c",
@@ -1762,6 +1873,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00293",
     "mallName": "步步高·星城天地",
     "phone": "19397987466",
@@ -1773,13 +1885,14 @@
     "storeName": "影石Insta360广州百脑汇照材专卖店",
     "province": "广东省",
     "city": "广州市",
-    "address": "广东省广州市天河区天河路598号百脑汇1B12(影石insta) ",
+    "address": "广东省广州市天河区天河路598号百脑汇1B12(影石insta)",
     "latitude": 23.797408,
     "longitude": 113.205411,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00640",
     "mallName": "天河百脑汇",
     "phone": "13184899989",
@@ -1798,6 +1911,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13117520561",
     "openingHours": "10:00-22:00"
   },
@@ -1814,6 +1928,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13165999212",
     "openingHours": "09:00-18:00"
   },
@@ -1823,13 +1938,14 @@
     "storeName": "石家庄保利广场京东之家售点1",
     "province": "河北省",
     "city": "石家庄市",
-    "address": "体育北大街191号保利广场一层1009A ",
+    "address": "体育北大街191号保利广场一层1009A",
     "latitude": 38.080544,
     "longitude": 114.545885,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "3fe11543-eea5-45bd-a7b8-9fe70c12c394",
@@ -1844,6 +1960,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00523",
     "mallName": "壹方天地C区",
     "phone": "19075357190",
@@ -1861,7 +1978,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "41524973-8be4-4fd5-b967-e17094afcd68",
@@ -1876,6 +1994,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00339",
     "mallName": "上海合生汇",
     "phone": "19521300436",
@@ -1894,6 +2013,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18688894292",
     "openingHours": "10:00-22:00"
   },
@@ -1910,6 +2030,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00649",
     "mallName": "潍坊益家园照材",
     "phone": "18353620560",
@@ -1928,6 +2049,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00507",
     "mallName": "柳州万象城",
     "phone": "19101120360",
@@ -1946,6 +2068,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15252035203",
     "openingHours": "10:00-20:00"
   },
@@ -1961,7 +2084,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "445644c2-cce4-4bb7-929d-ed542bc2da35",
@@ -1976,6 +2100,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00444",
     "mallName": "中骏世界城",
     "phone": "18558782799",
@@ -1993,7 +2118,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "463b4fbe-c714-466c-b770-47d0defafe25",
@@ -2008,6 +2134,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00575",
     "mallName": "天府艺术公园"
   },
@@ -2024,6 +2151,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00436",
     "mallName": "番禺天河城",
     "phone": "13360560983",
@@ -2041,7 +2169,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "46e7cbb8-6986-49bb-a195-f70d9762e1a0",
@@ -2055,7 +2184,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "473e9423-0488-4f1c-bc80-c7185d85ce4f",
@@ -2069,7 +2199,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
@@ -2083,7 +2214,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
+    "changeType": "nan",
     "phone": "18258231127"
   },
   {
@@ -2099,6 +2231,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00047",
     "mallName": "振华商厦(海港路)",
     "phone": "15684080488",
@@ -2117,6 +2250,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00160",
     "mallName": "长沙万象城",
     "phone": "19173739900",
@@ -2134,7 +2268,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "4d066fcd-96be-47b4-9616-42695422f1a1",
@@ -2149,6 +2284,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19065683089",
     "openingHours": "09:00-21:00"
   },
@@ -2165,6 +2301,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00565",
     "mallName": "广州琶洲保利",
     "phone": "19128896236",
@@ -2183,6 +2320,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00265",
     "mallName": "苏州中心商场二期",
     "phone": "18068055829",
@@ -2201,6 +2339,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13859989501",
     "openingHours": "09:00-21:00"
   },
@@ -2216,7 +2355,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "4ff95629-da09-4a59-a2b8-83b1797bdf80",
@@ -2231,6 +2371,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13683817031",
     "openingHours": "09:00-18:30"
   },
@@ -2247,6 +2388,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13669228897"
   },
   {
@@ -2262,6 +2404,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "020-88138500",
     "openingHours": "10:00-22:00"
   },
@@ -2277,7 +2420,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "520434d7-366f-41a9-afc4-638917eff64e",
@@ -2291,7 +2435,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "52341316-94c8-4ab5-a811-043739475e92",
@@ -2306,6 +2451,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13149802583",
     "openingHours": "09:00-17:00"
   },
@@ -2321,7 +2467,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "527d5a12-c3d7-474f-8333-0acc75af80fd",
@@ -2336,6 +2483,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19079192070"
   },
   {
@@ -2351,6 +2499,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00344",
     "mallName": "龙湖·西宸天街",
     "phone": "18482332045",
@@ -2369,6 +2518,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00065",
     "mallName": "重庆来福士广场",
     "phone": "13983092469",
@@ -2387,6 +2537,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15929317811",
     "openingHours": "09:30-19:30"
   },
@@ -2403,6 +2554,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00536",
     "mallName": "北京 798 创意园",
     "phone": "15679620963",
@@ -2420,7 +2572,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "573e1fe3-6289-41f6-95bf-d97e13e5dc5e",
@@ -2434,7 +2587,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "575671da-62c2-4ff3-9623-7390200d9c8b",
@@ -2449,6 +2603,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13506454610"
   },
   {
@@ -2463,7 +2618,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "58f3eac2-5e9b-4cb7-80b6-f392ef00ddf2",
@@ -2478,6 +2634,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00210",
     "mallName": "温州万象城",
     "phone": "19957016377",
@@ -2496,6 +2653,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00018",
     "mallName": "昆山万象汇",
     "phone": "18061696251"
@@ -2513,6 +2671,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00554",
     "mallName": "南京金陵天地",
     "phone": "17768382981",
@@ -2530,7 +2689,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "5b6901e2-a4ba-4062-a048-17582d094aee",
@@ -2544,7 +2704,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "5b78c9b1-7fed-4973-a531-e34e84f2e986",
@@ -2559,6 +2720,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00648",
     "mallName": "上海百脑汇",
     "phone": "15168406397",
@@ -2576,7 +2738,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "5ba62c54-01d2-4511-b4a0-59c4bad16be8",
@@ -2591,6 +2754,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00134",
     "mallName": "凯德MALL(望京店)",
     "phone": "13011809502",
@@ -2609,6 +2773,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19941743801"
   },
   {
@@ -2624,6 +2789,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "17795830325",
     "openingHours": "09:30-18:30"
   },
@@ -2640,6 +2806,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00366",
     "mallName": "禾巷东区购物中心(泰禾广场西区店)",
     "phone": "19906938512",
@@ -2658,6 +2825,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00643",
     "mallName": "1953园",
     "phone": "13111527531"
@@ -2675,6 +2843,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19011722242"
   },
   {
@@ -2689,7 +2858,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6057f3f3-4336-4243-a1bf-62c9d8985be6",
@@ -2704,6 +2874,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00645",
     "mallName": "船舶电子大世界",
     "phone": "13104628851",
@@ -2721,7 +2892,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "61b16551-55c0-40f3-a96f-ab36852d0caa",
@@ -2736,6 +2908,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00450",
     "mallName": "长春万象城",
     "phone": "13804321983",
@@ -2753,7 +2926,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6311d212-514d-48f1-9d11-54eed2ba2c7c",
@@ -2767,7 +2941,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "63c64155-881f-4366-b744-a4aed934c33b",
@@ -2781,7 +2956,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "64c7ad88-c00a-40f6-8f1a-0665637149f9",
@@ -2789,13 +2965,14 @@
     "storeName": "三亚硕展（京东电脑数码）",
     "province": "海南省",
     "city": "三亚市",
-    "address": "海南省三亚市天涯区新风街74号 ",
+    "address": "海南省三亚市天涯区新风街74号",
     "latitude": 18.255126,
     "longitude": 109.51697,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13637536901"
   },
   {
@@ -2810,7 +2987,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "65a6d4d7-ecc0-44cc-a29a-7f451043ffd4",
@@ -2825,6 +3003,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00209",
     "mallName": "大信新都汇B座",
     "phone": "18144953592",
@@ -2843,6 +3022,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00613",
     "mallName": "中央公园光环花园城",
     "phone": "19389358580",
@@ -2860,7 +3040,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6668d09c-ffe8-4bf6-a39c-9e9e31f51885",
@@ -2874,7 +3055,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6675777a-a003-4017-812b-5db6840f94f4",
@@ -2889,6 +3071,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00107",
     "mallName": "南昌T16购物中心",
     "phone": "19044575951",
@@ -2907,6 +3090,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00312",
     "mallName": "温州滨江万象城",
     "phone": "19106782077",
@@ -2924,7 +3108,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "66eaf480-2546-4205-bd3c-3d0e8d04a54d",
@@ -2939,6 +3124,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00335",
     "mallName": "北京 skp",
     "phone": "18610474243",
@@ -2956,7 +3142,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "69a43064-3d7a-4987-b2a9-de95c6f9d494",
@@ -2971,6 +3158,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18020506090",
     "openingHours": "09:30-17:30"
   },
@@ -2986,7 +3174,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6b593d42-d649-4917-b1fd-3935994001a8",
@@ -3001,6 +3190,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13382056018",
     "openingHours": "10:00-20:00"
   },
@@ -3016,7 +3206,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6c4df2d4-553f-4b75-9703-a65a78b6864d",
@@ -3031,6 +3222,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00022",
     "mallName": "沈阳三台子万象汇",
     "phone": "13889182947",
@@ -3049,6 +3241,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18924327252",
     "openingHours": "10:00-22:00"
   },
@@ -3064,7 +3257,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6c7384b6-0de2-42eb-9af6-705c002f903a",
@@ -3079,6 +3273,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00118",
     "mallName": "成都合生汇",
     "phone": "17828133776",
@@ -3096,7 +3291,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6ca46aaf-0a39-4077-a090-dba5062636ff",
@@ -3111,6 +3307,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00381",
     "mallName": "兰州万象城",
     "phone": "19312959778",
@@ -3122,13 +3319,14 @@
     "storeName": "长沙恒佳摄影器材有限公司",
     "province": "湖南省",
     "city": "长沙市",
-    "address": " 湖南省长沙市芙蓉区解放东路46号湖南摄影城一楼135-136号",
+    "address": "湖南省长沙市芙蓉区解放东路46号湖南摄影城一楼135-136号",
     "latitude": 28.196708,
     "longitude": 113.025716,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6d9ece97-9bae-4f84-909b-47d54800fa27",
@@ -3143,6 +3341,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00354",
     "mallName": "天津万象城",
     "phone": "13672044033",
@@ -3161,6 +3360,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00573",
     "mallName": "金牛凯德广场",
     "phone": "13408447177",
@@ -3179,6 +3379,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00646",
     "mallName": "大庆百脑汇",
     "phone": "19904861234",
@@ -3197,6 +3398,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "openingHours": "18056090910"
   },
   {
@@ -3211,7 +3413,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6f3d175a-b334-4c65-b017-5d3f1033090e",
@@ -3225,7 +3428,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "6fae2252-3544-401c-9597-c249ae880b17",
@@ -3239,7 +3443,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "700faed7-6626-40c6-b6a2-db23f3f2d129",
@@ -3253,7 +3458,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "704775fa-ec62-4bfc-81d9-023872538650",
@@ -3268,6 +3474,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00425",
     "mallName": "龙湖北京亦庄天街",
     "phone": "17610268200",
@@ -3286,6 +3493,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00378",
     "mallName": "沈阳万象城",
     "phone": "18302438825",
@@ -3304,6 +3512,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00603",
     "mallName": "宝安大悦城",
     "phone": "18118752596",
@@ -3321,7 +3530,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "73595615-e9c7-4352-a653-a5f840216506",
@@ -3336,6 +3546,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00545",
     "mallName": "上海浦东嘉里城",
     "phone": "15502190925",
@@ -3354,6 +3565,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00304",
     "mallName": "杭州湖滨银泰in77",
     "phone": "18967196182",
@@ -3372,6 +3584,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00541",
     "mallName": "沈阳百脑汇",
     "phone": "17702442230",
@@ -3389,7 +3602,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "75365ee7-397c-45e2-b95b-73ef548a6b2b",
@@ -3404,6 +3618,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15633811583",
     "openingHours": "09:30-19:00"
   },
@@ -3419,7 +3634,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "76e11ae3-8fc5-4506-909e-54f90e7b7202",
@@ -3434,6 +3650,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00518",
     "mallName": "南昌万象城",
     "phone": "19917928376",
@@ -3451,7 +3668,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "78384c0d-ebef-4062-bd79-6f4c78af146b",
@@ -3466,6 +3684,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00194",
     "mallName": "昆明恒隆广场",
     "phone": "18987877998",
@@ -3483,7 +3702,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "78d3b54b-f795-418c-b74c-125cdf76f076",
@@ -3497,7 +3717,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "7970832f-624a-40fe-bdc0-05baa4cfa9ab",
@@ -3512,6 +3733,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00546",
     "mallName": "龙湖上海宝山天街",
     "phone": "18738982586",
@@ -3530,6 +3752,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13908203715",
     "openingHours": "09:00-18:00"
   },
@@ -3545,7 +3768,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "7ae1f329-0b5c-46a7-a3df-d8abde9d9f7e",
@@ -3559,7 +3783,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "7afe2a66-7609-4a5a-b07f-6f6712680da2",
@@ -3573,7 +3798,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "7bd91920-ea63-4f2a-a454-a807b2a9e8f4",
@@ -3587,7 +3813,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "7bec7879-549b-459f-92c6-66c5fd27ad00",
@@ -3602,6 +3829,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-28",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00877",
     "mallName": "成都来福士广场",
     "phone": "18980049940",
@@ -3620,6 +3848,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19315289052"
   },
   {
@@ -3634,7 +3863,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "7fa534a3-987f-4b55-9161-c035eedb3b13",
@@ -3649,6 +3879,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00391",
     "mallName": "淮安万象城",
     "phone": "19105281600",
@@ -3667,6 +3898,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "0751-8894688"
   },
   {
@@ -3681,7 +3913,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "828333c2-1070-465d-be81-6b1fd9a0eaf7",
@@ -3696,6 +3929,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13600076277"
   },
   {
@@ -3711,6 +3945,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15304949991",
     "openingHours": "13:00-21:00"
   },
@@ -3726,7 +3961,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "84b8bb91-9d6f-4d29-b770-6d64e5e34c62",
@@ -3734,13 +3970,14 @@
     "storeName": "影石Insta360长沙高桥数码广场照材专卖店",
     "province": "湖南省",
     "city": "长沙市",
-    "address": "湖南省长沙市雨花区高桥现代商贸城4栋1楼03号东门入口 ",
+    "address": "湖南省长沙市雨花区高桥现代商贸城4栋1楼03号东门入口",
     "latitude": 28.176737,
     "longitude": 113.035748,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15675881828",
     "openingHours": "09:00-18:30"
   },
@@ -3756,7 +3993,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8654913d-0cbb-4f2f-9a5b-803dc517b898",
@@ -3770,7 +4008,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "86810db4-c017-426d-9041-1462ea60fa14",
@@ -3785,6 +4024,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00476",
     "mallName": "深业上城商场",
     "phone": "13332968325",
@@ -3802,7 +4042,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "879b72b4-5a11-44ce-a492-70cf0551d986",
@@ -3816,7 +4057,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8809df30-4eb8-45c1-8527-61683f264b64",
@@ -3831,6 +4073,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00264",
     "mallName": "万象城",
     "phone": "13785418851",
@@ -3848,7 +4091,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8892cc51-4839-4d43-af43-9d47bdf0905e",
@@ -3863,6 +4107,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00072",
     "mallName": "华贸天地",
     "phone": "18923645517",
@@ -3880,7 +4125,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "88ed46d5-d45e-4c85-a298-fb0a00514662",
@@ -3894,7 +4140,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8922003b-46a5-41c9-ba54-afcb7062c952",
@@ -3908,7 +4155,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "896b1bcc-98c5-416c-8a2b-ae4f148f5ced",
@@ -3923,6 +4171,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00230",
     "mallName": "UDV 河南商丘正弘汇",
     "phone": "19059705213",
@@ -3941,6 +4190,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00282",
     "mallName": "西安SKP",
     "phone": "13032931126",
@@ -3958,7 +4208,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8abc0666-93e5-4cc8-ac7b-d29388bf1ab4",
@@ -3972,7 +4223,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8be7c395-0589-4719-9975-b3463ecfb937",
@@ -3987,6 +4239,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00560",
     "mallName": "龙岩万宝广场",
     "phone": "18959031282",
@@ -4004,7 +4257,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8cc93847-509a-4a41-b3b3-2ce5206f2102",
@@ -4019,6 +4273,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00494",
     "mallName": "合肥包河万象汇",
     "phone": "18756967829",
@@ -4036,7 +4291,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "8f209c53-379c-4a93-811f-ce0200430729",
@@ -4051,6 +4307,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19389381968",
     "openingHours": "9：30-22：00"
   },
@@ -4067,6 +4324,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00367",
     "mallName": "顺城购物中心",
     "phone": "13608815805",
@@ -4085,6 +4343,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13582157063",
     "openingHours": "09:00-18:00"
   },
@@ -4101,6 +4360,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00621",
     "mallName": "福建省福州市仓山区福州烟台山商业漫步街区",
     "phone": "18959085930",
@@ -4118,7 +4378,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "91a28bc0-b4de-4857-b544-4862a499971c",
@@ -4132,7 +4393,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "93f8c555-fd9f-4f44-8b72-79bb9e45fe7b",
@@ -4147,6 +4409,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15336363466"
   },
   {
@@ -4162,6 +4425,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00656",
     "mallName": "保定爱情广场",
     "phone": "16630290058",
@@ -4179,7 +4443,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "94b5c284-e43f-4f45-ba4a-010b4e9e2d35",
@@ -4194,6 +4459,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18083895715",
     "openingHours": "10：00-22：00"
   },
@@ -4203,13 +4469,14 @@
     "storeName": "福州茗航毅站",
     "province": "福建省",
     "city": "福州市",
-    "address": "福建省福州市台江区白马南路63号  ",
+    "address": "福建省福州市台江区白马南路63号",
     "latitude": 26.053129,
     "longitude": 119.312376,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18150799246"
   },
   {
@@ -4225,6 +4492,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00199",
     "mallName": "协信星光广场",
     "phone": "18983617081",
@@ -4242,7 +4510,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "96485e42-004c-4b5e-8951-d34eb6664a61",
@@ -4257,6 +4526,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18723385175",
     "openingHours": "10:00-21:00"
   },
@@ -4272,7 +4542,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "980eea90-8b62-470f-bfb6-8706b67df71e",
@@ -4280,13 +4551,14 @@
     "storeName": "南京艺风授权体验点",
     "province": "江苏省",
     "city": "南京市",
-    "address": "珠江路333号百脑汇1楼1C10 ",
+    "address": "珠江路333号百脑汇1楼1C10",
     "latitude": 32.053554,
     "longitude": 118.805111,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "99c5650f-6f34-44ca-b723-952c3a382a8a",
@@ -4301,6 +4573,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00314",
     "mallName": "泰州万象城",
     "phone": "18115232316",
@@ -4318,7 +4591,8 @@
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "9a47ac6c-b418-4041-b9d1-ce3982a79f47",
@@ -4332,7 +4606,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "9ca248ce-c2c9-4183-96e4-fca1ecf23b50",
@@ -4347,6 +4622,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00036",
     "mallName": "西安万象城",
     "phone": "17792900579",
@@ -4364,7 +4640,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "9dd4d421-b5b4-4189-944f-a61b33a543d4",
@@ -4379,6 +4656,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13778147661",
     "openingHours": "09:00-18:30"
   },
@@ -4394,7 +4672,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "9e849737-616d-4316-bece-d54995f1c7db",
@@ -4409,6 +4688,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00499",
     "mallName": "成都科华王府井",
     "phone": "19180684465",
@@ -4427,6 +4707,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00568",
     "mallName": "KKONE购物中心北区",
     "phone": "18570265225",
@@ -4444,7 +4725,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "a1b0b23e-c090-4348-b81d-a0e2f683b942",
@@ -4459,6 +4741,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13210541165",
     "openingHours": "09:00-18:00"
   },
@@ -4475,6 +4758,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18940998830",
     "openingHours": "09:30-17:30"
   },
@@ -4491,6 +4775,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00070",
     "mallName": "武汉天地壹方购物中心",
     "phone": "13750383214",
@@ -4508,7 +4793,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "a42d5c91-6059-4dee-89e5-7deab97fe13d",
@@ -4523,6 +4809,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18123306865",
     "openingHours": "09:30-18:00"
   },
@@ -4539,6 +4826,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00533",
     "mallName": "北京市朝阳区首都机场路首都国际机场",
     "phone": "17610848823",
@@ -4556,7 +4844,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "a4f0da9b-b3d2-45f6-b38c-5475b6d8ac0f",
@@ -4564,13 +4853,14 @@
     "storeName": "影石Insta360东莞悠兰里街区授权专卖店",
     "province": "广东省",
     "city": "东莞市",
-    "address": "广东省东莞市松山湖文化艺术街区B3-101铺 吴记春 ",
+    "address": "广东省东莞市松山湖文化艺术街区B3-101铺 吴记春",
     "latitude": 22.925575,
     "longitude": 113.897978,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00650",
     "mallName": "东莞悠兰里街区授权",
     "phone": "0769-27287666",
@@ -4589,6 +4879,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00551",
     "mallName": "北外滩来福士广场",
     "phone": "17278813595",
@@ -4607,6 +4898,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13518863799"
   },
   {
@@ -4621,7 +4913,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "a87d42eb-1669-4faf-bea5-8838827a95b9",
@@ -4635,7 +4928,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "a9023bb1-7913-429e-a719-d6177677d2f8",
@@ -4649,7 +4943,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "a9a8546a-eaff-425c-9fb8-b4cbcd3f0f5b",
@@ -4663,7 +4958,8 @@
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "a9bc199c-bf36-4695-944e-2b95052bdb3d",
@@ -4678,6 +4974,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00405",
     "mallName": "桂林万象城",
     "phone": "19111445159",
@@ -4695,7 +4992,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "ab782038-f359-4daa-9d30-1b4fbf20456a",
@@ -4709,7 +5007,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "ac5dbe48-8bb2-483f-ba8b-a030b35a43a5",
@@ -4723,7 +5022,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "ae4998f5-728a-4ad1-a048-2452c9a9b55b",
@@ -4738,6 +5038,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00563",
     "mallName": "信万广场",
     "phone": "15137199413",
@@ -4755,7 +5056,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "aeb4c3d0-ce6b-4bda-a5f7-68d397d7e0ec",
@@ -4769,7 +5071,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "af660896-820a-439a-ba10-79aa4a2e58bf",
@@ -4783,7 +5086,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "afa3dc94-d461-4850-ac2b-b79b9ccdab47",
@@ -4798,6 +5102,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00382",
     "mallName": "青岛海信广场",
     "phone": "16653221285",
@@ -4815,7 +5120,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "b0ab4daa-d4ba-47c1-8c91-416cef7d5ba0",
@@ -4830,6 +5136,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00570",
     "mallName": "重庆万象城",
     "phone": "15086883642",
@@ -4848,6 +5155,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19324072230",
     "openingHours": "10：00-22：00"
   },
@@ -4864,6 +5172,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00485",
     "mallName": "龙湖杭州西溪天街",
     "phone": "19032585733",
@@ -4881,7 +5190,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "b1d870af-d4be-4e89-a1c2-42e4f8a2d4fe",
@@ -4896,6 +5206,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00170",
     "mallName": "王府井百货B馆",
     "phone": "18595182671",
@@ -4914,6 +5225,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00596",
     "mallName": "龙湖成都金楠天街",
     "phone": "18349155695",
@@ -4932,6 +5244,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00418",
     "mallName": "南京弘阳广场B馆",
     "phone": "18912974413",
@@ -4950,6 +5263,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00392",
     "mallName": "华强电子世界",
     "phone": "13544129994",
@@ -4968,6 +5282,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00558",
     "mallName": "明州里商场",
     "phone": "18868933339",
@@ -4986,6 +5301,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "0851-85202024",
     "openingHours": "周一至周四 10:00-22:00 / 周五至周日 10:00-22:30"
   },
@@ -5002,6 +5318,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00178",
     "mallName": "兴业太古汇",
     "phone": "17274616898",
@@ -5020,6 +5337,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18122751607"
   },
   {
@@ -5034,7 +5352,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "b4f5d826-9102-42ac-95c8-65711220c125",
@@ -5049,6 +5368,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00561",
     "mallName": "赣州泽丰环球汇",
     "phone": "13117520561"
@@ -5066,6 +5386,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15973120697",
     "openingHours": "09:00-18:00"
   },
@@ -5082,6 +5403,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00211",
     "mallName": "成都大悦城",
     "phone": "18284470815",
@@ -5100,6 +5422,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00373",
     "mallName": "上海港汇恒隆广场",
     "phone": "17601371794",
@@ -5118,6 +5441,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00407",
     "mallName": "IFS国金购物中心",
     "phone": "17373132601",
@@ -5135,7 +5459,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "b6bd7d1a-5a11-48ce-b6e5-3939ad9b6ac3",
@@ -5149,7 +5474,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "b75fdccf-ee12-4cba-9820-b94b155d0642",
@@ -5164,6 +5490,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00559",
     "mallName": "厦门大悦城",
     "phone": "18965510135",
@@ -5182,6 +5509,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19991290408"
   },
   {
@@ -5196,7 +5524,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "ba792098-ddf0-47ed-a477-449ac505b37c",
@@ -5204,13 +5533,14 @@
     "storeName": "影石Insta360北京朝阳合生汇授权体验店",
     "province": "北京市",
     "city": "北京市",
-    "address": "西大望路甲22号合生汇B2K03AB ",
+    "address": "西大望路甲22号合生汇B2K03AB",
     "latitude": 39.900826,
     "longitude": 116.492429,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00531",
     "mallName": "北京朝阳合生汇",
     "phone": "15600389557",
@@ -5228,7 +5558,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "bc48593a-cfa1-43c4-bd0d-bd44903eec1c",
@@ -5242,7 +5573,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "bd203619-1a31-4b98-8e4a-546a86f853de",
@@ -5256,7 +5588,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "bd917d14-5641-43c6-8eee-660de965a26a",
@@ -5270,7 +5603,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "bd9a8a03-bc99-45e7-a77d-936037502aa8",
@@ -5284,7 +5618,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "bde9f609-41ee-407e-82a9-b16818c3d64a",
@@ -5299,6 +5634,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00242",
     "mallName": "福州万象城",
     "phone": "18159082923",
@@ -5310,13 +5646,14 @@
     "storeName": "北京马连道照材店",
     "province": "北京市",
     "city": "北京市",
-    "address": "马连道摄影器材城4层南区202张张丽摄影 ",
+    "address": "马连道摄影器材城4层南区202张张丽摄影",
     "latitude": 39.890412,
     "longitude": 116.338766,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18501219182",
     "openingHours": "09:30-18:00"
   },
@@ -5333,6 +5670,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00120",
     "mallName": "悦府广场(天津大悦城南区)",
     "phone": "17695932048",
@@ -5351,6 +5689,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00441",
     "mallName": "世博源",
     "phone": "19850110502",
@@ -5362,13 +5701,14 @@
     "storeName": "影石Insta360西安百脑汇照材专卖店",
     "province": "陕西省",
     "city": "西安市",
-    "address": "碑林区雁塔中路百脑汇电脑城一楼1E08影石Insta360专卖店  ",
+    "address": "碑林区雁塔中路百脑汇电脑城一楼1E08影石Insta360专卖店",
     "latitude": 34.238468,
     "longitude": 108.974747,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13669228897",
     "openingHours": "09:00-18:30"
   },
@@ -5384,7 +5724,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c06d8b94-ceca-4e9b-857c-4093d0a67a8c",
@@ -5398,7 +5739,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c0d8d700-f199-4e77-a7e9-4d266243e0c4",
@@ -5412,7 +5754,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c2e4724f-83bf-49aa-8b9e-b1f686d20c0f",
@@ -5420,13 +5763,14 @@
     "storeName": "影石Insta360北京清河万象汇授权体验店",
     "province": "北京市",
     "city": "北京市",
-    "address": "清河中街68号/66号院1号楼万象汇一层L114 ",
+    "address": "清河中街68号/66号院1号楼万象汇一层L114",
     "latitude": 40.037132,
     "longitude": 116.348136,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00247",
     "mallName": "北京清河万象汇西区",
     "phone": "19231189360",
@@ -5444,7 +5788,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c45a6062-861a-4996-9ead-f5640bb79a0b",
@@ -5458,7 +5803,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c60c3180-8e2c-4c5e-b92d-2f5a154d7f78",
@@ -5473,6 +5819,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18908807140"
   },
   {
@@ -5488,6 +5835,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15168406397",
     "openingHours": "10:00-22:00"
   },
@@ -5503,7 +5851,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c817c073-23ad-462a-8665-535c7740ebbc",
@@ -5517,7 +5866,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c8997d3f-5d9c-4115-a5aa-44979e22e998",
@@ -5531,7 +5881,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c8d3eb49-4ddb-4918-b460-af13d8851816",
@@ -5546,6 +5897,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00161",
     "mallName": "万象宜宾天地",
     "phone": "17761000280",
@@ -5563,7 +5915,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "c9480be8-c49d-43df-aebc-793c84cfb89a",
@@ -5578,6 +5931,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00611",
     "mallName": "前海壹方汇",
     "phone": "15361601817",
@@ -5596,6 +5950,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00397",
     "mallName": "宁波万象城",
     "phone": "19157602877",
@@ -5613,7 +5968,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "caf3572f-38fa-4a5c-9ca6-4f609786d8e7",
@@ -5628,6 +5984,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00652",
     "mallName": "灞桥机车"
   },
@@ -5644,6 +6001,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00566",
     "mallName": "广州融创",
     "phone": "15899955380",
@@ -5662,6 +6020,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00426",
     "mallName": "景枫中心",
     "phone": "18851949294",
@@ -5680,6 +6039,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00390",
     "mallName": "苏州吴江万象汇",
     "phone": "13390837059",
@@ -5698,6 +6058,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00626",
     "mallName": "成都IFS国际金融中心",
     "phone": "18328524253",
@@ -5716,6 +6077,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00362",
     "mallName": "大连华南万象汇",
     "phone": "18041188109",
@@ -5734,6 +6096,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00139",
     "mallName": "万达广场(南昌红谷滩店)",
     "phone": "18679156781",
@@ -5752,6 +6115,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "17745084482",
     "openingHours": "周一 09:00-周日 18:30"
   },
@@ -5767,7 +6131,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "cec6cb27-9c9e-4540-aa7c-9c0497151b1e",
@@ -5781,7 +6146,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "ceef8fbb-da97-4e81-b6b4-dc1f2b66a27a",
@@ -5796,6 +6162,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00055",
     "mallName": "郑州正弘汇",
     "phone": "19037131668",
@@ -5814,6 +6181,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00644",
     "mallName": "唐山数码广场照材"
   },
@@ -5830,6 +6198,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13876335389"
   },
   {
@@ -5845,6 +6214,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18501219182",
     "openingHours": "09:30-18:00"
   },
@@ -5861,6 +6231,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13377189715"
   },
   {
@@ -5876,6 +6247,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00627",
     "mallName": "银川建发阅彩城",
     "phone": "17795183979",
@@ -5894,6 +6266,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00653",
     "mallName": "可可托海镇雪具"
   },
@@ -5909,7 +6282,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "d322914f-f9ff-4da0-9131-1fde6ff19227",
@@ -5923,7 +6297,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "d3454892-706e-4957-b463-0f13410f7345",
@@ -5937,7 +6312,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "d35a35a8-4f22-4842-bcf0-dca63a441110",
@@ -5945,13 +6321,14 @@
     "storeName": "广东湛江霞山万达广场影石授权售点",
     "province": "广东省",
     "city": "湛江市",
-    "address": "湛江市霞山区海滨大道128号万达广场一楼1058铺 ",
+    "address": "湛江市霞山区海滨大道128号万达广场一楼1058铺",
     "latitude": 21.252623,
     "longitude": 110.41689,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "0759-2834568"
   },
   {
@@ -5967,6 +6344,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13645601775"
   },
   {
@@ -5981,7 +6359,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "d42b1761-cfe8-44a8-a09b-c0944d36ce26",
@@ -5996,6 +6375,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00387",
     "mallName": "武汉万象城",
     "phone": "15795648152",
@@ -6014,6 +6394,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13381956644",
     "openingHours": "10:00-22:00"
   },
@@ -6030,6 +6411,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00576",
     "mallName": "西安赛格广场",
     "phone": "13319299791",
@@ -6041,13 +6423,14 @@
     "storeName": "邯郸日月城燕赵数码售点1",
     "province": "河北省",
     "city": "邯郸市",
-    "address": "陵西大街阳光三联电器日月城一楼  ",
+    "address": "陵西大街阳光三联电器日月城一楼",
     "latitude": 36.610209,
     "longitude": 114.495915,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "d8540ada-2576-40aa-835f-3108290ff805",
@@ -6061,7 +6444,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "d9681bc4-564c-43fd-8238-b50875b82152",
@@ -6076,6 +6460,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00571",
     "mallName": "环球购物中心B馆",
     "phone": "19960371882",
@@ -6093,7 +6478,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "dc104948-1f29-4761-a07c-79780960e6d1",
@@ -6107,7 +6493,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "dc942cbf-37e1-4bda-bdab-2b895d6e5485",
@@ -6121,7 +6508,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "dccffa4c-0c98-46e9-8f94-4d098eee98df",
@@ -6135,7 +6523,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "dd57a10c-29c1-41f0-9549-f1467004f526",
@@ -6150,6 +6539,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15253257181",
     "openingHours": "09:00-18:00"
   },
@@ -6166,6 +6556,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00595",
     "mallName": "成都世茂广场",
     "phone": "17828411306",
@@ -6183,7 +6574,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "dded6900-50a6-4754-a73b-a1006887dbe8",
@@ -6198,6 +6590,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00537",
     "mallName": "天津天河城",
     "phone": "13096518676",
@@ -6216,6 +6609,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13954919001"
   },
   {
@@ -6231,6 +6625,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00550",
     "mallName": "上海陆家嘴中心L+mall",
     "phone": "17274637838",
@@ -6248,7 +6643,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "def9b4cc-ffb3-4872-bd7c-cb1cf554486d",
@@ -6263,6 +6659,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13838888481",
     "openingHours": "09:00-19:00"
   },
@@ -6279,6 +6676,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13319881259",
     "openingHours": "09:00-21:00"
   },
@@ -6294,7 +6692,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "e10289eb-5560-485a-9ee5-c69af7c24096",
@@ -6308,7 +6707,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "e2e66ea9-a2bb-446b-8155-986ff752332a",
@@ -6323,6 +6723,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00555",
     "mallName": "南京仙林金鹰",
     "phone": "17372762791",
@@ -6340,7 +6741,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "e340d0ce-915a-4171-9126-58b5caa3bf9a",
@@ -6355,6 +6757,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00103",
     "mallName": "大连罗斯福",
     "phone": "15841764066",
@@ -6372,7 +6775,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "e399ca51-bdb7-41ac-b3b7-b450b4dd2ca0",
@@ -6387,6 +6791,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00486",
     "mallName": "万达广场(乌鲁木齐德汇店)",
     "phone": "17797832111",
@@ -6405,6 +6810,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18018685758",
     "openingHours": "09:00-18:00"
   },
@@ -6421,6 +6827,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00482",
     "mallName": "海岸城购物中心",
     "phone": "18923716021",
@@ -6439,6 +6846,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "027-87718188",
     "openingHours": "10:00-22:00"
   },
@@ -6454,7 +6862,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "e6a52738-dbfb-4b92-96c2-959c0d35c167",
@@ -6468,7 +6877,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "e6f4706d-8528-4302-87ae-0f0531eff2b8",
@@ -6483,6 +6893,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00549",
     "mallName": "正大广场",
     "phone": "17278883706",
@@ -6500,7 +6911,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "e85f2319-e690-4655-88f5-26bcf781fc1f",
@@ -6515,6 +6927,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00008",
     "mallName": "丹尼斯大卫天地",
     "phone": "17739093233",
@@ -6533,6 +6946,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00326",
     "mallName": "丹尼斯·大卫城",
     "phone": "15515681920",
@@ -6550,7 +6964,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "eb16f8f2-8b07-473e-b09d-02698be22c35",
@@ -6565,6 +6980,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18014899816",
     "openingHours": "09:00-21:00"
   },
@@ -6581,6 +6997,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00104",
     "mallName": "武汉武昌万象城",
     "phone": "17764183228",
@@ -6598,7 +7015,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "ec59f26a-5a1a-4d45-bd83-371608306163",
@@ -6607,12 +7025,13 @@
     "province": "山东省",
     "city": "日照市",
     "address": "山东省日照市东港区烟台路 176 号华润万象汇L-123",
-    "latitude": 35.420553,
-    "longitude": 119.532508,
+    "latitude": 35.42969,
+    "longitude": 119.545382,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "2025-11-28",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00876",
     "mallName": "日照万象汇",
     "phone": "13396338198",
@@ -6630,7 +7049,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "ee616cec-b6ac-4f33-86ac-6a58dd9cd79b",
@@ -6645,6 +7065,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00403",
     "mallName": "龙湖天津梅江天街",
     "phone": "16622572891",
@@ -6663,6 +7084,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00515",
     "mallName": "成都万象城",
     "phone": "15802883480",
@@ -6681,6 +7103,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "19128902259",
     "openingHours": "10:00-22:00"
   },
@@ -6697,6 +7120,7 @@
     "serviceTags": [],
     "openedAt": "2025-11-27",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18689189645",
     "openingHours": "11:00-22:00"
   },
@@ -6713,6 +7137,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00349",
     "mallName": "天河城",
     "phone": "15360003665",
@@ -6731,6 +7156,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00248",
     "mallName": "济宁万象汇",
     "phone": "15318418366",
@@ -6748,7 +7174,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f13ce18e-7eaa-4f58-b184-c76a23cb3ae5",
@@ -6763,6 +7190,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18958785888"
   },
   {
@@ -6778,6 +7206,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15920046777",
     "openingHours": "周一至周四 10:00-19:30 / 周五至周日 10:00-20:30"
   },
@@ -6794,6 +7223,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15238015211",
     "openingHours": "09:00-19:00"
   },
@@ -6810,6 +7240,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00497",
     "mallName": "德基广场二期",
     "phone": "18061292910",
@@ -6827,7 +7258,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f3f58c73-37c4-48d9-b268-bce98874a0ec",
@@ -6835,13 +7267,14 @@
     "storeName": "e·Fun Super（武汉SKP店）",
     "province": "湖北省",
     "city": "武汉市",
-    "address": "汉街武汉SKP-3号门4楼E fun super ",
+    "address": "汉街武汉SKP-3号门4楼E fun super",
     "latitude": 30.560367,
     "longitude": 114.350193,
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "13007112592"
   },
   {
@@ -6857,6 +7290,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00350",
     "mallName": "崂山万象汇",
     "phone": "18100375560",
@@ -6874,7 +7308,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f4fdc35e-29a0-4b77-9f93-54f9fef69e1b",
@@ -6888,7 +7323,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f5556d94-ec51-435f-8575-b6bba5e1b32e",
@@ -6902,7 +7338,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f56d0344-ef7e-414c-a1c9-a25deb105b26",
@@ -6916,7 +7353,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f589f16c-1fe5-41c3-82ac-2c1db6dc37a4",
@@ -6930,7 +7368,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f59e68fa-d3ca-4d45-a75a-f09282ba71bf",
@@ -6945,6 +7384,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "18010587558",
     "openingHours": "09:00-18:00"
   },
@@ -6960,7 +7400,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f78b6df2-04ea-48e7-91ec-2a14c36d29ff",
@@ -6974,7 +7415,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "f8050336-4fa5-4601-8c56-e31080f6b4d9",
@@ -6989,6 +7431,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15337204720",
     "openingHours": "09:00-18:00"
   },
@@ -7005,6 +7448,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15655136545",
     "openingHours": "09:30-21:00"
   },
@@ -7021,6 +7465,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "15001897964",
     "openingHours": "10:00-22:00"
   },
@@ -7036,7 +7481,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "fae632f5-dadf-4954-9c43-db70f11b0f19",
@@ -7050,7 +7496,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "fd18d169-487b-4129-ac56-b90ee8bc98c5",
@@ -7064,7 +7511,8 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中"
+    "status": "营业中",
+    "changeType": "nan"
   },
   {
     "id": "fe73c533-ef1f-47b2-bc34-6b1f3f64d959",
@@ -7079,6 +7527,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "phone": "17767791123",
     "openingHours": "09:00-18:00"
   },
@@ -7095,6 +7544,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00438",
     "mallName": "永盛购物中心",
     "phone": "17376589677",
@@ -7113,6 +7563,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00548",
     "mallName": "月星环球购物广场(上海月星环球港店)",
     "phone": "13951876577",
@@ -7131,6 +7582,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00246",
     "mallName": "合肥万象城",
     "phone": "18355728757",
@@ -7142,16 +7594,47 @@
     "storeName": "影石Insta360中山石歧万象汇授权体验店",
     "province": "广东省",
     "city": "中山市",
-    "address": "石岐万象汇 LG128 ",
+    "address": "石岐万象汇 LG128",
     "latitude": 22.524187,
     "longitude": 113.40054,
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
+    "changeType": "nan",
     "mallId": "MALL_00439",
     "mallName": "石岐万象汇",
     "phone": "18144953592",
     "openingHours": "周日至周四 10:00-22:00 / 周五至周六 10:00-22:30"
+  },
+  {
+    "id": "0c18d98d-22f0-499f-ad46-6ddc451e3c70",
+    "brand": "Insta360",
+    "storeName": "北京中关村鼎好大厦兴海嘉合售点1",
+    "province": "北京市",
+    "city": "北京市",
+    "address": "北京市海淀区大街3号鼎好大厦B座地下二层229A",
+    "latitude": 39.991299,
+    "longitude": 116.326126,
+    "storeType": "nan",
+    "serviceTags": [],
+    "openedAt": "2025-12-01",
+    "status": "营业中",
+    "changeType": "nan"
+  },
+  {
+    "id": "7f209798-d0dc-43e2-819f-451f9d0352a2",
+    "brand": "Insta360",
+    "storeName": "北京五棵松雅奇昕荟售点1",
+    "province": "北京市",
+    "city": "北京市",
+    "address": "北京市海淀区五棵松路40号北京摄影器材城1层特2号",
+    "latitude": 39.931234,
+    "longitude": 116.286046,
+    "storeType": "nan",
+    "serviceTags": [],
+    "openedAt": "2025-12-01",
+    "status": "营业中",
+    "changeType": "nan"
   }
 ]

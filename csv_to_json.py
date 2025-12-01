@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from datetime import datetime
+from collections import Counter, defaultdict
 
 import pandas as pd
 
@@ -198,6 +199,8 @@ def csv_to_json():
             "openedAt": opened_at,
             "status": status,
         }
+        if "change_type" in df.columns:
+            store["changeType"] = str(row.get("change_type", "")).strip()
         
         # 添加商场信息
         if mall_id:
@@ -235,16 +238,53 @@ def csv_to_json():
     # 生成商场JSON（包含品牌进驻信息）
     if mall_df is not None:
         print(f"\n[信息] 生成商场JSON...")
+
+        # 基于门店数据推断商场省份（mall_id 和城市双重兜底）
+        store_malls = dji_stores + insta_stores
+        mall_province_counts: dict[str, Counter] = defaultdict(Counter)
+        city_province_counts: dict[str, Counter] = defaultdict(Counter)
+
+        for store in store_malls:
+            province = (store.get("province") or "").strip()
+            if not province:
+                continue
+            mall_id_for_store = store.get("mallId")
+            if mall_id_for_store:
+                mall_province_counts[str(mall_id_for_store)].update([province])
+
+            city_norm = normalize_city(store.get("city", ""), province)
+            city_key = city_norm.replace("市", "").replace("区", "")
+            if city_key:
+                city_province_counts[city_key].update([province])
+
+        def infer_mall_province(mall_id: str, city: str, existing: str) -> str:
+            """优先使用主表中的省份，其次基于门店 mall_id 和城市推断。"""
+            existing = (existing or "").strip()
+            if existing and existing != "未知省份":
+                return existing
+
+            if mall_id and mall_id in mall_province_counts:
+                return mall_province_counts[mall_id].most_common(1)[0][0]
+
+            city_key = (city or "").strip().replace("市", "").replace("区", "")
+            if city_key and city_key in city_province_counts:
+                return city_province_counts[city_key].most_common(1)[0][0]
+
+            return existing or "未知省份"
+
         malls = []
         for _, mall_row in mall_df.iterrows():
             mall_id = str(mall_row.get("mall_id", "")).strip()
             mall_name = str(mall_row.get("mall_name", "")).strip()
             city = str(mall_row.get("city", "")).strip()
+            province_raw = str(mall_row.get("province", "")).strip() if "province" in mall_df.columns else ""
+            province = infer_mall_province(mall_id, city, province_raw)
 
             mall_data = {
                 "mallId": mall_id,
                 "mallName": mall_name,
                 "city": city,
+                "province": province,
                 "djiOpened": to_bool(mall_row.get("dji_opened", 0)),
                 "instaOpened": to_bool(mall_row.get("insta_opened", 0)),
                 "djiReported": to_bool(mall_row.get("dji_reported", 0)),

@@ -14,10 +14,11 @@ import os
 import time
 from datetime import date
 from pathlib import Path
-from typing import Optional
+from typing import Optional, List, Tuple
 
 import pandas as pd
 import requests
+from rapidfuzz import fuzz
 
 BASE = Path(__file__).resolve().parent
 ALL_PATH = BASE / "all_stores_final.csv"
@@ -214,6 +215,9 @@ def ensure_columns(df: pd.DataFrame) -> pd.DataFrame:
         df["status"] = "营业中"
     if "store_type" not in df.columns:
         df["store_type"] = ""
+    # 预留字段：记录是否发生过换址等变更（例如：已换址）
+    if "change_type" not in df.columns:
+        df["change_type"] = ""
     return df
 
 
@@ -305,7 +309,7 @@ def merge_from_spiders() -> None:
                     changed = True
 
     def ingest(path: Path, brand: str) -> None:
-        nonlocal new_rows_all, new_rows_master
+        nonlocal new_rows_all, new_rows_master, changed, existing_keys
         if not path.exists():
             print(f"[跳过] 未找到 {path.name}")
             return
@@ -325,16 +329,108 @@ def merge_from_spiders() -> None:
                 or str(row.get("token", "")).strip()
                 or str(row.get("id", "")).strip()
             )
-
+            # 如果该 key 已存在，则仅更新已有门店的门店类型信息
             if key in existing_keys:
                 update_existing_store_type(uuid, store_type)
                 continue
+
+            # 尝试识别“同城同品牌 + 名称/地址高度相似”的老门店，视为换址而不是新增
+            city = str(row.get("city") if pd.notna(row.get("city")) else "").strip()
+            relocated = False
+
+            raw_payload = row.to_dict()
+
+            if city:
+                candidate_mask = (
+                    all_df["brand"].astype(str).str.strip() == brand
+                ) & (
+                    all_df["city"].astype(str).str.strip() == city
+                )
+                candidates = all_df[candidate_mask].copy()
+
+                best_idx: Optional[int] = None
+                best_score: float = 0.0
+                best_old_key: Optional[tuple[str, str, str]] = None
+
+                for cand_idx, cand in candidates.iterrows():
+                    cname = str(cand.get("name", "")).strip()
+                    caddr = str(cand.get("address", "")).strip()
+                    if not cname:
+                        continue
+
+                    name_score = fuzz.ratio(name, cname)
+                    addr_score = fuzz.ratio(address, caddr) if address and caddr else 0
+                    combined = name_score * 0.6 + addr_score * 0.4
+
+                    # 优先规则：如果地址 100% 一致且名称也较高（>=70），直接视为高优先级候选
+                    strong_addr_match = addr_score >= 98 and name_score >= 70
+
+                    # 名称足够相似才认为可能是同一门店（除非地址强匹配）
+                    if not strong_addr_match and name_score < 85:
+                        continue
+
+                    score_for_select = combined + (100 if strong_addr_match else 0)
+
+                    if score_for_select > best_score:
+                        best_score = score_for_select
+                        best_idx = cand_idx
+                        best_old_key = (brand, cname, caddr)
+
+                # 综合得分达到 80，或者命中“地址强匹配”规则，则判定为同一门店换址/升级
+                if best_idx is not None and best_score >= 80:
+                    relocated = True
+                    cand = all_df.loc[best_idx]
+                    existing_uuid = str(cand.get("uuid") or "").strip()
+
+                    # 更新 all_stores_final 中该门店的信息（保留原 opened_at）
+                    all_df.at[best_idx, "name"] = name
+                    all_df.at[best_idx, "address"] = address
+                    all_df.at[best_idx, "province"] = row.get("province") if pd.notna(row.get("province")) else ""
+                    all_df.at[best_idx, "city"] = city
+                    all_df.at[best_idx, "lat"] = row.get("lat") if pd.notna(row.get("lat")) else None
+                    all_df.at[best_idx, "lng"] = row.get("lng") if pd.notna(row.get("lng")) else None
+                    all_df.at[best_idx, "phone"] = row.get("phone") if pd.notna(row.get("phone")) else ""
+                    all_df.at[best_idx, "business_hours"] = row.get("business_hours") if pd.notna(row.get("business_hours")) else ""
+                    all_df.at[best_idx, "raw_source"] = json.dumps(raw_payload, ensure_ascii=False)
+                    all_df.at[best_idx, "store_type"] = store_type
+                    all_df.at[best_idx, "status"] = "营业中"
+                    if "change_type" in all_df.columns:
+                        all_df.at[best_idx, "change_type"] = "已换址"
+
+                    # 同步更新门店主表
+                    if existing_uuid:
+                        mask_master = master_df["store_id"].astype(str).str.strip() == existing_uuid
+                        if mask_master.any():
+                            master_df.loc[mask_master, "name"] = name
+                            master_df.loc[mask_master, "address"] = address
+                            master_df.loc[mask_master, "province"] = row.get("province") if pd.notna(row.get("province")) else ""
+                            master_df.loc[mask_master, "city"] = city
+                            master_df.loc[mask_master, "corrected_lat"] = row.get("lat") if pd.notna(row.get("lat")) else None
+                            master_df.loc[mask_master, "corrected_lng"] = row.get("lng") if pd.notna(row.get("lng")) else None
+                            master_df.loc[mask_master, "phone"] = row.get("phone") if pd.notna(row.get("phone")) else ""
+                            master_df.loc[mask_master, "business_hours"] = row.get("business_hours") if pd.notna(row.get("business_hours")) else ""
+                            master_df.loc[mask_master, "store_type"] = store_type
+                            master_df.loc[mask_master, "status"] = "营业中"
+                            if "change_type" in master_df.columns:
+                                master_df.loc[mask_master, "change_type"] = "已换址"
+
+                    # 调整 existing_keys：移除旧 key，加入新 key
+                    if best_old_key is not None and best_old_key in existing_keys:
+                        existing_keys.discard(best_old_key)
+                    existing_keys.add(key)
+
+                    changed = True
+
+            if relocated:
+                # 换址门店：不新增记录，直接复用原门店
+                continue
+
+            # 走到这里说明是全新的门店
             existing_keys.add(key)
             if not uuid:
                 uuid = pd.util.hash_pandas_object(pd.DataFrame([key])).astype(str).iloc[0]
             lat = row.get("lat") if pd.notna(row.get("lat")) else None
             lng = row.get("lng") if pd.notna(row.get("lng")) else None
-            raw_payload = row.to_dict()
             new_rows_all.append(
                 {
                     "uuid": uuid,
@@ -425,8 +521,10 @@ def merge_from_spiders() -> None:
                 if key in spider_keys:
                     tracker[key] = 0
                     continue
+                # 本次爬虫未出现该门店，缺失计数 +1
                 tracker[key] = tracker.get(key, 0) + 1
-                if tracker[key] >= 2 and str(row.get("status", "")).strip() != "已闭店":
+                # 逻辑调整：只要有一次缺失，就标记为已闭店
+                if tracker[key] >= 1 and str(row.get("status", "")).strip() != "已闭店":
                     df.at[idx, "status"] = "已闭店"
                     updated += 1
             return updated
@@ -444,7 +542,10 @@ def merge_from_spiders() -> None:
         if updated_master:
             master_df.to_csv(MASTER_PATH, index=False, encoding="utf-8-sig")
             changed = True
-        print(f"[闭店标记] all_stores_final: {updated_all} 条, Store_Master_Cleaned: {updated_master} 条（需连续2次缺失才判闭店）")
+        print(
+            f"[闭店标记] all_stores_final: {updated_all} 条, "
+            f"Store_Master_Cleaned: {updated_master} 条（单次缺失即判闭店）"
+        )
 
     if UNKNOWN_STORE_TYPES:
         samples = list(UNKNOWN_STORE_TYPES)[:5]

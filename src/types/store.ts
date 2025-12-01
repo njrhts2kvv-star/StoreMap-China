@@ -20,7 +20,7 @@ export interface Store {
   latitude: number;
   longitude: number;
   storeType: string;
-  serviceTags: ServiceTag[];
+  serviceTags: ServiceTag[]; // 业务状态：仍以 status 区分营业/闭店，换址通过额外字段在 CSV 侧记录
   openingHours?: string;
   phone?: string;
   openedAt?: string;
@@ -35,6 +35,7 @@ export interface Mall {
   mallId: string;
   mallName: string;
   city: string;
+  province?: string;
   // 竞争字段
   djiOpened: boolean;
   instaOpened: boolean;

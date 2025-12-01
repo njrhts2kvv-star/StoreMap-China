@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Store } from '../types/store';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
-import { isNewThisMonth } from '../utils/storeRules';
 
 type Props = {
   stores: Store[];
@@ -18,28 +17,22 @@ export function NewStoresThisMonth({ stores, selectedId, onStoreSelect }: Props)
   const [brandFilter, setBrandFilter] = useState<BrandFilter>('all');
   const [page, setPage] = useState(0);
 
-  const sortedNewStores = useMemo(() => {
-    return stores
-      .filter(isNewThisMonth)
-      .sort((a, b) => {
-        const aTime = a.openedAt ? Date.parse(a.openedAt) : 0;
-        const bTime = b.openedAt ? Date.parse(b.openedAt) : 0;
-        return bTime - aTime;
-      });
+  const sortedStores = useMemo(() => {
+    return [...stores].sort((a, b) => {
+      const aTime = a.openedAt ? Date.parse(a.openedAt) : 0;
+      const bTime = b.openedAt ? Date.parse(b.openedAt) : 0;
+      return bTime - aTime;
+    });
   }, [stores]);
 
   const filteredStores = useMemo(() => {
-    if (brandFilter === 'all') return sortedNewStores;
-    return sortedNewStores.filter((s) => s.brand === brandFilter);
-  }, [sortedNewStores, brandFilter]);
+    if (brandFilter === 'all') return sortedStores;
+    return sortedStores.filter((s) => s.brand === brandFilter);
+  }, [sortedStores, brandFilter]);
 
   useEffect(() => {
     setPage(0);
   }, [brandFilter, filteredStores.length]);
-
-  if (!sortedNewStores.length) {
-    return null;
-  }
 
   const totalPages = Math.max(1, Math.ceil(filteredStores.length / PAGE_SIZE));
   const start = page * PAGE_SIZE;
@@ -59,7 +52,7 @@ export function NewStoresThisMonth({ stores, selectedId, onStoreSelect }: Props)
     <div className="bg-white rounded-[24px] p-4 border border-slate-100 shadow-sm">
       <div className="flex items-center justify-between mb-3">
         <div className="flex flex-col">
-          <div className="text-lg font-extrabold text-slate-900">本月新增门店</div>
+          <div className="text-lg font-extrabold text-slate-900">门店列表</div>
           <span className="text-xs text-slate-500">当前筛选条件下共 {filteredStores.length} 家</span>
         </div>
         <div className="flex items-center gap-2">
@@ -78,7 +71,7 @@ export function NewStoresThisMonth({ stores, selectedId, onStoreSelect }: Props)
       </div>
 
       {pageItems.length === 0 ? (
-        <div className="text-center text-sm text-slate-500 py-6">无符合当前筛选的新增门店</div>
+        <div className="text-center text-sm text-slate-500 py-6">无符合当前筛选的门店</div>
       ) : (
         <div className="space-y-2">
           {pageItems.map((store) => {

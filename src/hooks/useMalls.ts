@@ -21,7 +21,11 @@ const getCoord = (raw: any) => {
 
 const normalizeMall = (raw: any): Mall => {
   const { latitude, longitude } = getCoord(raw);
-  const city = raw.city === '市辖区' ? raw.province || raw.city : raw.city || raw.province || '未知';
+  const province = raw.province || raw.province_name || '';
+  const city =
+    raw.city === '市辖区'
+      ? province || raw.city
+      : raw.city || province || '未知';
   const djiOpened = toBool(raw.djiOpened ?? raw.dji_opened ?? raw.hasDJI ?? raw.has_dji ?? 0);
   const instaOpened = toBool(raw.instaOpened ?? raw.insta_opened ?? raw.hasInsta360 ?? raw.has_insta360 ?? 0);
   const djiReported = toBool(raw.djiReported ?? raw.dji_reported ?? 0);
@@ -32,6 +36,7 @@ const normalizeMall = (raw: any): Mall => {
     mallId: String(raw.mallId ?? raw.mall_id ?? ''),
     mallName: String(raw.mallName ?? raw.mall_name ?? ''),
     city,
+    province,
     latitude,
     longitude,
     djiOpened,

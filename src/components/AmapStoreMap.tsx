@@ -38,7 +38,7 @@ type Props = {
 };
 
 const DEFAULT_CENTER: [number, number] = [35.5, 103.5];
-const DEFAULT_ZOOM = 5.4; // 总览放大一级
+const DEFAULT_ZOOM = 3.2; // 默认进一步缩小
 const CHINA_BOUNDS = { sw: [73, 15] as [number, number], ne: [135, 54] as [number, number] };
 const MIN_FOCUS_ZOOM = 11;
 const CITY_MAX_ZOOM = 10; // 城市层最高放大，避免直接落到街道级
@@ -246,7 +246,7 @@ export function AmapStoreMap({
     (province: string, city: string) => cityStatsFiltered[`${province}||${city}`] ?? EMPTY_STATS,
     [cityStatsFiltered],
   );
-  const [drillLevel, setDrillLevel] = useState<DrillLevel>('province');
+  const [drillLevel, setDrillLevel] = useState<DrillLevel>('province'); // 默认全国视图
   const [activeProvince, setActiveProvince] = useState<string | null>(null);
   const [activeCity, setActiveCity] = useState<string | null>(null);
   const [provinceShapes, setProvinceShapes] = useState<RegionShape[]>([]);
@@ -254,6 +254,10 @@ export function AmapStoreMap({
   const [activeProvinceAdcode, setActiveProvinceAdcode] = useState<string | null>(null);
   const regionPolygonsRef = useRef<any[]>([]);
   const geoCacheRef = useRef<Record<string, RegionShape[]>>({});
+  const hasInitialCenteredRef = useRef(false);
+  const markersReadyRef = useRef(false);
+  const lastFocusedIdRef = useRef<string | null>(null);
+  const popupRef = useRef<HTMLDivElement | null>(null);
   const isSameCityName = (a: string, b: string) => {
     if (!a || !b) return false;
     return a === b || a.startsWith(b) || b.startsWith(a);
@@ -269,23 +273,53 @@ export function AmapStoreMap({
   // 重置视野到中国边界
   function recenter() {
     if (!mapRef.current) return;
-    if (amapRef.current) {
-      try {
-        const bounds = new (amapRef.current as any).Bounds(CHINA_BOUNDS.sw, CHINA_BOUNDS.ne);
-        mapRef.current.setLimitBounds(bounds);
-      } catch (e) {
-        // ignore bounds errors
-      }
-      mapRef.current.setZoomAndCenter(4.55, normalizedCenter, true);
-      return;
-    }
-    mapRef.current.setZoomAndCenter(initialZoom, normalizedCenter, true);
+    mapRef.current.setZoomAndCenter(DEFAULT_ZOOM, normalizedCenter, true);
   }
 
-  // 初始进入时将视野对齐中国边界
+  const focusOnStore = useCallback(
+    (store: Store | null) => {
+      if (!mapRef.current || !store) return false;
+      const point = toStoreLngLat(store);
+      if (!point) return false;
+      setActiveProvince(store.province || null);
+      setActiveCity(store.city || null);
+      setDrillLevel('city');
+      const currentZoom = mapRef.current.getZoom();
+      const targetZoom = Math.max(currentZoom, MIN_FOCUS_ZOOM);
+      mapRef.current.setZoomAndCenter(targetZoom, point, true);
+      if (showPopup && containerRef.current && mapRef.current?.lngLatToContainer) {
+        window.setTimeout(() => {
+          const map = mapRef.current;
+          const container = containerRef.current;
+          if (!map || !container) return;
+          const px = (map as any).lngLatToContainer(point as any);
+          if (!px) return;
+          const mapRect = container.getBoundingClientRect();
+          const popupRect = popupRef.current?.getBoundingClientRect();
+          const visibleBottom = popupRect ? popupRect.top - mapRect.top : mapRect.height;
+          const targetY = visibleBottom / 2;
+          const dy = targetY - px.y;
+          if (Math.abs(dy) > 4 && (map as any).panBy) {
+            (map as any).panBy(0, dy);
+          }
+        }, 120);
+      }
+      lastFocusedIdRef.current = store.id;
+      return true;
+    },
+    [showPopup],
+  );
+
+  // 初始进入时将视野对齐中国边界（如果没有选中门店）
   useEffect(() => {
-    if (ready) recenter();
-  }, [ready, normalizedCenter, initialZoom]);
+    if (ready && !hasInitialCenteredRef.current) {
+      // 如果已有选中的门店，不执行 recenter，让 selectedId 的 useEffect 处理
+      if (!selectedId) {
+        recenter();
+      }
+      hasInitialCenteredRef.current = true;
+    }
+  }, [ready, normalizedCenter, initialZoom, selectedId]);
 
   const provinceFilteredStats = useMemo(
     () => (activeProvince ? getProvinceFiltered(activeProvince) : EMPTY_STATS),
@@ -310,12 +344,13 @@ export function AmapStoreMap({
     },
     [activeProvince, activeCity, getCityFiltered, scopedStorePoints],
   );
+  // 从所有门店中查找选中的门店（而不是仅从 scopedStorePoints），确保全屏地图也能正确显示
   const selectedStore = useMemo(
     () =>
       viewMode === 'stores' && selectedId && selectedId.trim()
-        ? scopedStorePoints.find((s) => s.id === selectedId) ?? null
+        ? stores.find((s) => s.id === selectedId) ?? null
         : null,
-    [viewMode, scopedStorePoints, selectedId],
+    [viewMode, stores, selectedId],
   );
   useEffect(() => {
     setShowNavSelector(false);
@@ -497,8 +532,6 @@ export function AmapStoreMap({
     if (drillLevel === 'province') {
       if (provinceShapes.length) {
         drawRegionLayer(provinceShapes, 'province');
-      } else {
-        recenter();
       }
     } else if (drillLevel === 'city' && activeProvince) {
       const cities = cityShapesByProvince[activeProvince];
@@ -523,15 +556,19 @@ export function AmapStoreMap({
       clusterRef.current.setMap(null);
       clusterRef.current = null;
     }
+    markersReadyRef.current = false;
+    if (viewMode === 'stores') {
+      lastFocusedIdRef.current = null;
+    }
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
 
     const AMapLib = amapRef.current;
     const nextMarkers: AMap.Marker[] = [];
 
-    const showStoreMarkers = viewMode === 'stores' && (!regionEnabled || drillLevel === 'city');
+    const showStoreMarkers = viewMode === 'stores';
     if (showStoreMarkers) {
-      scopedStorePoints.forEach((store) => {
+      stores.forEach((store) => {
         if (!isInChinaRough(store)) return;
         const point = toStoreLngLat(store);
         if (!point) return;
@@ -582,13 +619,7 @@ export function AmapStoreMap({
 
         marker.on('click', () => {
           onSelect(store.id);
-          if (mapRef.current) {
-            const currentZoom = mapRef.current.getZoom();
-            if (currentZoom < MIN_FOCUS_ZOOM) {
-              mapRef.current.setZoom(MIN_FOCUS_ZOOM, true);
-            }
-            mapRef.current.setCenter(point, true);
-          }
+          focusOnStore(store);
         });
 
         nextMarkers.push(marker);
@@ -632,36 +663,41 @@ export function AmapStoreMap({
 
     const hasSelection = viewMode === 'stores' ? selectedId : selectedMallId;
     const allowAutoFit = !(viewMode === 'stores' && drillLevel === 'city'); // 城市层不自动按照门店点位缩放
-    const shouldFitAll = allowAutoFit && !hasSelection && (fitToStores || autoFitOnClear);
+    const shouldFitAll = allowAutoFit && !hasSelection && fitToStores;
 
     if (showStoreMarkers && nextMarkers.length && mapRef.current) {
-      const ClusterCtor = (AMapLib as any).MarkerClusterer || (AMapLib as any).MarkerCluster;
-      if (ClusterCtor) {
-        const renderClusterMarker = (context: { count: number; marker: AMap.Marker }) => {
-          const size = Math.max(28, Math.min(48, 18 + Math.log(context.count + 1) * 10));
-          const div = document.createElement('div');
-          div.className = 'store-cluster';
-          div.style.width = `${size}px`;
-          div.style.height = `${size}px`;
-          div.textContent = String(context.count);
-          context.marker.setContent(div);
-          context.marker.setOffset(new AMapLib.Pixel(-size / 2, -size / 2));
-        };
+      if (!isFullscreen) {
+        const ClusterCtor = (AMapLib as any).MarkerClusterer || (AMapLib as any).MarkerCluster;
+        if (ClusterCtor) {
+          const renderClusterMarker = (context: { count: number; marker: AMap.Marker }) => {
+            const size = Math.max(28, Math.min(48, 18 + Math.log(context.count + 1) * 10));
+            const div = document.createElement('div');
+            div.className = 'store-cluster';
+            div.style.width = `${size}px`;
+            div.style.height = `${size}px`;
+            div.textContent = String(context.count);
+            context.marker.setContent(div);
+            context.marker.setOffset(new AMapLib.Pixel(-size / 2, -size / 2));
+          };
 
-        clusterRef.current = new ClusterCtor(mapRef.current, nextMarkers, {
-          gridSize: CLUSTER_GRID_SIZE,
-          minClusterSize: 2,
-          renderClusterMarker,
-          maxZoom: CLUSTER_ZOOM_THRESHOLD,
-        } as any);
+          clusterRef.current = new ClusterCtor(mapRef.current, nextMarkers, {
+            gridSize: CLUSTER_GRID_SIZE,
+            minClusterSize: 2,
+            renderClusterMarker,
+            maxZoom: CLUSTER_ZOOM_THRESHOLD,
+          } as any);
+        } else {
+          nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
+        }
       } else {
+        // 全屏模式下不使用聚合，直接展示所有门店点位，视野完全由下钻逻辑控制
         nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
       }
     } else if (nextMarkers.length && mapRef.current) {
       nextMarkers.forEach((marker) => marker.setMap(mapRef.current!));
     }
 
-    if (mapRef.current && nextMarkers.length && shouldFitAll) {
+    if (mapRef.current && nextMarkers.length && (shouldFitAll || (!hasSelection && !hasInitialCenteredRef.current))) {
       const fitTargets: any[] = [];
       if (showStoreMarkers && clusterRef.current) {
         fitTargets.push(clusterRef.current);
@@ -669,27 +705,61 @@ export function AmapStoreMap({
         fitTargets.push(...nextMarkers);
       }
       mapRef.current.setFitView(fitTargets, false, [80, 40, 80, 80]);
-    } else if (!nextMarkers.length && viewMode !== 'stores') {
-      recenter();
-    } else if (!shouldFitAll && !hasSelection && !fitToStores && !autoFitOnClear && viewMode !== 'stores') {
-      recenter();
+      hasInitialCenteredRef.current = true;
+    }
+    if (showStoreMarkers && nextMarkers.length) {
+      markersReadyRef.current = true;
     }
   }, [
     ready,
-      viewMode,
-      scopedStorePoints,
+    viewMode,
+    stores,
     malls,
     favoritesSet,
-    selectedId,
-    selectedMallId,
     autoFitOnClear,
     fitToStores,
     onSelect,
     onMallClick,
-    recenter,
-      drillLevel,
-      regionEnabled,
+    drillLevel,
+    regionEnabled,
+    isFullscreen,
   ]);
+
+  // 当 selectedMallId 从外部变更（例如点击商场列表卡片）时，平滑聚焦到对应商场
+  useEffect(() => {
+    if (!ready || viewMode === 'stores' || !selectedMallId || !mapRef.current) return;
+    const mall = malls.find((m) => m.mallId === selectedMallId);
+    if (!mall) return;
+    const point = toMallLngLat(mall);
+    if (!point) return;
+    const currentZoom = mapRef.current.getZoom();
+    const targetZoom = Math.max(currentZoom, MIN_FOCUS_ZOOM);
+    mapRef.current.setZoomAndCenter(targetZoom, point, true);
+  }, [ready, selectedMallId, viewMode, malls]);
+
+  // 单独处理选中状态的样式更新，避免重新创建所有 markers
+  useEffect(() => {
+    if (!ready || viewMode !== 'stores' || !markersRef.current) return;
+    markersRef.current.forEach((marker) => {
+      const store = marker.getExtData() as Store;
+      if (!store) return;
+      const markerEl = marker.getContent() as HTMLElement;
+      if (!markerEl) return;
+
+      const isSelected = selectedId === store.id;
+      const setZ = (marker as any).setzIndex?.bind(marker) ?? (marker as any).setZIndex?.bind(marker);
+
+      if (isSelected) {
+        markerEl.classList.add('store-marker--selected');
+        if (setZ) setZ(140);
+      } else {
+        markerEl.classList.remove('store-marker--selected');
+        const isNew = markerEl.classList.contains('store-marker--new');
+        const isFavorite = markerEl.classList.contains('store-marker--favorite');
+        if (setZ) setZ(isNew ? 130 : isFavorite ? 120 : 100);
+      }
+    });
+  }, [ready, selectedId, viewMode]);
 
   useEffect(() => {
     if (!ready || !userPos || !amapRef.current || !mapRef.current) {
@@ -718,18 +788,15 @@ export function AmapStoreMap({
     }
   }, [ready, userPos]);
 
+  // 当选中门店时，下钻到门店位置（统一处理总览和全屏进入时已选中的场景）
   useEffect(() => {
-    if (!ready || viewMode !== 'stores' || !selectedId || !mapRef.current) return;
-    if (regionEnabled && drillLevel !== 'city') return;
-    const target = scopedStorePoints.find((s) => s.id === selectedId);
-    const point = target ? toStoreLngLat(target) : null;
-    if (!point) return;
-    const currentZoom = mapRef.current.getZoom();
-    if (currentZoom < MIN_FOCUS_ZOOM) {
-      mapRef.current.setZoom(MIN_FOCUS_ZOOM, true);
-    }
-    mapRef.current.setCenter(point, true);
-  }, [ready, viewMode, selectedId, scopedStorePoints, drillLevel]);
+    if (!ready || !mapRef.current || !selectedId || viewMode !== 'stores') return;
+    if (!markersReadyRef.current) return;
+    const target = stores.find((s) => s.id === selectedId);
+    if (!target) return;
+    if (lastFocusedIdRef.current === selectedId) return;
+    focusOnStore(target);
+  }, [focusOnStore, ready, selectedId, stores, viewMode]);
 
   useEffect(() => {
     if (resetToken > 0) {
@@ -738,9 +805,14 @@ export function AmapStoreMap({
       setActiveProvinceAdcode(null);
       setActiveCity(null);
       clearRegionOverlays();
-      recenter();
+      hasInitialCenteredRef.current = false;
+      // 如果当前没有选中的门店，则回到全国视图；
+      // 有选中门店时交给 selectedId 的下钻逻辑，避免互相抢视野
+      if (!selectedId) {
+        recenter();
+      }
     }
-  }, [resetToken, recenter, clearRegionOverlays]);
+  }, [resetToken, recenter, clearRegionOverlays, selectedId]);
 
   const telLink = selectedStore?.phone ? `tel:${selectedStore.phone}` : '';
   const hasCoord = typeof selectedStore?.latitude === 'number' && typeof selectedStore?.longitude === 'number';
@@ -857,9 +929,12 @@ export function AmapStoreMap({
           <p className="text-xs text-slate-400">请检查高德 Key 设置或网络连接后重试。</p>
         </div>
       )}
-      {viewMode === 'stores' && drillLevel === 'city' && activeProvince && !activeCity && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[180] w-[min(360px,88vw)] pointer-events-none">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3 pointer-events-auto">
+      {viewMode === 'stores' && drillLevel === 'city' && activeProvince && !activeCity && !selectedStore && (
+        <div
+          className="absolute left-4 right-4 z-[180] pointer-events-none"
+          style={{ bottom: isFullscreen ? '104px' : '16px' }}
+        >
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3 pointer-events-auto max-w-[360px] mx-auto">
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm font-bold text-slate-900">{activeProvince} - 省内对比</div>
               <div className="text-xs text-slate-500">仅当前筛选</div>
@@ -886,9 +961,12 @@ export function AmapStoreMap({
           </div>
         </div>
       )}
-      {viewMode === 'stores' && drillLevel === 'city' && activeProvince && activeCity && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[180] w-[min(360px,88vw)] pointer-events-none">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3 pointer-events-auto">
+      {viewMode === 'stores' && drillLevel === 'city' && activeProvince && activeCity && !selectedStore && (
+        <div
+          className="absolute left-4 right-4 z-[180] pointer-events-none"
+          style={{ bottom: isFullscreen ? '104px' : '16px' }}
+        >
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3 pointer-events-auto max-w-[360px] mx-auto">
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm font-bold text-slate-900">{activeCity} - 城市对比</div>
               <div className="text-xs text-slate-500">仅当前筛选</div>
@@ -915,13 +993,23 @@ export function AmapStoreMap({
           </div>
         </div>
       )}
-      {showPopup && viewMode === 'stores' && selectedStore && (!regionEnabled || drillLevel === 'city') && (
-        <div className="absolute bottom-4 left-4 right-4 z-[200] animate-slide-up pointer-events-auto max-h-[50vh] overflow-y-auto" style={{ willChange: 'transform' }}>
+      {showPopup && viewMode === 'stores' && selectedStore && (
+        <div
+          ref={popupRef}
+          className="absolute left-4 right-4 z-[200] animate-slide-up pointer-events-auto max-h-[50vh] overflow-y-auto"
+          style={{ willChange: 'transform', bottom: isFullscreen ? '104px' : '16px' }}
+        >
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden pointer-events-auto">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 onSelect('');
+                // 关闭门店卡片后，回到全国视图
+                setDrillLevel('province');
+                setActiveProvince(null);
+                setActiveProvinceAdcode(null);
+                setActiveCity(null);
+                recenter();
               }}
               className="absolute top-2 right-2 p-1 hover:bg-slate-100 transition-colors z-10"
             >
@@ -995,7 +1083,11 @@ export function AmapStoreMap({
         </div>
       )}
       {showLegend && (
-        <div className={`absolute left-3 ${isFullscreen ? 'bottom-[76px]' : 'bottom-[23px]'} flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1.5 shadow-sm pointer-events-none z-10`}>
+        <div
+          className={`absolute flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1.5 shadow-sm pointer-events-none z-10 ${
+            isFullscreen ? 'left-4 top-[160px]' : 'left-3 top-3'
+          }`}
+        >
           <div className="flex items-center gap-1">
             <span className="store-marker store-marker--insta store-marker--new store-marker--insta-new">
               <img src={instaLogoYellow} alt="Insta360 新增" className="store-marker__logo store-marker__logo--full" />

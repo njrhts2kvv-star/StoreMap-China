@@ -1,9 +1,9 @@
 {
-  "totalStores": 1255,
+  "totalStores": 1262,
   "topCities": [
     {
       "city": "北京市",
-      "count": 72
+      "count": 76
     },
     {
       "city": "深圳市",
@@ -14,11 +14,11 @@
       "count": 67
     },
     {
-      "city": "西安市",
-      "count": 55
+      "city": "成都市",
+      "count": 57
     },
     {
-      "city": "成都市",
+      "city": "西安市",
       "count": 55
     },
     {
@@ -63,15 +63,15 @@
     },
     {
       "province": "北京市",
-      "dji": 30,
-      "insta": 42,
-      "total": 72
+      "dji": 32,
+      "insta": 44,
+      "total": 76
     },
     {
       "province": "四川省",
-      "dji": 41,
+      "dji": 44,
       "insta": 28,
-      "total": 69
+      "total": 72
     },
     {
       "province": "上海市",
@@ -99,15 +99,15 @@
     },
     {
       "province": "辽宁省",
-      "dji": 26,
+      "dji": 24,
       "insta": 27,
-      "total": 53
+      "total": 51
     },
     {
       "province": "河南省",
-      "dji": 35,
+      "dji": 36,
       "insta": 15,
-      "total": 50
+      "total": 51
     },
     {
       "province": "湖北省",
@@ -129,9 +129,9 @@
     },
     {
       "province": "湖南省",
-      "dji": 22,
+      "dji": 23,
       "insta": 9,
-      "total": 31
+      "total": 32
     },
     {
       "province": "云南省",
@@ -230,5 +230,5 @@
       "total": 3
     }
   ],
-  "updatedAt": "2025-11-28T15:35:41.709284"
+  "updatedAt": "2025-12-01T12:53:01.444815"
 }
