@@ -153,7 +153,9 @@ export default function HomePage() {
   const [showCompetitionFilters, setShowCompetitionFilters] = useState(false);
   const [activeCompetitionFilterTab, setActiveCompetitionFilterTab] = useState<FilterTab>('storeType');
   const [appliedMallTags, setAppliedMallTags] = useState<string[]>([]);
-  const [activeCompetitionChip, setActiveCompetitionChip] = useState<'ALL' | 'PT' | 'GAP' | 'BOTH_OPENED' | 'BOTH_NONE' | 'INSTA_ONLY' | 'DJI_ONLY'>('ALL');
+  const [activeCompetitionChip, setActiveCompetitionChip] = useState<
+    'ALL' | 'PT' | 'GAP' | 'BOTH_OPENED' | 'BOTH_NONE' | 'INSTA_ONLY' | 'DJI_ONLY' | 'TARGET'
+  >('ALL');
   const hasRegionFilter = pendingFilters.city.length > 0 || pendingFilters.province.length > 0;
   const mapUserPos = hasRegionFilter ? null : userPos;
   const handleSelect = useCallback((id: string) => setSelectedId(id || null), []);
@@ -435,10 +437,40 @@ export default function HomePage() {
     );
   }, [debouncedCompetitionSearch, filteredMalls]);
 
-  const competitionMallsForView = useMemo(
-    () => competitionSearchFiltered.filter((m) => matchChip(m, activeCompetitionChip)),
-    [competitionSearchFiltered, activeCompetitionChip, matchChip],
-  );
+  const competitionMallsForView = useMemo(() => {
+    const base = competitionSearchFiltered.filter((m) => matchChip(m, activeCompetitionChip));
+
+    const getPriority = (mall: Mall): number => {
+      // 0: PT 商场
+      if (mall.djiExclusive === true) return 0;
+      // 1: 缺口机会（gap）
+      if (mall.status === 'gap') return 1;
+      const djiOpened = !!mall.djiOpened;
+      const instaOpened = !!mall.instaOpened;
+      const isTarget = mall.djiTarget === true && !djiOpened; // 目标未进驻
+      // 2: 均未进驻（且非目标场）
+      if (!djiOpened && !instaOpened && !isTarget) return 2;
+      // 3: 目标未进驻
+      if (isTarget) return 3;
+      // 4: 仅 Insta 进驻
+      if (instaOpened && !djiOpened) return 4;
+      // 5: 仅 DJI 进驻
+      if (djiOpened && !instaOpened) return 5;
+      // 6: 均进驻
+      if (djiOpened && instaOpened) return 6;
+      // 7: 其他（兜底）
+      return 7;
+    };
+
+    return [...base].sort((a, b) => {
+      const pa = getPriority(a);
+      const pb = getPriority(b);
+      if (pa !== pb) return pa - pb;
+      const cityCmp = a.city.localeCompare(b.city, 'zh-Hans-CN');
+      if (cityCmp !== 0) return cityCmp;
+      return a.mallName.localeCompare(b.mallName, 'zh-Hans-CN');
+    });
+  }, [competitionSearchFiltered, activeCompetitionChip, matchChip]);
   const competitionTotal = competitionSearchFiltered.length;
 
   // 为竞争模块的商场列表推导省份信息（优先使用商场主表，其次基于门店数据兜底）
@@ -823,78 +855,178 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
   );
 };
 
+type LlmContext = {
+  scopeName: string;
+  text: string;
+};
+
+const buildLlmContext = (
+  question: string,
+  malls: Mall[],
+  stores: Store[],
+  stats: ReturnType<typeof useCompetition>,
+): LlmContext => {
+  const q = (question || '').trim();
+
+  const allCities = Array.from(
+    new Set(malls.map((m) => m.city).filter(Boolean)),
+  ) as string[];
+
+  const findCityMatch = (): string => {
+    if (!q) return '';
+    for (const c of allCities) {
+      const base = c.replace(/市$/u, '');
+      if (base && q.includes(base)) return c;
+      if (q.includes(c)) return c;
+    }
+    return '';
+  };
+
+  const targetCity = findCityMatch();
+  const scopeMalls = targetCity ? malls.filter((m) => m.city === targetCity) : malls;
+  const scopeName = targetCity || '全国/当前筛选范围';
+
+  const buildScopeStats = (subset: Mall[]) => {
+    const statusCounts: Record<MallStatus, number> = {
+      blocked: 0,
+      gap: 0,
+      captured: 0,
+      blue_ocean: 0,
+      opportunity: 0,
+      neutral: 0,
+    };
+    let totalTarget = 0;
+    let bothOpened = 0;
+    subset.forEach((mall) => {
+      const status = (mall.status || 'neutral') as MallStatus;
+      statusCounts[status] = (statusCounts[status] || 0) + 1;
+      if (mall.djiTarget || mall.djiReported || mall.djiOpened) {
+        totalTarget += 1;
+      }
+      if (mall.djiOpened && mall.instaOpened) {
+        bothOpened += 1;
+      }
+    });
+    return {
+      totalTarget,
+      gapCount: statusCounts.gap,
+      capturedCount: statusCounts.captured,
+      blockedCount: statusCounts.blocked,
+      opportunityCount: statusCounts.opportunity,
+      blueOceanCount: statusCounts.blue_ocean,
+      neutralCount: statusCounts.neutral,
+      bothOpened,
+      totalMalls: subset.length,
+    };
+  };
+
+  const scopeStats =
+    targetCity === ''
+      ? {
+          totalTarget: stats.totalTarget,
+          gapCount: stats.gapCount,
+          capturedCount: stats.capturedCount,
+          blockedCount: stats.blockedCount,
+          opportunityCount: stats.opportunityCount,
+          blueOceanCount: stats.blueOceanCount,
+          neutralCount: stats.neutralCount,
+          bothOpened: malls.filter((m) => m.djiOpened && m.instaOpened).length,
+          totalMalls: malls.length,
+        }
+      : buildScopeStats(scopeMalls);
+
+  const gapMalls = scopeMalls.filter((m) => m.status === 'gap');
+  const targetUnopened = scopeMalls.filter(
+    (m) => m.djiTarget && !m.djiOpened && !m.instaOpened,
+  );
+  const opportunityMalls = scopeMalls.filter((m) => m.status === 'opportunity');
+  const blockedMalls = scopeMalls.filter((m) => m.status === 'blocked');
+
+  const statusLabel = (mall: Mall): string => {
+    switch (mall.status) {
+      case 'gap':
+        return '缺口机会-对手已开';
+      case 'opportunity':
+        return '高潜机会';
+      case 'blocked':
+        return '对手排他';
+      case 'captured':
+        return '双方均已进驻';
+      case 'blue_ocean':
+        return '蓝海商场';
+      default:
+        return '一般商场';
+    }
+  };
+
+  const keyMalls: Mall[] = [];
+  const seen = new Set<string>();
+  const pushUnique = (list: Mall[]) => {
+    list.forEach((m) => {
+      const key = m.mallId || `${m.city}-${m.mallName}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        keyMalls.push(m);
+      }
+    });
+  };
+
+  pushUnique(gapMalls);
+  pushUnique(targetUnopened);
+  pushUnique(opportunityMalls);
+  pushUnique(blockedMalls);
+
+  if (keyMalls.length > 20) {
+    keyMalls.length = 20;
+  }
+
+  const formatMallLine = (m: Mall): string => {
+    const city = m.city || '未知城市';
+    const dji = m.djiOpened ? 'DJI已开' : 'DJI未开';
+    const insta = m.instaOpened ? 'Insta已开' : 'Insta未开';
+    const enterable = m.status === 'blocked' || m.djiExclusive ? 'DJI排他' : '可进入';
+    return `- [${city}] ${m.mallName}：${dji} | ${insta}（${statusLabel(m)}，${enterable}）`;
+  };
+
+  const lines: string[] = [];
+  lines.push(`【数据分析范围】：${scopeName}`);
+  lines.push('【宏观局势】：');
+  lines.push(
+    `- 目标商场总数：${scopeStats.totalTarget} 家；其中缺口机会 ${scopeStats.gapCount} 家，高潜机会 ${scopeStats.opportunityCount} 家，已攻克 ${scopeStats.capturedCount} 家。`,
+  );
+  lines.push(
+    `- 双方均已进驻的商场：${scopeStats.bothOpened} 家；蓝海商场 ${scopeStats.blueOceanCount} 家；排他商场 ${scopeStats.blockedCount} 家；中性商场 ${scopeStats.neutralCount} 家。`,
+  );
+
+  lines.push('');
+  lines.push('【重点关注商场名单（Top 20）】：');
+  if (keyMalls.length === 0) {
+    lines.push('（当前筛选下暂未识别出明显的重点商场，需要结合一线信息再判断。）');
+  } else {
+    keyMalls.forEach((m) => {
+      lines.push(formatMallLine(m));
+    });
+  }
+
+  return {
+    scopeName,
+    text: lines.join('\n'),
+  };
+};
+
 const buildAiSuggestion = (
   question: string,
   malls: Mall[],
+  stores: Store[],
   competitionStats: ReturnType<typeof useCompetition>,
 ): string => {
-  const text = question.trim();
-  if (!text) {
-    return '您好！我是您的门店智能助手，可以用大白话跟我沟通，比如“帮我分析现在深圳的机会点在哪里？”，我会结合当前最新数据给到您建议。';
-  }
+  const { scopeName, text } = buildLlmContext(question, malls, stores, competitionStats);
+  const q = (question || '').trim();
+  const header = q
+    ? `我先根据当前数据，围绕你问的「${q}」，在「${scopeName}」范围内做了一个简要梳理：`
+    : `我先根据当前数据，在「${scopeName}」范围内做了一个简要梳理：`;
 
-  const allCities = Array.from(new Set(malls.map((m) => m.city))).filter(Boolean) as string[];
-  const matchedCity =
-    allCities.find((c) => text.includes(c.replace(/市$/u, ''))) ||
-    allCities.find((c) => text.includes(c.split('市')[0])) ||
-    null;
-
-  const scopedMalls = matchedCity ? malls.filter((m) => m.city === matchedCity) : malls;
-  const scopeLabel = matchedCity || '全国';
-
-  const targetNotOpened = scopedMalls.filter((m) => m.djiTarget && !m.djiOpened).length;
-  const gapCount = scopedMalls.filter((m) => m.status === 'gap').length;
-  const bothOpened = scopedMalls.filter((m) => m.djiOpened && m.instaOpened).length;
-  const bothNone = scopedMalls.filter((m) => !m.djiOpened && !m.instaOpened).length;
-
-  const formatMallExamples = (items: Mall[], limit: number): string => {
-    if (!items.length) return '当前筛选下暂未识别出典型商场';
-    const sliced = items.slice(0, limit);
-    const names = sliced.map((m) =>
-      m.city ? `${m.city.replace(/市$/u, '')}·${m.mallName}` : m.mallName,
-    );
-    const left = items.length - sliced.length;
-    if (left > 0) {
-      return `${names.join('、')} 等 ${items.length} 个商场`;
-    }
-    return names.join('、');
-  };
-
-  const targetNotOpenedMalls = scopedMalls.filter((m) => m.djiTarget && !m.djiOpened);
-  const gapMalls = scopedMalls.filter((m) => m.status === 'gap');
-  const bothOpenedMalls = scopedMalls.filter((m) => m.djiOpened && m.instaOpened);
-  const blueOceanMalls = scopedMalls.filter((m) => m.status === 'blue_ocean');
-
-  const lines: string[] = [];
-  lines.push(`我按照「${scopeLabel}」范围帮你看了一下：`);
-  lines.push(
-    `• 目标未进驻（DJI Target 但未开店）的商场约 ${targetNotOpened} 家，适合优先排期；`,
-  );
-  lines.push(
-    `• 缺口机会（DJI 有布局但 Insta 未进）的商场约 ${gapCount} 家，可以对着 DJI 布局挖 Insta 机会；`,
-  );
-  lines.push(
-    `• 双方均进驻的商场约 ${bothOpened} 家，适合主要做维护和提升份额；`,
-  );
-  lines.push(
-    `• 双方均未进驻的商场约 ${bothNone} 家，如果商场体量不错，可以评估是否作为新增点位。`,
-  );
-
-  lines.push('');
-  lines.push(
-    `例如，目标未进驻的典型商场包括：${formatMallExamples(targetNotOpenedMalls, 3)}。`,
-  );
-  lines.push(`缺口机会（DJI 有布局但 Insta 未进）的典型商场包括：${formatMallExamples(gapMalls, 3)}。`);
-  lines.push(
-    `已被双方同时覆盖的成熟商场样例：${formatMallExamples(bothOpenedMalls, 3)}；纯蓝海样例：${formatMallExamples(
-      blueOceanMalls,
-      3,
-    )}。`,
-  );
-
-  lines.push('');
-  lines.push('如果你想更具体一点，可以加上品牌或场景，比如：“只看深圳的PT商场机会” 或 “帮我看看西南地区缺口机会”。');
-  return lines.join('\n');
+  return `${header}\n\n${text}\n\n如果你想更具体一点，可以继续限定城市、商场等级或品牌（例如“只看深圳的 PT 商场机会”）。`;
 };
 
 const cleanAiText = (raw: string): string => {
@@ -942,10 +1074,8 @@ const callLlmSuggestion = async (
   const model = import.meta.env.VITE_BAILIAN_MODEL || 'qwen-plus';
   const endpoint = `${baseUrl.replace(/\/$/, '')}/chat/completions`;
 
-  const summary = buildAiSuggestion(question, malls, competitionStats);
-
-  const totalStores = stores.length;
-  const totalMalls = malls.length;
+  const { text: contextText } = buildLlmContext(question, malls, stores, competitionStats);
+  const userQuestion = (question && question.trim()) || '帮我看看现在整体还有哪些机会点？';
 
   const payload = {
     model,
@@ -956,28 +1086,12 @@ const callLlmSuggestion = async (
           '你是一个线下门店与商场布局的经营分析助手。你只能使用随后提供的“项目整体数据”和“结构化观察”里的信息来回答，不要使用任何外部知识，也不要自己编造未在数据中出现的城市、商场或数字。如果摘要里给出了具体商场或门店名称，可以直接引用这些名称举例，但不要凭空杜撰新的名字。\n\n在回答前，请先认真理解【用户问题】，搞清楚他关心的是哪些城市/区域、品牌（DJI / Insta360），以及是想看机会、风险还是排期优先级，然后再结合数据给结论。\n\n输出要求：\n1. 用 3–5 条编号句子（1. 2. 3. …）回答，每一条都要紧扣用户问题，而不是泛泛而谈。\n2. 建议中尽量提到数据中的具体商场/门店名称或数量区间，让结论“看得见数据”。\n3. 如果数据不足以支持某个判断，就明确说“从当前数据看不出来”，不要硬猜。\n4. 不要使用任何 Markdown 语法（不要出现 **、#、-、``` 等符号），也不要加标题或很长的背景说明。',
       },
       {
+        role: 'assistant',
+        content: `下面是当前的数据摘要和重点商场信息（所有结论只能基于这些内容）：\n\n${contextText}`,
+      },
+      {
         role: 'user',
-        content: [
-          `【项目整体数据】`,
-          `- 商场总数：${totalMalls}`,
-          `- 门店总数：${totalStores}`,
-          `- 目标商场总数（含已进驻）：${competitionStats.totalTarget}`,
-          `- 缺口机会商场：${competitionStats.gapCount}`,
-          `- 已覆盖商场：${competitionStats.capturedCount}`,
-          `- 蓝海商场：${competitionStats.blueOceanCount}`,
-          `- 中性商场：${competitionStats.neutralCount}`,
-          '',
-          '【按当前提问自动聚焦得到的一些结构化观察】',
-          summary,
-          '',
-          `【用户问题】${question || '帮我看看现在整体还有哪些机会点？'}`,
-          '',
-          '请基于上面的数据，给出 3-6 条建议：',
-          '1) 先一句话概括结论；',
-          '2) 然后分点说明在哪些城市/商场类型上更值得优先布局；',
-          '3) 建议既要提到 DJI，也要兼顾 Insta360 视角（如果数据中有区分）；',
-          '4) 不要给出任何与上面数据无关的推断。',
-        ].join('\n'),
+        content: userQuestion,
       },
     ],
     temperature: 0.3,
@@ -1058,7 +1172,7 @@ function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) 
         answer = await callLlmSuggestion(finalQuestion, allMalls, allStores, competitionStats);
       }
       if (!answer) {
-        answer = buildAiSuggestion(finalQuestion, allMalls, competitionStats);
+        answer = buildAiSuggestion(finalQuestion, allMalls, allStores, competitionStats);
       }
       const finalAnswer = answer;
       setMessages((prev) =>

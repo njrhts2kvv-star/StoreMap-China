@@ -155,16 +155,17 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
         const provinceOpen = openProvince === p.province;
         const rank = page * pageSize + idx + 1;
         return (
-          <div key={p.province} className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden transition-all">
-            <div
-              className="w-full text-left p-4 flex items-start justify-between cursor-pointer"
-              onClick={() => {
-                setOpenProvince(provinceOpen ? null : p.province);
-                setCityPage((prev) => ({ ...prev, [p.province]: 0 }));
-                setOpenCity(null);
-                setOpenMall(null);
-              }}
-            >
+          <div
+            key={p.province}
+            className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden transition-all cursor-pointer"
+            onClick={() => {
+              setOpenProvince(provinceOpen ? null : p.province);
+              setCityPage((prev) => ({ ...prev, [p.province]: 0 }));
+              setOpenCity(null);
+              setOpenMall(null);
+            }}
+          >
+            <div className="w-full text-left p-4 flex items-start justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-2xl font-black text-slate-900">{p.province}</div>
@@ -211,7 +212,13 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
               </div>
 
               {provinceOpen && (
-                <div className="space-y-2">
+                <div
+                  className="space-y-2"
+                  onClick={(e) => {
+                    // 防止在城市列表区域的点击触发展开/收起省份卡片
+                    e.stopPropagation();
+                  }}
+                >
                   {p.cities
                     .slice((cityPage[p.province] ?? 0) * 5, (cityPage[p.province] ?? 0) * 5 + 5)
                     .map((c, cityIdx) => {
