@@ -1,5 +1,15 @@
 [
   {
+    "id": "RELOCATE-9206a07d-6876-4bf0-b06f-8ac0f6b2ab7b",
+    "storeId": "9206a07d-6876-4bf0-b06f-8ac0f6b2ab7b",
+    "brand": "DJI",
+    "storeName": "沈阳龙之梦京东MALL授权体验店",
+    "province": "辽宁省",
+    "city": "沈阳市",
+    "changeType": "RELOCATE",
+    "timestamp": "2025-12-02T20:44:46.813697"
+  },
+  {
     "id": "CLOSE-05d9818c-4633-441f-88e3-22efc28bb3e0",
     "storeId": "05d9818c-4633-441f-88e3-22efc28bb3e0",
     "brand": "Insta360",
@@ -7,7 +17,7 @@
     "province": "河北省",
     "city": "保定市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-0b837fd3-1996-4eb5-9d2f-3e58e2d2d276",
@@ -17,7 +27,7 @@
     "province": "河北省",
     "city": "唐山市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-269132b3-1efe-4623-8df2-057ac83bb52d",
@@ -27,7 +37,7 @@
     "province": "河北省",
     "city": "唐山市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
@@ -37,7 +47,7 @@
     "province": "浙江省",
     "city": "杭州市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-5ba048a9-81bc-4bff-a8d0-9beeaf8b5e02",
@@ -47,7 +57,7 @@
     "province": "河北省",
     "city": "张家口市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-66b2efa8-673b-421a-aa49-d70168c8c3b5",
@@ -57,7 +67,7 @@
     "province": "河北省",
     "city": "沧州市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-7a8d42b8-276a-49c2-9ea6-bf9c2970d105",
@@ -67,7 +77,7 @@
     "province": "河北省",
     "city": "邢台市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-db46109a-fd1e-44c1-b902-554077ba9488",
@@ -77,7 +87,7 @@
     "province": "河北省",
     "city": "秦皇岛市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-e71aae2a-2c94-485e-a946-abf95982448e",
@@ -87,7 +97,7 @@
     "province": "河北省",
     "city": "邯郸市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-ecabac00-6e28-4e16-9d84-dbbe81c13d26",
@@ -97,7 +107,7 @@
     "province": "河北省",
     "city": "保定市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-f4fdc35e-29a0-4b77-9f93-54f9fef69e1b",
@@ -107,7 +117,7 @@
     "province": "河北省",
     "city": "邯郸市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "CLOSE-fae632f5-dadf-4954-9c43-db70f11b0f19",
@@ -117,17 +127,7 @@
     "province": "河北省",
     "city": "沧州市",
     "changeType": "CLOSE",
-    "timestamp": "2025-12-03T00:00:00"
-  },
-  {
-    "id": "RELOCATE-9206a07d-6876-4bf0-b06f-8ac0f6b2ab7b",
-    "storeId": "9206a07d-6876-4bf0-b06f-8ac0f6b2ab7b",
-    "brand": "DJI",
-    "storeName": "沈阳龙之梦京东MALL授权体验店",
-    "province": "辽宁省",
-    "city": "沈阳市",
-    "changeType": "RELOCATE",
-    "timestamp": "2025-12-02T16:28:59.937483"
+    "timestamp": "2025-12-02T00:00:00"
   },
   {
     "id": "f8c08b17-64eb-4633-919e-ad1482a673ed",
