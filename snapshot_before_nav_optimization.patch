@@ -1,0 +1,74 @@
+diff --git a/src/pages/HomePage.tsx b/src/pages/HomePage.tsx
+index 564cc22..98e2ff1 100644
+--- a/src/pages/HomePage.tsx
++++ b/src/pages/HomePage.tsx
+@@ -867,6 +867,29 @@ const buildAiSuggestion = (
+   return lines.join('\n');
+ };
+ 
++const cleanAiText = (raw: string): string => {
++  if (!raw) return '';
++  let text = raw.trim();
++
++  // 去掉可能的代码块包裹 ```xxx```
++  if (text.startsWith('```')) {
++    const parts = text.split('```');
++    text = parts[1] || parts[0];
++  }
++
++  // 去掉 markdown 标题前缀（#、## 等）
++  text = text.replace(/^\s*#+\s*/gm, '');
++
++  // 去掉粗体/斜体标记 **xx** / *xx*
++  text = text.replace(/\*\*(.+?)\*\*/g, '$1');
++  text = text.replace(/\*(.+?)\*/g, '$1');
++
++  // 去掉行首的 markdown 列表符号 "- " 或 "* "
++  text = text.replace(/^\s*[-*]\s+/gm, '');
++
++  return text.trim();
++};
++
+ const callLlmSuggestion = async (
+   question: string,
+   malls: Mall[],
+@@ -900,7 +923,7 @@ const callLlmSuggestion = async (
+       {
+         role: 'system',
+         content:
+-          '你是一个线下门店与商场布局的经营分析助手。你的所有分析只能基于用户提供的数据摘要，不要引用外部网络信息或你自己的通用知识；如果数据不足以支持结论，就明确说明“从当前数据看不出来”。回答要用简体中文，语气专业但口语化，给出可执行建议。',
++          '你是一个线下门店与商场布局的经营分析助手。你的所有分析只能基于用户提供的数据摘要，不要引用外部网络信息或你自己的通用知识；如果数据不足以支持结论，就明确说明“从当前数据看不出来”。回答要用简体中文，语气专业但口语化，给出可执行建议。输出要求：直接用 3-6 条编号句子（1. 2. 3. …），不要使用任何 Markdown 语法（不要出现 **、#、-、``` 等符号），不需要标题，只给出精炼结论和建议。',
+       },
+       {
+         role: 'user',
+@@ -944,9 +967,9 @@ const callLlmSuggestion = async (
+       return null;
+     }
+     const json = await resp.json();
+-    const content = json.choices?.[0]?.message?.content;
++    const content = json.choices?.[0]?.message?.content as string | undefined;
+     if (typeof content === 'string' && content.trim()) {
+-      return content.trim();
++      return cleanAiText(content);
+     }
+     return null;
+   } catch (err) {
+diff --git a/src/styles/tailwind.css b/src/styles/tailwind.css
+index 7fb2742..930e7fa 100644
+--- a/src/styles/tailwind.css
++++ b/src/styles/tailwind.css
+@@ -2,6 +2,14 @@
+ @tailwind components;
+ @tailwind utilities;
+ 
++/* 移动端输入框放大优化：保证 iOS 上的 input/textarea 字号 >=16px，避免自动缩放 */
++@media (max-width: 768px) {
++  input,
++  textarea {
++    font-size: 16px !important;
++  }
++}
++
+ /* 高德自定义圆点样式：品牌 logo 为主，去掉阴影但保留圆形裁剪，基准 16px */
+ .store-marker { --brand-main:#111827; --marker-bg:var(--brand-main); --marker-size:16px; width:var(--marker-size); height:var(--marker-size); border-radius:999px; border:0; display:inline-flex; align-items:center; justify-content:center; position:relative; background:var(--marker-bg); box-shadow:none; overflow:hidden; transform:translateZ(0); transition:transform 120ms ease; }
+ .store-marker__logo { width:13px; height:13px; pointer-events:none; border-radius:999px; object-fit:contain; }

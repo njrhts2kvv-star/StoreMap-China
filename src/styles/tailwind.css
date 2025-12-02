@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 移动端输入框放大优化：保证 iOS 上的 input/textarea 字号 >=16px，避免自动缩放 */
+@media (max-width: 768px) {
+  input,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
 /* 高德自定义圆点样式：品牌 logo 为主，去掉阴影但保留圆形裁剪，基准 16px */
 .store-marker { --brand-main:#111827; --marker-bg:var(--brand-main); --marker-size:16px; width:var(--marker-size); height:var(--marker-size); border-radius:999px; border:0; display:inline-flex; align-items:center; justify-content:center; position:relative; background:var(--marker-bg); box-shadow:none; overflow:hidden; transform:translateZ(0); transition:transform 120ms ease; }
 .store-marker__logo { width:13px; height:13px; pointer-events:none; border-radius:999px; object-fit:contain; }
