@@ -24,9 +24,10 @@ POI_MEMORY_FILE = BASE_DIR / "poi_memory.csv"
 
 AMAP_TEXT_API = "https://restapi.amap.com/v3/place/text"
 AMAP_AROUND_API = "https://restapi.amap.com/v3/place/around"
-AMAP_TYPES = "060100|060101|060102|060200|060400|060500"  # 商场类型码
+# 放宽类型：060000 覆盖购物服务大类，其余保留原有商场细分类
+AMAP_TYPES = "060000|060100|060101|060102|060200|060400|060500"
 
-# 简单的“非商场”过滤关键词：命中则强制跳过（避免匹配便利店/鲜花店等）
+# 简单的“非商场”过滤关键词：命中则强制跳过（避免匹配便利店/品牌专卖/小店等）
 NO_MALL_KEYWORDS = [
     "便利店",
     "超市",
@@ -38,6 +39,19 @@ NO_MALL_KEYWORDS = [
     "奶茶",
     "药房",
     "药店",
+    "眼镜",
+    "书城",
+    "书店",
+    "酒",
+    "体验店",
+    "授权体验店",
+    "授权专卖店",
+    "售点",
+    "摄影",
+    "数码",
+    "电子城",
+    "电脑城",
+    "销售中心",
     "KKV",
     "无人便利",
     "罗森",
@@ -82,7 +96,8 @@ CHAIN_WHITELIST = [
 ]
 
 # 经纬度匹配阈值（米）：商场与门店距离的接受阈值（自动通过）
-DISTANCE_THRESHOLD = 500  # 500米内才认为是同一商场
+# 适当放宽到 800m，减少“明显同一商场却被判为距离过远”的案例
+DISTANCE_THRESHOLD = 800
 
 # LLM 配置（用于坐标/距离冲突判断）
 LLM_BASE_URL = os.getenv("BAILIAN_BASE_URL") or "https://dashscope.aliyuncs.com/compatible-mode/v1"
@@ -92,6 +107,43 @@ NAME_SIMILARITY_THRESHOLD = 60
 
 # 地址相似度阈值
 ADDRESS_SIMILARITY_THRESHOLD = 50
+
+
+def extract_candidate_mall_name(store_name: str) -> Optional[str]:
+    """
+    从门店名称中提取潜在的商场名称（用于DJI/Inst360等“XX万达广场授权体验店”场景）。
+    逻辑尽量保守，只在明显存在固定后缀时截断。
+    """
+    if not store_name:
+        return None
+    name = str(store_name).strip()
+
+    # 去掉常见品牌前缀
+    for prefix in ["影石Insta360", "Insta360", "DJI", "大疆", "DJI 大疆|哈苏"]:
+        if name.startswith(prefix):
+            name = name[len(prefix):].strip(" ·|")
+
+    suffixes = [
+        "授权体验店",
+        "授权体验专区",
+        "授权专卖店",
+        "授权体验点",
+        "售点1",
+        "售点2",
+        "售点",
+        "体验店",
+        "体验专区",
+        "体验中心",
+        "概念店",
+        "照材店",
+        "专区",
+    ]
+    for suf in suffixes:
+        if name.endswith(suf):
+            core = name[: -len(suf)].strip(" -·")
+            if core:
+                return core
+    return None
 
 
 def load_env_key() -> Optional[str]:
@@ -478,26 +530,26 @@ def search_mall_by_name(
     
     # 构造搜索关键词
     keyword = f"{city} {mall_name}".strip()
-    
-    params = {
-        "key": AMAP_KEY,
-        "keywords": keyword,
-        "city": city,
-        "citylimit": "true",
-        "types": AMAP_TYPES,  # 只搜索商场类型
-        "extensions": "all",
-        "offset": 5,
-        "page": 1,
-    }
-    
-    try:
+
+    def _do_request(extra_params: dict) -> Optional[dict]:
+        params = {
+            "key": AMAP_KEY,
+            "keywords": keyword,
+            "city": city,
+            "citylimit": "true",
+            "extensions": "all",
+            "offset": 5,
+            "page": 1,
+        }
+        params.update(extra_params)
+
         resp = requests.get(AMAP_TEXT_API, params=params, timeout=15)
         resp.raise_for_status()
         data = resp.json()
-        
+
         if data.get("status") != "1":
             return None
-        
+
         pois = data.get("pois", []) or []
         if not pois:
             return None
@@ -506,14 +558,15 @@ def search_mall_by_name(
         best_score = 0
         store_lat_f = safe_float(store_lat)
         store_lng_f = safe_float(store_lng)
-        
+
         for poi in pois:
             poi_name = poi.get("name", "") or ""
             if not poi_name:
                 continue
 
             name_score = fuzz.partial_ratio(mall_name.lower(), poi_name.lower())
-            if name_score < 50:
+            # 放宽名称相似度下限到 40，避免“国贸360”等略有差异就被过滤掉
+            if name_score < 40:
                 continue
 
             loc = poi.get("location", "")
@@ -546,6 +599,15 @@ def search_mall_by_name(
                     "name_score": name_score,
                 }
 
+        return best_match
+
+    try:
+        # 第一轮：限定商场类型
+        best_match = _do_request({"types": AMAP_TYPES})
+        # 第二轮：如果没找到，再放开类型限制
+        if not best_match:
+            best_match = _do_request({})
+
         if not best_match:
             return None
 
@@ -565,7 +627,7 @@ def search_mall_by_name(
             return None
 
         return best_match
-        
+
     except Exception as e:
         print(f"[错误] 搜索商场 '{keyword}' 时出错: {e}")
         return None
@@ -574,71 +636,81 @@ def search_mall_by_name(
 def search_nearby_malls(lat: float, lng: float, city: str, store_name: str, store_address: str) -> Optional[dict]:
     """通过周边搜索寻找与门店匹配的商场（返回最佳候选及候选列表）。"""
     require_key()
-    params = {
-        "key": AMAP_KEY,
-        "location": f"{lng},{lat}",
-        "types": AMAP_TYPES,
-        "radius": 1500,
-        "sortrule": "distance",
-        "offset": 20,
-        "page": 1,
-    }
     try:
-        resp = requests.get(AMAP_AROUND_API, params=params, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-        if data.get("status") != "1":
-            return None
-        pois = data.get("pois") or []
-        best = None
-        best_score = 0
-        store_name_low = store_name.lower()
-        store_address_low = store_address.lower() if store_address else ""
-        candidates: List[dict] = []
-        for poi in pois:
-            loc = poi.get("location", "")
-            if "," not in loc:
-                continue
-            try:
-                poi_lng, poi_lat = map(float, loc.split(",", 1))
-            except Exception:
-                continue
-            try:
-                dist = geodesic((lat, lng), (poi_lat, poi_lng)).meters
-            except Exception:
-                dist = float(poi.get("distance") or 9999)
-            name = poi.get("name", "")
-            if not name:
-                continue
-            # 过滤明显不是商场的 POI
-            if any(bad in name for bad in NO_MALL_KEYWORDS):
-                continue
-            mall_like = any(hint in name for hint in MALL_HINT_KEYWORDS)
-            chain_boost = 1.2 if any(k in name for k in CHAIN_WHITELIST) else 1.0
-            name_score = fuzz.partial_ratio(name.lower(), store_name_low)
-            addr_score = 0
-            if store_address_low:
-                addr_score = fuzz.partial_ratio((poi.get("address", "") or "").lower(), store_address_low)
-            distance_score = max(0.0, 1 - dist / 2000) * 40
-            # 如果缺少商场提示词，降权 0.8
-            type_factor = 1.0 if mall_like else 0.8
-            score = (name_score * 0.45 + addr_score * 0.25 + distance_score) * type_factor * chain_boost
-            candidate = {
-                "mall_name": name,
-                "lat": poi_lat,
-                "lng": poi_lng,
-                "address": poi.get("address", ""),
-                "distance": dist,
-                "score": score,
-                "name_score": name_score,
-                "addr_score": addr_score,
-                "chain_boost": chain_boost,
+        def _do_request(extra_params: dict) -> Optional[dict]:
+            params = {
+                "key": AMAP_KEY,
+                "location": f"{lng},{lat}",
+                "radius": 1500,
+                "sortrule": "distance",
+                "offset": 20,
+                "page": 1,
             }
-            candidates.append(candidate)
-            if score > best_score:
-                best_score = score
-                best = candidate
-        if best and best_score >= 45:
+            params.update(extra_params)
+
+            resp = requests.get(AMAP_AROUND_API, params=params, timeout=15)
+            resp.raise_for_status()
+            data = resp.json()
+            if data.get("status") != "1":
+                return None
+            pois = data.get("pois") or []
+            best = None
+            best_score = 0
+            store_name_low = store_name.lower()
+            store_address_low = store_address.lower() if store_address else ""
+            candidates: List[dict] = []
+            for poi in pois:
+                loc = poi.get("location", "")
+                if "," not in loc:
+                    continue
+                try:
+                    poi_lng, poi_lat = map(float, loc.split(",", 1))
+                except Exception:
+                    continue
+                try:
+                    dist = geodesic((lat, lng), (poi_lat, poi_lng)).meters
+                except Exception:
+                    dist = float(poi.get("distance") or 9999)
+                name = poi.get("name", "")
+                if not name:
+                    continue
+                # 过滤明显不是商场的 POI
+                if any(bad in name for bad in NO_MALL_KEYWORDS):
+                    continue
+                mall_like = any(hint in name for hint in MALL_HINT_KEYWORDS)
+                chain_boost = 1.2 if any(k in name for k in CHAIN_WHITELIST) else 1.0
+                name_score = fuzz.partial_ratio(name.lower(), store_name_low)
+                addr_score = 0
+                if store_address_low:
+                    addr_score = fuzz.partial_ratio((poi.get("address", "") or "").lower(), store_address_low)
+                distance_score = max(0.0, 1 - dist / 2000) * 40
+                # 如果缺少商场提示词，降权 0.8
+                type_factor = 1.0 if mall_like else 0.8
+                score = (name_score * 0.45 + addr_score * 0.25 + distance_score) * type_factor * chain_boost
+                candidate = {
+                    "mall_name": name,
+                    "lat": poi_lat,
+                    "lng": poi_lng,
+                    "address": poi.get("address", ""),
+                    "distance": dist,
+                    "score": score,
+                    "name_score": name_score,
+                    "addr_score": addr_score,
+                    "chain_boost": chain_boost,
+                }
+                candidates.append(candidate)
+                if score > best_score:
+                    best_score = score
+                    best = candidate
+            return best, candidates
+
+        # 第一轮：限定商场类型
+        best, candidates = _do_request({"types": AMAP_TYPES})
+        # 第二轮：如果没找到，再放开类型限制
+        if not best:
+            best, candidates = _do_request({})
+
+        if best and best["score"] >= 40:
             # 附带前5个候选供 LLM 参考
             best["candidates"] = sorted(candidates, key=lambda x: x["score"], reverse=True)[:5]
             return best
@@ -902,7 +974,7 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
     if "is_manual_confirmed" not in df.columns:
         df["is_manual_confirmed"] = ""
 
-    # 选择需要处理的门店
+    # 选择需要处理的门店（初步按品牌/目标ID过滤）
     if target_ids:
         target_set: Optional[Set[str]] = {sid.strip() for sid in target_ids if sid and sid.strip()}
         target_rows = df[df["uuid"].astype(str).str.strip().isin(target_set)].copy()
@@ -912,6 +984,18 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
     else:
         target_set = None
         target_rows = df[df["brand"] == "Insta360"].copy()
+
+    # 业务规则：只有“直营店 / 授权体验店 / 授权专卖店”参与商场匹配，其余类型视为街边店
+    if "store_type" in df.columns:
+        allowed_types = {"授权体验店", "授权专卖店", "直营店"}
+        skip_mask = ~target_rows["store_type"].isin(allowed_types)
+        if skip_mask.any():
+            skipped = target_rows[skip_mask]
+            print(
+                f"[信息] 根据门店类型跳过匹配 {len(skipped)} 条 "
+                f"(store_type 非 直营/授权体验店/授权专卖店)，保留现有商场/街边状态。"
+            )
+            target_rows = target_rows[~skip_mask].copy()
 
     print(f"[信息] 目标门店: {len(target_rows)} 条")
     print(f"[信息] 模式: {'预览模式（不会修改文件）' if dry_run else '更新模式'}")
@@ -1042,19 +1126,67 @@ def match_insta360_malls(csv_path: Path, dry_run: bool = False, target_ids: Opti
                     if not accept:
                         print("  [保留] LLM 未通过，保留现状")
                         time.sleep(0.3)
-                        continue
-                print(f"  [匹配] 周边商场: {nearby['mall_name']} 距离{dist_display:.0f}m (score {nearby['score']:.1f})")
-                if not dry_run:
-                    df.at[idx, "mall_name"] = nearby["mall_name"]
-                    df.at[idx, "mall_lat"] = nearby["lat"]
-                    df.at[idx, "mall_lng"] = nearby["lng"]
-                    df.at[idx, "match_method"] = "amap_nearby" if not need_llm else "amap_nearby_llm"
-                    matched_malls += 1
-                else:
-                    print(f"  [预览] 将更新为: {nearby['mall_name']}")
-                    matched_malls += 1
-            else:
-                print("  ✗ 周边搜索未找到合适商场")
+                        nearby = None
+                if nearby:
+                    print(f"  [匹配] 周边商场: {nearby['mall_name']} 距离{dist_display:.0f}m (score {nearby['score']:.1f})")
+                    if not dry_run:
+                        df.at[idx, "mall_name"] = nearby["mall_name"]
+                        df.at[idx, "mall_lat"] = nearby["lat"]
+                        df.at[idx, "mall_lng"] = nearby["lng"]
+                        df.at[idx, "match_method"] = "amap_nearby" if not need_llm else "amap_nearby_llm"
+                        matched_malls += 1
+                    else:
+                        print(f"  [预览] 将更新为: {nearby['mall_name']}")
+                        matched_malls += 1
+
+            # 如果周边搜索仍然没有结果，尝试从门店名中抽取商场名，再用文本搜索兜底
+            if not nearby:
+                cand_mall_name = extract_candidate_mall_name(store_name)
+                if cand_mall_name:
+                    print(f"  [兜底] 通过门店名抽取商场名: {cand_mall_name}")
+                    by_name = search_mall_by_name(
+                        mall_name=cand_mall_name,
+                        city=city,
+                        store_lat=search_lat,
+                        store_lng=search_lng,
+                        store_name=store_name,
+                        store_address=store_address,
+                    )
+                    if by_name:
+                        dist_val = by_name.get("distance")
+                        dist_display = dist_val if isinstance(dist_val, (int, float)) else 0.0
+                        need_llm = isinstance(dist_val, (int, float)) and dist_val > DISTANCE_THRESHOLD
+                        if need_llm:
+                            print(f"  [警告] 文本搜索候选距离 {dist_display:.0f}m，交给 LLM 复核商场是否匹配")
+                            accept = llm_accept_far_mall_by_name(
+                                mall_name=cand_mall_name,
+                                city=city,
+                                store_name=store_name,
+                                store_address=store_address,
+                                store_lat=search_lat,
+                                store_lng=search_lng,
+                                candidate=by_name,
+                            )
+                            if not accept:
+                                print("  [保留] LLM 未通过，保留现状")
+                                by_name = None
+                        if by_name:
+                            print(
+                                f"  [匹配] 文本搜索商场: {by_name['amap_name']} 距离{dist_display:.0f}m "
+                                f"(name_score={by_name.get('name_score')})"
+                            )
+                            if not dry_run:
+                                df.at[idx, "mall_name"] = by_name["amap_name"]
+                                df.at[idx, "mall_lat"] = by_name["lat"]
+                                df.at[idx, "mall_lng"] = by_name["lng"]
+                                df.at[idx, "match_method"] = "amap_text"
+                                matched_malls += 1
+                            else:
+                                print(f"  [预览] 将更新为: {by_name['amap_name']}")
+                                matched_malls += 1
+
+            if not nearby and not cand_mall_name:
+                print("  ✗ 周边/文本搜索均未找到合适商场")
                 if current_mall_name:
                     print(f"  [保留] 使用现有商场: {current_mall_name}")
                 else:

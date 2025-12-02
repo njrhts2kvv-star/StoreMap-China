@@ -39,6 +39,19 @@ NO_MALL_KEYWORDS = (
     "奶茶",
     "药房",
     "药店",
+    "眼镜",
+    "书城",
+    "书店",
+    "酒",
+    "体验店",
+    "授权体验店",
+    "授权专卖店",
+    "售点",
+    "摄影",
+    "数码",
+    "电子城",
+    "电脑城",
+    "销售中心",
     "KKV",
     "无人便利",
     "罗森",
@@ -383,6 +396,7 @@ def update_mall_coordinates(
         cur_lng = store_row.get("corrected_lng")
         cur_mall_id = _normalize_str(store_row.get("mall_id"))
         cur_mall_name = _normalize_str(store_row.get("mall_name"))
+        store_type = _normalize_str(store_row.get("store_type"))
 
         changed = False
 
@@ -417,8 +431,11 @@ def update_mall_coordinates(
                     )
 
         # 若还没有商场名称，则尝试通过高德附近搜索自动匹配一次（DJI/Insta 新门店兜底）
+        # 仅对 直营店 / 授权体验店 / 授权专卖店 生效，其余类型视为街边店
         has_mall = bool(mall_name)
-        if not has_mall and src_lat is not None and src_lng is not None and brand in {"DJI", "Insta360"}:
+        allowed_types = {"授权体验店", "授权专卖店", "直营店"}
+        allow_auto_match = store_type in allowed_types
+        if not has_mall and src_lat is not None and src_lng is not None and brand in {"DJI", "Insta360"} and allow_auto_match:
             inferred = _search_nearby_mall(name, city, src_lat, src_lng)
             if inferred is not None:
                 inferred_name, inferred_lat, inferred_lng = inferred

@@ -1,5 +1,65 @@
 [
   {
+    "id": "f8c08b17-64eb-4633-919e-ad1482a673ed",
+    "storeId": "f8c08b17-64eb-4633-919e-ad1482a673ed",
+    "brand": "DJI",
+    "storeName": "重庆巴南万达授权体验店",
+    "province": "重庆市",
+    "city": "重庆市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-02"
+  },
+  {
+    "id": "bf0ce59d-cc7a-4b2f-93bd-2b9785cb82da",
+    "storeId": "bf0ce59d-cc7a-4b2f-93bd-2b9785cb82da",
+    "brand": "DJI",
+    "storeName": "重庆高新天街授权体验店",
+    "province": "重庆市",
+    "city": "重庆市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-02"
+  },
+  {
+    "id": "6db2ea32-4811-439c-8049-57e1c531ae94",
+    "storeId": "6db2ea32-4811-439c-8049-57e1c531ae94",
+    "brand": "DJI",
+    "storeName": "东莞君尚授权体验店",
+    "province": "广东省",
+    "city": "东莞市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-02"
+  },
+  {
+    "id": "d2b461c8-cd9d-41b3-bc8d-cce9e338de75",
+    "storeId": "d2b461c8-cd9d-41b3-bc8d-cce9e338de75",
+    "brand": "DJI",
+    "storeName": "云浮吾悦广场授权体验店",
+    "province": "广东省",
+    "city": "云浮市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-02"
+  },
+  {
+    "id": "7f8d12b0-b3ee-4bef-be5d-18c222a46d5c",
+    "storeId": "7f8d12b0-b3ee-4bef-be5d-18c222a46d5c",
+    "brand": "DJI",
+    "storeName": "牡丹江万达授权体验店",
+    "province": "黑龙江省",
+    "city": "牡丹江市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-02"
+  },
+  {
+    "id": "850da13b-40e8-4410-9370-97db3077f34e",
+    "storeId": "850da13b-40e8-4410-9370-97db3077f34e",
+    "brand": "DJI",
+    "storeName": "揭阳榕城万达授权体验店",
+    "province": "广东省",
+    "city": "揭阳市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-02"
+  },
+  {
     "id": "CLOSE-4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
     "storeId": "4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
     "brand": "Insta360",

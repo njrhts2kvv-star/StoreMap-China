@@ -8927,7 +8927,7 @@
   {
     "mallId": "MALL_00658",
     "mallName": "北京东方新天地",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -8942,7 +8942,7 @@
   {
     "mallId": "MALL_00659",
     "mallName": "颐堤港",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -8957,7 +8957,7 @@
   {
     "mallId": "MALL_00660",
     "mallName": "华熙LIVE·五棵松",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -8987,7 +8987,7 @@
   {
     "mallId": "MALL_00662",
     "mallName": "龙湖北京大兴天街",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9002,7 +9002,7 @@
   {
     "mallId": "MALL_00663",
     "mallName": "勒泰中心",
-    "city": "石家庄",
+    "city": "石家庄市",
     "province": "河北省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9018,7 +9018,7 @@
     "mallId": "MALL_00664",
     "mallName": "万达广场",
     "city": "通辽市",
-    "province": "未知省份",
+    "province": "内蒙古自治区",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9032,7 +9032,7 @@
   {
     "mallId": "MALL_00665",
     "mallName": "吾悦广场(沈阳沈北店)",
-    "city": "沈阳",
+    "city": "沈阳市",
     "province": "辽宁省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9047,7 +9047,7 @@
   {
     "mallId": "MALL_00666",
     "mallName": "万达广场(沈阳太原街店)",
-    "city": "沈阳",
+    "city": "沈阳市",
     "province": "辽宁省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9062,7 +9062,7 @@
   {
     "mallId": "MALL_00667",
     "mallName": "凯德和平广场",
-    "city": "大连",
+    "city": "大连市",
     "province": "辽宁省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9108,7 +9108,7 @@
     "mallId": "MALL_00670",
     "mallName": "万达广场(牡丹江店)",
     "city": "牡丹江市",
-    "province": "未知省份",
+    "province": "黑龙江省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9122,7 +9122,7 @@
   {
     "mallId": "MALL_00671",
     "mallName": "仲盛世界商城",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9137,7 +9137,7 @@
   {
     "mallId": "MALL_00672",
     "mallName": "上海第一八佰伴",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9152,7 +9152,7 @@
   {
     "mallId": "MALL_00673",
     "mallName": "龙之梦城市生活中心(长宁店)",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9167,7 +9167,7 @@
   {
     "mallId": "MALL_00674",
     "mallName": "上海静安大悦城",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9182,7 +9182,7 @@
   {
     "mallId": "MALL_00675",
     "mallName": "长风大悦城",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9197,7 +9197,7 @@
   {
     "mallId": "MALL_00676",
     "mallName": "百联中环购物广场",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9227,7 +9227,7 @@
   {
     "mallId": "MALL_00678",
     "mallName": "凯德虹口商业中心",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9257,7 +9257,7 @@
   {
     "mallId": "MALL_00680",
     "mallName": "吾悦广场(上海青浦店)",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9272,7 +9272,7 @@
   {
     "mallId": "MALL_00681",
     "mallName": "天空万科广场 UNI vanke MALL",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -9287,7 +9287,7 @@
   {
     "mallId": "MALL_00682",
     "mallName": "中央商场(新街口店)",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9317,7 +9317,7 @@
   {
     "mallId": "MALL_00684",
     "mallName": "南京新百(中山南路店)",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9332,7 +9332,7 @@
   {
     "mallId": "MALL_00685",
     "mallName": "昆山金鹰国际购物中心",
-    "city": "苏州",
+    "city": "苏州市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9347,7 +9347,7 @@
   {
     "mallId": "MALL_00686",
     "mallName": "昆山招商花园城",
-    "city": "苏州",
+    "city": "苏州市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9362,7 +9362,7 @@
   {
     "mallId": "MALL_00687",
     "mallName": "印象城(常熟店)",
-    "city": "苏州",
+    "city": "苏州市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9377,7 +9377,7 @@
   {
     "mallId": "MALL_00688",
     "mallName": "无锡海岸城",
-    "city": "无锡",
+    "city": "无锡市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9392,7 +9392,7 @@
   {
     "mallId": "MALL_00689",
     "mallName": "吾悦广场(宿迁宿城店)",
-    "city": "宿迁",
+    "city": "宿迁市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9422,7 +9422,7 @@
   {
     "mallId": "MALL_00691",
     "mallName": "万达广场(杭州余杭店)",
-    "city": "杭州",
+    "city": "杭州市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9437,7 +9437,7 @@
   {
     "mallId": "MALL_00692",
     "mallName": "银泰百货(杭州滨江店)",
-    "city": "杭州",
+    "city": "杭州市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9452,7 +9452,7 @@
   {
     "mallId": "MALL_00693",
     "mallName": "银泰百货(宁波环球银泰城店)",
-    "city": "宁波",
+    "city": "宁波市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9467,7 +9467,7 @@
   {
     "mallId": "MALL_00694",
     "mallName": "银泰百货(温州瓯海店)",
-    "city": "温州",
+    "city": "温州市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9482,7 +9482,7 @@
   {
     "mallId": "MALL_00695",
     "mallName": "桐乡万象汇",
-    "city": "嘉兴",
+    "city": "嘉兴市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9497,7 +9497,7 @@
   {
     "mallId": "MALL_00696",
     "mallName": "台州椒江宝龙城",
-    "city": "台州",
+    "city": "台州市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9512,7 +9512,7 @@
   {
     "mallId": "MALL_00697",
     "mallName": "上百万和城",
-    "city": "绍兴",
+    "city": "绍兴市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9528,7 +9528,7 @@
     "mallId": "MALL_00698",
     "mallName": "吾悦广场(衢州店)",
     "city": "衢州市",
-    "province": "未知省份",
+    "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9557,8 +9557,8 @@
   {
     "mallId": "MALL_00700",
     "mallName": "安庆弘阳广场",
-    "city": "安庆",
-    "province": "未知省份",
+    "city": "安庆市",
+    "province": "安徽省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9572,8 +9572,8 @@
   {
     "mallId": "MALL_00701",
     "mallName": "万达广场(宁德蕉城店)",
-    "city": "宁德",
-    "province": "未知省份",
+    "city": "宁德市",
+    "province": "福建省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9587,8 +9587,8 @@
   {
     "mallId": "MALL_00702",
     "mallName": "吾悦广场(漳州龙文店)",
-    "city": "漳州",
-    "province": "未知省份",
+    "city": "漳州市",
+    "province": "福建省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9602,8 +9602,8 @@
   {
     "mallId": "MALL_00703",
     "mallName": "润达国际购物中心",
-    "city": "宜春",
-    "province": "未知省份",
+    "city": "宜春市",
+    "province": "江西省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9617,7 +9617,7 @@
   {
     "mallId": "MALL_00704",
     "mallName": "伟东·乐客城",
-    "city": "青岛",
+    "city": "青岛市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9647,7 +9647,7 @@
   {
     "mallId": "MALL_00706",
     "mallName": "万达广场(滨州店)",
-    "city": "滨州",
+    "city": "滨州市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9662,7 +9662,7 @@
   {
     "mallId": "MALL_00707",
     "mallName": "万达广场(东营北一路店)",
-    "city": "东营",
+    "city": "东营市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9677,7 +9677,7 @@
   {
     "mallId": "MALL_00708",
     "mallName": "万达广场(枣庄店)",
-    "city": "枣庄",
+    "city": "枣庄市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9692,7 +9692,7 @@
   {
     "mallId": "MALL_00709",
     "mallName": "王府井购物中心",
-    "city": "洛阳",
+    "city": "洛阳市",
     "province": "河南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9707,7 +9707,7 @@
   {
     "mallId": "MALL_00710",
     "mallName": "万达广场(安阳店)",
-    "city": "安阳",
+    "city": "安阳市",
     "province": "河南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9722,7 +9722,7 @@
   {
     "mallId": "MALL_00711",
     "mallName": "西亚和美广场",
-    "city": "信阳",
+    "city": "信阳市",
     "province": "河南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9767,7 +9767,7 @@
   {
     "mallId": "MALL_00714",
     "mallName": "武汉摩尔城",
-    "city": "武汉",
+    "city": "武汉市",
     "province": "湖北省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9783,7 +9783,7 @@
     "mallId": "MALL_00715",
     "mallName": "万达广场",
     "city": "黄冈市",
-    "province": "未知省份",
+    "province": "湖北省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9797,8 +9797,8 @@
   {
     "mallId": "MALL_00716",
     "mallName": "万达广场(漳河店)",
-    "city": "荆门",
-    "province": "未知省份",
+    "city": "荆门市",
+    "province": "湖北省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9812,7 +9812,7 @@
   {
     "mallId": "MALL_00717",
     "mallName": "荆州吾悦广场",
-    "city": "荆州",
+    "city": "荆州市",
     "province": "湖北省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9842,7 +9842,7 @@
   {
     "mallId": "MALL_00719",
     "mallName": "怀化鹤城万达广场",
-    "city": "怀化",
+    "city": "怀化市",
     "province": "湖南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9857,8 +9857,8 @@
   {
     "mallId": "MALL_00720",
     "mallName": "步步高广场(湘潭店)",
-    "city": "湘潭",
-    "province": "未知省份",
+    "city": "湘潭市",
+    "province": "湖南省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9872,8 +9872,8 @@
   {
     "mallId": "MALL_00721",
     "mallName": "万达广场(永州店)",
-    "city": "永州",
-    "province": "未知省份",
+    "city": "永州市",
+    "province": "湖南省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9888,7 +9888,7 @@
     "mallId": "MALL_00722",
     "mallName": "王府·星Mall",
     "city": "株洲市",
-    "province": "未知省份",
+    "province": "湖南省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9902,7 +9902,7 @@
   {
     "mallId": "MALL_00723",
     "mallName": "云门New Park",
-    "city": "广州",
+    "city": "广州市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9917,7 +9917,7 @@
   {
     "mallId": "MALL_00724",
     "mallName": "万达广场(梅州梅江店)",
-    "city": "梅州",
+    "city": "梅州市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -9932,8 +9932,8 @@
   {
     "mallId": "MALL_00725",
     "mallName": "吾悦广场(云浮店)",
-    "city": "云浮",
-    "province": "未知省份",
+    "city": "云浮市",
+    "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9947,7 +9947,7 @@
   {
     "mallId": "MALL_00726",
     "mallName": "龙湖南宁青秀天街",
-    "city": "南宁",
+    "city": "南宁市",
     "province": "广西壮族自治区",
     "djiOpened": false,
     "instaOpened": false,
@@ -9962,8 +9962,8 @@
   {
     "mallId": "MALL_00727",
     "mallName": "吾悦广场(钦州店)",
-    "city": "钦州",
-    "province": "未知省份",
+    "city": "钦州市",
+    "province": "广西壮族自治区",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -9992,8 +9992,8 @@
   {
     "mallId": "MALL_00729",
     "mallName": "万达广场(眉山东坡店)",
-    "city": "眉山",
-    "province": "未知省份",
+    "city": "眉山市",
+    "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -10007,8 +10007,8 @@
   {
     "mallId": "MALL_00730",
     "mallName": "王府井广场(南充店)",
-    "city": "南充",
-    "province": "未知省份",
+    "city": "南充市",
+    "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -10022,7 +10022,7 @@
   {
     "mallId": "MALL_00731",
     "mallName": "遂宁万达广场",
-    "city": "遂宁",
+    "city": "遂宁市",
     "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10038,7 +10038,7 @@
     "mallId": "MALL_00732",
     "mallName": "黔南都匀万达广场",
     "city": "黔南布依族苗族自治州",
-    "province": "未知省份",
+    "province": "贵州省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -10067,8 +10067,8 @@
   {
     "mallId": "MALL_00734",
     "mallName": "保山吾悦广场",
-    "city": "保山",
-    "province": "未知省份",
+    "city": "保山市",
+    "province": "云南省",
     "djiOpened": false,
     "instaOpened": false,
     "djiReported": true,
@@ -10112,7 +10112,7 @@
   {
     "mallId": "MALL_00742",
     "mallName": "龙湖北京长楹天街",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10127,7 +10127,7 @@
   {
     "mallId": "MALL_00743",
     "mallName": "西三旗万象汇",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10142,7 +10142,7 @@
   {
     "mallId": "MALL_00744",
     "mallName": "昆明瑞鼎城悦容匯购物公园A馆",
-    "city": "昆明",
+    "city": "昆明市",
     "province": "云南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10157,7 +10157,7 @@
   {
     "mallId": "MALL_00745",
     "mallName": "万达广场(重庆巴南店)",
-    "city": "重庆",
+    "city": "重庆市",
     "province": "重庆市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10172,7 +10172,7 @@
   {
     "mallId": "MALL_00746",
     "mallName": "港惠购物中心",
-    "city": "惠州",
+    "city": "惠州市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10187,7 +10187,7 @@
   {
     "mallId": "MALL_00747",
     "mallName": "吾悦广场(兰州安宁店)",
-    "city": "兰州",
+    "city": "兰州市",
     "province": "甘肃省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10202,7 +10202,7 @@
   {
     "mallId": "MALL_00749",
     "mallName": "环球中心",
-    "city": "成都",
+    "city": "成都市",
     "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10217,7 +10217,7 @@
   {
     "mallId": "MALL_00750",
     "mallName": "群光广场",
-    "city": "成都",
+    "city": "成都市",
     "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10247,7 +10247,7 @@
   {
     "mallId": "MALL_00752",
     "mallName": "成都世茂广场",
-    "city": "成都",
+    "city": "成都市",
     "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10277,7 +10277,7 @@
   {
     "mallId": "MALL_00754",
     "mallName": "伊藤洋华堂(双楠店)",
-    "city": "成都",
+    "city": "成都市",
     "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10292,7 +10292,7 @@
   {
     "mallId": "MALL_00755",
     "mallName": "龙湖·北城天街购物广场南馆",
-    "city": "成都",
+    "city": "成都市",
     "province": "四川省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10322,7 +10322,7 @@
   {
     "mallId": "MALL_00757",
     "mallName": "观澜湖新城MH MALL",
-    "city": "深圳",
+    "city": "深圳市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10352,7 +10352,7 @@
   {
     "mallId": "MALL_00759",
     "mallName": "深圳坪山益田假日世界",
-    "city": "深圳",
+    "city": "深圳市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10367,7 +10367,7 @@
   {
     "mallId": "MALL_00760",
     "mallName": "茂业天地(华强北店)",
-    "city": "深圳",
+    "city": "深圳市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10382,7 +10382,7 @@
   {
     "mallId": "MALL_00761",
     "mallName": "丹尼斯百货(人民路店)",
-    "city": "郑州",
+    "city": "郑州市",
     "province": "河南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10397,7 +10397,7 @@
   {
     "mallId": "MALL_00762",
     "mallName": "万达广场(洛阳西工店)",
-    "city": "洛阳",
+    "city": "洛阳市",
     "province": "河南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10412,7 +10412,7 @@
   {
     "mallId": "MALL_00763",
     "mallName": "悦荟",
-    "city": "青岛",
+    "city": "青岛市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10442,7 +10442,7 @@
   {
     "mallId": "MALL_00765",
     "mallName": "万达广场(青岛CBD店)",
-    "city": "青岛",
+    "city": "青岛市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10457,7 +10457,7 @@
   {
     "mallId": "MALL_00766",
     "mallName": "泰盛广场",
-    "city": "临沂",
+    "city": "临沂市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10472,7 +10472,7 @@
   {
     "mallId": "MALL_00767",
     "mallName": "谷德广场",
-    "city": "潍坊",
+    "city": "潍坊市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10487,7 +10487,7 @@
   {
     "mallId": "MALL_00768",
     "mallName": "中百大厦",
-    "city": "潍坊",
+    "city": "潍坊市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10502,7 +10502,7 @@
   {
     "mallId": "MALL_00769",
     "mallName": "振华购物中心",
-    "city": "烟台",
+    "city": "烟台市",
     "province": "山东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10562,7 +10562,7 @@
   {
     "mallId": "MALL_00773",
     "mallName": "泉州泰禾广场二期精品mall",
-    "city": "泉州",
+    "city": "泉州市",
     "province": "福建省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10592,7 +10592,7 @@
   {
     "mallId": "MALL_00775",
     "mallName": "晋江宝龙广场",
-    "city": "泉州",
+    "city": "泉州市",
     "province": "福建省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10622,7 +10622,7 @@
   {
     "mallId": "MALL_00777",
     "mallName": "百捷上悦城",
-    "city": "泉州",
+    "city": "泉州市",
     "province": "福建省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10652,7 +10652,7 @@
   {
     "mallId": "MALL_00779",
     "mallName": "万达广场(厦门湖里店)",
-    "city": "厦门",
+    "city": "厦门市",
     "province": "福建省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10667,7 +10667,7 @@
   {
     "mallId": "MALL_00780",
     "mallName": "永旺梦乐城(新塘店)",
-    "city": "广州",
+    "city": "广州市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10742,7 +10742,7 @@
   {
     "mallId": "MALL_00785",
     "mallName": "益田假日世界购物中心",
-    "city": "贵阳",
+    "city": "贵阳市",
     "province": "贵州省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10757,7 +10757,7 @@
   {
     "mallId": "MALL_00786",
     "mallName": "万达广场(贵阳观山湖店)",
-    "city": "贵阳",
+    "city": "贵阳市",
     "province": "贵州省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10787,7 +10787,7 @@
   {
     "mallId": "MALL_00788",
     "mallName": "国泰优活城市广场北区",
-    "city": "重庆",
+    "city": "重庆市",
     "province": "重庆市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10802,7 +10802,7 @@
   {
     "mallId": "MALL_00789",
     "mallName": "金鹰财富中心",
-    "city": "重庆",
+    "city": "重庆市",
     "province": "重庆市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10832,7 +10832,7 @@
   {
     "mallId": "MALL_00791",
     "mallName": "龙湖重庆公园天街A馆",
-    "city": "重庆",
+    "city": "重庆市",
     "province": "重庆市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10847,7 +10847,7 @@
   {
     "mallId": "MALL_00792",
     "mallName": "拉萨王府井购物中心",
-    "city": "拉萨",
+    "city": "拉萨市",
     "province": "西藏自治区",
     "djiOpened": false,
     "instaOpened": false,
@@ -10862,7 +10862,7 @@
   {
     "mallId": "MALL_00793",
     "mallName": "百盛(南昌中山店)",
-    "city": "南昌",
+    "city": "南昌市",
     "province": "江西省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10877,7 +10877,7 @@
   {
     "mallId": "MALL_00795",
     "mallName": "南昌大悦城",
-    "city": "南昌",
+    "city": "南昌市",
     "province": "江西省",
     "djiOpened": false,
     "instaOpened": false,
@@ -10892,7 +10892,7 @@
   {
     "mallId": "MALL_00796",
     "mallName": "上海k11购物艺术中心",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10907,7 +10907,7 @@
   {
     "mallId": "MALL_00797",
     "mallName": "百联南方购物中心1区",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10922,7 +10922,7 @@
   {
     "mallId": "MALL_00798",
     "mallName": "尚嘉中心",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10937,7 +10937,7 @@
   {
     "mallId": "MALL_00799",
     "mallName": "上海世茂广场",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10952,7 +10952,7 @@
   {
     "mallId": "MALL_00800",
     "mallName": "恒基名人购物中心",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10967,7 +10967,7 @@
   {
     "mallId": "MALL_00801",
     "mallName": "大上海时代广场",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10982,7 +10982,7 @@
   {
     "mallId": "MALL_00802",
     "mallName": "晶耀前滩Crystal Plaza",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -10997,7 +10997,7 @@
   {
     "mallId": "MALL_00803",
     "mallName": "百联又一城购物中心",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11012,7 +11012,7 @@
   {
     "mallId": "MALL_00804",
     "mallName": "九亭金地广场",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11027,7 +11027,7 @@
   {
     "mallId": "MALL_00805",
     "mallName": "Gate M西岸梦中心",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11042,7 +11042,7 @@
   {
     "mallId": "MALL_00806",
     "mallName": "新世界城",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11057,7 +11057,7 @@
   {
     "mallId": "MALL_00807",
     "mallName": "宏伊国际广场(南京东路)",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11072,7 +11072,7 @@
   {
     "mallId": "MALL_00808",
     "mallName": "复地活力城",
-    "city": "上海",
+    "city": "上海市",
     "province": "上海市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11102,7 +11102,7 @@
   {
     "mallId": "MALL_00810",
     "mallName": "凯德1818",
-    "city": "武汉",
+    "city": "武汉市",
     "province": "湖北省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11117,7 +11117,7 @@
   {
     "mallId": "MALL_00811",
     "mallName": "武汉K11购物艺术中心",
-    "city": "武汉",
+    "city": "武汉市",
     "province": "湖北省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11162,7 +11162,7 @@
   {
     "mallId": "MALL_00814",
     "mallName": "长沙星沙万象汇",
-    "city": "长沙",
+    "city": "长沙市",
     "province": "湖南省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11207,7 +11207,7 @@
   {
     "mallId": "MALL_00817",
     "mallName": "万达广场(温州龙湾店)",
-    "city": "温州",
+    "city": "温州市",
     "province": "浙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11282,7 +11282,7 @@
   {
     "mallId": "MALL_00823",
     "mallName": "珠海斗门世荣万达广场",
-    "city": "珠海",
+    "city": "珠海市",
     "province": "广东省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11327,7 +11327,7 @@
   {
     "mallId": "MALL_00826",
     "mallName": "东方福来德",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11342,7 +11342,7 @@
   {
     "mallId": "MALL_00827",
     "mallName": "ist艾尚天地",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11357,7 +11357,7 @@
   {
     "mallId": "MALL_00828",
     "mallName": "万达广场(南京建邺店)",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11372,7 +11372,7 @@
   {
     "mallId": "MALL_00829",
     "mallName": "龙湖南京龙湾天街",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11387,7 +11387,7 @@
   {
     "mallId": "MALL_00830",
     "mallName": "南京鹏欣·水游城",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11402,7 +11402,7 @@
   {
     "mallId": "MALL_00831",
     "mallName": "玄武招商花园城",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11417,7 +11417,7 @@
   {
     "mallId": "MALL_00832",
     "mallName": "南京华贸中心(装修中)",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11432,7 +11432,7 @@
   {
     "mallId": "MALL_00833",
     "mallName": "JLC(金陵中环西区店)",
-    "city": "南京",
+    "city": "南京市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11447,7 +11447,7 @@
   {
     "mallId": "MALL_00834",
     "mallName": "韩国购物城",
-    "city": "苏州",
+    "city": "苏州市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11462,7 +11462,7 @@
   {
     "mallId": "MALL_00835",
     "mallName": "天虹CC Mall(石路店)",
-    "city": "苏州",
+    "city": "苏州市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11492,7 +11492,7 @@
   {
     "mallId": "MALL_00837",
     "mallName": "茂业天地(清扬店)",
-    "city": "无锡",
+    "city": "无锡市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11522,7 +11522,7 @@
   {
     "mallId": "MALL_00839",
     "mallName": "泰富百货(延陵西路)",
-    "city": "常州",
+    "city": "常州市",
     "province": "江苏省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11567,7 +11567,7 @@
   {
     "mallId": "MALL_00842",
     "mallName": "合肥苏宁广场(建设中)",
-    "city": "合肥",
+    "city": "合肥市",
     "province": "安徽省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11582,7 +11582,7 @@
   {
     "mallId": "MALL_00843",
     "mallName": "合肥之心城购物中心",
-    "city": "合肥",
+    "city": "合肥市",
     "province": "安徽省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11597,7 +11597,7 @@
   {
     "mallId": "MALL_00844",
     "mallName": "万达百货(天鹅湖万达店)",
-    "city": "合肥",
+    "city": "合肥市",
     "province": "安徽省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11612,7 +11612,7 @@
   {
     "mallId": "MALL_00845",
     "mallName": "万科广场",
-    "city": "合肥",
+    "city": "合肥市",
     "province": "安徽省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11642,7 +11642,7 @@
   {
     "mallId": "MALL_00847",
     "mallName": "悦方ID MALL",
-    "city": "合肥",
+    "city": "合肥市",
     "province": "安徽省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11657,7 +11657,7 @@
   {
     "mallId": "MALL_00849",
     "mallName": "MOMOPARK艺术购物中心",
-    "city": "西安",
+    "city": "西安市",
     "province": "陕西省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11672,7 +11672,7 @@
   {
     "mallId": "MALL_00850",
     "mallName": "西安西咸吾悦广场",
-    "city": "西安",
+    "city": "西安市",
     "province": "陕西省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11687,7 +11687,7 @@
   {
     "mallId": "MALL_00851",
     "mallName": "保百购物广场",
-    "city": "保定",
+    "city": "保定市",
     "province": "河北省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11702,7 +11702,7 @@
   {
     "mallId": "MALL_00852",
     "mallName": "万达广场(未来石店)",
-    "city": "保定",
+    "city": "保定市",
     "province": "河北省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11732,7 +11732,7 @@
   {
     "mallId": "MALL_00854",
     "mallName": "万达广场(哈尔滨哈西店)",
-    "city": "哈尔滨",
+    "city": "哈尔滨市",
     "province": "黑龙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11747,7 +11747,7 @@
   {
     "mallId": "MALL_00855",
     "mallName": "哈尔滨融创茂",
-    "city": "哈尔滨",
+    "city": "哈尔滨市",
     "province": "黑龙江省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11762,7 +11762,7 @@
   {
     "mallId": "MALL_00856",
     "mallName": "安盛购物广场(大连开发区店)",
-    "city": "大连",
+    "city": "大连市",
     "province": "辽宁省",
     "djiOpened": false,
     "instaOpened": false,
@@ -11777,7 +11777,7 @@
   {
     "mallId": "MALL_00857",
     "mallName": "世贸天阶",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11792,7 +11792,7 @@
   {
     "mallId": "MALL_00858",
     "mallName": "北京中关村领展广场",
-    "city": "北京",
+    "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11822,7 +11822,7 @@
   {
     "mallId": "MALL_00860",
     "mallName": "天津陆家嘴中心",
-    "city": "天津",
+    "city": "天津市",
     "province": "天津市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11837,7 +11837,7 @@
   {
     "mallId": "MALL_00861",
     "mallName": "天津梅江环宇城",
-    "city": "天津",
+    "city": "天津市",
     "province": "天津市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11852,7 +11852,7 @@
   {
     "mallId": "MALL_00862",
     "mallName": "吾悦广场(天津津南店)",
-    "city": "天津",
+    "city": "天津市",
     "province": "天津市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11867,7 +11867,7 @@
   {
     "mallId": "MALL_00863",
     "mallName": "永旺超市(津南永旺梦乐城店)",
-    "city": "天津",
+    "city": "天津市",
     "province": "天津市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11882,7 +11882,7 @@
   {
     "mallId": "MALL_00864",
     "mallName": "SM天津滨海城市广场",
-    "city": "天津",
+    "city": "天津市",
     "province": "天津市",
     "djiOpened": false,
     "instaOpened": false,
@@ -11897,7 +11897,7 @@
   {
     "mallId": "MALL_00865",
     "mallName": "乐城购物广场",
-    "city": "天津",
+    "city": "天津市",
     "province": "天津市",
     "djiOpened": false,
     "instaOpened": false,
@@ -12133,5 +12133,50 @@
     "hasInsta360": false,
     "latitude": 22.618439,
     "longitude": 114.41633
+  },
+  {
+    "mallId": "MALL_00889",
+    "mallName": "龙湖重庆高新天街",
+    "city": "重庆市",
+    "province": "重庆市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 29.610309,
+    "longitude": 106.365551
+  },
+  {
+    "mallId": "MALL_00890",
+    "mallName": "君尚(东莞店)",
+    "city": "东莞市",
+    "province": "广东省",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 23.035791,
+    "longitude": 113.780303
+  },
+  {
+    "mallId": "MALL_00891",
+    "mallName": "揭阳榕城万达广场",
+    "city": "揭阳市",
+    "province": "广东省",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 23.561315,
+    "longitude": 116.396778
   }
 ]

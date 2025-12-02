@@ -847,6 +847,24 @@ const buildAiSuggestion = (
   const bothOpened = scopedMalls.filter((m) => m.djiOpened && m.instaOpened).length;
   const bothNone = scopedMalls.filter((m) => !m.djiOpened && !m.instaOpened).length;
 
+  const formatMallExamples = (items: Mall[], limit: number): string => {
+    if (!items.length) return '当前筛选下暂未识别出典型商场';
+    const sliced = items.slice(0, limit);
+    const names = sliced.map((m) =>
+      m.city ? `${m.city.replace(/市$/u, '')}·${m.mallName}` : m.mallName,
+    );
+    const left = items.length - sliced.length;
+    if (left > 0) {
+      return `${names.join('、')} 等 ${items.length} 个商场`;
+    }
+    return names.join('、');
+  };
+
+  const targetNotOpenedMalls = scopedMalls.filter((m) => m.djiTarget && !m.djiOpened);
+  const gapMalls = scopedMalls.filter((m) => m.status === 'gap');
+  const bothOpenedMalls = scopedMalls.filter((m) => m.djiOpened && m.instaOpened);
+  const blueOceanMalls = scopedMalls.filter((m) => m.status === 'blue_ocean');
+
   const lines: string[] = [];
   lines.push(`我按照「${scopeLabel}」范围帮你看了一下：`);
   lines.push(
@@ -860,6 +878,18 @@ const buildAiSuggestion = (
   );
   lines.push(
     `• 双方均未进驻的商场约 ${bothNone} 家，如果商场体量不错，可以评估是否作为新增点位。`,
+  );
+
+  lines.push('');
+  lines.push(
+    `例如，目标未进驻的典型商场包括：${formatMallExamples(targetNotOpenedMalls, 3)}。`,
+  );
+  lines.push(`缺口机会（DJI 有布局但 Insta 未进）的典型商场包括：${formatMallExamples(gapMalls, 3)}。`);
+  lines.push(
+    `已被双方同时覆盖的成熟商场样例：${formatMallExamples(bothOpenedMalls, 3)}；纯蓝海样例：${formatMallExamples(
+      blueOceanMalls,
+      3,
+    )}。`,
   );
 
   lines.push('');
@@ -923,7 +953,7 @@ const callLlmSuggestion = async (
       {
         role: 'system',
         content:
-          '你是一个线下门店与商场布局的经营分析助手。你的所有分析只能基于用户提供的数据摘要，不要引用外部网络信息或你自己的通用知识；如果数据不足以支持结论，就明确说明“从当前数据看不出来”。回答要用简体中文，语气专业但口语化，给出可执行建议。输出要求：直接用 3-6 条编号句子（1. 2. 3. …），不要使用任何 Markdown 语法（不要出现 **、#、-、``` 等符号），不需要标题，只给出精炼结论和建议。',
+          '你是一个线下门店与商场布局的经营分析助手。你只能使用随后提供的“项目整体数据”和“结构化观察”里的信息来回答，不要使用任何外部知识，也不要自己编造未在数据中出现的城市、商场或数字。如果摘要里给出了具体商场或门店名称，可以直接引用这些名称举例，但不要凭空杜撰新的名字。\n\n在回答前，请先认真理解【用户问题】，搞清楚他关心的是哪些城市/区域、品牌（DJI / Insta360），以及是想看机会、风险还是排期优先级，然后再结合数据给结论。\n\n输出要求：\n1. 用 3–5 条编号句子（1. 2. 3. …）回答，每一条都要紧扣用户问题，而不是泛泛而谈。\n2. 建议中尽量提到数据中的具体商场/门店名称或数量区间，让结论“看得见数据”。\n3. 如果数据不足以支持某个判断，就明确说“从当前数据看不出来”，不要硬猜。\n4. 不要使用任何 Markdown 语法（不要出现 **、#、-、``` 等符号），也不要加标题或很长的背景说明。',
       },
       {
         role: 'user',
@@ -1094,7 +1124,7 @@ function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) 
                   )}
                   <div className="max-w-[80%]">
                     <div
-                      className={`rounded-3xl px-4 py-3.5 text-[13px] leading-relaxed ${
+                      className={`rounded-3xl px-4 py-3.5 text-[13px] leading-relaxed whitespace-pre-line ${
                         msg.role === 'assistant'
                           ? 'bg-white border border-slate-100 text-slate-800 shadow-[0_10px_24px_rgba(15,23,42,0.08)]'
                           : 'bg-slate-900 text-white'
