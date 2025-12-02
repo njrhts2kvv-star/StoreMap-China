@@ -11,12 +11,12 @@
 
 from __future__ import annotations
 
-import json
 import subprocess
 import sys
 from datetime import date
 from pathlib import Path
 from typing import Callable, Optional
+import os
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_FILE = BASE_DIR / ".build_state.json"
@@ -139,6 +139,14 @@ def run_comprehensive_check():
         raise RuntimeError(f"数据检查未通过: {', '.join(failed)}")
 
 
+def run_comprehensive_check_safe() -> None:
+  """在 CI 场景下使用的宽松版本：记录问题但不中断流水线。"""
+  try:
+      run_comprehensive_check()
+  except Exception as exc:
+      print(f"[警告] 数据检查未通过，但根据 ALLOW_CHECK_FAILURE 配置继续后续步骤：{exc}")
+
+
 def run_csv_to_json():
     from csv_to_json import csv_to_json
 
@@ -146,6 +154,7 @@ def run_csv_to_json():
 
 
 def main():
+    allow_check_failure = os.getenv("ALLOW_CHECK_FAILURE", "").lower() in {"1", "true", "yes"}
     log_step("抓取最新门店（可选）")
     run_spiders()
 
@@ -178,7 +187,10 @@ def main():
                 target_ids=target_ids, dry_run=False
             ),
         ),
-        ("全面数据检查", run_comprehensive_check),
+        (
+            "全面数据检查",
+            run_comprehensive_check if not allow_check_failure else run_comprehensive_check_safe,
+        ),
         ("导出 JSON 及统计数据", run_csv_to_json),
     ]
 
