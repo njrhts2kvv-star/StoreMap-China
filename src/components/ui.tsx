@@ -2,9 +2,9 @@ import type { ReactNode, ButtonHTMLAttributes } from 'react';
 
 const cx = (...args: Array<string | false | undefined>) => args.filter(Boolean).join(' ');
 
-type CardProps = { children: ReactNode; className?: string };
-export function Card({ children, className }: CardProps) {
-  return <div className={cx('rounded-[28px] bg-white shadow-[0_14px_40px_rgba(15,23,42,0.08)] border border-white/60', className)}>{children}</div>;
+type CardProps = { children: ReactNode; className?: string; onClick?: () => void };
+export function Card({ children, className, onClick }: CardProps) {
+  return <div className={cx('rounded-[28px] bg-white shadow-[0_14px_40px_rgba(15,23,42,0.08)] border border-white/60', className)} onClick={onClick}>{children}</div>;
 }
 
 type BadgeProps = { children: ReactNode; tone?: 'dji' | 'insta' | 'neutral'; className?: string };

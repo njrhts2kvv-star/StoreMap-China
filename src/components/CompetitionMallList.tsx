@@ -1,112 +1,141 @@
 // @ts-nocheck
 import { useEffect, useMemo, useState } from 'react';
-import type { Mall } from '../types/store';
+import { Search, LayoutGrid, List, Filter, X } from 'lucide-react';
+import type { Mall, Store } from '../types/store';
 import { Card } from './ui';
-import djiLogoBlack from '../assets/dji_logo_black_small.svg';
+import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
-
-type CompetitionMallListProps = {
-  malls: MallWithProvince[];
-  onMallClick?: (mall: MallWithProvince) => void;
-};
 
 type MallWithProvince = Mall & { province?: string };
 
-const getMallStatusPill = (mall: Mall) => {
-  const hasDJI = mall.djiOpened;
-  const hasInsta = mall.instaOpened;
-  const isPT = mall.djiExclusive || mall.status === 'blocked';
-  const isGap = mall.status === 'gap';
-
-  if (isPT) {
-    return {
-      label: 'PT',
-      className: 'bg-slate-900 text-white',
-    };
-  }
-
-  if (isGap) {
-    return {
-      label: '缺口机会',
-      className: 'bg-[#f5c400] text-slate-900',
-    };
-  }
-
-  if (!hasDJI && !hasInsta) {
-    return {
-      label: '双方未进',
-      className: 'bg-slate-100 text-slate-500',
-    };
-  }
-
-  if (hasDJI && hasInsta) {
-    return {
-      label: '双方进驻',
-      className: 'bg-slate-200 text-slate-800',
-    };
-  }
-
-  if (!hasDJI && hasInsta) {
-    return {
-      label: '仅 Insta',
-      className: 'bg-emerald-50 text-emerald-700',
-    };
-  }
-
-  return {
-    label: '仅 DJI',
-    className: 'bg-slate-900/5 text-slate-700',
-  };
+type CompetitionMallListProps = {
+  malls: MallWithProvince[];
+  stores?: Store[];
+  onMallClick?: (mall: MallWithProvince) => void;
+  onStoreClick?: (store: Store) => void;
+  resetToken?: number; // 用于外部重置
 };
 
-const sortByPinyin = (list: string[]) =>
-  [...new Set(list.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
+type ViewMode = 'mall' | 'store';
 
-const MAX_PROVINCES = 8;
-const MAX_CITIES = 4;
+// 只统计这些门店类型
+const VALID_STORE_TYPES = ['授权体验店', '授权专卖店', '直营店'];
 
-export function CompetitionMallList({ malls, onMallClick }: CompetitionMallListProps) {
-  const enriched = malls.map((mall) => ({
-    ...mall,
-    province: mall.province || (mall as any).province || (mall as any).rawProvince || '',
-  }));
+const getMallStatusInfo = (mall: Mall) => {
+  const hasDJI = mall.djiOpened;
+  const hasInsta = mall.instaOpened;
+  const isPtMall = mall.djiExclusive === true;
+  const isGap = mall.status === 'gap';
+  const isBothNone = !hasDJI && !hasInsta;
+  const isBothOpened = hasDJI && hasInsta;
+  const isInstaOnly = hasInsta && !hasDJI;
+  const isDjiOnly = hasDJI && !hasInsta;
+  const isTargetNotOpened = mall.djiTarget === true && !mall.djiOpened; // 目标未进驻：Target 且未开业
 
-  // 按商场数量对省份排序（降序），数量相同按拼音
+  // 状态标签 - 按优先级判断（PT商场 = djiExclusive = true）
+  let label = '';
+  let labelClass = '';
+  let dotColor = '';
+  
+  if (isPtMall) {
+    label = 'PT商场';
+    labelClass = 'bg-red-500 text-white border-red-500';
+    dotColor = '#EF4444'; // 红色
+  } else if (isTargetNotOpened) {
+    label = '目标未进驻';
+    labelClass = 'bg-blue-500 text-white border-blue-500';
+    dotColor = '#3B82F6'; // 蓝色
+  } else if (isGap) {
+    label = '缺口机会';
+    labelClass = 'bg-[#f5c400] text-slate-900 border-[#f5c400]';
+    dotColor = '#FFFFFF'; // 白色
+  } else if (isBothOpened) {
+    label = '均进驻';
+    labelClass = 'bg-emerald-500 text-white border-emerald-500';
+    dotColor = '#22c55e'; // 绿色
+  } else if (isBothNone) {
+    label = '均未进驻';
+    labelClass = 'bg-slate-400 text-white border-slate-400';
+    dotColor = '#94a3b8'; // 灰色
+  } else if (isInstaOnly) {
+    label = '仅Insta进驻';
+    labelClass = 'bg-[#f5c400] text-slate-900 border-[#f5c400]';
+    dotColor = '#f5c400'; // 黄色
+  } else if (isDjiOnly) {
+    label = '仅DJI进驻';
+    labelClass = 'bg-slate-900 text-white border-slate-900';
+    dotColor = '#1e293b'; // 黑色
+  }
+
+  return { label, labelClass, dotColor, isBothNone };
+};
+
+const normalizeCityKey = (city?: string | null) =>
+  (city || '未知城市').replace(/(市|区)$/u, '');
+
+const normalizeProvince = (province?: string | null) =>
+  (province || '').replace(/(省|市|自治区|回族自治区|壮族自治区|维吾尔自治区|特别行政区)$/u, '');
+
+export function CompetitionMallList({ malls, stores = [], onMallClick, onStoreClick, resetToken = 0 }: CompetitionMallListProps) {
+  const [viewMode, setViewMode] = useState<ViewMode>('mall');
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [showSearch, setShowSearch] = useState(false);
+  const [showFilterModal, setShowFilterModal] = useState(false);
+  const [activeMallId, setActiveMallId] = useState<string | null>(null);
+  const [activeStoreId, setActiveStoreId] = useState<string | null>(null);
+  
+  // 改为支持多选
+  const [activeProvinces, setActiveProvinces] = useState<string[]>(['全国']);
+  const [activeCities, setActiveCities] = useState<string[]>([]);
+  
+  const [tempProvinces, setTempProvinces] = useState<string[]>(['全国']);
+  const [tempCities, setTempCities] = useState<string[]>([]);
+  
+  // 分页状态
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  // 为商场添加省份信息
+  const enrichedMalls = useMemo(() => 
+    malls.map((mall) => ({
+      ...mall,
+      province: mall.province || (mall as any).rawProvince || '',
+    })),
+    [malls]
+  );
+
+  // 按商场数量对省份排序
   const provinceCounts = useMemo(() => {
     const counts: Record<string, number> = {};
-    enriched.forEach((m) => {
-      const p = m.province || '未知省份';
+    enrichedMalls.forEach((m) => {
+      const p = normalizeProvince(m.province) || '未知省份';
       counts[p] = (counts[p] || 0) + 1;
     });
     return counts;
-  }, [enriched]);
+  }, [enrichedMalls]);
 
   const allProvinces = useMemo(() => {
     const provinces = Object.keys(provinceCounts);
-    return provinces.sort((a, b) => {
+    return ['全国', ...provinces.sort((a, b) => {
       const ca = provinceCounts[a] || 0;
       const cb = provinceCounts[b] || 0;
       if (cb !== ca) return cb - ca;
       return a.localeCompare(b, 'zh-CN');
-    });
+    })];
   }, [provinceCounts]);
-  const [activeProvince, setActiveProvince] = useState<string | null>(
-    allProvinces[0] || null,
-  );
 
-  const normalizeCityKey = (city?: string | null) =>
-    (city || '未知城市').replace(/(市|区)$/u, '');
-
-  const getCitiesForProvince = (province: string | null) => {
-    if (!province) return [];
-    const scoped = enriched.filter(
-      (m) => (m.province || m.city || '未知省份') === province,
-    );
+  // 获取当前省份下的城市列表
+  const getCitiesForProvince = (province: string) => {
+    const scoped = province === '全国' 
+      ? enrichedMalls 
+      : enrichedMalls.filter((m) => normalizeProvince(m.province) === province);
+    
     const counts: Record<string, number> = {};
     scoped.forEach((m) => {
       const key = normalizeCityKey(m.city);
       counts[key] = (counts[key] || 0) + 1;
     });
+    
     const cities = Object.keys(counts);
     return cities.sort((a, b) => {
       const ca = counts[a] || 0;
@@ -116,246 +145,638 @@ export function CompetitionMallList({ malls, onMallClick }: CompetitionMallListP
     });
   };
 
-  const allCities = useMemo(() => {
-    if (!activeProvince) return [];
-    return getCitiesForProvince(activeProvince);
-  }, [activeProvince, enriched]);
-
-  const [activeCity, setActiveCity] = useState<string | null>(
-    allCities[0] || null,
-  );
-
-  const [showFilter, setShowFilter] = useState(false);
-  const [tempProvince, setTempProvince] = useState<string | null>(activeProvince);
-  const [tempCity, setTempCity] = useState<string | null>(activeCity);
-
-  // 当省份变化时，重置城市
-  useEffect(() => {
-    if (!allProvinces.length) {
-      setActiveProvince(null);
-      setActiveCity(null);
-      return;
+  // 获取多个省份下的城市列表
+  const getCitiesForProvinces = (provinces: string[]) => {
+    if (provinces.includes('全国') || provinces.length === 0) {
+      return getCitiesForProvince('全国');
     }
-    if (!activeProvince || !allProvinces.includes(activeProvince)) {
-      setActiveProvince(allProvinces[0]);
-    }
-  }, [allProvinces, activeProvince]);
-
-  useEffect(() => {
-    if (!allCities.length) {
-      setActiveCity(null);
-      return;
-    }
-    if (!activeCity || !allCities.includes(activeCity)) {
-      setActiveCity(allCities[0]);
-    }
-  }, [allCities, activeCity]);
-
-  const visibleMalls = useMemo(() => {
-    if (!activeProvince) return [];
-    return enriched.filter((m) => {
-      const p = m.province || m.city || '未知省份';
-      const c = normalizeCityKey(m.city);
-      if (p !== activeProvince) return false;
-      if (activeCity && c !== activeCity) return false;
-      return true;
+    
+    const scoped = enrichedMalls.filter((m) => provinces.includes(normalizeProvince(m.province)));
+    
+    const counts: Record<string, number> = {};
+    scoped.forEach((m) => {
+      const key = normalizeCityKey(m.city);
+      counts[key] = (counts[key] || 0) + 1;
     });
-  }, [enriched, activeProvince, activeCity]);
-
-  const visibleProvinces = useMemo(() => {
-    if (allProvinces.length <= MAX_PROVINCES) return allProvinces;
-    return [...allProvinces.slice(0, MAX_PROVINCES), '__MORE__'];
-  }, [allProvinces]);
-
-  const visibleCities = useMemo(() => {
-    if (allCities.length <= MAX_CITIES) return allCities;
-    return [...allCities.slice(0, MAX_CITIES), '__MORE_CITY__'];
-  }, [allCities]);
-
-  const openFilter = () => {
-    const baseProvince = activeProvince ?? allProvinces[0] ?? null;
-    setTempProvince(baseProvince);
-    const citiesForTemp = getCitiesForProvince(baseProvince);
-    setTempCity(activeCity ?? citiesForTemp[0] ?? null);
-    setShowFilter(true);
+    
+    const cities = Object.keys(counts);
+    return cities.sort((a, b) => {
+      const ca = counts[a] || 0;
+      const cb = counts[b] || 0;
+      if (cb !== ca) return cb - ca;
+      return a.localeCompare(b, 'zh-CN');
+    });
   };
 
+  const allCities = useMemo(() => getCitiesForProvinces(activeProvinces), [activeProvinces, enrichedMalls]);
+
+  // 当省份变化时，清除不在范围内的城市
+  useEffect(() => {
+    const availableCities = getCitiesForProvinces(activeProvinces);
+    setActiveCities((prev) => prev.filter((c) => availableCities.includes(c)));
+  }, [activeProvinces]);
+
+  // 当筛选条件或视图模式变化时，重置到第一页
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeProvinces, activeCities, searchKeyword, viewMode]);
+
+  // 筛选后的商场列表
+  const filteredMalls = useMemo(() => {
+    let result = enrichedMalls;
+    
+    // 省份筛选（支持多选）
+    if (!activeProvinces.includes('全国') && activeProvinces.length > 0) {
+      result = result.filter((m) => activeProvinces.includes(normalizeProvince(m.province)));
+    }
+    
+    // 城市筛选（支持多选）
+    if (activeCities.length > 0) {
+      result = result.filter((m) => activeCities.includes(normalizeCityKey(m.city)));
+    }
+    
+    // 搜索关键词
+    if (searchKeyword.trim()) {
+      const kw = searchKeyword.trim().toLowerCase();
+      result = result.filter((m) => 
+        m.mallName.toLowerCase().includes(kw) || 
+        (m.city || '').toLowerCase().includes(kw)
+      );
+    }
+    
+    return result;
+  }, [enrichedMalls, activeProvinces, activeCities, searchKeyword]);
+
+  // 分页后的商场列表
+  const paginatedMalls = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return filteredMalls.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredMalls, currentPage, itemsPerPage]);
+
+  const totalMallPages = useMemo(() => Math.ceil(filteredMalls.length / itemsPerPage), [filteredMalls.length, itemsPerPage]);
+
+  // 只统计有效门店类型的门店
+  const validStores = useMemo(() => {
+    return stores.filter((s) => 
+      s.status === '营业中' && 
+      VALID_STORE_TYPES.includes(s.storeType)
+    );
+  }, [stores]);
+
+  // 筛选后的门店列表
+  const filteredStores = useMemo(() => {
+    if (!validStores.length) return [];
+    
+    let result = validStores;
+    
+    // 省份筛选（支持多选）
+    if (!activeProvinces.includes('全国') && activeProvinces.length > 0) {
+      result = result.filter((s) => activeProvinces.includes(normalizeProvince(s.province)));
+    }
+    
+    // 城市筛选（支持多选）
+    if (activeCities.length > 0) {
+      result = result.filter((s) => activeCities.includes(normalizeCityKey(s.city)));
+    }
+    
+    // 搜索关键词
+    if (searchKeyword.trim()) {
+      const kw = searchKeyword.trim().toLowerCase();
+      result = result.filter((s) => 
+        s.storeName.toLowerCase().includes(kw) || 
+        (s.mallName || '').toLowerCase().includes(kw) ||
+        (s.city || '').toLowerCase().includes(kw)
+      );
+    }
+    
+    return result;
+  }, [validStores, activeProvinces, activeCities, searchKeyword]);
+
+  // 分页后的门店列表
+  const paginatedStores = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return filteredStores.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredStores, currentPage, itemsPerPage]);
+
+  const totalStorePages = useMemo(() => Math.ceil(filteredStores.length / itemsPerPage), [filteredStores.length, itemsPerPage]);
+
+  // 统计数据 - 只统计授权体验店、授权专卖店、直营店
+  const stats = useMemo(() => {
+    // 根据当前省份/城市筛选门店
+    let scopedStores = validStores;
+    
+    if (!activeProvinces.includes('全国') && activeProvinces.length > 0) {
+      scopedStores = scopedStores.filter((s) => activeProvinces.includes(normalizeProvince(s.province)));
+    }
+    if (activeCities.length > 0) {
+      scopedStores = scopedStores.filter((s) => activeCities.includes(normalizeCityKey(s.city)));
+    }
+    
+    return {
+      totalMalls: filteredMalls.length,
+      djiStores: scopedStores.filter((s) => s.brand === 'DJI').length,
+      instaStores: scopedStores.filter((s) => s.brand === 'Insta360').length,
+    };
+  }, [filteredMalls, validStores, activeProvinces, activeCities]);
+
+  // 计算商场的门店数量（只统计有效门店类型）
+  const getMallStoreCount = (mallId: string) => {
+    return validStores.filter((s) => s.mallId === mallId).length;
+  };
+
+  // 显示的省份列表
+  const displayProvinces = useMemo(() => {
+    // 如果是通过筛选器多选的，只显示选中的省份
+    const selected = activeProvinces.filter((p) => p !== '全国');
+    if (selected.length > 1) {
+      // 多选状态，只显示选中的省份
+      return selected;
+    }
+    
+    // 单选或全国状态，显示前11个
+    return allProvinces.slice(0, 11);
+  }, [allProvinces, activeProvinces]);
+
+  // 显示的城市列表
+  const displayCities = useMemo(() => {
+    // 如果有选中的城市，只显示选中的城市
+    if (activeCities.length > 0) {
+      return activeCities;
+    }
+    
+    // 没有选中城市，显示前4个
+    return allCities.slice(0, 4);
+  }, [allCities, activeCities]);
+
+  // 打开筛选弹窗
+  const openFilterModal = () => {
+    setTempProvinces(activeProvinces);
+    setTempCities(activeCities);
+    setShowFilterModal(true);
+  };
+
+  // 重置筛选
+  const resetFilters = () => {
+    setActiveProvinces(['全国']);
+    setActiveCities([]);
+    setSearchKeyword('');
+  };
+
+  // 切换省份选择（多选）
+  const toggleTempProvince = (province: string) => {
+    if (province === '全国') {
+      setTempProvinces(['全国']);
+      setTempCities([]);
+    } else {
+      setTempProvinces((prev) => {
+        const filtered = prev.filter((p) => p !== '全国');
+        if (filtered.includes(province)) {
+          const next = filtered.filter((p) => p !== province);
+          return next.length === 0 ? ['全国'] : next;
+        } else {
+          return [...filtered, province];
+        }
+      });
+      // 清除不在新省份列表中的城市
+      setTempCities((prev) => {
+        const newProvinces = tempProvinces.filter((p) => p !== '全国');
+        if (newProvinces.includes(province)) {
+          // 移除省份，需要清除该省份的城市
+          const citiesInProvince = getCitiesForProvince(province);
+          return prev.filter((c) => !citiesInProvince.includes(c));
+        }
+        return prev;
+      });
+    }
+  };
+
+  // 切换城市选择（多选）
+  const toggleTempCity = (city: string) => {
+    setTempCities((prev) => {
+      if (prev.includes(city)) {
+        return prev.filter((c) => c !== city);
+      } else {
+        return [...prev, city];
+      }
+    });
+  };
+
+  // 应用筛选
   const applyFilter = () => {
-    if (tempProvince) {
-      setActiveProvince(tempProvince);
-    }
-    if (tempCity) {
-      setActiveCity(tempCity);
-    }
-    setShowFilter(false);
+    setActiveProvinces(tempProvinces);
+    setActiveCities(tempCities);
+    setShowFilterModal(false);
   };
+
+  // 获取临时省份的城市列表
+  const availableTempCities = useMemo(() => getCitiesForProvinces(tempProvinces), [tempProvinces, enrichedMalls]);
+
+  // 监听外部重置（通过 resetToken）
+  useEffect(() => {
+    if (resetToken > 0) {
+      setActiveProvinces(['全国']);
+      setActiveCities([]);
+      setSearchKeyword('');
+      setShowSearch(false);
+      // 同步清空当前选中的商场 / 门店、高亮状态与分页
+      setActiveMallId(null);
+      setActiveStoreId(null);
+      setViewMode('mall');
+      setCurrentPage(1);
+    }
+  }, [resetToken]);
 
   return (
-    <div className="space-y-2 px-1 mt-3 mb-3">
+    <div className="space-y-2 px-1 mt-3 mb-[70px]">
       <div className="flex items-center justify-between px-1">
-        <div className="text-lg font-extrabold text-slate-900">商场列表探索</div>
+        <div className="text-lg font-extrabold text-slate-900">商场/门店列表</div>
+        {/* 搜索图标 */}
         <button
           type="button"
-          className="px-3 py-1 rounded-full text-[11px] font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 active:scale-[0.98] transition"
-          onClick={openFilter}
+          className="p-1.5 text-slate-400 hover:text-slate-600 transition"
+          onClick={() => setShowSearch(!showSearch)}
         >
-          筛选
+          <Search className="w-5 h-5" />
         </button>
       </div>
-      <Card className="rounded-[26px] overflow-hidden shadow-[0_18px_40px_rgba(15,23,42,0.12)] border border-slate-100 bg-white">
-        <div className="flex">
+
+      {/* 搜索框 */}
+      {showSearch && (
+        <div className="px-1">
+          <input
+            type="text"
+            className="w-full px-3 py-2 text-sm bg-white rounded-xl border border-slate-200 outline-none focus:border-slate-300 transition shadow-sm"
+            placeholder="搜索商场或城市..."
+            value={searchKeyword}
+            onChange={(e) => setSearchKeyword(e.target.value)}
+            autoFocus
+          />
+        </div>
+      )}
+      
+      <Card className="rounded-[26px] overflow-hidden shadow-[0_18px_40px_rgba(15,23,42,0.08)] border border-slate-100 bg-white h-[calc(100vh-240px)]">
+        <div className="flex h-full">
           {/* 左侧：省份纵向导航 */}
-          <div className="w-[80px] flex-none bg-white border-r border-slate-100/60 py-2">
-            <div className="flex flex-col gap-1">
-              {visibleProvinces.map((province) => {
-                const isMore = province === '__MORE__';
-                const active = !isMore && province === activeProvince;
-                return (
+          <div className="w-[60px] flex-none bg-white border-r border-slate-100/60">
+            <div className="py-2 px-1">
+              {/* 占位空白区域，保持原有高度 */}
+              <div className="h-[28px]" />
+              <div className="flex flex-col">
+                {displayProvinces.map((province) => {
+                  const active = activeProvinces.includes(province);
+                  return (
+                    <button
+                      key={province}
+                      type="button"
+                      className={`relative px-2 py-2.5 text-[12px] text-left transition-all active:scale-[0.99] ${
+                        active
+                          ? 'text-slate-900 font-semibold bg-slate-50'
+                          : 'text-slate-400 hover:text-slate-600'
+                      }`}
+                      onClick={() => {
+                        // 单选省份
+                        setActiveProvinces([province]);
+                        setActiveCities([]);
+                      }}
+                    >
+                      {active && (
+                        <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-[#f5c400] rounded-r-full" />
+                      )}
+                      {province}
+                    </button>
+                  );
+                })}
+                {/* 更多省份 - 只在非多选筛选状态下显示 */}
+                {allProvinces.length > 11 && activeProvinces.filter((p) => p !== '全国').length <= 1 && (
                   <button
-                    key={province}
                     type="button"
-                    className={`px-3 py-2 text-[12px] text-left rounded-r-full transition-all active:scale-[0.99] ${
-                      active
-                        ? 'bg-white text-slate-900 font-semibold shadow-sm'
-                        : 'text-slate-400 hover:text-slate-700'
-                    }`}
-                    onClick={() => {
-                      if (isMore) {
-                        openFilter();
-                      } else {
-                        setActiveProvince(province);
-                      }
-                    }}
+                    className="px-2 py-2.5 text-[12px] text-left text-slate-400 hover:text-slate-600 transition-all active:scale-[0.99]"
+                    onClick={openFilterModal}
                   >
-                    {isMore ? '...' : province}
+                    ...
                   </button>
-                );
-              })}
+                )}
+              </div>
             </div>
           </div>
 
-          {/* 右侧：城市横向导航 + 商场列表 */}
-          <div className="flex-1 flex flex-col">
-            {/* 城市横向导航 */}
+          {/* 右侧：城市Tab + 统计 + 筛选 + 列表 */}
+          <div className="flex-1 flex flex-col min-w-0 bg-white">
+            {/* 城市横向Tab */}
             <div className="px-4 pt-3 border-b border-slate-100/60">
-              <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
-                {visibleCities.map((city) => {
-                  const isMore = city === '__MORE_CITY__';
-                  const active = !isMore && city === activeCity;
+              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-2">
+                {/* 全部按钮 - 只在没有筛选多个城市时显示 */}
+                {activeCities.length === 0 && (
+                  <button
+                    type="button"
+                    className="px-2 py-1 text-[13px] font-semibold whitespace-nowrap transition text-slate-900"
+                    onClick={() => setActiveCities([])}
+                  >
+                    全部
+                  </button>
+                )}
+                {displayCities.map((city) => {
+                  const active = activeCities.includes(city);
                   return (
                     <button
                       key={city}
                       type="button"
-                      className={`relative pb-[10px] text-[13px] font-semibold whitespace-nowrap active:scale-[0.99] ${
+                      className={`px-2 py-1 text-[13px] font-medium whitespace-nowrap transition ${
                         active ? 'text-slate-900' : 'text-slate-400'
                       }`}
                       onClick={() => {
-                        if (isMore) {
-                          openFilter();
-                        } else {
-                          setActiveCity(city);
-                        }
+                        // 单选城市
+                        setActiveCities([city]);
                       }}
                     >
-                      {isMore ? '...' : city.replace(/(市|区)$/u, '')}
-                      {active && (
-                        <span className="absolute left-0 right-0 h-[3px] rounded-full bg-[#f5c400] bottom-0" />
-                      )}
+                      {city}
                     </button>
                   );
                 })}
+                {/* 更多城市 - 只在没有筛选城市时显示 */}
+                {allCities.length > 4 && activeCities.length === 0 && (
+                  <button
+                    type="button"
+                    className="px-2 py-1 text-[13px] text-slate-400 hover:text-slate-600 transition"
+                    onClick={openFilterModal}
+                  >
+                    ...
+                  </button>
+                )}
               </div>
             </div>
 
-            {/* 商场列表 */}
-            <div className="px-4 py-3 space-y-2 max-h-[440px] overflow-y-auto">
-              {visibleMalls.length === 0 ? (
-                <div className="text-xs text-slate-400 py-6 text-center">
-                  暂无符合条件的商场
+            {/* 统计卡片 */}
+            <div className="px-4 py-3 border-b border-slate-100/60 bg-white">
+              <div className="flex items-center gap-6">
+                <div>
+                  <div className="text-[11px] text-slate-400 mb-0.5">总商场</div>
+                  <div className="text-3xl font-black text-slate-900">{stats.totalMalls}</div>
                 </div>
+                <div className="flex-1 space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[12px] text-slate-500 w-8">大疆</span>
+                    <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-slate-800 rounded-full transition-all"
+                        style={{ width: `${stats.djiStores + stats.instaStores > 0 ? (stats.djiStores / (stats.djiStores + stats.instaStores)) * 100 : 0}%` }}
+                      />
+                    </div>
+                    <span className="text-[12px] font-semibold text-slate-700 w-12 text-right">{stats.djiStores}家</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[12px] text-slate-500 w-8">影石</span>
+                    <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-[#f5c400] rounded-full transition-all"
+                        style={{ width: `${stats.djiStores + stats.instaStores > 0 ? (stats.instaStores / (stats.djiStores + stats.instaStores)) * 100 : 0}%` }}
+                      />
+                    </div>
+                    <span className="text-[12px] font-semibold text-slate-700 w-12 text-right">{stats.instaStores}家</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 筛选胶囊 */}
+            <div className="px-4 py-2 border-b border-slate-100/60 bg-white">
+              <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+                {/* 视图切换 */}
+                <button
+                  type="button"
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-semibold border transition whitespace-nowrap ${
+                    viewMode === 'mall'
+                      ? 'bg-white text-slate-700 border-slate-200 shadow-sm'
+                      : 'bg-transparent text-slate-400 border-transparent'
+                  }`}
+                  onClick={() => setViewMode('mall')}
+                >
+                  <LayoutGrid className="w-3.5 h-3.5" />
+                  商场
+                </button>
+                <button
+                  type="button"
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-semibold border transition whitespace-nowrap ${
+                    viewMode === 'store'
+                      ? 'bg-white text-slate-700 border-slate-200 shadow-sm'
+                      : 'bg-transparent text-slate-400 border-transparent'
+                  }`}
+                  onClick={() => setViewMode('store')}
+                >
+                  <List className="w-3.5 h-3.5" />
+                  门店
+                </button>
+                
+                {/* 筛选器 */}
+                <button
+                  type="button"
+                  className="ml-auto p-1.5 rounded-xl border transition bg-white text-slate-500 border-slate-200 hover:bg-slate-50"
+                  title="筛选"
+                  onClick={openFilterModal}
+                >
+                  <Filter className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+
+            {/* 列表内容 */}
+            <div className="flex-1 px-4 py-2 space-y-1 overflow-y-auto bg-white">
+              {viewMode === 'mall' ? (
+                // 商场列表
+                paginatedMalls.length === 0 ? (
+                  <div className="text-xs text-slate-400 py-8 text-center">
+                    暂无符合条件的商场
+                  </div>
+                ) : (
+                  paginatedMalls.map((mall) => {
+                    const statusInfo = getMallStatusInfo(mall);
+                    const isActiveMall = activeMallId === mall.mallId;
+                    return (
+                      <button
+                        key={mall.mallId}
+                        type="button"
+                        className="w-full text-left active:scale-[0.99] transition-transform"
+                        onClick={() => {
+                          setActiveMallId(mall.mallId);
+                          onMallClick?.(mall);
+                        }}
+                      >
+                        <div
+                          className={`flex items-center gap-3 px-3 py-2 rounded-2xl bg-slate-50/50 hover:bg-slate-50 transition border-2 ${
+                            isActiveMall ? 'border-[#f5c400]' : 'border-transparent'
+                          }`}
+                        >
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-[15px] font-semibold text-slate-900 truncate">
+                                {mall.mallName}
+                              </span>
+                            </div>
+                            {statusInfo.label && (
+                              <div className="flex items-center gap-2">
+                                <span className={`inline-flex items-center justify-center min-w-[68px] px-3 py-1 rounded-lg text-[11px] font-semibold border whitespace-nowrap ${statusInfo.labelClass}`}>
+                                  {statusInfo.label}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          {/* 品牌徽章 - 使用真实logo */}
+                          <div className="flex items-center -space-x-1">
+                            {statusInfo.isBothNone ? (
+                              <>
+                                <div className="relative w-7 h-7 rounded-full bg-slate-900 flex items-center justify-center shadow-sm ring-2 ring-white z-10 overflow-hidden">
+                                  <img src={djiLogoWhite} alt="DJI" className="w-4 h-4 object-contain" />
+                                  <div className="absolute inset-0 bg-slate-400/60 pointer-events-none" />
+                                </div>
+                                <div className="relative w-7 h-7 rounded-full bg-[#f5c400] flex items-center justify-center shadow-sm ring-2 ring-white overflow-hidden">
+                                  <img src={instaLogoYellow} alt="Insta360" className="w-4 h-4 object-contain" />
+                                  <div className="absolute inset-0 bg-slate-400/60 pointer-events-none" />
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                {mall.djiOpened && (
+                                  <div className="w-7 h-7 rounded-full bg-slate-900 flex items-center justify-center shadow-sm ring-2 ring-white z-10 overflow-hidden">
+                                    <img src={djiLogoWhite} alt="DJI" className="w-4 h-4 object-contain" />
+                                  </div>
+                                )}
+                                {mall.instaOpened && (
+                                  <div className="w-7 h-7 rounded-full bg-[#f5c400] flex items-center justify-center shadow-sm ring-2 ring-white overflow-hidden">
+                                    <img src={instaLogoYellow} alt="Insta360" className="w-4 h-4 object-contain" />
+                                  </div>
+                                )}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })
+                )
               ) : (
-                visibleMalls.map((mall) => {
-                  const pill = getMallStatusPill(mall);
-                  return (
-                    <button
-                      key={mall.mallId}
-                      type="button"
-                      className="w-full text-left active:scale-[0.99] transition-transform"
-                      onClick={() => onMallClick?.(mall)}
-                    >
-                      <div className="flex items-center gap-3 px-1 py-3">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2 mb-1">
-                            <div className="text-[15px] font-semibold text-slate-900 truncate">
-                              {mall.mallName}
+                // 门店列表
+                paginatedStores.length === 0 ? (
+                  <div className="text-xs text-slate-400 py-8 text-center">
+                    暂无符合条件的门店
+                  </div>
+                ) : (
+                  paginatedStores.map((store) => {
+                    const isDJI = store.brand === 'DJI';
+                    const isActiveStore = activeStoreId === store.id;
+                    return (
+                      <button
+                        key={store.id}
+                        type="button"
+                        className="w-full text-left active:scale-[0.99] transition-transform"
+                        onClick={() => {
+                          setActiveStoreId(store.id);
+                          onStoreClick?.(store);
+                        }}
+                      >
+                        <div
+                          className={`flex items-center gap-3 px-3 py-2 rounded-2xl bg-slate-50/50 hover:bg-slate-50 transition border-2 ${
+                            isActiveStore ? 'border-[#f5c400]' : 'border-transparent'
+                          }`}
+                        >
+                          {/* 品牌Logo - 使用真实logo */}
+                          <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm overflow-hidden ${
+                            isDJI ? 'bg-slate-900' : 'bg-[#f5c400]'
+                          }`}>
+                            <img 
+                              src={isDJI ? djiLogoWhite : instaLogoYellow} 
+                              alt={isDJI ? 'DJI' : 'Insta360'} 
+                              className="w-8 h-8 object-contain" 
+                            />
+                          </div>
+                          
+                          <div className="flex-1 min-w-0">
+                            <div className="text-[15px] font-semibold text-slate-900 truncate mb-0.5">
+                              {store.storeName}
+                            </div>
+                            <div className="text-[11px] text-slate-400 truncate">
+                              {store.mallName || '独立店铺'} · {store.address || ''}
                             </div>
                           </div>
-                          <div className="flex items-center gap-2 mt-1">
-                            <span
-                              className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold ${pill.className}`}
-                            >
-                              {pill.label}
-                            </span>
-                          </div>
                         </div>
-                        {/* 品牌徽章 */}
-                        <div className="flex items-center gap-1">
-                          {mall.djiOpened && (
-                            <div className="w-7 h-7 rounded-full bg-slate-900 flex items-center justify-center shadow-sm">
-                              <img
-                                src={djiLogoBlack}
-                                alt="D"
-                                className="w-4 h-4 object-contain invert"
-                              />
-                            </div>
-                          )}
-                          {mall.instaOpened && (
-                            <div className="w-7 h-7 rounded-full bg-[#f5c400] flex items-center justify-center shadow-sm">
-                              <img
-                                src={instaLogoYellow}
-                                alt="I"
-                                className="w-4 h-4 object-contain"
-                              />
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </button>
-                  );
-                })
+                      </button>
+                    );
+                  })
+                )
               )}
             </div>
+
+            {/* 分页控件 */}
+            {((viewMode === 'mall' && totalMallPages > 1) || (viewMode === 'store' && totalStorePages > 1)) && (
+              <div className="px-4 py-3 border-t border-slate-100/60 bg-white">
+                <div className="flex items-center justify-between">
+                  <div className="text-[11px] text-slate-400">
+                    {viewMode === 'mall' 
+                      ? `共 ${filteredMalls.length} 个商场，第 ${currentPage}/${totalMallPages} 页`
+                      : `共 ${filteredStores.length} 个门店，第 ${currentPage}/${totalStorePages} 页`
+                    }
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      disabled={currentPage === 1}
+                      className={`px-3 py-1 rounded-lg text-[11px] font-semibold transition ${
+                        currentPage === 1
+                          ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                          : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
+                      }`}
+                      onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                    >
+                      上一页
+                    </button>
+                    <button
+                      type="button"
+                      disabled={currentPage === (viewMode === 'mall' ? totalMallPages : totalStorePages)}
+                      className={`px-3 py-1 rounded-lg text-[11px] font-semibold transition ${
+                        currentPage === (viewMode === 'mall' ? totalMallPages : totalStorePages)
+                          ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                          : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
+                      }`}
+                      onClick={() => setCurrentPage((p) => Math.min(viewMode === 'mall' ? totalMallPages : totalStorePages, p + 1))}
+                    >
+                      下一页
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </Card>
 
-      {showFilter && (
+      {/* 筛选弹窗 */}
+      {showFilterModal && (
         <>
           {/* 遮罩层 */}
           <div
             className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
-            onClick={() => setShowFilter(false)}
+            onClick={() => setShowFilterModal(false)}
           />
-          {/* 顶部筛选弹层，与商场列表重叠 */}
+          {/* 筛选面板 */}
           <div className="fixed inset-0 z-50 flex justify-center items-start px-4 pt-16">
             <div className="w-full max-w-[560px] bg-white rounded-3xl shadow-xl border border-slate-100 p-4">
               <div className="flex items-center justify-between mb-3">
                 <div className="text-sm font-semibold text-slate-900">
-                  选择省份和城市
+                  选择省份和城市（可多选）
                 </div>
                 <button
                   type="button"
-                  className="text-xs text-slate-400"
-                  onClick={() => setShowFilter(false)}
+                  className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 hover:bg-slate-200 transition"
+                  onClick={() => setShowFilterModal(false)}
                 >
-                  取消
+                  <X className="w-4 h-4" />
                 </button>
               </div>
+              
               <div className="flex gap-3">
                 {/* 省份列表 */}
-                <div className="w-[40%] max-h-[260px] overflow-y-auto pr-2 border-r border-slate-100">
+                <div className="w-[40%] max-h-[300px] overflow-y-auto pr-2 border-r border-slate-100">
                   {allProvinces.map((p) => {
-                    const active = p === tempProvince;
+                    const active = tempProvinces.includes(p);
                     return (
                       <button
                         key={p}
@@ -365,57 +786,89 @@ export function CompetitionMallList({ malls, onMallClick }: CompetitionMallListP
                             ? 'bg-slate-900 text-white border-slate-900'
                             : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
                         }`}
-                        onClick={() => {
-                          setTempProvince(p);
-                          const citiesForP = getCitiesForProvince(p);
-                          setTempCity(citiesForP[0] ?? null);
-                        }}
+                        onClick={() => toggleTempProvince(p)}
                       >
                         {p}
                       </button>
                     );
                   })}
                 </div>
+                
                 {/* 城市列表 */}
-                <div className="flex-1 max-h-[260px] overflow-y-auto pl-1">
-                  {tempProvince ? (
-                    (() => {
-                      const citiesForP = getCitiesForProvince(tempProvince);
-                      return citiesForP.length ? (
-                        citiesForP.map((c) => {
-                          const active = c === tempCity;
-                          return (
-                            <button
-                              key={c}
-                              type="button"
-                              className={`w-full text-left px-3 py-2 rounded-xl text-xs mb-1 border transition ${
-                                active
-                                  ? 'bg-slate-900 text-white border-slate-900'
-                                  : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
-                              }`}
-                              onClick={() => setTempCity(c)}
-                            >
-                              {c.replace(/(市|区)$/u, '')}
-                            </button>
-                          );
-                        })
-                      ) : (
-                        <div className="text-xs text-slate-400 py-2">
-                          该省份暂无城市数据
-                        </div>
-                      );
-                    })()
+                <div className="flex-1 max-h-[300px] overflow-y-auto pl-1">
+                  {availableTempCities.length > 0 ? (
+                    <>
+                      <div className="text-[11px] text-slate-400 mb-2 px-1">
+                        点击选择城市（可多选）
+                      </div>
+                      {availableTempCities.map((c) => {
+                        const active = tempCities.includes(c);
+                        return (
+                          <button
+                            key={c}
+                            type="button"
+                            className={`w-full text-left px-3 py-2 rounded-xl text-xs mb-1 border transition ${
+                              active
+                                ? 'bg-slate-900 text-white border-slate-900'
+                                : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                            }`}
+                            onClick={() => toggleTempCity(c)}
+                          >
+                            {c}
+                          </button>
+                        );
+                      })}
+                    </>
                   ) : (
-                    <div className="text-xs text-slate-400 py-2">
+                    <div className="text-xs text-slate-400 py-4 text-center">
                       请先选择省份
                     </div>
                   )}
                 </div>
               </div>
 
+              {/* 已选择的标签 */}
+              {(tempProvinces.length > 0 && !tempProvinces.includes('全国')) || tempCities.length > 0 ? (
+                <div className="mt-3 pt-3 border-t border-slate-100">
+                  <div className="text-[11px] text-slate-400 mb-2">已选择：</div>
+                  <div className="flex flex-wrap gap-1">
+                    {tempProvinces.filter((p) => p !== '全国').map((p) => (
+                      <span
+                        key={p}
+                        className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[11px] bg-slate-100 text-slate-600"
+                      >
+                        {p}
+                        <button
+                          type="button"
+                          className="text-slate-400 hover:text-slate-600"
+                          onClick={() => toggleTempProvince(p)}
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      </span>
+                    ))}
+                    {tempCities.map((c) => (
+                      <span
+                        key={c}
+                        className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[11px] bg-[#f5c400]/20 text-[#b8940a]"
+                      >
+                        {c}
+                        <button
+                          type="button"
+                          className="text-[#b8940a]/60 hover:text-[#b8940a]"
+                          onClick={() => toggleTempCity(c)}
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
               <button
                 type="button"
-                className="w-full mt-3 rounded-full bg-slate-900 text-white text-sm font-semibold py-2.5 hover:bg-slate-800 transition shadow-md"
+                className="w-full mt-4 rounded-full bg-slate-900 text-white text-sm font-semibold py-2.5 hover:bg-slate-800 transition shadow-md"
                 onClick={applyFilter}
               >
                 完成

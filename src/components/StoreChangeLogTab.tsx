@@ -1,8 +1,7 @@
 // @ts-nocheck
 import { useMemo, useState } from 'react';
 import { ChevronDown, ChevronRight, MapPin, X, Search } from 'lucide-react';
-import djiRaw from '../data/dji_stores.json';
-import instaRaw from '../data/insta360_stores.json';
+import storeChangeLogs from '../data/store_change_logs.json';
 import { Card } from './ui';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
@@ -63,146 +62,10 @@ const toInputDateValue = (date: Date) =>
     date.getDate(),
   ).padStart(2, '0')}`;
 
-const normalizeCity = (province: string, city: string) => {
-  if (!city || city === '市辖区') return province || city || '未知';
-  return city;
-};
-
-const normalizeNameForRelocate = (name: string) =>
-  (name || '')
-    .replace(/授权高级体验店|授权体验专区|授权体验店|授权专卖店|照材店|直营店/gu, '')
-    .trim();
-
 const deriveChangeLogs = (): StoreChangeLogEntry[] => {
-  const raw = [...djiRaw, ...instaRaw];
-
-  const openStores = raw.filter((item) => (item.status || '').trim() === '营业中');
-  const closedStores = raw.filter((item) => (item.status || '').trim() === '已闭店');
-
-  type RelocatePair = {
-    oldId: string;
-    newId: string;
-    timestamp: string;
-  };
-
-  const relocatePairs: RelocatePair[] = [];
-  const relocatedOldIds = new Set<string>();
-  const relocatedNewIds = new Set<string>();
-
-  // 显式“已换址”标记（来自 CSV change_type），直接视为 RELOCATE
-  (raw as any[]).forEach((item) => {
-    const ct = (item as any).changeType || (item as any).change_type;
-    if (ct === '已换址') {
-      const idStr = String(item.id);
-      const openedAt = (item.openedAt || '').trim();
-      const ts = openedAt && openedAt !== 'historical' ? openedAt : new Date().toISOString();
-      relocatePairs.push({
-        oldId: idStr,
-        newId: idStr,
-        timestamp: ts,
-      });
-      relocatedOldIds.add(idStr);
-      relocatedNewIds.add(idStr);
-    }
-  });
-
-  // 先在 JSON 内部做一次“换址配对”：同品牌、同城市、归一化店名一致
-  closedStores.forEach((oldStore) => {
-    const oldId = String(oldStore.id);
-    const oldProvince = oldStore.province || '';
-    const oldCity = normalizeCity(oldProvince, oldStore.city || '');
-    const oldBrand = oldStore.brand;
-    const oldNormName = normalizeNameForRelocate(oldStore.storeName || '');
-
-    if (!oldNormName) return;
-
-    const candidates = openStores.filter((s) => {
-      const sProvince = s.province || '';
-      const sCity = normalizeCity(sProvince, s.city || '');
-      const sNormName = normalizeNameForRelocate(s.storeName || '');
-      return s.brand === oldBrand && sCity === oldCity && sNormName === oldNormName;
-    });
-
-    if (!candidates.length) return;
-
-    // 简单取第一个候选（当前数据下是唯一的）
-    const newer = candidates[0];
-    const openedAt = (newer.openedAt || '').trim();
-    const ts = openedAt && openedAt !== 'historical' ? openedAt : new Date().toISOString();
-
-    relocatePairs.push({
-      oldId,
-      newId: String(newer.id),
-      timestamp: ts,
-    });
-    relocatedOldIds.add(oldId);
-    relocatedNewIds.add(String(newer.id));
-  });
-
-  const logs: StoreChangeLogEntry[] = [];
-
-  // 1) 新开业 / 已换址（绿色 / 黄色）
-  raw.forEach((item) => {
-    const province = item.province || '';
-    const city = normalizeCity(province, item.city || '');
-    const openedAt = (item.openedAt || '').trim();
-    const idStr = String(item.id);
-
-    const relocateMatch = relocatePairs.find((p) => p.newId === idStr);
-
-    if (relocateMatch) {
-      // 已换址：使用新店的开业时间，但展示老店的名称（更符合“这家店换址”的语义）
-      const oldStore = closedStores.find(
-        (s) => String(s.id) === relocateMatch.oldId,
-      );
-      const displayName = oldStore?.storeName || item.storeName || '';
-
-      logs.push({
-        id: `RELOCATE-${relocateMatch.oldId}`,
-        storeId: relocateMatch.newId,
-        brand: item.brand,
-        storeName: displayName,
-        province,
-        city,
-        changeType: 'RELOCATE',
-        timestamp: relocateMatch.timestamp,
-      });
-    } else if (openedAt && openedAt !== 'historical') {
-      // 普通新开业
-      logs.push({
-        id: idStr,
-        storeId: idStr,
-        brand: item.brand,
-        storeName: item.storeName || '',
-        province,
-        city,
-        changeType: 'OPEN',
-        timestamp: openedAt,
-      });
-    }
-  });
-
-  // 2) 真正“已闭店”的门店（灰色），排除已被视为换址的老店
-  closedStores.forEach((item) => {
-    const idStr = String(item.id);
-    if (relocatedOldIds.has(idStr)) return;
-    const province = item.province || '';
-    const city = normalizeCity(province, item.city || '');
-
-    logs.push({
-      id: `CLOSE-${idStr}`,
-      storeId: idStr,
-      brand: item.brand,
-      storeName: item.storeName || '',
-      province,
-      city,
-      changeType: 'CLOSE',
-      // 没有精准 closedAt，这里用当前时间近似
-      timestamp: new Date().toISOString(),
-    });
-  });
-
-  return logs.filter((log) => !Number.isNaN(new Date(log.timestamp).getTime()));
+  // 日志由后端脚本 csv_to_json.py 预计算并导出为 src/data/store_change_logs.json，
+  // 规则与这里之前的 deriveChangeLogs 实现保持一致（OPEN / CLOSE / RELOCATE）。
+  return (storeChangeLogs as StoreChangeLogEntry[]) || [];
 };
 
 export function StoreChangeLogTab() {
@@ -399,10 +262,10 @@ export function StoreChangeLogTab() {
       <header className="flex items-start justify-between sticky top-0 bg-[#f6f7fb] z-20 pb-2">
         <div className="ml-[6px]">
           <div className="text-2xl font-black leading-tight text-slate-900">
-            渠道动态日志
+            门店动态日志
           </div>
           <div className="text-sm text-slate-500">
-            实时监控竞品开店布局
+            实时监控开店布局情况
           </div>
         </div>
       </header>

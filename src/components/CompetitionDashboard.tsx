@@ -19,7 +19,7 @@ const cards: Array<{
 }> = [
   {
     key: 'target',
-    label: '目标商场',
+    label: '目标未进驻',
     description: '被 DJI 盯上的总量',
     color: '#0f172a',
     value: (stats) => numberFmt(stats.totalTarget),

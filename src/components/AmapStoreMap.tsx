@@ -12,6 +12,30 @@ import { isNewThisMonth } from '../utils/storeRules';
 import { MALL_STATUS_COLORS } from '../config/competitionColors';
 import { lighten, mixColors } from '../utils/color';
 
+// 根据商场属性计算点位颜色（与商场标签配色保持一致）
+const getCompetitionMallColor = (mall: Mall): string => {
+  const hasDJI = mall.djiOpened;
+  const hasInsta = mall.instaOpened;
+  const isPtMall = mall.djiExclusive === true; // PT 商场
+  const isTarget = mall.djiTarget === true && !mall.djiOpened; // 目标未进驻：DJI Target 且尚未开业
+  const isGap = mall.status === 'gap'; // 缺口机会（DJI 有布局但 Insta 未进）
+  const isBothOpened = hasDJI && hasInsta;
+  const isBothNone = !hasDJI && !hasInsta;
+  const isInstaOnly = hasInsta && !hasDJI;
+  const isDjiOnly = hasDJI && !hasInsta;
+
+  // 按优先级返回颜色
+  if (isPtMall) return '#EF4444';      // 红色 - PT商场
+  if (isGap) return '#FFFFFF';         // 白色 - 缺口机会
+  if (isTarget) return '#3B82F6';      // 蓝色 - 目标未进驻
+  if (isBothOpened) return '#22C55E';  // 绿色 - 均进驻
+  if (isBothNone) return '#94A3B8';    // 灰色 - 均未进驻
+  if (isInstaOnly) return '#F5C400';   // 黄色 - 仅 Insta 进驻
+  if (isDjiOnly) return '#111827';     // 深黑色 - 仅 DJI 进驻
+
+  return '#9CA3AF'; // 默认灰色
+};
+
 type Props = {
   viewMode?: 'stores' | 'malls' | 'competition';
   stores: Store[];
@@ -632,7 +656,7 @@ export function AmapStoreMap({
         const isSelected = selectedMallId === mall.mallId;
         const markerEl = document.createElement('div');
         markerEl.className = 'mall-marker';
-        const color = viewMode === 'competition' ? MALL_STATUS_COLORS[mall.status] : '#2563eb';
+        const color = viewMode === 'competition' ? getCompetitionMallColor(mall) : '#2563eb';
         markerEl.style.backgroundColor = color;
         if (isSelected) markerEl.classList.add('mall-marker--selected');
         markerEl.title = mall.mallName;
@@ -640,7 +664,7 @@ export function AmapStoreMap({
         const marker = new AMapLib.Marker({
           position: point,
           content: markerEl,
-          offset: new AMapLib.Pixel(-8, -8),
+          offset: new AMapLib.Pixel(-6, -6),
           zIndex: isSelected ? 150 : 120,
         });
         marker.setExtData(mall);
@@ -725,9 +749,9 @@ export function AmapStoreMap({
     isFullscreen,
   ]);
 
-  // 当 selectedMallId 从外部变更（例如点击商场列表卡片）时，平滑聚焦到对应商场
+  // 当 selectedMallId 从外部变更（例如点击商场列表卡片或地图上的商场气泡）时，平滑聚焦到对应商场
   useEffect(() => {
-    if (!ready || viewMode === 'stores' || !selectedMallId || !mapRef.current) return;
+    if (!ready || !selectedMallId || !mapRef.current) return;
     const mall = malls.find((m) => m.mallId === selectedMallId);
     if (!mall) return;
     const point = toMallLngLat(mall);
@@ -735,7 +759,7 @@ export function AmapStoreMap({
     const currentZoom = mapRef.current.getZoom();
     const targetZoom = Math.max(currentZoom, MIN_FOCUS_ZOOM);
     mapRef.current.setZoomAndCenter(targetZoom, point, true);
-  }, [ready, selectedMallId, viewMode, malls]);
+  }, [ready, selectedMallId, malls]);
 
   // 单独处理选中状态的样式更新，避免重新创建所有 markers
   useEffect(() => {
@@ -887,7 +911,7 @@ export function AmapStoreMap({
         </div>
       )}
       {showNavSelector && selectedStore && (
-        <div className="absolute inset-0 z-[250] bg-black/30 backdrop-blur-sm flex items-center justify-center px-4">
+        <div className="absolute inset-0 z-30 bg-black/30 backdrop-blur-sm flex items-center justify-center px-4">
           <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 w-full max-w-sm p-5 space-y-5">
             <div className="flex items-center justify-between">
               <div>
@@ -923,7 +947,7 @@ export function AmapStoreMap({
         </div>
       )}
       {loadError && (
-        <div className="absolute inset-0 z-[200] bg-white/85 backdrop-blur-sm flex flex-col items-center justify-center text-center px-6 text-sm text-slate-600 gap-2">
+        <div className="absolute inset-0 z-30 bg-white/85 backdrop-blur-sm flex flex-col items-center justify-center text-center px-6 text-sm text-slate-600 gap-2">
           <p className="font-semibold text-slate-900">地图暂时无法加载</p>
           <p>{loadError}</p>
           <p className="text-xs text-slate-400">请检查高德 Key 设置或网络连接后重试。</p>
@@ -931,7 +955,7 @@ export function AmapStoreMap({
       )}
       {viewMode === 'stores' && drillLevel === 'city' && activeProvince && !activeCity && !selectedStore && (
         <div
-          className="absolute left-4 right-4 z-[180] pointer-events-none"
+          className="absolute left-4 right-4 z-20 pointer-events-none"
           style={{ bottom: isFullscreen ? '104px' : '16px' }}
         >
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3 pointer-events-auto max-w-[360px] mx-auto">
@@ -963,7 +987,7 @@ export function AmapStoreMap({
       )}
       {viewMode === 'stores' && drillLevel === 'city' && activeProvince && activeCity && !selectedStore && (
         <div
-          className="absolute left-4 right-4 z-[180] pointer-events-none"
+          className="absolute left-4 right-4 z-20 pointer-events-none"
           style={{ bottom: isFullscreen ? '104px' : '16px' }}
         >
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3 pointer-events-auto max-w-[360px] mx-auto">
@@ -996,7 +1020,7 @@ export function AmapStoreMap({
       {showPopup && viewMode === 'stores' && selectedStore && (
         <div
           ref={popupRef}
-          className="absolute left-4 right-4 z-[200] animate-slide-up pointer-events-auto max-h-[50vh] overflow-y-auto"
+          className="absolute left-4 right-4 z-30 animate-slide-up pointer-events-auto max-h-[50vh] overflow-y-auto"
           style={{ willChange: 'transform', bottom: isFullscreen ? '104px' : '16px' }}
         >
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden pointer-events-auto">

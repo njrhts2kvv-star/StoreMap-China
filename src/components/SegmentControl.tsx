@@ -17,7 +17,7 @@ export function SegmentControl({ value, onChange }: Props) {
     { key: 'map' as const, label: '地图', icon: MapPin },
   ];
   return (
-    <div className="fixed bottom-3 left-0 right-0 z-50 flex justify-center px-4">
+    <div className="fixed bottom-6 left-0 right-0 z-50 flex justify-center px-4">
       <div className="w-full max-w-[560px] rounded-full bg-white shadow-xl border border-white/70 backdrop-blur-md px-4 py-2 overflow-hidden">
         <div className="flex items-stretch gap-2">
           {tabs.map((tab) => {

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Search, RotateCcw, X, SlidersHorizontal } from 'lucide-react';
+import { Search, RotateCcw, X, SlidersHorizontal, Crosshair, Store as StoreIcon, Sparkles } from 'lucide-react';
 import type { Brand, ServiceTag, Store, Mall, MallStatus } from '../types/store';
 import { useStores } from '../hooks/useStores';
 import { useGeo } from '../hooks/useGeo';
@@ -16,9 +16,9 @@ import { NewStoresThisMonth } from '../components/NewStoresThisMonth';
 import { Card, Button } from '../components/ui';
 import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
 import { CompetitionDashboard } from '../components/CompetitionDashboard';
+import { CompetitionMallCard } from '../components/CompetitionMallCard';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
-import { MallDetail } from '../components/MallDetail';
 import { CompetitionMallList } from '../components/CompetitionMallList';
 import { StoreChangeLogTab } from '../components/StoreChangeLogTab';
 
@@ -83,6 +83,9 @@ export default function HomePage() {
   const [appliedFilters, setAppliedFilters] = useState<FilterState>(initialFilters);
   const [storeFilterMode, setStoreFilterMode] = useState<StoreFilterMode>('experience');
   const [activeTab, setActiveTab] = useState<'overview' | 'list' | 'competition' | 'log' | 'map'>('overview');
+  const [showAiAssistant, setShowAiAssistant] = useState(false);
+  const [aiQuestion, setAiQuestion] = useState('');
+  const [aiAnswer, setAiAnswer] = useState<string | null>(null);
   
   // 根据模式应用门店类别筛选
   const filtersWithMode = useMemo(() => {
@@ -135,11 +138,23 @@ export default function HomePage() {
     province: [...pendingFilters.province],
     city: [...pendingFilters.city],
   });
+  const [tempCompetitionFilters, setTempCompetitionFilters] = useState<{
+    mallTags: string[];
+    province: string[];
+    city: string[];
+  }>({
+    mallTags: [],
+    province: [],
+    city: [],
+  });
   const [showNewAddedPopover, setShowNewAddedPopover] = useState(false);
   const [mapResetToken, setMapResetToken] = useState(0);
   const [competitionSearch, setCompetitionSearch] = useState('');
   const [debouncedCompetitionSearch, setDebouncedCompetitionSearch] = useState('');
-  const [activeCompetitionChip, setActiveCompetitionChip] = useState<'ALL' | 'PT' | 'GAP' | 'ONLY_INSTA' | 'BOTH_NONE' | 'BOTH_PRESENT'>('ALL');
+  const [showCompetitionFilters, setShowCompetitionFilters] = useState(false);
+  const [activeCompetitionFilterTab, setActiveCompetitionFilterTab] = useState<FilterTab>('storeType');
+  const [appliedMallTags, setAppliedMallTags] = useState<string[]>([]);
+  const [activeCompetitionChip, setActiveCompetitionChip] = useState<'ALL' | 'PT' | 'GAP' | 'BOTH_OPENED' | 'BOTH_NONE' | 'INSTA_ONLY' | 'DJI_ONLY'>('ALL');
   const hasRegionFilter = pendingFilters.city.length > 0 || pendingFilters.province.length > 0;
   const mapUserPos = hasRegionFilter ? null : userPos;
   const handleSelect = useCallback((id: string) => setSelectedId(id || null), []);
@@ -195,6 +210,18 @@ export default function HomePage() {
     },
     [allStores],
   );
+
+  const matchMallTag = useCallback((mall: Mall, tag: string) => {
+    if (tag === 'PT') return mall.djiExclusive === true;
+    if (tag === 'TARGET') return mall.djiTarget === true && mall.djiExclusive === false;
+    if (tag === 'GAP') return mall.status === 'gap';
+    if (tag === 'BOTH_OPENED') return mall.djiOpened && mall.instaOpened;
+    if (tag === 'BOTH_NONE') return !mall.djiOpened && !mall.instaOpened;
+    if (tag === 'INSTA_ONLY') return mall.instaOpened && !mall.djiOpened;
+    if (tag === 'DJI_ONLY') return mall.djiOpened && !mall.instaOpened;
+    return false;
+  }, []);
+
   const filteredMalls = useMemo(() => {
     const cityFilters =
       Array.isArray(filtersWithMode.city) && filtersWithMode.city.length > 0
@@ -205,18 +232,13 @@ export default function HomePage() {
     return allMalls.filter((mall) => {
       const cityMatch = cityFilters.length ? cityFilters.includes(mall.city) : true;
       const statusMatch = filtersWithMode.mallStatuses.length ? filtersWithMode.mallStatuses.includes(mall.status) : true;
-      return cityMatch && statusMatch;
+      // 商场标签筛选
+      const tagMatch = appliedMallTags.length > 0 
+        ? appliedMallTags.some(tag => matchMallTag(mall, tag))
+        : true;
+      return cityMatch && statusMatch && tagMatch;
     });
-  }, [allMalls, filtersWithMode.city, filtersWithMode.mallStatuses]);
-  const competitionStats = useCompetition(filteredMalls);
-  const selectedMall = useMemo(
-    () => allMalls.find((mall) => mall.mallId === selectedMallId) ?? null,
-    [allMalls, selectedMallId],
-  );
-  const storesInSelectedMall = useMemo(
-    () => (selectedMall ? allStores.filter((s) => s.mallId === selectedMall.mallId) : []),
-    [allStores, selectedMall],
-  );
+  }, [allMalls, filtersWithMode.city, filtersWithMode.mallStatuses, appliedMallTags, matchMallTag]);
   useEffect(() => {
     if (quickFilter === 'favorites' && selectedId && !favorites.includes(selectedId)) {
       setSelectedId(null);
@@ -268,6 +290,14 @@ export default function HomePage() {
     setShowStoreTypeDropdown(false);
     setShowSearchFilters(false);
     setShowNewAddedPopover(false);
+    
+    // 重置竞争模块状态
+    setSelectedCompetitionMall(null);
+    setShowCompetitionMallCard(false);
+    setCompetitionSearch('');
+    setDebouncedCompetitionSearch('');
+    setActiveCompetitionChip('ALL');
+    
     setMapResetToken((token) => token + 1);
   };
 
@@ -329,16 +359,27 @@ export default function HomePage() {
     setSelectedMallId(null);
   };
 
+  const [showCompetitionMallCard, setShowCompetitionMallCard] = useState(false);
+  const [selectedCompetitionMall, setSelectedCompetitionMall] = useState<Mall | null>(null);
+  const [competitionMapMode, setCompetitionMapMode] = useState<'competition' | 'stores'>('competition');
+
   const handleMallClick = useCallback((mall: Mall) => {
+    setCompetitionMapMode('competition');
     setSelectedMallId(mall.mallId);
+    setSelectedCompetitionMall(mall);
+    setShowCompetitionMallCard(true);
   }, []);
 
   const resetMallFilters = () => {
     updateFilters({ mallStatuses: [], city: [] });
     setSelectedMallId(null);
+    setSelectedCompetitionMall(null);
+    setShowCompetitionMallCard(false);
+     setCompetitionMapMode('competition');
     setCompetitionSearch('');
     setDebouncedCompetitionSearch('');
     setActiveCompetitionChip('ALL');
+    setAppliedMallTags([]);
     setMapResetToken((token) => token + 1);
   };
 
@@ -368,11 +409,13 @@ export default function HomePage() {
   const matchChip = useCallback(
     (mall: Mall, chip: typeof activeCompetitionChip) => {
       if (chip === 'ALL') return true;
-      if (chip === 'PT') return mall.djiTarget === true;
+      if (chip === 'PT') return mall.djiExclusive === true; // PT商场 = djiExclusive = true
+      if (chip === 'TARGET') return mall.djiTarget === true && !mall.djiOpened; // 目标未进驻：Target 且未开业
       if (chip === 'GAP') return mall.status === 'gap';
-      if (chip === 'ONLY_INSTA') return mall.instaOpened && !mall.djiOpened;
+      if (chip === 'BOTH_OPENED') return mall.djiOpened && mall.instaOpened;
       if (chip === 'BOTH_NONE') return !mall.djiOpened && !mall.instaOpened;
-      if (chip === 'BOTH_PRESENT') return mall.djiOpened && mall.instaOpened;
+      if (chip === 'INSTA_ONLY') return mall.instaOpened && !mall.djiOpened;
+      if (chip === 'DJI_ONLY') return mall.djiOpened && !mall.instaOpened;
       return true;
     },
     [],
@@ -405,7 +448,7 @@ export default function HomePage() {
     return map;
   }, [allStores]);
 
-  // 兜底：部分目标商场当前还没有门店，但可以通过城市→省份的映射进行推断
+  // 兜底：部分目标未进驻商场当前还没有门店，但可以通过城市→省份的映射进行推断
   const cityProvinceMap = useMemo(() => {
     const cityCounts: Record<string, Record<string, number>> = {};
     allStores.forEach((s) => {
@@ -596,15 +639,16 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
                     <div className="flex flex-wrap gap-2">
                       {['授权体验店', '新型照材'].map((type) => {
                         const active = tempFilters.djiStoreTypes.includes(type);
+                        const baseClasses = 'px-[11px] py-1.5 rounded-lg text-xs font-medium border transition';
+                        const activeClasses = 'bg-slate-900 text-white border-slate-900';
+                        const inactiveClasses = 'bg-white text-slate-700 border-slate-200 hover:border-slate-300';
+                        
                         return (
                           <button
                             key={type}
                             type="button"
-                        className={`px-[11px] py-2 rounded-lg text-xs font-medium border transition ${
-                          active
-                            ? 'bg-slate-900 text-white border-slate-900'
-                            : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
-                        }`}
+                            style={active ? { boxShadow: '0 0 0 2px white, 0 0 0 4px #111827' } : {}}
+                            className={`${baseClasses} ${active ? activeClasses : inactiveClasses}`}
                             onClick={() => {
                               setTempFilters((prev) => ({
                                 ...prev,
@@ -626,15 +670,16 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
                     <div className="flex flex-wrap gap-2">
                       {['直营店', '授权专卖店', '合作体验点'].map((type) => {
                         const active = tempFilters.instaStoreTypes.includes(type);
+                        const baseClasses = 'px-[11px] py-1.5 rounded-lg text-xs font-medium border transition';
+                        const activeClasses = 'bg-slate-900 text-white border-slate-900';
+                        const inactiveClasses = 'bg-white text-slate-700 border-slate-200 hover:border-slate-300';
+                        
                         return (
                           <button
                             key={type}
                             type="button"
-                        className={`px-[11px] py-2 rounded-lg text-xs font-medium border transition ${
-                          active
-                            ? 'bg-slate-900 text-white border-slate-900'
-                            : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
-                        }`}
+                            style={active ? { boxShadow: '0 0 0 2px white, 0 0 0 4px #111827' } : {}}
+                            className={`${baseClasses} ${active ? activeClasses : inactiveClasses}`}
                             onClick={() => {
                               setTempFilters((prev) => ({
                                 ...prev,
@@ -774,27 +819,306 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
   );
 };
 
+const buildAiSuggestion = (
+  question: string,
+  malls: Mall[],
+  competitionStats: ReturnType<typeof useCompetition>,
+): string => {
+  const text = question.trim();
+  if (!text) {
+    return '可以问我一些大白话问题，比如：“帮我看看深圳哪里还有机会？”、“只看PT商场，哪里最难啃？”或者“最近有没有新开的缺口机会商场？”。';
+  }
+
+  const allCities = Array.from(new Set(malls.map((m) => m.city))).filter(Boolean) as string[];
+  const matchedCity =
+    allCities.find((c) => text.includes(c.replace(/市$/u, ''))) ||
+    allCities.find((c) => text.includes(c.split('市')[0])) ||
+    null;
+
+  const scopedMalls = matchedCity ? malls.filter((m) => m.city === matchedCity) : malls;
+  const scopeLabel = matchedCity || '全国';
+
+  const targetNotOpened = scopedMalls.filter((m) => m.djiTarget && !m.djiOpened).length;
+  const gapCount = scopedMalls.filter((m) => m.status === 'gap').length;
+  const bothOpened = scopedMalls.filter((m) => m.djiOpened && m.instaOpened).length;
+  const bothNone = scopedMalls.filter((m) => !m.djiOpened && !m.instaOpened).length;
+
+  const lines: string[] = [];
+  lines.push(`我按照「${scopeLabel}」范围帮你看了一下：`);
+  lines.push(
+    `• 目标未进驻（DJI Target 但未开店）的商场约 ${targetNotOpened} 家，适合优先排期；`,
+  );
+  lines.push(
+    `• 缺口机会（DJI 有布局但 Insta 未进）的商场约 ${gapCount} 家，可以对着 DJI 布局挖 Insta 机会；`,
+  );
+  lines.push(
+    `• 双方均进驻的商场约 ${bothOpened} 家，适合主要做维护和提升份额；`,
+  );
+  lines.push(
+    `• 双方均未进驻的商场约 ${bothNone} 家，如果商场体量不错，可以评估是否作为新增点位。`,
+  );
+
+  lines.push('');
+  lines.push('如果你想更具体一点，可以加上品牌或场景，比如：“只看深圳的PT商场机会” 或 “帮我看看西南地区缺口机会”。');
+  return lines.join('\n');
+};
+
+const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') => {
+  const wrapperClass =
+    variant === 'floating'
+      ? 'space-y-3 bg-white/90 backdrop-blur-md border border-white/50 rounded-[28px] p-4 shadow-[0_25px_40px_rgba(15,23,42,0.18)] max-w-[520px]'
+      : 'space-y-3';
+
+  const mallTagOptions = [
+    { key: 'PT', label: 'PT商场', color: 'bg-red-500 text-white' },                 // 红色
+    { key: 'TARGET', label: '目标未进驻', color: 'bg-blue-500 text-white' },        // 蓝色
+    { key: 'GAP', label: '缺口机会', color: 'bg-[#f5c400] text-slate-900' },         // 黄色底 + 白色圆点
+    { key: 'BOTH_OPENED', label: '均进驻', color: 'bg-emerald-500 text-white' },     // 绿色
+    { key: 'BOTH_NONE', label: '均未进驻', color: 'bg-slate-400 text-white' },       // 灰色
+    { key: 'INSTA_ONLY', label: '仅Insta进驻', color: 'bg-[#f5c400] text-slate-900' }, // 黄色
+    { key: 'DJI_ONLY', label: '仅DJI进驻', color: 'bg-slate-900 text-white' },       // 深黑色
+  ];
+
+  return (
+    <div className={wrapperClass}>
+      {variant === 'floating' && (
+        <div className="flex flex-col gap-3">
+          {/* 左右布局：左侧胶囊按钮 + 右侧内容框 */}
+          <div className="flex gap-3">
+            {/* 左侧：三个独立胶囊按钮 */}
+            <div className="flex flex-col gap-[15px] mt-[23px]">
+              {[
+                { key: 'storeType' as FilterTab, label: '商场标签' },
+                { key: 'province' as FilterTab, label: '全部省份' },
+                { key: 'city' as FilterTab, label: '全部城市' },
+              ].map((tab) => {
+                const isActive = activeCompetitionFilterTab === tab.key;
+                return (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    className={`px-[14px] py-[9px] rounded-full text-xs font-medium transition whitespace-nowrap ${
+                      isActive
+                        ? 'bg-slate-900 text-white shadow-md'
+                        : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300'
+                    }`}
+                    onClick={() => setActiveCompetitionFilterTab(tab.key)}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* 右侧：独立内容框 */}
+            <div className="w-[280px] bg-white rounded-2xl shadow-lg border border-slate-100 px-4 pb-4 pt-[26px] overflow-y-auto h-[450px]">
+              {/* 商场标签 */}
+              {activeCompetitionFilterTab === 'storeType' && (
+                <div className="space-y-2">
+                  <div className="text-sm font-semibold text-slate-900 mb-3">商场标签</div>
+                  <div className="flex flex-wrap gap-2">
+                    {mallTagOptions.map((tag) => {
+                      const active = tempCompetitionFilters.mallTags.includes(tag.key);
+                      const isPT = tag.key === 'PT';
+
+                      return (
+                        <button
+                          key={tag.key}
+                          type="button"
+                          className={`px-[11px] rounded-lg font-medium border transition ${
+                            isPT ? 'py-1 text-[11px]' : 'py-1.5 text-xs'
+                          } ${
+                            active
+                              ? 'bg-slate-900 text-white border-slate-900 shadow-sm'
+                              : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                          }`}
+                          onClick={() => {
+                            setTempCompetitionFilters((prev) => ({
+                              ...prev,
+                              mallTags: active
+                                ? prev.mallTags.filter((x) => x !== tag.key)
+                                : [...prev.mallTags, tag.key],
+                            }));
+                          }}
+                        >
+                          {tag.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* 省份 */}
+              {activeCompetitionFilterTab === 'province' && (
+                <div>
+                  <div className="text-sm font-semibold text-slate-900 mb-3">选择省份</div>
+                  <div className="flex flex-wrap gap-2">
+                    {provinces.map((province) => {
+                      const active = tempCompetitionFilters.province.includes(province);
+                      return (
+                        <button
+                          key={province}
+                          type="button"
+                          className={`px-[11px] py-2 rounded-lg text-xs font-medium border transition ${
+                            active
+                              ? 'bg-slate-900 text-white border-slate-900'
+                              : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                          }`}
+                          onClick={() => {
+                            setTempCompetitionFilters((prev) => {
+                              const current = new Set(prev.province);
+                              if (current.has(province)) current.delete(province);
+                              else current.add(province);
+                              const newProvinces = Array.from(current);
+                              const allowedCities = getAllowedCities(newProvinces);
+                              const newCities = prev.city.filter((c) => allowedCities.includes(c));
+                              return { ...prev, province: newProvinces, city: newCities };
+                            });
+                          }}
+                        >
+                          {province}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* 城市 */}
+              {activeCompetitionFilterTab === 'city' && (
+                <div>
+                  <div className="text-sm font-semibold text-slate-900 mb-3">选择城市</div>
+                  {(() => {
+                    const allowedCities = getAllowedCities(tempCompetitionFilters.province);
+                    return allowedCities.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {allowedCities.map((c) => {
+                          const active = tempCompetitionFilters.city.includes(c);
+                          return (
+                            <button
+                              key={c}
+                              type="button"
+                              className={`px-3 py-2 rounded-lg text-xs font-medium border transition ${
+                                active
+                                  ? 'bg-slate-900 text-white border-slate-900'
+                                  : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                              }`}
+                              onClick={() => {
+                                setTempCompetitionFilters((prev) => {
+                                  const next = active
+                                    ? prev.city.filter((item) => item !== c)
+                                    : [...prev.city, c];
+                                  return { ...prev, city: next };
+                                });
+                              }}
+                            >
+                              {c}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="text-sm text-slate-400">请先选择省份</div>
+                    );
+                  })()}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* 底部：两个独立胶囊按钮 */}
+          <div className="flex gap-3 mt-[6px]">
+            <button
+              type="button"
+              className="flex items-center justify-center gap-2 px-[16px] py-[8px] rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm"
+              onClick={() => {
+                setTempCompetitionFilters({
+                  mallTags: [],
+                  province: [],
+                  city: [],
+                });
+              }}
+            >
+              <RotateCcw className="w-4 h-4" />
+              重置
+            </button>
+            <button
+              type="button"
+              className="flex-1 flex items-center justify-center gap-2 px-[19px] py-[8px] rounded-full text-sm font-semibold bg-slate-900 text-white hover:bg-slate-800 transition shadow-md"
+              onClick={() => {
+                // 应用筛选逻辑
+                updateFilters({
+                  province: tempCompetitionFilters.province,
+                  city: tempCompetitionFilters.city,
+                });
+                // 应用商场标签筛选
+                setAppliedMallTags(tempCompetitionFilters.mallTags);
+                setShowCompetitionFilters(false);
+                setMapResetToken((token) => token + 1);
+              }}
+            >
+              <span className="text-base">✓</span>
+              完成
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
   return (
     <div className="min-h-screen flex justify-center bg-[#f6f7fb]">
       <div className="w-full max-w-[393px] min-w-[360px] min-h-screen flex flex-col gap-2 px-4 pb-24 pt-6">
         {activeTab !== 'log' && (
           <header
-            className={`flex items-start justify-between sticky top-0 bg-[#f6f7fb] z-20 pb-2 transition ${
+            className={`flex items-start justify-between sticky top-0 bg-[#f6f7fb] z-40 pb-2 transition ${
               showSearchFilters ? 'opacity-60 blur-sm pointer-events-none' : ''
             }`}
           >
             <div className="ml-[6px]">
-              <div className="text-2xl font-black leading-tight text-slate-900">门店分布对比</div>
-              <div className="text-sm text-slate-500">DJI vs Insta360 全国数据</div>
+              <div className="text-2xl font-black leading-tight text-slate-900">
+                {activeTab === 'list' 
+                  ? '全量门店/商场清单' 
+                  : activeTab === 'competition' 
+                  ? '商场情况一览' 
+                  : activeTab === 'map'
+                  ? '商场/门店地图分布'
+                  : '门店分布对比'}
+              </div>
+              <div className="text-sm text-slate-500">
+                {activeTab === 'list' 
+                  ? 'DJI VS Insta360 全国列表' 
+                  : activeTab === 'competition' 
+                  ? '全国不同商场数据一览' 
+                  : activeTab === 'map'
+                  ? 'DJI VS Insta360 地图数据'
+                  : 'DJI vs Insta360 全国数据'}
+              </div>
             </div>
-            <button
-              onClick={resetFilters}
-              className="flex items-center gap-1 text-slate-900 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100 mt-[2px]"
-              title="重置筛选"
-            >
-              <RotateCcw className="w-4 h-4" />
-              重置
-            </button>
+            <div className="flex items-center gap-2 mt-[2px]">
+              <button
+                type="button"
+                className="flex items-center gap-1 text-slate-700 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
+                onClick={() => {
+                  setShowAiAssistant(true);
+                  setAiAnswer(null);
+                }}
+                title="AI 助手"
+              >
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                AI 助手
+              </button>
+              <button
+                onClick={resetFilters}
+                className="flex items-center gap-1 text-slate-900 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
+                title="重置筛选"
+              >
+                <RotateCcw className="w-4 h-4" />
+                重置
+              </button>
+            </div>
           </header>
         )}
 
@@ -927,7 +1251,7 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
         {activeTab === 'competition' && (
           <div className="space-y-2 pb-24">
             {/* 搜索栏 */}
-            <div className="px-1">
+            <div className="px-1 space-y-2">
               <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
                 <Search className="w-5 h-5 text-slate-300" />
                 <input
@@ -940,23 +1264,35 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
                   type="button"
                   className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
                   onClick={() => {
-                    const willShow = !showSearchFilters;
+                    const willShow = !showCompetitionFilters;
                     if (willShow) {
-                      setTempFilters({
-                        djiStoreTypes: [...pendingFilters.djiStoreTypes],
-                        instaStoreTypes: [...pendingFilters.instaStoreTypes],
+                      setTempCompetitionFilters({
+                        mallTags: [...appliedMallTags],
                         province: [...pendingFilters.province],
                         city: [...pendingFilters.city],
                       });
-                      setActiveFilterTab('storeType');
+                      setActiveCompetitionFilterTab('storeType');
                     }
-                    setShowSearchFilters(willShow);
+                    setShowCompetitionFilters(willShow);
                   }}
                   title="更多筛选"
                 >
                   <SlidersHorizontal className="w-5 h-5" />
                 </button>
               </div>
+              {showCompetitionFilters && (
+                <>
+                  {/* 背景遮罩 */}
+                  <div 
+                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-10"
+                    onClick={() => setShowCompetitionFilters(false)}
+                  />
+                  {/* 筛选面板 */}
+                  <div className="relative z-20">
+                    {renderCompetitionFilters('floating')}
+                  </div>
+                </>
+              )}
             </div>
 
             {/* 筛选 Chips */}
@@ -965,9 +1301,9 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
                 {[
                   { key: 'PT' as const, label: 'PT 商场' },
                   { key: 'GAP' as const, label: '缺口机会' },
-                  { key: 'ONLY_INSTA' as const, label: '仅 Insta' },
-                  { key: 'BOTH_NONE' as const, label: '双方未进' },
-                  { key: 'BOTH_PRESENT' as const, label: '双方进驻' },
+                  { key: 'BOTH_OPENED' as const, label: '均进驻' },
+                  { key: 'BOTH_NONE' as const, label: '均未进驻' },
+                  { key: 'INSTA_ONLY' as const, label: '仅 Insta' },
                 ].map((chip) => {
                   const active = activeCompetitionChip === chip.key;
                   return (
@@ -990,8 +1326,8 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
             <div className="px-1 space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { key: 'PT' as const, title: 'PT 商场', color: 'bg-slate-900 text-white' },
-                  { key: 'BOTH_NONE' as const, title: '缺口机会', color: 'bg-[#f5c400] text-slate-900' },
+                  { key: 'PT' as const, title: 'PT 商场', color: 'bg-slate-900 text-white', dotColor: 'bg-red-400' },
+                  { key: 'GAP' as const, title: '缺口机会', color: 'bg-[#f5c400] text-slate-900', dotColor: 'bg-white' },
                 ].map((card) => {
                   const active = activeCompetitionChip === card.key;
                   return (
@@ -1001,7 +1337,7 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
                       onClick={() => setActiveCompetitionChip((prev) => (prev === card.key ? 'ALL' : card.key))}
                     >
                       <div className="flex items-center gap-2 text-sm font-semibold opacity-90 -translate-y-[2px]">
-                        <span className="w-[9px] h-[9px] rounded-full bg-red-400 inline-block" />
+                        <span className={`w-[9px] h-[9px] rounded-full ${card.dotColor} inline-block`} />
                         <span>{card.title}</span>
                       </div>
                       <div className="text-3xl font-black mt-2 mb-4 flex items-baseline gap-1">
@@ -1009,8 +1345,15 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
                         <span className="text-sm font-semibold text-white/70">/ {competitionTotal}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm font-semibold opacity-90 -translate-y-[2px]">
-                        <span>{card.key === 'PT' ? 'DJI 已PT 签约' : '均未进驻目标场'}</span>
-                        <span className={`px-3 py-1 rounded-full text-xs font-bold ${card.key === 'PT' ? 'bg-white/15 text-white' : 'bg-white/65 text-slate-900'}`}>
+                        {card.key === 'PT' ? (
+                          <span>DJI已PT签约</span>
+                        ) : (
+                          <div className="flex flex-col gap-0">
+                            <span className="text-sm leading-none">Insta未进驻</span>
+                            <span className="text-[9px] italic font-normal opacity-75 leading-none mt-0.5">(DJI进驻或目标场)</span>
+                          </div>
+                        )}
+                        <span className={`px-3 py-1 rounded-full text-xs font-bold ml-[2px] ${card.key === 'PT' ? 'bg-white/15 text-white' : 'bg-white/65 text-slate-900'}`}>
                           {card.key === 'PT' ? '难攻' : '机会'}
                         </span>
                       </div>
@@ -1021,26 +1364,71 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
 
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { key: 'ONLY_INSTA' as const, title: '仅 Insta 进驻', dot: 'bg-emerald-500' },
-                  { key: 'GAP' as const, title: '进驻未PT', dot: 'bg-slate-400' },
-                  { key: 'BOTH_PRESENT' as const, title: '均进驻', dot: 'bg-slate-900' },
+                  // 简单：目标未进驻
+                  { key: 'TARGET' as const, title: '目标未进驻', dot: 'bg-blue-500' },
+                  // 三态：默认(ALL, 显示均未进驻) -> 仅均未进驻 -> 仅均进驻 -> 回到 ALL
+                  {
+                    key: 'BOTH_NONE' as const,
+                    title: '均未进驻',
+                    dot: 'bg-slate-400',
+                    altKey: 'BOTH_OPENED' as const,
+                    altTitle: '均进驻',
+                    altDot: 'bg-emerald-500',
+                  },
+                  // 三态：默认(ALL, 显示仅 Insta) -> 仅 Insta -> 仅 DJI -> 回到 ALL
+                  {
+                    key: 'INSTA_ONLY' as const,
+                    title: '仅 Insta',
+                    dot: 'bg-[#f5c400]',
+                    altKey: 'DJI_ONLY' as const,
+                    altTitle: '仅 DJI',
+                    altDot: 'bg-slate-900',
+                  },
                 ].map((card) => {
-                  const active = activeCompetitionChip === card.key;
-                  const count = countByChip(card.key);
+                  const isPrimaryActive = activeCompetitionChip === card.key;
+                  const isAltActive = card.altKey && activeCompetitionChip === card.altKey;
+                  const active = isPrimaryActive || isAltActive;
+
+                  const displayTitle = isAltActive ? card.altTitle : card.title;
+                  const displayDot = isAltActive ? card.altDot : card.dot;
+                  const displayKey = isAltActive ? card.altKey : card.key;
+                  const count = countByChip(displayKey!);
+
+                  const handleClick = () => {
+                    if (card.altKey) {
+                      // 三态切换
+                      if (
+                        activeCompetitionChip === 'ALL' ||
+                        (activeCompetitionChip !== card.key && activeCompetitionChip !== card.altKey)
+                      ) {
+                        setActiveCompetitionChip(card.key);
+                      } else if (activeCompetitionChip === card.key) {
+                        setActiveCompetitionChip(card.altKey);
+                      } else {
+                        setActiveCompetitionChip('ALL');
+                      }
+                    } else {
+                      // 普通切换
+                      setActiveCompetitionChip((prev) => (prev === card.key ? 'ALL' : card.key));
+                    }
+                  };
+
                   return (
                     <Card
                       key={card.key}
-                      className={`relative rounded-lg border ${active ? 'border-slate-900' : 'border-slate-100'} shadow-sm bg-white`}
-                      onClick={() => setActiveCompetitionChip((prev) => (prev === card.key ? 'ALL' : card.key))}
+                      className={`relative rounded-lg border ${
+                        active ? 'border-slate-900' : 'border-slate-100'
+                      } shadow-sm bg-white cursor-pointer hover:shadow-md transition-shadow`}
+                      onClick={handleClick}
                     >
                       <div className="px-4 py-3">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <span className={`w-1.5 h-1.5 rounded-full ${card.dot}`} />
-                          <span className="text-xs text-slate-500 font-medium">{card.title}</span>
+                          <span className={`w-1.5 h-1.5 rounded-full ${displayDot}`} />
+                          <span className="text-xs text-slate-500 font-medium">{displayTitle}</span>
                         </div>
                         <div className="text-[28px] font-black text-slate-900 leading-none flex items-baseline gap-0.5">
                           <span>{count}</span>
-                          <span className="text-xs font-semibold text-slate-400">/{competitionTotal}</span>
+                          <span className="text-xs font-semibold text-slate-700">/{competitionTotal}</span>
                         </div>
                       </div>
                     </Card>
@@ -1051,24 +1439,117 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
 
             {/* 地图 */}
             <div className="space-y-3 px-1">
-              <div className="text-lg font-extrabold text-slate-900 px-1">分布地图</div>
+              <div className="flex items-center justify-between px-1">
+                <div className="text-lg font-extrabold text-slate-900">分布地图</div>
+                <div className="flex items-center bg-white rounded-full shadow-[0_10px_24px_rgba(15,23,42,0.12)] border border-slate-100 px-1 py-[3px]">
+                  <button
+                    type="button"
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition ${
+                      competitionMapMode === 'competition'
+                        ? 'bg-slate-900 text-white shadow-md'
+                        : 'bg-transparent text-slate-500'
+                    }`}
+                    onClick={() => {
+                      setCompetitionMapMode('competition');
+                    }}
+                  >
+                    <Crosshair className="w-3.5 h-3.5" />
+                    商场界面
+                  </button>
+                  <button
+                    type="button"
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition ${
+                      competitionMapMode === 'stores'
+                        ? 'bg-slate-900 text-white shadow-md'
+                        : 'bg-transparent text-slate-500'
+                    }`}
+                    onClick={() => {
+                      setCompetitionMapMode('stores');
+                      setShowCompetitionMallCard(false);
+                      setSelectedCompetitionMall(null);
+                      setSelectedMallId(null);
+                    }}
+                  >
+                    <StoreIcon className="w-3.5 h-3.5" />
+                    门店界面
+                  </button>
+                </div>
+              </div>
               <Card className="relative border border-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.06)] overflow-hidden">
+                {competitionMapMode === 'competition' && (
+                  <div className="absolute left-3 top-3 z-10 rounded-2xl bg-white/95 backdrop-blur-sm border border-slate-100 shadow-[0_8px_20px_rgba(15,23,42,0.12)] px-3 py-1.5">
+                    <div className="flex flex-col gap-1 text-[9px] text-slate-600">
+                      {/* 第一排：PT商场 / 均进驻 / 均未进驻 / 缺口机会 */}
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1 whitespace-nowrap">
+                          <span className="w-2 h-2 rounded-full bg-[#ef4444]" />
+                          <span>PT商场</span>
+                        </div>
+                        <div className="flex items-center gap-1 whitespace-nowrap">
+                          <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
+                          <span>均进驻</span>
+                        </div>
+                        <div className="flex items-center gap-1 whitespace-nowrap">
+                          <span className="w-2 h-2 rounded-full bg-[#94a3b8]" />
+                          <span>均未进驻</span>
+                        </div>
+                        <div className="flex items-center gap-1 ml-auto whitespace-nowrap transform translate-x-[1px]">
+                          <span className="w-2 h-2 rounded-full bg-white border border-slate-200" />
+                          <span className="text-right">缺口机会</span>
+                        </div>
+                      </div>
+                      {/* 第二排：目标未进驻 / 仅 Insta / 仅 DJI */}
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-1 whitespace-nowrap">
+                          <span className="w-2 h-2 rounded-full bg-[#3b82f6]" />
+                          <span>目标未进驻</span>
+                        </div>
+                        <div className="flex items-center gap-1 whitespace-nowrap">
+                          <span className="w-2 h-2 rounded-full bg-[#f5c400]" />
+                          <span>仅 Insta 进驻</span>
+                        </div>
+                        <div className="flex items-center gap-1 ml-auto whitespace-nowrap transform translate-x-[1px]">
+                          <span className="w-2 h-2 rounded-full bg-[#111827]" />
+                          <span className="text-right">仅 DJI 进驻</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="h-96 w-full relative">
                   <AmapStoreMap
-                    viewMode="competition"
+                    viewMode={competitionMapMode === 'stores' ? 'stores' : 'competition'}
                     stores={visibleStores}
                     malls={competitionMallsForView}
-                    selectedMallId={selectedMallId || undefined}
+                    selectedId={competitionMapMode === 'stores' ? selectedId || undefined : undefined}
+                    selectedMallId={competitionMapMode === 'competition' ? selectedMallId || undefined : undefined}
                     onSelect={handleSelect}
-                    onMallClick={handleMallClick}
-                    showPopup={false}
+                    onMallClick={competitionMapMode === 'competition' ? handleMallClick : undefined}
+                    userPos={competitionMapMode === 'stores' ? mapUserPos : null}
+                    favorites={competitionMapMode === 'stores' ? favorites : []}
+                    onToggleFavorite={competitionMapMode === 'stores' ? toggleFavorite : undefined}
+                    showPopup={competitionMapMode === 'stores'}
                     resetToken={mapResetToken}
                     mapId="competition-map-standalone"
                     showControls
                     autoFitOnClear
-                    fitToStores
-                    showLegend={true}
+                    fitToStores={competitionMapMode === 'stores' ? pendingFilters.province.length > 0 || pendingFilters.city.length > 0 : false}
+                    colorBaseStores={competitionMapMode === 'stores' ? allStores : undefined}
+                    regionMode={competitionMapMode === 'stores' ? 'none' : 'province'}
+                    showLegend={competitionMapMode === 'stores'}
                   />
+                  {/* 竞争商场卡片 */}
+                  {competitionMapMode === 'competition' && showCompetitionMallCard && selectedCompetitionMall && (
+                    <CompetitionMallCard
+                      mall={selectedCompetitionMall}
+                      stores={allStores.filter(s => s.mallId === selectedCompetitionMall.mallId)}
+                      onClose={() => {
+                        setShowCompetitionMallCard(false);
+                        setSelectedCompetitionMall(null);
+                        setSelectedMallId(null);
+                      }}
+                    />
+                  )}
                 </div>
               </Card>
             </div>
@@ -1076,8 +1557,16 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
             {/* 商场列表：与竞争地图联动 */}
             <CompetitionMallList
               malls={competitionMallsWithProvince}
+              stores={allStores}
+              resetToken={mapResetToken}
               onMallClick={(mall) => {
+                setCompetitionMapMode('competition');
                 setSelectedMallId(mall.mallId);
+                setSelectedCompetitionMall(mall);
+                setShowCompetitionMallCard(true);
+              }}
+              onStoreClick={(store) => {
+                setSelectedId(store.id);
               }}
             />
           </div>
@@ -1158,10 +1647,75 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
         )}
 
         {activeTab === 'log' && <StoreChangeLogTab />}
-
-        <MallDetail mall={selectedMall} stores={storesInSelectedMall} onClose={() => setSelectedMallId(null)} />
         <SegmentControl value={activeTab} onChange={setActiveTab} />
       </div>
+
+      {/* AI 助手：和筛选类似的浮层模块 */}
+      {showAiAssistant && (
+        <>
+          <div
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+            onClick={() => setShowAiAssistant(false)}
+          />
+          <div className="fixed inset-0 z-50 flex items-end justify-center px-4 pb-8">
+            <div className="w-full max-w-[560px] bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_18px_40px_rgba(15,23,42,0.45)] border border-slate-100 overflow-hidden">
+              <div className="flex items-center justify-between px-4 pt-3 pb-2 border-b border-slate-100">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-full bg-slate-900 flex items-center justify-center text-white">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-slate-900">AI 助手</div>
+                    <div className="text-[11px] text-slate-500">
+                      用大白话问问题，帮你看机会点
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowAiAssistant(false)}
+                  className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 hover:bg-slate-200 transition"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              <div className="px-4 pt-3 pb-3 space-y-3">
+                <div className="text-[11px] text-slate-500">
+                  示例：<span className="font-semibold text-slate-700">帮我分析现在深圳的机会点在哪里</span>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50/80 px-3 py-2">
+                  <textarea
+                    className="w-full bg-transparent outline-none text-sm text-slate-800 placeholder:text-slate-400 resize-none leading-relaxed"
+                    rows={3}
+                    placeholder="用大白话说出你想看的城市、商场类型或机会点…"
+                    value={aiQuestion}
+                    onChange={(e) => setAiQuestion(e.target.value)}
+                  />
+                </div>
+                <div className="flex justify-end">
+                  <Button
+                    size="sm"
+                    className="rounded-full px-4 py-1.5 h-auto text-xs font-semibold"
+                    onClick={() => {
+                      const answer = buildAiSuggestion(aiQuestion, competitionMallsForView, competitionStats);
+                      setAiAnswer(answer);
+                    }}
+                  >
+                    生成建议
+                  </Button>
+                </div>
+                <div className="max-h-52 overflow-y-auto rounded-2xl border border-slate-100 bg-slate-50/80 px-3 py-2">
+                  <div className="text-[12px] whitespace-pre-line leading-relaxed text-slate-700">
+                    {aiAnswer ||
+                      '还没有问题哦。输入你的问题后点「生成建议」，我会结合当前筛选下的商场数据，帮你总结目标未进驻、缺口机会、均进驻和均未进驻的结构。'}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
