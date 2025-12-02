@@ -1,5 +1,5 @@
 {
-  "totalStores": 1268,
+  "totalStores": 1270,
   "topCities": [
     {
       "city": "北京市",
@@ -94,8 +94,8 @@
     {
       "province": "河北省",
       "dji": 25,
-      "insta": 31,
-      "total": 56
+      "insta": 33,
+      "total": 58
     },
     {
       "province": "辽宁省",
@@ -230,5 +230,5 @@
       "total": 3
     }
   ],
-  "updatedAt": "2025-12-02T11:16:12.557784"
+  "updatedAt": "2025-12-02T16:29:00.133242"
 }

@@ -159,7 +159,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -306,7 +306,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -521,7 +521,7 @@
     "storeType": "授权专卖店",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan",
     "mallId": "MALL_00610",
     "mallName": "河北保定市西大街",
@@ -1248,7 +1248,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -2738,7 +2738,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -3108,7 +3108,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -3768,7 +3768,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -6478,7 +6478,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -6911,7 +6911,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -7049,7 +7049,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -7323,7 +7323,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -7496,7 +7496,7 @@
     "storeType": "合作体验点",
     "serviceTags": [],
     "openedAt": "historical",
-    "status": "营业中",
+    "status": "已闭店",
     "changeType": "nan"
   },
   {
@@ -7620,7 +7620,9 @@
     "serviceTags": [],
     "openedAt": "2025-12-01",
     "status": "营业中",
-    "changeType": "nan"
+    "changeType": "nan",
+    "mallId": "MALL_00627",
+    "mallName": "精功眼镜(中关村店)"
   },
   {
     "id": "7f209798-d0dc-43e2-819f-451f9d0352a2",
@@ -7638,5 +7640,36 @@
     "changeType": "nan",
     "mallId": "MALL_00883",
     "mallName": "北京五棵松万达广场"
+  },
+  {
+    "id": "7b870bc2-0692-4a88-8d9b-429f7226748e",
+    "brand": "Insta360",
+    "storeName": "影石Insta360唐山信之恒·思远授权专区",
+    "province": "河北省",
+    "city": "唐山市",
+    "address": "河北省唐山市路北区玫瑰庄园北新西道底商17-12号",
+    "latitude": 39.641329,
+    "longitude": 118.176309,
+    "storeType": "nan",
+    "serviceTags": [],
+    "openedAt": "2025-12-02",
+    "status": "营业中",
+    "changeType": "nan"
+  },
+  {
+    "id": "a9797da1-639a-4ed1-9b68-1e7edec4b433",
+    "brand": "Insta360",
+    "storeName": "河北保定市西大街影石Insta360专卖店",
+    "province": "河北省",
+    "city": "保定市",
+    "address": "河北省保定市莲池区永华街道西大街东段轴线21-23号",
+    "latitude": 38.860792,
+    "longitude": 115.506184,
+    "storeType": "授权专卖店",
+    "serviceTags": [],
+    "openedAt": "2025-12-02",
+    "status": "营业中",
+    "changeType": "nan",
+    "phone": "19931256777"
   }
 ]

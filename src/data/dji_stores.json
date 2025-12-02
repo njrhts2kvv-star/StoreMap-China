@@ -10107,24 +10107,21 @@
   {
     "id": "9206a07d-6876-4bf0-b06f-8ac0f6b2ab7b",
     "brand": "DJI",
-    "storeName": "沈阳京东MALL授权体验店",
+    "storeName": "沈阳龙之梦京东MALL授权体验店",
     "province": "辽宁省",
     "city": "沈阳市",
-    "address": "辽宁省沈阳市大东区滂江街26-2京东MALL一层大疆",
-    "latitude": 41.802415,
-    "longitude": 123.492349,
+    "address": "辽宁省沈阳市大东区滂江街28号大东区龙之梦京东MALL",
+    "latitude": 41.802311,
+    "longitude": 123.490097,
     "storeType": "授权体验店",
-    "serviceTags": [
-      "可试飞",
-      "支持以旧换新"
-    ],
+    "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
-    "changeType": "nan",
+    "changeType": "已换址",
     "mallId": "MALL_00421",
     "mallName": "沈阳京东 MALL",
-    "phone": "18804033809",
-    "openingHours": "10:00-21:00"
+    "phone": "13940460865",
+    "openingHours": "10:00~21:00"
   },
   {
     "id": "923d6f5d-6f85-4a0c-9800-c3e7937184f3",
@@ -17038,7 +17035,7 @@
     "status": "营业中",
     "changeType": "nan",
     "mallId": "MALL_00859",
-    "mallName": "龙湖北京房山天街",
+    "mallName": "歪马送酒(房山二店)",
     "phone": "15303122034",
     "openingHours": "周一至周天 10：00-22：00"
   },
@@ -17190,7 +17187,7 @@
     "status": "营业中",
     "changeType": "nan",
     "mallId": "MALL_00889",
-    "mallName": "龙湖重庆高新天街",
+    "mallName": "美宜佳(龙湖·好城时光店)",
     "phone": "19122805658",
     "openingHours": "周一至周天 10:00-22:00"
   },
@@ -17209,7 +17206,7 @@
     "status": "营业中",
     "changeType": "nan",
     "mallId": "MALL_00890",
-    "mallName": "君尚(东莞店)",
+    "mallName": "万达百货(东莞东城万达广场店)",
     "phone": "0755-22226070,18929256236",
     "openingHours": "周天至周四10:00-22:00，周五至周六10:00-22:30"
   },
@@ -17266,7 +17263,7 @@
     "status": "营业中",
     "changeType": "nan",
     "mallId": "MALL_00891",
-    "mallName": "揭阳榕城万达广场",
+    "mallName": "屈臣氏(揭阳榕城万达广场店)",
     "phone": "13326737859",
     "openingHours": "10:00-22:30"
   }

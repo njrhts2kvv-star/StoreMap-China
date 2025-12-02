@@ -1,5 +1,135 @@
 [
   {
+    "id": "CLOSE-05d9818c-4633-441f-88e3-22efc28bb3e0",
+    "storeId": "05d9818c-4633-441f-88e3-22efc28bb3e0",
+    "brand": "Insta360",
+    "storeName": "保定万博店",
+    "province": "河北省",
+    "city": "保定市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-0b837fd3-1996-4eb5-9d2f-3e58e2d2d276",
+    "storeId": "0b837fd3-1996-4eb5-9d2f-3e58e2d2d276",
+    "brand": "Insta360",
+    "storeName": "唐百超级商场店",
+    "province": "河北省",
+    "city": "唐山市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-269132b3-1efe-4623-8df2-057ac83bb52d",
+    "storeId": "269132b3-1efe-4623-8df2-057ac83bb52d",
+    "brand": "Insta360",
+    "storeName": "唐山超商店",
+    "province": "河北省",
+    "city": "唐山市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
+    "storeId": "4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
+    "brand": "Insta360",
+    "storeName": "杭州颖顺器材照材店",
+    "province": "浙江省",
+    "city": "杭州市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-5ba048a9-81bc-4bff-a8d0-9beeaf8b5e02",
+    "storeId": "5ba048a9-81bc-4bff-a8d0-9beeaf8b5e02",
+    "brand": "Insta360",
+    "storeName": "雪具授权体验店（崇礼店）",
+    "province": "河北省",
+    "city": "张家口市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-66b2efa8-673b-421a-aa49-d70168c8c3b5",
+    "storeId": "66b2efa8-673b-421a-aa49-d70168c8c3b5",
+    "brand": "Insta360",
+    "storeName": "沧州吾悦店",
+    "province": "河北省",
+    "city": "沧州市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-7a8d42b8-276a-49c2-9ea6-bf9c2970d105",
+    "storeId": "7a8d42b8-276a-49c2-9ea6-bf9c2970d105",
+    "brand": "Insta360",
+    "storeName": "邢台万达店",
+    "province": "河北省",
+    "city": "邢台市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-db46109a-fd1e-44c1-b902-554077ba9488",
+    "storeId": "db46109a-fd1e-44c1-b902-554077ba9488",
+    "brand": "Insta360",
+    "storeName": "秦皇岛万象汇店",
+    "province": "河北省",
+    "city": "秦皇岛市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-e71aae2a-2c94-485e-a946-abf95982448e",
+    "storeId": "e71aae2a-2c94-485e-a946-abf95982448e",
+    "brand": "Insta360",
+    "storeName": "邯郸天鸿店",
+    "province": "河北省",
+    "city": "邯郸市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-ecabac00-6e28-4e16-9d84-dbbe81c13d26",
+    "storeId": "ecabac00-6e28-4e16-9d84-dbbe81c13d26",
+    "brand": "Insta360",
+    "storeName": "保定竞秀万博店",
+    "province": "河北省",
+    "city": "保定市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-f4fdc35e-29a0-4b77-9f93-54f9fef69e1b",
+    "storeId": "f4fdc35e-29a0-4b77-9f93-54f9fef69e1b",
+    "brand": "Insta360",
+    "storeName": "邯郸新世纪店",
+    "province": "河北省",
+    "city": "邯郸市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-fae632f5-dadf-4954-9c43-db70f11b0f19",
+    "storeId": "fae632f5-dadf-4954-9c43-db70f11b0f19",
+    "brand": "Insta360",
+    "storeName": "沧州吾悦苹果店",
+    "province": "河北省",
+    "city": "沧州市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "RELOCATE-9206a07d-6876-4bf0-b06f-8ac0f6b2ab7b",
+    "storeId": "9206a07d-6876-4bf0-b06f-8ac0f6b2ab7b",
+    "brand": "DJI",
+    "storeName": "沈阳龙之梦京东MALL授权体验店",
+    "province": "辽宁省",
+    "city": "沈阳市",
+    "changeType": "RELOCATE",
+    "timestamp": "2025-12-02T16:28:59.937483"
+  },
+  {
     "id": "f8c08b17-64eb-4633-919e-ad1482a673ed",
     "storeId": "f8c08b17-64eb-4633-919e-ad1482a673ed",
     "brand": "DJI",
@@ -60,14 +190,24 @@
     "timestamp": "2025-12-02"
   },
   {
-    "id": "CLOSE-4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
-    "storeId": "4a12dbf1-0918-4351-a91f-6ef2aaadbf87",
+    "id": "7b870bc2-0692-4a88-8d9b-429f7226748e",
+    "storeId": "7b870bc2-0692-4a88-8d9b-429f7226748e",
     "brand": "Insta360",
-    "storeName": "杭州颖顺器材照材店",
-    "province": "浙江省",
-    "city": "杭州市",
-    "changeType": "CLOSE",
-    "timestamp": "2025-12-01T00:00:00"
+    "storeName": "影石Insta360唐山信之恒·思远授权专区",
+    "province": "河北省",
+    "city": "唐山市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-02"
+  },
+  {
+    "id": "RELOCATE-120458e7-d7c5-43e5-b7cb-30e01dc14cf3",
+    "storeId": "a9797da1-639a-4ed1-9b68-1e7edec4b433",
+    "brand": "Insta360",
+    "storeName": "河北保定市西大街影石Insta360专卖店",
+    "province": "河北省",
+    "city": "保定市",
+    "changeType": "RELOCATE",
+    "timestamp": "2025-12-02"
   },
   {
     "id": "9d281b3a-76b4-4383-9ff9-c9e6c8787b9f",
