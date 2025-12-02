@@ -15,6 +15,7 @@ import time
 from datetime import date
 from pathlib import Path
 from typing import Optional, List, Tuple
+from collections import Counter, defaultdict
 
 import pandas as pd
 import requests
@@ -23,6 +24,7 @@ from rapidfuzz import fuzz
 BASE = Path(__file__).resolve().parent
 ALL_PATH = BASE / "all_stores_final.csv"
 MASTER_PATH = BASE / "Store_Master_Cleaned.csv"
+MALL_PATH = BASE / "Mall_Master_Cleaned.csv"
 DJI_RAW = BASE / "dji_offline_stores.csv"
 INSTA_RAW = BASE / "insta360_offline_stores.csv"
 BACKUP_SUFFIX = ".backup_spider"
@@ -49,6 +51,28 @@ PROVINCE_ALIASES = {
     "宁夏": "宁夏回族自治区", "新疆": "新疆维吾尔自治区",
     "香港": "香港特别行政区", "澳门": "澳门特别行政区",
 }
+CITY_MANUAL_PROVINCE_MAP = {
+    "云浮": "广东省",
+    "保山": "云南省",
+    "南充": "四川省",
+    "宁德": "福建省",
+    "安庆": "安徽省",
+    "宜春": "江西省",
+    "株洲": "湖南省",
+    "永州": "湖南省",
+    "湘潭": "湖南省",
+    "漳州": "福建省",
+    "牡丹江": "黑龙江省",
+    "眉山": "四川省",
+    "荆门": "湖北省",
+    "衢州": "浙江省",
+    "通辽": "内蒙古自治区",
+    "钦州": "广西壮族自治区",
+    "黄冈": "湖北省",
+    "黔南布依族苗族": "贵州省",
+}
+CITY_SUFFIXES = ("市", "地区", "盟", "自治州", "林区", "特别行政区")
+MUNICIPALITIES = {"北京市", "天津市", "上海市", "重庆市"}
 
 
 def _load_amap_key() -> Optional[str]:
@@ -89,6 +113,65 @@ def normalize_province(province: str) -> str:
         if province.startswith(alias):
             return standard
     return province
+
+
+def normalize_city_key(city: str) -> str:
+    """生成用于匹配的城市 key（去掉末尾“市/地区/自治州”）"""
+    if not city or str(city).lower() in ("nan", "none"):
+        return ""
+    c = str(city).strip()
+    for suf in CITY_SUFFIXES:
+        if c.endswith(suf):
+            c = c[: -len(suf)]
+            break
+    return c
+
+
+def build_city_province_map(*dfs: pd.DataFrame) -> dict[str, Counter]:
+    """从已有数据构建 城市key -> 省份 计数映射，供爬虫增量兜底"""
+    mapping: dict[str, Counter] = defaultdict(Counter)
+    for df in dfs:
+        if df is None:
+            continue
+        for _, row in df.iterrows():
+            city = str(row.get("city") if pd.notna(row.get("city")) else "").strip()
+            prov = str(row.get("province") if pd.notna(row.get("province")) else "").strip()
+            if not city or not prov:
+                continue
+            prov_norm = normalize_province(prov)
+            key = normalize_city_key(city)
+            if key and prov_norm:
+                mapping[key].update([prov_norm])
+    return mapping
+
+
+def infer_province(city: str, declared_province: str, city_province_map: dict[str, Counter]) -> str:
+    """先用声明省份，其次用城市-省份映射，再用手工兜底表"""
+    if declared_province and declared_province not in ("未知省份", "未知城市", "未知"):
+        return normalize_province(declared_province)
+    key = normalize_city_key(city)
+    if key in city_province_map:
+        return city_province_map[key].most_common(1)[0][0]
+    if key in CITY_MANUAL_PROVINCE_MAP:
+        return CITY_MANUAL_PROVINCE_MAP[key]
+    return ""
+
+
+def standardize_city(city: str, province: str) -> str:
+    """补齐缺失“市”后缀，对直辖市用省份名覆盖"""
+    c = str(city if pd.notna(city) else "").strip()
+    prov_norm = normalize_province(province)
+    if c in ("未知城市", "未知省份", "未知"):
+        c = ""
+    if not c and prov_norm:
+        return prov_norm
+    if not c:
+        return ""
+    if c.endswith(CITY_SUFFIXES):
+        return c
+    if prov_norm in MUNICIPALITIES and (c == prov_norm or c + "市" == prov_norm):
+        return prov_norm
+    return c + "市"
 
 
 def reverse_geocode(lat: float, lng: float) -> Optional[dict]:
@@ -278,12 +361,14 @@ def merge_from_spiders() -> None:
 
     all_df = ensure_columns(pd.read_csv(ALL_PATH))
     master_df = ensure_columns(pd.read_csv(MASTER_PATH))
+    mall_df = pd.read_csv(MALL_PATH) if MALL_PATH.exists() else None
 
     master_columns = list(master_df.columns)
     existing_keys = {
         (str(r.get("brand", "")).strip(), str(r.get("name", "")).strip(), str(r.get("address", "")).strip())
         for _, r in all_df.iterrows()
     }
+    city_province_map = build_city_province_map(all_df, master_df, mall_df)
 
     new_rows_all: list[dict] = []
     new_rows_master: list[dict] = []
@@ -323,6 +408,10 @@ def merge_from_spiders() -> None:
             opened_at = normalize_opened_at(row.get("opened_at", "historical"))
             raw_source = row.get("raw_source") or row.get("raw") or ""
             store_type = derive_store_type(raw_source, brand, name=name, address=address) or str(row.get("store_type") or "").strip()
+            city_raw = str(row.get("city") if pd.notna(row.get("city")) else "").strip()
+            province_raw = str(row.get("province") if pd.notna(row.get("province")) else "").strip()
+            province = infer_province(city_raw, province_raw, city_province_map)
+            city = standardize_city(city_raw, province)
             uuid = (
                 str(row.get("uuid", "")).strip()
                 or str(row.get("store_id", "")).strip()
@@ -335,7 +424,6 @@ def merge_from_spiders() -> None:
                 continue
 
             # 尝试识别“同城同品牌 + 名称/地址高度相似”的老门店，视为换址而不是新增
-            city = str(row.get("city") if pd.notna(row.get("city")) else "").strip()
             relocated = False
 
             raw_payload = row.to_dict()
@@ -344,7 +432,7 @@ def merge_from_spiders() -> None:
                 candidate_mask = (
                     all_df["brand"].astype(str).str.strip() == brand
                 ) & (
-                    all_df["city"].astype(str).str.strip() == city
+                    all_df["city"].astype(str).apply(normalize_city_key) == normalize_city_key(city)
                 )
                 candidates = all_df[candidate_mask].copy()
 
@@ -385,7 +473,7 @@ def merge_from_spiders() -> None:
                     # 更新 all_stores_final 中该门店的信息（保留原 opened_at）
                     all_df.at[best_idx, "name"] = name
                     all_df.at[best_idx, "address"] = address
-                    all_df.at[best_idx, "province"] = row.get("province") if pd.notna(row.get("province")) else ""
+                    all_df.at[best_idx, "province"] = province
                     all_df.at[best_idx, "city"] = city
                     all_df.at[best_idx, "lat"] = row.get("lat") if pd.notna(row.get("lat")) else None
                     all_df.at[best_idx, "lng"] = row.get("lng") if pd.notna(row.get("lng")) else None
@@ -403,7 +491,7 @@ def merge_from_spiders() -> None:
                         if mask_master.any():
                             master_df.loc[mask_master, "name"] = name
                             master_df.loc[mask_master, "address"] = address
-                            master_df.loc[mask_master, "province"] = row.get("province") if pd.notna(row.get("province")) else ""
+                            master_df.loc[mask_master, "province"] = province
                             master_df.loc[mask_master, "city"] = city
                             master_df.loc[mask_master, "corrected_lat"] = row.get("lat") if pd.notna(row.get("lat")) else None
                             master_df.loc[mask_master, "corrected_lng"] = row.get("lng") if pd.notna(row.get("lng")) else None
@@ -439,8 +527,8 @@ def merge_from_spiders() -> None:
                     "lat": lat,
                     "lng": lng,
                     "address": address,
-                    "province": row.get("province") if pd.notna(row.get("province")) else "",
-                    "city": row.get("city") if pd.notna(row.get("city")) else "",
+                    "province": province,
+                    "city": city,
                     "phone": row.get("phone") if pd.notna(row.get("phone")) else "",
                     "business_hours": row.get("business_hours") if pd.notna(row.get("business_hours")) else "",
                     "raw_source": json.dumps(raw_payload, ensure_ascii=False),
@@ -459,8 +547,8 @@ def merge_from_spiders() -> None:
                     "brand": brand,
                     "name": name,
                     "address": address,
-                    "city": row.get("city") if pd.notna(row.get("city")) else "",
-                    "province": row.get("province") if pd.notna(row.get("province")) else "",
+                    "city": city,
+                    "province": province,
                     "corrected_lat": lat,
                     "corrected_lng": lng,
                     "mall_name": "",

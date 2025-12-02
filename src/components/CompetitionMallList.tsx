@@ -299,9 +299,10 @@ export function CompetitionMallList({ malls, stores = [], onMallClick, onStoreCl
 
   // 显示的城市列表
   const displayCities = useMemo(() => {
-    // 如果有选中的城市，只显示选中的城市
+    if (allCities.length === 0) return [];
+    // 选择城市时仍展示完整列表，便于快速切换
     if (activeCities.length > 0) {
-      return activeCities;
+      return allCities;
     }
     
     // 没有选中城市，显示前4个
@@ -465,16 +466,16 @@ export function CompetitionMallList({ malls, stores = [], onMallClick, onStoreCl
             {/* 城市横向Tab */}
             <div className="px-4 pt-3 border-b border-slate-100/60">
               <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-2">
-                {/* 全部按钮 - 只在没有筛选多个城市时显示 */}
-                {activeCities.length === 0 && (
-                  <button
-                    type="button"
-                    className="px-2 py-1 text-[13px] font-semibold whitespace-nowrap transition text-slate-900"
-                    onClick={() => setActiveCities([])}
-                  >
-                    全部
-                  </button>
-                )}
+                {/* 全部按钮：始终展示，便于随时回到全部城市 */}
+                <button
+                  type="button"
+                  className={`px-2 py-1 text-[13px] font-semibold whitespace-nowrap transition ${
+                    activeCities.length === 0 ? 'text-slate-900' : 'text-slate-400'
+                  }`}
+                  onClick={() => setActiveCities([])}
+                >
+                  全部
+                </button>
                 {displayCities.map((city) => {
                   const active = activeCities.includes(city);
                   return (

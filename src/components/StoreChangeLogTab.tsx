@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { useMemo, useState } from 'react';
-import { ChevronDown, ChevronRight, MapPin, X, Search } from 'lucide-react';
+import { ChevronDown, ChevronRight, MapPin, X, Search, RotateCcw } from 'lucide-react';
 import storeChangeLogs from '../data/store_change_logs.json';
 import { Card } from './ui';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
@@ -68,7 +68,12 @@ const deriveChangeLogs = (): StoreChangeLogEntry[] => {
   return (storeChangeLogs as StoreChangeLogEntry[]) || [];
 };
 
-export function StoreChangeLogTab() {
+type StoreChangeLogTabProps = {
+  onOpenAssistant?: () => void;
+  onResetFilters?: () => void;
+};
+
+export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChangeLogTabProps) {
   const allLogs = useMemo<StoreChangeLogEntry[]>(() => deriveChangeLogs(), []);
   const [dateRangePreset, setDateRangePreset] = useState<DateRangePreset>('last7');
   const [dateRange, setDateRange] = useState<DateRange>(() => createPresetRange('last7'));
@@ -267,6 +272,33 @@ export function StoreChangeLogTab() {
           <div className="text-sm text-slate-500">
             实时监控开店布局情况
           </div>
+        </div>
+        <div className="flex items-center gap-2 mt-[2px] mr-1">
+          {onOpenAssistant && (
+            <button
+              type="button"
+              className="flex items-center gap-1 text-slate-700 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
+              onClick={() => {
+                onOpenAssistant();
+              }}
+              title="AI 助手"
+            >
+              AI 助手
+            </button>
+          )}
+          {onResetFilters && (
+            <button
+              type="button"
+              onClick={() => {
+                onResetFilters();
+              }}
+              className="flex items-center gap-1 text-slate-900 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
+              title="重置筛选"
+            >
+              <RotateCcw className="w-4 h-4" />
+              重置
+            </button>
+          )}
         </div>
       </header>
 

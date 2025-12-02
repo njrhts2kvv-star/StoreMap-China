@@ -658,6 +658,12 @@ export function AmapStoreMap({
         markerEl.className = 'mall-marker';
         const color = viewMode === 'competition' ? getCompetitionMallColor(mall) : '#2563eb';
         markerEl.style.backgroundColor = color;
+        if (color === '#FFFFFF') {
+          // 缺口机会：白色圆圈 + 极细黑色描边
+          markerEl.style.border = '0.5px solid #111827';
+        } else {
+          markerEl.style.border = '0px solid transparent';
+        }
         if (isSelected) markerEl.classList.add('mall-marker--selected');
         markerEl.title = mall.mallName;
 
@@ -878,7 +884,7 @@ export function AmapStoreMap({
   };
 
   const borderRadius = isFullscreen ? 'rounded-none' : 'rounded-[28px]';
-  const controlsTop = isFullscreen ? 'top-[144px]' : 'top-4';
+  const controlsTop = isFullscreen ? 'top-[214px]' : 'top-4';
 
   return (
     <div className={`relative w-full h-full ${borderRadius} ${isFullscreen ? '' : 'shadow-[0_16px_44px_rgba(15,23,42,0.08)] bg-gradient-to-b from-[#f9fafc] to-[#eef1f7] border border-white'} overflow-hidden isolate`}>
@@ -1021,7 +1027,7 @@ export function AmapStoreMap({
         <div
           ref={popupRef}
           className="absolute left-4 right-4 z-30 animate-slide-up pointer-events-auto max-h-[50vh] overflow-y-auto"
-          style={{ willChange: 'transform', bottom: isFullscreen ? '104px' : '16px' }}
+          style={{ willChange: 'transform', bottom: isFullscreen ? '110px' : '16px' }}
         >
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden pointer-events-auto">
             <button
@@ -1109,7 +1115,7 @@ export function AmapStoreMap({
       {showLegend && (
         <div
           className={`absolute flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1.5 shadow-sm pointer-events-none z-10 ${
-            isFullscreen ? 'left-4 top-[160px]' : 'left-3 top-3'
+            isFullscreen ? 'left-4 bottom-[110px]' : 'left-3 top-3'
           }`}
         >
           <div className="flex items-center gap-1">

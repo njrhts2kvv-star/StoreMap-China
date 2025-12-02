@@ -8,6 +8,7 @@ type Props = {
   mall: Mall;
   stores: Store[];
   onClose: () => void;
+  bottomOffset?: number;
 };
 
 // 获取商场状态信息（与 CompetitionMallList 中的逻辑一致）
@@ -70,7 +71,7 @@ const getMallStatusInfo = (mall: Mall) => {
   return statuses.slice(0, 3); // 最多显示3个
 };
 
-export function CompetitionMallCard({ mall, stores, onClose }: Props) {
+export function CompetitionMallCard({ mall, stores, onClose, bottomOffset = 16 }: Props) {
   const statuses = getMallStatusInfo(mall);
   const hasDJI = mall.djiOpened;
   const hasInsta = mall.instaOpened;
@@ -80,7 +81,7 @@ export function CompetitionMallCard({ mall, stores, onClose }: Props) {
   return (
     <div
       className="absolute left-4 right-4 z-30 animate-slide-up pointer-events-auto max-h-[50vh] overflow-y-auto"
-      style={{ willChange: 'transform', bottom: '16px' }}
+      style={{ willChange: 'transform', bottom: `${bottomOffset}px` }}
     >
       <div className="bg-white rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden pointer-events-auto">
         <button
