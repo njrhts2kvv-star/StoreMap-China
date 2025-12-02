@@ -1,7 +1,7 @@
 import type { Store } from '../types/store';
 
 /**
- * 判断是否为近 30 天新增（含当天）
+ * 判断是否为“本月新增”（自然月：本月 1 号 ~ 当前日期）
  */
 export function isNewThisMonth(store: Store): boolean {
   if (!store.openedAt || store.openedAt === 'historical') return false;
@@ -9,9 +9,12 @@ export function isNewThisMonth(store: Store): boolean {
   if (!opened || opened.length < 10) return false;
   const openedDate = new Date(opened);
   if (Number.isNaN(openedDate.getTime())) return false;
+
   const now = new Date();
-  const diffDays = Math.floor((now.getTime() - openedDate.getTime()) / (1000 * 60 * 60 * 24));
-  return diffDays >= 0 && diffDays <= 30;
+  return (
+    openedDate.getFullYear() === now.getFullYear() &&
+    openedDate.getMonth() === now.getMonth()
+  );
 }
 
 /**

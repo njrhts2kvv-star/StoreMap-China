@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ChevronDown, MapPin, Star } from 'lucide-react';
 import type { Store, Mall } from '../types/store';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
@@ -11,6 +11,8 @@ type Props = {
   favorites: string[];
   onToggleFavorite: (id: string) => void;
   onSelect: (id: string) => void;
+  /** 外部重置信号：变化时折叠所有展开项并回到第一页 */
+  resetToken?: number;
 };
 
 type MallGroup = {
@@ -66,7 +68,7 @@ function MallStatusBadge({ status }: { status: 'both' | 'dji' | 'insta' | 'none'
   );
 }
 
-export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelect }: Props) {
+export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelect, resetToken }: Props) {
   const pageSize = 5;
   const [page, setPage] = useState(0);
   const [openProvince, setOpenProvince] = useState<string | null>(null);
@@ -75,6 +77,18 @@ export function RegionList({ stores, malls, favorites, onToggleFavorite, onSelec
   const [cityPage, setCityPage] = useState<Record<string, number>>({});
   const [mallPage, setMallPage] = useState<Record<string, number>>({});
   const [storePage, setStorePage] = useState<Record<string, number>>({});
+
+  // 当外部触发重置时，关闭所有展开的层级并回到第一页
+  useEffect(() => {
+    if (typeof resetToken === 'undefined') return;
+    setPage(0);
+    setOpenProvince(null);
+    setOpenCity(null);
+    setOpenMall(null);
+    setCityPage({});
+    setMallPage({});
+    setStorePage({});
+  }, [resetToken]);
 
   const provinces = useMemo<ProvinceGroup[]>(() => {
     const group: Record<string, ProvinceGroup> = {};

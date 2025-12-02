@@ -28,7 +28,7 @@ export function SegmentControl({ value, onChange }: Props) {
                 {active && (
                   <motion.div
                     layoutId="nav-pill"
-                    className="absolute inset-y-0 left-0 right-0 mx-1 rounded-full bg-slate-900"
+                    className="absolute inset-y-0 left-0 right-0 mx-1 rounded-2xl bg-slate-900"
                     transition={{ type: 'spring', stiffness: 500, damping: 40 }}
                   />
                 )}

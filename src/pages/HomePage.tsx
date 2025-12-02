@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Search, RotateCcw, X, SlidersHorizontal, Crosshair, Store as StoreIcon, Send } from 'lucide-react';
+import { Search, RotateCcw, X, SlidersHorizontal, Crosshair, Store as StoreIcon, Send, FileText, Download } from 'lucide-react';
+import { exportStoresToCsv, exportMallsToCsv } from '../utils/exportCsv';
 import type { Brand, ServiceTag, Store, Mall, MallStatus } from '../types/store';
 import { useStores } from '../hooks/useStores';
 import { useGeo } from '../hooks/useGeo';
@@ -21,6 +22,8 @@ import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import { CompetitionMallList } from '../components/CompetitionMallList';
 import { StoreChangeLogTab } from '../components/StoreChangeLogTab';
+import ReportModal from '../components/ReportModal';
+import useAiAssistant from '../hooks/useAiAssistant';
 
 const sortStoreTypeOptions = (options: string[], priority: string[] = []) => {
   const list = options.filter(Boolean);
@@ -124,7 +127,7 @@ export default function HomePage() {
   const [showStoreTypeDropdown, setShowStoreTypeDropdown] = useState(false);
   const [showSearchFilters, setShowSearchFilters] = useState(false);
   // 分栏筛选面板状态
-  type FilterTab = 'storeType' | 'province' | 'city';
+type FilterTab = 'storeType' | 'province' | 'city';
   const [activeFilterTab, setActiveFilterTab] = useState<FilterTab>('storeType');
   const [tempFilters, setTempFilters] = useState<{
     djiStoreTypes: string[];
@@ -148,6 +151,7 @@ export default function HomePage() {
   });
   const [showNewAddedPopover, setShowNewAddedPopover] = useState(false);
   const [mapResetToken, setMapResetToken] = useState(0);
+  const [regionListResetToken, setRegionListResetToken] = useState(0);
   const [competitionSearch, setCompetitionSearch] = useState('');
   const [debouncedCompetitionSearch, setDebouncedCompetitionSearch] = useState('');
   const [showCompetitionFilters, setShowCompetitionFilters] = useState(false);
@@ -168,7 +172,16 @@ export default function HomePage() {
     });
   };
 
-  const provinces = useMemo(() => [...new Set(allStores.map((s) => s.province))].filter(Boolean), [allStores]);
+  // 省份按门店数量从高到低排序
+  const provinces = useMemo(() => {
+    const counts: Record<string, number> = {};
+    allStores.forEach((s) => {
+      const p = s.province || '';
+      if (!p) return;
+      counts[p] = (counts[p] || 0) + 1;
+    });
+    return Object.keys(counts).sort((a, b) => (counts[b] || 0) - (counts[a] || 0));
+  }, [allStores]);
   const djiStoreOptions = useMemo(
     () => sortStoreTypeOptions([...new Set(allStores.filter((s) => s.brand === 'DJI').map((s) => s.storeType).filter(Boolean))]),
     [allStores],
@@ -181,6 +194,7 @@ export default function HomePage() {
       ),
     [allStores],
   );
+  // 城市按门店数量从高到低排序（会结合当前省份筛选）
   const cities = useMemo(() => {
     const provinceFilters =
       Array.isArray(pendingFilters.province) && pendingFilters.province.length > 0
@@ -188,10 +202,16 @@ export default function HomePage() {
         : typeof pendingFilters.province === 'string' && pendingFilters.province
           ? [pendingFilters.province]
           : [];
-    const scoped = provinceFilters.length
+    const target = provinceFilters.length
       ? allStores.filter((s) => provinceFilters.includes(s.province))
       : allStores;
-    return [...new Set(scoped.map((s) => s.city))].filter(Boolean);
+    const cityCounts: Record<string, number> = {};
+    target.forEach((s) => {
+      const c = s.city || '';
+      if (!c) return;
+      cityCounts[c] = (cityCounts[c] || 0) + 1;
+    });
+    return Object.keys(cityCounts).sort((a, b) => (cityCounts[b] || 0) - (cityCounts[a] || 0));
   }, [allStores, pendingFilters.province]);
   const provinceFilterValues = Array.isArray(pendingFilters.province)
     ? pendingFilters.province
@@ -207,7 +227,13 @@ export default function HomePage() {
   const getAllowedCities = useCallback(
     (provinceSelection: string[]) => {
       const target = provinceSelection.length ? allStores.filter((s) => provinceSelection.includes(s.province)) : allStores;
-      return [...new Set(target.map((s) => s.city))].filter(Boolean);
+      const cityCounts: Record<string, number> = {};
+      target.forEach((s) => {
+        const c = s.city || '';
+        if (!c) return;
+        cityCounts[c] = (cityCounts[c] || 0) + 1;
+      });
+      return Object.keys(cityCounts).sort((a, b) => (cityCounts[b] || 0) - (cityCounts[a] || 0));
     },
     [allStores],
   );
@@ -247,6 +273,7 @@ export default function HomePage() {
       return provinceMatch && cityMatch && statusMatch && tagMatch;
     });
   }, [allMalls, (filtersWithMode as any).province, filtersWithMode.city, filtersWithMode.mallStatuses, appliedMallTags, matchMallTag]);
+  const scopedCompetitionStats = useCompetition(filteredMalls);
   useEffect(() => {
     if (quickFilter === 'favorites' && selectedId && !favorites.includes(selectedId)) {
       setSelectedId(null);
@@ -306,7 +333,9 @@ export default function HomePage() {
     setDebouncedCompetitionSearch('');
     setActiveCompetitionChip('ALL');
     
+    // 地图视图与区域列表一并重置
     setMapResetToken((token) => token + 1);
+    setRegionListResetToken((token) => token + 1);
   };
 
   const applyQuickFilter = (key: typeof quickFilter) => {
@@ -549,11 +578,13 @@ export default function HomePage() {
 
   
   
-const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
+const renderQuickFilters = (variant: 'default' | 'floating' | 'map' = 'default') => {
   const wrapperClass =
     variant === 'floating'
       ? 'space-y-3 bg-white/90 backdrop-blur-md border border-white/50 rounded-[28px] p-4 shadow-[0_25px_40px_rgba(15,23,42,0.18)] max-w-[520px]'
-      : 'space-y-3';
+      : variant === 'map'
+        ? ''
+        : 'space-y-3';
   const padding = variant === 'floating' ? '' : 'px-1';
   const dropdownCard = (maxHeight: string) =>
     `${
@@ -578,6 +609,75 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
         ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
         : 'bg-white text-slate-600 border-slate-200'
     }`;
+
+  // 专用于地图页的胶囊布局：与商场界面保持完全一致（单行、等宽、左右间距相同）
+  if (variant === 'map') {
+    return (
+      <div className={wrapperClass} ref={setQuickFilterRef(refIndex)}>
+        <div>
+          <div className="flex flex-nowrap gap-2 justify-between">
+            {quickButtons.map((item) => {
+              const active =
+                item.key === 'favorites'
+                  ? pendingFilters.favoritesOnly
+                  : item.key === 'new'
+                    ? pendingFilters.newAddedRange !== 'none'
+                    : item.key === 'dji'
+                      ? brandSelection.length === 1 && brandSelection[0] === 'DJI'
+                      : item.key === 'insta'
+                        ? brandSelection.length === 1 && brandSelection[0] === 'Insta360'
+                        : !pendingFilters.favoritesOnly &&
+                          pendingFilters.newAddedRange === 'none' &&
+                          brandSelection.length === 2;
+              const btnClass = quickBtnClass(active);
+
+              return (
+                <div key={item.key} className="relative flex-1 min-w-0">
+                  <button
+                    type="button"
+                    onClick={() => applyQuickFilter(item.key)}
+                    className={btnClass}
+                  >
+                    {item.label}
+                  </button>
+                  {item.key === 'new' && showNewAddedPopover && (
+                    <div
+                      ref={newAddedPopoverRef}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[160px] rounded-2xl bg-white border border-slate-100 shadow-[0_14px_30px_rgba(15,23,42,0.12)] z-30 overflow-hidden"
+                    >
+                      {[
+                        { key: 'this_month' as const, label: '本月新增' },
+                        { key: 'last_month' as const, label: '上月新增' },
+                        { key: 'last_three_months' as const, label: '近三月新增' },
+                      ].map((opt) => {
+                        const activeOpt = pendingFilters.newAddedRange === opt.key;
+                        return (
+                          <button
+                            key={opt.key}
+                            className={`w-full text-left px-4 py-2 text-sm font-medium transition ${
+                              activeOpt ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50'
+                            }`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              updateFilters({ newAddedRange: opt.key });
+                              setQuickFilter('new');
+                              setShowNewAddedPopover(false);
+                            }}
+                          >
+                            {opt.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={wrapperClass} ref={setQuickFilterRef(refIndex)}>
@@ -855,388 +955,236 @@ const renderQuickFilters = (variant: 'default' | 'floating' = 'default') => {
   );
 };
 
-type LlmContext = {
-  scopeName: string;
-  text: string;
+type AiDetailState = {
+  id: string;
+  malls: Mall[];
 };
 
-const buildLlmContext = (
-  question: string,
-  malls: Mall[],
-  stores: Store[],
-  stats: ReturnType<typeof useCompetition>,
-): LlmContext => {
-  const q = (question || '').trim();
-
-  const allCities = Array.from(
-    new Set(malls.map((m) => m.city).filter(Boolean)),
-  ) as string[];
-
-  const findCityMatch = (): string => {
-    if (!q) return '';
-    for (const c of allCities) {
-      const base = c.replace(/市$/u, '');
-      if (base && q.includes(base)) return c;
-      if (q.includes(c)) return c;
-    }
-    return '';
-  };
-
-  const targetCity = findCityMatch();
-  const scopeMalls = targetCity ? malls.filter((m) => m.city === targetCity) : malls;
-  const scopeName = targetCity || '全国/当前筛选范围';
-
-  const buildScopeStats = (subset: Mall[]) => {
-    const statusCounts: Record<MallStatus, number> = {
-      blocked: 0,
-      gap: 0,
-      captured: 0,
-      blue_ocean: 0,
-      opportunity: 0,
-      neutral: 0,
-    };
-    let totalTarget = 0;
-    let bothOpened = 0;
-    subset.forEach((mall) => {
-      const status = (mall.status || 'neutral') as MallStatus;
-      statusCounts[status] = (statusCounts[status] || 0) + 1;
-      if (mall.djiTarget || mall.djiReported || mall.djiOpened) {
-        totalTarget += 1;
-      }
-      if (mall.djiOpened && mall.instaOpened) {
-        bothOpened += 1;
-      }
-    });
-    return {
-      totalTarget,
-      gapCount: statusCounts.gap,
-      capturedCount: statusCounts.captured,
-      blockedCount: statusCounts.blocked,
-      opportunityCount: statusCounts.opportunity,
-      blueOceanCount: statusCounts.blue_ocean,
-      neutralCount: statusCounts.neutral,
-      bothOpened,
-      totalMalls: subset.length,
-    };
-  };
-
-  const scopeStats =
-    targetCity === ''
-      ? {
-          totalTarget: stats.totalTarget,
-          gapCount: stats.gapCount,
-          capturedCount: stats.capturedCount,
-          blockedCount: stats.blockedCount,
-          opportunityCount: stats.opportunityCount,
-          blueOceanCount: stats.blueOceanCount,
-          neutralCount: stats.neutralCount,
-          bothOpened: malls.filter((m) => m.djiOpened && m.instaOpened).length,
-          totalMalls: malls.length,
-        }
-      : buildScopeStats(scopeMalls);
-
-  const gapMalls = scopeMalls.filter((m) => m.status === 'gap');
-  const targetUnopened = scopeMalls.filter(
-    (m) => m.djiTarget && !m.djiOpened && !m.instaOpened,
-  );
-  const opportunityMalls = scopeMalls.filter((m) => m.status === 'opportunity');
-  const blockedMalls = scopeMalls.filter((m) => m.status === 'blocked');
-
-  const statusLabel = (mall: Mall): string => {
-    switch (mall.status) {
-      case 'gap':
-        return '缺口机会-对手已开';
-      case 'opportunity':
-        return '高潜机会';
-      case 'blocked':
-        return '对手排他';
-      case 'captured':
-        return '双方均已进驻';
-      case 'blue_ocean':
-        return '蓝海商场';
-      default:
-        return '一般商场';
-    }
-  };
-
-  const keyMalls: Mall[] = [];
-  const seen = new Set<string>();
-  const pushUnique = (list: Mall[]) => {
-    list.forEach((m) => {
-      const key = m.mallId || `${m.city}-${m.mallName}`;
-      if (!seen.has(key)) {
-        seen.add(key);
-        keyMalls.push(m);
-      }
-    });
-  };
-
-  pushUnique(gapMalls);
-  pushUnique(targetUnopened);
-  pushUnique(opportunityMalls);
-  pushUnique(blockedMalls);
-
-  if (keyMalls.length > 20) {
-    keyMalls.length = 20;
-  }
-
-  const formatMallLine = (m: Mall): string => {
-    const city = m.city || '未知城市';
-    const dji = m.djiOpened ? 'DJI已开' : 'DJI未开';
-    const insta = m.instaOpened ? 'Insta已开' : 'Insta未开';
-    const enterable = m.status === 'blocked' || m.djiExclusive ? 'DJI排他' : '可进入';
-    return `- [${city}] ${m.mallName}：${dji} | ${insta}（${statusLabel(m)}，${enterable}）`;
-  };
-
-  const lines: string[] = [];
-  lines.push(`【数据分析范围】：${scopeName}`);
-  lines.push('【宏观局势】：');
-  lines.push(
-    `- 目标商场总数：${scopeStats.totalTarget} 家；其中缺口机会 ${scopeStats.gapCount} 家，高潜机会 ${scopeStats.opportunityCount} 家，已攻克 ${scopeStats.capturedCount} 家。`,
-  );
-  lines.push(
-    `- 双方均已进驻的商场：${scopeStats.bothOpened} 家；蓝海商场 ${scopeStats.blueOceanCount} 家；排他商场 ${scopeStats.blockedCount} 家；中性商场 ${scopeStats.neutralCount} 家。`,
-  );
-
-  lines.push('');
-  lines.push('【重点关注商场名单（Top 20）】：');
-  if (keyMalls.length === 0) {
-    lines.push('（当前筛选下暂未识别出明显的重点商场，需要结合一线信息再判断。）');
-  } else {
-    keyMalls.forEach((m) => {
-      lines.push(formatMallLine(m));
-    });
-  }
-
-  return {
-    scopeName,
-    text: lines.join('\n'),
-  };
+const MallStatusPill = ({ mall }: { mall: Mall }) => {
+  const label =
+    mall.status === 'gap'
+      ? '缺口'
+      : mall.djiExclusive
+        ? '排他'
+        : mall.djiTarget
+          ? '目标'
+          : mall.status === 'captured'
+            ? '已进驻'
+            : '中性';
+  const styles =
+    mall.status === 'gap'
+      ? 'bg-amber-100 text-amber-700 border border-amber-200'
+      : mall.djiExclusive
+        ? 'bg-red-100 text-red-700 border border-red-200'
+        : mall.djiTarget
+          ? 'bg-blue-100 text-blue-700 border border-blue-200'
+          : mall.status === 'captured'
+            ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+            : 'bg-slate-100 text-slate-700 border border-slate-200';
+  return <span className={`px-2 py-0.5 rounded-full text-[11px] font-semibold ${styles}`}>{label}</span>;
 };
 
-const buildAiSuggestion = (
-  question: string,
-  malls: Mall[],
-  stores: Store[],
-  competitionStats: ReturnType<typeof useCompetition>,
-): string => {
-  const { scopeName, text } = buildLlmContext(question, malls, stores, competitionStats);
-  const q = (question || '').trim();
-  const header = q
-    ? `我先根据当前数据，围绕你问的「${q}」，在「${scopeName}」范围内做了一个简要梳理：`
-    : `我先根据当前数据，在「${scopeName}」范围内做了一个简要梳理：`;
-
-  return `${header}\n\n${text}\n\n如果你想更具体一点，可以继续限定城市、商场等级或品牌（例如“只看深圳的 PT 商场机会”）。`;
-};
-
-const cleanAiText = (raw: string): string => {
-  if (!raw) return '';
-  let text = raw.trim();
-
-  // 去掉可能的代码块包裹 ```xxx```
-  if (text.startsWith('```')) {
-    const parts = text.split('```');
-    text = parts[1] || parts[0];
-  }
-
-  // 去掉 markdown 标题前缀（#、## 等）
-  text = text.replace(/^\s*#+\s*/gm, '');
-
-  // 去掉粗体/斜体标记 **xx** / *xx*
-  text = text.replace(/\*\*(.+?)\*\*/g, '$1');
-  text = text.replace(/\*(.+?)\*/g, '$1');
-
-  // 去掉行首的 markdown 列表符号 "- " 或 "* "
-  text = text.replace(/^\s*[-*]\s+/gm, '');
-
-  return text.trim();
-};
-
-const callLlmSuggestion = async (
-  question: string,
-  malls: Mall[],
-  stores: Store[],
-  competitionStats: ReturnType<typeof useCompetition>,
-): Promise<string | null> => {
-  // 只使用阿里云百炼（DashScope 兼容模式），不再回退到 OpenAI
-  const bailianApiKey =
-    import.meta.env.VITE_BAILIAN_API_KEY || import.meta.env.VITE_BAILIAN_API_KEY_PUBLIC;
-
-  if (!bailianApiKey || typeof fetch === 'undefined') {
-    console.error(
-      '[AI 助手] 缺少百炼 API Key，请在 .env.local 中配置 VITE_BAILIAN_API_KEY（或 VITE_BAILIAN_API_KEY_PUBLIC）',
-    );
-    return null;
-  }
-
-  const baseUrl =
-    import.meta.env.VITE_BAILIAN_BASE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1';
-  const model = import.meta.env.VITE_BAILIAN_MODEL || 'qwen-plus';
-  const endpoint = `${baseUrl.replace(/\/$/, '')}/chat/completions`;
-
-  const { text: contextText } = buildLlmContext(question, malls, stores, competitionStats);
-  const userQuestion = (question && question.trim()) || '帮我看看现在整体还有哪些机会点？';
-
-  const payload = {
-    model,
-    messages: [
-      {
-        role: 'system',
-        content:
-          '你是一个线下门店与商场布局的经营分析助手。你只能使用随后提供的“项目整体数据”和“结构化观察”里的信息来回答，不要使用任何外部知识，也不要自己编造未在数据中出现的城市、商场或数字。如果摘要里给出了具体商场或门店名称，可以直接引用这些名称举例，但不要凭空杜撰新的名字。\n\n在回答前，请先认真理解【用户问题】，搞清楚他关心的是哪些城市/区域、品牌（DJI / Insta360），以及是想看机会、风险还是排期优先级，然后再结合数据给结论。\n\n输出要求：\n1. 用 3–5 条编号句子（1. 2. 3. …）回答，每一条都要紧扣用户问题，而不是泛泛而谈。\n2. 建议中尽量提到数据中的具体商场/门店名称或数量区间，让结论“看得见数据”。\n3. 如果数据不足以支持某个判断，就明确说“从当前数据看不出来”，不要硬猜。\n4. 不要使用任何 Markdown 语法（不要出现 **、#、-、``` 等符号），也不要加标题或很长的背景说明。',
-      },
-      {
-        role: 'assistant',
-        content: `下面是当前的数据摘要和重点商场信息（所有结论只能基于这些内容）：\n\n${contextText}`,
-      },
-      {
-        role: 'user',
-        content: userQuestion,
-      },
-    ],
-    temperature: 0.3,
-  };
-
-  try {
-    const resp = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${bailianApiKey}`,
-      },
-      body: JSON.stringify(payload),
-    });
-    if (!resp.ok) {
-      console.error('[AI 助手] LLM 请求失败', resp.status, await resp.text());
-      return null;
-    }
-    const json = await resp.json();
-    const content = json.choices?.[0]?.message?.content as string | undefined;
-    if (typeof content === 'string' && content.trim()) {
-      return cleanAiText(content);
-    }
-    return null;
-  } catch (err) {
-    console.error('[AI 助手] LLM 请求异常', err);
-    return null;
-  }
-};
-
-function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) {
+function AiAssistantOverlay({ onClose, malls, stats }: { onClose: () => void; malls: Mall[]; stats: ReturnType<typeof useCompetition> }) {
+  const {
+    history,
+    sessions,
+    activeSessionId,
+    startNewSession,
+    loadSession,
+    isGenerating,
+    sendMessage,
+    reportOptions,
+    generateReportOptions,
+    generateFinalReport,
+    reportContent,
+  } = useAiAssistant();
   const [question, setQuestion] = useState('');
-  const [messages, setMessages] = useState([
-    {
-      id: 'welcome',
-      role: 'assistant',
-      content:
-        '您好！我是您的门店智能助手，可以用大白话跟我沟通，比如“帮我分析现在深圳的机会点在哪里？”，我会结合当前最新的门店和商场数据给到您建议。',
-    },
-  ]);
-  const [loading, setLoading] = useState(false);
-  const scrollRef = useRef(null);
-  const inputRef = useRef(null);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [showReportModal, setShowReportModal] = useState(false);
+  const [reportTitle, setReportTitle] = useState('AI 深度分析报告');
+  const [detailState, setDetailState] = useState<AiDetailState | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [showSessionList, setShowSessionList] = useState(false);
+  const [isGeneratingFinal, setIsGeneratingFinal] = useState(false);
+  const [reportPanelClosed, setReportPanelClosed] = useState(false);
 
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, []);
+  }, [history, isGenerating]);
 
   useEffect(() => {
-    const el = scrollRef.current;
-    if (el) {
-      el.scrollTop = el.scrollHeight;
+    setSelectedOptions([]);
+  }, [reportOptions]);
+
+  useEffect(() => {
+    if (reportOptions.length) {
+      setReportPanelClosed(false);
     }
-  }, [messages, loading]);
+  }, [reportOptions]);
 
-  const handleSend = async () => {
-    if (loading) return;
-    const raw = (question || '').trim();
-    const hasQuestion = !!raw;
-    const finalQuestion = raw || '帮我看看现在整体还有哪些机会点？';
-    const userContent = hasQuestion ? raw : finalQuestion;
-
-    const id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-
-    setMessages((prev) => [
-      ...prev,
-      { id: `u-${id}`, role: 'user', content: userContent },
-      { id: `a-${id}`, role: 'assistant', content: '我正在根据当前全量数据帮你分析，请稍等几秒…' },
-    ]);
+  const handleSend = () => {
+    if (isGenerating) return;
+    sendMessage(question, malls, stats);
     setQuestion('');
-    setLoading(true);
+    setDetailState(null);
+    setShowSessionList(false);
+  };
 
-    try {
-      let answer: string | null = null;
-      if (hasQuestion) {
-        answer = await callLlmSuggestion(finalQuestion, allMalls, allStores, competitionStats);
-      }
-      if (!answer) {
-        answer = buildAiSuggestion(finalQuestion, allMalls, allStores, competitionStats);
-      }
-      const finalAnswer = answer;
-      setMessages((prev) =>
-        prev.map((m) => (m.id === `a-${id}` ? { ...m, content: finalAnswer } : m)),
-      );
-    } catch (err) {
-      setMessages((prev) =>
-        prev.map((m) =>
-          m.id === `a-${id}`
-            ? {
-                ...m,
-                content: '调用 AI 助手时出现问题，可以稍后再试，或先根据筛选结果自己看一看。',
-              }
-            : m,
-        ),
-      );
-    } finally {
-      setLoading(false);
+  const handleGenerateOptions = async () => {
+    if (isGenerating) return;
+    await generateReportOptions(malls, stats);
+    setSelectedOptions([]);
+    setReportTitle('AI 深度分析报告');
+    setReportPanelClosed(false);
+    setIsGeneratingFinal(false);
+  };
+
+  const handleGenerateReport = async () => {
+    if (isGenerating || !selectedOptions.length) return;
+    setReportPanelClosed(true);
+    setIsGeneratingFinal(true);
+    const content = await generateFinalReport(selectedOptions, malls, stats);
+    setIsGeneratingFinal(false);
+    setSelectedOptions([]);
+    if (!content) {
+      setReportPanelClosed(false);
+      return;
     }
+    if (content) {
+      setShowReportModal(true);
+    }
+  };
+
+  const toggleOption = (id: string) => {
+    setSelectedOptions((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  };
+
+  const renderDetailCard = (list: Mall[]) => (
+    <div className="mt-2 rounded-2xl bg-slate-50 border border-slate-100 shadow-inner p-3 space-y-2">
+      {list.slice(0, 10).map((mall) => (
+        <div
+          key={`${mall.mallId}-${mall.mallName}`}
+          className="flex items-start justify-between gap-2 rounded-xl bg-white border border-slate-100 px-3 py-2 shadow-sm"
+        >
+          <div>
+            <div className="text-sm font-semibold text-slate-900">{mall.mallName}</div>
+            <div className="text-[11px] text-slate-500 mt-0.5">{mall.city}</div>
+            <div className="text-[11px] text-slate-500">
+              DJI {mall.djiOpened ? '已开' : '未开'}｜Insta {mall.instaOpened ? '已开' : '未开'}
+            </div>
+          </div>
+          <MallStatusPill mall={mall} />
+        </div>
+      ))}
+      {list.length > 10 && (
+        <div className="text-xs text-slate-500 text-right">仅展示前 10 个，更多请在列表页查看</div>
+      )}
+    </div>
+  );
+
+  const handleResetChat = () => {
+    startNewSession();
+    setQuestion('');
+    setSelectedOptions([]);
+    setDetailState(null);
+    setShowSessionList(false);
+    setIsGeneratingFinal(false);
+    setReportPanelClosed(false);
+    setShowReportModal(false);
   };
 
   return (
     <>
-      <div
-        className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
-        onClick={onClose}
-      />
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40" onClick={onClose} />
       <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-16 pb-10">
-        <div className="w-full max-w-[560px] bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_18px_40px_rgba(15,23,42,0.45)] border border-slate-100 overflow-hidden">
-          <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-slate-100">
-            <div className="flex items-center gap-2">
-              <img src={instaLogoYellow} alt="AI" className="w-8 h-8 rounded-full shadow-sm" />
-              <div>
-                <div className="text-sm font-semibold text-slate-900">AI 助手</div>
-                <div className="text-[11px] text-slate-500">在线｜基于全量数据给建议</div>
+        <div className="w-full max-w-[720px] bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_18px_40px_rgba(15,23,42,0.45)] border border-slate-100 overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-slate-100">
+              <div className="flex items-center gap-2">
+                <img src={instaLogoYellow} alt="AI" className="w-9 h-9 rounded-full shadow-sm" />
+                <div>
+                  <div className="text-sm font-semibold text-slate-900">AI 助手 · 多轮对话</div>
+                <div className="text-[11px] text-slate-500">携带最近 5 轮历史与当前筛选数据</div>
+              </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                  <div className="relative">
+                    <button
+                      type="button"
+                      className="w-full inline-flex items-center justify-center px-3 py-1.5 rounded-full font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition whitespace-nowrap"
+                      onClick={() => setShowSessionList((v) => !v)}
+                    >
+                      历史对话
+                    </button>
+                    {showSessionList && (
+                      <div className="absolute right-0 mt-2 w-60 rounded-2xl bg-white border border-slate-100 shadow-lg z-10">
+                        <div className="max-h-64 overflow-y-auto divide-y divide-slate-100">
+                          {sessions.map((s) => (
+                            <button
+                              key={s.id}
+                              type="button"
+                              className={`w-full text-left px-3 py-2 text-sm ${
+                                s.id === activeSessionId
+                                  ? 'bg-slate-100 text-slate-900'
+                                  : 'text-slate-700 hover:bg-slate-50'
+                              }`}
+                              onClick={() => {
+                                loadSession(s.id);
+                                setShowSessionList(false);
+                                setDetailState(null);
+                                setSelectedOptions([]);
+                                setQuestion('');
+                              }}
+                            >
+                              <div className="font-semibold truncate">{s.name}</div>
+                              <div className="text-[11px] text-slate-400">
+                                {new Date(s.createdAt).toLocaleString()}
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    className="w-full inline-flex items-center justify-center px-3 py-1.5 rounded-full font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition whitespace-nowrap"
+                    onClick={handleResetChat}
+                  >
+                    新对话
+                  </button>
+                  <button
+                    type="button"
+                    className="col-span-2 inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-full font-semibold bg-slate-900 text-white hover:bg-slate-800 transition whitespace-nowrap"
+                    onClick={handleGenerateOptions}
+                    disabled={isGenerating}
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    生成报告
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 hover:bg-slate-200 transition"
+                >
+                  <X className="w-4 h-4" />
+                </button>
               </div>
             </div>
-            <button
-              type="button"
-              onClick={onClose}
-              className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 hover:bg-slate-200 transition"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
-
-          <div className="px-5 pt-5 pb-6 flex flex-col gap-5 h-[70vh]">
-            {/* 对话区 */}
+          <div className="px-5 pt-5 pb-6 flex flex-col gap-4 h-[75vh]">
             <div className="flex-1 overflow-y-auto pr-1" ref={scrollRef}>
-              {messages.map((msg) => (
+              {history.map((msg) => (
                 <div
                   key={msg.id}
-                  className={`mb-3 flex items-start gap-3 ${
-                    msg.role === 'user' ? 'justify-end' : ''
-                  }`}
+                  className={`mb-3 flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}
                 >
                   {msg.role === 'assistant' && (
-                    <img
-                      src={instaLogoYellow}
-                      alt="AI"
-                      className="w-8 h-8 rounded-full shadow-sm mt-1"
-                    />
+                    <img src={instaLogoYellow} alt="AI" className="w-8 h-8 rounded-full shadow-sm mt-1" />
                   )}
-                  <div className="max-w-[80%]">
+                  <div className="max-w-[82%]">
                     <div
                       className={`rounded-3xl px-4 py-3.5 text-[13px] leading-relaxed whitespace-pre-line ${
                         msg.role === 'assistant'
@@ -1246,6 +1194,18 @@ function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) 
                     >
                       {msg.content}
                     </div>
+                    {msg.role === 'assistant' && msg.relatedData?.length ? (
+                      <div className="flex items-center gap-2 mt-2 flex-wrap">
+                        <button
+                          type="button"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition"
+                          onClick={() => setDetailState({ id: msg.id, malls: msg.relatedData || [] })}
+                        >
+                          🔍 查看详情
+                        </button>
+                      </div>
+                    ) : null}
+                    {detailState?.id === msg.id && detailState.malls?.length ? renderDetailCard(detailState.malls) : null}
                   </div>
                   {msg.role === 'user' && (
                     <div className="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-[11px] font-semibold mt-1">
@@ -1255,17 +1215,73 @@ function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) 
                 </div>
               ))}
             </div>
-
-            {/* 输入区 */}
+            {reportOptions.length > 0 && !reportPanelClosed && !isGeneratingFinal && (
+              <div className="rounded-2xl border border-slate-100 bg-slate-50/60 p-3 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm font-semibold text-slate-900">报告维度（Step 2）</div>
+                    <div className="text-[11px] text-slate-500">勾选维度后生成 Markdown 报告</div>
+                  </div>
+                  <div className="text-[11px] text-slate-500">
+                    {selectedOptions.length}/{reportOptions.length} 已选
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {reportOptions.map((opt) => {
+                    const active = selectedOptions.includes(opt.id);
+                    return (
+                      <button
+                        key={opt.id}
+                        type="button"
+                        className={`text-left rounded-xl border px-3 py-2 text-xs font-semibold transition ${
+                          active ? 'border-slate-900 bg-white shadow-sm' : 'border-slate-200 bg-white'
+                        }`}
+                        onClick={() => toggleOption(opt.id)}
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-slate-900">{opt.title}</span>
+                          {active && <span className="text-[10px] text-slate-500">已选</span>}
+                        </div>
+                        {opt.reason && <div className="text-[11px] text-slate-500 mt-1 leading-snug">{opt.reason}</div>}
+                      </button>
+                    );
+                  })}
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="text-[11px] text-slate-500">至少勾选 1 个维度</div>
+                  <button
+                    type="button"
+                    disabled={!selectedOptions.length || isGenerating}
+                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold ${
+                      !selectedOptions.length || isGenerating
+                        ? 'bg-slate-200 text-slate-500 cursor-not-allowed'
+                        : 'bg-slate-900 text-white hover:bg-slate-800'
+                    }`}
+                    onClick={handleGenerateReport}
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    生成终稿
+                  </button>
+                </div>
+              </div>
+            )}
+            {isGeneratingFinal && (
+              <div className="rounded-2xl border border-slate-100 bg-slate-50/60 p-4 flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-semibold text-slate-900">终稿生成中</div>
+                  <div className="text-[11px] text-slate-500">正在生成 Markdown 报告，请稍等…</div>
+                </div>
+                <span className="w-4 h-4 border-[2px] border-slate-400 border-t-transparent rounded-full animate-spin" />
+              </div>
+            )}
             <div className="space-y-2">
               <div className="text-[11px] text-slate-400">
                 示例：<span className="font-semibold text-slate-700">帮我分析现在深圳的机会点在哪里</span>
               </div>
               <div className="flex items-center gap-2 rounded-full bg-slate-50 border border-slate-200 px-4 py-3">
                 <input
-                  ref={inputRef}
                   className="flex-1 bg-transparent outline-none text-sm text-slate-800 placeholder:text-slate-400"
-                  placeholder="输入您的问题，例如：现在广州的机会在哪里？"
+                  placeholder=""
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                   onKeyDown={(e) => {
@@ -1277,13 +1293,13 @@ function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) 
                 />
                 <button
                   type="button"
-                  disabled={loading}
+                  disabled={isGenerating}
                   className={`w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center transition ${
-                    loading ? 'opacity-60 cursor-not-allowed' : 'hover:bg-slate-800'
+                    isGenerating ? 'opacity-60 cursor-not-allowed' : 'hover:bg-slate-800'
                   }`}
                   onClick={handleSend}
                 >
-                  {loading ? (
+                  {isGenerating ? (
                     <span className="w-4 h-4 border-[2px] border-white/70 border-t-transparent rounded-full animate-spin" />
                   ) : (
                     <Send className="w-4 h-4" />
@@ -1294,6 +1310,12 @@ function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) 
           </div>
         </div>
       </div>
+      <ReportModal
+        open={showReportModal}
+        title={reportTitle}
+        content={reportContent || '报告生成中…'}
+        onClose={() => setShowReportModal(false)}
+      />
     </>
   );
 }
@@ -1573,27 +1595,37 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   value={pendingFilters.keyword}
                   onChange={(e) => updateFilters({ keyword: e.target.value })}
                 />
-                <button
-                  type="button"
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
-                  onClick={() => {
-                    const willShow = !showSearchFilters;
-                    if (willShow) {
-                      // 打开面板时同步当前筛选状态到临时状态
-                      setTempFilters({
-                        djiStoreTypes: [...pendingFilters.djiStoreTypes],
-                        instaStoreTypes: [...pendingFilters.instaStoreTypes],
-                        province: [...pendingFilters.province],
-                        city: [...pendingFilters.city],
-                      });
-                      setActiveFilterTab('storeType');
-                    }
-                    setShowSearchFilters(willShow);
-                  }}
-                  title="更多筛选"
-                >
-                  <SlidersHorizontal className="w-5 h-5" />
-                </button>
+                <div className="flex items-center">
+                  <button
+                    type="button"
+                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    onClick={() => exportStoresToCsv(visibleStores)}
+                    title="导出门店清单"
+                  >
+                    <Download className="w-5 h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    onClick={() => {
+                      const willShow = !showSearchFilters;
+                      if (willShow) {
+                        // 打开面板时同步当前筛选状态到临时状态
+                        setTempFilters({
+                          djiStoreTypes: [...pendingFilters.djiStoreTypes],
+                          instaStoreTypes: [...pendingFilters.instaStoreTypes],
+                          province: [...pendingFilters.province],
+                          city: [...pendingFilters.city],
+                        });
+                        setActiveFilterTab('storeType');
+                      }
+                      setShowSearchFilters(willShow);
+                    }}
+                    title="更多筛选"
+                  >
+                    <SlidersHorizontal className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
               {showSearchFilters && (
                 <>
@@ -1707,25 +1739,35 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   value={competitionSearch}
                   onChange={(e) => setCompetitionSearch(e.target.value)}
                 />
-                <button
-                  type="button"
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
-                  onClick={() => {
-                    const willShow = !showCompetitionFilters;
-                    if (willShow) {
-                      setTempCompetitionFilters({
-                        mallTags: [...appliedMallTags],
-                        province: [...pendingFilters.province],
-                        city: [...pendingFilters.city],
-                      });
-                      setActiveCompetitionFilterTab('storeType');
-                    }
-                    setShowCompetitionFilters(willShow);
-                  }}
-                  title="更多筛选"
-                >
-                  <SlidersHorizontal className="w-5 h-5" />
-                </button>
+                <div className="flex items-center">
+                  <button
+                    type="button"
+                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    onClick={() => exportMallsToCsv(competitionMallsWithProvince)}
+                    title="导出商场清单"
+                  >
+                    <Download className="w-5 h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    onClick={() => {
+                      const willShow = !showCompetitionFilters;
+                      if (willShow) {
+                        setTempCompetitionFilters({
+                          mallTags: [...appliedMallTags],
+                          province: [...pendingFilters.province],
+                          city: [...pendingFilters.city],
+                        });
+                        setActiveCompetitionFilterTab('storeType');
+                      }
+                      setShowCompetitionFilters(willShow);
+                    }}
+                    title="更多筛选"
+                  >
+                    <SlidersHorizontal className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
               {showCompetitionFilters && (
                 <>
@@ -2023,7 +2065,10 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
               {/* 地图下方搜索与快速筛选 */}
               {competitionMapMode === 'competition' ? (
                 // 商场界面：使用竞争模块的搜索框 + 筛选
-                <div className="absolute left-0 right-0 top-[128px] z-20 px-4">
+                <div
+                  className="absolute left-0 right-0 top-[128px] z-20 px-4"
+                  data-map-safe-top="true"
+                >
                   <div className="px-1 space-y-2">
                     <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
                       <Search className="w-5 h-5 text-slate-300" />
@@ -2033,25 +2078,35 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                         value={competitionSearch}
                         onChange={(e) => setCompetitionSearch(e.target.value)}
                       />
-                      <button
-                        type="button"
-                        className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
-                        onClick={() => {
-                          const willShow = !showCompetitionFilters;
-                          if (willShow) {
-                            setTempCompetitionFilters({
-                              mallTags: [...appliedMallTags],
-                              province: [...pendingFilters.province],
-                              city: [...pendingFilters.city],
-                            });
-                            setActiveCompetitionFilterTab('storeType');
-                          }
-                          setShowCompetitionFilters(willShow);
-                        }}
-                        title="更多筛选"
-                      >
-                        <SlidersHorizontal className="w-5 h-5" />
-                      </button>
+                      <div className="flex items-center">
+                        <button
+                          type="button"
+                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                          onClick={() => exportMallsToCsv(competitionMallsForView)}
+                          title="导出商场清单"
+                        >
+                          <Download className="w-5 h-5" />
+                        </button>
+                        <button
+                          type="button"
+                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                          onClick={() => {
+                            const willShow = !showCompetitionFilters;
+                            if (willShow) {
+                              setTempCompetitionFilters({
+                                mallTags: [...appliedMallTags],
+                                province: [...pendingFilters.province],
+                                city: [...pendingFilters.city],
+                              });
+                              setActiveCompetitionFilterTab('storeType');
+                            }
+                            setShowCompetitionFilters(willShow);
+                          }}
+                          title="更多筛选"
+                        >
+                          <SlidersHorizontal className="w-5 h-5" />
+                        </button>
+                      </div>
                     </div>
                     {showCompetitionFilters && (
                       <>
@@ -2100,7 +2155,10 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                 </div>
               ) : (
                 // 门店界面：使用总览模块的搜索框 + 快速筛选
-                <div className="absolute left-0 right-0 top-[128px] z-20 px-4">
+                <div
+                  className="absolute left-0 right-0 top-[128px] z-20 px-4"
+                  data-map-safe-top="true"
+                >
                   {/* 搜索栏 */}
                   <div className="px-1 space-y-2">
                     <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
@@ -2111,27 +2169,37 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                         value={pendingFilters.keyword}
                         onChange={(e) => updateFilters({ keyword: e.target.value })}
                       />
-                      <button
-                        type="button"
-                        className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
-                        onClick={() => {
-                          const willShow = !showSearchFilters;
-                          if (willShow) {
-                            // 打开面板时同步当前筛选状态到临时状态
-                            setTempFilters({
-                              djiStoreTypes: [...pendingFilters.djiStoreTypes],
-                              instaStoreTypes: [...pendingFilters.instaStoreTypes],
-                              province: [...pendingFilters.province],
-                              city: [...pendingFilters.city],
-                            });
-                            setActiveFilterTab('storeType');
-                          }
-                          setShowSearchFilters(willShow);
-                        }}
-                        title="更多筛选"
-                      >
-                        <SlidersHorizontal className="w-5 h-5" />
-                      </button>
+                      <div className="flex items-center">
+                        <button
+                          type="button"
+                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                          onClick={() => exportStoresToCsv(visibleStores)}
+                          title="导出门店清单"
+                        >
+                          <Download className="w-5 h-5" />
+                        </button>
+                        <button
+                          type="button"
+                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                          onClick={() => {
+                            const willShow = !showSearchFilters;
+                            if (willShow) {
+                              // 打开面板时同步当前筛选状态到临时状态
+                              setTempFilters({
+                                djiStoreTypes: [...pendingFilters.djiStoreTypes],
+                                instaStoreTypes: [...pendingFilters.instaStoreTypes],
+                                province: [...pendingFilters.province],
+                                city: [...pendingFilters.city],
+                              });
+                              setActiveFilterTab('storeType');
+                            }
+                            setShowSearchFilters(willShow);
+                          }}
+                          title="更多筛选"
+                        >
+                          <SlidersHorizontal className="w-5 h-5" />
+                        </button>
+                      </div>
                     </div>
                     {showSearchFilters && (
                       <>
@@ -2147,9 +2215,9 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                       </>
                     )}
                   </div>
-                  {/* 总览快速筛选 Chips */}
-                  <div className="mt-3">
-                    {renderQuickFilters()}
+                  {/* 总览快速筛选 Chips（地图门店界面，与商场界面保持一致布局） */}
+                  <div className="px-1 mt-2">
+                    {renderQuickFilters('map')}
                   </div>
                 </div>
               )}
@@ -2305,26 +2373,36 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   value={pendingFilters.keyword}
                   onChange={(e) => updateFilters({ keyword: e.target.value })}
                 />
-                <button
-                  type="button"
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
-                  onClick={() => {
-                    const willShow = !showSearchFilters;
-                    if (willShow) {
-                      setTempFilters({
-                        djiStoreTypes: [...pendingFilters.djiStoreTypes],
-                        instaStoreTypes: [...pendingFilters.instaStoreTypes],
-                        province: [...pendingFilters.province],
-                        city: [...pendingFilters.city],
-                      });
-                      setActiveFilterTab('storeType');
-                    }
-                    setShowSearchFilters(willShow);
-                  }}
-                  title="更多筛选"
-                >
-                  <SlidersHorizontal className="w-5 h-5" />
-                </button>
+                <div className="flex items-center">
+                  <button
+                    type="button"
+                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    onClick={() => exportStoresToCsv(visibleStores)}
+                    title="导出门店清单"
+                  >
+                    <Download className="w-5 h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    onClick={() => {
+                      const willShow = !showSearchFilters;
+                      if (willShow) {
+                        setTempFilters({
+                          djiStoreTypes: [...pendingFilters.djiStoreTypes],
+                          instaStoreTypes: [...pendingFilters.instaStoreTypes],
+                          province: [...pendingFilters.province],
+                          city: [...pendingFilters.city],
+                        });
+                        setActiveFilterTab('storeType');
+                      }
+                      setShowSearchFilters(willShow);
+                    }}
+                    title="更多筛选"
+                  >
+                    <SlidersHorizontal className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
               {showSearchFilters && (
                 <>
@@ -2361,6 +2439,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   favorites={favorites}
                   onToggleFavorite={toggleFavorite}
                   onSelect={handleSelect}
+                  resetToken={regionListResetToken}
                 />
               )}
             </div>
@@ -2373,6 +2452,9 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
               setShowAiAssistant(true);
             }}
             onResetFilters={resetFilters}
+            getStoreById={(id) => allStores.find((s) => s.id === id) ?? null}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
           />
         )}
         <SegmentControl value={activeTab} onChange={setActiveTab} />
@@ -2382,9 +2464,8 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
       {showAiAssistant && (
         <AiAssistantOverlay
           onClose={() => setShowAiAssistant(false)}
-          allMalls={allMalls}
-          allStores={allStores}
-          competitionStats={competitionStats}
+          malls={filteredMalls}
+          stats={scopedCompetitionStats}
         />
       )}
     </div>

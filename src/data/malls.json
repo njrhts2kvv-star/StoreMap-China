@@ -4140,21 +4140,6 @@
     "longitude": 120.247543
   },
   {
-    "mallId": "MALL_00297",
-    "mallName": "成都IFS",
-    "city": "成都市",
-    "province": "四川省",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 30.654802,
-    "longitude": 104.081504
-  },
-  {
     "mallId": "MALL_00298",
     "mallName": "万达广场(石家庄裕华店)",
     "city": "石家庄市",
@@ -8524,12 +8509,12 @@
     "mallName": "成都IFS国际金融中心",
     "city": "成都市",
     "province": "四川省",
-    "djiOpened": false,
+    "djiOpened": true,
     "instaOpened": true,
     "djiReported": false,
     "djiExclusive": false,
     "djiTarget": false,
-    "hasDJI": false,
+    "hasDJI": true,
     "hasInsta360": true,
     "latitude": 30.654937,
     "longitude": 104.081419

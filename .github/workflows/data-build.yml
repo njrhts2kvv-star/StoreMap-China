@@ -1,0 +1,54 @@
+name: Crawl and build store data
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # 每天 UTC 20:00（北京时间次日 4:00）
+    - cron: '0 20 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run crawler and data pipeline
+        env:
+          # 高德 Web Key，用于坐标/POI 校正；在仓库 Settings → Secrets 中配置
+          AMAP_WEB_KEY: ${{ secrets.AMAP_WEB_KEY }}
+        run: |
+          python build_data.py
+
+      - name: Commit and push data changes
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "chore: update data via workflow"
+            git push
+          else
+            echo "No data changes to commit"
+          fi
+

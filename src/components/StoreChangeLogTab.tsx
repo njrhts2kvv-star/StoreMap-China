@@ -1,10 +1,13 @@
 // @ts-nocheck
-import { useMemo, useState } from 'react';
-import { ChevronDown, ChevronRight, MapPin, X, Search, RotateCcw } from 'lucide-react';
+import { useMemo, useState, useEffect } from 'react';
+import { ChevronDown, ChevronRight, MapPin, X, Search, RotateCcw, Download } from 'lucide-react';
+import { exportChangeLogsToCsv } from '../utils/exportCsv';
 import storeChangeLogs from '../data/store_change_logs.json';
 import { Card } from './ui';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
+import type { Store } from '../types/store';
+import { StoreLogStoreCardOverlay } from './StoreLogStoreCardOverlay';
 
 type StoreChangeType = 'OPEN' | 'CLOSE' | 'RELOCATE';
 
@@ -71,9 +74,21 @@ const deriveChangeLogs = (): StoreChangeLogEntry[] => {
 type StoreChangeLogTabProps = {
   onOpenAssistant?: () => void;
   onResetFilters?: () => void;
+  /** 通过 storeId 获取完整门店信息，用于弹出门店详情卡片 */
+  getStoreById?: (id: string) => Store | null;
+  /** 当前收藏的门店 id 列表（来自 HomePage / useStores） */
+  favorites?: string[];
+  /** 切换收藏状态（同步地图等其他视图的收藏状态） */
+  onToggleFavorite?: (id: string) => void;
 };
 
-export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChangeLogTabProps) {
+export function StoreChangeLogTab({
+  onOpenAssistant,
+  onResetFilters,
+  getStoreById,
+  favorites,
+  onToggleFavorite,
+}: StoreChangeLogTabProps) {
   const allLogs = useMemo<StoreChangeLogEntry[]>(() => deriveChangeLogs(), []);
   const [dateRangePreset, setDateRangePreset] = useState<DateRangePreset>('last7');
   const [dateRange, setDateRange] = useState<DateRange>(() => createPresetRange('last7'));
@@ -83,7 +98,7 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
   const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>({});
   const [keyword, setKeyword] = useState('');
   const [quickFilter, setQuickFilter] = useState<'all' | 'favorites' | 'dji' | 'insta'>('all');
-  const [favoriteStoreIds] = useState<string[]>(() => {
+  const [favoriteStoreIds, setFavoriteStoreIds] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
     try {
       const saved = localStorage.getItem('favorites');
@@ -92,6 +107,15 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
       return [];
     }
   });
+
+  // 如果上层传入了 favorites（来自 useStores），与本地状态保持同步
+  useEffect(() => {
+    if (favorites && Array.isArray(favorites)) {
+      setFavoriteStoreIds(favorites);
+    }
+  }, [favorites]);
+
+  const favoritesSet = useMemo(() => new Set(favoriteStoreIds), [favoriteStoreIds]);
 
   const now = useMemo(() => new Date(), []);
 
@@ -115,7 +139,7 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
       .filter((log) => {
         if (quickFilter === 'dji') return log.brand === 'DJI';
         if (quickFilter === 'insta') return log.brand === 'Insta360';
-        if (quickFilter === 'favorites') return favoriteStoreIds.includes(log.storeId);
+        if (quickFilter === 'favorites') return favoritesSet.has(log.storeId);
         return true;
       })
       .sort(
@@ -162,6 +186,43 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
             PRESET_DAYS[dateRangePreset as Exclude<DateRangePreset, 'custom'>]
           } 天暂无门店变化`
       : null;
+
+  // 当前弹出的门店详情
+  const [activeStore, setActiveStore] = useState<Store | null>(null);
+  const [overlayAnchorTop, setOverlayAnchorTop] = useState<number | null>(null);
+
+  const handleLogClick = (log: StoreChangeLogEntry, targetEl?: HTMLElement | null) => {
+    if (!getStoreById) return;
+    const store = getStoreById(log.storeId);
+    if (!store) return;
+    setActiveStore(store);
+    if (typeof window !== 'undefined' && targetEl) {
+      const rect = targetEl.getBoundingClientRect();
+      setOverlayAnchorTop(rect.top + rect.height / 2);
+    } else {
+      setOverlayAnchorTop(null);
+    }
+  };
+
+  const handleToggleFavorite = (id: string) => {
+    if (onToggleFavorite) {
+      onToggleFavorite(id);
+      return;
+    }
+    // 兜底：本地更新收藏状态并写入 localStorage，保证“我的收藏”筛选可用
+    setFavoriteStoreIds((prev) => {
+      const exists = prev.includes(id);
+      const next = exists ? prev.filter((x) => x !== id) : [...prev, id];
+      try {
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('favorites', JSON.stringify(next));
+        }
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
 
   const handleOpenRangePicker = () => {
     setCustomStart(toInputDateValue(dateRange.start));
@@ -273,7 +334,7 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
             实时监控开店布局情况
           </div>
         </div>
-        <div className="flex items-center gap-2 mt-[2px] mr-1">
+        <div className="flex items-center gap-2 mt-[2px]">
           {onOpenAssistant && (
             <button
               type="button"
@@ -304,7 +365,7 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
 
       {/* 搜索栏 */}
       <div className="px-1 space-y-2">
-        <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-2.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
+        <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
           <Search className="w-5 h-5 text-slate-300" />
           <input
             className="flex-1 bg-transparent outline-none text-sm text-slate-700 placeholder:text-slate-400"
@@ -312,6 +373,14 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
+          <button
+            type="button"
+            className="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
+            onClick={() => exportChangeLogsToCsv(filteredLogs)}
+            title="导出变化门店清单"
+          >
+            <Download className="w-5 h-5" />
+          </button>
         </div>
       </div>
 
@@ -426,6 +495,7 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
                       className={`w-full text-left active:scale-[0.99] transition-transform ${
                         idx > 0 ? 'border-t border-slate-100' : ''
                       }`}
+                      onClick={(e) => handleLogClick(log, e.currentTarget as HTMLButtonElement)}
                     >
                       <div className="px-5 py-4 flex items-center gap-3">
                         {renderBrandAvatar(log.brand)}
@@ -463,6 +533,20 @@ export function StoreChangeLogTab({ onOpenAssistant, onResetFilters }: StoreChan
           {footerText}
         </div>
       </div>
+
+      {/* 门店详情卡片弹层：点击日志中的门店时出现，仅展示卡片，背景虚化 */}
+      {activeStore && (
+        <StoreLogStoreCardOverlay
+          store={activeStore}
+          isFavorite={favoritesSet.has(activeStore.id)}
+          onClose={() => {
+            setActiveStore(null);
+            setOverlayAnchorTop(null);
+          }}
+          onToggleFavorite={handleToggleFavorite}
+          anchorTop={overlayAnchorTop ?? undefined}
+        />
+      )}
 
       {showRangePicker && (
         <>

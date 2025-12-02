@@ -328,20 +328,53 @@ export function AmapStoreMap({
       // 直接下钻到街道级别，并居中到该门店
       (mapRef.current as any).setZoomAndCenter(MIN_FOCUS_ZOOM, point, true);
       if (showPopup && containerRef.current && mapRef.current?.lngLatToContainer) {
-        // 在缩放生效后，通过一次 panBy 将门店点直接移动到“可视区域几何中心”位置
+        // 在缩放生效后，通过一次 panBy 将门店点移动到「顶部筛选区域」和「底部门店卡片」之间的中间安全位置
         window.setTimeout(() => {
           const map = mapRef.current;
           const container = containerRef.current;
           if (!map || !container) return;
           const px = (map as any).lngLatToContainer(point as any);
           if (!px) return;
+
           const mapRect = container.getBoundingClientRect();
           const popupRect = popupRef.current?.getBoundingClientRect();
-          const visibleBottom = popupRect ? popupRect.top - mapRect.top : mapRect.height;
+
+          // 底部安全边界：门店卡片顶部（若不存在则使用地图高度）
+          const safeBottom = popupRect ? popupRect.top - mapRect.top : mapRect.height;
+
+          // 顶部安全边界：
+          // - 全屏地图：尝试读取带有 data-map-safe-top 的顶部搜索+快速筛选容器的 bottom
+          // - 普通模块：轻微预留一个上边距，让点位整体略偏上
+          let safeTop = 0;
+          if (typeof document !== 'undefined') {
+            const safeTopEl = document.querySelector('[data-map-safe-top="true"]') as HTMLElement | null;
+            if (safeTopEl) {
+              const safeTopRect = safeTopEl.getBoundingClientRect();
+              safeTop = Math.max(0, safeTopRect.bottom - mapRect.top + 8); // 再加一点缓冲
+            }
+          }
+
+          // 非全屏模块（如「门店分布对比」卡片）没有顶部浮层，这里给一个轻微的上边距
+          if (!safeTop && !isFullscreen) {
+            safeTop = 16;
+          }
+
+          // 保证安全区域有一定高度，避免计算异常
+          const minVisibleHeight = 40;
+          if (safeBottom - safeTop < minVisibleHeight) {
+            safeTop = Math.max(0, safeBottom - minVisibleHeight);
+          }
+
+          // 聚焦比例：
+          // - 全屏地图（带顶部筛选）：点位落在顶部筛选和底部门店卡片之间的大致中点
+          // - 卡片内的地图模块：略微靠上一点，避免被卡片挡住
+          const focusRatio = isFullscreen ? 0.5 : 0.4;
+
           const targetX = mapRect.width / 2;
-          const targetY = visibleBottom / 2;
+          const targetY = safeTop + (safeBottom - safeTop) * focusRatio;
           const dx = targetX - px.x;
           const dy = targetY - px.y;
+
           if ((Math.abs(dx) > 4 || Math.abs(dy) > 4) && (map as any).panBy) {
             (map as any).panBy(dx, dy);
           }
@@ -350,7 +383,7 @@ export function AmapStoreMap({
       lastFocusedIdRef.current = store.id;
       return true;
     },
-    [showPopup],
+    [showPopup, isFullscreen],
   );
 
   // 初始进入时将视野对齐中国边界（如果没有选中门店）
