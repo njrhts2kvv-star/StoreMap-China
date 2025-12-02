@@ -84,9 +84,6 @@ export default function HomePage() {
   const [storeFilterMode, setStoreFilterMode] = useState<StoreFilterMode>('experience');
   const [activeTab, setActiveTab] = useState<'overview' | 'list' | 'competition' | 'log' | 'map'>('overview');
   const [showAiAssistant, setShowAiAssistant] = useState(false);
-  const [aiQuestion, setAiQuestion] = useState('');
-  const [aiAnswer, setAiAnswer] = useState<string | null>(null);
-  const [aiLoading, setAiLoading] = useState(false);
   
   // 根据模式应用门店类别筛选
   const filtersWithMode = useMemo(() => {
@@ -225,6 +222,12 @@ export default function HomePage() {
   }, []);
 
   const filteredMalls = useMemo(() => {
+    const provinceFilters =
+      Array.isArray(filtersWithMode.province) && filtersWithMode.province.length > 0
+        ? filtersWithMode.province
+        : typeof (filtersWithMode as any).province === 'string' && (filtersWithMode as any).province
+          ? [(filtersWithMode as any).province]
+          : [];
     const cityFilters =
       Array.isArray(filtersWithMode.city) && filtersWithMode.city.length > 0
         ? filtersWithMode.city
@@ -232,15 +235,16 @@ export default function HomePage() {
           ? [filtersWithMode.city]
           : [];
     return allMalls.filter((mall) => {
+      const provinceMatch = provinceFilters.length ? provinceFilters.includes((mall as any).province) : true;
       const cityMatch = cityFilters.length ? cityFilters.includes(mall.city) : true;
       const statusMatch = filtersWithMode.mallStatuses.length ? filtersWithMode.mallStatuses.includes(mall.status) : true;
       // 商场标签筛选
       const tagMatch = appliedMallTags.length > 0 
         ? appliedMallTags.some(tag => matchMallTag(mall, tag))
         : true;
-      return cityMatch && statusMatch && tagMatch;
+      return provinceMatch && cityMatch && statusMatch && tagMatch;
     });
-  }, [allMalls, filtersWithMode.city, filtersWithMode.mallStatuses, appliedMallTags, matchMallTag]);
+  }, [allMalls, (filtersWithMode as any).province, filtersWithMode.city, filtersWithMode.mallStatuses, appliedMallTags, matchMallTag]);
   useEffect(() => {
     if (quickFilter === 'favorites' && selectedId && !favorites.includes(selectedId)) {
       setSelectedId(null);
@@ -869,10 +873,21 @@ const callLlmSuggestion = async (
   stores: Store[],
   competitionStats: ReturnType<typeof useCompetition>,
 ): Promise<string | null> => {
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY || import.meta.env.VITE_OPENAI_API_KEY_PUBLIC;
-  if (!apiKey || typeof fetch === 'undefined') {
+  // 只使用阿里云百炼（DashScope 兼容模式），不再回退到 OpenAI
+  const bailianApiKey =
+    import.meta.env.VITE_BAILIAN_API_KEY || import.meta.env.VITE_BAILIAN_API_KEY_PUBLIC;
+
+  if (!bailianApiKey || typeof fetch === 'undefined') {
+    console.error(
+      '[AI 助手] 缺少百炼 API Key，请在 .env.local 中配置 VITE_BAILIAN_API_KEY（或 VITE_BAILIAN_API_KEY_PUBLIC）',
+    );
     return null;
   }
+
+  const baseUrl =
+    import.meta.env.VITE_BAILIAN_BASE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1';
+  const model = import.meta.env.VITE_BAILIAN_MODEL || 'qwen-plus';
+  const endpoint = `${baseUrl.replace(/\/$/, '')}/chat/completions`;
 
   const summary = buildAiSuggestion(question, malls, competitionStats);
 
@@ -880,7 +895,7 @@ const callLlmSuggestion = async (
   const totalMalls = malls.length;
 
   const payload = {
-    model: 'gpt-4.1-mini',
+    model,
     messages: [
       {
         role: 'system',
@@ -916,11 +931,11 @@ const callLlmSuggestion = async (
   };
 
   try {
-    const resp = await fetch('https://api.openai.com/v1/chat/completions', {
+    const resp = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: `Bearer ${bailianApiKey}`,
       },
       body: JSON.stringify(payload),
     });
@@ -939,6 +954,182 @@ const callLlmSuggestion = async (
     return null;
   }
 };
+
+function AiAssistantOverlay({ onClose, allMalls, allStores, competitionStats }) {
+  const [question, setQuestion] = useState('');
+  const [messages, setMessages] = useState([
+    {
+      id: 'welcome',
+      role: 'assistant',
+      content:
+        '您好！我是您的门店智能助手，可以用大白话跟我沟通，比如“帮我分析现在深圳的机会点在哪里？”，我会结合当前最新的门店和商场数据给到您建议。',
+    },
+  ]);
+  const [loading, setLoading] = useState(false);
+  const scrollRef = useRef(null);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [messages, loading]);
+
+  const handleSend = async () => {
+    if (loading) return;
+    const raw = (question || '').trim();
+    const hasQuestion = !!raw;
+    const finalQuestion = raw || '帮我看看现在整体还有哪些机会点？';
+    const userContent = hasQuestion ? raw : finalQuestion;
+
+    const id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+
+    setMessages((prev) => [
+      ...prev,
+      { id: `u-${id}`, role: 'user', content: userContent },
+      { id: `a-${id}`, role: 'assistant', content: '我正在根据当前全量数据帮你分析，请稍等几秒…' },
+    ]);
+    setQuestion('');
+    setLoading(true);
+
+    try {
+      let answer: string | null = null;
+      if (hasQuestion) {
+        answer = await callLlmSuggestion(finalQuestion, allMalls, allStores, competitionStats);
+      }
+      if (!answer) {
+        answer = buildAiSuggestion(finalQuestion, allMalls, competitionStats);
+      }
+      const finalAnswer = answer;
+      setMessages((prev) =>
+        prev.map((m) => (m.id === `a-${id}` ? { ...m, content: finalAnswer } : m)),
+      );
+    } catch (err) {
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === `a-${id}`
+            ? {
+                ...m,
+                content: '调用 AI 助手时出现问题，可以稍后再试，或先根据筛选结果自己看一看。',
+              }
+            : m,
+        ),
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <>
+      <div
+        className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+        onClick={onClose}
+      />
+      <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-16 pb-10">
+        <div className="w-full max-w-[560px] bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_18px_40px_rgba(15,23,42,0.45)] border border-slate-100 overflow-hidden">
+          <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-slate-100">
+            <div className="flex items-center gap-2">
+              <img src={instaLogoYellow} alt="AI" className="w-8 h-8 rounded-full shadow-sm" />
+              <div>
+                <div className="text-sm font-semibold text-slate-900">AI 助手</div>
+                <div className="text-[11px] text-slate-500">在线｜基于全量数据给建议</div>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 hover:bg-slate-200 transition"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="px-5 pt-5 pb-6 flex flex-col gap-5 h-[70vh]">
+            {/* 对话区 */}
+            <div className="flex-1 overflow-y-auto pr-1" ref={scrollRef}>
+              {messages.map((msg) => (
+                <div
+                  key={msg.id}
+                  className={`mb-3 flex items-start gap-3 ${
+                    msg.role === 'user' ? 'justify-end' : ''
+                  }`}
+                >
+                  {msg.role === 'assistant' && (
+                    <img
+                      src={instaLogoYellow}
+                      alt="AI"
+                      className="w-8 h-8 rounded-full shadow-sm mt-1"
+                    />
+                  )}
+                  <div className="max-w-[80%]">
+                    <div
+                      className={`rounded-3xl px-4 py-3.5 text-[13px] leading-relaxed ${
+                        msg.role === 'assistant'
+                          ? 'bg-white border border-slate-100 text-slate-800 shadow-[0_10px_24px_rgba(15,23,42,0.08)]'
+                          : 'bg-slate-900 text-white'
+                      }`}
+                    >
+                      {msg.content}
+                    </div>
+                  </div>
+                  {msg.role === 'user' && (
+                    <div className="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-[11px] font-semibold mt-1">
+                      我
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* 输入区 */}
+            <div className="space-y-2">
+              <div className="text-[11px] text-slate-400">
+                示例：<span className="font-semibold text-slate-700">帮我分析现在深圳的机会点在哪里</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full bg-slate-50 border border-slate-200 px-4 py-3">
+                <input
+                  ref={inputRef}
+                  className="flex-1 bg-transparent outline-none text-sm text-slate-800 placeholder:text-slate-400"
+                  placeholder="输入您的问题，例如：现在广州的机会在哪里？"
+                  value={question}
+                  onChange={(e) => setQuestion(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      handleSend();
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  disabled={loading}
+                  className={`w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center transition ${
+                    loading ? 'opacity-60 cursor-not-allowed' : 'hover:bg-slate-800'
+                  }`}
+                  onClick={handleSend}
+                >
+                  {loading ? (
+                    <span className="w-4 h-4 border-[2px] border-white/70 border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
 
 const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') => {
   const wrapperClass =
@@ -1186,7 +1377,6 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                 className="flex items-center gap-1 text-slate-700 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
                 onClick={() => {
                   setShowAiAssistant(true);
-                  setAiAnswer(null);
                 }}
                 title="AI 助手"
               >
@@ -1266,22 +1456,31 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
               </div>
               <Card className="relative border border-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.06)] overflow-hidden">
                 <div className="h-96 w-full relative">
-                  <AmapStoreMap
-                    stores={visibleStores}
-                    colorBaseStores={allStores}
-                    regionMode="none"
-                    selectedId={selectedId || undefined}
-                    onSelect={handleSelect}
-                    userPos={mapUserPos}
-                    favorites={favorites}
-                    onToggleFavorite={toggleFavorite}
-                    showPopup={true}
-                    resetToken={mapResetToken}
-                    mapId="overview-map"
-                    showControls={true}
-                    fitToStores={pendingFilters.province.length > 0 || pendingFilters.city.length > 0}
-                    showLegend={true}
-                  />
+                  {(() => {
+                    const hasProvinceFilter = pendingFilters.province.length > 0;
+                    const hasCityFilter = pendingFilters.city.length > 0;
+                    const fitLevel =
+                      hasCityFilter ? 'city' : hasProvinceFilter ? 'province' : 'none';
+                    return (
+                      <AmapStoreMap
+                        stores={visibleStores}
+                        colorBaseStores={allStores}
+                        regionMode="none"
+                        selectedId={selectedId || undefined}
+                        onSelect={handleSelect}
+                        userPos={mapUserPos}
+                        favorites={favorites}
+                        onToggleFavorite={toggleFavorite}
+                        showPopup={true}
+                        resetToken={mapResetToken}
+                        mapId="overview-map"
+                        showControls={true}
+                        fitToStores={hasProvinceFilter || hasCityFilter}
+                        fitLevel={fitLevel}
+                        showLegend={true}
+                      />
+                    );
+                  })()}
                 </div>
               </Card>
             </div>
@@ -1519,43 +1718,10 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
               </div>
             </div>
 
-            {/* 地图 */}
+            {/* 地图（仅商场界面） */}
             <div className="space-y-3 px-1">
               <div className="flex items-center justify-between px-1">
                 <div className="text-lg font-extrabold text-slate-900">分布地图</div>
-                <div className="flex items-center bg-white rounded-full shadow-[0_10px_24px_rgba(15,23,42,0.12)] border border-slate-100 px-1 py-[3px]">
-                  <button
-                    type="button"
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition ${
-                      competitionMapMode === 'competition'
-                        ? 'bg-slate-900 text-white shadow-md'
-                        : 'bg-transparent text-slate-500'
-                    }`}
-                    onClick={() => {
-                      setCompetitionMapMode('competition');
-                    }}
-                  >
-                    <Crosshair className="w-3.5 h-3.5" />
-                    商场界面
-                  </button>
-                  <button
-                    type="button"
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition ${
-                      competitionMapMode === 'stores'
-                        ? 'bg-slate-900 text-white shadow-md'
-                        : 'bg-transparent text-slate-500'
-                    }`}
-                    onClick={() => {
-                      setCompetitionMapMode('stores');
-                      setShowCompetitionMallCard(false);
-                      setSelectedCompetitionMall(null);
-                      setSelectedMallId(null);
-                    }}
-                  >
-                    <StoreIcon className="w-3.5 h-3.5" />
-                    门店界面
-                  </button>
-                </div>
               </div>
               <Card className="relative border border-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.06)] overflow-hidden">
                 {competitionMapMode === 'competition' && (
@@ -1602,27 +1768,35 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   </div>
                 )}
                 <div className="h-96 w-full relative">
-                  <AmapStoreMap
-                    viewMode={competitionMapMode === 'stores' ? 'stores' : 'competition'}
-                    stores={visibleStores}
-                    malls={competitionMallsForView}
-                    selectedId={competitionMapMode === 'stores' ? selectedId || undefined : undefined}
-                    selectedMallId={competitionMapMode === 'competition' ? selectedMallId || undefined : undefined}
-                    onSelect={handleSelect}
-                    onMallClick={competitionMapMode === 'competition' ? handleMallClick : undefined}
-                    userPos={competitionMapMode === 'stores' ? mapUserPos : null}
-                    favorites={competitionMapMode === 'stores' ? favorites : []}
-                    onToggleFavorite={competitionMapMode === 'stores' ? toggleFavorite : undefined}
-                    showPopup={competitionMapMode === 'stores'}
-                    resetToken={mapResetToken}
-                    mapId="competition-map-standalone"
-                    showControls
-                    autoFitOnClear
-                    fitToStores={competitionMapMode === 'stores' ? pendingFilters.province.length > 0 || pendingFilters.city.length > 0 : false}
-                    colorBaseStores={competitionMapMode === 'stores' ? allStores : undefined}
-                    regionMode={competitionMapMode === 'stores' ? 'none' : 'province'}
-                    showLegend={competitionMapMode === 'stores'}
-                  />
+                  {(() => {
+                    const hasProvinceFilter = pendingFilters.province.length > 0;
+                    const hasCityFilter = pendingFilters.city.length > 0;
+                    const fitLevel =
+                      hasCityFilter ? 'city' : hasProvinceFilter ? 'province' : 'none';
+                    return (
+                      <AmapStoreMap
+                        viewMode="competition"
+                        stores={visibleStores}
+                        malls={competitionMallsForView}
+                        selectedMallId={selectedMallId || undefined}
+                        onSelect={handleSelect}
+                        onMallClick={handleMallClick}
+                        userPos={null}
+                        favorites={[]}
+                        onToggleFavorite={undefined}
+                        showPopup={false}
+                        resetToken={mapResetToken}
+                        mapId="competition-map-standalone"
+                        showControls
+                        autoFitOnClear
+                        fitToStores={hasProvinceFilter || hasCityFilter}
+                        fitLevel={fitLevel}
+                        colorBaseStores={allStores}
+                        regionMode="province"
+                        showLegend={false}
+                      />
+                    );
+                  })()}
                   {/* 竞争商场卡片 */}
                   {competitionMapMode === 'competition' && showCompetitionMallCard && selectedCompetitionMall && (
                     <CompetitionMallCard
@@ -1632,6 +1806,8 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                         setShowCompetitionMallCard(false);
                         setSelectedCompetitionMall(null);
                         setSelectedMallId(null);
+                        // 关闭卡片后，回到当前筛选范围视图
+                        setMapResetToken((token) => token + 1);
                       }}
                     />
                   )}
@@ -1896,32 +2072,41 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
 
               {/* 全屏地图：占满剩余可视高度 */}
               <div className="h-full w-full relative">
-                <AmapStoreMap
-                  viewMode={competitionMapMode === 'stores' ? 'stores' : 'competition'}
-                  stores={visibleStores}
-                  malls={competitionMallsForView}
-                  selectedId={competitionMapMode === 'stores' ? selectedId || undefined : undefined}
-                  selectedMallId={competitionMapMode === 'competition' ? selectedMallId || undefined : undefined}
-                  onSelect={handleSelect}
-                  onMallClick={competitionMapMode === 'competition' ? handleMallClick : undefined}
-                  userPos={competitionMapMode === 'stores' ? mapUserPos : null}
-                  favorites={competitionMapMode === 'stores' ? favorites : []}
-                  onToggleFavorite={competitionMapMode === 'stores' ? toggleFavorite : undefined}
-                  showPopup={competitionMapMode === 'stores'}
-                  resetToken={mapResetToken}
-                  mapId="full-screen-competition-map"
-                  isFullscreen
-                  showControls
-                  autoFitOnClear
-                  fitToStores={
-                    competitionMapMode === 'stores'
-                      ? pendingFilters.province.length > 0 || pendingFilters.city.length > 0
-                      : false
-                  }
-                  colorBaseStores={competitionMapMode === 'stores' ? allStores : undefined}
-                  regionMode={competitionMapMode === 'stores' ? 'none' : 'province'}
-                  showLegend={competitionMapMode === 'stores'}
-                />
+                {(() => {
+                  const hasProvinceFilter = pendingFilters.province.length > 0;
+                  const hasCityFilter = pendingFilters.city.length > 0;
+                  const fitLevel =
+                    hasCityFilter ? 'city' : hasProvinceFilter ? 'province' : 'none';
+                  return (
+                    <AmapStoreMap
+                      viewMode={competitionMapMode === 'stores' ? 'stores' : 'competition'}
+                      stores={visibleStores}
+                      malls={competitionMallsForView}
+                      selectedId={competitionMapMode === 'stores' ? selectedId || undefined : undefined}
+                      selectedMallId={competitionMapMode === 'competition' ? selectedMallId || undefined : undefined}
+                      onSelect={handleSelect}
+                      onMallClick={competitionMapMode === 'competition' ? handleMallClick : undefined}
+                      userPos={competitionMapMode === 'stores' ? mapUserPos : null}
+                      favorites={competitionMapMode === 'stores' ? favorites : []}
+                      onToggleFavorite={competitionMapMode === 'stores' ? toggleFavorite : undefined}
+                      showPopup={competitionMapMode === 'stores'}
+                      resetToken={mapResetToken}
+                      mapId="full-screen-competition-map"
+                      isFullscreen
+                      showControls
+                      autoFitOnClear
+                      fitToStores={
+                        competitionMapMode === 'stores'
+                          ? hasProvinceFilter || hasCityFilter
+                          : false
+                      }
+                      fitLevel={competitionMapMode === 'stores' ? fitLevel : 'none'}
+                      colorBaseStores={competitionMapMode === 'stores' ? allStores : undefined}
+                      regionMode={competitionMapMode === 'stores' ? 'none' : 'province'}
+                      showLegend={competitionMapMode === 'stores'}
+                    />
+                  );
+                })()}
                 {/* 竞争商场卡片 */}
                 {competitionMapMode === 'competition' && showCompetitionMallCard && selectedCompetitionMall && (
                   <CompetitionMallCard
@@ -1932,6 +2117,8 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                       setShowCompetitionMallCard(false);
                       setSelectedCompetitionMall(null);
                       setSelectedMallId(null);
+                      // 全屏下同样在关闭时恢复到筛选层级视图
+                      setMapResetToken((token) => token + 1);
                     }}
                   />
                 )}
@@ -2018,7 +2205,6 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
           <StoreChangeLogTab
             onOpenAssistant={() => {
               setShowAiAssistant(true);
-              setAiAnswer(null);
             }}
             onResetFilters={resetFilters}
           />
@@ -2028,89 +2214,12 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
 
       {/* AI 助手：和筛选类似的浮层模块 */}
       {showAiAssistant && (
-        <>
-          <div
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
-            onClick={() => setShowAiAssistant(false)}
-          />
-          <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-16 pb-10">
-            <div className="w-full max-w-[560px] bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_18px_40px_rgba(15,23,42,0.45)] border border-slate-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-2">
-                  <img src={instaLogoYellow} alt="AI" className="w-8 h-8 rounded-full shadow-sm" />
-                  <div>
-                    <div className="text-sm font-semibold text-slate-900">AI 助手</div>
-                    <div className="text-[11px] text-slate-500">
-                      在线｜基于全量数据给建议
-                    </div>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setShowAiAssistant(false)}
-                  className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 hover:bg-slate-200 transition"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-
-              <div className="px-5 pt-5 pb-6 flex flex-col gap-5 h-[70vh]">
-                {/* 对话区 */}
-                <div className="flex-1 overflow-y-auto pr-1">
-                  <div className="flex items-start gap-3">
-                    <img src={instaLogoYellow} alt="AI" className="w-8 h-8 rounded-full shadow-sm mt-1" />
-                    <div className="flex-1">
-                      <div className="rounded-3xl bg-white border border-slate-100 shadow-[0_10px_24px_rgba(15,23,42,0.08)] px-4 py-3.5 text-[13px] leading-relaxed text-slate-800">
-                        {aiAnswer ||
-                          '您好！我是您的门店智能助手，可以用大白话跟我沟通，比如“帮我分析现在深圳的机会点在哪里？”，我会结合当前最新的门店和商场数据给到您建议。'}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 输入区 */}
-                <div className="space-y-2">
-                  <div className="text-[11px] text-slate-400">
-                    示例：<span className="font-semibold text-slate-700">帮我分析现在深圳的机会点在哪里</span>
-                  </div>
-                  <div className="flex items-center gap-2 rounded-full bg-slate-50 border border-slate-200 px-4 py-3">
-                    <input
-                      className="flex-1 bg-transparent outline-none text-sm text-slate-800 placeholder:text-slate-400"
-                      placeholder="输入您的问题，例如：现在广州的机会在哪里？"
-                      value={aiQuestion}
-                      onChange={(e) => setAiQuestion(e.target.value)}
-                    />
-                    <button
-                      type="button"
-                      className="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center hover:bg-slate-800 transition"
-                      onClick={async () => {
-                        const question = aiQuestion;
-                        if (!question.trim()) {
-                          setAiAnswer(buildAiSuggestion(question, allMalls, competitionStats));
-                          return;
-                        }
-                        setAiAnswer('我正在根据当前全量数据帮你分析，请稍等几秒…');
-                        setAiLoading(true);
-                        try {
-                          const llmAnswer = await callLlmSuggestion(question, allMalls, allStores, competitionStats);
-                          if (llmAnswer) {
-                            setAiAnswer(llmAnswer);
-                          } else {
-                            setAiAnswer(buildAiSuggestion(question, allMalls, competitionStats));
-                          }
-                        } finally {
-                          setAiLoading(false);
-                        }
-                      }}
-                    >
-                      <Send className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
+        <AiAssistantOverlay
+          onClose={() => setShowAiAssistant(false)}
+          allMalls={allMalls}
+          allStores={allStores}
+          competitionStats={competitionStats}
+        />
       )}
     </div>
   );

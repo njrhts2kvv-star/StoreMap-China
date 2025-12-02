@@ -59,12 +59,15 @@ type Props = {
   regionMode?: 'province' | 'none'; // none: 不展示省市色块，直接展示点位
   showLegend?: boolean; // 是否显示新增门店图例
   isFullscreen?: boolean; // 是否全屏模式（无圆角）
+  // 控制自动缩放的级别：省份/城市，用于「筛选省份/城市」时的视野层级
+  fitLevel?: 'none' | 'province' | 'city';
 };
 
 const DEFAULT_CENTER: [number, number] = [35.5, 103.5];
 const DEFAULT_ZOOM = 3.2; // 默认进一步缩小
 const CHINA_BOUNDS = { sw: [73, 15] as [number, number], ne: [135, 54] as [number, number] };
-const MIN_FOCUS_ZOOM = 11;
+// 下钻到具体门店 / 商场时使用的街道级缩放
+const MIN_FOCUS_ZOOM = 14;
 const CITY_MAX_ZOOM = 10; // 城市层最高放大，避免直接落到街道级
 const DJI_COLOR = '#111827';
 const INSTA_COLOR = '#facc15';
@@ -239,6 +242,7 @@ export function AmapStoreMap({
   regionMode = 'province',
   showLegend = false,
   isFullscreen = false,
+  fitLevel = 'none',
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<AMap.Map | null>(null);
@@ -300,6 +304,19 @@ export function AmapStoreMap({
     mapRef.current.setZoomAndCenter(DEFAULT_ZOOM, normalizedCenter, true);
   }
 
+  const focusOnMall = useCallback(
+    (mall: Mall | null) => {
+      if (!mapRef.current || !mall) return false;
+      const point = toMallLngLat(mall);
+      if (!point) return false;
+      // 下钻到街道级别并居中到该商场
+      (mapRef.current as any).setZoomAndCenter(MIN_FOCUS_ZOOM, point, true);
+      hasInitialCenteredRef.current = true;
+      return true;
+    },
+    [],
+  );
+
   const focusOnStore = useCallback(
     (store: Store | null) => {
       if (!mapRef.current || !store) return false;
@@ -308,10 +325,10 @@ export function AmapStoreMap({
       setActiveProvince(store.province || null);
       setActiveCity(store.city || null);
       setDrillLevel('city');
-      const currentZoom = mapRef.current.getZoom();
-      const targetZoom = Math.max(currentZoom, MIN_FOCUS_ZOOM);
-      mapRef.current.setZoomAndCenter(targetZoom, point, true);
+      // 直接下钻到街道级别，并居中到该门店
+      (mapRef.current as any).setZoomAndCenter(MIN_FOCUS_ZOOM, point, true);
       if (showPopup && containerRef.current && mapRef.current?.lngLatToContainer) {
+        // 在缩放生效后，通过一次 panBy 将门店点直接移动到“可视区域几何中心”位置
         window.setTimeout(() => {
           const map = mapRef.current;
           const container = containerRef.current;
@@ -321,12 +338,14 @@ export function AmapStoreMap({
           const mapRect = container.getBoundingClientRect();
           const popupRect = popupRef.current?.getBoundingClientRect();
           const visibleBottom = popupRect ? popupRect.top - mapRect.top : mapRect.height;
+          const targetX = mapRect.width / 2;
           const targetY = visibleBottom / 2;
+          const dx = targetX - px.x;
           const dy = targetY - px.y;
-          if (Math.abs(dy) > 4 && (map as any).panBy) {
-            (map as any).panBy(0, dy);
+          if ((Math.abs(dx) > 4 || Math.abs(dy) > 4) && (map as any).panBy) {
+            (map as any).panBy(dx, dy);
           }
-        }, 120);
+        }, 160);
       }
       lastFocusedIdRef.current = store.id;
       return true;
@@ -676,13 +695,7 @@ export function AmapStoreMap({
         marker.setExtData(mall);
         marker.on('click', () => {
           onMallClick?.(mall);
-          if (mapRef.current) {
-            const currentZoom = mapRef.current.getZoom();
-            if (currentZoom < MIN_FOCUS_ZOOM) {
-              mapRef.current.setZoom(MIN_FOCUS_ZOOM, true);
-            }
-            mapRef.current.setCenter(point, true);
-          }
+          focusOnMall(mall);
         });
         nextMarkers.push(marker);
       });
@@ -735,6 +748,13 @@ export function AmapStoreMap({
         fitTargets.push(...nextMarkers);
       }
       mapRef.current.setFitView(fitTargets, false, [80, 40, 80, 80]);
+      // 根据筛选层级限制最大缩放，避免一筛选省份就直接下钻到街道级
+      const z = mapRef.current.getZoom();
+      if (fitLevel === 'province' && z > 7.5) {
+        mapRef.current.setZoom(7.5, true);
+      } else if (fitLevel === 'city' && z > CITY_MAX_ZOOM) {
+        mapRef.current.setZoom(CITY_MAX_ZOOM, true);
+      }
       hasInitialCenteredRef.current = true;
     }
     if (showStoreMarkers && nextMarkers.length) {
@@ -760,12 +780,8 @@ export function AmapStoreMap({
     if (!ready || !selectedMallId || !mapRef.current) return;
     const mall = malls.find((m) => m.mallId === selectedMallId);
     if (!mall) return;
-    const point = toMallLngLat(mall);
-    if (!point) return;
-    const currentZoom = mapRef.current.getZoom();
-    const targetZoom = Math.max(currentZoom, MIN_FOCUS_ZOOM);
-    mapRef.current.setZoomAndCenter(targetZoom, point, true);
-  }, [ready, selectedMallId, malls]);
+    focusOnMall(mall);
+  }, [ready, selectedMallId, malls, focusOnMall]);
 
   // 单独处理选中状态的样式更新，避免重新创建所有 markers
   useEffect(() => {
