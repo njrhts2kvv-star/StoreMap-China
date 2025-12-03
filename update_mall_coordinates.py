@@ -363,6 +363,14 @@ def update_mall_coordinates(
     updated_mall_rows = 0
     coord_conflicts: list[dict[str, str]] = []
 
+    # 允许自动“挂商场/建商场”的门店类型
+    ALLOWED_TYPES_FOR_MALL = {"授权体验店", "授权专卖店", "直营店"}
+
+    # 特例白名单：即使类型不是以上三种，也允许保留/创建商场的门店（比如杭州城西银泰城授权体验店）
+    WHITELIST_STORE_IDS: Set[str] = {
+        "5413fa76-bccd-467c-be31-4e6dc615128d",  # DJI - 杭州城西银泰城授权体验店
+    }
+
     # 逐店同步
     for idx, store_row in store_df.iterrows():
         store_id = _normalize_str(store_row.get("store_id"))
@@ -397,6 +405,8 @@ def update_mall_coordinates(
         cur_mall_id = _normalize_str(store_row.get("mall_id"))
         cur_mall_name = _normalize_str(store_row.get("mall_name"))
         store_type = _normalize_str(store_row.get("store_type"))
+        is_allowed_type = store_type in ALLOWED_TYPES_FOR_MALL
+        is_whitelist_store = store_id in WHITELIST_STORE_IDS
 
         changed = False
 
@@ -433,8 +443,7 @@ def update_mall_coordinates(
         # 若还没有商场名称，则尝试通过高德附近搜索自动匹配一次（DJI/Insta 新门店兜底）
         # 仅对 直营店 / 授权体验店 / 授权专卖店 生效，其余类型视为街边店
         has_mall = bool(mall_name)
-        allowed_types = {"授权体验店", "授权专卖店", "直营店"}
-        allow_auto_match = store_type in allowed_types
+        allow_auto_match = is_allowed_type
         if not has_mall and src_lat is not None and src_lng is not None and brand in {"DJI", "Insta360"} and allow_auto_match:
             inferred = _search_nearby_mall(name, city, src_lat, src_lng)
             if inferred is not None:
@@ -457,6 +466,23 @@ def update_mall_coordinates(
         mall_id = cur_mall_id or name_key_to_mall_id.get(key)
 
         if not mall_id:
+            # 仅允许 直营店 / 授权体验店 / 授权专卖店 或白名单门店触发新增商场
+            if not (is_allowed_type or is_whitelist_store):
+                if dry_run:
+                    print(
+                        f"[跳过新增商场] {brand} - {name} ({city}) "
+                        f"类型={store_type or '空'}，视为街边店，不创建商场记录"
+                    )
+                # 若当前门店挂了旧 mall_id，则清空，避免再次引用已经删除的商场
+                if cur_mall_id and not dry_run:
+                    store_df.at[idx, "mall_id"] = ""
+                    store_df.at[idx, "mall_name"] = ""
+                    changed = True
+                    updated_store_rows += 1
+                elif changed:
+                    updated_store_rows += 1
+                continue
+
             # 创建新的 mall 记录
             mall_id = _next_mall_id(mall_df)
             name_key_to_mall_id[key] = mall_id

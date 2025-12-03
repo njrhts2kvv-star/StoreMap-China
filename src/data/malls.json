@@ -8685,21 +8685,6 @@
     "longitude": 120.11045
   },
   {
-    "mallId": "MALL_00642",
-    "mallName": "张家港吾悦广场",
-    "city": "苏州市",
-    "province": "江苏省",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 31.836138,
-    "longitude": 120.54881
-  },
-  {
     "mallId": "MALL_00643",
     "mallName": "1953园",
     "city": "石家庄市",
@@ -8833,36 +8818,6 @@
     "hasInsta360": true,
     "latitude": 30.667587,
     "longitude": 104.132526
-  },
-  {
-    "mallId": "MALL_00652",
-    "mallName": "灞桥机车",
-    "city": "西安市",
-    "province": "陕西省",
-    "djiOpened": false,
-    "instaOpened": true,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": true,
-    "latitude": 34.36932,
-    "longitude": 109.062334
-  },
-  {
-    "mallId": "MALL_00653",
-    "mallName": "可可托海镇雪具",
-    "city": "阿勒泰地区",
-    "province": "新疆维吾尔自治区",
-    "djiOpened": false,
-    "instaOpened": true,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": false,
-    "hasInsta360": true,
-    "latitude": 47.227798,
-    "longitude": 89.824386
   },
   {
     "mallId": "MALL_00654",
@@ -11985,21 +11940,6 @@
     "longitude": 116.661162
   },
   {
-    "mallId": "MALL_00879",
-    "mallName": "花仙子鲜花",
-    "city": "大连市",
-    "province": "辽宁省",
-    "djiOpened": true,
-    "instaOpened": false,
-    "djiReported": false,
-    "djiExclusive": false,
-    "djiTarget": false,
-    "hasDJI": true,
-    "hasInsta360": false,
-    "latitude": 38.917013,
-    "longitude": 121.593508
-  },
-  {
     "mallId": "MALL_00880",
     "mallName": "龙湖成都时代天街",
     "city": "成都市",
@@ -12185,12 +12125,12 @@
     "city": "北京市",
     "province": "北京市",
     "djiOpened": false,
-    "instaOpened": false,
+    "instaOpened": true,
     "djiReported": false,
     "djiExclusive": false,
     "djiTarget": false,
     "hasDJI": false,
-    "hasInsta360": false,
+    "hasInsta360": true,
     "latitude": 39.992111,
     "longitude": 116.323188
   }

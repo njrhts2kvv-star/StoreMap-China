@@ -5984,9 +5984,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
-    "changeType": "nan",
-    "mallId": "MALL_00652",
-    "mallName": "灞桥机车"
+    "changeType": "nan"
   },
   {
     "id": "cb01eae1-696f-4b29-8422-b3538cb8a5c7",
@@ -6266,9 +6264,7 @@
     "serviceTags": [],
     "openedAt": "historical",
     "status": "营业中",
-    "changeType": "nan",
-    "mallId": "MALL_00653",
-    "mallName": "可可托海镇雪具"
+    "changeType": "nan"
   },
   {
     "id": "d308e27d-7f2c-40c9-94b4-78a2cc2bdb33",

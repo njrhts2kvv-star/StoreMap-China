@@ -2798,8 +2798,6 @@
     "openedAt": "historical",
     "status": "营业中",
     "changeType": "nan",
-    "mallId": "MALL_00642",
-    "mallName": "张家港吾悦广场",
     "phone": "18015529801",
     "openingHours": "09:00-20:00"
   },
@@ -3214,8 +3212,6 @@
     "openedAt": "historical",
     "status": "营业中",
     "changeType": "nan",
-    "mallId": "MALL_00640",
-    "mallName": "天河百脑汇",
     "phone": "020-38104804 / 13710546346 / 19120484940",
     "openingHours": "09:30-21:30"
   },
@@ -15412,8 +15408,6 @@
     "openedAt": "2025-11-28",
     "status": "营业中",
     "changeType": "nan",
-    "mallId": "MALL_00879",
-    "mallName": "花仙子鲜花",
     "phone": "15998475630",
     "openingHours": "周一至周日9:00-19:00"
   },
