@@ -7,7 +7,7 @@
     "province": "辽宁省",
     "city": "沈阳市",
     "changeType": "RELOCATE",
-    "timestamp": "2025-12-03T10:11:55.523919"
+    "timestamp": "2025-12-03T07:47:52.939525"
   },
   {
     "id": "CLOSE-05d9818c-4633-441f-88e3-22efc28bb3e0",
@@ -46,6 +46,16 @@
     "storeName": "杭州颖顺器材照材店",
     "province": "浙江省",
     "city": "杭州市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-5b6901e2-a4ba-4062-a048-17582d094aee",
+    "storeId": "5b6901e2-a4ba-4062-a048-17582d094aee",
+    "brand": "Insta360",
+    "storeName": "唐山北新道蜗牛摄影器材售点1",
+    "province": "河北省",
+    "city": "唐山市",
     "changeType": "CLOSE",
     "timestamp": "2025-12-03T00:00:00"
   },

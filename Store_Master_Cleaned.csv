@@ -1,4 +1,4 @@
-store_id,brand,name,address,city,province,corrected_lat,corrected_lng,mall_name,mall_id,phone,business_hours,wechat_qr_code,store_type,opened_at,status,change_type
+﻿store_id,brand,name,address,city,province,corrected_lat,corrected_lng,mall_name,mall_id,phone,business_hours,wechat_qr_code,store_type,opened_at,status,change_type
 001727a1-1aef-43b4-84c9-6b8e65c628a1,DJI,临汾生龙悦享城授权体验店,山西省临汾市解放西路生龙悦享城一层F1-031,临汾市,山西省,36.09194,111.535552,生龙悠购天地,MALL_00031,16636340688,10:00-22:00,,授权体验店,2025-11-28,营业中,
 0024e304-d6cc-4f92-ad53-0c219185e343,Insta360,影石Insta360深圳壹方城直营店,新安街道壹方城购物中心B2-054影石Insta360,深圳市,广东省,22.555615,113.898986,深圳前海壹方城,MALL_00007,19925294205,周一至周五 10:00-22:00 / 周六至周日 10:00-22:30,,直营店,historical,营业中,
 00346c7a-f996-44ec-9e3e-12f8eb7a1100,DJI,昆明恒隆广场授权体验店,云南省昆明市盘龙区东风东路21号恒隆广场5楼L512商铺,昆明市,云南省,25.033964,102.724181,昆明恒隆广场,MALL_00194,0871-65129339,周一至周四 10:00-22:00 / 周五至周日 10:00-22:30,https://terra-1-g.djicdn.com/ca21b7ff69f8434293e0bd434b8d4a54/customer/1-20251110115552.png,授权体验店,historical,营业中,
@@ -465,7 +465,7 @@ store_id,brand,name,address,city,province,corrected_lat,corrected_lng,mall_name,
 5ae20bee-d8bd-4b17-8b26-04235952b55d,DJI,扬州购佰航空谷授权店,江苏省扬州市广陵区航空谷科创研发中心星航荟,扬州市,江苏省,32.402887,119.560885,,,17751383807,10:00-21:00,https://terra-1-g.djicdn.com/ca21b7ff69f8434293e0bd434b8d4a54/customer/%E5%9B%BE%E7%89%87_393_06-20250303170045.png,新型照材,historical,营业中,
 5b03c366-40df-470a-8e3a-55dbbf8c9ca9,DJI,常州新北万达授权体验店,"江苏省常州市新北区通江中路 88 号新北万达广场1F1020-2,1021",常州市,江苏省,31.818992,119.970079,常州新北万达广场,MALL_00394,13645191345,10:00-22:00,https://terra-1-g.djicdn.com/ca21b7ff69f8434293e0bd434b8d4a54/customer/%E5%BC%A0%E6%9D%AD-20251121154758.png,授权体验店,historical,营业中,
 5b328e44-ba1c-497e-88bf-82d67db19153,DJI,深圳中航城授权体验店,深圳市福田区华强北中航路1号中航城君尚购物中心B区L125号,深圳市,广东省,22.540084,114.088019,深圳中航城,MALL_00607,13346438831,周一至周四 10:00-22:00 / 周五至周日 10:00-22:30,https://terra-1-g.djicdn.com/ca21b7ff69f8434293e0bd434b8d4a54/customer/%E7%8E%8B%E4%BE%9D%E8%8B%B9-20251105153132.png,授权体验店,historical,营业中,
-5b6901e2-a4ba-4062-a048-17582d094aee,Insta360,唐山北新道蜗牛摄影器材售点1,唐山北新道蜗牛摄影器材售点1,唐山市,河北省,39.641329,118.176309,,,,,,合作体验点,historical,营业中,
+5b6901e2-a4ba-4062-a048-17582d094aee,Insta360,唐山北新道蜗牛摄影器材售点1,唐山北新道蜗牛摄影器材售点1,唐山市,河北省,39.641329,118.176309,,,,,,合作体验点,historical,已闭店,
 5b78c9b1-7fed-4973-a531-e34e84f2e986,Insta360,影石Insta360上海百脑汇照材专卖店,漕溪北路339号一楼,上海市,上海市,31.195149,121.449254,上海百脑汇,MALL_00648,15168406397,10:00-21:00,,授权专卖店,historical,营业中,
 5b7edd3b-0e27-4c21-a940-00df7590e10b,DJI,北京富力广场授权体验店,北京市朝阳区东三环中路65号楼一层102内128-4、128-5号,北京市,北京市,39.897118,116.467047,北京富力广场,MALL_00097,18515966880,10:00-22:00,https://terra-1-g.djicdn.com/ca21b7ff69f8434293e0bd434b8d4a54/customer/%E5%8C%97%E4%BA%AC%E5%AF%8C%E5%8A%9B%E5%B9%BF%E5%9C%BA%E6%8E%88%E6%9D%83%E4%BD%93%E9%AA%8C%E5%BA%97-20240911203453.png,授权体验店,historical,营业中,
 5ba048a9-81bc-4bff-a8d0-9beeaf8b5e02,Insta360,雪具授权体验店（崇礼店）,美食街一号傲天极限单双板集合店,张家口市,河北省,40.986854,115.304878,,,,,,合作体验点,historical,已闭店,
