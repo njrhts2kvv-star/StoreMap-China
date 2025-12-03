@@ -22,6 +22,7 @@ import pandas as pd
 from geopy.distance import geodesic
 
 from update_precise_coordinates import search_store_by_name, require_key
+from far_store_whitelist import WHITELIST_FAR_STORE_IDS
 
 BASE_DIR = Path(__file__).resolve().parent
 STORE_MASTER = BASE_DIR / "Store_Master_Cleaned.csv"
@@ -42,6 +43,11 @@ def collect_far_store_ids(threshold_m: float = 2000.0) -> list[str]:
             continue
         mall = mall_by_id.get(str(mall_id))
         if mall is None:
+            continue
+
+        # 白名单门店：业务确认可以接受“远距离”，不再参与自动修正
+        store_id = str(store.get("store_id") or "").strip()
+        if store_id in WHITELIST_FAR_STORE_IDS:
             continue
 
         s_lat, s_lng = store.get("corrected_lat"), store.get("corrected_lng")
@@ -140,4 +146,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

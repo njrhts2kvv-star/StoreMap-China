@@ -16,6 +16,9 @@ import pandas as pd
 import json
 from geopy.distance import geodesic
 
+from far_store_whitelist import WHITELIST_FAR_STORE_IDS
+from competition_whitelist import WHITELIST_EXCLUSIVE_MALL_IDS
+
 
 def to_bool(value):
     if isinstance(value, bool):
@@ -165,7 +168,11 @@ def check_coordinates(store_df, mall_df):
             continue
         
         mall = mall.iloc[0]
-        
+        # 白名单门店：业务上确认可以接受，即使距离较远也不再提示
+        store_id = str(store.get("store_id") or "").strip()
+        if store_id in WHITELIST_FAR_STORE_IDS:
+            continue
+
         store_coord = (store['corrected_lat'], store['corrected_lng'])
         mall_coord = (mall['mall_lat'], mall['mall_lng'])
         
@@ -300,6 +307,9 @@ def check_competition_fields(mall_df):
         if to_bool(row.get("dji_exclusive", False)) and not (
             to_bool(row.get("dji_opened", False)) or to_bool(row.get("dji_reported", False))
         ):
+            # 已在白名单中的 PT 商场：业务确认“排他但未报店/开店”可以接受，不再提示风险
+            if str(mall_id) in WHITELIST_EXCLUSIVE_MALL_IDS:
+                continue
             exclusive_issues.append({
                 "mall_id": mall_id,
                 "mall_name": row.get("mall_name"),
@@ -492,6 +502,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
 
