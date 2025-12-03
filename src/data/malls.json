@@ -11806,7 +11806,7 @@
   },
   {
     "mallId": "MALL_00859",
-    "mallName": "龙湖北京房山天街",
+    "mallName": "歪马送酒(房山二店)",
     "city": "北京",
     "province": "北京市",
     "djiOpened": false,
@@ -11816,8 +11816,8 @@
     "djiTarget": true,
     "hasDJI": false,
     "hasInsta360": false,
-    "latitude": 39.74553,
-    "longitude": 116.140617
+    "latitude": 39.754172,
+    "longitude": 116.16081
   },
   {
     "mallId": "MALL_00860",
@@ -12133,5 +12133,20 @@
     "hasInsta360": false,
     "latitude": 22.618439,
     "longitude": 114.41633
+  },
+  {
+    "mallId": "MALL_00889",
+    "mallName": "美宜佳(龙湖·好城时光店)",
+    "city": "北京市",
+    "province": "北京市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 29.610309,
+    "longitude": 106.365551
   }
 ]
