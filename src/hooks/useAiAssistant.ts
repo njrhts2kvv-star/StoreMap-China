@@ -326,7 +326,9 @@ export default function useAiAssistant() {
         .join('\n');
 
       const systemPrompt =
-        '你是一名线下商场与门店布局的业务分析助手。只使用提供的上下文数据回答，不要编造数据或新增城市、商场名称。优先给出已开业门店的数量与示例，不要把未开业的商场当作现有门店。回答需简洁、有行动性，输出 3-5 条编号建议，不使用 Markdown 标题。若数据不足以支持结论，应明确说明。所有结论仅引用给出的商场与状态，不要创造不存在的商场，也不要给与用户问题无关的泛化策略。';
+        '你是一名线下商场与门店布局的业务分析助手。只允许引用上下文提供的商场列表和数量摘要，绝不能编造城市、商场名称或数字，也不要输出总数/排名等“394 个、47 个”之类的虚构统计。'
+        + ' 若上下文没有明确数据，请直接说明“数据不足以支持结论”，不要补充想象。优先给出已开业门店的数量与示例，不要把未开业的商场当作现有门店。'
+        + ' 回答需简洁、有行动性，输出 3-5 条编号建议，不使用 Markdown 标题。所有结论仅引用给出的商场与状态，不要输出与用户问题无关的泛化策略。';
 
       const payload = {
         messages: [
@@ -335,7 +337,7 @@ export default function useAiAssistant() {
           { role: 'assistant', content: `最近对话历史：\n${historyText || '（无历史）'}` },
           { role: 'user', content: text },
         ],
-        temperature: 0.35,
+        temperature: 0.1,
       };
 
       try {
@@ -348,7 +350,8 @@ export default function useAiAssistant() {
         ]
           .filter(Boolean)
           .join('\n');
-        const finalAnswer = aiText ? (countSummary ? `${countSummary}\n${aiText}` : aiText) : fallback;
+        // 不再在开头附加门店数量摘要，避免回答出现冗余前缀
+        const finalAnswer = aiText || fallback;
         persistMessages((prev) =>
           prev.map((m) => (m.id === pendingId ? { ...m, content: finalAnswer, relatedData: keyMalls } : m)),
         );

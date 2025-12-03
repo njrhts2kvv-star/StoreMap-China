@@ -74,6 +74,7 @@ const initialFilters: FilterState = {
 };
 
 type StoreFilterMode = 'all' | 'experience';
+const AI_ASSISTANT_ENABLED = false; // 临时隐藏 AI 助手入口
 
 export default function HomePage() {
   const { position: userPos } = useGeo();
@@ -1561,16 +1562,18 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
               </div>
             </div>
             <div className="flex items-center gap-2 mt-[2px]">
-              <button
-                type="button"
-                className="flex items-center gap-1 text-slate-700 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
-                onClick={() => {
-                  setShowAiAssistant(true);
-                }}
-                title="AI 助手"
-              >
-                AI 助手
-              </button>
+              {AI_ASSISTANT_ENABLED && (
+                <button
+                  type="button"
+                  className="flex items-center gap-1 text-slate-700 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
+                  onClick={() => {
+                    setShowAiAssistant(true);
+                  }}
+                  title="AI 助手"
+                >
+                  AI 助手
+                </button>
+              )}
               <button
                 onClick={resetFilters}
                 className="flex items-center gap-1 text-slate-900 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
@@ -2448,9 +2451,13 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
 
         {activeTab === 'log' && (
           <StoreChangeLogTab
-            onOpenAssistant={() => {
-              setShowAiAssistant(true);
-            }}
+            onOpenAssistant={
+              AI_ASSISTANT_ENABLED
+                ? () => {
+                    setShowAiAssistant(true);
+                  }
+                : undefined
+            }
             onResetFilters={resetFilters}
             getStoreById={(id) => allStores.find((s) => s.id === id) ?? null}
             favorites={favorites}
@@ -2461,7 +2468,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
       </div>
 
       {/* AI 助手：和筛选类似的浮层模块 */}
-      {showAiAssistant && (
+      {AI_ASSISTANT_ENABLED && showAiAssistant && (
         <AiAssistantOverlay
           onClose={() => setShowAiAssistant(false)}
           malls={filteredMalls}
