@@ -1,4 +1,4 @@
-mall_id,mall_name,original_name,mall_lat,mall_lng,amap_poi_id,city,source,store_count,dji_reported,dji_exclusive,dji_target,dji_opened,insta_opened,province
+﻿mall_id,mall_name,original_name,mall_lat,mall_lng,amap_poi_id,city,source,store_count,dji_reported,dji_exclusive,dji_target,dji_opened,insta_opened,province
 MALL_00002,广州天汇广场,广州天汇广场,23.115992,113.331925,B0FFG23ZZ1,广州市,api,1,0,1,0,1,0,广东省
 MALL_00003,上海久光中心,上海久光中心,31.276292,121.451283,,上海市,memory,1,1,0,1,1,0,上海市
 MALL_00004,荔星中心,荔星中心,26.610024,106.647886,,贵阳市,memory,1,0,0,0,1,0,贵州省
