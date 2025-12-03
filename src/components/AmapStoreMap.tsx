@@ -390,12 +390,12 @@ export function AmapStoreMap({
   useEffect(() => {
     if (ready && !hasInitialCenteredRef.current) {
       // 如果已有选中的门店，不执行 recenter，让 selectedId 的 useEffect 处理
-      if (!selectedId) {
+      if (!selectedId && !selectedMallId) {
         recenter();
       }
       hasInitialCenteredRef.current = true;
     }
-  }, [ready, normalizedCenter, initialZoom, selectedId]);
+  }, [ready, normalizedCenter, initialZoom, selectedId, selectedMallId]);
 
   const provinceFilteredStats = useMemo(
     () => (activeProvince ? getProvinceFiltered(activeProvince) : EMPTY_STATS),
@@ -887,11 +887,11 @@ export function AmapStoreMap({
       hasInitialCenteredRef.current = false;
       // 如果当前没有选中的门店，则回到全国视图；
       // 有选中门店时交给 selectedId 的下钻逻辑，避免互相抢视野
-      if (!selectedId) {
+      if (!selectedId && !selectedMallId) {
         recenter();
       }
     }
-  }, [resetToken, recenter, clearRegionOverlays, selectedId]);
+  }, [resetToken, recenter, clearRegionOverlays, selectedId, selectedMallId]);
 
   const telLink = selectedStore?.phone ? `tel:${selectedStore.phone}` : '';
   const hasCoord = typeof selectedStore?.latitude === 'number' && typeof selectedStore?.longitude === 'number';
