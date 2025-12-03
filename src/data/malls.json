@@ -12136,7 +12136,7 @@
   },
   {
     "mallId": "MALL_00889",
-    "mallName": "龙湖·好城时光",
+    "mallName": "美宜佳(龙湖·好城时光店)",
     "city": "重庆市",
     "province": "重庆市",
     "djiOpened": true,
@@ -12151,7 +12151,7 @@
   },
   {
     "mallId": "MALL_00890",
-    "mallName": "东莞东城万达广场",
+    "mallName": "万达百货(东莞东城万达广场店)",
     "city": "东莞市",
     "province": "广东省",
     "djiOpened": true,
@@ -12161,12 +12161,12 @@
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 23.036066,
-    "longitude": 113.777712
+    "latitude": 23.035791,
+    "longitude": 113.780303
   },
   {
     "mallId": "MALL_00891",
-    "mallName": "揭阳榕城万达广场",
+    "mallName": "屈臣氏(揭阳榕城万达广场店)",
     "city": "揭阳市",
     "province": "广东省",
     "djiOpened": true,
@@ -12176,7 +12176,22 @@
     "djiTarget": false,
     "hasDJI": true,
     "hasInsta360": false,
-    "latitude": 23.558641,
-    "longitude": 116.401145
+    "latitude": 23.561315,
+    "longitude": 116.396778
+  },
+  {
+    "mallId": "MALL_00892",
+    "mallName": "精功眼镜(中关村店)",
+    "city": "北京市",
+    "province": "北京市",
+    "djiOpened": false,
+    "instaOpened": false,
+    "djiReported": false,
+    "djiExclusive": false,
+    "djiTarget": false,
+    "hasDJI": false,
+    "hasInsta360": false,
+    "latitude": 39.992111,
+    "longitude": 116.323188
   }
 ]
