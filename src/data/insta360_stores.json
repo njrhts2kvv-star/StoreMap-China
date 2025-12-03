@@ -897,7 +897,7 @@
     "brand": "Insta360",
     "storeName": "影石Insta360绍兴银泰授权体验店",
     "province": "浙江省",
-    "city": "杭州市",
+    "city": "绍兴市",
     "address": "杭州市西湖区黄姑山路29号颐高旗舰大厦A座1302",
     "latitude": 30.277697,
     "longitude": 120.144736,
@@ -7620,9 +7620,7 @@
     "serviceTags": [],
     "openedAt": "2025-12-01",
     "status": "营业中",
-    "changeType": "nan",
-    "mallId": "MALL_00889",
-    "mallName": "精功眼镜(中关村店)"
+    "changeType": "nan"
   },
   {
     "id": "7f209798-d0dc-43e2-819f-451f9d0352a2",
