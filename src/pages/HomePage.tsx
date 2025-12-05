@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Search, RotateCcw, X, SlidersHorizontal, Crosshair, Store as StoreIcon, Send, FileText, Download } from 'lucide-react';
+import { Search, RotateCcw, X, SlidersHorizontal, Crosshair, Map as MapIcon, Store as StoreIcon, Send, FileText, Download } from 'lucide-react';
 import { exportStoresToCsv, exportMallsToCsv } from '../utils/exportCsv';
 import type { Brand, ServiceTag, Store, Mall, MallStatus } from '../types/store';
 import { useStores } from '../hooks/useStores';
@@ -14,7 +14,7 @@ import { CoverageStats } from '../components/CoverageStats';
 import { TopProvinces } from '../components/TopProvinces';
 import { TopCities } from '../components/TopCities';
 import { NewStoresThisMonth } from '../components/NewStoresThisMonth';
-import { Card, Button } from '../components/ui';
+import { Card } from '../components/ui';
 import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
 import { CompetitionDashboard } from '../components/CompetitionDashboard';
 import StoreList from '../components/StoreList';
@@ -405,6 +405,33 @@ type FilterTab = 'storeType' | 'province' | 'city';
     });
   };
 
+  const toggleStoreFilterPanel = (nextOpen?: boolean) => {
+    const willShow = typeof nextOpen === 'boolean' ? nextOpen : !showSearchFilters;
+    if (willShow) {
+      setTempFilters({
+        djiStoreTypes: [...pendingFilters.djiStoreTypes],
+        instaStoreTypes: [...pendingFilters.instaStoreTypes],
+        province: [...pendingFilters.province],
+        city: [...pendingFilters.city],
+      });
+      setActiveFilterTab('storeType');
+    }
+    setShowSearchFilters(willShow);
+  };
+
+  const toggleCompetitionFilterPanel = (nextOpen?: boolean) => {
+    const willShow = typeof nextOpen === 'boolean' ? nextOpen : !showCompetitionFilters;
+    if (willShow) {
+      setTempCompetitionFilters({
+        mallTags: [...appliedMallTags],
+        province: [...pendingFilters.province],
+        city: [...pendingFilters.city],
+      });
+      setActiveCompetitionFilterTab('storeType');
+    }
+    setShowCompetitionFilters(willShow);
+  };
+
   const updateBrandSelection = (brands: Brand[]) => {
     setBrandSelection(brands);
     const next = { ...pendingFilters, brands };
@@ -688,9 +715,8 @@ const renderQuickFilters = (variant: 'default' | 'floating' | 'map' = 'default')
     variant === 'floating'
       ? 'space-y-3 bg-white/90 backdrop-blur-md border border-white/50 rounded-[28px] p-4 shadow-[0_25px_40px_rgba(15,23,42,0.18)] max-w-[520px]'
       : variant === 'map'
-        ? ''
-        : 'space-y-3';
-  const padding = variant === 'floating' ? '' : 'px-1';
+        ? 'flex flex-col gap-3'
+        : 'flex flex-wrap items-center gap-2';
   const dropdownCard = (maxHeight: string) =>
     `${
       variant === 'floating'
@@ -709,138 +735,86 @@ const renderQuickFilters = (variant: 'default' | 'floating' | 'map' = 'default')
   ];
 
   const quickBtnClass = (active: boolean) =>
-    `w-full px-3 py-[7px] rounded-xl text-[11px] font-semibold border transition whitespace-nowrap text-center flex items-center justify-center ${
-      active
-        ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
-        : 'bg-white text-slate-600 border-slate-200'
-    }`;
+    variant === 'floating'
+      ? `w-full px-3 py-[7px] rounded-xl text-[11px] font-semibold border transition whitespace-nowrap text-center flex items-center justify-center ${
+          active
+            ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
+            : 'bg-white text-slate-600 border-slate-200'
+        }`
+      : `inline-flex items-center justify-center px-3.5 py-2 rounded-lg text-xs font-semibold border transition whitespace-nowrap ${
+          active
+            ? 'bg-neutral-10 text-neutral-0 border-neutral-10 shadow-sm'
+            : 'bg-neutral-0 text-neutral-6 border-neutral-2 hover:border-neutral-3'
+        }`;
+
+  const renderButtons = () => (
+    <div className="flex flex-wrap gap-2">
+      {quickButtons.map((item) => {
+        const active =
+          item.key === 'favorites'
+            ? pendingFilters.favoritesOnly
+            : item.key === 'new'
+              ? pendingFilters.newAddedRange !== 'none'
+              : item.key === 'dji'
+                ? brandSelection.length === 1 && brandSelection[0] === 'DJI'
+                : item.key === 'insta'
+                  ? brandSelection.length === 1 && brandSelection[0] === 'Insta360'
+                  : !pendingFilters.favoritesOnly && pendingFilters.newAddedRange === 'none' && brandSelection.length === 2;
+        const btnClass = quickBtnClass(active);
+
+        return (
+          <div key={item.key} className="relative">
+            <button onClick={() => applyQuickFilter(item.key)} className={btnClass}>
+              {item.label}
+            </button>
+            {item.key === 'new' && showNewAddedPopover && (
+              <div
+                ref={newAddedPopoverRef}
+                className="absolute top-full left-0 mt-2 w-[200px] rounded-xl bg-white border border-slate-100 shadow-lg z-30 overflow-hidden"
+              >
+                {[
+                  { key: 'this_month' as const, label: '本月新增' },
+                  { key: 'last_month' as const, label: '上月新增' },
+                  { key: 'last_three_months' as const, label: '近三月新增' },
+                ].map((opt) => {
+                  const activeOpt = pendingFilters.newAddedRange === opt.key;
+                  return (
+                    <button
+                      key={opt.key}
+                      className={`w-full text-left px-4 py-2 text-sm font-medium transition ${
+                        activeOpt ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50'
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        updateFilters({ newAddedRange: opt.key });
+                        setQuickFilter('new');
+                        setShowNewAddedPopover(false);
+                      }}
+                    >
+                      {opt.label}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 
   // 专用于地图页的胶囊布局：与商场界面保持完全一致（单行、等宽、左右间距相同）
   if (variant === 'map') {
     return (
       <div className={wrapperClass} ref={setQuickFilterRef(refIndex)}>
-        <div>
-          <div className="flex flex-nowrap gap-2 justify-between">
-            {quickButtons.map((item) => {
-              const active =
-                item.key === 'favorites'
-                  ? pendingFilters.favoritesOnly
-                  : item.key === 'new'
-                    ? pendingFilters.newAddedRange !== 'none'
-                    : item.key === 'dji'
-                      ? brandSelection.length === 1 && brandSelection[0] === 'DJI'
-                      : item.key === 'insta'
-                        ? brandSelection.length === 1 && brandSelection[0] === 'Insta360'
-                        : !pendingFilters.favoritesOnly &&
-                          pendingFilters.newAddedRange === 'none' &&
-                          brandSelection.length === 2;
-              const btnClass = quickBtnClass(active);
-
-              return (
-                <div key={item.key} className="relative flex-1 min-w-0">
-                  <button
-                    type="button"
-                    onClick={() => applyQuickFilter(item.key)}
-                    className={btnClass}
-                  >
-                    {item.label}
-                  </button>
-                  {item.key === 'new' && showNewAddedPopover && (
-                    <div
-                      ref={newAddedPopoverRef}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[160px] rounded-2xl bg-white border border-slate-100 shadow-[0_14px_30px_rgba(15,23,42,0.12)] z-30 overflow-hidden"
-                    >
-                      {[
-                        { key: 'this_month' as const, label: '本月新增' },
-                        { key: 'last_month' as const, label: '上月新增' },
-                        { key: 'last_three_months' as const, label: '近三月新增' },
-                      ].map((opt) => {
-                        const activeOpt = pendingFilters.newAddedRange === opt.key;
-                        return (
-                          <button
-                            key={opt.key}
-                            className={`w-full text-left px-4 py-2 text-sm font-medium transition ${
-                              activeOpt ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50'
-                            }`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              updateFilters({ newAddedRange: opt.key });
-                              setQuickFilter('new');
-                              setShowNewAddedPopover(false);
-                            }}
-                          >
-                            {opt.label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        {renderButtons()}
       </div>
     );
   }
 
   return (
     <div className={wrapperClass} ref={setQuickFilterRef(refIndex)}>
-      {variant === 'default' && (
-        <div className={padding}>
-          <div className="grid grid-cols-5 gap-2">
-            {quickButtons.map((item) => {
-              const active =
-                item.key === 'favorites'
-                  ? pendingFilters.favoritesOnly
-                  : item.key === 'new'
-                    ? pendingFilters.newAddedRange !== 'none'
-                    : item.key === 'dji'
-                      ? brandSelection.length === 1 && brandSelection[0] === 'DJI'
-                      : item.key === 'insta'
-                        ? brandSelection.length === 1 && brandSelection[0] === 'Insta360'
-                        : !pendingFilters.favoritesOnly && pendingFilters.newAddedRange === 'none' && brandSelection.length === 2;
-              return (
-                <div key={item.key} className="relative">
-                  <button onClick={() => applyQuickFilter(item.key)} className={quickBtnClass(active)}>
-                    {item.label}
-                  </button>
-                  {item.key === 'new' && showNewAddedPopover && (
-                    <div
-                      ref={newAddedPopoverRef}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[160px] rounded-2xl bg-white border border-slate-100 shadow-[0_14px_30px_rgba(15,23,42,0.12)] z-30 overflow-hidden"
-                    >
-                      {[
-                        { key: 'this_month' as const, label: '本月新增' },
-                        { key: 'last_month' as const, label: '上月新增' },
-                        { key: 'last_three_months' as const, label: '近三月新增' },
-                      ].map((opt) => {
-                        const activeOpt = pendingFilters.newAddedRange === opt.key;
-                        return (
-                          <button
-                            key={opt.key}
-                            className={`w-full text-left px-4 py-2 text-sm font-medium transition ${
-                              activeOpt ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50'
-                            }`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              updateFilters({ newAddedRange: opt.key });
-                              setQuickFilter('new');
-                              setShowNewAddedPopover(false);
-                            }}
-                          >
-                            {opt.label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
+      {variant === 'default' && renderButtons()}
 
       {variant === 'floating' && (
         <div className="flex flex-col gap-3">
@@ -1630,272 +1604,252 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
   );
 };
 
+  const pageMeta: Record<HomePageTab, { title: string; desc: string }> = {
+    overview: { title: '门店分布对比', desc: '全国门店与商场的实时对比看板' },
+    list: { title: '全量门店/商场清单', desc: '按省市、品牌、门店类型快速检索' },
+    competition: { title: '商场竞争态势', desc: 'PT、缺口、目标进驻等关键状态的洞察' },
+    map: { title: '地图视角', desc: '门店 / 商场 / 区域多视角分布' },
+    log: { title: '门店变更日志', desc: '新增、调整、撤店的全链路记录' },
+  };
+
+  const { title: pageTitle, desc: pageDescription } = pageMeta[currentTab];
+  const showFilterActions = currentTab !== 'log';
+
   return (
-    <div className="min-h-screen flex justify-center bg-[#f6f7fb]">
+    <div className="min-h-screen">
       <div
         className={
           currentTab === 'map'
-            ? 'w-full max-w-[1440px] min-h-screen flex flex-col px-4 lg:px-8 pb-16 pt-6'
-            : 'w-full max-w-[1200px] min-h-screen flex flex-col gap-2 px-4 lg:px-8 pb-24 pt-6'
+            ? 'w-full max-w-[1500px] mx-auto min-h-screen flex flex-col gap-6 pb-16'
+            : 'w-full max-w-[1380px] mx-auto min-h-screen flex flex-col gap-6 pb-24'
         }
       >
-        {currentTab !== 'log' && currentTab !== 'map' && (
-          <header
-            className={`flex items-start justify-between sticky top-0 bg-[#f6f7fb] z-40 pb-2 transition ${
-              showSearchFilters ? 'opacity-60 blur-sm pointer-events-none' : ''
-            }`}
-          >
-            <div className="ml-[6px]">
-              <div className="text-2xl font-black leading-tight text-slate-900">
-                {currentTab === 'list' 
-                  ? '全量门店/商场清单' 
-                  : currentTab === 'competition' 
-                  ? '商场情况一览' 
-                  : currentTab === 'map'
-                  ? '商场/门店地图分布'
-                  : '门店分布对比'}
-              </div>
-              <div className="text-sm text-slate-500">
-                {currentTab === 'list' 
-                  ? 'DJI VS Insta360 全国列表' 
-                  : currentTab === 'competition' 
-                  ? '全国不同商场数据一览' 
-                  : currentTab === 'map'
-                  ? 'DJI VS Insta360 地图数据'
-                  : 'DJI vs Insta360 全国数据'}
-              </div>
+        <header className="flex flex-col gap-2">
+          <div className="text-xs font-semibold uppercase text-neutral-5 tracking-[0.1em]">Store Map · Dashboard</div>
+          <div className="flex items-start justify-between gap-3">
+            <div className="space-y-1">
+              <div className="text-2xl font-bold leading-tight text-neutral-10">{pageTitle}</div>
+              <div className="text-sm text-neutral-6">{pageDescription}</div>
             </div>
-            <div className="flex items-center gap-2 mt-[2px]">
-              {AI_ASSISTANT_ENABLED && (
+            {showFilterActions && (
+              <div className="flex items-center gap-2">
                 <button
-                  type="button"
-                  className="flex items-center gap-1 text-slate-700 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
-                  onClick={() => {
-                    setShowAiAssistant(true);
-                  }}
-                  title="AI 助手"
+                  onClick={resetFilters}
+                  className="flex items-center gap-1 text-neutral-9 text-sm font-semibold bg-neutral-0 px-3 py-2 rounded-lg shadow-sm border border-neutral-2 hover:border-neutral-3 transition"
+                  title="重置筛选"
                 >
-                  AI 助手
+                  <RotateCcw className="w-4 h-4" />
+                  重置筛选
                 </button>
-              )}
-              <button
-                onClick={resetFilters}
-                className="flex items-center gap-1 text-slate-900 text-sm font-semibold bg-white px-3 py-2 rounded-full shadow-sm border border-slate-100"
-                title="重置筛选"
-              >
-                <RotateCcw className="w-4 h-4" />
-                重置
-              </button>
-            </div>
-          </header>
-        )}
+                {currentTab !== 'map' && (
+                  <button
+                    onClick={() => setTab('map')}
+                    className="flex items-center gap-1 text-neutral-0 text-sm font-semibold bg-neutral-10 px-3 py-2 rounded-lg shadow-sm border border-neutral-10 hover:brightness-95 transition"
+                    title="切换地图视图"
+                  >
+                    <MapIcon className="w-4 h-4" />
+                    地图视角
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        </header>
 
         {currentTab === 'overview' && (
-          <>
-            {/* 搜索栏 */}
-            <div className="px-1 space-y-2">
-              <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
-                <Search className="w-5 h-5 text-slate-300" />
-                <input
-                  className="flex-1 bg-transparent outline-none text-sm text-slate-700 placeholder:text-slate-400"
-                  placeholder="搜索门店、城市或省份..."
-                  value={pendingFilters.keyword}
-                  onChange={(e) => updateFilters({ keyword: e.target.value })}
-                />
-                <div className="flex items-center">
-                  <button
-                    type="button"
-                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
-                    onClick={() => exportStoresToCsv(visibleStores)}
-                    title="导出门店清单"
-                  >
-                    <Download className="w-5 h-5" />
-                  </button>
-                  <button
-                    type="button"
-                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
-                    onClick={() => {
-                      const willShow = !showSearchFilters;
-                      if (willShow) {
-                        // 打开面板时同步当前筛选状态到临时状态
-                        setTempFilters({
-                          djiStoreTypes: [...pendingFilters.djiStoreTypes],
-                          instaStoreTypes: [...pendingFilters.instaStoreTypes],
-                          province: [...pendingFilters.province],
-                          city: [...pendingFilters.city],
-                        });
-                        setActiveFilterTab('storeType');
-                      }
-                      setShowSearchFilters(willShow);
-                    }}
-                    title="更多筛选"
-                  >
-                    <SlidersHorizontal className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-              {showSearchFilters && (
-                <>
-                  {/* 背景遮罩 */}
-                  <div 
-                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-10"
-                    onClick={() => setShowSearchFilters(false)}
-                  />
-                  {/* 筛选面板 */}
-                  <div className="relative z-20">
-                    {renderQuickFilters('floating')}
-                  </div>
-                </>
-              )}
-            </div>
-
-            {renderQuickFilters()}
-
-            <InsightBar stores={filtered} selectedBrands={brandSelection} onToggle={updateBrandSelection} />
-
-            {/* 覆盖城市数、覆盖省份数 */}
-            <CoverageStats stores={visibleStores} />
-
-            <div className="space-y-3">
-              <div className="flex items-center justify-between px-1">
-                <div className="text-lg font-extrabold text-slate-900">门店分布对比</div>
-              </div>
-              <Card className="relative border border-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.06)] overflow-hidden">
-                <div className="h-96 w-full relative">
-                  {(() => {
-                    const hasProvinceFilter = pendingFilters.province.length > 0;
-                    const hasCityFilter = pendingFilters.city.length > 0;
-                    const fitLevel =
-                      hasCityFilter ? 'city' : hasProvinceFilter ? 'province' : 'none';
-                    return (
-                      <AmapStoreMap
-                        stores={visibleStores}
-                        colorBaseStores={allStores}
-                        regionMode="none"
-                      selectedId={selectedId || undefined}
-                      onSelect={handleSelect}
-                      userPos={mapUserPos}
-                      favorites={favorites}
-                      onToggleFavorite={toggleFavorite}
-                      showPopup={true}
-                      resetToken={mapResetToken}
-                      mapId="overview-map"
-                      showControls={true}
-                      initialCenter={mapInitialCenter}
-                      initialZoom={mapInitialZoom}
-                      fitToStores={hasProvinceFilter || hasCityFilter}
-                      fitLevel={fitLevel}
-                      showLegend={true}
+          <div className="space-y-6">
+            <div className="bg-neutral-0 border border-neutral-2 rounded-2xl shadow-sm p-4 space-y-3">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex items-center gap-3 w-full lg:max-w-2xl">
+                  <div className="relative flex-1">
+                    <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                      <Search className="w-4 h-4 text-neutral-4" />
+                    </div>
+                    <input
+                      className="w-full rounded-lg border border-neutral-3 bg-neutral-0 pl-10 pr-3 py-2 text-sm text-neutral-9 placeholder:text-neutral-4 focus:outline-none focus:ring-2 focus:ring-neutral-9 focus:border-transparent transition"
+                      placeholder="搜索门店、城市或省份..."
+                      value={pendingFilters.keyword}
+                      onChange={(e) => updateFilters({ keyword: e.target.value })}
                     />
-                  );
-                  })()}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-2 text-sm font-semibold text-neutral-7 hover:border-neutral-3 transition"
+                      onClick={() => exportStoresToCsv(visibleStores)}
+                      title="导出门店清单"
+                    >
+                      <Download className="w-4 h-4" />
+                      导出
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-1 rounded-lg bg-neutral-10 text-neutral-0 px-3 py-2 text-sm font-semibold shadow-sm border border-neutral-10 hover:brightness-95 transition"
+                      onClick={() => toggleStoreFilterPanel(true)}
+                      title="更多筛选"
+                    >
+                      <SlidersHorizontal className="w-4 h-4" />
+                      高级筛选
+                    </button>
+                  </div>
                 </div>
-              </Card>
+                <div className="w-full lg:flex-1">
+                  {renderQuickFilters()}
+                </div>
+              </div>
             </div>
 
-            {/* TOP5省份和TOP10城市 */}
-            <div className="space-y-3">
-              <TopProvinces 
-                stores={storesForProvinceRanking} 
-                onViewAll={() => setTab('list')}
-                selectedProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
-                onProvinceClick={(province) => {
-                  const current = pendingFilters.province;
-                  const isSelected = current.length === 1 && current[0] === province;
-                  const nextProvinces = isSelected ? [] : [province];
-                  // 设置省份筛选（支持再次点击取消）
-                  updateFilters({ province: nextProvinces, city: [] });
-                  // 触发地图重置，让地图适应新筛选的门店
-                  setMapResetToken((token) => token + 1);
-                }}
-              />
-              <TopCities 
-                stores={storesForCityRanking} 
-                onViewAll={() => setTab('list')}
-                selectedCities={pendingFilters.city}
-                activeProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
-                onCityClick={(city) => {
-                  // 在已有城市筛选基础上执行多选切换
-                  const currentCities = pendingFilters.city;
-                  const isSelected = currentCities.includes(city);
-                  const nextCities = isSelected
-                    ? currentCities.filter((item) => item !== city)
-                    : [...currentCities, city];
-                  updateFilters({ city: nextCities });
-                  // 触发地图重置，让地图适应新筛选的门店
-                  setMapResetToken((token) => token + 1);
-                }}
-              />
-              {/* 门店列表（受当前筛选影响） */}
-              <NewStoresThisMonth
-                stores={visibleStores}
-                selectedId={selectedId}
-                onStoreSelect={handleNewStoreSelect}
-              />
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-12 xl:col-span-8 space-y-4">
+                <div className="grid grid-cols-12 gap-4">
+                  <div className="col-span-12 lg:col-span-7">
+                    <div className="bg-neutral-0 border border-neutral-2 rounded-2xl shadow-sm p-4 space-y-3 h-full">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-sm font-semibold text-neutral-7">品牌概览</div>
+                          <div className="text-xs text-neutral-5">点击品牌卡片切换对比</div>
+                        </div>
+                        <div className="text-[11px] text-neutral-5">当前结果 {visibleStores.length} 家</div>
+                      </div>
+                      <InsightBar stores={filtered} selectedBrands={brandSelection} onToggle={updateBrandSelection} />
+                    </div>
+                  </div>
+                  <div className="col-span-12 lg:col-span-5 space-y-4">
+                    <div className="bg-neutral-0 border border-neutral-2 rounded-2xl shadow-sm p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <div>
+                          <div className="text-sm font-semibold text-neutral-7">覆盖概览</div>
+                          <div className="text-xs text-neutral-5">省份与城市覆盖对比</div>
+                        </div>
+                        <button
+                          type="button"
+                          className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-1.5 text-[12px] font-semibold text-neutral-7 hover:border-neutral-3 transition"
+                          onClick={resetFilters}
+                        >
+                          <RotateCcw className="w-4 h-4" />
+                          清空
+                        </button>
+                      </div>
+                      <CoverageStats stores={visibleStores} />
+                    </div>
+                    <NewStoresThisMonth stores={visibleStores} selectedId={selectedId} onStoreSelect={handleNewStoreSelect} />
+                  </div>
+                </div>
+
+                <div className="bg-neutral-0 border border-neutral-2 rounded-2xl shadow-sm p-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm font-semibold text-neutral-7">地图视角</div>
+                      <div className="text-xs text-neutral-5">自动贴合当前筛选范围</div>
+                    </div>
+                    <button
+                      type="button"
+                      className="hidden lg:inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-1.5 text-[12px] font-semibold text-neutral-7 hover:border-neutral-3 transition"
+                      onClick={() => setTab('map')}
+                    >
+                      <MapIcon className="w-4 h-4" />
+                      全屏地图
+                    </button>
+                  </div>
+                  <div className="h-[420px] rounded-xl border border-neutral-2 bg-neutral-1 overflow-hidden">
+                    {(() => {
+                      const hasProvinceFilter = pendingFilters.province.length > 0;
+                      const hasCityFilter = pendingFilters.city.length > 0;
+                      const fitLevel = hasCityFilter ? 'city' : hasProvinceFilter ? 'province' : 'none';
+                      return (
+                        <AmapStoreMap
+                          stores={visibleStores}
+                          colorBaseStores={allStores}
+                          regionMode="none"
+                          selectedId={selectedId || undefined}
+                          onSelect={handleSelect}
+                          userPos={mapUserPos}
+                          favorites={favorites}
+                          onToggleFavorite={toggleFavorite}
+                          showPopup
+                          resetToken={mapResetToken}
+                          mapId="overview-map"
+                          showControls
+                          initialCenter={mapInitialCenter}
+                          initialZoom={mapInitialZoom}
+                          fitToStores={hasProvinceFilter || hasCityFilter}
+                          fitLevel={fitLevel}
+                          showLegend
+                        />
+                      );
+                    })()}
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-span-12 xl:col-span-4 space-y-4">
+                <TopProvinces
+                  stores={storesForProvinceRanking}
+                  onViewAll={() => setTab('list')}
+                  selectedProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
+                  onProvinceClick={(province) => {
+                    const current = pendingFilters.province;
+                    const isSelected = current.length === 1 && current[0] === province;
+                    const nextProvinces = isSelected ? [] : [province];
+                    updateFilters({ province: nextProvinces, city: [] });
+                    setMapResetToken((token) => token + 1);
+                  }}
+                />
+                <TopCities
+                  stores={storesForCityRanking}
+                  onViewAll={() => setTab('list')}
+                  selectedCities={pendingFilters.city}
+                  activeProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
+                  onCityClick={(city) => {
+                    const currentCities = pendingFilters.city;
+                    const isSelected = currentCities.includes(city);
+                    const nextCities = isSelected ? currentCities.filter((item) => item !== city) : [...currentCities, city];
+                    updateFilters({ city: nextCities });
+                    setMapResetToken((token) => token + 1);
+                  }}
+                />
+              </div>
             </div>
-          </>
+          </div>
         )}
 
         {currentTab === 'competition' && (
-          <div className="space-y-2 pb-24">
-            {/* 搜索栏 */}
-            <div className="px-1 space-y-2">
-              <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
-                <Search className="w-5 h-5 text-slate-300" />
-                <input
-                  className="flex-1 bg-transparent outline-none text-sm text-slate-700 placeholder:text-slate-400"
-                  placeholder="搜索商场，城市…"
-                  value={competitionSearch}
-                  onChange={(e) => setCompetitionSearch(e.target.value)}
-                />
-                <div className="flex items-center">
+          <div className="space-y-5 pb-6">
+            <div className="bg-neutral-0 border border-neutral-2 rounded-2xl shadow-sm p-4 space-y-3">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div className="relative flex-1">
+                  <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                    <Search className="w-4 h-4 text-neutral-4" />
+                  </div>
+                  <input
+                    className="w-full rounded-lg border border-neutral-3 bg-neutral-0 pl-10 pr-3 py-2 text-sm text-neutral-9 placeholder:text-neutral-4 focus:outline-none focus:ring-2 focus:ring-neutral-9 focus:border-transparent transition"
+                    placeholder="搜索商场，城市…"
+                    value={competitionSearch}
+                    onChange={(e) => setCompetitionSearch(e.target.value)}
+                  />
+                </div>
+                <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-2 text-sm font-semibold text-neutral-7 hover:border-neutral-3 transition"
                     onClick={() => exportMallsToCsv(competitionMallsWithProvince)}
                     title="导出商场清单"
                   >
-                    <Download className="w-5 h-5" />
+                    <Download className="w-4 h-4" />
+                    导出
                   </button>
                   <button
                     type="button"
-                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
-                    onClick={() => {
-                      const willShow = !showCompetitionFilters;
-                      if (willShow) {
-                        setTempCompetitionFilters({
-                          mallTags: [...appliedMallTags],
-                          province: [...pendingFilters.province],
-                          city: [...pendingFilters.city],
-                        });
-                        setActiveCompetitionFilterTab('storeType');
-                      }
-                      setShowCompetitionFilters(willShow);
-                    }}
+                    className="inline-flex items-center gap-1 rounded-lg bg-neutral-10 text-neutral-0 px-3 py-2 text-sm font-semibold shadow-sm border border-neutral-10 hover:brightness-95 transition"
+                    onClick={() => toggleCompetitionFilterPanel(true)}
                     title="更多筛选"
                   >
-                    <SlidersHorizontal className="w-5 h-5" />
+                    <SlidersHorizontal className="w-4 h-4" />
+                    高级筛选
                   </button>
                 </div>
               </div>
-              {showCompetitionFilters && (
-                <>
-                  {/* 背景遮罩 */}
-                  <div 
-                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-10"
-                    onClick={() => setShowCompetitionFilters(false)}
-                  />
-                  {/* 筛选面板 */}
-                  <div className="relative z-20">
-                    {renderCompetitionFilters('floating')}
-                  </div>
-                </>
-              )}
-            </div>
-
-            {/* 筛选 Chips */}
-            <div className="px-1">
-              <div className="flex flex-nowrap gap-2 justify-between">
+              <div className="flex flex-wrap gap-2">
                 {[
                   { key: 'PT' as const, label: 'PT 商场' },
                   { key: 'GAP' as const, label: '缺口机会' },
@@ -1908,8 +1862,10 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                     <button
                       key={chip.key}
                       type="button"
-                      className={`flex-1 min-w-0 text-center px-3 py-[7px] rounded-xl text-[11px] font-semibold border transition whitespace-nowrap ${
-                        active ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]' : 'bg-white text-slate-600 border-slate-200'
+                      className={`inline-flex items-center justify-center gap-1 px-3.5 py-2 rounded-lg text-xs font-semibold border transition ${
+                        active
+                          ? 'bg-neutral-10 text-neutral-0 border-neutral-10 shadow-sm'
+                          : 'bg-neutral-0 text-neutral-6 border-neutral-2 hover:border-neutral-3'
                       }`}
                       onClick={() => setActiveCompetitionChip((prev) => (prev === chip.key ? 'ALL' : chip.key))}
                     >
@@ -2309,62 +2265,41 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   className="absolute left-0 right-0 top-[128px] z-20 px-4"
                   data-map-safe-top="true"
                 >
-                  <div className="px-1 space-y-2">
-                    <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
-                      <Search className="w-5 h-5 text-slate-300" />
-                      <input
-                        className="flex-1 bg-transparent outline-none text-sm text-slate-700 placeholder:text-slate-400"
-                        placeholder="搜索商场，城市…"
-                        value={competitionSearch}
-                        onChange={(e) => setCompetitionSearch(e.target.value)}
-                      />
-                      <div className="flex items-center">
+                  <div className="bg-neutral-0 border border-neutral-2 rounded-xl shadow-sm px-4 py-3 space-y-2">
+                    <div className="flex items-center gap-3">
+                      <div className="relative flex-1">
+                        <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                          <Search className="w-4 h-4 text-neutral-4" />
+                        </div>
+                        <input
+                          className="w-full rounded-lg border border-neutral-3 bg-neutral-0 pl-10 pr-3 py-2 text-sm text-neutral-9 placeholder:text-neutral-4 focus:outline-none focus:ring-2 focus:ring-neutral-9 focus:border-transparent transition"
+                          placeholder="搜索商场，城市…"
+                          value={competitionSearch}
+                          onChange={(e) => setCompetitionSearch(e.target.value)}
+                        />
+                      </div>
+                      <div className="flex items-center gap-2">
                         <button
                           type="button"
-                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                          className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-2 text-sm font-semibold text-neutral-7 hover:border-neutral-3 transition"
                           onClick={() => exportMallsToCsv(competitionMallsForView)}
                           title="导出商场清单"
                         >
-                          <Download className="w-5 h-5" />
+                          <Download className="w-4 h-4" />
+                          导出
                         </button>
                         <button
                           type="button"
-                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
-                          onClick={() => {
-                            const willShow = !showCompetitionFilters;
-                            if (willShow) {
-                              setTempCompetitionFilters({
-                                mallTags: [...appliedMallTags],
-                                province: [...pendingFilters.province],
-                                city: [...pendingFilters.city],
-                              });
-                              setActiveCompetitionFilterTab('storeType');
-                            }
-                            setShowCompetitionFilters(willShow);
-                          }}
+                          className="inline-flex items-center gap-1 rounded-lg bg-neutral-10 text-neutral-0 px-3 py-2 text-sm font-semibold shadow-sm border border-neutral-10 hover:brightness-95 transition"
+                          onClick={() => toggleCompetitionFilterPanel(true)}
                           title="更多筛选"
                         >
-                          <SlidersHorizontal className="w-5 h-5" />
+                          <SlidersHorizontal className="w-4 h-4" />
+                          高级筛选
                         </button>
                       </div>
                     </div>
-                    {showCompetitionFilters && (
-                      <>
-                        {/* 背景遮罩 */}
-                        <div
-                          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-10"
-                          onClick={() => setShowCompetitionFilters(false)}
-                        />
-                        {/* 筛选面板 */}
-                        <div className="relative z-20">
-                          {renderCompetitionFilters('floating')}
-                        </div>
-                      </>
-                    )}
-                  </div>
-                  {/* 竞争快速筛选 Chips */}
-                  <div className="px-1 mt-2">
-                    <div className="flex flex-nowrap gap-2 justify-between">
+                    <div className="flex flex-wrap gap-2">
                       {[
                         { key: 'PT' as const, label: 'PT 商场' },
                         { key: 'GAP' as const, label: '缺口机会' },
@@ -2377,14 +2312,12 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                           <button
                             key={chip.key}
                             type="button"
-                            className={`flex-1 min-w-0 text-center px-3 py-[7px] rounded-xl text-[11px] font-semibold border transition whitespace-nowrap ${
+                            className={`inline-flex items-center justify-center gap-1 px-3.5 py-2 rounded-lg text-xs font-semibold border transition ${
                               active
-                                ? 'bg-slate-900 text-white border-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.18)]'
-                                : 'bg-white text-slate-600 border-slate-200'
+                                ? 'bg-neutral-10 text-neutral-0 border-neutral-10 shadow-sm'
+                                : 'bg-neutral-0 text-neutral-6 border-neutral-2 hover:border-neutral-3'
                             }`}
-                            onClick={() =>
-                              setActiveCompetitionChip((prev) => (prev === chip.key ? 'ALL' : chip.key))
-                            }
+                            onClick={() => setActiveCompetitionChip((prev) => (prev === chip.key ? 'ALL' : chip.key))}
                           >
                             {chip.label}
                           </button>
@@ -2399,64 +2332,40 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   className="absolute left-0 right-0 top-[128px] z-20 px-4"
                   data-map-safe-top="true"
                 >
-                  {/* 搜索栏 */}
-                  <div className="px-1 space-y-2">
-                    <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
-                      <Search className="w-5 h-5 text-slate-300" />
-                      <input
-                        className="flex-1 bg-transparent outline-none text-sm text-slate-700 placeholder:text-slate-400"
-                        placeholder="搜索门店、城市或省份..."
-                        value={pendingFilters.keyword}
-                        onChange={(e) => updateFilters({ keyword: e.target.value })}
-                      />
-                      <div className="flex items-center">
+                  <div className="bg-neutral-0 border border-neutral-2 rounded-xl shadow-sm px-4 py-3 space-y-2">
+                    <div className="flex items-center gap-3">
+                      <div className="relative flex-1">
+                        <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                          <Search className="w-4 h-4 text-neutral-4" />
+                        </div>
+                        <input
+                          className="w-full rounded-lg border border-neutral-3 bg-neutral-0 pl-10 pr-3 py-2 text-sm text-neutral-9 placeholder:text-neutral-4 focus:outline-none focus:ring-2 focus:ring-neutral-9 focus:border-transparent transition"
+                          placeholder="搜索门店、城市或省份..."
+                          value={pendingFilters.keyword}
+                          onChange={(e) => updateFilters({ keyword: e.target.value })}
+                        />
+                      </div>
+                      <div className="flex items-center gap-2">
                         <button
                           type="button"
-                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                          className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-2 text-sm font-semibold text-neutral-7 hover:border-neutral-3 transition"
                           onClick={() => exportStoresToCsv(visibleStores)}
                           title="导出门店清单"
                         >
-                          <Download className="w-5 h-5" />
+                          <Download className="w-4 h-4" />
+                          导出
                         </button>
                         <button
                           type="button"
-                          className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
-                          onClick={() => {
-                            const willShow = !showSearchFilters;
-                            if (willShow) {
-                              // 打开面板时同步当前筛选状态到临时状态
-                              setTempFilters({
-                                djiStoreTypes: [...pendingFilters.djiStoreTypes],
-                                instaStoreTypes: [...pendingFilters.instaStoreTypes],
-                                province: [...pendingFilters.province],
-                                city: [...pendingFilters.city],
-                              });
-                              setActiveFilterTab('storeType');
-                            }
-                            setShowSearchFilters(willShow);
-                          }}
+                          className="inline-flex items-center gap-1 rounded-lg bg-neutral-10 text-neutral-0 px-3 py-2 text-sm font-semibold shadow-sm border border-neutral-10 hover:brightness-95 transition"
+                          onClick={() => toggleStoreFilterPanel(true)}
                           title="更多筛选"
                         >
-                          <SlidersHorizontal className="w-5 h-5" />
+                          <SlidersHorizontal className="w-4 h-4" />
+                          高级筛选
                         </button>
                       </div>
                     </div>
-                    {showSearchFilters && (
-                      <>
-                        {/* 背景遮罩 */}
-                        <div
-                          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-10"
-                          onClick={() => setShowSearchFilters(false)}
-                        />
-                        {/* 筛选面板 */}
-                        <div className="relative z-20">
-                          {renderQuickFilters('floating')}
-                        </div>
-                      </>
-                    )}
-                  </div>
-                  {/* 总览快速筛选 Chips（地图门店界面，与商场界面保持一致布局） */}
-                  <div className="px-1 mt-2">
                     {renderQuickFilters('map')}
                   </div>
                 </div>
@@ -2610,76 +2519,72 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
         )}
 
         {currentTab === 'list' && (
-          <>
-            {/* 搜索栏（与总览保持一致） */}
-            <div className="px-1 space-y-2">
-              <div className="flex items-center gap-3 rounded-full bg-white px-[13px] py-0.5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02),0_10px_26px_rgba(15,23,42,0.04)] border border-slate-100 w-full">
-                <Search className="w-5 h-5 text-slate-300" />
-                <input
-                  className="flex-1 bg-transparent outline-none text-sm text-slate-700 placeholder:text-slate-400"
-                  placeholder="搜索门店、城市或省份..."
-                  value={pendingFilters.keyword}
-                  onChange={(e) => updateFilters({ keyword: e.target.value })}
-                />
-                <div className="flex items-center">
+          <div className="space-y-5">
+            <div className="bg-neutral-0 border border-neutral-2 rounded-2xl shadow-sm p-4 space-y-3">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div className="relative flex-1">
+                  <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                    <Search className="w-4 h-4 text-neutral-4" />
+                  </div>
+                  <input
+                    className="w-full rounded-lg border border-neutral-3 bg-neutral-0 pl-10 pr-3 py-2 text-sm text-neutral-9 placeholder:text-neutral-4 focus:outline-none focus:ring-2 focus:ring-neutral-9 focus:border-transparent transition"
+                    placeholder="搜索门店、城市或省份..."
+                    value={pendingFilters.keyword}
+                    onChange={(e) => updateFilters({ keyword: e.target.value })}
+                  />
+                </div>
+                <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+                    className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-2 text-sm font-semibold text-neutral-7 hover:border-neutral-3 transition"
                     onClick={() => exportStoresToCsv(visibleStores)}
                     title="导出门店清单"
                   >
-                    <Download className="w-5 h-5" />
+                    <Download className="w-4 h-4" />
+                    导出
                   </button>
                   <button
                     type="button"
-                    className="px-2 py-2 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
-                    onClick={() => {
-                      const willShow = !showSearchFilters;
-                      if (willShow) {
-                        setTempFilters({
-                          djiStoreTypes: [...pendingFilters.djiStoreTypes],
-                          instaStoreTypes: [...pendingFilters.instaStoreTypes],
-                          province: [...pendingFilters.province],
-                          city: [...pendingFilters.city],
-                        });
-                        setActiveFilterTab('storeType');
-                      }
-                      setShowSearchFilters(willShow);
-                    }}
+                    className="inline-flex items-center gap-1 rounded-lg bg-neutral-10 text-neutral-0 px-3 py-2 text-sm font-semibold shadow-sm border border-neutral-10 hover:brightness-95 transition"
+                    onClick={() => toggleStoreFilterPanel(true)}
                     title="更多筛选"
                   >
-                    <SlidersHorizontal className="w-5 h-5" />
+                    <SlidersHorizontal className="w-4 h-4" />
+                    高级筛选
                   </button>
                 </div>
               </div>
-              {showSearchFilters && (
-                <>
-                  {/* 背景遮罩 */}
-                  <div
-                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-10"
-                    onClick={() => setShowSearchFilters(false)}
-                  />
-                  {/* 筛选面板 */}
-                  <div className="relative z-20">
-                    {renderQuickFilters('floating')}
-                  </div>
-                </>
-              )}
+              {renderQuickFilters()}
             </div>
 
-            {/* 筛选 Chips（与总览共用样式） */}
-            {renderQuickFilters()}
-
-            {/* 下：门店列表 */}
-            <div className="space-y-3">
-              <div className="text-lg font-extrabold text-slate-900 px-1">区域列表</div>
+            <div className="bg-neutral-0 border border-neutral-2 rounded-2xl shadow-sm p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-lg font-semibold text-neutral-9">区域列表</div>
+                  <div className="text-xs text-neutral-5">按当前筛选汇总门店与商场</div>
+                </div>
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-1.5 text-[12px] font-semibold text-neutral-7 hover:border-neutral-3 transition"
+                  onClick={resetFilters}
+                >
+                  <RotateCcw className="w-4 h-4" />
+                  重置
+                </button>
+              </div>
               {visibleStores.length === 0 ? (
-                <Card className="p-6 text-center text-slate-500 text-sm">
+                <div className="p-6 text-center text-neutral-6 text-sm border border-dashed border-neutral-3 rounded-xl">
                   没有结果，试试调整筛选或重置。
                   <div className="mt-3">
-                    <Button variant="outline" onClick={resetFilters}>重置筛选</Button>
+                    <button
+                      className="inline-flex items-center gap-1 rounded-lg border border-neutral-2 bg-neutral-0 px-3 py-1.5 text-sm font-semibold text-neutral-7 hover:border-neutral-3 transition"
+                      onClick={resetFilters}
+                    >
+                      <RotateCcw className="w-4 h-4" />
+                      重置筛选
+                    </button>
                   </div>
-                </Card>
+                </div>
               ) : (
                 <RegionList
                   stores={visibleStores}
@@ -2691,7 +2596,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                 />
               )}
             </div>
-          </>
+          </div>
         )}
 
         {currentTab === 'log' && (
@@ -2711,6 +2616,30 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
         )}
         <SegmentControl value={currentTab} onChange={setTab} />
       </div>
+
+      {showSearchFilters && (
+        <>
+          <div
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+            onClick={() => toggleStoreFilterPanel(false)}
+          />
+          <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4">
+            {renderQuickFilters('floating')}
+          </div>
+        </>
+      )}
+
+      {showCompetitionFilters && (
+        <>
+          <div
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+            onClick={() => toggleCompetitionFilterPanel(false)}
+          />
+          <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4">
+            {renderCompetitionFilters('floating')}
+          </div>
+        </>
+      )}
 
       {/* AI 助手：和筛选类似的浮层模块 */}
       {AI_ASSISTANT_ENABLED && showAiAssistant && (
