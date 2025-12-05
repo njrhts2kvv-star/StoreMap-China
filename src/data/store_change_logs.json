@@ -7,7 +7,97 @@
     "province": "辽宁省",
     "city": "沈阳市",
     "changeType": "RELOCATE",
-    "timestamp": "2025-12-03T14:45:01.974824"
+    "timestamp": "2025-12-05T01:42:31.836470"
+  },
+  {
+    "id": "40129a59-1e05-4b96-ba0d-5daa5512911c",
+    "storeId": "40129a59-1e05-4b96-ba0d-5daa5512911c",
+    "brand": "Insta360",
+    "storeName": "荣耀直营店(太原钟楼街店)",
+    "province": "山西省",
+    "city": "太原市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "d8bcc991-09e1-4360-a970-457a041c3923",
+    "storeId": "d8bcc991-09e1-4360-a970-457a041c3923",
+    "brand": "Insta360",
+    "storeName": "荣耀直营店(南京软件谷店)",
+    "province": "江苏省",
+    "city": "南京市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "a2d07930-3981-4ddf-984f-febe59c171a9",
+    "storeId": "a2d07930-3981-4ddf-984f-febe59c171a9",
+    "brand": "Insta360",
+    "storeName": "荣耀直营店(福州东二环泰禾广场店)",
+    "province": "福建省",
+    "city": "福州市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "57aaf24f-1e09-487f-abb4-0c2a3da299b1",
+    "storeId": "57aaf24f-1e09-487f-abb4-0c2a3da299b1",
+    "brand": "Insta360",
+    "storeName": "荣耀直营店(广州机场T3店)",
+    "province": "广东省",
+    "city": "广州市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "b4adb57e-94c4-4103-9d89-35b113865cf0",
+    "storeId": "b4adb57e-94c4-4103-9d89-35b113865cf0",
+    "brand": "Insta360",
+    "storeName": "荣耀旗舰店(深圳湾万象城店)",
+    "province": "广东省",
+    "city": "深圳市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "e29d7370-aa0c-4756-bf18-7a92079c1231",
+    "storeId": "e29d7370-aa0c-4756-bf18-7a92079c1231",
+    "brand": "Insta360",
+    "storeName": "荣耀直营店(深圳机场T3店)",
+    "province": "广东省",
+    "city": "深圳市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "af84574b-6913-4604-bb00-66d0c490ce77",
+    "storeId": "af84574b-6913-4604-bb00-66d0c490ce77",
+    "brand": "Insta360",
+    "storeName": "影石Insta360成都百脑汇照材店",
+    "province": "四川省",
+    "city": "成都市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "ec278ed8-26f9-4c34-8596-39c9a17ce68b",
+    "storeId": "ec278ed8-26f9-4c34-8596-39c9a17ce68b",
+    "brand": "Insta360",
+    "storeName": "荣耀旗舰店(成都宽窄巷子店)",
+    "province": "四川省",
+    "city": "成都市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "7cb0bf4a-0022-43cb-9317-9cf366deea3e",
+    "storeId": "7cb0bf4a-0022-43cb-9317-9cf366deea3e",
+    "brand": "Insta360",
+    "storeName": "荣耀直营店(昆明万象城店)",
+    "province": "云南省",
+    "city": "昆明市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
   },
   {
     "id": "CLOSE-05d9818c-4633-441f-88e3-22efc28bb3e0",
