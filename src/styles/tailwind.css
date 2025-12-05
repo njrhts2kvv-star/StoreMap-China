@@ -18,6 +18,8 @@
 .store-marker--dji-new { --marker-bg:transparent; box-shadow:none; } /* 新增 DJI：透明底黑 logo，无描边 */
 .store-marker--insta { --brand-main:#facc15; --marker-bg:#ffffff; box-shadow:none; } /* 普通 / 收藏 Insta：白底黑/黄 logo */
 .store-marker--insta-new { --marker-bg:transparent; box-shadow:none; } /* 新增 Insta：透明底黄 logo，无描边 */
+.store-marker--generic { --marker-bg:#ffffff; box-shadow:none; }
+.store-marker--generic-new { --marker-bg:transparent; box-shadow:none; }
 .store-marker--favorite { --marker-size:16px; } /* 收藏尺寸与普通一致，不改底色 */
 .store-marker--new { box-shadow:none; transform:scale(1); }
 .store-marker--selected { box-shadow:0 0 0 1px #ffffff,0 3px 8px rgba(15,23,42,0.15); transform:translateZ(0) scale(1.06); }

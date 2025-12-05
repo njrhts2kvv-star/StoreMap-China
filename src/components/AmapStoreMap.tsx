@@ -2,36 +2,34 @@
 // @ts-nocheck
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Crosshair, Minus, Plus, Star, X } from 'lucide-react';
-import type { Mall, Store } from '../types/store';
+import type { BrandId } from '../config/brandConfig';
+import type { Mall, RegionStats, Store } from '../types/store';
 import { loadAmap } from '../utils/loadAmap';
-import djiLogoBlack from '../assets/dji_logo_black_small.svg';
-import djiLogoWhite from '../assets/dji_logo_white_small.svg';
-import instaLogoBlack from '../assets/insta360_logo_black_small.svg';
-import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
 import { isNewThisMonth } from '../utils/storeRules';
-import { MALL_STATUS_COLORS } from '../config/competitionColors';
 import { lighten, mixColors } from '../utils/color';
+import { getBrandConfig } from '../config/brandConfig';
+import { getMallCompetitionStatus } from '../utils/competition';
+
+const CORE_BRAND: BrandId = 'DJI';
+const SECONDARY_BRAND: BrandId = 'Insta360';
 
 // 根据商场属性计算点位颜色（与商场标签配色保持一致）
-const getCompetitionMallColor = (mall: Mall): string => {
-  const hasDJI = mall.djiOpened;
-  const hasInsta = mall.instaOpened;
-  const isPtMall = mall.djiExclusive === true; // PT 商场
-  const isTarget = mall.djiTarget === true && !mall.djiOpened; // 目标未进驻：DJI Target 且尚未开业
-  const isGap = mall.status === 'gap'; // 缺口机会（DJI 有布局但 Insta 未进）
-  const isBothOpened = hasDJI && hasInsta;
-  const isBothNone = !hasDJI && !hasInsta;
-  const isInstaOnly = hasInsta && !hasDJI;
-  const isDjiOnly = hasDJI && !hasInsta;
+const getCompetitionMallColor = (mall: Mall, coreBrand: BrandId = CORE_BRAND): string => {
+  const competition = mall.competitionStatus ?? getMallCompetitionStatus(mall, coreBrand);
+  const core = getBrandConfig(coreBrand);
+  const competitorId = (mall.openedBrands || []).find((b) => b !== coreBrand);
+  const competitor = competitorId ? getBrandConfig(competitorId) : getBrandConfig(SECONDARY_BRAND);
+  const isGap = mall.status === 'gap';
+  const isTarget = mall.djiTarget === true && mall.djiOpened !== true;
 
   // 按优先级返回颜色
-  if (isPtMall) return '#EF4444';      // 红色 - PT商场
-  if (isGap) return '#FFFFFF';         // 白色 - 缺口机会
-  if (isTarget) return '#3B82F6';      // 蓝色 - 目标未进驻
-  if (isBothOpened) return '#22C55E';  // 绿色 - 均进驻
-  if (isBothNone) return '#94A3B8';    // 灰色 - 均未进驻
-  if (isInstaOnly) return '#F5C400';   // 黄色 - 仅 Insta 进驻
-  if (isDjiOnly) return '#111827';     // 深黑色 - 仅 DJI 进驻
+  if (mall.djiExclusive) return '#EF4444';      // 红色 - PT商场
+  if (isGap) return '#FFFFFF';                  // 白色 - 缺口机会
+  if (isTarget) return '#3B82F6';               // 蓝色 - 目标未进驻
+  if (competition === 'coreAndCompetitors') return '#22C55E'; // 绿色 - 均进驻
+  if (competition === 'none') return '#94A3B8';              // 灰色 - 均未进驻
+  if (competition === 'onlyCompetitors') return competitor.primaryColor || '#F5C400'; // 竞品
+  if (competition === 'onlyCore') return core.primaryColor || '#111827';               // 仅核心品牌
 
   return '#9CA3AF'; // 默认灰色
 };
@@ -69,8 +67,10 @@ const CHINA_BOUNDS = { sw: [73, 15] as [number, number], ne: [135, 54] as [numbe
 // 下钻到具体门店 / 商场时使用的街道级缩放
 const MIN_FOCUS_ZOOM = 14;
 const CITY_MAX_ZOOM = 10; // 城市层最高放大，避免直接落到街道级
-const DJI_COLOR = '#111827';
-const INSTA_COLOR = '#facc15';
+const CORE_BRAND_CONFIG = getBrandConfig(CORE_BRAND);
+const SECONDARY_BRAND_CONFIG = getBrandConfig(SECONDARY_BRAND);
+const DJI_COLOR = CORE_BRAND_CONFIG.primaryColor || '#111827';
+const INSTA_COLOR = SECONDARY_BRAND_CONFIG.primaryColor || '#facc15';
 const NO_DATA_COLOR = '#e5e7eb';
 const CLUSTER_ZOOM_THRESHOLD = 9;
 const CLUSTER_GRID_SIZE = 80;
@@ -84,12 +84,7 @@ type RegionShape = {
 
 type DrillLevel = 'province' | 'city';
 
-type RegionStats = {
-  dji: number;
-  insta: number;
-  total: number;
-};
-const EMPTY_STATS: RegionStats = { dji: 0, insta: 0, total: 0 };
+const EMPTY_STATS: RegionStats = { regionId: '', total: 0, byBrand: {} };
 
 const safeCenter = (center: string | number[] | undefined): [number, number] => {
   if (!center) return DEFAULT_CENTER;
@@ -121,10 +116,11 @@ const normalizeBoundaries = (paths: any[] = []): [number, number][][] =>
 const aggregateByProvince = (stores: Store[]) =>
   stores.reduce<Record<string, RegionStats>>((acc, store) => {
     const key = store.province || '未知';
-    if (!acc[key]) acc[key] = { dji: 0, insta: 0, total: 0 };
-    if (store.brand === 'DJI') acc[key].dji += 1;
-    else acc[key].insta += 1;
-    acc[key].total += 1;
+    const region = acc[key] || { regionId: key, total: 0, byBrand: {} };
+    const brand = store.brand as BrandId;
+    region.byBrand[brand] = (region.byBrand[brand] || 0) + 1;
+    region.total += 1;
+    acc[key] = region;
     return acc;
   }, {});
 
@@ -133,10 +129,11 @@ const aggregateByCity = (stores: Store[]) =>
     const province = store.province || '未知';
     const city = store.city || province;
     const key = `${province}||${city}`;
-    if (!acc[key]) acc[key] = { dji: 0, insta: 0, total: 0 };
-    if (store.brand === 'DJI') acc[key].dji += 1;
-    else acc[key].insta += 1;
-    acc[key].total += 1;
+    const region = acc[key] || { regionId: key, total: 0, byBrand: {} };
+    const brand = store.brand as BrandId;
+    region.byBrand[brand] = (region.byBrand[brand] || 0) + 1;
+    region.total += 1;
+    acc[key] = region;
     return acc;
   }, {});
 
@@ -144,6 +141,11 @@ const calcFillColor = (share: number | null) => {
   if (share === null || Number.isNaN(share)) return NO_DATA_COLOR;
   return mixColors(INSTA_COLOR, DJI_COLOR, share);
 };
+
+const getBrandShare = (stats: RegionStats, brandId: BrandId) =>
+  stats.total > 0 ? (stats.byBrand[brandId] || 0) / stats.total : null;
+
+const emptyStatsFor = (regionId: string): RegionStats => ({ ...EMPTY_STATS, regionId });
 
 const calcStrokeColor = (fill: string) => lighten(fill, 0.15);
 
@@ -264,14 +266,18 @@ export function AmapStoreMap({
   const provinceStatsFiltered = useMemo(() => aggregateByProvince(stores), [stores]);
   const cityStatsFiltered = useMemo(() => aggregateByCity(stores), [stores]);
   const regionEnabled = regionMode !== 'none';
-  const getProvinceBase = useCallback((name: string) => provinceStatsBase[name] ?? EMPTY_STATS, [provinceStatsBase]);
-  const getProvinceFiltered = useCallback((name: string) => provinceStatsFiltered[name] ?? EMPTY_STATS, [provinceStatsFiltered]);
+  const getProvinceBase = useCallback((name: string) => provinceStatsBase[name] ?? emptyStatsFor(name), [provinceStatsBase]);
+  const getProvinceFiltered = useCallback(
+    (name: string) => provinceStatsFiltered[name] ?? emptyStatsFor(name),
+    [provinceStatsFiltered],
+  );
   const getCityBase = useCallback(
-    (province: string, city: string) => cityStatsBase[`${province}||${city}`] ?? EMPTY_STATS,
+    (province: string, city: string) => cityStatsBase[`${province}||${city}`] ?? emptyStatsFor(`${province}||${city}`),
     [cityStatsBase],
   );
   const getCityFiltered = useCallback(
-    (province: string, city: string) => cityStatsFiltered[`${province}||${city}`] ?? EMPTY_STATS,
+    (province: string, city: string) =>
+      cityStatsFiltered[`${province}||${city}`] ?? emptyStatsFor(`${province}||${city}`),
     [cityStatsFiltered],
   );
   const [drillLevel, setDrillLevel] = useState<DrillLevel>('province'); // 默认全国视图
@@ -398,23 +404,23 @@ export function AmapStoreMap({
   }, [ready, normalizedCenter, initialZoom, selectedId, selectedMallId]);
 
   const provinceFilteredStats = useMemo(
-    () => (activeProvince ? getProvinceFiltered(activeProvince) : EMPTY_STATS),
+    () => (activeProvince ? getProvinceFiltered(activeProvince) : emptyStatsFor('')),
     [activeProvince, getProvinceFiltered],
   );
   const cityFilteredStats = useMemo(
     () => {
-      if (!activeProvince || !activeCity) return EMPTY_STATS;
+      if (!activeProvince || !activeCity) return emptyStatsFor('');
       const keyed = getCityFiltered(activeProvince, activeCity);
       if (keyed.total > 0) return keyed;
       // 兜底：用当前城市门店直接统计，避免命名不一致导致 0
       const derived = scopedStorePoints.reduce(
         (acc, s) => {
-          if (s.brand === 'DJI') acc.dji += 1;
-          else acc.insta += 1;
+          const brand = s.brand as BrandId;
+          acc.byBrand[brand] = (acc.byBrand[brand] || 0) + 1;
           acc.total += 1;
           return acc;
         },
-        { ...EMPTY_STATS },
+        { ...emptyStatsFor(`${activeProvince}||${activeCity}`) },
       );
       return derived;
     },
@@ -542,7 +548,7 @@ export function AmapStoreMap({
             ? getProvinceBase(shape.name)
             : getCityBase(provinceContext || activeProvince || '未知', shape.name);
         const hasData = baseStats.total > 0;
-        const share = hasData ? baseStats.dji / baseStats.total : null;
+        const share = hasData ? getBrandShare(baseStats, CORE_BRAND) : null;
         const fillColor = hasData ? calcFillColor(share) : 'transparent';
         const strokeColor = hasData ? calcStrokeColor(fillColor) : '#cbd5e1';
         const polygon = new (AMapLib as any).Polygon({
@@ -652,31 +658,27 @@ export function AmapStoreMap({
         const isSelected = selectedId === store.id;
         const isNew = isNewThisMonth(store);
         const markerEl = document.createElement('div');
-        const brandClass = store.brand === 'DJI' ? 'store-marker--dji' : 'store-marker--insta';
+        const brand = getBrandConfig(store.brand as BrandId);
+        const brandClass = brand.markerClass || 'store-marker--generic';
         let markerClass = `store-marker ${brandClass}`;
         if (isNew) {
           markerClass += ' store-marker--new';
-          markerClass += store.brand === 'DJI' ? ' store-marker--dji-new' : ' store-marker--insta-new';
+          markerClass += brandClass ? ` ${brandClass}-new` : ' store-marker--generic-new';
         }
         if (isFavorite) {
           markerClass += ' store-marker--favorite';
         }
         markerEl.className = markerClass.trim();
+        markerEl.style.setProperty('--brand-main', brand.primaryColor || '#111827');
         if (isSelected) markerEl.classList.add('store-marker--selected');
-        markerEl.title = store.storeName;
+        markerEl.title = `${brand.shortName || store.brand} · ${store.storeName}`;
 
         const logoImg = document.createElement('img');
         logoImg.className = 'store-marker__logo';
-        const logoSrc = isNew
-          ? store.brand === 'DJI'
-            ? djiLogoWhite
-            : instaLogoYellow
-          : store.brand === 'DJI'
-            ? djiLogoBlack
-            : instaLogoBlack;
+        const logoSrc = isNew ? brand.logoNew || brand.logo : brand.logo;
         logoImg.src = logoSrc;
-        logoImg.alt = store.brand;
-        if (isNew && store.brand === 'Insta360') {
+        logoImg.alt = brand.shortName || store.brand;
+        if (isNew && brand.id === 'Insta360') {
           logoImg.classList.add('store-marker__logo--full');
         }
         markerEl.appendChild(logoImg);
@@ -708,7 +710,7 @@ export function AmapStoreMap({
         const isSelected = selectedMallId === mall.mallId;
         const markerEl = document.createElement('div');
         markerEl.className = 'mall-marker';
-        const color = viewMode === 'competition' ? getCompetitionMallColor(mall) : '#2563eb';
+        const color = viewMode === 'competition' ? getCompetitionMallColor(mall, mall.coreBrand || CORE_BRAND) : '#2563eb';
         markerEl.style.backgroundColor = color;
         if (color === '#FFFFFF') {
           // 缺口机会：白色圆圈 + 极细黑色描边
@@ -896,6 +898,7 @@ export function AmapStoreMap({
   const telLink = selectedStore?.phone ? `tel:${selectedStore.phone}` : '';
   const hasCoord = typeof selectedStore?.latitude === 'number' && typeof selectedStore?.longitude === 'number';
   const isFavorite = (id: string) => favoritesSet.has(id);
+  const selectedBrand = selectedStore ? getBrandConfig(selectedStore.brand as BrandId) : null;
 
   const openMapService = (service: 'gaode' | 'tencent' | 'baidu') => {
     if (!selectedStore || !hasCoord) return;
@@ -914,15 +917,21 @@ export function AmapStoreMap({
     window.open(url, '_blank');
   };
 
-  const favoriteBtnClass = selectedStore
-    ? selectedStore.brand === 'DJI'
+  const favoriteBtnClass = 'bg-slate-100 text-slate-900 border-slate-200';
+  const favoriteBtnStyle =
+    selectedStore && selectedBrand
       ? isFavorite(selectedStore.id)
-        ? 'bg-slate-900 text-white border-slate-900'
-        : 'bg-slate-100 text-slate-900 border-slate-200'
-      : isFavorite(selectedStore.id)
-        ? 'bg-yellow-400 text-slate-900 border-yellow-400'
-        : 'bg-yellow-50 text-amber-700 border-amber-200'
-    : 'bg-slate-100 text-slate-900 border-slate-200';
+        ? {
+            background: selectedBrand.primaryColor,
+            color: '#ffffff',
+            borderColor: selectedBrand.primaryColor,
+          }
+        : {
+            background: '#f8fafc',
+            color: '#0f172a',
+            borderColor: '#e2e8f0',
+          }
+      : undefined;
 
   const handleZoom = (delta: number) => {
     if (!mapRef.current) return;
@@ -1022,7 +1031,9 @@ export function AmapStoreMap({
               <div className="w-full h-3 rounded-full bg-slate-100 overflow-hidden">
                 {(() => {
                   const total = provinceFilteredStats.total || 1;
-                  const djiPct = Math.round((provinceFilteredStats.dji / total) * 100);
+                  const djiCount = provinceFilteredStats.byBrand[CORE_BRAND] || 0;
+                  const instaCount = provinceFilteredStats.byBrand[SECONDARY_BRAND] || 0;
+                  const djiPct = Math.round((djiCount / total) * 100);
                   return (
                     <div className="flex h-full">
                       <div className="h-full" style={{ width: `${djiPct}%`, background: DJI_COLOR }} />
@@ -1032,8 +1043,8 @@ export function AmapStoreMap({
                 })()}
               </div>
               <div className="flex items-center justify-between text-xs text-slate-700">
-                <span>DJI: {provinceFilteredStats.dji}</span>
-                <span>Insta: {provinceFilteredStats.insta}</span>
+                <span>DJI: {provinceFilteredStats.byBrand[CORE_BRAND] || 0}</span>
+                <span>Insta: {provinceFilteredStats.byBrand[SECONDARY_BRAND] || 0}</span>
                 <span>总计: {provinceFilteredStats.total}</span>
               </div>
             </div>
@@ -1054,7 +1065,8 @@ export function AmapStoreMap({
               <div className="w-full h-3 rounded-full bg-slate-100 overflow-hidden">
                 {(() => {
                   const total = cityFilteredStats.total || 1;
-                  const djiPct = Math.round((cityFilteredStats.dji / total) * 100);
+                  const djiCount = cityFilteredStats.byBrand[CORE_BRAND] || 0;
+                  const djiPct = Math.round((djiCount / total) * 100);
                   return (
                     <div className="flex h-full">
                       <div className="h-full" style={{ width: `${djiPct}%`, background: DJI_COLOR }} />
@@ -1064,8 +1076,8 @@ export function AmapStoreMap({
                 })()}
               </div>
               <div className="flex items-center justify-between text-xs text-slate-700">
-                <span>DJI: {cityFilteredStats.dji}</span>
-                <span>Insta: {cityFilteredStats.insta}</span>
+                <span>DJI: {cityFilteredStats.byBrand[CORE_BRAND] || 0}</span>
+                <span>Insta: {cityFilteredStats.byBrand[SECONDARY_BRAND] || 0}</span>
                 <span>总计: {cityFilteredStats.total}</span>
               </div>
             </div>
@@ -1096,12 +1108,11 @@ export function AmapStoreMap({
             </button>
             <div className="pt-3 pb-3">
               <div className="flex gap-3 items-start mb-2 px-3 pr-8">
-              <div
-                  className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm ${
-                    selectedStore.brand === 'DJI' ? 'bg-white border border-slate-900' : 'bg-white border border-amber-300'
-                  }`}
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm border bg-white"
+                  style={{ borderColor: selectedBrand?.primaryColor || '#e2e8f0' }}
                 >
-                  <img src={selectedStore.brand === 'DJI' ? djiLogoWhite : instaLogoYellow} alt={selectedStore.brand} className="w-9 h-9" />
+                  <img src={isNewThisMonth(selectedStore) ? selectedBrand?.logoNew || selectedBrand?.logo : selectedBrand?.logo} alt={selectedStore.brand} className="w-9 h-9 object-contain" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
@@ -1121,17 +1132,14 @@ export function AmapStoreMap({
               <div className="flex gap-2 px-3">
                 <button
                   className={`flex-1 h-[30px] rounded-full text-xs font-bold border transition-colors flex items-center justify-center gap-1.5 ${favoriteBtnClass}`}
+                  style={favoriteBtnStyle}
                   onClick={(e) => {
                     e.stopPropagation();
                     onToggleFavorite?.(selectedStore.id);
                   }}
                 >
                   <Star
-                    className={`w-4 h-4 ${
-                      isFavorite(selectedStore.id)
-                        ? 'fill-current text-inherit stroke-inherit'
-                        : 'text-slate-900 stroke-slate-900'
-                    }`}
+                    className="w-4 h-4 text-current stroke-current"
                   />
                   收藏
                 </button>
@@ -1167,18 +1175,22 @@ export function AmapStoreMap({
             isFullscreen ? 'left-4 bottom-[110px]' : 'left-3 top-3'
           }`}
         >
-          <div className="flex items-center gap-1">
-            <span className="store-marker store-marker--insta store-marker--new store-marker--insta-new">
-              <img src={instaLogoYellow} alt="Insta360 新增" className="store-marker__logo store-marker__logo--full" />
-            </span>
-            <span className="text-[10px] text-slate-600">新增</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="store-marker store-marker--dji store-marker--new store-marker--dji-new">
-              <img src={djiLogoWhite} alt="DJI 新增" className="store-marker__logo" />
-            </span>
-            <span className="text-[10px] text-slate-600">新增</span>
-          </div>
+          {[SECONDARY_BRAND_CONFIG, CORE_BRAND_CONFIG].map((brand) => {
+            const markerClass = brand.markerClass || 'store-marker--generic';
+            const newClass = `${markerClass}-new`;
+            return (
+              <div key={brand.id} className="flex items-center gap-1">
+                <span className={`store-marker ${markerClass} store-marker--new ${newClass}`}>
+                  <img
+                    src={brand.logoNew || brand.logo}
+                    alt={`${brand.shortName} 新增`}
+                    className="store-marker__logo store-marker__logo--full"
+                  />
+                </span>
+                <span className="text-[10px] text-slate-600">{brand.shortName} 新增</span>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

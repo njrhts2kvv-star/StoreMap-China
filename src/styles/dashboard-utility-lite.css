@@ -1,0 +1,64 @@
+:root {
+  --neutral-0: #ffffff;
+  --neutral-1: #f8fafc;
+  --neutral-2: #f1f5f9;
+  --neutral-3: #e2e8f0;
+  --neutral-4: #cbd5e1;
+  --neutral-5: #94a3b8;
+  --neutral-6: #64748b;
+  --neutral-7: #475569;
+  --neutral-8: #334155;
+  --neutral-9: #1e293b;
+  --neutral-10: #0f172a;
+  --red-5: #f43f5e;
+}
+
+.bg-neutral-0 { background-color: var(--neutral-0); }
+.bg-neutral-1 { background-color: var(--neutral-1); }
+.bg-neutral-2 { background-color: var(--neutral-2); }
+.bg-neutral-3 { background-color: var(--neutral-3); }
+.bg-neutral-4 { background-color: var(--neutral-4); }
+.bg-neutral-5 { background-color: var(--neutral-5); }
+.bg-neutral-6 { background-color: var(--neutral-6); }
+.bg-neutral-7 { background-color: var(--neutral-7); }
+.bg-neutral-8 { background-color: var(--neutral-8); }
+.bg-neutral-9 { background-color: var(--neutral-9); }
+.bg-neutral-10 { background-color: var(--neutral-10); }
+.bg-neutral-1\/50 { background-color: color-mix(in srgb, var(--neutral-1) 50%, transparent); }
+.bg-neutral-2\/50 { background-color: color-mix(in srgb, var(--neutral-2) 50%, transparent); }
+.bg-red-5 { background-color: var(--red-5); }
+
+.text-neutral-0 { color: var(--neutral-0); }
+.text-neutral-1 { color: var(--neutral-1); }
+.text-neutral-2 { color: var(--neutral-2); }
+.text-neutral-3 { color: var(--neutral-3); }
+.text-neutral-4 { color: var(--neutral-4); }
+.text-neutral-5 { color: var(--neutral-5); }
+.text-neutral-6 { color: var(--neutral-6); }
+.text-neutral-7 { color: var(--neutral-7); }
+.text-neutral-8 { color: var(--neutral-8); }
+.text-neutral-9 { color: var(--neutral-9); }
+.text-neutral-10 { color: var(--neutral-10); }
+
+.border-neutral-0 { border-color: var(--neutral-0); }
+.border-neutral-1 { border-color: var(--neutral-1); }
+.border-neutral-2 { border-color: var(--neutral-2); }
+.border-neutral-3 { border-color: var(--neutral-3); }
+.border-neutral-4 { border-color: var(--neutral-4); }
+.border-neutral-5 { border-color: var(--neutral-5); }
+.border-neutral-6 { border-color: var(--neutral-6); }
+
+.ring-neutral-0 { --tw-ring-color: var(--neutral-0); }
+.ring-neutral-10 { --tw-ring-color: var(--neutral-10); }
+
+.dark .dark\:bg-neutral-0 { background-color: var(--neutral-0); }
+.dark .dark\:bg-neutral-1 { background-color: var(--neutral-1); }
+.dark .dark\:bg-neutral-2 { background-color: var(--neutral-2); }
+.dark .dark\:bg-neutral-3 { background-color: var(--neutral-3); }
+.dark .dark\:bg-neutral-4 { background-color: var(--neutral-4); }
+.dark .dark\:text-neutral-5 { color: var(--neutral-5); }
+.dark .dark\:text-neutral-9 { color: var(--neutral-9); }
+.dark .dark\:text-neutral-10 { color: var(--neutral-10); }
+.dark .dark\:border-neutral-2 { border-color: var(--neutral-2); }
+.dark .dark\:border-neutral-3 { border-color: var(--neutral-3); }
+.dark .dark\:border-neutral-4 { border-color: var(--neutral-4); }

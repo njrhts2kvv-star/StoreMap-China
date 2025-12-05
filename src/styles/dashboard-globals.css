@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --neutral-0: #ffffff;
+  --neutral-1: #f8fafc;
+  --neutral-2: #f1f5f9;
+  --neutral-3: #e2e8f0;
+  --neutral-4: #cbd5e1;
+  --neutral-5: #94a3b8;
+  --neutral-6: #64748b;
+  --neutral-7: #475569;
+  --neutral-8: #334155;
+  --neutral-9: #1e293b;
+  --neutral-10: #0f172a;
+  --green-5: #10b981;
+  --green-0: #ecfdf5;
+  --green-9: #064e3b;
+  --red-5: #f43f5e;
+  --red-0: #fff1f2;
+  --red-9: #881337;
+  --amber-5: #f59e0b;
+  --amber-0: #fffbeb;
+  --blue-5: #6366f1;
+  --cat-1: #1e293b;
+  --cat-2: #2bdba6;
+  --cat-3: #38bdf8;
+  --cat-4: #818cf8;
+  --cat-5: #94a3b8;
+  --background: var(--neutral-1);
+  --foreground: var(--neutral-10);
+  --card: var(--neutral-0);
+  --card-foreground: var(--neutral-7);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--neutral-7);
+  --primary: var(--neutral-10);
+  --primary-foreground: var(--neutral-0);
+  --secondary: var(--neutral-0);
+  --secondary-foreground: var(--neutral-10);
+  --muted: var(--neutral-2);
+  --muted-foreground: var(--neutral-6);
+  --accent: var(--neutral-2);
+  --accent-foreground: var(--neutral-9);
+  --destructive: var(--red-5);
+  --destructive-foreground: var(--neutral-0);
+  --border: var(--neutral-3);
+  --input: var(--neutral-3);
+  --ring: var(--neutral-10);
+  --radius: 12px;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.dark {
+  --neutral-0: #0f172a;
+  --neutral-1: #020617;
+  --neutral-2: #1e293b;
+  --neutral-3: #334155;
+  --neutral-4: #475569;
+  --neutral-5: #64748b;
+  --neutral-6: #94a3b8;
+  --neutral-7: #cbd5e1;
+  --neutral-8: #e2e8f0;
+  --neutral-9: #f1f5f9;
+  --neutral-10: #ffffff;
+  --border: var(--neutral-3);
+  --input: var(--neutral-3);
+  --ring: var(--neutral-8);
+}

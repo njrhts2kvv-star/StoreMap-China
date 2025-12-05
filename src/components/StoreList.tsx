@@ -2,6 +2,7 @@ import { Phone, Navigation, Star } from 'lucide-react';
 import { Virtuoso } from 'react-virtuoso';
 import type { Store } from '../types/store';
 import { isNewThisMonth } from '../utils/storeRules';
+import { getBrandConfig } from '../config/brandConfig';
 
 type Props = {
   stores: Store[];
@@ -17,6 +18,8 @@ export default function StoreList({ stores, favorites, onToggleFavorite, onSelec
     const rank = index + 1;
     const isFavorite = favorites.includes(s.id);
     const isNew = isNewThisMonth(s);
+    const brand = getBrandConfig(s.brand);
+    const brandColor = brand.primaryColor || '#0f172a';
     return (
       <div
         className={`relative overflow-hidden rounded-[24px] p-3 border transition shadow-[0_12px_30px_rgba(15,23,42,0.06)] ${
@@ -24,7 +27,7 @@ export default function StoreList({ stores, favorites, onToggleFavorite, onSelec
         }`}
         onClick={() => onSelect(s.id)}
       >
-        <div className="absolute inset-y-0 left-0 w-1 rounded-l-[24px]" style={{ background: s.brand === 'DJI' ? '#0f172a' : '#f5c400' }} />
+        <div className="absolute inset-y-0 left-0 w-1 rounded-l-[24px]" style={{ background: brandColor }} />
         <div className="flex items-start gap-3">
           <div className="w-10 h-10 rounded-2xl bg-slate-100 flex items-center justify-center text-sm font-bold text-slate-700">
             {rank}
@@ -32,10 +35,8 @@ export default function StoreList({ stores, favorites, onToggleFavorite, onSelec
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
               <div className="font-semibold text-sm text-slate-900 truncate">{s.storeName}</div>
-              <span
-                className={`text-[11px] px-2 py-1 rounded-full ${s.brand === 'DJI' ? 'bg-slate-900 text-white' : 'bg-[#fee600] text-slate-900'}`}
-              >
-                {s.brand}
+              <span className="text-[11px] px-2 py-1 rounded-full border" style={{ background: '#fff', color: brandColor, borderColor: brandColor }}>
+                {brand.shortName || s.brand}
               </span>
               {isNew && (
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#ef4444] text-white font-semibold shadow-sm">

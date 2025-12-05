@@ -1,4 +1,6 @@
-export type Brand = 'DJI' | 'Insta360';
+import type { BrandId } from '../config/brandConfig';
+
+export type Brand = BrandId;
 
 export type ServiceTag = '可试飞' | '支持以旧换新' | '现场维修';
 
@@ -9,6 +11,12 @@ export type MallStatus =
   | 'blue_ocean'   // 纯蓝海
   | 'opportunity'  // 高潜机会
   | 'neutral';     // 中性
+
+export type MallCompetitionStatus =
+  | 'none'
+  | 'onlyCore'
+  | 'coreAndCompetitors'
+  | 'onlyCompetitors';
 
 export interface Store {
   id: string;
@@ -36,12 +44,15 @@ export interface Mall {
   mallName: string;
   city: string;
   province?: string;
+  openedBrands: BrandId[];
   // 竞争字段
   djiOpened: boolean;
   instaOpened: boolean;
   djiReported: boolean;
   djiExclusive: boolean;
   djiTarget: boolean;
+  competitionStatus?: MallCompetitionStatus;
+  coreBrand?: BrandId;
   // 兼容旧逻辑
   hasDJI?: boolean;
   hasInsta360?: boolean;
@@ -50,3 +61,9 @@ export interface Mall {
   latitude?: number;
   longitude?: number;
 }
+
+export type RegionStats = {
+  regionId: string;
+  total: number;
+  byBrand: Record<BrandId, number>;
+};

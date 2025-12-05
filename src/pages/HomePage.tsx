@@ -17,6 +17,7 @@ import { NewStoresThisMonth } from '../components/NewStoresThisMonth';
 import { Card, Button } from '../components/ui';
 import { EXPERIENCE_STORE_TYPES } from '../config/storeTypes';
 import { CompetitionDashboard } from '../components/CompetitionDashboard';
+import StoreList from '../components/StoreList';
 import { CompetitionMallCard } from '../components/CompetitionMallCard';
 import instaLogoYellow from '../assets/insta360_logo_yellow_small.svg';
 import djiLogoWhite from '../assets/dji_logo_white_small.svg';
@@ -76,7 +77,15 @@ const initialFilters: FilterState = {
 type StoreFilterMode = 'all' | 'experience';
 const AI_ASSISTANT_ENABLED = false; // 临时隐藏 AI 助手入口
 
-export default function HomePage() {
+type HomePageTab = 'overview' | 'list' | 'competition' | 'log' | 'map';
+
+export default function HomePage({
+  activeTabOverride,
+  onActiveTabChange,
+}: {
+  activeTabOverride?: HomePageTab;
+  onActiveTabChange?: (tab: HomePageTab) => void;
+} = {}) {
   const { position: userPos } = useGeo();
   const quickFilterRefs = useRef<(HTMLDivElement | null)[]>([]);
   const newAddedPopoverRef = useRef<HTMLDivElement | null>(null);
@@ -86,7 +95,12 @@ export default function HomePage() {
   const [pendingFilters, setPendingFilters] = useState<FilterState>(initialFilters);
   const [appliedFilters, setAppliedFilters] = useState<FilterState>(initialFilters);
   const [storeFilterMode, setStoreFilterMode] = useState<StoreFilterMode>('experience');
-  const [activeTab, setActiveTab] = useState<'overview' | 'list' | 'competition' | 'log' | 'map'>('overview');
+  const [activeTab, setActiveTab] = useState<HomePageTab>('overview');
+  const currentTab = activeTabOverride ?? activeTab;
+  const setTab = (tab: HomePageTab) => {
+    if (!activeTabOverride) setActiveTab(tab);
+    onActiveTabChange?.(tab);
+  };
   const [showAiAssistant, setShowAiAssistant] = useState(false);
   
   // 根据模式应用门店类别筛选
@@ -163,7 +177,19 @@ type FilterTab = 'storeType' | 'province' | 'city';
   >('ALL');
   const hasRegionFilter = pendingFilters.city.length > 0 || pendingFilters.province.length > 0;
   const mapUserPos = hasRegionFilter ? null : userPos;
-  const handleSelect = useCallback((id: string) => setSelectedId(id || null), []);
+  const handleSelect = useCallback(
+    (id: string) => {
+      setSelectedId(id || null);
+      if (id) {
+        const target = allStores.find((s) => s.id === id);
+        if (target && typeof target.latitude === 'number' && typeof target.longitude === 'number') {
+          setMapInitialCenter([target.latitude, target.longitude]);
+          setMapInitialZoom(14);
+        }
+      }
+    },
+    [allStores],
+  );
 
   const updateFilters = (patch: Partial<FilterState>) => {
     setPendingFilters((f) => {
@@ -400,12 +426,89 @@ type FilterTab = 'storeType' | 'province' | 'city';
   const [showCompetitionMallCard, setShowCompetitionMallCard] = useState(false);
   const [selectedCompetitionMall, setSelectedCompetitionMall] = useState<Mall | null>(null);
   const [competitionMapMode, setCompetitionMapMode] = useState<'competition' | 'stores'>('competition');
+  const [mapViewSelection, setMapViewSelection] = useState<'stores' | 'competition' | 'region'>('competition');
+  const [mapRegionMode, setMapRegionMode] = useState<'none' | 'province'>('province');
+  const [mapInitialCenter, setMapInitialCenter] = useState<[number, number] | undefined>(undefined);
+  const [mapInitialZoom, setMapInitialZoom] = useState<number | undefined>(undefined);
+  const [urlParamsReady, setUrlParamsReady] = useState(false);
+  useEffect(() => {
+    if (mapViewSelection === 'competition') {
+      setCompetitionMapMode('competition');
+      setMapRegionMode('province');
+    } else if (mapViewSelection === 'region') {
+      setCompetitionMapMode('stores');
+      setMapRegionMode('province');
+    } else {
+      setCompetitionMapMode('stores');
+      setMapRegionMode('none');
+    }
+  }, [mapViewSelection]);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const viewParam = params.get('view');
+    if (viewParam === 'competition' || viewParam === 'stores' || viewParam === 'region') {
+      setMapViewSelection(viewParam as any);
+    }
+    const brandParam = params.get('brand');
+    if (brandParam) {
+      const parsed = brandParam
+        .split(',')
+        .map((b) => b.trim())
+        .filter(Boolean) as Brand[];
+      if (parsed.length) {
+        setBrandSelection(parsed);
+        setPendingFilters((f) => ({ ...f, brands: parsed }));
+        setAppliedFilters((f) => ({ ...f, brands: parsed }));
+      }
+    }
+    const storeParam = params.get('storeId');
+    if (storeParam) setSelectedId(storeParam);
+    const mallParam = params.get('mallId');
+    if (mallParam) setSelectedMallId(mallParam);
+    const centerParam = params.get('center');
+    if (centerParam) {
+      const [lat, lng] = centerParam.split(',').map((v) => Number(v));
+      if (Number.isFinite(lat) && Number.isFinite(lng)) {
+        setMapInitialCenter([lat, lng]);
+      }
+    }
+    const zoomParam = params.get('zoom');
+    const zoom = zoomParam !== null ? Number(zoomParam) : undefined;
+    if (typeof zoom === 'number' && Number.isFinite(zoom)) {
+      setMapInitialZoom(zoom);
+    }
+    setUrlParamsReady(true);
+  }, []);
+  useEffect(() => {
+    if (!urlParamsReady || typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    params.set('view', mapViewSelection);
+    if (brandSelection.length) params.set('brand', brandSelection.join(','));
+    else params.delete('brand');
+    if (selectedId) params.set('storeId', selectedId);
+    else params.delete('storeId');
+    if (selectedMallId) params.set('mallId', selectedMallId);
+    else params.delete('mallId');
+    if (mapInitialCenter) params.set('center', `${mapInitialCenter[0]},${mapInitialCenter[1]}`);
+    else params.delete('center');
+    if (mapInitialZoom) params.set('zoom', String(mapInitialZoom));
+    else params.delete('zoom');
+    const next = params.toString();
+    const suffix = next ? `?${next}` : '';
+    window.history.replaceState({}, '', `${window.location.pathname}${suffix}`);
+  }, [brandSelection, mapInitialCenter, mapInitialZoom, mapViewSelection, selectedId, selectedMallId, urlParamsReady]);
 
   const handleMallClick = useCallback((mall: Mall) => {
     setCompetitionMapMode('competition');
+    setMapViewSelection('competition');
     setSelectedMallId(mall.mallId);
     setSelectedCompetitionMall(mall);
     setShowCompetitionMallCard(true);
+    if (typeof mall.latitude === 'number' && typeof mall.longitude === 'number') {
+      setMapInitialCenter([mall.latitude, mall.longitude]);
+      setMapInitialZoom(13);
+    }
   }, []);
 
   const resetMallFilters = () => {
@@ -413,7 +516,8 @@ type FilterTab = 'storeType' | 'province' | 'city';
     setSelectedMallId(null);
     setSelectedCompetitionMall(null);
     setShowCompetitionMallCard(false);
-     setCompetitionMapMode('competition');
+    setCompetitionMapMode('competition');
+    setMapViewSelection('competition');
     setCompetitionSearch('');
     setDebouncedCompetitionSearch('');
     setActiveCompetitionChip('ALL');
@@ -1530,12 +1634,12 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
     <div className="min-h-screen flex justify-center bg-[#f6f7fb]">
       <div
         className={
-          activeTab === 'map'
-            ? 'w-full max-w-[393px] min-w-[360px] min-h-screen flex flex-col'
-            : 'w-full max-w-[393px] min-w-[360px] min-h-screen flex flex-col gap-2 px-4 pb-24 pt-6'
+          currentTab === 'map'
+            ? 'w-full max-w-[1440px] min-h-screen flex flex-col px-4 lg:px-8 pb-16 pt-6'
+            : 'w-full max-w-[1200px] min-h-screen flex flex-col gap-2 px-4 lg:px-8 pb-24 pt-6'
         }
       >
-        {activeTab !== 'log' && activeTab !== 'map' && (
+        {currentTab !== 'log' && currentTab !== 'map' && (
           <header
             className={`flex items-start justify-between sticky top-0 bg-[#f6f7fb] z-40 pb-2 transition ${
               showSearchFilters ? 'opacity-60 blur-sm pointer-events-none' : ''
@@ -1543,20 +1647,20 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
           >
             <div className="ml-[6px]">
               <div className="text-2xl font-black leading-tight text-slate-900">
-                {activeTab === 'list' 
+                {currentTab === 'list' 
                   ? '全量门店/商场清单' 
-                  : activeTab === 'competition' 
+                  : currentTab === 'competition' 
                   ? '商场情况一览' 
-                  : activeTab === 'map'
+                  : currentTab === 'map'
                   ? '商场/门店地图分布'
                   : '门店分布对比'}
               </div>
               <div className="text-sm text-slate-500">
-                {activeTab === 'list' 
+                {currentTab === 'list' 
                   ? 'DJI VS Insta360 全国列表' 
-                  : activeTab === 'competition' 
+                  : currentTab === 'competition' 
                   ? '全国不同商场数据一览' 
-                  : activeTab === 'map'
+                  : currentTab === 'map'
                   ? 'DJI VS Insta360 地图数据'
                   : 'DJI vs Insta360 全国数据'}
               </div>
@@ -1586,7 +1690,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
           </header>
         )}
 
-        {activeTab === 'overview' && (
+        {currentTab === 'overview' && (
           <>
             {/* 搜索栏 */}
             <div className="px-1 space-y-2">
@@ -1668,20 +1772,22 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                         stores={visibleStores}
                         colorBaseStores={allStores}
                         regionMode="none"
-                        selectedId={selectedId || undefined}
-                        onSelect={handleSelect}
-                        userPos={mapUserPos}
-                        favorites={favorites}
-                        onToggleFavorite={toggleFavorite}
-                        showPopup={true}
-                        resetToken={mapResetToken}
-                        mapId="overview-map"
-                        showControls={true}
-                        fitToStores={hasProvinceFilter || hasCityFilter}
-                        fitLevel={fitLevel}
-                        showLegend={true}
-                      />
-                    );
+                      selectedId={selectedId || undefined}
+                      onSelect={handleSelect}
+                      userPos={mapUserPos}
+                      favorites={favorites}
+                      onToggleFavorite={toggleFavorite}
+                      showPopup={true}
+                      resetToken={mapResetToken}
+                      mapId="overview-map"
+                      showControls={true}
+                      initialCenter={mapInitialCenter}
+                      initialZoom={mapInitialZoom}
+                      fitToStores={hasProvinceFilter || hasCityFilter}
+                      fitLevel={fitLevel}
+                      showLegend={true}
+                    />
+                  );
                   })()}
                 </div>
               </Card>
@@ -1691,7 +1797,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
             <div className="space-y-3">
               <TopProvinces 
                 stores={storesForProvinceRanking} 
-                onViewAll={() => setActiveTab('list')}
+                onViewAll={() => setTab('list')}
                 selectedProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
                 onProvinceClick={(province) => {
                   const current = pendingFilters.province;
@@ -1705,7 +1811,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
               />
               <TopCities 
                 stores={storesForCityRanking} 
-                onViewAll={() => setActiveTab('list')}
+                onViewAll={() => setTab('list')}
                 selectedCities={pendingFilters.city}
                 activeProvince={pendingFilters.province.length === 1 ? pendingFilters.province[0] : null}
                 onCityClick={(city) => {
@@ -1730,7 +1836,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
           </>
         )}
 
-        {activeTab === 'competition' && (
+        {currentTab === 'competition' && (
           <div className="space-y-2 pb-24">
             {/* 搜索栏 */}
             <div className="px-1 space-y-2">
@@ -2000,6 +2106,8 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                         mapId="competition-map-standalone"
                         showControls
                         autoFitOnClear
+                        initialCenter={mapInitialCenter}
+                        initialZoom={mapInitialZoom}
                         fitToStores={hasProvinceFilter || hasCityFilter}
                         fitLevel={fitLevel}
                         colorBaseStores={allStores}
@@ -2044,9 +2152,138 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
           </div>
         )}
 
-        {activeTab === 'map' && (
-          <div className="flex-1 flex flex-col">
-            <div className="relative w-full h-full">
+        {currentTab === 'map' && (
+          <>
+            <div className="hidden lg:grid lg:grid-cols-[360px_1fr] gap-5 mb-8">
+              <div className="space-y-4">
+                <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-4 space-y-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-lg font-black text-slate-900">地图视角</div>
+                      <div className="text-sm text-slate-500">选择品牌、视图与筛选</div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {([
+                        { key: 'stores', label: '门店' },
+                        { key: 'competition', label: '商场/竞品' },
+                        { key: 'region', label: '区域' },
+                      ] as const).map((tab) => {
+                        const active = mapViewSelection === tab.key;
+                        return (
+                          <button
+                            key={tab.key}
+                            type="button"
+                            onClick={() => setMapViewSelection(tab.key)}
+                            className={`px-3 py-1.5 rounded-full text-[12px] font-semibold border transition ${
+                              active ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-600 border-slate-200'
+                            }`}
+                          >
+                            {tab.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  {renderQuickFilters('map')}
+                </div>
+                <div className="bg-white rounded-3xl border border-slate-100 shadow-sm flex flex-col overflow-hidden" style={{ minHeight: '60vh' }}>
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100">
+                    <div className="text-sm font-semibold text-slate-900">
+                      {mapViewSelection === 'competition'
+                        ? '商场列表'
+                        : mapViewSelection === 'region'
+                          ? '区域门店'
+                          : '门店列表'}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={resetFilters}
+                      className="text-xs font-semibold text-slate-600 bg-slate-100 rounded-full px-3 py-1.5 hover:bg-slate-200 transition"
+                    >
+                      重置
+                    </button>
+                  </div>
+                  <div className="flex-1 overflow-hidden px-3 pb-3">
+                    {mapViewSelection === 'competition' ? (
+                      <CompetitionMallList
+                        malls={competitionMallsWithProvince}
+                        stores={allStores}
+                        resetToken={mapResetToken}
+                        onMallClick={(mall) => {
+                          setMapViewSelection('competition');
+                          setSelectedMallId(mall.mallId);
+                          setSelectedCompetitionMall(mall);
+                          setShowCompetitionMallCard(true);
+                        }}
+                        onStoreClick={(store) => {
+                          setSelectedId(store.id);
+                        }}
+                      />
+                    ) : (
+                      <div className="h-full">
+                        <StoreList
+                          stores={visibleStores}
+                          favorites={favorites}
+                          onToggleFavorite={toggleFavorite}
+                          onSelect={handleSelect}
+                          selectedId={selectedId}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden min-h-[72vh]">
+                <div className="h-full w-full relative">
+                  {(() => {
+                    const hasProvinceFilter = pendingFilters.province.length > 0;
+                    const hasCityFilter = pendingFilters.city.length > 0;
+                    const fitLevel = hasCityFilter ? 'city' : hasProvinceFilter ? 'province' : 'none';
+                    const regionMode = mapViewSelection === 'competition' || mapViewSelection === 'region' ? 'province' : mapRegionMode;
+                    return (
+                      <AmapStoreMap
+                        viewMode={mapViewSelection === 'competition' ? 'competition' : 'stores'}
+                        stores={visibleStores}
+                        malls={competitionMallsForView}
+                        selectedId={mapViewSelection !== 'competition' ? selectedId || undefined : undefined}
+                        selectedMallId={mapViewSelection === 'competition' ? selectedMallId || undefined : undefined}
+                        onSelect={handleSelect}
+                        onMallClick={mapViewSelection === 'competition' ? handleMallClick : undefined}
+                        userPos={mapViewSelection === 'competition' ? null : mapUserPos}
+                        favorites={mapViewSelection === 'competition' ? [] : favorites}
+                        onToggleFavorite={mapViewSelection === 'competition' ? undefined : toggleFavorite}
+                        showPopup={mapViewSelection !== 'competition'}
+                        resetToken={mapResetToken}
+                        mapId="desktop-map"
+                        showControls
+                        autoFitOnClear
+                        initialCenter={mapInitialCenter}
+                        initialZoom={mapInitialZoom}
+                        fitToStores={hasProvinceFilter || hasCityFilter}
+                        fitLevel={mapViewSelection === 'competition' ? 'none' : fitLevel}
+                        colorBaseStores={mapViewSelection === 'competition' ? allStores : undefined}
+                        regionMode={regionMode}
+                        showLegend={mapViewSelection !== 'competition'}
+                      />
+                    );
+                  })()}
+                  {mapViewSelection === 'competition' && showCompetitionMallCard && selectedCompetitionMall && (
+                    <CompetitionMallCard
+                      mall={selectedCompetitionMall}
+                      stores={allStores.filter((s) => s.mallId === selectedCompetitionMall.mallId)}
+                      onClose={() => {
+                        setShowCompetitionMallCard(false);
+                        setSelectedCompetitionMall(null);
+                        setSelectedMallId(null);
+                        setMapResetToken((token) => token + 1);
+                      }}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="lg:hidden flex-1 flex flex-col">
+              <div className="relative w-full h-full">
               {/* 地图标题 + 重置 */}
               <div className="absolute top-6 left-0 right-0 z-30 flex items-start justify-between pointer-events-none px-4">
                 <div className="ml-[6px] pointer-events-auto">
@@ -2237,6 +2474,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                     }`}
                     onClick={() => {
                       setCompetitionMapMode('competition');
+                      setMapViewSelection('competition');
                     }}
                   >
                     <Crosshair className="w-3.5 h-3.5" />
@@ -2251,6 +2489,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                     }`}
                     onClick={() => {
                       setCompetitionMapMode('stores');
+                      setMapViewSelection('stores');
                       setShowCompetitionMallCard(false);
                       setSelectedCompetitionMall(null);
                       setSelectedMallId(null);
@@ -2261,6 +2500,10 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                   </button>
                 </div>
               </div>
+
+              </div>
+
+              <div className="h-4" />
 
               {/* 竞争图例：仅在商场界面展示，位于左上角 */}
               {competitionMapMode === 'competition' && (
@@ -2332,6 +2575,8 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                       isFullscreen
                       showControls
                       autoFitOnClear
+                      initialCenter={mapInitialCenter}
+                      initialZoom={mapInitialZoom}
                       fitToStores={
                         competitionMapMode === 'stores'
                           ? hasProvinceFilter || hasCityFilter
@@ -2361,10 +2606,10 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
                 )}
               </div>
             </div>
-          </div>
+          </>
         )}
 
-        {activeTab === 'list' && (
+        {currentTab === 'list' && (
           <>
             {/* 搜索栏（与总览保持一致） */}
             <div className="px-1 space-y-2">
@@ -2449,7 +2694,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
           </>
         )}
 
-        {activeTab === 'log' && (
+        {currentTab === 'log' && (
           <StoreChangeLogTab
             onOpenAssistant={
               AI_ASSISTANT_ENABLED
@@ -2464,7 +2709,7 @@ const renderCompetitionFilters = (variant: 'default' | 'floating' = 'default') =
             onToggleFavorite={toggleFavorite}
           />
         )}
-        <SegmentControl value={activeTab} onChange={setActiveTab} />
+        <SegmentControl value={currentTab} onChange={setTab} />
       </div>
 
       {/* AI 助手：和筛选类似的浮层模块 */}

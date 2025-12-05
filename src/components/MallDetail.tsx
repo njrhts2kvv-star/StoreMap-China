@@ -2,6 +2,7 @@ import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import type { Mall, Store } from '../types/store';
 import { MALL_STATUS_COLORS } from '../config/competitionColors';
+import { getBrandConfig } from '../config/brandConfig';
 
 type Props = {
   mall: Mall | null;
@@ -20,8 +21,13 @@ const statusLabel: Record<Mall['status'], string> = {
 
 export function MallDetail({ mall, stores, onClose }: Props) {
   if (!mall) return null;
-  const djiStores = stores.filter((s) => s.brand === 'DJI');
-  const instaStores = stores.filter((s) => s.brand === 'Insta360');
+  const storesByBrand = stores.reduce<Record<string, Store[]>>((acc, store) => {
+    const brand = store.brand;
+    if (!acc[brand]) acc[brand] = [];
+    acc[brand].push(store);
+    return acc;
+  }, {});
+  const brandList = (mall.openedBrands && mall.openedBrands.length ? mall.openedBrands : Object.keys(storesByBrand)) as string[];
 
   const badgeColor = MALL_STATUS_COLORS[mall.status];
 
@@ -51,11 +57,16 @@ export function MallDetail({ mall, stores, onClose }: Props) {
         <div className="p-5 space-y-4 overflow-y-auto">
           <div className="grid grid-cols-2 gap-3">
             {[
-              { label: 'DJI 开店', value: mall.djiOpened ? '是' : '否' },
-              { label: 'DJI 报店', value: mall.djiReported ? '是' : '否' },
-              { label: 'DJI 目标', value: mall.djiTarget ? '是' : '否' },
-              { label: 'DJI 排他', value: mall.djiExclusive ? '是' : '否' },
-              { label: 'Insta360 开店', value: mall.instaOpened ? '是' : '否' },
+              { label: '核心品牌视角', value: mall.coreBrand || 'DJI' },
+              {
+                label: '开店品牌',
+                value: brandList.length
+                  ? brandList.map((b) => getBrandConfig(b).shortName || b).join('、')
+                  : '暂无',
+              },
+              { label: '目标商场', value: mall.djiTarget ? '是' : '否' },
+              { label: '被关注/报店', value: mall.djiReported ? '是' : '否' },
+              { label: '排他 (PT)', value: mall.djiExclusive ? '是' : '否' },
             ].map((item) => (
               <div key={item.label} className="bg-slate-50 rounded-2xl px-3 py-2 border border-slate-100">
                 <div className="text-[11px] text-slate-500 font-semibold">{item.label}</div>
@@ -66,40 +77,32 @@ export function MallDetail({ mall, stores, onClose }: Props) {
           <div className="space-y-2">
             <div className="text-sm font-bold text-slate-900">门店列表</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="bg-white border border-slate-100 rounded-2xl shadow-sm p-3">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs font-semibold text-slate-500">DJI</div>
-                  <div className="text-xs font-bold text-slate-900">{djiStores.length} 家</div>
-                </div>
-                {djiStores.length === 0 ? (
-                  <div className="text-xs text-slate-400">暂无门店</div>
-                ) : (
-                  <ul className="space-y-1">
-                    {djiStores.map((s) => (
-                      <li key={s.id} className="text-xs text-slate-700">
-                        {s.storeName}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              <div className="bg-white border border-slate-100 rounded-2xl shadow-sm p-3">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs font-semibold text-slate-500">Insta360</div>
-                  <div className="text-xs font-bold text-slate-900">{instaStores.length} 家</div>
-                </div>
-                {instaStores.length === 0 ? (
-                  <div className="text-xs text-slate-400">暂无门店</div>
-                ) : (
-                  <ul className="space-y-1">
-                    {instaStores.map((s) => (
-                      <li key={s.id} className="text-xs text-slate-700">
-                        {s.storeName}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              {brandList.map((brandId) => {
+                const brand = getBrandConfig(brandId);
+                const brandStores = storesByBrand[brandId] || [];
+                return (
+                  <div key={brandId} className="bg-white border border-slate-100 rounded-2xl shadow-sm p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
+                        <span className="w-2 h-2 rounded-full" style={{ background: brand.primaryColor || '#0f172a' }} />
+                        <span>{brand.shortName}</span>
+                      </div>
+                      <div className="text-xs font-bold text-slate-900">{brandStores.length} 家</div>
+                    </div>
+                    {brandStores.length === 0 ? (
+                      <div className="text-xs text-slate-400">暂无门店</div>
+                    ) : (
+                      <ul className="space-y-1">
+                        {brandStores.map((s) => (
+                          <li key={s.id} className="text-xs text-slate-700">
+                            {s.storeName}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

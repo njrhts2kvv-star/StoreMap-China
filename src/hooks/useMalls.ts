@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import mallsRaw from '../data/malls.json';
 import type { Mall } from '../types/store';
-import { computeMallStatus } from '../utils/competition';
+import { computeMallStatus, getMallCompetitionStatus } from '../utils/competition';
 
 const toBool = (value: unknown) => {
   if (typeof value === 'boolean') return value;
@@ -31,6 +31,11 @@ const normalizeMall = (raw: any): Mall => {
   const djiReported = toBool(raw.djiReported ?? raw.dji_reported ?? 0);
   const djiExclusive = toBool(raw.djiExclusive ?? raw.dji_exclusive ?? 0);
   const djiTarget = toBool(raw.djiTarget ?? raw.dji_target ?? 0);
+  const openedBrands = Array.isArray(raw.openedBrands)
+    ? (raw.openedBrands as any[]).filter(Boolean).map((b) => String(b))
+    : [];
+  if (djiOpened) openedBrands.push('DJI');
+  if (instaOpened) openedBrands.push('Insta360');
 
   return {
     mallId: String(raw.mallId ?? raw.mall_id ?? ''),
@@ -39,6 +44,7 @@ const normalizeMall = (raw: any): Mall => {
     province,
     latitude,
     longitude,
+    openedBrands: Array.from(new Set(openedBrands)),
     djiOpened,
     instaOpened,
     djiReported,
@@ -47,6 +53,8 @@ const normalizeMall = (raw: any): Mall => {
     hasDJI: toBool(raw.hasDJI ?? raw.has_dji ?? djiOpened),
     hasInsta360: toBool(raw.hasInsta360 ?? raw.has_insta360 ?? instaOpened),
     status: 'neutral',
+    coreBrand: 'DJI',
+    competitionStatus: 'none',
   };
 };
 
@@ -54,7 +62,8 @@ export function useMalls() {
   return useMemo(() => {
     return (mallsRaw as any[]).map((raw) => {
       const mall = normalizeMall(raw);
-      return { ...mall, status: computeMallStatus(mall) };
+      const competitionStatus = getMallCompetitionStatus(mall, 'DJI');
+      return { ...mall, status: computeMallStatus(mall, 'DJI'), competitionStatus };
     });
   }, []);
 }
