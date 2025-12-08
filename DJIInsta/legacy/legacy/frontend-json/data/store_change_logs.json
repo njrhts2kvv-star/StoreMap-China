@@ -7,7 +7,57 @@
     "province": "辽宁省",
     "city": "沈阳市",
     "changeType": "RELOCATE",
-    "timestamp": "2025-12-05T01:42:31.836470"
+    "timestamp": "2025-12-07T20:37:10.255639"
+  },
+  {
+    "id": "64afbd46-eb27-48ea-b209-0b7a226c3919",
+    "storeId": "64afbd46-eb27-48ea-b209-0b7a226c3919",
+    "brand": "DJI",
+    "storeName": "上海漕河泾印象城授权体验店",
+    "province": "上海市",
+    "city": "上海市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "5adc3e8b-8a07-4865-8ee9-6ddf2ccce529",
+    "storeId": "5adc3e8b-8a07-4865-8ee9-6ddf2ccce529",
+    "brand": "DJI",
+    "storeName": "合肥瑶海天地授权体验店",
+    "province": "安徽省",
+    "city": "合肥市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "438ba415-48e2-4e89-877e-5f63780444d6",
+    "storeId": "438ba415-48e2-4e89-877e-5f63780444d6",
+    "brand": "DJI",
+    "storeName": "兰州安宁吾悦广场授权体验店",
+    "province": "甘肃省",
+    "city": "兰州市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "5dcb2d92-d36f-4fdd-834a-ca8311ee2bc7",
+    "storeId": "5dcb2d92-d36f-4fdd-834a-ca8311ee2bc7",
+    "brand": "DJI",
+    "storeName": "广州云门NEW PARK授权体验店",
+    "province": "广东省",
+    "city": "广州市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
+  },
+  {
+    "id": "5cb1deb9-f2cd-45cc-9776-ba0680746589",
+    "storeId": "5cb1deb9-f2cd-45cc-9776-ba0680746589",
+    "brand": "DJI",
+    "storeName": "洛阳王府井授权体验店",
+    "province": "河南省",
+    "city": "洛阳市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-05"
   },
   {
     "id": "40129a59-1e05-4b96-ba0d-5daa5512911c",

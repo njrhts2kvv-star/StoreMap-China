@@ -1,5 +1,5 @@
 {
-  "totalStores": 1279,
+  "totalStores": 1284,
   "topCities": [
     {
       "city": "北京市",
@@ -11,7 +11,7 @@
     },
     {
       "city": "上海市",
-      "count": 67
+      "count": 68
     },
     {
       "city": "成都市",
@@ -23,7 +23,7 @@
     },
     {
       "city": "广州市",
-      "count": 54
+      "count": 55
     },
     {
       "city": "杭州市",
@@ -45,9 +45,9 @@
   "provinceRanking": [
     {
       "province": "广东省",
-      "dji": 114,
+      "dji": 115,
       "insta": 59,
-      "total": 173
+      "total": 174
     },
     {
       "province": "江苏省",
@@ -75,9 +75,9 @@
     },
     {
       "province": "上海市",
-      "dji": 39,
+      "dji": 40,
       "insta": 28,
-      "total": 67
+      "total": 68
     },
     {
       "province": "山东省",
@@ -98,15 +98,15 @@
       "total": 58
     },
     {
+      "province": "河南省",
+      "dji": 37,
+      "insta": 15,
+      "total": 52
+    },
+    {
       "province": "辽宁省",
       "dji": 24,
       "insta": 27,
-      "total": 51
-    },
-    {
-      "province": "河南省",
-      "dji": 36,
-      "insta": 15,
       "total": 51
     },
     {
@@ -141,9 +141,9 @@
     },
     {
       "province": "安徽省",
-      "dji": 21,
+      "dji": 22,
       "insta": 7,
-      "total": 28
+      "total": 29
     },
     {
       "province": "新疆维吾尔自治区",
@@ -212,13 +212,13 @@
       "total": 10
     },
     {
-      "province": "青海省",
-      "dji": 6,
+      "province": "甘肃省",
+      "dji": 7,
       "insta": 2,
-      "total": 8
+      "total": 9
     },
     {
-      "province": "甘肃省",
+      "province": "青海省",
       "dji": 6,
       "insta": 2,
       "total": 8
@@ -230,5 +230,5 @@
       "total": 3
     }
   ],
-  "updatedAt": "2025-12-05T01:42:32.088564"
+  "updatedAt": "2025-12-07T20:37:10.565481"
 }
