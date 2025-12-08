@@ -1,3 +1,0 @@
-﻿business_area_id,key,name_raw,amap_id,adcode,province_code,city_code,district_code,province_name,city_name,district_name,center_lat,center_lng,mall_count,store_count,name
-1,510115,凤溪大道,510115,510115,510000,510100,510115,四川省,成都市,温江区,30.692468500000004,103.84122651562495,14,50,凤溪大道商圈
-2,510117,郫筒,510117,510117,510000,510100,510117,四川省,成都市,郫都区,30.807747000000003,103.887863,0,12,郫筒商圈

@@ -29,6 +29,9 @@ __pycache__/
 .env
 .env.local
 
+# 本地归档/大数据文件（仅本地保留，不推送）
+local_archive/
+
 # 编辑器/IDE
 .vscode/*
 !.vscode/extensions.json
