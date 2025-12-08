@@ -1,0 +1,55 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "经四路商圈",
+    "description": "以经四路为核心的传统商业集聚区，涵盖万达广场、振华商厦等主要商业体，地处市中区老城中心，商业氛围浓厚，交通便利。",
+    "mall_codes": [
+      "MALL_7E8CC321",
+      "MALL_3BBD2D8B",
+      "MALL_AA99EF73",
+      "MALL_0C136EC2",
+      "MALL_7A692AC4",
+      "MALL_311AE685"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "英雄山路商圈",
+    "description": "沿英雄山路分布的商业集群，包括银座·奥特莱斯、多个英雄山人防商城出入口及周边商业设施，服务于南部居民区，具备一定社区商业基础。",
+    "mall_codes": [
+      "MALL_D71AEE9A",
+      "MALL_EC876F7B",
+      "MALL_58D771BF",
+      "MALL_797B2726",
+      "MALL_BE360CA4"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "二环南路商圈",
+    "description": "位于市中区南部新兴发展带，集中了中海·环宇城、欧亚大观乐活城等较新的商业项目，依托大型居住区形成区域性消费中心。",
+    "mall_codes": [
+      "MALL_0069BD41",
+      "MALL_8ECB9579"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南部新城商圈",
+    "description": "覆盖市中区西南部拓展区域，包含祥泰广场、西河邻里中心及贵和购物中心等配套商业，服务于新兴住宅片区，功能偏重社区服务。",
+    "mall_codes": [
+      "MALL_0B678AD1",
+      "MALL_153D7022",
+      "MALL_E6156664"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "经十一路商圈",
+    "description": "依托经十一路与马鞍山路交叉区域形成的局部商业节点，以地下人防商城为主体，连接周边小型商业设施，具有特定地段聚集效应。",
+    "mall_codes": [
+      "MALL_ADA6238B",
+      "MALL_0D49BCCE"
+    ]
+  }
+]

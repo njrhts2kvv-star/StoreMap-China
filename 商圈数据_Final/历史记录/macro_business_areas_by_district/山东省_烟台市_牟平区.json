@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "正阳路商圈",
+    "description": "以正阳路为核心干道，聚集了丰金广场、1格广场、正阳商城等多个商业节点，是牟平区传统的商业集中区域之一。",
+    "mall_codes": [
+      "MALL_DD2C2CBE",
+      "MALL_CFDC3CA6",
+      "MALL_EDE04F7C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "宁海大街商圈",
+    "description": "位于宁海大街沿线，涵盖大都汇、振华购物广场（宁海大街）等主要商场，是牟平区较为活跃的现代商业集聚区。",
+    "mall_codes": [
+      "MALL_623693CC",
+      "MALL_115D3688"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "通海路商圈",
+    "description": "以通海路为轴线，分布有振华商厦等商业项目，毗邻政务与居住核心区，具备一定消费基础。",
+    "mall_codes": [
+      "MALL_866428A6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "政府大街商圈",
+    "description": "沿政府大街布局，包含义乌百货批发中心、牟平区东华物资城东实彩钢等商贸型场所，偏向批发与日常零售功能。",
+    "mall_codes": [
+      "MALL_6428E40F",
+      "MALL_73CE9278"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北关大街商圈",
+    "description": "位于北关大街沿线，拥有太平洋广场和金茂商厦，形成区域性的生活服务与社区商业配套。",
+    "mall_codes": [
+      "MALL_9A1DFBD3",
+      "MALL_BE44A051"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "文兴路商圈",
+    "description": "集中在文兴路附近，包括儒林商厦、新天地广场、辽源商场等，服务于周边居民区，属于成熟的生活型商业片区。",
+    "mall_codes": [
+      "MALL_7BC47625",
+      "MALL_0F6AD36D",
+      "MALL_D415F5CA"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "三联广场独立节点",
+    "description": "三联广场地理位置相对独立，周边暂无其他商场形成联动，作为单点商业存在，未融入其他商圈。",
+    "mall_codes": [
+      "MALL_AC1771E3"
+    ]
+  }
+]

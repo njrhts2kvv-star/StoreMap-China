@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "世纪金源商圈",
+    "description": "位于官渡区北部，以世纪金源购物中心为核心的大型商业聚集区",
+    "mall_codes": [
+      "MALL_F7AE7352",
+      "MALL_2DD5E1E3",
+      "MALL_650398BA",
+      "MALL_44C39BB3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "环城南路商圈",
+    "description": "沿环城南路分布的商业带，包含多个商业广场和商场",
+    "mall_codes": [
+      "MALL_F0AE4555",
+      "MALL_AC47700C",
+      "MALL_768DFD37",
+      "MALL_B39B7808"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "彩云北路商圈",
+    "description": "彩云北路沿线商业聚集区，涵盖大都摩天购物中心等商业体",
+    "mall_codes": [
+      "MALL_02F127D7",
+      "MALL_5A61A029",
+      "MALL_7FF3BA26",
+      "MALL_A5D0D9A1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新螺蛳湾商圈",
+    "description": "以新螺蛳湾国际商贸城为核心的专业市场和商业区",
+    "mall_codes": [
+      "MALL_A63C2312",
+      "MALL_31159BBA"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "广福路商圈",
+    "description": "广福路沿线商业区，包含海乐城等商业项目",
+    "mall_codes": [
+      "MALL_E8F2653C"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "滇池会展商圈",
+    "description": "滇池国际会展中心周边商业区域",
+    "mall_codes": [
+      "MALL_2C663AF2"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "羊甫商圈",
+    "description": "云大西路羊甫片区商业中心",
+    "mall_codes": [
+      "MALL_AE34C639"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "双桥路商圈",
+    "description": "双桥路与宝海路交叉口周边商业区",
+    "mall_codes": [
+      "MALL_C57E778F"
+    ]
+  }
+]

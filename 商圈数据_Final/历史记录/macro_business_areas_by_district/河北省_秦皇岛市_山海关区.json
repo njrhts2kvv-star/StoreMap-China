@@ -1,0 +1,34 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南关大街商圈",
+    "description": "以南关大街为核心分布的多个商城聚集区，包括兴华商城各楼栋、国百商城及万孚购物广场等，是山海关区主要的商业集中区域。",
+    "mall_codes": [
+      "MALL_1F393D86",
+      "MALL_7E00496C",
+      "MALL_C2E370AA",
+      "MALL_CAA48506",
+      "MALL_0CDE0F00",
+      "MALL_010A2722",
+      "MALL_38F55746",
+      "MALL_CADD0B62",
+      "MALL_B0DB43DC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "关城南路商圈",
+    "description": "位于关城南路附近的万商商贸城，独立成片，形成山海关区南部的一个区域性商业节点。",
+    "mall_codes": [
+      "MALL_C7BBDEA6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "龙海大道商圈",
+    "description": "位于山海关区西部龙海大道沿线的龙海源商厦，地理位置相对独立，服务于周边新建居住区和交通节点。",
+    "mall_codes": [
+      "MALL_EBA0C30F"
+    ]
+  }
+]

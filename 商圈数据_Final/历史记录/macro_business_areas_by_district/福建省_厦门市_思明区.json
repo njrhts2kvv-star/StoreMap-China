@@ -1,0 +1,128 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "SM城市广场商圈",
+    "description": "以SM新生活广场及其二期为核心，覆盖嘉禾路沿线的成熟商业集聚区，是厦门岛内北部的重要商圈之一。",
+    "mall_codes": [
+      "MALL_C994FFA6",
+      "MALL_E766FA65"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "莲前商圈",
+    "description": "依托莲前大道主干道形成的商业带，包含瑞景商业广场、加州商业广场等，服务于城市主干道沿线的居住与办公人群。",
+    "mall_codes": [
+      "MALL_56DB5F83",
+      "MALL_673C64BA"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "湖滨东路商圈",
+    "description": "围绕湖滨东路地铁站及周边写字楼群形成的中心型商圈，代表项目为厦门万象城，地理位置优越，连接岛内东西向交通要道。",
+    "mall_codes": [
+      "MALL_58BAF7F2"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "中山路/思明南路商圈",
+    "description": "位于厦门老城区核心，涵盖中华城、老虎城等项目，紧邻中山路步行街和鼓浪屿码头，是传统旅游与本地消费融合的高流量商圈。",
+    "mall_codes": [
+      "MALL_7A7FE7DF",
+      "MALL_726453B5"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "火车站/梧村商圈",
+    "description": "以厦门火车站为核心枢纽，辐射梧村地下商业街及中闽百汇商场，形成集交通换乘与日常消费于一体的地下商业网络。",
+    "mall_codes": [
+      "MALL_868B0712"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "松柏-莲花商圈",
+    "description": "覆盖松柏与莲花片区的生活型商圈，包括磐基莲花里、天虹购物中心等，服务周边密集居民区，具备较强社区属性。",
+    "mall_codes": [
+      "MALL_FFB21E0F",
+      "MALL_1122ED44"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "明发商业圈",
+    "description": "位于莲前西路与嘉禾路交汇处，以明发商业广场为代表，曾是跨区域人流聚集地，现仍具一定商业基础。",
+    "mall_codes": [
+      "MALL_624BE80D"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "厦禾路商圈",
+    "description": "沿厦禾路分布的城市级商业走廊，包含罗宾森广场、禹悦汇等项目，连接老城区与新兴商务区，具有过渡性商业特征。",
+    "mall_codes": [
+      "MALL_47DCE74A",
+      "MALL_014DD4C2"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "会展北/观音山商圈",
+    "description": "位于厦门岛东部沿海地带，由JFC品尚中心和宝龙一城构成双核驱动，依托会展与高端住宅区发展起来的新兴现代商圈。",
+    "mall_codes": [
+      "MALL_E77198AC",
+      "MALL_B1E7CBB3"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "体育路商圈",
+    "description": "围绕体育路及育秀东路地铁站布局，以奥永广场为代表，结合体育文化资源形成特色化商业节点。",
+    "mall_codes": [
+      "MALL_44B0D46B"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "七星湾商圈",
+    "description": "位于筼筜湖北岸，以思明欢乐颂商场为主要载体，服务于周边中高端住宅区，体量较小但定位清晰。",
+    "mall_codes": [
+      "MALL_9B924804"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "环岛南商圈",
+    "description": "地处环岛南路沿线，以宝嘉CCPARK潮流艺术街区为特色，靠近景区资源，主打年轻化、艺术化消费体验。",
+    "mall_codes": [
+      "MALL_236CA83E"
+    ]
+  },
+  {
+    "area_id": 13,
+    "area_name": "厦港/演武门商圈",
+    "description": "位于厦门大学与沙坡尾之间，以演武1658为代表，处于历史文化街区与高校圈交界，具备文创与休闲消费潜力。",
+    "mall_codes": [
+      "MALL_3F037300"
+    ]
+  },
+  {
+    "area_id": 14,
+    "area_name": "南中广场商圈",
+    "description": "坐落于思明西路，毗邻中山路西段，以南中广场为单一载体，处于传统商圈边缘，规模有限但位置便利。",
+    "mall_codes": [
+      "MALL_AF126F51"
+    ]
+  },
+  {
+    "area_id": 15,
+    "area_name": "星河COCO Park商圈",
+    "description": "位于展鸿路金融核心区，厦门星河COCO Park作为独立运营的都市时尚商业体，自成一体，吸引周边白领与年轻客群。",
+    "mall_codes": [
+      "MALL_E6A5B1DF"
+    ]
+  }
+]

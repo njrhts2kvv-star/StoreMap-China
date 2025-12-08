@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "岳林中心商圈",
+    "description": "位于奉化区岳林街道核心区域，集中了中山东路沿线多个主要商业体，是奉化城区传统商业中心。",
+    "mall_codes": [
+      "MALL_81957B39",
+      "MALL_C40DD2F4",
+      "MALL_D810AB45",
+      "MALL_BD25910C",
+      "MALL_D46CDE66"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大成东路商圈",
+    "description": "分布于大成东路与金钟路、广济路交叉口附近，形成东部城区新兴商业集聚带。",
+    "mall_codes": [
+      "MALL_C2921C87",
+      "MALL_F4FA4331"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "江口-宁南新城商圈",
+    "description": "位于奉化北部江口及宁南新城片区，涵盖机场南路与陈王路周边新兴商业项目，代表城市北拓发展方向。",
+    "mall_codes": [
+      "MALL_5EE68B99",
+      "MALL_47DE2227"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "莼湖滨海商圈",
+    "description": "地处奉化南部莼湖镇，依托莼桐路与东环线交汇处形成区域性商业节点，服务南部城镇组团。",
+    "mall_codes": [
+      "MALL_C7367A40",
+      "MALL_CA1572A6"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西坞商圈",
+    "description": "位于奉化西北部永丰街一带，为外围城镇独立商业中心，辐射周边居民区。",
+    "mall_codes": [
+      "MALL_DBE771A5"
+    ]
+  }
+]

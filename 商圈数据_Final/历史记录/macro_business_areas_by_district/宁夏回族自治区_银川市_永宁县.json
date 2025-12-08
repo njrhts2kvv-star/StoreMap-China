@@ -1,0 +1,46 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "永宁县城中心商圈",
+    "description": "以永宁县城核心区域为主，涵盖团结西路、杨和街周边多个商贸设施，是永宁县传统商业集中地带。",
+    "mall_codes": [
+      "MALL_AF89DC2B",
+      "MALL_89598D66",
+      "MALL_CFFCC2E7",
+      "MALL_373E5895"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "望远镇商圈",
+    "description": "覆盖望远镇主要商业节点，包括江山阅恒太城及周边商贸中心，是永宁县南部重要商业集聚区。",
+    "mall_codes": [
+      "MALL_C12EC19E",
+      "MALL_29D15CC8"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "李俊片区商圈",
+    "description": "位于永宁县北部李俊镇附近，以东兰购物中心为代表，服务周边乡镇居民的区域性商业节点。",
+    "mall_codes": [
+      "MALL_BEEC1608"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "闽宁镇商圈",
+    "description": "位于永宁县西部闽宁镇，依托110国道交通优势，以闽宁商城为核心的服务型商业聚集点。",
+    "mall_codes": [
+      "MALL_21AB4442"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "望远北片区商圈",
+    "description": "位于望远镇北部与永宁县城交界地带，以宁温综合商场为代表，辐射周边城乡结合区域。",
+    "mall_codes": [
+      "MALL_766E13C6"
+    ]
+  }
+]

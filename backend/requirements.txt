@@ -1,0 +1,9 @@
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.12
+geoalchemy2==0.14.6
+pydantic-settings==2.2.1
+# pandas 2.0.3 与 numpy 2.x 有二进制不兼容，显式锁定兼容的 numpy 版本
+numpy==1.24.4
+pandas==2.0.3

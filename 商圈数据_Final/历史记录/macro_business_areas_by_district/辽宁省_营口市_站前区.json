@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "市府路商圈",
+    "description": "以市府路为核心街道，聚集了万达广场、新亚商厦、丽璟名品购物中心、财富春天购物中心等多个商业体，是站前区传统的商业中心之一。",
+    "mall_codes": [
+      "MALL_251ABD6E",
+      "MALL_701D5977",
+      "MALL_168130D0",
+      "MALL_1DFE466F",
+      "MALL_8BA763D8",
+      "MALL_E74D2F9F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "渤海大街商圈",
+    "description": "位于渤海大街沿线，以大商新玛特购物广场为核心，辐射周边商业配套，是站前区重要的主干道商业带。",
+    "mall_codes": [
+      "MALL_C92403D2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "辽河大街商圈",
+    "description": "沿辽河大街分布，涵盖中亚购物广场和深港购物中心等商场，构成站前区西部的重要消费区域。",
+    "mall_codes": [
+      "MALL_CD3E221A",
+      "MALL_DAFFC8E5"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "建设街-东升路商圈",
+    "description": "集中在建设街与东升路附近，包括亿万佳时代购物广场和金地商场，服务于跃进街道居民，属于区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_57DACED9",
+      "MALL_7A14C6FC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "新兴大街商圈",
+    "description": "以营口兴隆大厦为代表，位于新兴大街东段，是站前区东部具有一定规模的商业节点。",
+    "mall_codes": [
+      "MALL_44F99F42"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "永红街商圈",
+    "description": "以汉城商社为中心，地处永红街，体量较小但地理位置居中，服务周边社区。",
+    "mall_codes": [
+      "MALL_6A98E172"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "跃进街商圈",
+    "description": "位于跃进街沿线，拥有锦联·经典汇等商业项目，依托社区型超市形成小型商业聚集。",
+    "mall_codes": [
+      "MALL_1C19E10E"
+    ]
+  }
+]

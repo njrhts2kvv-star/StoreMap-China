@@ -1,0 +1,50 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "隆尧城区核心商圈",
+    "description": "位于隆尧县城中心区域，集中了新华路与康庄路周边多个主要购物场所，是县城内商业密度最高的片区。",
+    "mall_codes": [
+      "MALL_B96F2F88",
+      "MALL_8E3811E8",
+      "MALL_4E3587F7",
+      "MALL_6D6E65E2",
+      "MALL_6777FF30",
+      "MALL_B00906D7",
+      "MALL_2063647E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "固城片区商圈",
+    "description": "位于隆尧县北部的固城镇，以北方购物广场和绿源众信商厦为核心，服务本地乡镇居民。",
+    "mall_codes": [
+      "MALL_B78C3B61",
+      "MALL_DF8FE974"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "尹村-唐人街商圈",
+    "description": "位于尹村镇唐人街及周边，依托唐人街购物广场和华润购物商场形成区域性消费节点。",
+    "mall_codes": [
+      "MALL_E69691BE",
+      "MALL_5C01F258"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东部城乡结合商圈",
+    "description": "位于县城东部327省道附近，以宏大生活广场为代表，覆盖城乡过渡带消费人群。",
+    "mall_codes": [
+      "MALL_721B397F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "南部乡镇商圈",
+    "description": "位于隆尧县南部的莲子镇或相近区域，爱军购物中心为该片区代表性的零售点，服务于周边乡镇。",
+    "mall_codes": [
+      "MALL_A6E48812"
+    ]
+  }
+]

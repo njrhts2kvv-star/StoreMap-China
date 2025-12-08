@@ -1,0 +1,73 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五一广场/黄兴路步行街商圈",
+    "description": "位于长沙市中心核心地带，涵盖五一广场、黄兴路步行街及周边地铁枢纽，是天心区最繁华的商业集聚区，集中了悦方ID Mall、海信广场、王府井百货等主要商业体。",
+    "mall_codes": [
+      "MALL_53E2C72F",
+      "MALL_D0E37156",
+      "MALL_A77444C0",
+      "MALL_BBB7FC95",
+      "MALL_7E54AC6C",
+      "MALL_9B9ADCA0",
+      "MALL_0B4F0B01",
+      "MALL_40666DFD",
+      "MALL_B0A31291",
+      "MALL_38CEED24",
+      "MALL_AE78B16D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "侯家塘商圈",
+    "description": "以劳动西路与芙蓉中路交汇区域为核心，依托侯家塘地铁站形成的重要商业节点，包括叮叮mall、摩天商业广场等商业项目。",
+    "mall_codes": [
+      "MALL_7044ECEA",
+      "MALL_A6D60E51"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南门口商圈",
+    "description": "位于长沙老城区南门口一带，依托历史街区和人流聚集形成的特色商业区域，代表项目为南门口1662主题购物中心。",
+    "mall_codes": [
+      "MALL_D0E37156"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "书院路-南郊商圈",
+    "description": "覆盖书院南路至南郊公园一带，服务城市南部居民区，包含南郊生活广场、幸福里商业广场等社区型商业设施。",
+    "mall_codes": [
+      "MALL_094AFF17",
+      "MALL_56BE2297"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "中信广场/暮云商圈",
+    "description": "位于天心区南部外围，以中信广场地铁站为核心，辐射周边大型居住区，主要商业体包括环宇城、鑫悦汇、长沙友阿奥特莱斯及德盛欢乐广场。",
+    "mall_codes": [
+      "MALL_3F015B55",
+      "MALL_40D1C9FB",
+      "MALL_45042368",
+      "MALL_D1C4337D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "黄土岭商圈",
+    "description": "依托黄土岭地铁站形成的区域级商业节点，主要服务于周边住宅区，代表项目为荣悦台商业广场。",
+    "mall_codes": [
+      "MALL_BDC24948"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "铁道学院商圈",
+    "description": "以芙蓉南路铁道学院地铁站周边为核心，聚集高校与居民区形成的区域性商业中心，代表项目为天虹商场。",
+    "mall_codes": [
+      "MALL_64B99F4F"
+    ]
+  }
+]

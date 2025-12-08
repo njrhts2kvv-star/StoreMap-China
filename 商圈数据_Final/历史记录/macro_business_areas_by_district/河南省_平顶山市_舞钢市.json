@@ -1,0 +1,43 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "寺坡商圈",
+    "description": "以瑶璋生活广场为核心，覆盖周边商贸配套，位于舞钢市寺坡街道湖滨大道附近，是当地居民日常消费的主要聚集区。",
+    "mall_codes": [
+      "MALL_AA99A488",
+      "MALL_EC95BD23"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "石漫滩大道商圈",
+    "description": "位于石漫滩大道与平安路交叉区域，以华联商场为代表，地处城市主干道交汇处，具备一定商业集聚效应。",
+    "mall_codes": [
+      "MALL_E05D15BF"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "朱兰环湖路商圈",
+    "description": "围绕环湖路布局，以商贸中心为主要节点，服务周边居住区，具有区域性商业功能。",
+    "mall_codes": [
+      "MALL_5CCBDF9E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "杨庄乡省道商圈",
+    "description": "依托220省道交通节点分布，逸锦购物广场为该区域主要商业设施，服务于乡镇及过境客流。",
+    "mall_codes": [
+      "MALL_2ACC79AA"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "尹集镇省道商圈",
+    "description": "位于234省道附近，利源购物广场为该区域代表商业点，主要辐射乡镇基础消费需求。",
+    "mall_codes": [
+      "MALL_3CF5F578"
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "老隆镇中心商圈",
+    "description": "位于龙川县老隆镇核心区域，涵盖人民路、东风西路及周边主要商业街道，聚集了多家传统商场和商业综合体，是县城最成熟的商业中心。",
+    "mall_codes": [
+      "MALL_A4BD2FBD",
+      "MALL_8709C88E",
+      "MALL_D3419CE1",
+      "MALL_5655B071",
+      "MALL_D753B944",
+      "MALL_015FD7D3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "泰华城商圈",
+    "description": "以泰华城A区和B区商业广场为核心，位于建设东路与一环路交汇区域，形成相对集中的新兴商业片区，具备一定规模的综合商业服务能力。",
+    "mall_codes": [
+      "MALL_E4377254",
+      "MALL_C5AE805D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "一环路西段商圈",
+    "description": "位于一环路海天财富广场附近，以好加多义乌商城为代表，服务于周边居民区，是老隆镇西部的重要商业节点。",
+    "mall_codes": [
+      "MALL_468CA16D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "廻龙镇商圈",
+    "description": "位于廻龙镇罗回村，依托永昌商场服务本地乡镇居民，属于典型的乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_3A4B4AD6"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "铁场镇商圈",
+    "description": "位于铁场镇238国道与359乡道交叉口附近，以良飞商场为主要商业载体，服务于铁场镇及周边农村地区。",
+    "mall_codes": [
+      "MALL_F9E0EAF0"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "车田镇商圈",
+    "description": "位于车田镇177县道附近，由腾天百货构成主要商业设施，覆盖车田镇本地消费人群，属偏远乡镇商业点。",
+    "mall_codes": [
+      "MALL_A45D6B47"
+    ]
+  }
+]

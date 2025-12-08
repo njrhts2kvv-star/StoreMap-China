@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金官商圈",
+    "description": "位于金官镇核心区域，以供销商业步行街为中心的传统商业聚集区",
+    "mall_codes": [
+      "MALL_F0976B6B",
+      "MALL_27506610"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南街商圈",
+    "description": "位于县城南街与吉庆路交汇处的商业中心",
+    "mall_codes": [
+      "MALL_DB756603"
+    ]
+  }
+]

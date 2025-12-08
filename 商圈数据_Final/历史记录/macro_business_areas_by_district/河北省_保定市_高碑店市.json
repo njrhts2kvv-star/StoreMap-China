@@ -1,0 +1,54 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "白沟镇商贸城商圈",
+    "description": "以白沟镇核心商贸区为主，聚集多个大型商贸中心和购物中心，集中在兴胜大街、津保路及富民路周边，是白沟镇最主要的商业集聚区。",
+    "mall_codes": [
+      "MALL_3D0E1116",
+      "MALL_874A73F2",
+      "MALL_6C8BB712",
+      "MALL_F9AF8728",
+      "MALL_CECEFF74",
+      "MALL_BCD1E957",
+      "MALL_478E026D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "高碑店市区迎宾路商圈",
+    "description": "位于高碑店市区迎宾路沿线，集中分布多个商厦与购物中心，是高碑店市区主要的商业走廊，涵盖天奕、宜佳旺、家兴等品牌商厦。",
+    "mall_codes": [
+      "MALL_AD65DCB5",
+      "MALL_ED0A8C69",
+      "MALL_81FC750E",
+      "MALL_5D809F7E",
+      "MALL_B1CC143D",
+      "MALL_997C74F4",
+      "MALL_5C10A030"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "高碑店新城一商场商圈",
+    "description": "位于高碑店市东部的新城区域，以新城一商场为核心，服务周边居民区，商业集聚度相对独立，形成区域性小型商圈。",
+    "mall_codes": [
+      "MALL_DF7A6EB6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "高碑店悦百汇商圈",
+    "description": "位于高碑店市区南部，以悦百汇购物中心为节点，辐射南和路与盛世东路交叉区域，形成南部新兴商业点。",
+    "mall_codes": [
+      "MALL_5BBB1C14"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东方纽伦堡商圈",
+    "description": "位于高碑店市北部东方路与112国道交汇区域，以东方·纽伦堡项目为核心，地处交通节点，形成独立门户型商业片区。",
+    "mall_codes": [
+      "MALL_03F5A595"
+    ]
+  }
+]

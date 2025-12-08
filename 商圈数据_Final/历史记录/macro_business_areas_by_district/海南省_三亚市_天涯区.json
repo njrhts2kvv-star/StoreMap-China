@@ -1,0 +1,40 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "解放路商圈",
+    "description": "位于三亚市天涯区核心主干道解放路沿线，聚集多个传统百货与购物中心，是城区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_310E6082",
+      "MALL_46CD236A",
+      "MALL_CE162CCE",
+      "MALL_797FD742",
+      "MALL_F22366BA",
+      "MALL_15886F3E",
+      "MALL_162D3472",
+      "MALL_40538741"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "新城路-三亚湾商圈",
+    "description": "沿三亚湾新城片区分布，涵盖滨海旅游区及新兴生活广场，以休闲、旅游配套商业为主。",
+    "mall_codes": [
+      "MALL_6C7E452F",
+      "MALL_E4CC8EA7",
+      "MALL_D8BBBAD7",
+      "MALL_F7E1B054"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "凤凰路-万悦新天地商圈",
+    "description": "位于凤凰路与育秀路交汇区域，以万悦新天地为核心，集中奥特莱斯与平价奢侈品中心，形成新兴中高端商业集聚区。",
+    "mall_codes": [
+      "MALL_86886551",
+      "MALL_F8E5CDB5",
+      "MALL_3BA61D9B",
+      "MALL_62236E57",
+      "MALL_460A7454"
+    ]
+  }
+]

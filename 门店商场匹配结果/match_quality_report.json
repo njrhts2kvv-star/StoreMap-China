@@ -1,0 +1,231 @@
+{
+  "generated_at": "2025-12-06T09:54:18.438955",
+  "summary": {
+    "total_stores": 58106,
+    "matched_stores": 28809,
+    "match_rate": 49.6,
+    "auto_confirmed": 51915,
+    "needs_review": 6191,
+    "auto_rate": 89.3
+  },
+  "confidence_distribution": {
+    "nan": 29297,
+    "high": 10591,
+    "low": 9792,
+    "medium": 6213,
+    "medium_high": 2213
+  },
+  "store_type_distribution": {
+    "mall_store": 19017,
+    "street_store": 17082,
+    "street_authorized_store": 12227,
+    "unknown": 3629,
+    "mall_store_uncertain": 2971,
+    "mall_store_no_match": 1333,
+    "auto_showroom": 937,
+    "office_or_industrial": 805,
+    "service_center": 105
+  },
+  "brand_stats": {
+    "Xiaomi": {
+      "total": 13088,
+      "matched": 6197,
+      "match_rate": 47.3
+    },
+    "OPPO": {
+      "total": 8482,
+      "matched": 4179,
+      "match_rate": 49.3
+    },
+    "Honor": {
+      "total": 8365,
+      "matched": 3781,
+      "match_rate": 45.2
+    },
+    "Huawei": {
+      "total": 7972,
+      "matched": 3368,
+      "match_rate": 42.2
+    },
+    "vivo": {
+      "total": 6561,
+      "matched": 3362,
+      "match_rate": 51.2
+    },
+    "Apple Authorized": {
+      "total": 3991,
+      "matched": 2401,
+      "match_rate": 60.2
+    },
+    "Samsung": {
+      "total": 2313,
+      "matched": 1487,
+      "match_rate": 64.3
+    },
+    "Li Auto": {
+      "total": 1780,
+      "matched": 697,
+      "match_rate": 39.2
+    },
+    "NIO": {
+      "total": 996,
+      "matched": 438,
+      "match_rate": 44.0
+    },
+    "XPeng": {
+      "total": 829,
+      "matched": 300,
+      "match_rate": 36.2
+    },
+    "Tesla": {
+      "total": 588,
+      "matched": 342,
+      "match_rate": 58.2
+    },
+    "Coach": {
+      "total": 363,
+      "matched": 307,
+      "match_rate": 84.6
+    },
+    "Popmart": {
+      "total": 362,
+      "matched": 336,
+      "match_rate": 92.8
+    },
+    "Estee Lauder": {
+      "total": 360,
+      "matched": 296,
+      "match_rate": 82.2
+    },
+    "Polo Ralph Lauren": {
+      "total": 312,
+      "matched": 274,
+      "match_rate": 87.8
+    },
+    "Descente": {
+      "total": 253,
+      "matched": 204,
+      "match_rate": 80.6
+    },
+    "Lancome": {
+      "total": 147,
+      "matched": 119,
+      "match_rate": 81.0
+    },
+    "Arc'teryx": {
+      "total": 138,
+      "matched": 49,
+      "match_rate": 35.5
+    },
+    "Dior Beauty": {
+      "total": 128,
+      "matched": 109,
+      "match_rate": 85.2
+    },
+    "Hugo Boss": {
+      "total": 99,
+      "matched": 80,
+      "match_rate": 80.8
+    },
+    "On": {
+      "total": 98,
+      "matched": 72,
+      "match_rate": 73.5
+    },
+    "Louis Vuitton": {
+      "total": 68,
+      "matched": 53,
+      "match_rate": 77.9
+    },
+    "The North Face": {
+      "total": 67,
+      "matched": 59,
+      "match_rate": 88.1
+    },
+    "Kenzo": {
+      "total": 56,
+      "matched": 32,
+      "match_rate": 57.1
+    },
+    "Kolon Sport": {
+      "total": 56,
+      "matched": 36,
+      "match_rate": 64.3
+    },
+    "Tory Burch": {
+      "total": 50,
+      "matched": 24,
+      "match_rate": 48.0
+    },
+    "Prada": {
+      "total": 44,
+      "matched": 43,
+      "match_rate": 97.7
+    },
+    "Chanel": {
+      "total": 41,
+      "matched": 23,
+      "match_rate": 56.1
+    },
+    "Apple": {
+      "total": 35,
+      "matched": 32,
+      "match_rate": 91.4
+    },
+    "Hermès": {
+      "total": 35,
+      "matched": 24,
+      "match_rate": 68.6
+    },
+    "MCM": {
+      "total": 25,
+      "matched": 15,
+      "match_rate": 60.0
+    },
+    "Longchamp": {
+      "total": 25,
+      "matched": 21,
+      "match_rate": 84.0
+    },
+    "LEGO": {
+      "total": 25,
+      "matched": 6,
+      "match_rate": 24.0
+    },
+    "Givenchy": {
+      "total": 22,
+      "matched": 17,
+      "match_rate": 77.3
+    },
+    "Dior": {
+      "total": 19,
+      "matched": 18,
+      "match_rate": 94.7
+    },
+    "lululemon": {
+      "total": 8,
+      "matched": 5,
+      "match_rate": 62.5
+    },
+    "Gucci": {
+      "total": 7,
+      "matched": 2,
+      "match_rate": 28.6
+    },
+    "Michael Kors": {
+      "total": 4,
+      "matched": 0,
+      "match_rate": 0.0
+    },
+    "Salomon": {
+      "total": 3,
+      "matched": 1,
+      "match_rate": 33.3
+    },
+    "Kailas": {
+      "total": 0,
+      "matched": 0,
+      "match_rate": NaN
+    }
+  }
+}

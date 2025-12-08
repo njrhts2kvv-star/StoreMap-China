@@ -1,0 +1,28 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "腾飞路商圈",
+    "description": "位于洱源县城核心区域，以腾飞路为主要商业轴线，包含多个商业设施",
+    "mall_codes": [
+      "MALL_B321A437",
+      "MALL_B4F05390",
+      "MALL_2D4B3397"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "炼铁乡商圈",
+    "description": "位于炼铁乡集镇区域，服务当地居民日常购物需求",
+    "mall_codes": [
+      "MALL_DB8428D6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "牛街商圈",
+    "description": "位于牛街乡周边，地处西景线与乡道交汇处",
+    "mall_codes": [
+      "MALL_881BD4A1"
+    ]
+  }
+]

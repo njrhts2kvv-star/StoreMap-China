@@ -1,0 +1,24 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "织篢镇中心商圈",
+    "description": "位于阳西县织篢镇核心区域，涵盖兴华路、人民大道及周边主要道路交汇处的多个商场，是县城内商业较为集中的片区。",
+    "mall_codes": [
+      "MALL_A05BAD80",
+      "MALL_7784559E",
+      "MALL_52A9C1E0",
+      "MALL_FF9F455C",
+      "MALL_DDE714A8",
+      "MALL_C6459536",
+      "MALL_8F65A098"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "沙扒镇商圈",
+    "description": "位于阳西县沙扒镇书村书兴路一带，服务于本地居民和滨海旅游客流，为镇级区域性商业节点。",
+    "mall_codes": [
+      "MALL_6BD4CCAA"
+    ]
+  }
+]

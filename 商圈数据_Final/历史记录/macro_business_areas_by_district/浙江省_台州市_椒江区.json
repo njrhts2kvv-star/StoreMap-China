@@ -1,0 +1,94 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "市政府商圈",
+    "description": "以市府大道为核心，覆盖万达广场、万家灯火都市广场及周边商业体，是椒江区行政与商业中心交汇区域，交通便利，商业集聚度高。",
+    "mall_codes": [
+      "MALL_B117CAB1",
+      "MALL_07DE2B5B",
+      "MALL_16D34458",
+      "MALL_01A3B997",
+      "MALL_D7CF0241",
+      "MALL_8EDA6DC9",
+      "MALL_914A9C54",
+      "MALL_1A9A890D",
+      "MALL_24C22ADC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "洪家北环商圈",
+    "description": "位于中心大道与洪家北环交叉口附近，以台州银泰城为核心，辐射青悦城购物中心等项目，构成椒江中部重要商业节点。",
+    "mall_codes": [
+      "MALL_D617D934",
+      "MALL_C8FE6E35"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "中山西路商圈",
+    "description": "集中在中山西路沿线，包括中都商厦、银河商城系列及锦江百货，是椒江老城区传统商业中心，成熟度高，人流稳定。",
+    "mall_codes": [
+      "MALL_D226FFD6",
+      "MALL_187EEA59",
+      "MALL_19B7BF01",
+      "MALL_43492DE0"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "白云山商圈",
+    "description": "位于白云山西路一带，以优加购物广场为代表，服务白云街道及周边居民区，属区域性社区型商业集聚区。",
+    "mall_codes": [
+      "MALL_98485BE7"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "葭沚/黄海公路商圈",
+    "description": "分布于葭沚街道黄海公路沿线，以台州椒江宝龙城为主要载体，带动新兴片区商业发展，定位为城西综合消费中心。",
+    "mall_codes": [
+      "MALL_31BDC0B5"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "下陈商圈",
+    "description": "位于下陈街道中心街，以同盛购物为核心，服务于本地镇级市场，规模较小但具备基础生活配套功能。",
+    "mall_codes": [
+      "MALL_C232F1DF"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "安康路商圈",
+    "description": "围绕市府大道与安康路交叉口布局，以中城广场为代表，处于新老城区衔接地带，发展潜力较大。",
+    "mall_codes": [
+      "MALL_30408D03"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "洪家大卖场商圈",
+    "description": "位于鸿洲大道的洪家大卖场独立成点，服务洪家镇东部居民，属局部性便民商业设施。",
+    "mall_codes": [
+      "MALL_08A48046"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "滨富东路商圈",
+    "description": "地处滨富东路999号的东盛广场单独构成一个远端商业点，位置偏东，临近新区边缘，目前商业密度较低。",
+    "mall_codes": [
+      "MALL_352F2DB0"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "尚华社区商圈",
+    "description": "位于群辉菜市场附近的尚华购物中心，依附于基层市场，属于典型社区级微型商业体。",
+    "mall_codes": [
+      "MALL_20657B80"
+    ]
+  }
+]

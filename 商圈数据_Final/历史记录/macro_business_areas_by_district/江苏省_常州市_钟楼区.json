@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南大街商圈",
+    "description": "以南大街为核心，覆盖莱蒙都会、新世纪商城、吾悦广场等多个商业体，是钟楼区最核心的传统商业集聚区，地铁通达，人流密集。",
+    "mall_codes": [
+      "MALL_83726882",
+      "MALL_84382824",
+      "MALL_9FE3797E",
+      "MALL_9A38F2F2",
+      "MALL_7C6F3533",
+      "MALL_7DC1B602",
+      "MALL_E2869EB1",
+      "MALL_20B964DF",
+      "MALL_43560260",
+      "MALL_AB302DA3",
+      "MALL_3BA473B6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "怀德路-延陵西路商圈",
+    "description": "位于怀德北路与延陵西路交汇区域，以吾悦国际广场系列及江南商场为主，形成集购物、餐饮、休闲于一体的现代化商业中心。",
+    "mall_codes": [
+      "MALL_1FFF708E",
+      "MALL_D13717D3",
+      "MALL_E6A121B9",
+      "MALL_73096D43"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "五星-勤业商圈",
+    "description": "依托龙湖龙城天街和金地假日广场，服务于钟楼区西部居民，是近年来发展迅速的新兴居住配套型商圈。",
+    "mall_codes": [
+      "MALL_1B695886",
+      "MALL_1C906B37"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "邹区商圈",
+    "description": "位于钟楼区西部邹区镇，以泰富时代广场为代表，服务周边乡镇及本地居民，属区域性基础商业中心。",
+    "mall_codes": [
+      "MALL_A84D21CB"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "经济开发区商圈",
+    "description": "位于钟楼经济开发区梧桐路一带，以常州钟楼宝龙广场为核心，配套联港超市等社区商业，服务于产业园区及新建住宅区。",
+    "mall_codes": [
+      "MALL_2BBA1918",
+      "MALL_1CC11EFA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "吊桥路商圈",
+    "description": "以星光天地为主要载体，地处吊桥路沿线，靠近老城区，定位为区域性生活消费场所。",
+    "mall_codes": [
+      "MALL_EBE9B2E2"
+    ]
+  }
+]

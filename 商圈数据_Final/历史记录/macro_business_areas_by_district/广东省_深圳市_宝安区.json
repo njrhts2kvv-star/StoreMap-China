@@ -1,0 +1,77 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "前海商圈",
+    "description": "位于宝安区南部，以前海HOP天地、壹方城购物中心北区为核心，覆盖宝安中心地铁站周边商业集群，是前海合作区的重要消费节点。",
+    "mall_codes": [
+      "MALL_5136F609",
+      "MALL_7973D15E",
+      "MALL_80A1B795",
+      "MALL_C7CFF7A2",
+      "MALL_44695454",
+      "MALL_78EE1253",
+      "MALL_C05880E4",
+      "MALL_31036E7E",
+      "MALL_C96F7B65"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "西乡-新湖路商圈",
+    "description": "以西乡大道与新湖路交汇区域为中心，涵盖大仟里购物中心、宝安天虹购物中心等项目，服务于西乡中西部成熟居住区。",
+    "mall_codes": [
+      "MALL_C7B7691F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "沙井商圈",
+    "description": "位于宝安区西北部沙井街道，以京基百纳广场、万丰海岸城购物中心为主要商业载体，辐射沙井及周边片区。",
+    "mall_codes": [
+      "MALL_10258790",
+      "MALL_94A57B94"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "福永-航城商圈",
+    "description": "覆盖福永街道及航城街道部分区域，包括益田假日天地和航城里购物中心，服务机场周边及产业人群。",
+    "mall_codes": [
+      "MALL_798E25AB",
+      "MALL_E3D03E40"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "石岩-上屋商圈",
+    "description": "位于宝安区东北部，以星城购物中心为主要商业节点，服务于上屋、宝石东路沿线居住组团。",
+    "mall_codes": [
+      "MALL_4C972C44"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "新桥商圈",
+    "description": "位于新桥街道核心区域，以东方新天地为主要商业代表，覆盖万丰、上合等社区。",
+    "mall_codes": [
+      "MALL_7BE0210B",
+      "MALL_0D57172B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "福海商圈",
+    "description": "地处宝安大道沿线，以同泰时代广场为核心，连接福永东部与西乡交界地带的商业发展轴线。",
+    "mall_codes": [
+      "MALL_7E40496C"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "松岗商圈",
+    "description": "位于宝安区最北部松岗街道，以百佳华·佳漾邻为典型商业项目，服务松岗本地及东莞接壤区域。",
+    "mall_codes": [
+      "MALL_5C209F7F"
+    ]
+  }
+]

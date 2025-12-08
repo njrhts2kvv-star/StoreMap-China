@@ -1,0 +1,90 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇商圈",
+    "description": "位于虞城县中心城区，以城关镇为核心，涵盖人民路与胜利路交叉口周边商业集聚区，是县城传统商业中心。",
+    "mall_codes": [
+      "MALL_D9845496"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "木兰镇商圈",
+    "description": "覆盖木兰镇区域的商业节点，以黑脸购物广场为代表，服务本地居民的基础生活消费。",
+    "mall_codes": [
+      "MALL_C0BBBDAC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大侯镇商圈",
+    "description": "位于大侯镇，依托佰纳汇购物中心形成区域性小型商业聚集点，服务于乡镇级消费人群。",
+    "mall_codes": [
+      "MALL_8364D1C0"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "李老家乡商圈",
+    "description": "以李老家乡张关庙转盘附近的昌源购物广场为核心，辐射周边乡村的基层商业服务节点。",
+    "mall_codes": [
+      "MALL_E7B8A693"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "杜集镇商圈",
+    "description": "位于杜集镇，依托百盛鞋服购物商城形成服务于镇域居民的日常购物场所。",
+    "mall_codes": [
+      "MALL_80807CEE"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "乔集镇商圈",
+    "description": "覆盖乔集镇区域，以李想购物广场为主要商业载体，满足当地居民基础消费需求。",
+    "mall_codes": [
+      "MALL_E1A820D5"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "尚村商圈",
+    "description": "位于尚村附近，由尚村购物中心构成的村级或乡级商业节点，服务周边村落。",
+    "mall_codes": [
+      "MALL_01FC1437"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "铁塔刘楼商圈",
+    "description": "以铁塔刘楼十字街为中心的大方生活购物中心所在区域，为局部社区提供生活配套服务。",
+    "mall_codes": [
+      "MALL_BB216E9B"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "浙商大道商圈",
+    "description": "位于203省道沿线，依托浙商购物广场形成的交通干道型商业节点，具有较强区域可达性。",
+    "mall_codes": [
+      "MALL_8FD03DF7"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "府前路商圈",
+    "description": "位于虞城县东部，府前路与富士大道交汇区域，由婚庆购物广场构成特色功能导向的商业点。",
+    "mall_codes": [
+      "MALL_47AFF2B8"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "君平路商圈",
+    "description": "以016县道西侧的君平购物广场为核心，服务于沿线乡镇居民的区域性基础商业设施。",
+    "mall_codes": [
+      "MALL_E8B26CF8"
+    ]
+  }
+]

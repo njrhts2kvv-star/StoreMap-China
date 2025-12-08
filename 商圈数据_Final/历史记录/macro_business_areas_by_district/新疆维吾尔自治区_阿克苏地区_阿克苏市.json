@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "北京路商圈",
+    "description": "以北京西路为核心干道，集中分布多个传统商厦与购物中心，如世纪商厦、人民商厦、供销商厦等，是阿克苏市传统商业中心之一。",
+    "mall_codes": [
+      "MALL_F4697325",
+      "MALL_55021E0D",
+      "MALL_133F802B",
+      "MALL_10BE8954",
+      "MALL_2814E826",
+      "MALL_6AA1D7E5",
+      "MALL_B8F2778C",
+      "MALL_D9379407",
+      "MALL_57DE5187",
+      "MALL_86BDE2D4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "友谊北路商圈",
+    "description": "位于友谊北路与虹桥路交汇区域，以亚太·世纪购物中心为核心，周边商业配套较为集中，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_6BAA73F0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "王三街商圈",
+    "description": "人民路与王三街交叉口附近聚集幸福商场、斯塔尔商贸城等中小型商场，服务于老城区居民，属社区型商业集聚区。",
+    "mall_codes": [
+      "MALL_0E6B2000",
+      "MALL_07B2EC74"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "塔中路商圈",
+    "description": "位于塔中路沿线，以新疆友好集团阿克苏天百时尚购物中心为旗舰项目，辐射周边新兴住宅区，是城市东部的重要商业中心。",
+    "mall_codes": [
+      "MALL_395E6CDB"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "江南大道商圈",
+    "description": "地处依干其乡乌喀路与江南大道交汇处，以江南商贸城A区为代表，主要服务城乡结合部及周边乡镇消费群体。",
+    "mall_codes": [
+      "MALL_C98C936B"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "环东路商圈",
+    "description": "位于环东路附近，依托新农时代广场形成局部商业聚集，服务周边居民和通勤人群。",
+    "mall_codes": [
+      "MALL_67CB9A61"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "东大街商圈",
+    "description": "位于东大街与幸福北路交叉区域，以石榴街生活超市为核心，构成生活化社区商业点。",
+    "mall_codes": [
+      "MALL_3E6D9548"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "207省道商圈",
+    "description": "位于207省道东北侧，地理位置相对偏远，以联佳广场为主要商业载体，服务于过境交通及外围乡镇需求。",
+    "mall_codes": [
+      "MALL_928EDE99"
+    ]
+  }
+]

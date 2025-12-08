@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中天街商圈",
+    "description": "以中天街为核心的传统商业中心，聚集了多家百货商场和购物中心，是东宝区最核心的商业集聚区。",
+    "mall_codes": [
+      "MALL_01C16CB5",
+      "MALL_5C2C5981",
+      "MALL_A055CCEA",
+      "MALL_DFA283DE",
+      "MALL_59AD0039",
+      "MALL_B87908EB",
+      "MALL_6FA7A437",
+      "MALL_45ABF644",
+      "MALL_DF2C4689"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北门路商圈",
+    "description": "位于龙泉街道北门路沿线，分布有多个商城和购物大厦，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_0109E775",
+      "MALL_947CA135",
+      "MALL_5B3D1884"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "金虾路商圈",
+    "description": "沿金虾路布局的商业集聚区，包含华铭广场、银泰城等综合体，是城区东部的重要商业带。",
+    "mall_codes": [
+      "MALL_727AFE66",
+      "MALL_C74D53C9",
+      "MALL_D91217A4"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "长宁大道商圈",
+    "description": "依托长宁大道城市发展轴线形成的现代商业节点，涵盖摩尔城购物广场及在建大型项目。",
+    "mall_codes": [
+      "MALL_36DAE41E",
+      "MALL_0FAB8E54"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "月亮湖路商圈",
+    "description": "位于城区西部月亮湖路周边，以荆门商业城为代表，服务本地居民的区域级商业中心。",
+    "mall_codes": [
+      "MALL_437D1C57"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "海慧路商圈",
+    "description": "以海慧路与凤台巷交叉口为节点的小型商业集聚区，配套成熟，人流稳定。",
+    "mall_codes": [
+      "MALL_C83C4394"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "石桥驿商圈",
+    "description": "位于东宝区北部石桥驿镇的区域性商业中心，服务于周边乡镇居民。",
+    "mall_codes": [
+      "MALL_7A57AABF"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "新天地商圈",
+    "description": "位于育红巷的新天地购物广场独立成片，形成特色鲜明的社区型商业中心。",
+    "mall_codes": [
+      "MALL_2FC350E3"
+    ]
+  }
+]

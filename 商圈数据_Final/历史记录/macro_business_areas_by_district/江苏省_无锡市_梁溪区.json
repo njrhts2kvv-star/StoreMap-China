@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "三阳广场商圈",
+    "description": "以三阳广场地铁站为核心，聚集了大东方百货、八佰伴、茂业天地等传统核心商场，是梁溪区最成熟的商业中心之一。",
+    "mall_codes": [
+      "MALL_DE370BFC",
+      "MALL_22C0A9F6",
+      "MALL_6A037E14",
+      "MALL_40CFC3AE",
+      "MALL_1DAFB87F",
+      "MALL_FAB36594",
+      "MALL_6729AC20"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "广益新城商圈",
+    "description": "位于梁溪区东北部，以广益路、广南路沿线的万达广场、五洲银河城、广益五洲哥伦布广场等组成，是近年来发展迅速的新兴居住与商业复合片区。",
+    "mall_codes": [
+      "MALL_8D06F86A",
+      "MALL_0557786C",
+      "MALL_20B5D20C",
+      "MALL_4A1F9EFB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "人民路商圈",
+    "description": "沿人民路分布，涵盖光华时代广场、金悦广场、彩旸广场等社区型商业体，服务周边密集居民区，形成东西向延伸的区域级商业带。",
+    "mall_codes": [
+      "MALL_11657CF6",
+      "MALL_3F1EFB83",
+      "MALL_85D1DB2C"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "清名桥/南长街商圈",
+    "description": "位于古运河沿线，以茂业天地B座为代表，靠近清名桥历史文化街区，融合旅游与社区商业，具有文化与现代消费结合特征。",
+    "mall_codes": [
+      "MALL_6492C68E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "锡澄路商圈",
+    "description": "位于梁溪区西北部，依托锡澄路交通节点，由圆融购物中心和爱琴海购物中心构成，服务于黄巷及周边大型居住区。",
+    "mall_codes": [
+      "MALL_F6594E35",
+      "MALL_9826382D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "中山路北段商圈",
+    "description": "位于中山路中北段，包含凤凰天街、红梅广场等项目，连接三阳广场与广益片区，处于城市更新活跃地带。",
+    "mall_codes": [
+      "MALL_385AF271",
+      "MALL_072FEC2E"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "永乐路商圈",
+    "description": "以美邻中心为核心，位于梁溪区南部，服务曹张新村等成熟社区，属于典型的社区型商业中心。",
+    "mall_codes": [
+      "MALL_B33F6469"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "红星路商圈",
+    "description": "位于梁溪区西南边缘，以阳光奥特莱斯为主要商业载体，主打折扣零售，吸引区域性客流。",
+    "mall_codes": [
+      "MALL_1455E0AB"
+    ]
+  }
+]

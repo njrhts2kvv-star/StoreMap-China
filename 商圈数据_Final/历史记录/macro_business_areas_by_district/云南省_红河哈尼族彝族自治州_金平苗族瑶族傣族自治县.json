@@ -1,0 +1,20 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "前哨路商圈",
+    "description": "位于前哨北路与前哨南路交汇区域，是金平县核心商业聚集区",
+    "mall_codes": [
+      "MALL_94FD09C9",
+      "MALL_EE17E6EB",
+      "MALL_93495AE3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "河东南路商圈",
+    "description": "位于河东南路片区，形成相对独立的商业中心",
+    "mall_codes": [
+      "MALL_EB08F891"
+    ]
+  }
+]

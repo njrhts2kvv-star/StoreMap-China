@@ -43,3 +43,56 @@ npm run dev
 ```bash
 npm run build
 ```
+
+---
+
+## 新增：分析 / 截图工具（FastAPI + React）
+
+### 后端（FastAPI + PostgreSQL）
+
+1. 设置环境变量（可在仓库根目录创建 `.env`）：
+
+```
+DATABASE_URL=postgresql+psycopg2://user:password@host:5432/dbname
+```
+
+2. 安装依赖并启动：
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload --app-dir .
+```
+
+接口基于 `/api` 前缀，健康检查：`GET /api/health`。
+
+### 前端（React + Vite + Ant Design）
+
+1. 设置环境变量（可选，默认指向本地后端 `http://localhost:8000/api`）：
+
+```
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+
+2. 安装依赖并启动：
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### 示例请求
+
+```bash
+curl http://localhost:8000/api/cities
+curl http://localhost:8000/api/malls/1
+curl "http://localhost:8000/api/brands/1/stores?city_code=310000"
+```
+
+前端主要页面：
+- `/cities`：城市列表与商场、品牌结构
+- `/cities/{city_code}`：城市下商场列表
+- `/malls/{mall_id}`：商场详情与品牌矩阵
+- `/brands`：品牌列表（按品类、tier 筛选）
+- `/brands/{brand_id}`：品牌详情与门店列表

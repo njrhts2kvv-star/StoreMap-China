@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "火车站商圈",
+    "description": "位于丽江火车站周边，以交通枢纽为核心形成的商业聚集区",
+    "mall_codes": [
+      "MALL_CA0AB01C",
+      "MALL_7F6217D7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "丽水路商圈",
+    "description": "沿丽水路分布的商业区域，服务于周边居民日常生活",
+    "mall_codes": [
+      "MALL_E1CB31B1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "杵峰商圈",
+    "description": "位于杵峰段与大鲁段交叉口周边的商业区域，辐射周边乡镇",
+    "mall_codes": [
+      "MALL_BB66B84D"
+    ]
+  }
+]

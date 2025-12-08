@@ -1,0 +1,62 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "峡山商圈",
+    "description": "以峡山街道为核心，沿324国道及广汕公路分布多个商场，包括合胜广场、粤盛广场及金龙、金塘等传统商场，构成潮南区主要商业中心之一。",
+    "mall_codes": [
+      "MALL_1A5884B3",
+      "MALL_7C411EC7",
+      "MALL_330DF0C1",
+      "MALL_96E78C3D",
+      "MALL_B3339EE1",
+      "MALL_59CFCE8F",
+      "MALL_71C28A49",
+      "MALL_2A517C31",
+      "MALL_0369C4E5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "陈店商圈",
+    "description": "位于陈店镇，依托新兴路和周边交通干道聚集吉利园、惠客隆、都市电商购物广场等商场，是潮南区西部的重要商贸节点。",
+    "mall_codes": [
+      "MALL_F7CEE033",
+      "MALL_70E1BF29",
+      "MALL_FAA3FA38",
+      "MALL_79D0080F",
+      "MALL_942353A9"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "司马浦商圈",
+    "description": "分布在司马浦镇广汕公路沿线，以金马商场为代表，服务本地居民的区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_BB6D424B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "陇田商圈",
+    "description": "位于陇田镇沙陇片区，以沙陇综合商场为主要商业载体，覆盖南部乡村地区的消费需求。",
+    "mall_codes": [
+      "MALL_C67E514F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "两英外围商圈",
+    "description": "位于两英镇北部边缘地带，以上东浦乡三片商贸城为代表，处于城镇结合部的初级商业形态。",
+    "mall_codes": [
+      "MALL_BB5864DF"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "成田外围商圈",
+    "description": "位于成田镇附近省道与乡道交叉区域，以好客隆购物商场为代表，服务于周边农村市场的基础商业设施。",
+    "mall_codes": [
+      "MALL_5265FFCA"
+    ]
+  }
+]

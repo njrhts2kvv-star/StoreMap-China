@@ -1,0 +1,69 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "竟陵中心商圈",
+    "description": "位于天门市竟陵街道核心区域，集中了国贸大厦、友谊商贸城、天门CBD购物广场等多个商业设施，是天门市区的传统商业中心。",
+    "mall_codes": [
+      "MALL_C83462AF",
+      "MALL_AEAB781D",
+      "MALL_533FBC97",
+      "MALL_84B8FE19",
+      "MALL_C517A87F",
+      "MALL_74FE7D9A",
+      "MALL_E603510B",
+      "MALL_597E2EF2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东湖路-城上城商圈",
+    "description": "以城上城商业广场为核心，覆盖东湖路周边新兴商业节点，包括广客隆购物中心等，形成东部次级商业集聚区。",
+    "mall_codes": [
+      "MALL_75A17468",
+      "MALL_4746C201"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "拖市-渔薪片区商圈",
+    "description": "涵盖拖市镇和渔薪镇的区域性商业中心，包括拖市商贸城、金时代购物广场和渔薪商城，服务西部乡镇居民。",
+    "mall_codes": [
+      "MALL_C0ABC3C8",
+      "MALL_AA90C041",
+      "MALL_54DAC93B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "石河-蒋场片区商圈",
+    "description": "分布于天门市南部乡镇的商业节点，包含石河商业广场和蒋场商贸中心，服务于南部乡镇消费人群。",
+    "mall_codes": [
+      "MALL_EBCC7D22",
+      "MALL_9AC3C502"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "麻洋镇商圈",
+    "description": "位于天门市北部麻洋镇的独立商业点，以万福隆购物广场为代表，服务本地镇域居民。",
+    "mall_codes": [
+      "MALL_2BDF8667"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "天西商贸城商圈",
+    "description": "位于天门市西部边缘的沿河大道附近，以天西商贸城为唯一商业载体，辐射周边街区。",
+    "mall_codes": [
+      "MALL_C21DCD5A"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "幸福街商圈",
+    "description": "位于夏家场附近的幸福街购物中心，地理位置偏西南，独立成点，服务局部区域。",
+    "mall_codes": [
+      "MALL_313C15E9"
+    ]
+  }
+]

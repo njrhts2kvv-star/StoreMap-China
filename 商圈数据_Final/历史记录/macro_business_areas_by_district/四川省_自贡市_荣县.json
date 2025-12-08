@@ -1,0 +1,26 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "旭阳镇商圈",
+    "description": "以旭阳镇为核心，覆盖星河广场等商业项目，是荣县城区主要的商业聚集区之一。",
+    "mall_codes": [
+      "MALL_7DC77025"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "荣复路商圈",
+    "description": "位于荣复路周边，涵盖世纪华联购物中心，服务于沿线居民区，具备基础商业功能。",
+    "mall_codes": [
+      "MALL_6FB5B913"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "玉皇街商圈",
+    "description": "坐落于玉皇街与富民路交叉区域，以晶众鑫购物中心为代表，辐射周边社区消费。",
+    "mall_codes": [
+      "MALL_82EF7E7A"
+    ]
+  }
+]

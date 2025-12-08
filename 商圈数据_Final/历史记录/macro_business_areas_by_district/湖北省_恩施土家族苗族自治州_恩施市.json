@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "舞阳坝商圈",
+    "description": "位于恩施市中心城区核心地带，集中了多个老牌商业体和百货商场，是传统人流密集的商业中心。",
+    "mall_codes": [
+      "MALL_585254C2",
+      "MALL_E0AFF436",
+      "MALL_7DE27C63",
+      "MALL_161856AA",
+      "MALL_3CBDC552"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "航空路商圈",
+    "description": "沿航空大道分布的商业集聚区，包含多个社区型商场与百货，服务于周边居民区，交通便利。",
+    "mall_codes": [
+      "MALL_4A63C9E3",
+      "MALL_EF94EA79",
+      "MALL_07D3E489",
+      "MALL_6B3D7CD7"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "土桥大道商圈",
+    "description": "依托土桥大道主干道形成的新兴商业带，拥有现代化 mall 和交叉路口核心位置的商业项目。",
+    "mall_codes": [
+      "MALL_C957F8B7",
+      "MALL_4A240D7A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "金桂大道商圈",
+    "description": "位于城市扩展方向的金桂大道沿线，聚集专业市场与大型综合商场，辐射城北及周边区域。",
+    "mall_codes": [
+      "MALL_4B03E900",
+      "MALL_37C33F76",
+      "MALL_747627D6",
+      "MALL_223DC70F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "白杨坪商圈",
+    "description": "位于白杨坪镇的区域性商业中心，服务乡镇本地消费人群，具有明显的社区商业特征。",
+    "mall_codes": [
+      "MALL_586A1DC0",
+      "MALL_A33FC1C1"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "屯堡商圈",
+    "description": "地处屯堡乡的偏远商贸中心，以基础零售和服务为主，满足乡镇日常消费需求。",
+    "mall_codes": [
+      "MALL_251464E4"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "龙凤新区商圈",
+    "description": "位于恩施市南部边缘的远郊区域，商场分布稀疏，主要服务于特定居住点或过境人群。",
+    "mall_codes": [
+      "MALL_79AA7A84",
+      "MALL_F81B297C"
+    ]
+  }
+]

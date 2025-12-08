@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "国贸商圈",
+    "description": "以金龙路、金贸东路为核心，聚集了上邦百汇城、国潮城、海口万象城、N次方公园等商业项目，是龙华区最成熟的高端商业中心之一。",
+    "mall_codes": [
+      "MALL_6EB0E902",
+      "MALL_7CC2738E",
+      "MALL_B8377D83",
+      "MALL_30B49EB2",
+      "MALL_F2880168"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "海垦商圈",
+    "description": "位于海秀中路与海垦路一带，涵盖王府井海垦广场、西岭商业广场等，服务于周边密集居住区，形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_C8EFA04A",
+      "MALL_D93C9E4F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大同/明珠广场商圈",
+    "description": "以解放西路和大同路为核心，包括多宝利商业广场、海口百货大楼、金棕榈文化商业广场、森免万国购、泰龙城等，是海口传统老城区的重要商业集聚区。",
+    "mall_codes": [
+      "MALL_C6C66D94",
+      "MALL_667A62C2",
+      "MALL_BC502A5C",
+      "MALL_C4558ED0",
+      "MALL_0A041E40",
+      "MALL_94E7A5F8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南海大道商圈",
+    "description": "沿南海大道分布，集中了友谊·南海城、国度娱乐文化城、龙湖海南海口天街等项目，是连接市区与城西的新兴商业带。",
+    "mall_codes": [
+      "MALL_442C3489",
+      "MALL_0E0FB298",
+      "MALL_B129AD46"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "迎宾大道商圈",
+    "description": "位于城市南部迎宾大道沿线，包含吾悦广场及新城吾悦广场S5，依托交通枢纽位置发展起来的现代商业节点。",
+    "mall_codes": [
+      "MALL_F0D3517B",
+      "MALL_2630D30D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "观澜湖商圈",
+    "description": "地处龙华区西南部羊山大道附近，仅有深免海口观澜湖免税城一个大型商业体，依托观澜湖旅游休闲资源形成特色消费区域。",
+    "mall_codes": [
+      "MALL_7BA8F987"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "城西商圈",
+    "description": "位于城西镇学院路周边，以城西商业广场为代表，服务高校及居民区的社区型商业集聚点。",
+    "mall_codes": [
+      "MALL_EF40B299"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "龙昆南商圈",
+    "description": "位于龙昆南路20号，凯盛广场独立成点，处于主干道沿线，具备一定交通引流能力，构成局部商业节点。",
+    "mall_codes": [
+      "MALL_E0FF1320"
+    ]
+  }
+]

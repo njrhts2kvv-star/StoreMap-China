@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "孟定镇商圈",
+    "description": "位于耿马县孟定镇核心区域，毗邻中缅边境，是当地重要的商业聚集区",
+    "mall_codes": [
+      "MALL_925131BE",
+      "MALL_5B17BD54"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "耿马县城商圈",
+    "description": "位于耿马县城中心区域，是县城主要商业活动集中地",
+    "mall_codes": [
+      "MALL_212B3F0B"
+    ]
+  }
+]

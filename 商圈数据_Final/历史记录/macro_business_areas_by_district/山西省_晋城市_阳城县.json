@@ -1,0 +1,73 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新阳东街商圈",
+    "description": "位于阳城县凤城镇核心商业街道新阳东街沿线，集中分布多个商厦与商业体，包括北国商城、丰泽商厦、丰泽美食城等，是县城传统商贸集聚区。",
+    "mall_codes": [
+      "MALL_82283205",
+      "MALL_2ACA2B40",
+      "MALL_B34B8FA5",
+      "MALL_1670294E",
+      "MALL_6F56B4C3",
+      "MALL_53BA392C",
+      "MALL_DC0EBEDB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "西关-南城西街商圈",
+    "description": "覆盖西关社区及南城西街周边，包含华都商厦、和谐购物广场等商业设施，毗邻居民区，形成区域性生活消费中心。",
+    "mall_codes": [
+      "MALL_1670294E",
+      "MALL_6F56B4C3"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新建路商圈",
+    "description": "位于新建路与建安路交叉口附近，以国昱生活广场为核心，服务周边居住片区，具备基础商业配套功能。",
+    "mall_codes": [
+      "MALL_2B36E20B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "右岸大道商圈",
+    "description": "地处右岸大道与岳庄路交汇区域，以阳城爱琴海晶海广场为标志项目，属新兴商业节点，辐射城市扩展区域。",
+    "mall_codes": [
+      "MALL_0985CAA6"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "滨河东路商圈",
+    "description": "位于滨河东路兰花A区红绿灯路口一带，依托东海岸商城形成局部商业点位，交通节点特征明显。",
+    "mall_codes": [
+      "MALL_FDB0F4FD"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "析城大街商圈",
+    "description": "坐落于析城大街沿线，以阳城县景豪商业广场为代表，服务于县城东部片区的公共活动与商业需求。",
+    "mall_codes": [
+      "MALL_190D80A5"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "润城商贸区",
+    "description": "位于润城镇中心外围，由润城镇商贸中心构成，服务于乡镇本地居民，属于县域次级商业节点。",
+    "mall_codes": [
+      "MALL_36721D97"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "东部新城商圈",
+    "description": "分布在332省道北侧，以人民商场为代表，地处城市边缘交通干道旁，具有城乡结合部商业特征。",
+    "mall_codes": [
+      "MALL_BE5D994E"
+    ]
+  }
+]

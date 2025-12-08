@@ -1,0 +1,44 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "荣将商圈",
+    "description": "位于荣将镇核心区域，以大众购物中心为主要商业体",
+    "mall_codes": [
+      "MALL_C96EB515"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中心镇商圈",
+    "description": "位于中心镇核心区域，包含泰和商城、桥头堡商业城等商业设施",
+    "mall_codes": [
+      "MALL_F34A0AF5",
+      "MALL_8E0AE7B8"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "老城商圈",
+    "description": "位于华坪县老城区，以永惠购物中心和龙口商城为核心商业体",
+    "mall_codes": [
+      "MALL_D1572366",
+      "MALL_C0B04D33"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "大兴商圈",
+    "description": "位于大文段周边区域，以大兴百货商场为主要商业体",
+    "mall_codes": [
+      "MALL_D5E1278D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "永冬商圈",
+    "description": "位于永冬段周边区域，以超悦购物中心为主要商业体",
+    "mall_codes": [
+      "MALL_D2CDB989"
+    ]
+  }
+]

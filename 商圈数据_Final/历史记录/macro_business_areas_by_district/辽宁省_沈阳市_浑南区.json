@@ -1,0 +1,82 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "奥体中心商圈",
+    "description": "以奥体中心地铁站为核心，覆盖周边盛京大奥莱、万象九宜城等商业项目，是浑南新区早期发展的主要商业集聚区。",
+    "mall_codes": [
+      "MALL_5292BD24",
+      "MALL_2C037891",
+      "MALL_44F00D90"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "全运路商圈",
+    "description": "围绕全运路沿线的万达广场、绿城沈阳青悦里等项目，依托政务与文体中心功能发展起来的新兴城市核心区商业带。",
+    "mall_codes": [
+      "MALL_B7A30E3A",
+      "MALL_FA1E531D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "沈营大街商圈",
+    "description": "位于沈营大街沿线，以上亿广场为代表，结合天惠广场形成局部商业聚集，服务周边密集居住区。",
+    "mall_codes": [
+      "MALL_7E56E392",
+      "MALL_23CB3A51"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "建筑大学/金地琥珀天地商圈",
+    "description": "以建筑大学地铁站为枢纽，集中了悟空商业·琥珀天地、金地·琥珀天地A区和C区，形成服务于高校及青年群体的社区型商业集群。",
+    "mall_codes": [
+      "MALL_F98CCDAD",
+      "MALL_48558943",
+      "MALL_70ACA580"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "长青南街商圈",
+    "description": "位于长青南街与恒达路交汇处附近，以欧亚长青城为主要商业载体，辅以邻里广场，服务东南部居民区。",
+    "mall_codes": [
+      "MALL_E626CE94",
+      "MALL_F3F015C3"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "智慧三街/四街商圈",
+    "description": "依托龙湖沈阳浑南天街布局于智慧四街，靠近地铁沈中大街站，是新市府板块重点发展的现代商业节点之一。",
+    "mall_codes": [
+      "MALL_F98A85D1"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "棋盘山商圈",
+    "description": "位于双园路的王府井奥莱棋盘山小镇，地处浑南东北部近郊，依托旅游休闲资源形成的特色奥特莱斯商业区。",
+    "mall_codes": [
+      "MALL_BC7F2ABE"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "东湖片区商圈",
+    "description": "位于浑南东部边缘，以群星大卖场为代表，服务于深井子等远郊村镇的基础生活配套商业点。",
+    "mall_codes": [
+      "MALL_A8FE81C3"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "嘉华/文汇街商圈",
+    "description": "集中在文源街与文汇街一带，包括嘉华购物中心及沈阳环球港动感城，虽现状商业活力较弱，但具备一定区位集聚特征。",
+    "mall_codes": [
+      "MALL_016E1DFC",
+      "MALL_BE0C460E"
+    ]
+  }
+]

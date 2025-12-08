@@ -1,0 +1,23 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "防城老城区商圈",
+    "description": "位于防城区核心居住与商业聚集区，涵盖人民路、防钦路及周边街巷，以传统百货、小型商场为主，服务本地居民日常消费。",
+    "mall_codes": [
+      "MALL_BC64C0B7",
+      "MALL_8E0FA61D",
+      "MALL_5A1724E8",
+      "MALL_4CED94F5",
+      "MALL_4F5FC7AE",
+      "MALL_89F92125"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "防港路沿线商圈",
+    "description": "沿防港路分布，靠近城市主干道，具备一定交通优势，包含民族商场等区域性商业节点，辐射范围较广。",
+    "mall_codes": [
+      "MALL_653E0535"
+    ]
+  }
+]

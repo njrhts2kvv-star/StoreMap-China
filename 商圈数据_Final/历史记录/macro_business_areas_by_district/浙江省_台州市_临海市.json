@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "崇和门商圈",
+    "description": "位于临海市老城区核心，以崇和商城及其北区为中心，周边聚集多个商业点，是传统商业繁华地带。",
+    "mall_codes": [
+      "MALL_915FAEFC",
+      "MALL_1E45CB02",
+      "MALL_6C2E3244",
+      "MALL_9A44DAAE",
+      "MALL_8884AA55",
+      "MALL_67E085A2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大洋东路-东方大道商圈",
+    "description": "沿大洋东路与东方大道分布，涵盖银泰百货、耀达商场等大型商业体，是临海市新兴的城市主干道商业带。",
+    "mall_codes": [
+      "MALL_0D474852",
+      "MALL_F064AB26",
+      "MALL_AE1BF77B",
+      "MALL_FE09C36E",
+      "MALL_4C74F2B8",
+      "MALL_2921660C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "杜桥镇商圈",
+    "description": "位于临海市东部的杜桥镇，以杜桥宝龙广场为核心，覆盖周边综合商城和路商生活广场，服务杜桥及周边区域。",
+    "mall_codes": [
+      "MALL_C1058F43",
+      "MALL_3387004E",
+      "MALL_1E105799"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "大田片区商圈",
+    "description": "集中在大田街道，包括大田百货、联商购物广场等，服务于大田本地居民，属于区域性社区型商业集聚区。",
+    "mall_codes": [
+      "MALL_DAF36947",
+      "MALL_7163C892"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "白水洋-括苍片区商圈",
+    "description": "位于临海市西部偏远乡镇，仅含世纪华联购物中心，属乡镇级基础商业配套，辐射范围较小。",
+    "mall_codes": [
+      "MALL_D2A21248"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "涌泉-尤溪片区商圈",
+    "description": "位于临海市南部山区边缘，仅含都尚购物中心，为局部乡镇提供基本商业服务。",
+    "mall_codes": [
+      "MALL_D89B047D"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "古城南片区商圈",
+    "description": "位于古城街道南部，升辉购物街为核心，临近台州府路，连接老城与新城过渡带，具备一定步行街特征。",
+    "mall_codes": [
+      "MALL_26961D43"
+    ]
+  }
+]

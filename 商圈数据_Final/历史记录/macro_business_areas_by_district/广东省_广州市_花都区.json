@@ -1,0 +1,102 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "花都中心城区商圈",
+    "description": "以龙珠路、公益路为核心的传统商业集聚区，集中了来又来、广百广场等主要商业体，是花都区最成熟的商圈之一。",
+    "mall_codes": [
+      "MALL_0D2238DC",
+      "MALL_79121BFF",
+      "MALL_5E52D4BC",
+      "MALL_FD0E9F85",
+      "MALL_05D25CC1",
+      "MALL_AEDB4E65",
+      "MALL_5B96617A",
+      "MALL_4592DE16",
+      "MALL_6C7EF81C",
+      "MALL_DD8CCEA9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "融创文旅城商圈",
+    "description": "依托融创茂形成的新兴商业集群，位于花都城区北部，凤凰北路沿线，定位为文旅与家庭消费结合的综合商圈。",
+    "mall_codes": [
+      "MALL_DF85C579"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "狮岭商贸商圈",
+    "description": "位于狮岭镇核心区域，以东福百货广场和联合广场为代表，服务本地居民及皮具产业人群，形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_B808742C",
+      "MALL_A514EC6A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新华街西部商圈",
+    "description": "分布于天贵路、秀全大道西段的社区型商业节点，包括金城广场、百花广场等，服务于周边居住区。",
+    "mall_codes": [
+      "MALL_6C7EF81C",
+      "MALL_DD8CCEA9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "花山-炭步片区商圈",
+    "description": "位于花都南部的炭步镇，以永利广场为代表，覆盖乡镇级消费需求，商业密度较低，呈分散布局。",
+    "mall_codes": [
+      "MALL_241398CB"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "雅居乐新城商圈",
+    "description": "围绕雅居乐汇通天地、盛业广场等项目形成的新兴居住区配套商圈，位于花都新区板块，发展潜力较大。",
+    "mall_codes": [
+      "MALL_D8E6AD7D",
+      "MALL_9FBDE79B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "骏壹万邦商圈",
+    "description": "以骏壹万邦广场为核心的现代商业综合体商圈，地处曙光大道，辐射花都新城区，具备一定品牌集聚效应。",
+    "mall_codes": [
+      "MALL_5BE41AC5"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "万大广场商圈",
+    "description": "位于花都北部北中路与中花路交界处，以万大广场为单一核心，目前商业活跃度较低，属局部社区服务型节点。",
+    "mall_codes": [
+      "MALL_B429BEFB"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "自由人花园商圈",
+    "description": "以自由里为中心的小型社区商业圈，服务于自由人花园及周边住宅区，规模较小，功能基础。",
+    "mall_codes": [
+      "MALL_DAC430A1"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "阳光城商圈",
+    "description": "位于花都东部阳光北路，以阳光广场为主要载体，服务东部居住组团，商业体量有限。",
+    "mall_codes": [
+      "MALL_348005B3"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "福达广场商圈",
+    "description": "位于凤凰北路中段，依托福达广场形成的小型商业点，主要满足周边社区日常需求。",
+    "mall_codes": [
+      "MALL_01C13C9B"
+    ]
+  }
+]

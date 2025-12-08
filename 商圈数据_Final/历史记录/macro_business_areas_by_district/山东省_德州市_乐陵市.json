@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "兴隆大街商圈",
+    "description": "以兴隆南大街为核心轴线，集中分布多个商贸城与购物中心，是乐陵市传统商业中心，涵盖百货大楼、德百系商场及多个沿街商城。",
+    "mall_codes": [
+      "MALL_6D4120BF",
+      "MALL_B23D0A0F",
+      "MALL_9AD6F823",
+      "MALL_F1674293",
+      "MALL_48AD061D",
+      "MALL_0799446C",
+      "MALL_C84BC8B7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "五洲大道商圈",
+    "description": "位于城市西部发展轴，依托德百欧尚小镇和银座商城形成新兴商业集聚区，交通便利，服务周边居住区。",
+    "mall_codes": [
+      "MALL_E2762D4F",
+      "MALL_2315CC2E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "文昌西路商圈",
+    "description": "位于城区北部，以ZTeKa中天怡家为核心，覆盖富安路周边商业节点，属区域性生活配套商业带。",
+    "mall_codes": [
+      "MALL_94D2D5F6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "崇圣公园商圈",
+    "description": "围绕崇圣公园布局，结合开元中大道与兴隆北大街交叉口人流，发展地下商业空间，具有休闲与购物融合特征。",
+    "mall_codes": [
+      "MALL_5767142C"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "澳林商贸城商圈",
+    "description": "位于城区西南部，以义乌国际商贸城供货市场为依托，主打批发与综合供应功能，形成专业市场型商业集聚区。",
+    "mall_codes": [
+      "MALL_F2ABA381"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "枣都商贸街商圈",
+    "description": "位于城区西部，依托枣都商贸街本地商业资源，以枣都购物中心为代表，服务周边居民日常消费。",
+    "mall_codes": [
+      "MALL_D384B22D"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "朱集路商圈",
+    "description": "位于城区东部，以合家乐中心商场为核心，地处商业街与朱集路交叉区域，辐射东部居住片区。",
+    "mall_codes": [
+      "MALL_192A93BD"
+    ]
+  }
+]

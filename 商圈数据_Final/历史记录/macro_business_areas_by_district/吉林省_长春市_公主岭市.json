@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "温州商城商圈",
+    "description": "以中国北方温州商场及其多个分区为核心，集中分布在国文大街与河南大街交汇区域，是公主岭市区内规模较大的综合性商贸集聚区。",
+    "mall_codes": [
+      "MALL_A0BFE5A7",
+      "MALL_FF5E8497",
+      "MALL_E494C7C1",
+      "MALL_7B93EE8D",
+      "MALL_6D2A55D8",
+      "MALL_60D0AD69"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "岭西商圈",
+    "description": "位于公主岭市区西部，涵盖国文大街沿线的卓岱四季印象城、岭西蓝山商城等商业设施，服务岭西片区居民。",
+    "mall_codes": [
+      "MALL_D044C644",
+      "MALL_E19B1DD9"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "华生购物中心商圈",
+    "description": "以华生购物中心为主要商业节点，位于苇子沟街道，覆盖公主岭市南部局部区域。",
+    "mall_codes": [
+      "MALL_A792C45D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "范家屯商圈",
+    "description": "位于范家屯经济开发区，以兴泰商厦、阳光城市广场及周边建筑群为商业核心，是范家屯镇的主要消费聚集区。",
+    "mall_codes": [
+      "MALL_1C86E6EF",
+      "MALL_CAF9FC43",
+      "MALL_1A00981C",
+      "MALL_22B25E67",
+      "MALL_FCE5E943"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "怀德商圈",
+    "description": "覆盖怀德镇区域，以兴泰商场为代表性商业设施，服务于怀德镇及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_89D98481"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "南崴子商圈",
+    "description": "位于南崴子街道，以南崴子百货大楼为主要商业载体，辐射周边农村地区。",
+    "mall_codes": [
+      "MALL_CD402D92"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "大榆树商圈",
+    "description": "地处大榆树镇，依托广源商厦形成区域性小型商业中心，服务本地乡镇人口。",
+    "mall_codes": [
+      "MALL_EB2B1233"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "毛城子商圈",
+    "description": "位于毛城子镇，以毛城子供销商场为主要商业节点，服务于当地农村市场。",
+    "mall_codes": [
+      "MALL_93F3903F"
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南京东路商圈",
+    "description": "位于黄浦区核心地段，以南京东路为主轴，汇集多家大型百货和购物中心，是上海传统商业中心",
+    "mall_codes": [
+      "MALL_7BAFC10E",
+      "MALL_D9C5DB10",
+      "MALL_5DBE590F",
+      "MALL_E99DCE9D",
+      "MALL_5F27CD6B",
+      "MALL_02BF912B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "淮海中路商圈",
+    "description": "以淮海中路为核心的高端商业区，聚集了众多时尚购物中心和精品百货",
+    "mall_codes": [
+      "MALL_47BA5343",
+      "MALL_93A7F267",
+      "MALL_7DDEF6AB",
+      "MALL_46166CFB",
+      "MALL_D4B1370E",
+      "MALL_E2E1D156"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新天地商圈",
+    "description": "以新天地为核心的时尚休闲商业区，融合石库门建筑与现代商业",
+    "mall_codes": [
+      "MALL_BEE9E97E",
+      "MALL_F3AC7461",
+      "MALL_43E43E40"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "人民广场商圈",
+    "description": "围绕人民广场的商业聚集区，交通便利，商业设施密集",
+    "mall_codes": [
+      "MALL_E31317A4",
+      "MALL_AFB8CEBA"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "外滩商圈",
+    "description": "位于外滩区域的商业中心，兼具历史风貌与现代商业",
+    "mall_codes": [
+      "MALL_A8DB305D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "打浦桥商圈",
+    "description": "以打浦桥为核心的区域商业中心，服务周边社区",
+    "mall_codes": [
+      "MALL_F6E1D556",
+      "MALL_CD1FE8F9",
+      "MALL_D8E5AB33"
+    ]
+  }
+]

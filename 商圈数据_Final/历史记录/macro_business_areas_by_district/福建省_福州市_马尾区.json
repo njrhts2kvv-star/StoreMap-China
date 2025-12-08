@@ -1,0 +1,38 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "马尾中心商圈",
+    "description": "以名城中心南区、名城中心北区、名城广场及福州名城广场(北区)为核心，集中分布在儒江西路与江滨东大道交汇区域，是马尾区目前最主要的商业集聚区。",
+    "mall_codes": [
+      "MALL_18AAEAC4",
+      "MALL_CAC265D1",
+      "MALL_35FBF3B0",
+      "MALL_9767DC4D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "马江商圈",
+    "description": "位于马尾区西部，涵盖正荣财富中心和金海商贸中心，地处建星路与君竹路一带，构成马尾老城区的重要商业节点。",
+    "mall_codes": [
+      "MALL_DBB3AAAA",
+      "MALL_C656A05D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "琅岐商圈",
+    "description": "位于琅岐岛内，以琅岐九龙商业中心为代表，服务琅岐本地居民，是马尾区东部岛屿的区域性商业中心。",
+    "mall_codes": [
+      "MALL_1ECBCC09"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "红旗路商圈",
+    "description": "位于马尾区中部红旗路沿线，以供销商场为唯一代表，商业体量较小，服务于周边社区。",
+    "mall_codes": [
+      "MALL_6404B2C6"
+    ]
+  }
+]

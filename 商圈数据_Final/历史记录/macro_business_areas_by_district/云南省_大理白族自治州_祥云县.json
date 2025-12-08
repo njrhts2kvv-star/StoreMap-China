@@ -1,0 +1,38 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "兴云路商圈",
+    "description": "位于兴云路沿线，包含万合商城、亿峰商城、彩云·时代广场等商业体",
+    "mall_codes": [
+      "MALL_C4233D0D",
+      "MALL_50F96648",
+      "MALL_0BE91A6E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "龙翔路商圈",
+    "description": "以龙翔路为核心，包含祥云县百货大楼、祥云百佳惠大卖场、茂元商场等传统商业",
+    "mall_codes": [
+      "MALL_FE2427B3",
+      "MALL_BCC64D73",
+      "MALL_8F6E373D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "温州商业街商圈",
+    "description": "温州商业街区域，以金都商城为代表",
+    "mall_codes": [
+      "MALL_C880697F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "清红路商圈",
+    "description": "清红路与鼓楼西街交汇处，以祥和购物商场为核心",
+    "mall_codes": [
+      "MALL_109ECF1C"
+    ]
+  }
+]

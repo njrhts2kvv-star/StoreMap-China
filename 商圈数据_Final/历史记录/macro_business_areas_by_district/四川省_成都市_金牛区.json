@@ -1,0 +1,119 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "华侨城商圈",
+    "description": "以OCT华侨城生活广场为核心，覆盖西华大道周边商业节点，依托地铁站点形成区域型生活商圈。",
+    "mall_codes": [
+      "MALL_E9E00AB3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中海国际商圈",
+    "description": "围绕中海国际购物公园布局，位于蜀西路核心地段，服务中海国际社区及周边大型居住区。",
+    "mall_codes": [
+      "MALL_E4E9F07B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "交大凯德商圈",
+    "description": "以凯德广场和凯德广场·金牛2期为双核，地处交大路与星河地铁站交汇处，形成集购物、交通于一体的成熟商圈。",
+    "mall_codes": [
+      "MALL_C850CE16",
+      "MALL_242D1165"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "沙湾印象汇商圈",
+    "description": "依托西南交大地铁站的区位优势，以沙湾印象汇为主要载体，服务于高校与居民区的区域性商业中心。",
+    "mall_codes": [
+      "MALL_8B435FAE"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "茶店子龙湖商圈",
+    "description": "以龙湖·西宸天街为核心，位于花照壁西顺街，结合地铁茶店子站打造的新兴居住配套商圈。",
+    "mall_codes": [
+      "MALL_80DF9E79"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "人民北路商圈",
+    "description": "聚焦一环路北段核心地带，涵盖龙湖上城天街与苏宁百货，靠近人民北路地铁站，具备城市级商业潜力。",
+    "mall_codes": [
+      "MALL_BAC702DC",
+      "MALL_BFC04371"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "五块石商圈",
+    "description": "以龙湖成都北城天街为引领，辐射五块石路及周边专业市场群，是金牛区北部重要商贸节点。",
+    "mall_codes": [
+      "MALL_928D4D0F"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "驷马桥商圈",
+    "description": "依托驷马桥地铁站枢纽位置，以城中汇购物中心为主力，连接二环路北四段沿线商业资源。",
+    "mall_codes": [
+      "MALL_6741B17D"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "荷花池商贸商圈",
+    "description": "聚集荷花池16区、荷花金池市场等传统批发市场，位于北站东一路至北站东二路一带，延续荷花池片区批发业态特征。",
+    "mall_codes": [
+      "MALL_49EE8897",
+      "MALL_62ACA4A6"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "西北桥商圈",
+    "description": "以沐府汇MUFUPAPK为主要商业体，地处西北桥北街，服务于内城西北侧居民的生活消费需求。",
+    "mall_codes": [
+      "MALL_940C7713"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "万裕生活商圈",
+    "description": "位于黄金东一路的社区型商业节点，以万裕生活广场为代表，满足周边基础生活配套需要。",
+    "mall_codes": [
+      "MALL_581AAA92"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "金牛万达商圈",
+    "description": "围绕金牛万达SOHO区域设置的送车点虽非完整商场，但基于万达品牌集聚效应，归入金牛万达微型商业节点。",
+    "mall_codes": [
+      "MALL_B08C63B7"
+    ]
+  },
+  {
+    "area_id": 13,
+    "area_name": "成都国际商贸城商圈",
+    "description": "以成都国际商贸城功能区和招商花园城为核心，位于天回镇南部，构成金牛区最北端的大规模商贸集群。",
+    "mall_codes": [
+      "MALL_1ABA2A5F",
+      "MALL_B47F33E1"
+    ]
+  },
+  {
+    "area_id": 14,
+    "area_name": "北站东一路商圈",
+    "description": "集中于北站东一路沿线，包含旺马仕名品广场和恒业国际日用品商城，毗邻火车北站，具有交通枢纽商业特征。",
+    "mall_codes": [
+      "MALL_9294D72A",
+      "MALL_A2C80E4F"
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "棉城中华路商圈",
+    "description": "位于潮阳区棉城核心区域，沿中华路分布，聚集多个中小型商场，是城区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_6D176831",
+      "MALL_6009B0C7",
+      "MALL_F94A7FAD",
+      "MALL_02DCDA3E",
+      "MALL_0042F8D3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南-东山大道商圈",
+    "description": "覆盖城南街道及东山大道沿线，包含多个居住区配套商业体，形成区域性综合消费带。",
+    "mall_codes": [
+      "MALL_75A99A34",
+      "MALL_D6001D62",
+      "MALL_2113C78B",
+      "MALL_56CBF72F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "谷饶镇中心商圈",
+    "description": "集中在谷饶镇谷贵路一带，依托和信广场与五彩阳光等商场，服务本地居民的日常购物需求。",
+    "mall_codes": [
+      "MALL_B03A3AF4",
+      "MALL_8412AD36"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "和平镇商圈",
+    "description": "位于和平镇金丰和平广场及老和惠公路沿线，以社区型商场为主，辐射周边乡镇。",
+    "mall_codes": [
+      "MALL_F3EDB7E8",
+      "MALL_3A42A7A4",
+      "MALL_08347E37"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西胪-关埠片区商圈",
+    "description": "分布于西胪镇及邻近区域，包括兴发商场和松和购物广场，服务于西北部乡镇市场。",
+    "mall_codes": [
+      "MALL_FA7B4C43",
+      "MALL_70E25E0A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "金灶镇商圈",
+    "description": "位于潮阳区北部金灶镇，以金达利购物广场为代表，满足偏远乡镇基础商业需求。",
+    "mall_codes": [
+      "MALL_76DCB6FD"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "棉北商贸城商圈",
+    "description": "集中于棉北街道棉新大道与华星商贸区附近，由松峰商贸城、华美芝商贸城等组成，具批发零售混合特征。",
+    "mall_codes": [
+      "MALL_E2C7027A",
+      "MALL_B653E27D",
+      "MALL_B5BA2F25"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "莲峰南路商圈",
+    "description": "位于城区西南侧莲峰南路沿线，以三和购物中心为代表，服务周边住宅区。",
+    "mall_codes": [
+      "MALL_E8DADFCA"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "铜盂-贵屿边缘商圈",
+    "description": "位于潮阳西部韩江沿岸地带，韩星购物商场为该区域代表商业点，连接揭阳方向。",
+    "mall_codes": [
+      "MALL_BADC05BB"
+    ]
+  }
+]

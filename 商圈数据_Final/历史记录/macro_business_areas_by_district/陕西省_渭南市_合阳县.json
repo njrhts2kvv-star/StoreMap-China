@@ -1,0 +1,34 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "合阳县城关商圈",
+    "description": "位于合阳县城关镇核心区域，集中了黄河路、东大街及南大街沿线的多个购物场所，是县城主要商业聚集区。",
+    "mall_codes": [
+      "MALL_ADEBA7D8",
+      "MALL_0FA2F884",
+      "MALL_38CEBB37",
+      "MALL_69FDDF45",
+      "MALL_6D3F1294",
+      "MALL_2479AE4F",
+      "MALL_021A7A1C",
+      "MALL_46EC5DB4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "合阳县凤凰西街商圈",
+    "description": "位于凤凰西街与朝阳北路交叉口附近，以锦禾秀为代表，覆盖西部城区局部商业点。",
+    "mall_codes": [
+      "MALL_07A88869"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "合阳县杨家庄商圈",
+    "description": "位于杨家庄信用社周边，涵盖万佳购物中心和阳光商城，处于县城北部边缘地带，服务周边居民区。",
+    "mall_codes": [
+      "MALL_1CCF07C8",
+      "MALL_7EB99875"
+    ]
+  }
+]

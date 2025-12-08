@@ -1,0 +1,80 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五一广场商圈",
+    "description": "位于长沙市芙蓉区核心地带，以五一广场地铁站为中心，聚集了多个商业体，是长沙最繁华的传统商业中心之一。",
+    "mall_codes": [
+      "MALL_0E610EAD",
+      "MALL_1122226F",
+      "MALL_C0F8BDE7",
+      "MALL_FD3ADDBF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "袁家岭商圈",
+    "description": "依托五一大道与袁家岭地铁站形成的区域商业中心，主要服务周边居民及通勤人群，拥有友谊商店等老牌商业设施。",
+    "mall_codes": [
+      "MALL_5FA3785B",
+      "MALL_EB153F9B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "万家丽商圈",
+    "description": "以万家丽中路为主轴，涵盖万家丽国际购物广场及其周边多个商业体，是东部城区的重要商业集聚区。",
+    "mall_codes": [
+      "MALL_DC001BBE",
+      "MALL_5F029504",
+      "MALL_9FABEDCD",
+      "MALL_800882AF",
+      "MALL_F3519090",
+      "MALL_7851CCB7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "马王堆/远大路商圈",
+    "description": "位于远大一路与万家丽北路交汇区域，依托地铁马王堆站形成的生活配套型商圈，覆盖多个社区商业广场。",
+    "mall_codes": [
+      "MALL_885EA704",
+      "MALL_63E9E700",
+      "MALL_A929E7C3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东岸城邦商圈",
+    "description": "位于双杨路与远大一路交叉口附近，以东岸城邦商业广场为核心的新兴社区型商业集聚区。",
+    "mall_codes": [
+      "MALL_A1214A8B"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "人民东路商圈",
+    "description": "沿人民东路分布，连接望龙路至德政街一带，包含多个新建商业项目，服务于东部扩展城区的居住人口。",
+    "mall_codes": [
+      "MALL_D3FE4E98",
+      "MALL_3C2352E0",
+      "MALL_705C01FB"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "星沙大道商圈",
+    "description": "位于星沙大道与远大二路、同丰街交汇区域，靠近长沙县边界，是城市东北方向的新兴商业节点。",
+    "mall_codes": [
+      "MALL_A280F569",
+      "MALL_9C601CDF"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "韶山北路商圈",
+    "description": "位于韶山北路沿线，临近袁家岭与火车站区域，以美诺广场为代表的小型商业体构成的区域性消费点。",
+    "mall_codes": [
+      "MALL_C2328982"
+    ]
+  }
+]

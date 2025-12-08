@@ -1,0 +1,66 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，覆盖祥云道周边商业节点，是丰润区较为集中的现代商业聚集区，周边汇聚多个购物场所。",
+    "mall_codes": [
+      "MALL_06DAF35D",
+      "MALL_34E69021",
+      "MALL_628B3AF2",
+      "MALL_DDD7631D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "曹雪芹东道商圈",
+    "description": "沿曹雪芹东道分布的商业集聚区，涵盖万隆商贸中心、新城购物广场及西武百货等主要商场，构成丰润城区东部的主要消费带。",
+    "mall_codes": [
+      "MALL_EADB0EEA",
+      "MALL_97CBDC3D",
+      "MALL_9562C667"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "燕山路商圈",
+    "description": "位于燕山路沿线，集中了永和宜佳与永和宜家超市等商业设施，服务周边居民区，形成区域性生活消费中心。",
+    "mall_codes": [
+      "MALL_53D66831",
+      "MALL_137E7C38"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "丰登坞镇商圈",
+    "description": "位于丰润区西部乡镇区域，以万象购物为代表，服务于丰登坞镇及周边农村地区，商业规模较小但具地域覆盖性。",
+    "mall_codes": [
+      "MALL_9C852BCE"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "新军屯商圈",
+    "description": "位于丰润区西北部，由天佑城、将军楼商厦和新军屯供销大厦共同构成，服务于新军屯镇及附近乡镇居民。",
+    "mall_codes": [
+      "MALL_0DCB9871",
+      "MALL_B661B0AE",
+      "MALL_9283E8B3"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "龙辉商圈",
+    "description": "位于丰润区北部国道沿线，以龙辉购物中心为唯一核心，依托交通干道形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_868EA47B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "南环西道商圈",
+    "description": "位于城区南部交叉路口附近，以板市大厅为主要商业体，服务于南部城区居民，具有较强社区属性。",
+    "mall_codes": [
+      "MALL_AB526A3B"
+    ]
+  }
+]

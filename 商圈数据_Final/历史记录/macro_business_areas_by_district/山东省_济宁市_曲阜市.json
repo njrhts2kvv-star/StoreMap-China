@@ -1,0 +1,82 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "市中心/大同路商圈",
+    "description": "位于曲阜市中心核心区域，围绕大同路与春秋中路交汇处集中分布多个商业设施，包括华联商厦、国贸购物广场、银座购物广场等，是传统商业中心。",
+    "mall_codes": [
+      "MALL_194D0FEC",
+      "MALL_59E41772",
+      "MALL_88320680"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "西关大街商圈",
+    "description": "以西关大街为轴线，涵盖双龙购物广场及周边生活广场，形成西部城区的主要商业聚集区。",
+    "mall_codes": [
+      "MALL_BA5CF903",
+      "MALL_D6DBE1F0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "静轩东路商圈",
+    "description": "沿静轩东路分布富良商务中心、鲁城商场等，服务于东部居民区，具备一定规模的社区型商业配套。",
+    "mall_codes": [
+      "MALL_FBE7C213",
+      "MALL_543324D0",
+      "MALL_1F675F2F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "鼓楼南街商圈",
+    "description": "位于老城区南部，汇聚大世界购物中心、赛科广场和百意购物中心，靠近景区入口，人流密集，商业活跃。",
+    "mall_codes": [
+      "MALL_FAB0C629",
+      "MALL_98FF9584",
+      "MALL_B831F006"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "裕隆路商圈",
+    "description": "位于城市北部裕隆路沿线，以万嘉旺生活广场为代表，辐射周边住宅区，属新兴居住配套商业带。",
+    "mall_codes": [
+      "MALL_6DB7AF71"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "星光天地商圈",
+    "description": "依托星光天地国际广场建设的商业节点，包含山东库里提奥特莱斯商业大厦，定位特色零售与品牌折扣。",
+    "mall_codes": [
+      "MALL_670D78A3"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "陵城商贸区",
+    "description": "位于曲阜市西南部陵城镇，以陵城商贸中心为核心，服务乡镇及周边农村市场，属于外围城镇级商业中心。",
+    "mall_codes": [
+      "MALL_9783A330"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "吴村-王庄乡镇商圈",
+    "description": "覆盖曲阜北部吴村镇与王庄镇的基层供销系统商业点，包括曲阜市供销社商场和王庄供销社中王购物中心，主要满足乡镇日常生活需求。",
+    "mall_codes": [
+      "MALL_FD73D6EF",
+      "MALL_192A2EC3"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "天华路商圈",
+    "description": "位于城市西北部，以鲁华商场为核心，服务局部社区，规模较小但具备基础商业功能。",
+    "mall_codes": [
+      "MALL_95B06EEC"
+    ]
+  }
+]

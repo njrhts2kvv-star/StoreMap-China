@@ -1,0 +1,59 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "大学城商圈",
+    "description": "位于小谷围岛的广州大学城核心区域，以服务高校师生及周边居民为主，商业配套集中于生活消费与日常休闲。",
+    "mall_codes": [
+      "MALL_08B75B25",
+      "MALL_7E254775",
+      "MALL_F827AF5E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "市桥老城区商圈",
+    "description": "番禺传统中心城区市桥的核心商业带，覆盖多个成熟社区，商业设施分布密集，服务本地居民日常消费需求。",
+    "mall_codes": [
+      "MALL_6A5CB907",
+      "MALL_A69B454E",
+      "MALL_B5069651",
+      "MALL_5521B9FB",
+      "MALL_A35F6E38"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "钟村-汉溪长隆商圈",
+    "description": "依托地铁3号线汉溪长隆站及钟村片区发展起来的新兴商业走廊，连接奥园、万达、K11等重点项目，是番禺南部重要的消费节点。",
+    "mall_codes": [
+      "MALL_9D90C76C",
+      "MALL_05E3D9D5",
+      "MALL_A8F8EDD9",
+      "MALL_65EC19BE",
+      "MALL_37317655",
+      "MALL_F118E626",
+      "MALL_47CB49C4",
+      "MALL_121BD1CD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南村万博商圈",
+    "description": "以基盛万科里和亚运城广场为代表的区域型商业中心，辐射南村及亚运城大型居住区，具备一定城市副中心功能。",
+    "mall_codes": [
+      "MALL_28B2D81F",
+      "MALL_6C4875EE",
+      "MALL_5880B41B",
+      "MALL_2BB39697"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大石-石壁商圈",
+    "description": "位于番禺西北部，临近广州南站，以万民城和大石城为代表，服务于大石、石壁片区的居住人口。",
+    "mall_codes": [
+      "MALL_1A1AB83E",
+      "MALL_77EFDAEE"
+    ]
+  }
+]

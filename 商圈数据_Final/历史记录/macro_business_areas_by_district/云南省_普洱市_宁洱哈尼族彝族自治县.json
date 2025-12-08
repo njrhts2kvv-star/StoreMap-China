@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "文昌路商圈",
+    "description": "位于县城中心区域，以文昌商业广场为核心，周边商业氛围浓厚",
+    "mall_codes": [
+      "MALL_3A2363AD",
+      "MALL_E59300BD"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "勐普线商圈",
+    "description": "位于县城外围区域，沿155县道分布，服务周边居民日常购物需求",
+    "mall_codes": [
+      "MALL_B22998A4"
+    ]
+  }
+]

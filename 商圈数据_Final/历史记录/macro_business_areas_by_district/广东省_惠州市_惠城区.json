@@ -1,0 +1,83 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "江北CBD商圈",
+    "description": "位于惠州市惠城区江北街道，是城市核心商务区，聚集高端商业与地标项目，以华贸天地、佳兆业广场为代表，形成市级商业中心。",
+    "mall_codes": [
+      "MALL_90BDC332",
+      "MALL_32ED4F83"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "河南岸港惠商圈",
+    "description": "以港惠新天地东区、北区及港惠购物中心为核心，辐射演达大道沿线，是南部城区主要商业集聚区，配套成熟，人流密集。",
+    "mall_codes": [
+      "MALL_DC6E8B62",
+      "MALL_FC5E3442",
+      "MALL_94D3434E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "仲恺高新区商圈",
+    "description": "位于仲恺新区，依托仲恺大道交通干线，由TPARK时尚公园、万信佳购物广场等构成，服务高新区产业人口，属区域型商业中心。",
+    "mall_codes": [
+      "MALL_114EBCD1",
+      "MALL_2DD54EEB"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "金山湖-河南岸商圈",
+    "description": "覆盖河南岸至金山湖片区，包含惠州印象城、方直FUN STAR天地等项目，服务于南部居住组团，是新兴发展的社区型商业集聚带。",
+    "mall_codes": [
+      "MALL_9D7DEBEF",
+      "MALL_C12F6976"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "水口商圈",
+    "description": "位于水口街道，以华昌购物广场为主要商业载体，服务于水口本地居民，属于外围镇级商业中心。",
+    "mall_codes": [
+      "MALL_68098960"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "东平-江北大道商圈",
+    "description": "沿东江流域分布，涵盖丽日湖畔生活购物广场、吉之岛、美博城等，依托成熟居住区形成的生活消费圈，具有较强社区属性。",
+    "mall_codes": [
+      "MALL_EEC74B76",
+      "MALL_E34AEA96",
+      "MALL_85CC5AD7"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "中海广场商圈",
+    "description": "围绕中海广场及其周边商业体，包括中海环宇天地和中海生活汇，依托大型住宅社区发展而成的配套型商业集群。",
+    "mall_codes": [
+      "MALL_0BC77C43",
+      "MALL_5C56D0C8"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "赛格-隆生商圈",
+    "description": "位于东湖片区，集中了赛格假日广场、隆生广场等商业项目，靠近市中心但具一定独立性，构成区域性综合消费节点。",
+    "mall_codes": [
+      "MALL_87F9AEA0",
+      "MALL_0A71CB3E"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "仲恺天益城商圈",
+    "description": "位于仲恺大道南段，以天益城购物中心为单一核心，服务周边工业园区与居民区，属单核驱动型镇级商圈。",
+    "mall_codes": [
+      "MALL_B24EF481"
+    ]
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南屏街商圈",
+    "description": "位于昆明市中心的核心商业区，聚集了多个知名商场和百货",
+    "mall_codes": [
+      "MALL_4C337FCF",
+      "MALL_82ABB25E",
+      "MALL_7702BA73",
+      "MALL_23310FCE",
+      "MALL_2D01CB76",
+      "MALL_3B7A8A7D",
+      "MALL_C2046C20",
+      "MALL_37756145",
+      "MALL_D6EE1A40",
+      "MALL_EEE1CA7E",
+      "MALL_401FA4A0",
+      "MALL_760182F9",
+      "MALL_0E29CD12",
+      "MALL_5D258036",
+      "MALL_000D55D2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "西北商圈",
+    "description": "位于五华区西北部的商业聚集区，包含多个大型购物中心",
+    "mall_codes": [
+      "MALL_AF12237B",
+      "MALL_4FD95F6C",
+      "MALL_80DB419D",
+      "MALL_239AD57E",
+      "MALL_08E7F075"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "小康大道商圈",
+    "description": "位于五华区东北部的新兴商业区域，沿小康大道分布",
+    "mall_codes": [
+      "MALL_B48678B5",
+      "MALL_A381F791"
+    ]
+  }
+]

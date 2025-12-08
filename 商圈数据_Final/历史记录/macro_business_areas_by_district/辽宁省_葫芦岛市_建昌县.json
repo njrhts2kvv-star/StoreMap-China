@@ -1,0 +1,35 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "建昌中心商圈",
+    "description": "以建昌县核心城区为主要范围，集中分布于凌河街、建凌街及周边主干道，涵盖人民广场、兴业商贸城、兴隆大家庭等主要商业载体，是建昌县传统商业集聚区。",
+    "mall_codes": [
+      "MALL_25E83FDB",
+      "MALL_AA34D6A6",
+      "MALL_AD544CA7",
+      "MALL_F56982A4",
+      "MALL_BE7045A6",
+      "MALL_B68486BC",
+      "MALL_3E124128",
+      "MALL_83E4DC76",
+      "MALL_F8D12CE1",
+      "MALL_FABE38DA"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "建昌东部拓展商圈",
+    "description": "位于建昌县东部区域，远离核心城区，以翰沃商贸城为代表，地处朝阳路南侧，属于县城向东发展延伸的新兴商业节点。",
+    "mall_codes": [
+      "MALL_0DF8AD93"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "建昌北部边缘商圈",
+    "description": "位于建昌县北部外围区域，距离中心城区较远，以家家乐购物超市为代表，地处玲小线与二西线交叉口附近，服务周边居民点，商业聚集度较低。",
+    "mall_codes": [
+      "MALL_0A8ACE8A"
+    ]
+  }
+]

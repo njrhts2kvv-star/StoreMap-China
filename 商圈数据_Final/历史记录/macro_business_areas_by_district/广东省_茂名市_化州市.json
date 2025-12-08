@@ -1,0 +1,67 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "河西商圈",
+    "description": "以万达广场为核心，覆盖河西街道及周边主要商业设施，是化州市新兴的商业中心之一。",
+    "mall_codes": [
+      "MALL_856C9F8A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "市区北岸商圈",
+    "description": "位于北岸区域，集中了兆康时代广场、吉洲百货等多家商场，构成化州城区北部的主要商业集聚区。",
+    "mall_codes": [
+      "MALL_588D2911",
+      "MALL_981B710B",
+      "MALL_D485AF15",
+      "MALL_A1841A40",
+      "MALL_A8C2B00C",
+      "MALL_D5DE2C63",
+      "MALL_16CF35D5"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "石西江开发区商圈",
+    "description": "位于石西江开发区沿江路一带，以兆康保润广场为主要商业节点，服务当地居民。",
+    "mall_codes": [
+      "MALL_878790E8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "播扬镇商圈",
+    "description": "位于播扬镇幸福路，以家和福商场内的商场为代表，服务于乡镇本地消费群体。",
+    "mall_codes": [
+      "MALL_7705BFA6"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "南郊商圈",
+    "description": "位于化州市南部郊区，包括图乐商城、好益家购物广场等，分布较为分散，服务于城乡结合部及周边村落。",
+    "mall_codes": [
+      "MALL_C34F0044",
+      "MALL_6FDFCE6A",
+      "MALL_250CC783",
+      "MALL_B0321004"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "长岐镇外围商圈",
+    "description": "位于化州东部外围区域，金龙喜商贸城为该片区代表性的商贸型商场，临近国道交通要道。",
+    "mall_codes": [
+      "MALL_0059F696"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "同庆镇外围商圈",
+    "description": "位于化州西部外围，亚超平价商场服务于当地乡镇居民，地理位置相对独立。",
+    "mall_codes": [
+      "MALL_141EE013"
+    ]
+  }
+]

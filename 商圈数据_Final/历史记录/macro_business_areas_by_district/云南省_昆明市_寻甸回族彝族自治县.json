@@ -1,0 +1,28 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "屏江路商圈",
+    "description": "位于屏江北路与旭东路交汇区域，包含华美万家购物广场等商业设施",
+    "mall_codes": [
+      "MALL_CA928790",
+      "MALL_CB7961CE"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "凤梧路商圈",
+    "description": "以凤梧路为核心，涵盖温商财富广场和老街商业城等商业项目",
+    "mall_codes": [
+      "MALL_88D902A9",
+      "MALL_2815076A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "百嘉路商圈",
+    "description": "位于百嘉路与兴嘉街交叉口周边，以财起购物中心为主要商业体",
+    "mall_codes": [
+      "MALL_44E6033E"
+    ]
+  }
+]

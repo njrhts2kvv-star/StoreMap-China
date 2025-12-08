@@ -1,0 +1,58 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "东湖商圈",
+    "description": "位于安宁市中心区域，围绕东湖周边形成的商业聚集区",
+    "mall_codes": [
+      "MALL_254A7364",
+      "MALL_63D2B676",
+      "MALL_02D85352"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "昆钢商圈",
+    "description": "昆钢片区传统商业区，服务周边居民生活需求",
+    "mall_codes": [
+      "MALL_B9DEDDC8",
+      "MALL_0658C222",
+      "MALL_EDDC5621"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "太平新城商圈",
+    "description": "太平新城现代化商业区，包含大型商业综合体",
+    "mall_codes": [
+      "MALL_853420CC",
+      "MALL_F9974D1B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "大学城商圈",
+    "description": "安宁大学城周边商业配套，服务高校师生群体",
+    "mall_codes": [
+      "MALL_FB7390F5",
+      "MALL_A3B08C2B"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "禄脿商圈",
+    "description": "禄脿街道核心商业区，服务周边乡镇居民",
+    "mall_codes": [
+      "MALL_9857DDD5",
+      "MALL_1958B4F6"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "吾悦商圈",
+    "description": "以吾悦广场为核心形成的商业聚集区",
+    "mall_codes": [
+      "MALL_3110D6C1",
+      "MALL_2E1A0FA1"
+    ]
+  }
+]

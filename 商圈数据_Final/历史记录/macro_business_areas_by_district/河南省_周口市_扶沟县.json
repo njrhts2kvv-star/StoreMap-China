@@ -1,0 +1,26 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "扶沟县城关商圈",
+    "description": "位于扶沟县城区核心区域，涵盖文化东路、东大街及周边主干道沿线的购物中心，是县城内商业较为集中的片区。",
+    "mall_codes": [
+      "MALL_9D9AF30C",
+      "MALL_2231EC92",
+      "MALL_6045211F",
+      "MALL_25B43FFB",
+      "MALL_3D607C33"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "扶沟南部乡镇商圈",
+    "description": "覆盖扶沟县南部乡镇区域，包括曹里乡及周边乡村地带的分散型生活购物场所，服务本地居民日常消费需求。",
+    "mall_codes": [
+      "MALL_102B9434",
+      "MALL_3474212E",
+      "MALL_F02B669C",
+      "MALL_526F4374",
+      "MALL_8E9BDA59"
+    ]
+  }
+]

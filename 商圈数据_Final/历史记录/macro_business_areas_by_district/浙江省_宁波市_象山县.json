@@ -1,0 +1,88 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "丹城天安路商圈",
+    "description": "位于象山县丹城核心区域，沿天安路集中分布多个商业设施，包括南苑商厦、宏利商城、汇金商城、锦杭百货等，是县城传统商业中心。",
+    "mall_codes": [
+      "MALL_1FC9DE3A",
+      "MALL_68A4403D",
+      "MALL_89ADB4A3",
+      "MALL_1D36BEF5",
+      "MALL_7D820C27",
+      "MALL_0C552AE7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "丹峰东路-博浪海港城商圈",
+    "description": "以丹峰东路与巨鹰路交叉口为核心，聚集象山恒太城、象山太平洋百货等大型商业体，形成新兴综合商业区。",
+    "mall_codes": [
+      "MALL_ED40E8E9",
+      "MALL_757B4EB8"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "丹南路万达商圈",
+    "description": "以宁波象山万达广场为核心，辐射周边形成现代化商业集聚区，是近年来发展迅速的主力商圈。",
+    "mall_codes": [
+      "MALL_D5CC31BE"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "白石-丹河路商圈",
+    "description": "位于丹西街道东部，以白石商业广场为代表，服务周边居住区的区域性商业中心。",
+    "mall_codes": [
+      "MALL_1DDCE023"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "松兰山旅游配套商圈",
+    "description": "位于松兰山滨海旅游度假区内，以松兰礼遇购物商场为主要商业配套，服务于游客和度假人群。",
+    "mall_codes": [
+      "MALL_6AA0892C"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "东边片区商圈",
+    "description": "位于象山东部沿海区域，以东边商业广场为代表，覆盖局部社区的边缘型商业节点。",
+    "mall_codes": [
+      "MALL_4DABCD31"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "汇兴路生活服务商圈",
+    "description": "位于汇兴路沿线，以家生活一站式生活用品购物中心为主，侧重日常生活消费的小型商业点。",
+    "mall_codes": [
+      "MALL_AB492FA4"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "丹峰西路建材商圈",
+    "description": "位于丹峰西路，以家居装饰地下商场为代表，聚焦家装建材的专业化商业区域。",
+    "mall_codes": [
+      "MALL_8642E687"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "建设路文昌商圈",
+    "description": "以文昌商城为核心，位于建设路沿线，服务于老城区居民的传统小型商业聚集地。",
+    "mall_codes": [
+      "MALL_19BD9119"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "象山港文化广场商圈",
+    "description": "依托象山港文化广场形成的公共文化与商业结合区域，具有一定的公共活动功能。",
+    "mall_codes": [
+      "MALL_6B3BC1D2"
+    ]
+  }
+]

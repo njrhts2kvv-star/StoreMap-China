@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "老城中心商圈",
+    "description": "以解放大道与乐山大道交汇区域为核心，覆盖传统商业集聚区，包含乐山商场、天中天街、北京商场、新玛特等老牌商场，是驿城区历史最悠久的商业中心。",
+    "mall_codes": [
+      "MALL_7AF90E7C",
+      "MALL_C8587B92",
+      "MALL_AA3D521B",
+      "MALL_D7EDAD84",
+      "MALL_7DDCA179",
+      "MALL_70305C63",
+      "MALL_F0559ECA",
+      "MALL_C70A25D6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "置地大道商圈",
+    "description": "位于城市新区置地大道沿线，集中了爱克广场、玖隆茂购物中心、恒大商业中心等现代商业项目，是近年来新兴的城市级商业中心，辐射范围广。",
+    "mall_codes": [
+      "MALL_3ABD16D4",
+      "MALL_2580FE2D",
+      "MALL_CBABCD8F",
+      "MALL_D5356696",
+      "MALL_1C386208"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "雪松大道-前进大道商圈",
+    "description": "依托雪松大道与前进大道交叉口形成的区域商业中心，核心项目为中骏世界城和浙江商贸城2期，具备较强的人流聚集效应和交通优势。",
+    "mall_codes": [
+      "MALL_4480BCCA",
+      "MALL_62DBBB3F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "中华路西段商圈",
+    "description": "位于中华路西侧，以喜盈门为核心，辅以鑫玖万客隆购物广场，服务周边大型居住区，形成区域性消费中心。",
+    "mall_codes": [
+      "MALL_3730BCB8",
+      "MALL_ABC52220"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "文化路商圈",
+    "description": "以文化路沿线为轴线，布局置地商城等商业设施，服务于行政与文教区域，体量较小但区位明确。",
+    "mall_codes": [
+      "MALL_D8783F9F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "上海商城独立点",
+    "description": "上海商城地理位置相对孤立，远离其他商场集群，未形成有效联动，作为单点存在。",
+    "mall_codes": [
+      "MALL_80A09DC4"
+    ]
+  }
+]

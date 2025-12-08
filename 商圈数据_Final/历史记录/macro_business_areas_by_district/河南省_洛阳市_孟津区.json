@@ -1,0 +1,57 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "会盟镇商圈",
+    "description": "位于孟津区会盟镇核心区域，涵盖会盟东大街及会盟西大街沿线商业，以五兄弟商行、福源商贸城为代表，服务本地居民日常消费。",
+    "mall_codes": [
+      "MALL_DB80D6EB",
+      "MALL_089EF295"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城区中心商圈",
+    "description": "集中在孟津老城区新华路与小浪底大道周边，包括商业大厦、致和时代广场及盛德美等，是区内人流最密集的传统商业中心。",
+    "mall_codes": [
+      "MALL_56505462",
+      "MALL_67C7C1D0",
+      "MALL_4D3B7539"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "河阳路商圈",
+    "description": "沿河阳路分布，聚集大张盛德美、望京汇城市广场和顺达生活广场，形成北部新兴综合商业带，辐射周边住宅区。",
+    "mall_codes": [
+      "MALL_F66A9A3C",
+      "MALL_A6F50D74",
+      "MALL_DF16A325"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "麻屯镇商圈",
+    "description": "位于麻屯镇区域，以大胡子商场为核心，服务于镇域内居民的基础购物需求。",
+    "mall_codes": [
+      "MALL_567D16BF"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "平乐镇商圈",
+    "description": "覆盖平乐镇群贤广场周边，以平乐百货楼为主要商业节点，满足乡镇日常生活配套。",
+    "mall_codes": [
+      "MALL_55E02677"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "送庄-姚凹沿线商圈",
+    "description": "沿243省道分布，连接朝阳商场、金牛购物广场与姚凹商贸城，构成东西向乡镇商贸走廊。",
+    "mall_codes": [
+      "MALL_7C6FF09A",
+      "MALL_ACA3D385",
+      "MALL_45C7C4E1"
+    ]
+  }
+]

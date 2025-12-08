@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇中心商圈",
+    "description": "位于利辛县城关镇核心区域，涵盖人民路、向阳路、淝河路与文州大道交汇地带，聚集了多个主要商业项目，是县城最密集的商业活动区域。",
+    "mall_codes": [
+      "MALL_B12678C4",
+      "MALL_4D453949",
+      "MALL_48052422",
+      "MALL_FA9F8053",
+      "MALL_E386CE6E",
+      "MALL_8C6C5979",
+      "MALL_823A1203",
+      "MALL_035C65F2",
+      "MALL_8BC353BF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南片区商圈",
+    "description": "位于城关镇南部，以和谐路与幸福大道周边为主，覆盖南部居民区的主要购物场所，商业布局相对独立，服务南部城区。",
+    "mall_codes": [
+      "MALL_D9ADE549"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城西乡镇商圈",
+    "description": "分布于利辛县西部及西北部乡镇，包括大李集镇、杨楼等地，商场多为乡镇级购物中心，服务于本地居民。",
+    "mall_codes": [
+      "MALL_91476D04",
+      "MALL_19E2A6BA",
+      "MALL_7B907D34",
+      "MALL_45C25FAD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城北乡镇商圈",
+    "description": "位于利辛县北部乡镇区域，涵盖张村镇、王市镇等地，商业设施分布较散，主要服务于周边乡镇人口。",
+    "mall_codes": [
+      "MALL_77B4D9FB",
+      "MALL_A1A177C8"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东部外围乡镇商圈",
+    "description": "分布在利辛县东部及东南部边缘乡镇，如胡集镇、展沟镇附近，地理位置偏远离主城区，服务本地乡镇消费。",
+    "mall_codes": [
+      "MALL_507249E1",
+      "MALL_FE180EEE"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "西南工业区周边商圈",
+    "description": "位于县城西南方向，靠近238省道与前进路交叉区域，毗邻物流和工业通道，商业配套以区域性商贸城为主。",
+    "mall_codes": [
+      "MALL_3E1E61CD",
+      "MALL_547D424C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "中部偏东商圈",
+    "description": "位于县城中部偏东的浙南片区，靠近209乡道与县道交汇处，地理位置居中但略偏东，服务范围覆盖周边多个社区。",
+    "mall_codes": [
+      "MALL_EDE668B1"
+    ]
+  }
+]

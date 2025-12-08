@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "九宫庙商圈",
+    "description": "以九宫庙地铁站为核心的传统商业中心，聚集多个中型购物中心和社区商业体，是大渡口区最成熟的商圈之一。",
+    "mall_codes": [
+      "MALL_6DA36E6A",
+      "MALL_CFED5520",
+      "MALL_B79135D8",
+      "MALL_D2C31004",
+      "MALL_AF91FC95",
+      "MALL_CA0B25F3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "万象城商圈",
+    "description": "以重庆大渡口万象汇为核心形成的新兴高端商业集聚区，包含A、B、C馆及周边体验式商业，定位区域级综合消费目的地。",
+    "mall_codes": [
+      "MALL_14313A6F",
+      "MALL_C66E81B9",
+      "MALL_B5F71367",
+      "MALL_5A8A0F30"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新山村商圈",
+    "description": "位于新山村街道的居住区配套商业集群，以壹街购物中心及其A/B区为主导，服务本地居民日常消费需求。",
+    "mall_codes": [
+      "MALL_A6B0D89C",
+      "MALL_16889FD1",
+      "MALL_FAD2043A",
+      "MALL_84595058",
+      "MALL_BA20EBAD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "建桥新城商圈",
+    "description": "依托建桥大道沿线产业与人口发展起来的新城区商业带，以万达广场为锚点，江城天街（在建）将强化其区域商业地位。",
+    "mall_codes": [
+      "MALL_F6098EF0",
+      "MALL_72A8E2AF"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "钓鱼嘴商圈",
+    "description": "位于大渡口南部的新兴发展片区，目前商业配套相对独立，以龙马汇商业广场为主要载体，面向未来城市拓展区域。",
+    "mall_codes": [
+      "MALL_3783927E"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "杨渡路商圈",
+    "description": "依托杨渡路沿线住宅与交通节点发展的社区型商业，以中交西西荟为代表，服务于周边新建居住区。",
+    "mall_codes": [
+      "MALL_1C7B767F"
+    ]
+  }
+]

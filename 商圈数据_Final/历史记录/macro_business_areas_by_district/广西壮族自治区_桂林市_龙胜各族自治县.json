@@ -1,0 +1,21 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "龙胜中心商圈",
+    "description": "位于龙胜各族自治县县城核心区域，涵盖兴龙中路沿线及周边主要商业设施，是县内传统商业集聚区，以本地居民日常消费为主。",
+    "mall_codes": [
+      "MALL_E9ABDAEA",
+      "MALL_DA8068E9",
+      "MALL_60E0C24F",
+      "MALL_5E7E72E7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "体育路商圈",
+    "description": "位于体育路与庆新路交汇区域，相对独立于县城主街商业带，依托大广福购物广场形成局部商业节点，服务周边居住区。",
+    "mall_codes": [
+      "MALL_AB212F8B"
+    ]
+  }
+]

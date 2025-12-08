@@ -1,0 +1,101 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "陆家嘴商圈",
+    "description": "位于浦东新区核心金融区，汇集高端购物中心和地标性商业体",
+    "mall_codes": [
+      "MALL_A1E705DE",
+      "MALL_F64E2A2B",
+      "MALL_411834A9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "八佰伴商圈",
+    "description": "以第一八佰伴为核心的传统商业中心，周边商业配套成熟",
+    "mall_codes": [
+      "MALL_2D04427F",
+      "MALL_B64D3511"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "世博商圈",
+    "description": "依托世博园区发展的新兴商业集聚区",
+    "mall_codes": [
+      "MALL_99C05696",
+      "MALL_D623BB06"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "金桥商圈",
+    "description": "金桥地区核心商业区，服务周边居民和产业园区",
+    "mall_codes": [
+      "MALL_09AFA6F4",
+      "MALL_3D262231",
+      "MALL_E01C886E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "三林商圈",
+    "description": "三林地区主要商业聚集地，服务周边社区",
+    "mall_codes": [
+      "MALL_85137C76",
+      "MALL_A5B460B1",
+      "MALL_1F544951"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "张江商圈",
+    "description": "张江科学城周边商业配套，服务高科技园区",
+    "mall_codes": [
+      "MALL_68A2D93B",
+      "MALL_6E28675B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "临港商圈",
+    "description": "临港新片区主要商业中心",
+    "mall_codes": [
+      "MALL_B9503A89"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "川沙商圈",
+    "description": "川沙地区核心商业区，临近迪士尼度假区",
+    "mall_codes": [
+      "MALL_E550344D",
+      "MALL_52C76D5E",
+      "MALL_E5C72D3E"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "前滩商圈",
+    "description": "前滩新兴商务区商业配套",
+    "mall_codes": [
+      "MALL_8D97A9CE"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "曹路商圈",
+    "description": "曹路地区主要商业中心",
+    "mall_codes": [
+      "MALL_AFCB5611"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "康桥商圈",
+    "description": "康桥地区商业聚集区",
+    "mall_codes": [
+      "MALL_B1C56013"
+    ]
+  }
+]

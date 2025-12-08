@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "珠江新城商圈",
+    "description": "位于天河区核心CBD，集聚高端商业综合体与地标建筑，以太古汇、K11、花城汇系列及高德置地广场为代表，形成广州最具代表性的现代都市商业中心。",
+    "mall_codes": [
+      "MALL_561B2809",
+      "MALL_E20BBD56",
+      "MALL_E6E116F0",
+      "MALL_A12E72F6",
+      "MALL_671CE0EA",
+      "MALL_BDAE12DA",
+      "MALL_8759BC62"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "天河路商圈",
+    "description": "横跨天河体育中心至岗顶段的成熟商业带，集中了天河城、正佳广场、天环Parc Central等大型购物中心，是广州历史最悠久、人流最密集的商业核心区之一。",
+    "mall_codes": [
+      "MALL_3CFD26C1",
+      "MALL_B6389DE0",
+      "MALL_AB35F8CF",
+      "MALL_815C4495",
+      "MALL_930DE03A",
+      "MALL_F4C638F6",
+      "MALL_BD763846"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "天河北/林和西商圈",
+    "description": "依托地铁三号线林和西至广州东站沿线发展起来的次级商业带，以东方宝泰为核心，连接周边办公与住宅区，形成区域型综合消费圈。",
+    "mall_codes": [
+      "MALL_D99D1287"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "员村-琶洲东部商圈",
+    "description": "分布于天河东部黄埔大道至奥体南路沿线，涵盖美林M·LIVE天地、优托邦等社区型商业项目，服务本地居民为主，商业密度相对较低。",
+    "mall_codes": [
+      "MALL_6AD13360",
+      "MALL_740E4BDC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "天河南-马场路商圈",
+    "description": "位于天河城以南、临珠江的居住配套商业区，以天河领展广场为代表，体量较小但贴近高端住宅群，具备一定社区商业活力。",
+    "mall_codes": [
+      "MALL_289E9008"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "梅花园商圈",
+    "description": "地处广州大道北梅花园地铁站周边，依托信达金茂广场形成局部商业节点，服务于北部居住组团，属外围片区型商业点。",
+    "mall_codes": [
+      "MALL_6FAB960B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "岗顶商圈",
+    "description": "以天娱广场为标志的岗顶电子与数码商业聚集地，虽当前商场数据表现弱，但地理位置明确，长期作为IT产品集散地存在特定功能定位。",
+    "mall_codes": [
+      "MALL_A6593B89"
+    ]
+  }
+]

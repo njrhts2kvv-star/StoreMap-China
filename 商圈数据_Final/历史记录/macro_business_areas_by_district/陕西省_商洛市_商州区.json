@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "北新街商圈",
+    "description": "位于商州区核心城区北新街沿线，聚集了多个传统购物中心和商业广场，是城区主要的商业集中带。",
+    "mall_codes": [
+      "MALL_7A45446D",
+      "MALL_CB05CCE6",
+      "MALL_1E358419",
+      "MALL_848C32B5",
+      "MALL_4C68CABA"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "万达广场商圈",
+    "description": "以商洛商州万达广场为核心，位于通江东路与州城路交汇区域，形成新兴的城市商业节点。",
+    "mall_codes": [
+      "MALL_5D469F79"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "现代国际广场商圈",
+    "description": "围绕现代国际广场及大都汇购物中心布局，地处西街与工农路附近，构成城区西部的重要商业组团。",
+    "mall_codes": [
+      "MALL_04D00C87",
+      "MALL_76B33776"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "中心广场/天信商圈",
+    "description": "位于北新街东段与中心广场交叉口周边，以天信商贸购物中心为代表，服务老城区东部居民。",
+    "mall_codes": [
+      "MALL_6738E9AD",
+      "MALL_6C1074E0"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "名人街商圈",
+    "description": "坐落于名人街与工农路交汇处附近，依托天元时代广场形成区域性商业点。",
+    "mall_codes": [
+      "MALL_435C6646"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "南环路商圈",
+    "description": "位于城区南部南环路与民生路交叉区域，以百丰购物中心为主要商业载体，辐射南部居住区。",
+    "mall_codes": [
+      "MALL_67E86629"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "居然之家商圈",
+    "description": "位于惠民二路与沪霍线交叉口附近，依托晨光购物中心服务于城市外围家居消费人群。",
+    "mall_codes": [
+      "MALL_005D8489"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "团结路商圈",
+    "description": "位于团结路18号，以商州交通批发商城为核心，形成以批发贸易为主的特色商业节点。",
+    "mall_codes": [
+      "MALL_54340ED1"
+    ]
+  }
+]

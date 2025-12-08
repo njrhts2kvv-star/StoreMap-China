@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "路桥老城商圈",
+    "description": "以中盛百货、东方华联购物广场等为核心，覆盖银座街与商城街周边传统商业集聚区，是路桥区历史较久的商业中心。",
+    "mall_codes": [
+      "MALL_C92BCE8C",
+      "MALL_1BB80EEF",
+      "MALL_C65BC60B",
+      "MALL_72BAB774",
+      "MALL_45DC32CD",
+      "MALL_BF2EE002",
+      "MALL_ECF11968"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "财富大道商贸商圈",
+    "description": "围绕财富大道沿线的中国日用品商城及其B区组成，集中于桐商路与凤栖路一带，主打日用商品批发与零售，具有专业市场特征。",
+    "mall_codes": [
+      "MALL_BD541669",
+      "MALL_7D35DCEE"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "吾悦广场商圈",
+    "description": "以吾悦广场为单一核心，位于腾达路主干道附近，辐射范围较广，是近年来新兴的城市综合体商业节点。",
+    "mall_codes": [
+      "MALL_62211ECD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新桥镇商圈",
+    "description": "位于路桥区新桥镇区域，以新桥领悦广场为代表，服务本地居民的区域性商业中心。",
+    "mall_codes": [
+      "MALL_C0F57E62"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "银安街生活商圈",
+    "description": "以宏达生活广场为中心，位于银安街沿线，靠近居民区，侧重日常生活配套和社区型消费。",
+    "mall_codes": [
+      "MALL_035E60B7"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "赵王村周边商圈",
+    "description": "以赵王购物中心为主，地处马铺路赵王村，服务于城乡结合部及周边村落的日常购物需求。",
+    "mall_codes": [
+      "MALL_F6C65C28"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "振屿路商圈",
+    "description": "以新一佳购物广场为核心，位于振屿路188号，属于局部社区型商业点，覆盖周边居住区。",
+    "mall_codes": [
+      "MALL_015B5375"
+    ]
+  }
+]

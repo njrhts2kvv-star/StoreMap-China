@@ -1,0 +1,95 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城北商圈",
+    "description": "以万达广场和德豪购物广场为核心，覆盖庐山北路一带的商业集聚区，是德阳市较为现代的商业中心之一。",
+    "mall_codes": [
+      "MALL_F5E91E7A",
+      "MALL_365ADC57"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城中商圈",
+    "description": "位于长江西路沿线，集中了人民商场、洋洋广场、新时代广场等多个传统商业体，构成德阳老城区的核心商业带。",
+    "mall_codes": [
+      "MALL_93563063",
+      "MALL_B7037403",
+      "MALL_2C663CF5",
+      "MALL_24221E4F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "岷江路商圈",
+    "description": "围绕岷江西路与庐山南路分布，包括凯旋国际·上美广场、盛唐摩尔等商场，服务旌东片区居民，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_BE71EDAD",
+      "MALL_5A88FE88",
+      "MALL_DE87CA9E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "文庙广场商圈",
+    "description": "依托文庙历史文化背景，聚集南华春天、地一街购物中心、德阳商城等小型商业体，形成集购物与文化体验于一体的街区型商业区。",
+    "mall_codes": [
+      "MALL_0EFCFA20",
+      "MALL_04D0DADA",
+      "MALL_DBE024F9",
+      "MALL_55F3001E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "天山北路商圈",
+    "description": "以印象汇为主要载体，位于天山北路，周边商业配套逐步完善，成为新兴的城市次级商业中心。",
+    "mall_codes": [
+      "MALL_0F28ED28"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "恒大商贸城商圈",
+    "description": "由德阳恒大国际商贸城及其附属建筑组成，聚焦批发与综合零售，位于阿里山街附近，服务于专业市场及周边社区。",
+    "mall_codes": [
+      "MALL_9680FF1D",
+      "MALL_74D8A8F9",
+      "MALL_2AFF2BA2"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "城南商圈",
+    "description": "位于鞍山路与嘉陵江东路段，涵盖嘉悦里项目，地处城市南部发展轴，具备一定社区商业基础。",
+    "mall_codes": [
+      "MALL_E0239369"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "西北外围商圈",
+    "description": "分布于兴隆路、黄许镇等城市边缘区域，包含安安商业广场、家家福购物中心、欣欣购物广场等乡镇级商业设施，辐射远郊人口。",
+    "mall_codes": [
+      "MALL_9935AC98",
+      "MALL_1A7271CE",
+      "MALL_1335AB4A"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "景都商圈",
+    "description": "位于旌阳区西部偏北，以景都购物中心为唯一核心，服务局部社区，属区域性小型商业点。",
+    "mall_codes": [
+      "MALL_C1274022"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "吾悦广场商圈",
+    "description": "奥特乐位于吾悦广场内，虽未直接列出吾悦广场主体，但基于位置判断其依附于该商业体，构成独立商业节点。",
+    "mall_codes": [
+      "MALL_6C046EA0"
+    ]
+  }
+]

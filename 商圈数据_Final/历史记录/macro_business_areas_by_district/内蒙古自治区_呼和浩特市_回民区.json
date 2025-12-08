@@ -1,0 +1,69 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中山西路商圈",
+    "description": "以中山西路为核心的传统商业中心，聚集了多家老牌商厦和百货商场，如王府井百货、维多利购物中心、天元商厦等，是呼和浩特市回民区最成熟的商业集聚区。",
+    "mall_codes": [
+      "MALL_7BF15698",
+      "MALL_8DB3501E",
+      "MALL_1A077FCB",
+      "MALL_232F62E3",
+      "MALL_9FC063ED",
+      "MALL_57CC6D69",
+      "MALL_998C35E6",
+      "MALL_9DB44481",
+      "MALL_3E000BD0",
+      "MALL_7F16ADEF",
+      "MALL_ACF6B6CC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "新华广场商圈",
+    "description": "依托新华广场地铁枢纽形成的新兴商业节点，周边有新华MALL等商业设施，交通便利，具备一定人流集散能力，商业潜力逐步释放。",
+    "mall_codes": [
+      "MALL_37CE45F1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，结合周边商业中心形成的现代化商业组团，位于成吉思汗西街与阿拉善北路交汇区域，配套较新，辐射城北居住区。",
+    "mall_codes": [
+      "MALL_1BDD1E60",
+      "MALL_67CC3CE7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "青城公园商圈",
+    "description": "位于青城公园西南角及周边，依托公园人流形成的生活性商业节点，代表项目为亚辰海派广场，商业氛围相对休闲化。",
+    "mall_codes": [
+      "MALL_9938EFA8"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "钢铁路商圈",
+    "description": "位于钢铁路与新华西街交汇区域，以传统社区型商业为主，代表项目为钢铁路百货商场，服务周边居民，商业能级较低。",
+    "mall_codes": [
+      "MALL_8422D2FA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "县府街商圈",
+    "description": "位于县府街一带，以金河商城为代表的老牌小商品市场类商业点，主要服务于本地居民日常消费，业态偏传统。",
+    "mall_codes": [
+      "MALL_A75F0851"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "贝尔路商圈",
+    "description": "集中在贝尔路商业街与文化宫路东巷交叉区域，以满达商城为代表，形成区域性社区商业中心，具有一定街面商业活力。",
+    "mall_codes": [
+      "MALL_A6F62B67"
+    ]
+  }
+]

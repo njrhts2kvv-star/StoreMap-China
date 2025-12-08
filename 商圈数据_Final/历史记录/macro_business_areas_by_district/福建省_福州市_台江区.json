@@ -1,0 +1,55 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "宝龙万象城商圈",
+    "description": "位于福州市台江区工业路沿线，以宝龙广场、万象九宜城为核心，涵盖苏宁广场等商业项目，是台江西部重要的集中商业区。",
+    "mall_codes": [
+      "MALL_E724414B",
+      "MALL_7F41D0AC",
+      "MALL_24FDE51F",
+      "MALL_8D1646AF",
+      "MALL_319EE315",
+      "MALL_36BEB2C6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "台江万达商圈",
+    "description": "以鳌峰路万达广场为中心，聚集东百运动生活城等商业体，形成台江东部滨江板块的商务与消费核心区域。",
+    "mall_codes": [
+      "MALL_BADEADC5",
+      "MALL_6A786ACD"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "中亭街/台江路商圈",
+    "description": "传统台江核心商业带，覆盖东百元洪城、南星商城、好莱钨主题百货等，依托地铁达道站和中亭街人流密集优势。",
+    "mall_codes": [
+      "MALL_17744E8D",
+      "MALL_45D18C44",
+      "MALL_5112042B",
+      "MALL_9400BE47",
+      "MALL_BE0CA1BA",
+      "MALL_E8FC1F30",
+      "MALL_689F3873"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "茶亭商圈",
+    "description": "以茶亭地铁站为枢纽，辐射儒商楼、太平洋·茶亭里等小型商业载体，构成台江中部偏北的生活配套商业圈。",
+    "mall_codes": [
+      "MALL_F57D28D6",
+      "MALL_A2ECA2BB"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "白马路万科里商圈",
+    "description": "位于台江区西北部白马路与西洋路交汇区域，以白马路万科里为主要商业节点，服务周边居民区。",
+    "mall_codes": [
+      "MALL_EB929B00"
+    ]
+  }
+]

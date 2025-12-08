@@ -1,0 +1,38 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "平武县城中心商圈",
+    "description": "以飞龙路中段及报恩寺街周边为核心，覆盖华西商城、娇子东风商场、平武凤阳商贸、春天百货等主要商业设施，是平武县最集中的商业活动区域。",
+    "mall_codes": [
+      "MALL_BFCCEC69",
+      "MALL_FEC22D81",
+      "MALL_4B2152BE",
+      "MALL_A7D46DAB",
+      "MALL_7B8658BB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "涪江南路商圈",
+    "description": "位于涪江南路中段，以旺客多购物中心为代表，服务周边居民区，是平武县城南部的重要消费节点。",
+    "mall_codes": [
+      "MALL_50C3121B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "龙安镇南街商圈",
+    "description": "依托水井坊彩虹商场，服务于龙安镇老城区居民，地处南街核心路段，具有一定的社区商业基础。",
+    "mall_codes": [
+      "MALL_17D6AADF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "水晶街外围乡镇商圈",
+    "description": "位于平武县偏远乡镇区域，以茗扬购物中心为典型代表，地处水晶街与荣华街交叉口附近，服务于当地乡镇居民。",
+    "mall_codes": [
+      "MALL_0ABD58C3"
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "西北角商圈",
+    "description": "以西北角地铁站为核心，聚集了鹏欣·水游城及其各座、天津陆家嘴中心等商业项目，是红桥区重要的交通枢纽型商圈，地理位置集中，商业联动性强。",
+    "mall_codes": [
+      "MALL_A55C2D02",
+      "MALL_2BCB517A",
+      "MALL_EB7FF379",
+      "MALL_2BF02BC7",
+      "MALL_742B020B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大胡同商圈",
+    "description": "位于红桥区传统商贸核心区，涵盖万隆大胡同商业中心7区、百年大胡同、友联商贸楼、天奕新厦、天津都行商城等， historically 以批发和零售贸易为主，商场分布密集，形成区域性成熟商圈。",
+    "mall_codes": [
+      "MALL_1530E591",
+      "MALL_A062CFA4",
+      "MALL_D86288BF",
+      "MALL_9A218FAD",
+      "MALL_F315F9C6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "丁字沽商圈",
+    "description": "位于红桥区北部，涵盖天津百货大楼凯莱赛商厦、天食广场、宝能城市广场等，沿丁字沽一线路及周边分布，服务本地居民为主的综合性生活商圈。",
+    "mall_codes": [
+      "MALL_D1BE91A4",
+      "MALL_7079E9DE",
+      "MALL_4BFE5D2F"
+    ]
+  }
+]

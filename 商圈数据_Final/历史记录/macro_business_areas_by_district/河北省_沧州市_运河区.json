@@ -1,0 +1,93 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新华路商圈",
+    "description": "以新华路为主线，集中分布多个传统商厦和购物中心，包括华北商厦、同天购物中心及其周边附属商业体，是运河区核心商业带。",
+    "mall_codes": [
+      "MALL_480478E5",
+      "MALL_7B9EE7CA",
+      "MALL_71644A54",
+      "MALL_50617649",
+      "MALL_E34932DF",
+      "MALL_F632D4B2",
+      "MALL_D4495E37",
+      "MALL_1C05F2FE"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "同天-狮城商圈",
+    "description": "围绕同天购物中心及狮城广场形成的西部核心商圈，涵盖多个紧密相邻的商业项目，位于朝阳街与解放西路一带，是区域性消费中心。",
+    "mall_codes": [
+      "MALL_FBC4B42C",
+      "MALL_C49CBE12",
+      "MALL_A63B94D3",
+      "MALL_0B39AE82",
+      "MALL_F8CBC91B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "光荣路-金街商圈",
+    "description": "位于光荣路与金街步行街交汇区域，聚集上海广场等商业节点，靠近市中心传统步行街区，具备较强人流集聚效应。",
+    "mall_codes": [
+      "MALL_42ACFB09"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "浮阳大道商圈",
+    "description": "位于浮阳北大道与新华路交叉口附近，以人民商坊为代表，辐射周边居民区，形成次级商业中心。",
+    "mall_codes": [
+      "MALL_08492115"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "永安南大道商圈",
+    "description": "位于城市南部新兴发展区域，以吾悦广场为核心，地处交通主干道交叉口，服务南部城区及周边居住组团。",
+    "mall_codes": [
+      "MALL_B2FFCBBA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "黄河西路商圈",
+    "description": "沿黄河西路分布，以悦港城生活广场为标志，覆盖西部城区生活配套需求，定位社区型商业中心。",
+    "mall_codes": [
+      "MALL_A3A7ACC8"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "太原路商圈",
+    "description": "位于运河区北部太原路沿线，以沧州东塑明珠商贸城为主要载体，主打批发零售与大众消费结合的商业模式。",
+    "mall_codes": [
+      "MALL_CF847E99"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "清池南大道商圈",
+    "description": "依托清池南大道主轴线，以沧州信誉楼商厦为核心，服务于城市东部片区，具有较强区域辐射能力。",
+    "mall_codes": [
+      "MALL_016561A7"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "御河路商圈",
+    "description": "位于御河路沿线，以理享山28号商场为代表，服务于周边中高端住宅区，属社区级商业补充节点。",
+    "mall_codes": [
+      "MALL_C9C570E8"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "宝利商厦商圈",
+    "description": "依附于宝利商厦建筑体内，以小叶子青少儿购物中心为特色，定位垂直细分市场，体量较小但功能明确。",
+    "mall_codes": [
+      "MALL_D758DB71"
+    ]
+  }
+]

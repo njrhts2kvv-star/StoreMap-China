@@ -1,0 +1,33 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "眉县中心商圈",
+    "description": "位于眉县城区核心区域，涵盖迎宾路、美阳街、首善街等主干道沿线的多个商业设施，包括天龙百货、眉县供销商场、福顺路商城等，是眉县传统商业集聚区。",
+    "mall_codes": [
+      "MALL_D8ABDA92",
+      "MALL_7E22E7CB",
+      "MALL_955CD36B",
+      "MALL_80AADB30",
+      "MALL_5AF9C797",
+      "MALL_B4334291",
+      "MALL_4F2867CA",
+      "MALL_AE2F31EF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "常兴大道商圈",
+    "description": "位于眉县常兴镇片区，以红梅商城(吊车)为核心，服务常兴镇及周边工业区居民，商业布局相对独立，距县城中心有一定距离。",
+    "mall_codes": [
+      "MALL_4B726EBE"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "齐镇商圈",
+    "description": "位于眉县齐镇区域，以新贸鑫都购物广场为代表，服务于齐镇本地居民，地处县域南部边缘，具有明显的乡镇级商业特征。",
+    "mall_codes": [
+      "MALL_C7D9E2CA"
+    ]
+  }
+]

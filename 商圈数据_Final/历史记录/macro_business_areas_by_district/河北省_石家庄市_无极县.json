@@ -1,0 +1,29 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "光明街商圈",
+    "description": "以光明北街和光明南街为核心，覆盖供销商场、大众商城、世纪城商场和鑫洲购物中心，是无极县传统的商业集中区域，交通便利，人流密集。",
+    "mall_codes": [
+      "MALL_C917DCD0",
+      "MALL_E6614C08",
+      "MALL_CCE2F2E4",
+      "MALL_E39547F6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中昌西路商圈",
+    "description": "位于中昌西路与贸易南街交汇地带，以中昌商贸城为核心，结合周边商业资源形成区域性商圈，服务本地居民为主。",
+    "mall_codes": [
+      "MALL_2F21F35E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "中发路商圈",
+    "description": "依托中发路与幸福北街交叉区域，以星光天元商城为支点，构成县城东北部新兴的商业节点。",
+    "mall_codes": [
+      "MALL_BBBCFEC0"
+    ]
+  }
+]

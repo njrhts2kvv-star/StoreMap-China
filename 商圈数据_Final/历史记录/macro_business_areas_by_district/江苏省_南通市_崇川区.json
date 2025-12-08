@@ -1,0 +1,83 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南大街商圈",
+    "description": "以八佰伴和文峰大世界为核心，覆盖南通传统市中心南大街一带的商业集聚区，是崇川区历史最悠久的商业中心之一。",
+    "mall_codes": [
+      "MALL_2E55BE99",
+      "MALL_AF701DD1"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "人民路商圈",
+    "description": "沿人民路分布，包括京扬市集、王府井生活中心等商业项目，地处城市核心区，交通便利，商业氛围浓厚。",
+    "mall_codes": [
+      "MALL_99FC1A55",
+      "MALL_7BF9E883"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "工农路/圆融商圈",
+    "description": "以圆融购物中心和金鹰购物中心为主要载体，位于工农路沿线，毗邻地铁文峰站，形成中高端商业聚集带。",
+    "mall_codes": [
+      "MALL_9F110896",
+      "MALL_D05C5727"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新城桥商圈",
+    "description": "以南通CBD大有境及其A座、复悦里、印象城等为核心，集中于桃园路至工农南路一带，是近年来崛起的城市新中心商业集群。",
+    "mall_codes": [
+      "MALL_0BDC8252",
+      "MALL_7DC33E5D",
+      "MALL_814F8ECA",
+      "MALL_E5436004"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "五水商圈",
+    "description": "位于西北部区域，包含万达广场、喜悦汇商业广场和奥特莱斯购物广场，依托深南路与石桥路形成复合型消费片区，涵盖休闲、购物与奥特莱斯业态。",
+    "mall_codes": [
+      "MALL_1BDE5C16",
+      "MALL_779EFDC0",
+      "MALL_3E99DA25"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "观音山商圈",
+    "description": "东部新兴商业节点，以崇川大有境为核心，位于观畅路附近，服务周边大型居住区与行政中心。",
+    "mall_codes": [
+      "MALL_B20AFB3A"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "开发区科教城商圈",
+    "description": "南部科教文化区域商业配套，涵盖紫琅新天地与南通市凤凰文化广场，服务于紫琅湖片区及周边高校、文化设施。",
+    "mall_codes": [
+      "MALL_19A76133",
+      "MALL_359260B4"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "苏通产业园商圈",
+    "description": "位于苏通科技产业园区内，以福地商业广场为代表，服务于园区产业人口与周边居民的区域性商业中心。",
+    "mall_codes": [
+      "MALL_BB980067"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "新东板块商圈",
+    "description": "东部城区重要商业节点，以世茂广场为标志性项目，位于新河东路，辐射主城区东部居住组团。",
+    "mall_codes": [
+      "MALL_5BA7808C"
+    ]
+  }
+]

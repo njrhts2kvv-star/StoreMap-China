@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "太平路商圈",
+    "description": "以太平路为主轴，集中了波斯特活力城、8090时尚广场、金街商城等多个商业体，是西安区核心商业带之一。",
+    "mall_codes": [
+      "MALL_73D7B371",
+      "MALL_A2E70EED",
+      "MALL_243188AC",
+      "MALL_3A29C3A3",
+      "MALL_6EC9460B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "西长安街商圈",
+    "description": "位于西长安街沿线，汇聚大商集团百货大楼和朝鲜民族百货广场，构成西安区西部重要商业节点。",
+    "mall_codes": [
+      "MALL_8904A02A",
+      "MALL_D4124CD5"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "景福街商圈",
+    "description": "依托景福街形成的小型商业集聚区，以东方源地下商贸城为代表，服务周边居民。",
+    "mall_codes": [
+      "MALL_4380C0C7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "海浪路商圈",
+    "description": "位于西安区南部海浪路沿线，以海浪小区百货商场为典型代表，属社区型商业配套。",
+    "mall_codes": [
+      "MALL_E54CD100"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "平安街商圈",
+    "description": "集中在平安街与主要道路交叉口附近，包括8090地下商场等点位，形成街头型商业聚集。",
+    "mall_codes": [
+      "MALL_5428CB6A"
+    ]
+  }
+]

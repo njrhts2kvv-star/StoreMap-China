@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "太和大道商圈",
+    "description": "以太和大道南段为核心，聚集了多个商业体，包括美好家园购物中心、银丰国际东方商业中心等，是射洪市城区内较为集中的商业片区。",
+    "mall_codes": [
+      "MALL_8F1B1B72",
+      "MALL_33E496C8",
+      "MALL_D86C4640",
+      "MALL_0EF1AA1F",
+      "MALL_3C7ADAC7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中央景峰商圈",
+    "description": "位于伯玉街与新阳街交叉口附近，以中央景峰为核心，周边分布有凯立广场、金源商场等商业设施，构成射洪市中心另一个重要商业节点。",
+    "mall_codes": [
+      "MALL_1FEB4049",
+      "MALL_EC75E83E",
+      "MALL_246BCE57",
+      "MALL_973F3D2C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "涪江大道商圈",
+    "description": "位于涪江大道沿线，以射洪万达广场为主要标志，是城市主干道上的重点商业布局区域，具备未来发展潜力。",
+    "mall_codes": [
+      "MALL_1346849B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "复兴镇商圈",
+    "description": "位于射洪市下辖的复兴镇，以世纪红商场为代表，服务于本地居民，属于乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_9974C9E0"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "洋溪镇商圈",
+    "description": "位于射洪市西南部，以百惠购物中心为唯一代表，服务周边乡镇居民，属于外围区域性商业点。",
+    "mall_codes": [
+      "MALL_00283FEA"
+    ]
+  }
+]

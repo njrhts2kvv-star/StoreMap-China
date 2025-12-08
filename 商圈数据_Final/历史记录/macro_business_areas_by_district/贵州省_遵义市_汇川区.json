@@ -1,0 +1,66 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "珠海路商圈",
+    "description": "以珠海路为核心，聚集了国贸购物中心、海珠广场、国贸春天百货等商业体，是汇川区较为集中的商业中心之一。",
+    "mall_codes": [
+      "MALL_F6E416CD",
+      "MALL_7F29C913",
+      "MALL_9828A84C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "香港路商圈",
+    "description": "位于香港路沿线，涵盖大成商贸城、鑫泰广场、长征商贸城等，形成以传统商贸市场为主的商业集聚区。",
+    "mall_codes": [
+      "MALL_31B22D59",
+      "MALL_78353D49",
+      "MALL_DB1B374A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "上海路-昆明路商圈",
+    "description": "覆盖上海路与昆明路交界区域，包括悦萃城生活广场、世贸城A区等，服务于周边居民区，具备一定生活配套商业功能。",
+    "mall_codes": [
+      "MALL_CCAE07FC",
+      "MALL_DEE67053"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "长沙路-大连路商圈",
+    "description": "涵盖长沙路与大连路片区，包含万兴购物、医学院地下商场等，依托社区和医疗教育机构形成的基础型商业节点。",
+    "mall_codes": [
+      "MALL_B5E18CF2",
+      "MALL_CDABFC23"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "南京路商圈",
+    "description": "以南京路为核心，拥有在建的C6广场，地理位置居中，未来有望成为连接多个片区的重要商业节点。",
+    "mall_codes": [
+      "MALL_D81A0DAB"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "澳门路-温州路商圈",
+    "description": "位于澳门路与温州路一带，集中了众汇达购物中心、自游港奥特莱斯广场、澳港商贸城等，形成区域性综合商业集群。",
+    "mall_codes": [
+      "MALL_332F6EB1",
+      "MALL_8C7AFE90",
+      "MALL_57F7EDFF"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "新蒲新区外围商圈",
+    "description": "振华购物中心位于洪江路，位置相对独立，处于城市扩展方向边缘，服务新兴居住区，构成外围成长型商业点。",
+    "mall_codes": [
+      "MALL_9E88609A"
+    ]
+  }
+]

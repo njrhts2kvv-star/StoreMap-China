@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "大中海步行街商圈",
+    "description": "以大中海步行街为核心，聚集了多个商业体，包括丹尼斯百货、万悦城及多家中小型商场，是湖滨区较为集中的商业片区。",
+    "mall_codes": [
+      "MALL_AFD83412",
+      "MALL_60F9717B",
+      "MALL_4D0F2132",
+      "MALL_1B4EDB25",
+      "MALL_756D88DB",
+      "MALL_0C71D43C",
+      "MALL_14715EBC",
+      "MALL_EC992C45"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "黄河路中段商圈",
+    "description": "位于黄河路中段沿线，分布有三门峡百货大楼、大张百货、时代百货等传统商业设施，属于城市主干道上的成熟商业带。",
+    "mall_codes": [
+      "MALL_19ACFDC6",
+      "MALL_82FEA5E3",
+      "MALL_0BB5A343",
+      "MALL_C0C5ECE2",
+      "MALL_5D41B110",
+      "MALL_8A337539",
+      "MALL_87AB8F27"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大岭北路商圈",
+    "description": "位于大岭北路与黄河西路交叉区域，包含千禧鲜生活、大大商城等配套商业，服务于北部居住区。",
+    "mall_codes": [
+      "MALL_14A8B513",
+      "MALL_38DBA685"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "六峰北路商圈",
+    "description": "分布在六峰北路与黄河东路交叉口附近，建业新天地为该片区代表商业项目，辐射周边住宅。",
+    "mall_codes": [
+      "MALL_C6382AAF"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "高铁南站商圈",
+    "description": "依托高铁南站区位优势，天鹅国际广场位于此区域，具备交通导向型商业特征。",
+    "mall_codes": [
+      "MALL_1B1EC6FD"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "大岭南路商贸商圈",
+    "description": "以三门峡国际商贸城A座为代表，地处大岭南路，侧重批发零售与综合商贸功能。",
+    "mall_codes": [
+      "MALL_8FEB6E3C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "大岭路北万达商圈",
+    "description": "位于大岭路北路，三门峡湖滨万达广场坐落于此，虽当前数据为空，但属品牌主导型规划商圈。",
+    "mall_codes": [
+      "MALL_EF1C123B"
+    ]
+  }
+]

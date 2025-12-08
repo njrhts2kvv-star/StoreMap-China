@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金乡县城中心商圈",
+    "description": "位于金乡县老城区核心地带，涵盖金山街、中心街、奎星路交汇区域，是县城传统商业集聚区，包含多家老牌商厦与购物广场。",
+    "mall_codes": [
+      "MALL_0CAF182C",
+      "MALL_17639E83",
+      "MALL_4ABA4D14",
+      "MALL_0C89ED85",
+      "MALL_0C78720C",
+      "MALL_6A1B98D9",
+      "MALL_0C78720C",
+      "MALL_7D3AC88A",
+      "MALL_FCF99613",
+      "MALL_9F29E42D",
+      "MALL_59CDF854",
+      "MALL_49127A23"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "嘉欣新城商圈",
+    "description": "以崇文大道与奎星路交汇处为核心，辐射孙庄社区周边，是金乡县东部新兴商业发展带，代表项目为嘉欣商城。",
+    "mall_codes": [
+      "MALL_696EC0BC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "化雨镇商圈",
+    "description": "位于金乡县化雨乡所在地，服务乡镇居民日常消费，以化雨街为中心形成区域性小型商业节点。",
+    "mall_codes": [
+      "MALL_CCC4634D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "马庙镇商圈",
+    "description": "依托马庙镇金谷社区形成的地方性商业配套，主要服务本地居民，代表项目为鲁杭时代生活广场。",
+    "mall_codes": [
+      "MALL_7A22A8DC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "胡集镇商圈",
+    "description": "位于胡集镇中心街区，围绕商业街与中心街交叉口布局，服务于胡集镇及周边区域的零售需求。",
+    "mall_codes": [
+      "MALL_9F37A3F0"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "高河街道商圈",
+    "description": "位于金乡县北部高河街道片区，集中分布于金曼克大道与文峰路延伸带，包括多个商贸城分区和精品城项目，构成县域北部重要商业集群。",
+    "mall_codes": [
+      "MALL_4B20D321",
+      "MALL_2DA157EB",
+      "MALL_73E8DBF2"
+    ]
+  }
+]

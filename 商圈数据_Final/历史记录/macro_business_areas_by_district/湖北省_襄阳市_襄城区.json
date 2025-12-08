@@ -1,0 +1,45 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "鼓楼商圈",
+    "description": "以鼓楼商场为核心，涵盖北街与西街交汇处的传统商业中心，是襄城区老城核心商圈之一。",
+    "mall_codes": [
+      "MALL_E95A3926",
+      "MALL_DFC2E265"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "檀溪路商圈",
+    "description": "位于檀溪路沿线，聚集凯地广场及周边商业体，服务檀溪片区居民，形成区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_87B49FBF",
+      "MALL_79E6FD81"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "环山南路商圈",
+    "description": "分布于环山南路与虎头山冲路附近，以君临山购物广场为代表，辐射周边住宅区的社区型商业节点。",
+    "mall_codes": [
+      "MALL_544B79E0"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "欧庙镇商圈",
+    "description": "位于欧庙镇丹二路，包含供销商城和好又多购物广场，服务于乡镇居民的基础商业配套区域。",
+    "mall_codes": [
+      "MALL_E87A7172",
+      "MALL_F6A8F349"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "白云村商圈",
+    "description": "位于白云村一组，以一奇购物中心为唯一商业载体，属于偏远村级零售点，规模较小。",
+    "mall_codes": [
+      "MALL_A47E88F8"
+    ]
+  }
+]

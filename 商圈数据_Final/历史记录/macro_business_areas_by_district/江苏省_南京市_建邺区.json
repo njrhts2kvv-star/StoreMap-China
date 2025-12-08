@@ -1,0 +1,48 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "河西CBD商圈",
+    "description": "以江东中路为核心，覆盖南京国际博览中心、中央商务区核心地段，聚集高端商业与城市综合体，是建邺区最核心的现代商业中心。",
+    "mall_codes": [
+      "MALL_7431D8D0",
+      "MALL_6294276A",
+      "MALL_3089E62C",
+      "MALL_3E14C02B",
+      "MALL_33C8F5C4",
+      "MALL_A7F544B0",
+      "MALL_DDC4E8CB",
+      "MALL_1978CA25",
+      "MALL_B2AF77C9",
+      "MALL_4E912192"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "河西南部商圈",
+    "description": "位于河西南段，涵盖油坊桥、永初地铁站周边，商业布局较新，以社区型和新兴商业中心为主，服务南部居住区。",
+    "mall_codes": [
+      "MALL_88AC41D9",
+      "MALL_723E1718",
+      "MALL_1C006D97"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "江心洲商圈",
+    "description": "坐落于江心洲岛内，依托地铁江心洲站发展，包含仁恒系商业项目，定位生态科技岛配套商业，独立成片。",
+    "mall_codes": [
+      "MALL_EF89BFE7",
+      "MALL_F9E62751"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "江山大街商圈",
+    "description": "位于金沙江西街至江山大街沿线，靠近南京南站辐射区，分布有Vanli江山中心、澎湃力中心等项目，属新兴商业拓展区。",
+    "mall_codes": [
+      "MALL_69FDEB44",
+      "MALL_3AECF6A0",
+      "MALL_46064A3B"
+    ]
+  }
+]

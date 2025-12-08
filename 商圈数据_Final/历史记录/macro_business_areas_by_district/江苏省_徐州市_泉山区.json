@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "淮海西路商圈",
+    "description": "以淮海西路为核心干道，聚集了金鹰国际购物中心、新都商业广场及其A/B座等主要商业体，是泉山区西部重要的商业集聚区。",
+    "mall_codes": [
+      "MALL_571DD42B",
+      "MALL_CF8A2C54",
+      "MALL_A629543D",
+      "MALL_244DCC3C",
+      "MALL_5FF986F9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "矿山路-苏堤路商圈",
+    "description": "位于泉山区北部，涵盖华美商厦及周边商业配套，依托地铁苏堤路站形成区域性消费节点。",
+    "mall_codes": [
+      "MALL_9DA363AB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "湖北路商圈",
+    "description": "以湖北路为轴线，分布有新盛广场等商业项目，服务周边成熟居住区，构成泉山区中部的生活型商圈。",
+    "mall_codes": [
+      "MALL_780ABB41"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "玉带大道奥莱商圈",
+    "description": "位于泉山区西南部，以徐州杉杉奥特莱斯广场为核心，主打品牌折扣与休闲购物，形成特色化零售聚集区。",
+    "mall_codes": [
+      "MALL_9CCDD644"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "三胞国际广场商圈",
+    "description": "依托三胞国际广场空间载体，布局京东奥莱等新型零售业态，地处市中心向南延伸带，具备一定交通可达性优势。",
+    "mall_codes": [
+      "MALL_FB866893"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "黄河南路-水漫桥路商圈",
+    "description": "位于泉山区东部边缘，由星宿生活广场和漫桥商业广场组成，服务于周边社区，形成局部生活服务型商业组团。",
+    "mall_codes": [
+      "MALL_9F2A0C0F",
+      "MALL_4B4DD253"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "二环西路商圈",
+    "description": "位于泉山区西北部，以世成百汇为代表，地处主干道交叉口，具备基础商业功能。",
+    "mall_codes": [
+      "MALL_8F9AF486"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "新淮海西路西延商圈",
+    "description": "处于城市拓展区域，荣益广场坐落于此，临近规划道路，具有未来发展潜力的新兴商业点位。",
+    "mall_codes": [
+      "MALL_F3B11E76"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "三环南路社区商圈",
+    "description": "位于泉山区南部，颐和汇邻湾作为小型社区商业代表，服务于周边住宅小区，规模较小但贴近居民生活。",
+    "mall_codes": [
+      "MALL_642A0775"
+    ]
+  }
+]

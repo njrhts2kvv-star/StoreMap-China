@@ -1,0 +1,93 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "武陵阁商圈",
+    "description": "位于常德市武陵区核心地带，以武陵阁步行街为中心，聚集多个商业体，是传统市中心和人流密集的商业中心。",
+    "mall_codes": [
+      "MALL_EABFF1C9",
+      "MALL_51336DCA",
+      "MALL_C92A3EA3",
+      "MALL_94EB54CD",
+      "MALL_20FF4D49"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "万达广场商圈",
+    "description": "围绕常德万达广场及万达国际中心形成的城市综合体商圈，集购物、娱乐、办公于一体，是武陵区新兴的核心商业区。",
+    "mall_codes": [
+      "MALL_40CF1B0E",
+      "MALL_F68123A5",
+      "MALL_916D9D0C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "友阿国际广场商圈",
+    "description": "以友阿国际广场为核心，包含周边高端百货与商业配套，是武陵区朗州路沿线的重要商业节点。",
+    "mall_codes": [
+      "MALL_EA5C7DF4",
+      "MALL_6D57718A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "人民路商圈",
+    "description": "沿人民路分布的商业集群，涵盖FUN.1617年轻活力场和梅尼广场等，服务本地居民，具有较强的生活化特征。",
+    "mall_codes": [
+      "MALL_CA871FD3",
+      "MALL_6160494E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "城东欢乐城商圈",
+    "description": "位于武陵大道与新河路交汇区域，以M+欢乐城A馆为主体，结合周边商业设施形成东部新兴消费圈。",
+    "mall_codes": [
+      "MALL_8DA0860C",
+      "MALL_8D2BC709"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "德山大道商圈",
+    "description": "位于武陵区南部德山板块，以莲花天街为代表，覆盖德山大道沿线商业布局，服务于经开区及周边居住区。",
+    "mall_codes": [
+      "MALL_D45BF485"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "恒大商业中心商圈",
+    "description": "依托恒大影城及商业配套形成的社区型商业中心，位于武陵区东部，辐射周边住宅区。",
+    "mall_codes": [
+      "MALL_FE62298D"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "城西熙城汇商圈",
+    "description": "位于常德大道与芙蓉路交汇处，以熙城汇为支点，构成城市西部入口处的区域性商业节点。",
+    "mall_codes": [
+      "MALL_8FF574AB"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "湘西北商贸城商圈",
+    "description": "位于常德经开区，由湘西北商贸城内多栋商业建筑组成，主打批发零售与专业市场功能，属产业型商业集聚区。",
+    "mall_codes": [
+      "MALL_CA06FA3C",
+      "MALL_0719D2BA",
+      "MALL_27D62086"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "穿紫河玫瑰广场商圈",
+    "description": "临近屈原公园与穿紫河景区，以玫瑰广场为代表，服务周边居民与游客，属社区型小型商业圈。",
+    "mall_codes": [
+      "MALL_1358EE86"
+    ]
+  }
+]

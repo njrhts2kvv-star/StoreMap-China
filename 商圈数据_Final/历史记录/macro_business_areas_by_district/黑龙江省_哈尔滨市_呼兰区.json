@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "呼兰老城区商圈",
+    "description": "位于呼兰区传统核心区域，覆盖东府路及南大街周边，以呼兰四百、百货大楼等为代表，服务于本地居民日常消费。",
+    "mall_codes": [
+      "MALL_CB66F6C1",
+      "MALL_84BB480A",
+      "MALL_5E556267"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "利民开发区/学院路商圈",
+    "description": "集中在利民开发区学院路沿线及周边，聚集了志华广场、家得乐商城、德金娱乐广场等多个商业体，依托高校与地铁站点形成年轻化消费集聚区。",
+    "mall_codes": [
+      "MALL_B747850E",
+      "MALL_7540943C",
+      "MALL_AE69D1BB",
+      "MALL_DBFFBACA",
+      "MALL_461085E6",
+      "MALL_FF82BB8A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "康金镇商圈",
+    "description": "位于呼兰区下辖的康金镇，以康金镇百货大楼为核心，服务乡镇本地居民的基础商业需求。",
+    "mall_codes": [
+      "MALL_43CDEE3A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "君豪商圈",
+    "description": "围绕哈萝公路与利民大道交叉口的新兴商业节点，以君豪网红城为主要载体，具备一定区域吸引力。",
+    "mall_codes": [
+      "MALL_DE74317C"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "呼兰北顺路商圈",
+    "description": "位于呼兰城区北部北顺路与顺东路交汇区域，以利来购物中心为标志，辐射周边居住区。",
+    "mall_codes": [
+      "MALL_20B6A508"
+    ]
+  }
+]

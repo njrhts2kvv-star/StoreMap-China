@@ -1,0 +1,41 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五常市中心商圈",
+    "description": "位于五常市主城区核心区域，集中分布于亚臣路、建设大街、葵花大街等主干道交汇地带，涵盖多个传统商业载体，是五常市区主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_A8FE2A6A",
+      "MALL_6F8BC844",
+      "MALL_AB9E57B1",
+      "MALL_F90A1771",
+      "MALL_5DA0410D",
+      "MALL_FC9DC4D1",
+      "MALL_1F83A2F5",
+      "MALL_524A7101"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "拉林镇商圈",
+    "description": "位于五常市下辖的拉林满族镇，以拉林商城为核心，服务于当地居民的区域性商业中心，地理位置相对独立于五常市区。",
+    "mall_codes": [
+      "MALL_A0C57E4E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "山河街商圈",
+    "description": "位于五常市山河大街沿线，以供销商场(山河大街)为主要商业节点，覆盖周边社区的生活服务型商圈。",
+    "mall_codes": [
+      "MALL_A9FDBFDE"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "营城子商圈",
+    "description": "位于五常市营城子满族乡，依托靠河供销商场形成的小型乡镇级商业节点，服务本地乡村及周边人口。",
+    "mall_codes": [
+      "MALL_A6FCDF8C"
+    ]
+  }
+]

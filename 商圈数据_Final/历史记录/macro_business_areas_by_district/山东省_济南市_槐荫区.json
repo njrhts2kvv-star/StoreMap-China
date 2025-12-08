@@ -1,0 +1,81 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "西市场商圈",
+    "description": "以华联商厦为核心，聚集嘉华购物广场、路港和平商城等多个商业体，位于经二路沿线，是槐荫区传统商贸集聚区。",
+    "mall_codes": [
+      "MALL_A6356BE4",
+      "MALL_3704A5B9",
+      "MALL_37996C68",
+      "MALL_2C95CB40",
+      "MALL_F58CF599",
+      "MALL_8342D0A6",
+      "MALL_69A008F7",
+      "MALL_411F56D6",
+      "MALL_410606FC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "和谐广场商圈",
+    "description": "以和谐广场和银座商城为主体，位于经十路主干道，毗邻多个住宅区，是槐荫区东部重要的现代商业中心。",
+    "mall_codes": [
+      "MALL_56C2126F",
+      "MALL_BF6C6675",
+      "MALL_17C5FF3B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "阳光100商圈",
+    "description": "围绕阳光100美乐汇南区、北区及主区形成的生活配套商业带，服务阳光新路周边大型社区，具备较强社区消费属性。",
+    "mall_codes": [
+      "MALL_DAC4F7B7",
+      "MALL_EA636C91",
+      "MALL_56F3C6AC"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "张庄路-兴福寺路商圈",
+    "description": "由广友购物广场和弘阳广场构成，位于张庄路与兴福寺路交汇区域，服务于西部城区居民，具有较强区域辐射力。",
+    "mall_codes": [
+      "MALL_BF731449",
+      "MALL_6620301C"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "济南西城天街商圈",
+    "description": "以龙湖济南西城天街为单一核心，位于经十路与腊山河东路交叉口，是槐荫区西部新兴的购物中心集聚点。",
+    "mall_codes": [
+      "MALL_02AFDD43"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "腊山南商圈",
+    "description": "以欢乐颂购物中心为主导，汇邦邻里中心为补充，位于刘长山路与腊山西路交界处，服务南部新兴居住区。",
+    "mall_codes": [
+      "MALL_A461FD72",
+      "MALL_E7B35F60"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "青岛路商圈",
+    "description": "以中建幸福MALL内的幸福市集为代表，位于青岛路沿线，属槐荫区西北部新兴社区商业节点。",
+    "mall_codes": [
+      "MALL_D651F27D",
+      "MALL_99C11EAD"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "槐荫广场商圈",
+    "description": "以槐荫广场人防商城为中心，地处经六路核心地段，是老城区局部商业活力点。",
+    "mall_codes": [
+      "MALL_571AF0F3"
+    ]
+  }
+]

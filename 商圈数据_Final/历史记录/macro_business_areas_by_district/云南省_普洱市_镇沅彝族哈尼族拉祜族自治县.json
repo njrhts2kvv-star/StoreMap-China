@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "和平镇商圈",
+    "description": "位于镇沅县城核心区域，集中了惠美家购物中心和新世纪购物中心等主要商业设施",
+    "mall_codes": [
+      "MALL_DDB0D461",
+      "MALL_B9339BB5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "人民路商圈",
+    "description": "位于人民路与商云路交叉口周边，以红树林生活坊为代表的商业区域",
+    "mall_codes": [
+      "MALL_4BF5B60B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "建设路商圈",
+    "description": "位于建设路与恩水路交叉口周边，以青松商场为代表的商业区域",
+    "mall_codes": [
+      "MALL_039F542C"
+    ]
+  }
+]

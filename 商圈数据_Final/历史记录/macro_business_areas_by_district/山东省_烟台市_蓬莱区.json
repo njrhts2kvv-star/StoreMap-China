@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "登州路-钟楼路商圈",
+    "description": "位于蓬莱区核心城区，以钟楼路为主线，覆盖登州路与钟楼路交叉区域，聚集多个传统商场和购物点，是区内主要商业集中带。",
+    "mall_codes": [
+      "MALL_BE6A26DD",
+      "MALL_E2B902F8",
+      "MALL_E1B3176B",
+      "MALL_A72A6DA4",
+      "MALL_FA8202BA",
+      "MALL_2BC5FA47",
+      "MALL_F4CAAA1E",
+      "MALL_3B964194"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北关路商圈",
+    "description": "沿北关路分布，以利群海情广场、悦动港湾及蓬莱购物广场为核心，形成北部城区的主要商业集群，交通便利，商业密度较高。",
+    "mall_codes": [
+      "MALL_5D9E3D9A",
+      "MALL_A83DC1F3",
+      "MALL_CD071519",
+      "MALL_E996C5C7"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南关路-东关路商圈",
+    "description": "位于城区南部，以南海商厦、南海商贸城及其B区为主体，覆盖南关路与东关路交汇区域，服务周边居民区，形成南部重要商贸集散地。",
+    "mall_codes": [
+      "MALL_74DD0FD5",
+      "MALL_3A77EFD2",
+      "MALL_0744E7D0"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "海市西路商圈",
+    "description": "位于城区东部延伸带，以蓬莱国际购物中心为唯一核心，地处海市西路与抹直口路交叉区域，辐射东部居住板块，具备一定发展潜力。",
+    "mall_codes": [
+      "MALL_3541C842"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "盛唐国际商圈",
+    "description": "位于登州路东延段，靠近海天平民大药房一带，以盛唐国际商城为单一核心，位置相对独立，服务于东部特定社区。",
+    "mall_codes": [
+      "MALL_AE10C5DC"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "鹊嘴路商圈",
+    "description": "位于蓬莱区北部边缘，以金鼎商贸城与鸾凤商场为双核心，集中在鹊嘴路39号附近，属区域性小型商业节点。",
+    "mall_codes": [
+      "MALL_70A0CC30",
+      "MALL_DA175AF1"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "黄金河路商圈",
+    "description": "位于蓬莱区西南远郊，仅含金鼎购物广场，地理位置偏远，远离主城区，自成一个孤立商业点，服务局部区域。",
+    "mall_codes": [
+      "MALL_96268109"
+    ]
+  }
+]

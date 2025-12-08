@@ -1,0 +1,14 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新华路商圈",
+    "description": "以新华路为核心干道，集中分布多个传统商贸商场，涵盖建设路与新城路交汇区域，形成县城中心商业集聚区。",
+    "mall_codes": [
+      "MALL_E514755E",
+      "MALL_EABD2ACB",
+      "MALL_4E6945AD",
+      "MALL_B3F2E3EE",
+      "MALL_794E23EB"
+    ]
+  }
+]

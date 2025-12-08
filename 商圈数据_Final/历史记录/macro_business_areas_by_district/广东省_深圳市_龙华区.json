@@ -1,0 +1,51 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "龙华壹方天地商圈",
+    "description": "以壹方天地B、C、D区为核心，集中布局在人民路与工业路交汇区域，是龙华区规模较大的现代商业综合体集群，辐射周边民治、龙华中心片区。",
+    "mall_codes": [
+      "MALL_45A4FAFE",
+      "MALL_D06B66F4",
+      "MALL_26DDB104"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "民治中心商圈",
+    "description": "位于民治大道沿线，涵盖佐阾香颂、嘉熙业广场、天虹商场、星河COCO City等项目，依托地铁4号线和密集居住区形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_2B1FF28C",
+      "MALL_847504D4",
+      "MALL_45B8D839",
+      "MALL_ED93575A",
+      "MALL_CCFC3517"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "红山-深圳北站商圈",
+    "description": "围绕红山地铁站与深圳北站枢纽布局，包括红山六九七九、深圳民治壹方里、缤果空间等商业体，具备交通枢纽型商圈特征，连接城市轨道交通网络。",
+    "mall_codes": [
+      "MALL_94A5C659",
+      "MALL_45FE0194",
+      "MALL_4F059A55"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "观澜中心商圈",
+    "description": "分布于观澜大道沿线，以兴万达广场、百佳华Max City为主要载体，服务观澜本地居民，形成区域性基础商业配套。",
+    "mall_codes": [
+      "MALL_8460E815",
+      "MALL_FD5F8B92"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "观澜湖新城商圈",
+    "description": "位于观澜湖片区，依托观澜湖新城MH MALL及地铁观澜湖站，结合旅游休闲资源发展而成的特色商业节点，定位偏文旅消费。",
+    "mall_codes": [
+      "MALL_DD5659DE"
+    ]
+  }
+]

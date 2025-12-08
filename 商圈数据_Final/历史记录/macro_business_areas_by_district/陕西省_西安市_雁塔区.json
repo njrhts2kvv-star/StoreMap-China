@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "小寨商圈",
+    "description": "以小寨地铁站为核心，聚集多个大型购物中心，是雁塔区最核心的商业中心之一，涵盖赛格国际、银泰城、MOMOPARK等标志性商场。",
+    "mall_codes": [
+      "MALL_FA845EE2",
+      "MALL_D93CE6D2",
+      "MALL_12FF7EAD",
+      "MALL_D01503CB",
+      "MALL_D723023E",
+      "MALL_F23551ED"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "高新商圈",
+    "description": "位于西安高新区科技路沿线，汇聚中大国际、金鹰国际、大都荟等中高端商业项目，服务于高新产业园区及周边高收入人群。",
+    "mall_codes": [
+      "MALL_B90754C9",
+      "MALL_0DCC9207",
+      "MALL_504D613E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "曲江商圈",
+    "description": "依托大雁塔、大唐芙蓉园等文旅地标，形成集文化、旅游、商业于一体的高端消费区域，包括大悦城、万象城、金地广场等大型综合体。",
+    "mall_codes": [
+      "MALL_73C53580",
+      "MALL_B3D412A8",
+      "MALL_22F133CD",
+      "MALL_92E7B27A",
+      "MALL_87AB56D5",
+      "MALL_E829D22B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "丈八/锦业路商圈",
+    "description": "位于高新区南部延伸带，以立丰城、益田假日里为代表，服务软件新城及周边新兴居住区，商业密度相对较低但潜力较大。",
+    "mall_codes": [
+      "MALL_A62B2A39",
+      "MALL_E4A1A395"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "电子城商圈",
+    "description": "覆盖雁塔区西南部传统居住区，包含兰岛广场、南飞鸿·乐荟中心等社区型商业，满足区域居民日常消费需求。",
+    "mall_codes": [
+      "MALL_36C62268",
+      "MALL_D3302A8F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "西部大道商圈",
+    "description": "位于雁塔区西南边缘，依托荟聚中心为区域旗舰商业体，辐射西部大道沿线大型住宅区，是近年来新兴发展的外围商圈。",
+    "mall_codes": [
+      "MALL_F06722B1"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "长安南路商圈",
+    "description": "沿长安南路分布，以曼蒂广场为代表，地处高校与居民区交汇地带，商业体量较小，定位偏社区配套。",
+    "mall_codes": [
+      "MALL_23E3AFF5"
+    ]
+  }
+]

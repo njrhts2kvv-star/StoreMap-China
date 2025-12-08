@@ -1,0 +1,59 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "老城中心商圈",
+    "description": "位于船山区传统市中心，涵盖顺南街、遂州中路等核心街道，聚集了新世纪百货、银丰国际商业中心、遂州商场等老牌商业体，是遂宁市历史悠久的商业集聚区。",
+    "mall_codes": [
+      "MALL_31D046EA",
+      "MALL_4E9184D3",
+      "MALL_C55804D7",
+      "MALL_7F2EC467",
+      "MALL_6440FB98",
+      "MALL_79BB3F49",
+      "MALL_C3CAA321",
+      "MALL_A615EE53",
+      "MALL_E489E2E6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城北商圈",
+    "description": "覆盖明月路及遂州北路一带，以万兴商场、君利来百货系列门店为主，服务城北居民区，属于区域性传统商业集聚点。",
+    "mall_codes": [
+      "MALL_F74F246F",
+      "MALL_7B9CB83D",
+      "MALL_16683DC0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城南商圈",
+    "description": "位于遂州南路至南津路沿线，包含凯旋商城、南津商城、君利来城南商场、美宁广场等，辐射南部城区，具备一定生活配套商业基础。",
+    "mall_codes": [
+      "MALL_4064569D",
+      "MALL_92B0693A",
+      "MALL_13AE4DA5",
+      "MALL_1B9FE1FA",
+      "MALL_DD66FA1E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "物流港商圈",
+    "description": "地处西宁街道健坤国际片区，集中了健坤国际名品购物中心、健坤国际百货广场、欢乐新天地等项目，依托物流港规划形成的新城商业集群。",
+    "mall_codes": [
+      "MALL_47EA677F",
+      "MALL_444D72E0",
+      "MALL_C6EF986A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "高新东区商圈",
+    "description": "位于高新区民惠路与问陶路交叉口附近，以高新联邻广场为核心，服务于高新技术产业园区及周边新兴居住区，属城市东部新兴商业节点。",
+    "mall_codes": [
+      "MALL_9ABC4DEE",
+      "MALL_93238401"
+    ]
+  }
+]

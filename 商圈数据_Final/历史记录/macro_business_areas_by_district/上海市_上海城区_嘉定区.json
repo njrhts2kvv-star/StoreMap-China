@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南翔商圈",
+    "description": "位于南翔镇核心区域，聚集了多个大型商业综合体",
+    "mall_codes": [
+      "MALL_3E32FAF6",
+      "MALL_6C24E734",
+      "MALL_17B5A53B",
+      "MALL_07BD4CB2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "嘉定新城商圈",
+    "description": "嘉定新城核心商业区，包含多个现代化购物中心",
+    "mall_codes": [
+      "MALL_74E09129",
+      "MALL_CDC6E904",
+      "MALL_B6C13BED",
+      "MALL_3F992301",
+      "MALL_A0ED3C11"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "安亭商圈",
+    "description": "安亭镇核心商业区域，以汽车城为特色",
+    "mall_codes": [
+      "MALL_E727E475",
+      "MALL_3F9770AB",
+      "MALL_AF8E1A32"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "江桥商圈",
+    "description": "江桥地区商业中心，辐射周边居民区",
+    "mall_codes": [
+      "MALL_D0EBAC7E",
+      "MALL_9FB80FCA"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "马陆商圈",
+    "description": "马陆镇核心商业区，服务周边社区",
+    "mall_codes": [
+      "MALL_E6C13EA3"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "嘉定老城商圈",
+    "description": "嘉定老城区传统商业中心",
+    "mall_codes": [
+      "MALL_5E608B26",
+      "MALL_037906DD",
+      "MALL_66088D16",
+      "MALL_2466FE4C"
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中央商城商圈",
+    "description": "以中央商城及其A、B、C区为核心，集中分布在安宜东路与丽人街周边，是宝应县传统的商业中心区域，多购物与生活服务类场所。",
+    "mall_codes": [
+      "MALL_450962B4",
+      "MALL_7683BC30",
+      "MALL_EF0E41CE",
+      "MALL_1A466FE4",
+      "MALL_47211A83"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "吾悦广场商圈",
+    "description": "位于通运路与淮江大道附近，以吾悦广场和红星a家馆为主要载体，是宝应县新兴的现代化商业集聚区，具备较强的品牌吸引力和交通便利性。",
+    "mall_codes": [
+      "MALL_80C99BA8",
+      "MALL_FCA1B89B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城西-金源商圈",
+    "description": "分布于东阳中路及城西片区，包含金源温泉生活广场和花城商业广场等，服务于西部城区居民，功能偏重生活休闲与社区配套。",
+    "mall_codes": [
+      "MALL_9CCE41E9",
+      "MALL_0CDC3E6A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城北商圈",
+    "description": "位于安宜北路一带，以永年百货和银座GINZA工作室为代表，覆盖城北居住区，商业密度相对较低，主要满足区域性日常消费需求。",
+    "mall_codes": [
+      "MALL_4DAAFC8E",
+      "MALL_EAB42C70"
+    ]
+  }
+]

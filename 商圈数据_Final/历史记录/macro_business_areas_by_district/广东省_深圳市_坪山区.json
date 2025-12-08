@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "坪山中心商圈",
+    "description": "以坪山街道为核心，覆盖益田假日世界及周边商业体，地处深汕路主干道，毗邻地铁站，是坪山区较为集中的商业活跃区域。",
+    "mall_codes": [
+      "MALL_38CF301F",
+      "MALL_187784D8",
+      "MALL_DC4B0B0D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "坑梓核心商圈",
+    "description": "集中于坑梓街道人民西路、梓兴路一带，涵盖多个社区型商业广场和购物点，是坑梓片区主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_17E5B463",
+      "MALL_319BC81F",
+      "MALL_93EEAF22",
+      "MALL_4659940F",
+      "MALL_E1657DAE",
+      "MALL_B26A9DAF",
+      "MALL_13726413",
+      "MALL_58D67458",
+      "MALL_EA5795B1",
+      "MALL_CA4BD01C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "龙田-龙湾商圈",
+    "description": "位于龙田街道龙湾客家文化商业广场周边，依托文化商业项目形成区域性商业节点，覆盖周边居民区。",
+    "mall_codes": [
+      "MALL_8D1E542E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "马峦-沙博潜力商圈",
+    "description": "分布于马峦街道与沙博社区，包含零散商贸城与规划中项目，目前商业密度较低，具备未来发展潜力。",
+    "mall_codes": [
+      "MALL_50FF93F7",
+      "MALL_5F762F3E",
+      "MALL_0923B71B",
+      "MALL_6A8D4535",
+      "MALL_26D2962E"
+    ]
+  }
+]

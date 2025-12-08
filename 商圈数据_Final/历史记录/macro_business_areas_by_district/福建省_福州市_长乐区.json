@@ -1,0 +1,53 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "吴航中心商圈",
+    "description": "位于长乐区吴航街道核心区域，涵盖万星广场、盛昌综合商城及周边商业体，是长乐传统城区的主要商业集聚区。",
+    "mall_codes": [
+      "MALL_5E4B6424",
+      "MALL_B54CB596",
+      "MALL_C968BE51"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "十洋-长山湖商圈",
+    "description": "以十洋国际城和长山湖广场为核心，地处郑和中路沿线，地铁十洋站附近，形成区域性综合消费中心。",
+    "mall_codes": [
+      "MALL_E4CBA2F2",
+      "MALL_A842130A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "金峰镇商圈",
+    "description": "集中于金峰镇区域，包含印象汇、好莱钨儿童文化城等项目，服务于当地居民的日常消费与家庭娱乐需求。",
+    "mall_codes": [
+      "MALL_B0B7AE2B",
+      "MALL_BBA33ABF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "漳港-江田外围商圈",
+    "description": "分布于长乐南部沿海乡镇，包括漳港旺镇商城、永康商城、甘墩街商业城及南乡商贸城、集美百货，属镇级基础商业配套。",
+    "mall_codes": [
+      "MALL_582DC563",
+      "MALL_948801C7",
+      "MALL_3927A39A",
+      "MALL_B4E35DE1",
+      "MALL_EE52222F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "筹岐-和谐路商圈",
+    "description": "位于长乐新区会堂南路与和谐路交汇地带，聚集正源财富广场、长乐吾悦广场（在建）及安平广场，为新兴城市拓展方向的潜力商圈。",
+    "mall_codes": [
+      "MALL_ABAB75D0",
+      "MALL_02897D39",
+      "MALL_C3ADF305",
+      "MALL_6E26DE3C"
+    ]
+  }
+]

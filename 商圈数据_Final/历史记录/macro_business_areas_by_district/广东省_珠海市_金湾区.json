@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "平沙商圈",
+    "description": "位于珠海市金湾区平沙镇核心区域，集中了多个商业城和购物广场，如京华MALL、兆丰商业城、钰海万国汇系列等，是平沙镇主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_7D33DFF4",
+      "MALL_E6A0C5C7",
+      "MALL_EC189F59",
+      "MALL_E9D6DA8E",
+      "MALL_37F8206A",
+      "MALL_67511C5B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "红旗商圈",
+    "description": "位于金湾区红旗镇，以华晨商业广场、旭泰商业城、泰然西西里等为核心，覆盖虹晖路周边商业节点，是红旗镇的主要消费中心。",
+    "mall_codes": [
+      "MALL_D09B621F",
+      "MALL_FF8CA623",
+      "MALL_CE81D808",
+      "MALL_37656930",
+      "MALL_E2526867",
+      "MALL_238B23F0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "三灶商圈",
+    "description": "位于金湾区三灶镇，以鹏泰百货及其分店、睦邻商业中心为主要商业载体，服务于三灶镇居民，形成区域性生活消费圈。",
+    "mall_codes": [
+      "MALL_D19180A0",
+      "MALL_CC0E91FC",
+      "MALL_DD51A19A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南水商圈",
+    "description": "位于金湾区南水镇，以南水购物广场为核心，辐射周边工业区与居民区，是南水镇重要的综合性商业节点。",
+    "mall_codes": [
+      "MALL_D3A63BCB"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "湖心路口商圈",
+    "description": "位于金湾区西部，靠近斗门交界处，以听涛雅苑商业广场、翰林商业广场为代表，依托金文路与县道交叉口的交通优势形成新兴商业聚集点。",
+    "mall_codes": [
+      "MALL_89338476",
+      "MALL_15B0BB0B"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "高栏港商圈",
+    "description": "位于珠海大道沿线，临近铁炉北路，以珠海生活营地和第首购物广场为支点，服务高栏港工业区及周边居住人群。",
+    "mall_codes": [
+      "MALL_09E5C653",
+      "MALL_85637124"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "航空新城商圈",
+    "description": "位于金湾区核心发展片区航空新城范围内，以万科里缤纷海岸为主要商业项目，结合城市新中心规划，具备现代商业服务功能。",
+    "mall_codes": [
+      "MALL_8380EEDF"
+    ]
+  }
+]

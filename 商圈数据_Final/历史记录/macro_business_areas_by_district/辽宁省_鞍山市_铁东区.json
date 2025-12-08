@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "站前商圈",
+    "description": "以鞍山站前为核心的传统商业中心，聚集了大量老牌商场和地下商业设施，是铁东区最繁华的商业集聚区。",
+    "mall_codes": [
+      "MALL_C6884FEE",
+      "MALL_AC88C097",
+      "MALL_2868A3BC",
+      "MALL_7D7514CD",
+      "MALL_F66B25E7",
+      "MALL_730073C0",
+      "MALL_534E31ED",
+      "MALL_1A7E577C",
+      "MALL_3A43684D",
+      "MALL_EF17AAFA",
+      "MALL_7ED2963C",
+      "MALL_6F99C96F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "胜利路商圈",
+    "description": "沿胜利南路分布的现代商业带，拥有新玛特、北方新生活等中高端商业体，是铁东区重要的新兴消费区域。",
+    "mall_codes": [
+      "MALL_7EC17B1C",
+      "MALL_6196E72D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "园林大道商圈",
+    "description": "位于铁东区南部，以时代广场为核心，周边商业配套逐步完善，服务南部居住区。",
+    "mall_codes": [
+      "MALL_6D3F6A2C"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "建国路商圈",
+    "description": "依托万象汇和盛仕商贸城形成的东部商业集聚区，辐射范围覆盖铁东东部及周边居民区。",
+    "mall_codes": [
+      "MALL_B3E01D32",
+      "MALL_826AED12"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "钢城街商圈",
+    "description": "位于铁东区北部，以申江商业中心为节点，连接周边住宅与商业服务，形成区域性消费点。",
+    "mall_codes": [
+      "MALL_9213E45A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "红星国际商圈",
+    "description": "以红星国际广场为核心的南部新兴商业节点，目前商业体量较小，主要服务于周边社区。",
+    "mall_codes": [
+      "MALL_DAB090F3"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "八卦街商圈",
+    "description": "位于铁东区东北部，以银光购物中心为标志，结合传统街区形态发展而成的特色商业点。",
+    "mall_codes": [
+      "MALL_25451639"
+    ]
+  }
+]

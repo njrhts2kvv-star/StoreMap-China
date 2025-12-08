@@ -1,0 +1,50 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "孚玉镇中心商圈",
+    "description": "位于宿松县孚玉镇核心区域，集中了多个主要购物中心，如华尔商城、发到家购物广场、振兴商城等，是县城内商业密度最高的片区。",
+    "mall_codes": [
+      "MALL_93B05F79",
+      "MALL_4EB99B9A",
+      "MALL_D2140071",
+      "MALL_3448EF58",
+      "MALL_0B6D4B4C",
+      "MALL_614199A5",
+      "MALL_706FAA06"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "破凉镇/五谷村商圈",
+    "description": "位于宿松县破凉镇五谷村周边，以五谷购物中心和佳美购物中心为代表，服务当地乡镇居民，形成区域性乡镇商业节点。",
+    "mall_codes": [
+      "MALL_950D7EEA",
+      "MALL_D9BBFCD3"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "太白路-龙湖路商圈",
+    "description": "分布于太白路与龙湖路沿线，包括亿加依购物中心和购物中心（龙湖路店），覆盖城东新兴居住区，具备一定社区商业集聚特征。",
+    "mall_codes": [
+      "MALL_BFFE0AA6",
+      "MALL_1275D189"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "佐坝乡商圈",
+    "description": "位于宿松县佐坝乡王岭街，以江林大卖场为核心，服务于周边乡村地区，属于典型的乡镇级独立商业点。",
+    "mall_codes": [
+      "MALL_1AA5E151"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "沙塘路商圈",
+    "description": "位于沙塘路与环城南路交叉口附近，以海牧盛源自选购物中心为主要商业载体，辐射老城区南部边缘地带。",
+    "mall_codes": [
+      "MALL_C4E37E6A"
+    ]
+  }
+]

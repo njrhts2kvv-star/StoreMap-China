@@ -1,0 +1,85 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "递铺中心商圈",
+    "description": "位于安吉县递铺街道核心区域，聚集了多个主要商业设施，包括安吉商城、博瑞广场、第一百货等，是县城传统商业中心。",
+    "mall_codes": [
+      "MALL_6AD75AAE",
+      "MALL_1F03AD5A",
+      "MALL_6331880F",
+      "MALL_CD9109C8",
+      "MALL_C7D4EA81",
+      "MALL_E832BF84",
+      "MALL_A986EB1D",
+      "MALL_92B4D564",
+      "MALL_4A27664A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城西老城商圈",
+    "description": "位于安吉县城西部老城区，涵盖华立商城、浙北大厦等早期商业项目，服务本地居民为主，商业密度较低。",
+    "mall_codes": [
+      "MALL_526164C2",
+      "MALL_5230E93A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "灵峰城南商圈",
+    "description": "位于灵峰街道城南片区，以南茂购物中心为核心，靠近居住区，配套基础商业服务。",
+    "mall_codes": [
+      "MALL_6AD75AAE",
+      "MALL_CFFD041E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "天荒坪路商圈",
+    "description": "沿天荒坪中路分布，以博瑞广场为代表，处于城市主干道交汇处，具备一定交通与商业集聚优势。",
+    "mall_codes": [
+      "MALL_6AD75AAE"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "梅溪镇商圈",
+    "description": "位于安吉县梅溪镇，以天和商城为唯一具备品牌门店的商场，服务于乡镇居民。",
+    "mall_codes": [
+      "MALL_9ECF40B8"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "天子湖镇商圈",
+    "description": "位于安吉县北部天子湖镇，以北林场商贸城为代表，服务于周边乡镇及工业区。",
+    "mall_codes": [
+      "MALL_89EEC3A3"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "良朋镇商圈",
+    "description": "位于安吉县西部良朋片区，以良朋供销大楼为主要商业节点，服务乡镇级消费。",
+    "mall_codes": [
+      "MALL_24A2BAC9"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "东滨社区商圈",
+    "description": "位于递铺街道东滨社区，以东滨购物中心为代表，属社区级小型商业配套。",
+    "mall_codes": [
+      "MALL_B6EB5E3E"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "天逸城商圈",
+    "description": "位于丰华路天逸城片区，集中了丰华商业广场和恒隆商业广场，形成小型商业聚集点。",
+    "mall_codes": [
+      "MALL_EEBFAA41",
+      "MALL_4B8EC05A"
+    ]
+  }
+]

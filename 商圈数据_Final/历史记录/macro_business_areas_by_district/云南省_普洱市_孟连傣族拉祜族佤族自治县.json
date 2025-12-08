@@ -1,0 +1,18 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "孟连县城商圈",
+    "description": "位于孟连县城中心区域，包含县城主要商业设施",
+    "mall_codes": [
+      "MALL_3134F931"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城郊商圈",
+    "description": "位于县城外围区域，服务周边居民日常购物需求",
+    "mall_codes": [
+      "MALL_BD64A895"
+    ]
+  }
+]

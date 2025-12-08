@@ -1,0 +1,83 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "延安北路商圈",
+    "description": "位于昌吉市核心城区，以延安北路为主轴，聚集东方广场、环宇新天地等商业体，是昌吉市传统商业中心之一。",
+    "mall_codes": [
+      "MALL_6108E66F",
+      "MALL_13C00C8C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中山南路商圈",
+    "description": "以中山南路为轴线，集中汇嘉时代系列购物中心及周边商业，形成区域级综合消费中心，品牌集聚度较高。",
+    "mall_codes": [
+      "MALL_1DE61B5B",
+      "MALL_E0FA498F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "乌伊西路商圈",
+    "description": "沿乌伊西路分布多个商业项目，包括汇嘉时代生活广场、亚中美居广场等，覆盖城西居民区，具备一定规模的零售与家居业态。",
+    "mall_codes": [
+      "MALL_BA0C328D",
+      "MALL_3F442481",
+      "MALL_AFB26D9E",
+      "MALL_514F2594"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "文化东路/农机巷商圈",
+    "description": "以亚中商城为核心，辐射周边大天地商城等小型商业体，位于老城区腹地，服务本地居民日常消费需求。",
+    "mall_codes": [
+      "MALL_5330347C",
+      "MALL_323ADD2A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "宁边西路商圈",
+    "description": "位于城市北部宁边西路沿线，以中银星世纪广场为代表，连接红星路片区，构成北部新兴商业节点。",
+    "mall_codes": [
+      "MALL_444D1E98",
+      "MALL_F2E09C27"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "建国西路商圈",
+    "description": "依托昌吉友好时尚购物中心和月上茶颜婚恋广场，形成以休闲、婚庆为主题的特色消费区域。",
+    "mall_codes": [
+      "MALL_026AD0A1",
+      "MALL_F8A5367D"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "军户农场商圈",
+    "description": "位于昌吉市西部边缘的军户农场区域，由军户商贸城和地下商场组成，服务于周边乡镇及农村市场。",
+    "mall_codes": [
+      "MALL_374F1BDC",
+      "MALL_96E3E979"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "石河子西路商圈",
+    "description": "位于城市西南部，靠近石河子方向，以米兰春天商业广场为主要载体，服务城乡结合部及过境客流。",
+    "mall_codes": [
+      "MALL_4C8BB71F"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "富友书香雅苑商圈",
+    "description": "以社区型便利店为主导的微型商业点，围绕富友书香雅苑布局，主要满足小区居民基础生活需求。",
+    "mall_codes": [
+      "MALL_EFC6AF2A"
+    ]
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，辐射周边永定路一带的商业集聚区，是龙湾区较为成熟的中心商圈之一。",
+    "mall_codes": [
+      "MALL_5F9A0751",
+      "MALL_31F3C887",
+      "MALL_9AF2D72D",
+      "MALL_A3AE12B3",
+      "MALL_F36A177E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "滨海商圈",
+    "description": "位于龙湾区东部滨海片区，聚集多个以‘滨海’命名的商业项目，包括崇悦广场、利玛广场等，服务本地居民为主。",
+    "mall_codes": [
+      "MALL_1B5E3AA9",
+      "MALL_8D3A9461",
+      "MALL_628AEE6B",
+      "MALL_76BA8390"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "空港商圈",
+    "description": "依托空港新区发展起来的新兴商业区域，涵盖环游里购物中心及周边物流与产业配套区域。",
+    "mall_codes": [
+      "MALL_BC6B4955"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "蒲州-温州大道商圈",
+    "description": "覆盖蒲州街道及温州大道沿线，包含云创商业广场、城市蜂窝、邻里广场等社区型商业体，形成区域性生活服务中心。",
+    "mall_codes": [
+      "MALL_F0798608",
+      "MALL_9F4D3FF0",
+      "MALL_24AF4560"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "科技城TOD商圈",
+    "description": "围绕科技城地铁站布局的TOD模式商业，以温州TOD国际新城印象汇为标志，体现轨道交通带动的城市开发特征。",
+    "mall_codes": [
+      "MALL_CE6694EE"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "吾悦广场周边商业区",
+    "description": "位于龙湾西部边缘，以上江路吾悦广场为依托，潮品挚尚和通征购物中心分布附近，形成局部消费节点。",
+    "mall_codes": [
+      "MALL_F3C8D52B",
+      "MALL_9C6A7862"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "瑶溪-四通路商业点",
+    "description": "分布于龙南片区的零散商业，如九极奥特莱斯新车折扣店，位置相对独立，服务特定功能需求。",
+    "mall_codes": [
+      "MALL_3ADFB6DA"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "永中-明珠路商业点",
+    "description": "位于永中片区核心道路明珠路上的法派购物广场，独立成点，服务于老城区居民。",
+    "mall_codes": [
+      "MALL_624199AF"
+    ]
+  }
+]

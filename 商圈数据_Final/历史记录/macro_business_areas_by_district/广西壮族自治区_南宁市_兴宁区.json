@@ -1,0 +1,57 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "朝阳商圈",
+    "description": "以朝阳路为核心，覆盖朝阳广场地铁站周边密集商业体，包括传统百货、批发商城及新兴商业广场，是兴宁区最核心的传统商圈。",
+    "mall_codes": [
+      "MALL_BADAE088",
+      "MALL_D08DC792",
+      "MALL_F4F6F792",
+      "MALL_94862C95",
+      "MALL_0C243D9C",
+      "MALL_72A80094",
+      "MALL_74FFAD70",
+      "MALL_4D228A64",
+      "MALL_7695DDE8",
+      "MALL_E43F6256",
+      "MALL_F0D3E792",
+      "MALL_8BCC74C7",
+      "MALL_998B1307",
+      "MALL_39F1F27D",
+      "MALL_2E3A7618",
+      "MALL_AE3D606E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "昆仑大道奥特莱斯商圈",
+    "description": "位于兴宁区东部昆仑大道沿线，以南宁首创奥特莱斯为核心，定位为城市东部的 outlet 购物中心，辐射周边居住区。",
+    "mall_codes": [
+      "MALL_317C7CCD"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "金川路吾悦广场商圈",
+    "description": "以吾悦广场为单一核心，位于金川路与昆仑大道交汇区域，是近年来兴起的新兴区域型商圈，服务城北及五象新区过渡带。",
+    "mall_codes": [
+      "MALL_0410E9F2"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "降桥路书城商圈",
+    "description": "位于兴宁区北部降桥路与兴桂路交叉口附近，以广西书城生活广场为代表，周边商业配套相对独立，服务于北部居住组团。",
+    "mall_codes": [
+      "MALL_D1009686"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "望州南路商圈",
+    "description": "位于望州南路与长望路交汇处，以时代茗城购物广场为主要商业载体，属于区域性社区型商圈，服务周边居民。",
+    "mall_codes": [
+      "MALL_73E34C90"
+    ]
+  }
+]

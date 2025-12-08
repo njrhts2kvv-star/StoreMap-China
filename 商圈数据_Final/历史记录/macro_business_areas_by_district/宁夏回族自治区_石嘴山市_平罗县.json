@@ -1,0 +1,34 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "平罗县城关商圈",
+    "description": "位于平罗县城区核心区域，集中分布于鼓楼街、步行街及周边主干道，涵盖多个传统百货与商业广场，是县城最主要的商业集聚区。",
+    "mall_codes": [
+      "MALL_C56AA05F",
+      "MALL_943429AA",
+      "MALL_0DCCDB1F",
+      "MALL_2FD9F5D3",
+      "MALL_930E7EF7",
+      "MALL_659645F5",
+      "MALL_C35186BD",
+      "MALL_7DC6D283"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "平罗县陶乐镇商圈",
+    "description": "位于平罗县陶乐镇片区，以陶乐商场和宏海商场为代表，服务于当地居民的基础商业需求，是县域内北部的重要区域性商业节点。",
+    "mall_codes": [
+      "MALL_59BFEC87",
+      "MALL_093EE56B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "平罗县人民西路商圈",
+    "description": "位于平罗县西部城区人民西路与萧公大街交汇处附近，以阳光商业广场为核心，辐射周边居住区，形成西部城区的新兴商业聚集点。",
+    "mall_codes": [
+      "MALL_6E09A1CC"
+    ]
+  }
+]

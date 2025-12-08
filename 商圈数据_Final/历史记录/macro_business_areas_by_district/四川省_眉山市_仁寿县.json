@@ -1,0 +1,46 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "文林镇核心商圈",
+    "description": "以文林镇为中心，覆盖仁寿大道沿线及周边主要商业设施，是仁寿县传统商业集聚区，包含恒太城、万达广场等主要商场。",
+    "mall_codes": [
+      "MALL_FABCB6D7",
+      "MALL_67A9E2A9",
+      "MALL_7B929CCE",
+      "MALL_9DF74615",
+      "MALL_93488A72",
+      "MALL_A9F56DA8",
+      "MALL_8C9B0CCB",
+      "MALL_8E502B54"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "普宁街道-星光路商圈",
+    "description": "依托万达广场和恒太城形成的新兴商业节点，位于普宁街道星光路一带，交通便利，商业潜力较大。",
+    "mall_codes": [
+      "MALL_FABCB6D7",
+      "MALL_67A9E2A9"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "视高街道商圈",
+    "description": "位于仁寿县北部视高街道，承接成都外溢城市功能，湖山生活汇为该区域代表性商业项目。",
+    "mall_codes": [
+      "MALL_2F1F743B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "龙正镇及周边乡镇商圈",
+    "description": "覆盖仁寿县南部及周边乡镇的分散型商业点，包括六英购物中心、彰家阳光百姓购物中心等社区型商场，服务本地居民。",
+    "mall_codes": [
+      "MALL_02BAEC90",
+      "MALL_62D8034A",
+      "MALL_C1E8F581",
+      "MALL_D6A40C43",
+      "MALL_459AA0A6"
+    ]
+  }
+]

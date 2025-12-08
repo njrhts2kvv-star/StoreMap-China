@@ -1,0 +1,56 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达商圈",
+    "description": "以万达广场为核心，聚集星球商业中心、天成商业广场等商业体，位于掇刀区虎牙关大道沿线，是掇刀区较为集中的现代商业集聚区。",
+    "mall_codes": [
+      "MALL_00434C8B",
+      "MALL_C38667FE",
+      "MALL_34567664"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "迎春大道商圈",
+    "description": "以东方百货凤凰广场为主要商业载体，位于迎春大道沿线，服务周边居民区，形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_A5CDEB57"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "红星时代广场商圈",
+    "description": "以红星时代广场为核心，临近聚龙商城，位于象山大道与运动公园路交叉区域，构成掇刀区中部的商业节点。",
+    "mall_codes": [
+      "MALL_5C60B45F",
+      "MALL_F29BD2EB"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "团林片区商圈",
+    "description": "集中于团林镇附近，包含剑月购物广场、团林商贸城、百汇购物等多个小型商业体，服务于乡镇及周边社区。",
+    "mall_codes": [
+      "MALL_B4BD4E2F",
+      "MALL_2F0CD40E",
+      "MALL_1C62667D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "月亮湖路商圈",
+    "description": "位于城区北部月亮湖路沿线，涵盖金城购物广场和金马购物广场，靠近洪源市场，形成区域性零售集聚带。",
+    "mall_codes": [
+      "MALL_3E2D2350",
+      "MALL_28FF179A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "团何路商圈",
+    "description": "位于团何路与石龙村交界区域，以百姓购物中心为主，辐射农村及城乡结合部，商业体量较小。",
+    "mall_codes": [
+      "MALL_83DDB453"
+    ]
+  }
+]

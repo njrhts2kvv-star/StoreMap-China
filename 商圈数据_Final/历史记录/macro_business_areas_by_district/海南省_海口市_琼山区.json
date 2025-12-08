@@ -1,0 +1,61 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "日月广场商圈",
+    "description": "以日月广场为核心，包含其东区、西区及各星座主题楼宇的大型商业集群，位于国兴大道与大英山片区，是琼山区现代商业中心之一。",
+    "mall_codes": [
+      "MALL_1A42EF8E",
+      "MALL_BFDD30B6",
+      "MALL_0EA1083A",
+      "MALL_0D7AB676",
+      "MALL_D3088AEA",
+      "MALL_16EF2D89",
+      "MALL_94EE761B",
+      "MALL_03EE8D5D",
+      "MALL_4ED55808",
+      "MALL_D06F0B94",
+      "MALL_DB3EC3A2",
+      "MALL_32709C45",
+      "MALL_17DEBC31",
+      "MALL_E8A2D49C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "府城老城区商圈",
+    "description": "以忠介路、高登街、中山路等传统街道为核心的府城老城区商业集聚区，涵盖多个本地老牌商场和小型商业体，服务本地居民为主。",
+    "mall_codes": [
+      "MALL_AC71F7D7",
+      "MALL_1E1CE211",
+      "MALL_1416E5B4",
+      "MALL_FCD9F716",
+      "MALL_B2CF55CD",
+      "MALL_E8E70D70"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "红城湖路商圈",
+    "description": "位于红城湖路沿线的商业节点，依托红城湖商业广场和E世纪广场形成区域性生活配套商圈，主要服务于周边住宅区。",
+    "mall_codes": [
+      "MALL_07D23EE3",
+      "MALL_44CA73D1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城南/凤翔商圈",
+    "description": "位于城南路与凤翔街道交界区域，以喜徕丁广场为代表，覆盖南部居住区的新兴社区型商业中心。",
+    "mall_codes": [
+      "MALL_2AFB282C"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "琼州大道商圈",
+    "description": "沿琼州大道分布，以宗恒商业城为主要载体，服务于主干道沿线及周边社区的区域性商业节点。",
+    "mall_codes": [
+      "MALL_B411E371"
+    ]
+  }
+]

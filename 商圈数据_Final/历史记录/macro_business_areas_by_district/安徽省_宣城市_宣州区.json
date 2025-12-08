@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城东万达商圈",
+    "description": "以万达广场为核心，覆盖水阳江大道沿线的新兴商业集聚区，包含星隆国际广场等周边商业体，是宣城市东部的主要消费中心之一。",
+    "mall_codes": [
+      "MALL_A9C70A90",
+      "MALL_BB76CFCE",
+      "MALL_5B3167EC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中心老城区商圈",
+    "description": "位于宣城市中心老城区核心地带，集中了八佰伴、国购广场、中都百货等多个传统购物中心和商业楼宇，是宣州区历史最悠久、人流最密集的商业核心区。",
+    "mall_codes": [
+      "MALL_B0C64AB1",
+      "MALL_45C4CC46",
+      "MALL_B92D1576",
+      "MALL_2FB9E0CB",
+      "MALL_ABBB82D5",
+      "MALL_CE6E7473",
+      "MALL_F0FEAC2A",
+      "MALL_0E70F4B2",
+      "MALL_65F6324C",
+      "MALL_D7E2EEE1",
+      "MALL_AB71FD0E",
+      "MALL_1147BE05"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "梅溪路-昭亭路商圈",
+    "description": "沿梅溪路与昭亭路交叉区域分布，包括威尼达广场、锦润商业中心等项目，地处城市主干道交汇处，具备一定商业活力和发展潜力。",
+    "mall_codes": [
+      "MALL_8BFE1BA6",
+      "MALL_BDD179F1",
+      "MALL_6AEFFEDE",
+      "MALL_6ACC97D8",
+      "MALL_383F3504"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城北高新区商圈",
+    "description": "位于宣州区北部高新技术产业开发区附近，以高新区·邻里荟为主要商业节点，服务产业园区及周边居住区，属于新兴社区型商业中心。",
+    "mall_codes": [
+      "MALL_180F7906"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "水阳镇商圈",
+    "description": "位于宣州区北部水阳镇区域，以水阳购物中心为代表，服务于乡镇本地居民，属于区域性乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_D434CB33"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "城南工业区商圈",
+    "description": "位于宣城市南部工业拓展区，涵盖华都购物中心和金多多·Rich等商业设施，主要服务于周边工业园区及城乡结合部居民。",
+    "mall_codes": [
+      "MALL_D5E3B0C1",
+      "MALL_98101572"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "九州市场商圈",
+    "description": "依托九州市场形成的区域性商贸集散地，以宣城大华商贸为代表，侧重批发零售与日常商贸服务。",
+    "mall_codes": [
+      "MALL_42014804"
+    ]
+  }
+]

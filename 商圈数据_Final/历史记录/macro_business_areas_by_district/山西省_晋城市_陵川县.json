@@ -1,0 +1,41 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "崇文镇中心商圈",
+    "description": "位于陵川县崇文镇核心区域，集中了梅园东街、望洛路及古陵南路周边的主要商业设施，是县城内商业密度最高的片区。",
+    "mall_codes": [
+      "MALL_5917DBCC",
+      "MALL_D63019EA",
+      "MALL_12BACB1C",
+      "MALL_88174191",
+      "MALL_D0F5A1C2",
+      "MALL_94B44181",
+      "MALL_B02B939C",
+      "MALL_30CD9817"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "平城商圈",
+    "description": "位于陵川县平城镇，依托长陵线交通干道形成区域性商业节点，服务本地居民为主。",
+    "mall_codes": [
+      "MALL_EDC0B40E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "附城商圈",
+    "description": "位于陵川县附城地区，靠近礼夺线，服务于周边乡镇的居民，具有一定的区域辐射能力。",
+    "mall_codes": [
+      "MALL_126CA1B0"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "礼义商圈",
+    "description": "位于陵川县礼义镇，依托镇区人口和交通基础发展形成的乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_BFF412C1"
+    ]
+  }
+]

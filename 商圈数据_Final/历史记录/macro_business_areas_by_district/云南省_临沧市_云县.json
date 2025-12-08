@@ -1,0 +1,28 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "云州路商圈",
+    "description": "位于云州路与草皮街交汇区域，是云县核心商业集中区",
+    "mall_codes": [
+      "MALL_41FE0E71",
+      "MALL_E2DF24DD",
+      "MALL_B21FED0E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大老线商圈",
+    "description": "位于大老线沿线，服务周边居民日常生活",
+    "mall_codes": [
+      "MALL_C5A4DCCA"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "茂马线商圈",
+    "description": "位于茂马线与茂丙线交叉口，辐射周边乡镇商业需求",
+    "mall_codes": [
+      "MALL_A4FA84D3"
+    ]
+  }
+]

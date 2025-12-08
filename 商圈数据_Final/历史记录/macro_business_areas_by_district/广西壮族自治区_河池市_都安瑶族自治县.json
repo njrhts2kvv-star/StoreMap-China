@@ -1,0 +1,39 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "都安县城中心商圈",
+    "description": "以都安县安阳镇核心商业带为主体，涵盖迎晖街、屏山路、安阳大道沿线的多个传统商场与百货点，是都安县最集中的商业聚集区。",
+    "mall_codes": [
+      "MALL_8AF9C5CB",
+      "MALL_F8FDEA1A",
+      "MALL_50D67FFA",
+      "MALL_D4D65ED6",
+      "MALL_7C5F8CD1",
+      "MALL_B053B6D1"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "高岭路商贸区",
+    "description": "位于都安县高岭镇方向的区域性商贸节点，以宏杰商贸城为代表，服务周边乡镇居民，具备一定批发与零售混合功能。",
+    "mall_codes": [
+      "MALL_824ACA49"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "巴谭新区发展区",
+    "description": "位于安阳镇西部的新兴开发区域，目前商业设施尚在建设中，未来可能形成新的城市副中心商业节点。",
+    "mall_codes": [
+      "MALL_41347B19"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "百旺镇社区商业点",
+    "description": "位于都安县下辖百旺镇的本地化小型购物中心，服务于乡镇居民日常消费，规模较小且独立分布。",
+    "mall_codes": [
+      "MALL_4F296449"
+    ]
+  }
+]

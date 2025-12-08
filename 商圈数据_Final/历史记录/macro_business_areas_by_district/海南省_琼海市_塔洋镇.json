@@ -1,0 +1,26 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "嘉积老城商圈",
+    "description": "以嘉积镇老城区为核心，覆盖新民街、元亨街、前进街等传统商业街道，聚集多个本地商场和商业广场，是塔洋镇及周边居民日常消费的主要区域。",
+    "mall_codes": [
+      "MALL_F6BB9655",
+      "MALL_CEF3D3D4",
+      "MALL_867983BE",
+      "MALL_0B2073A8",
+      "MALL_FFB58545",
+      "MALL_3ED7AA8C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "嘉积新城商圈",
+    "description": "位于嘉积镇新兴发展区域，涵盖兴海中路、爱华东延伸段等地带，分布有万特广场、南宝商场等较新商业项目，体现城市扩展方向的商业布局。",
+    "mall_codes": [
+      "MALL_77F02DD8",
+      "MALL_A8B281EC",
+      "MALL_1DA7246D",
+      "MALL_AE778B3A"
+    ]
+  }
+]

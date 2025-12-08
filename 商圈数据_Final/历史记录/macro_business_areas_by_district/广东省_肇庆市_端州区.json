@@ -1,0 +1,107 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "天宁北路商圈",
+    "description": "以天宁北路为核心街道，聚集多个商场和商业设施，包括七星银座、合百利广场、天宁广场、工影商场及蓝宫商城等，是端州区传统的商业集中区域。",
+    "mall_codes": [
+      "MALL_B839F5F4",
+      "MALL_C82A70CC",
+      "MALL_82B3805F",
+      "MALL_A0EE5609",
+      "MALL_6A643E60"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "正东路商圈",
+    "description": "位于正东路沿线，涵盖南方购物中心及其附属的华立电子商场，地理位置集中，属于老城区重要商业节点之一。",
+    "mall_codes": [
+      "MALL_F7F11220",
+      "MALL_2E351D79"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "端州四路商圈",
+    "description": "集中在端州四路附近，包含印象汇与星湖国际广场，地处城市主干道交汇区域，具备一定商业集聚效应。",
+    "mall_codes": [
+      "MALL_BB3038B3",
+      "MALL_EE39492B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "康乐北路/国际广场商圈",
+    "description": "以国际广场为核心，位于康乐北路，周边商业配套相对独立，辐射城北局部区域。",
+    "mall_codes": [
+      "MALL_FC29EC2F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "太和北路商圈",
+    "description": "位于端州区西北部，以太和广场为主要商业载体，服务周边居民区。",
+    "mall_codes": [
+      "MALL_E8B090C9"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "信安大道商圈",
+    "description": "以敏捷广场为唯一较具规模的商业项目，位于信安大道片区，代表新区发展方向，品牌集聚度相对较高。",
+    "mall_codes": [
+      "MALL_523282F8"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "端州七路商圈",
+    "description": "覆盖头村商贸城与沙街桥西综合商场，位于端州七路沿线，服务于睦岗街道及周边社区。",
+    "mall_codes": [
+      "MALL_304AF61C",
+      "MALL_8C74630E"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "百花园商圈",
+    "description": "以百花购物公园为代表，位于百花园住宅区范围内，主要满足本地居民日常消费需求。",
+    "mall_codes": [
+      "MALL_EBB0ABE5"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "颂德路商圈",
+    "description": "位于颂德路恒裕海湾片区，以海湾城·购物中心为主要商业设施，属新兴居住区配套商业。",
+    "mall_codes": [
+      "MALL_21BC40E6"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "端州一路商圈",
+    "description": "位于端州一路沿线，包含正汇广场和蓝塘广场，地处城市扩展区域，商业分布较为分散。",
+    "mall_codes": [
+      "MALL_663ABC45",
+      "MALL_C68488B0"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "忠勇路商圈",
+    "description": "位于忠勇路附近，涵盖朝天门和潮流站商场，属于局部街区型商业点位，规模较小。",
+    "mall_codes": [
+      "MALL_3EFD33C7",
+      "MALL_008C8E78"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "岗美路商圈",
+    "description": "位于岗美路与端州二路交叉口附近，仅有供销商城一个商业点，属区域性便民商业节点。",
+    "mall_codes": [
+      "MALL_FAEECB3A"
+    ]
+  }
+]

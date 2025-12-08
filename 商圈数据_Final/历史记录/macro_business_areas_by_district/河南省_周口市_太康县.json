@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "太康县城关商圈",
+    "description": "位于太康县城区核心区域，涵盖涡河路、建设南路等主要道路沿线的商业设施，是县城内较为集中的商业聚集区。",
+    "mall_codes": [
+      "MALL_0E8CE93C",
+      "MALL_4A717DF0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "太康东部乡镇商圈",
+    "description": "覆盖太康县东部马厂镇、张集镇等乡镇区域的购物中心，依托国道和乡道形成区域性乡镇商业节点。",
+    "mall_codes": [
+      "MALL_12243921",
+      "MALL_C5FB495B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "太康北部乡镇商圈",
+    "description": "分布于太康县北部芝麻洼乡、平岗镇等区域的购物中心，沿106国道及县道布局，服务周边农村人口。",
+    "mall_codes": [
+      "MALL_3DE6DF13",
+      "MALL_AC58BAB7",
+      "MALL_12B6452E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "太康南部乡镇商圈",
+    "description": "以独塘乡、三和片区为代表的南部乡镇商业集聚点，依托311国道形成交通导向型乡镇零售布局。",
+    "mall_codes": [
+      "MALL_680F3A44",
+      "MALL_643092C8"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "太康西部乡镇商圈",
+    "description": "位于太康县西部区域，包括高贤乡附近及银城南路一带的乡镇级生活广场，服务于西部乡村居民日常消费。",
+    "mall_codes": [
+      "MALL_3B5A7983",
+      "MALL_62E102FE",
+      "MALL_4CA26457"
+    ]
+  }
+]

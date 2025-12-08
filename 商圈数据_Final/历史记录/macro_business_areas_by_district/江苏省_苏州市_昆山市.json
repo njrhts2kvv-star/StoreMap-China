@@ -1,0 +1,87 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "市中心商圈",
+    "description": "以昆山传统市中心为核心，覆盖人民路、珠江中路沿线的商业集聚区，包含昆山金鹰国际购物中心、昆山商厦等核心商业体。",
+    "mall_codes": [
+      "MALL_00FA2E10",
+      "MALL_9D2CD8D2",
+      "MALL_758CD542",
+      "MALL_6BDDC1E0",
+      "MALL_FD929737",
+      "MALL_02B954E3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城西商圈",
+    "description": "位于昆山城西区域，以前进西路为主轴，涵盖吾悦广场、西城后街商业广场及周边社区型商业中心。",
+    "mall_codes": [
+      "MALL_46BCC157",
+      "MALL_F6295170",
+      "MALL_F5AACE82",
+      "MALL_9838AF41"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东部新城商圈",
+    "description": "昆山东部新城区的核心商业带，集中于前进东路沿线，以世茂广场及其二期为主体，形成区域级商业中心。",
+    "mall_codes": [
+      "MALL_16749CE8",
+      "MALL_E9F2E58B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "花桥商圈",
+    "description": "位于昆山花桥镇，靠近上海边界，依托轨道交通和跨城消费人群，以乐尚城市广场和中骏世界城为主要商业载体。",
+    "mall_codes": [
+      "MALL_C63B8C0A",
+      "MALL_14E7B7F8"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北部新城商圈",
+    "description": "昆山北部新兴居住与产业融合区，以萧林中路为轴线，聚集昆山九方购物中心与招商花园城，服务北部居民。",
+    "mall_codes": [
+      "MALL_B75ECAB0",
+      "MALL_416FE73C"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "南城商圈",
+    "description": "位于昆山南部城区，美丰路与白马泾路一带，以南星渎商业中心和超华城市广场为代表，服务于南部片区居民。",
+    "mall_codes": [
+      "MALL_1AABA03C",
+      "MALL_342EA2FF"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "开发区东区商圈",
+    "description": "昆山经济技术开发区东部片区，沿昆嘉路和东城大道分布，包括首创奥特莱斯和昆山钜潮荟，侧重 outlet 与社区商业结合。",
+    "mall_codes": [
+      "MALL_01CB429E",
+      "MALL_5ACFAAE2"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "智谷小镇商圈",
+    "description": "位于昆山高新区智谷小镇片区，主打滨水风情与科技人才配套商业，以大渔湾湖滨风情商业街为核心。",
+    "mall_codes": [
+      "MALL_DF543B01"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "衡山路商圈",
+    "description": "昆山西部交通干道衡山路沿线商业节点，以万达广场为主要代表，辐射周边住宅区。",
+    "mall_codes": [
+      "MALL_D800C987"
+    ]
+  }
+]

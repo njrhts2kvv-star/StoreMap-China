@@ -1,0 +1,41 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新兴大街商圈",
+    "description": "以新兴大街为主轴，集中分布多个传统商厦和购物中心，是尖山区核心商业带，涵盖国贸、兴亚、东北亚等老牌商场。",
+    "mall_codes": [
+      "MALL_FD151BE8",
+      "MALL_30BBEB20",
+      "MALL_311E034F",
+      "MALL_E20EE894",
+      "MALL_1D34DF1B",
+      "MALL_6D81C706",
+      "MALL_21AD9060",
+      "MALL_545BF3F7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中心站-义乌商城商圈",
+    "description": "位于中心站区域外围，以义乌商城为核心，形成集小商品、零售于一体的区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_F793C35B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南海路优品汇商圈",
+    "description": "位于南海路与南山中路交叉口附近，以优品汇购物中心为支点，服务南部居住区的新兴商业节点。",
+    "mall_codes": [
+      "MALL_E99E04BF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "伟业商厦片区",
+    "description": "位于四马路伟业五金商场周边，以伟业商厦为代表，构成局部社区型商业服务点。",
+    "mall_codes": [
+      "MALL_49415D43"
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五云中心商圈",
+    "description": "位于缙云县老城区五云镇核心区域，涵盖金龙购物广场及周边多个商业体，是县城传统商业集聚区。",
+    "mall_codes": [
+      "MALL_22596F8A",
+      "MALL_ED527D81",
+      "MALL_43864DCE",
+      "MALL_CC300FEE",
+      "MALL_F3445A62",
+      "MALL_49D0D061",
+      "MALL_94A4BFB9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "七里片区商圈",
+    "description": "位于缙云县七里乡附近，由七里良富购物中心与天顺购物中心构成，服务于城西外围居民区。",
+    "mall_codes": [
+      "MALL_794ED80F",
+      "MALL_C336DA7D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "壶镇中心商圈",
+    "description": "以壶镇镇为核心的发展中商业集聚区，包含乐业广场及其附属建筑、龙隐购物中心等，覆盖本地主要工业城镇消费人群。",
+    "mall_codes": [
+      "MALL_65F1B7DD",
+      "MALL_0997ACE4",
+      "MALL_C122CDE3"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "壶镇工业园区商圈",
+    "description": "位于壶镇工业园区内，以丽缙商业中心为代表，定位为产业配套型商业项目，目前处于建设阶段。",
+    "mall_codes": [
+      "MALL_0860BB8D"
+    ]
+  }
+]

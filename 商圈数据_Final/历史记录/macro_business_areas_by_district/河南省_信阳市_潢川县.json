@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "航空路商圈",
+    "description": "位于潢川县核心城区，以航空路与环城路、跃进路交汇区域为中心，聚集多个商业广场和商贸城，是县城传统商业中心。",
+    "mall_codes": [
+      "MALL_58516F5E",
+      "MALL_A19DF38E",
+      "MALL_CC6A7F4F",
+      "MALL_EDB7D474",
+      "MALL_0CD643B5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "迎宾路商圈",
+    "description": "位于县城东部迎宾路沿线，以好实惠购物中心为代表，服务周边居民区，属于城区东部的生活型商业集聚区。",
+    "mall_codes": [
+      "MALL_1A312DF2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "国道312商圈",
+    "description": "依托312国道交通干线形成的外围商业节点，以百家来生活广场为核心，辐射周边城乡结合区域。",
+    "mall_codes": [
+      "MALL_729E22F3"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "仁和镇商圈",
+    "description": "位于潢川县下辖仁和镇，以福美购物广场为主要商业载体，服务于乡镇本地消费人群。",
+    "mall_codes": [
+      "MALL_FCAB8C3F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "黄寺岗商圈",
+    "description": "位于潢川县北部014县道沿线，由志江购物中心和鑫华购物中心共同构成，服务于北部乡镇及农村地区。",
+    "mall_codes": [
+      "MALL_247C8040",
+      "MALL_6E388979"
+    ]
+  }
+]

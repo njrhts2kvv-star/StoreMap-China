@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "余姚城东商圈",
+    "description": "以余姚五彩城和众安时代广场购物中心B区为核心，覆盖城东路沿线商业项目，是余姚东部较集中的现代商业聚集区。",
+    "mall_codes": [
+      "MALL_B4735C25",
+      "MALL_087D053C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "余姚万达商圈",
+    "description": "以万达广场为核心，结合周边兰江商贸城、冠宁商贸城等，形成余姚西部重要的综合商业中心，交通便利，人流密集。",
+    "mall_codes": [
+      "MALL_9CEC9C1B",
+      "MALL_0D649ABD",
+      "MALL_0339C974"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "余姚老城核心商圈",
+    "description": "位于余姚市中心区域，集中了华联商厦、新华联百货、新大新·时尚广场等多个传统百货与商业中心，是城市传统商业核心区。",
+    "mall_codes": [
+      "MALL_8DE383D0",
+      "MALL_3C07516B",
+      "MALL_FE2A0D56",
+      "MALL_0CB2CFD3",
+      "MALL_5277857F",
+      "MALL_148B593B",
+      "MALL_3BD0F69F",
+      "MALL_44403102"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "余姚城北商圈",
+    "description": "位于余姚北部，以余姚宝龙广场为核心，辐射周边区域，服务朗霞街道及北部居民，是近年来发展的新兴商业板块。",
+    "mall_codes": [
+      "MALL_6CA772B9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "泗门镇商圈",
+    "description": "位于余姚下辖的泗门镇，以万安商厦为代表，服务于本地居民，属于乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_3138CCBE"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "凤山-梨洲商圈",
+    "description": "覆盖凤山街道与梨洲街道交界区域，包括嘉悦购物广场、白云商贸中心、惠购生活超市等，服务于城市东北部居民。",
+    "mall_codes": [
+      "MALL_B08F223E",
+      "MALL_84ADFEF9",
+      "MALL_F686707C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "阳明新城商圈",
+    "description": "位于余姚中部偏北，以中鑫一佳为主要代表，结合周边社区商业，服务阳明街道及新建路沿线居民。",
+    "mall_codes": [
+      "MALL_1E1ED936"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "城南商圈",
+    "description": "位于余姚南部，以永丰村商贸中心和朴石·锦邻天地为节点，覆盖玉立路、永丰中路一带，属区域性社区商业集聚区。",
+    "mall_codes": [
+      "MALL_D84B9E73",
+      "MALL_249119D9"
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "站前商圈",
+    "description": "以万达广场为核心，覆盖周边永丰街、解放北路一带的商业聚集区，包含多个文化商场、商厦及地下商场，是平山区最主要的商业中心之一。",
+    "mall_codes": [
+      "MALL_10867F95",
+      "MALL_BB9C27E9",
+      "MALL_D38BE74D",
+      "MALL_C7DD3FC4",
+      "MALL_7142F003",
+      "MALL_DEC8C4A1",
+      "MALL_9A0AC9AF",
+      "MALL_069D55D6",
+      "MALL_3E6C3500",
+      "MALL_550E0C2A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "胜利路商圈",
+    "description": "位于胜利路沿线，集中了世佳购物中心、实华文化商场（人民路）、本溪商业大厦等多个商业体，是平山区传统核心商业带之一。",
+    "mall_codes": [
+      "MALL_019E739F",
+      "MALL_22408EFA",
+      "MALL_722DAFF8",
+      "MALL_CA096B0A",
+      "MALL_528167DD",
+      "MALL_DD03BE81"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "金明/建业街商圈",
+    "description": "位于建业街与清光街交叉口附近，涵盖万铭购物广场和金明商场，属于平山区西部的生活配套型商业片区。",
+    "mall_codes": [
+      "MALL_10BFCAE0",
+      "MALL_870DF782"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "转山路商圈",
+    "description": "位于平山区南部转山路一带，以新世纪超市为代表，服务周边居民区，规模较小但具备基础商业功能。",
+    "mall_codes": [
+      "MALL_0A54C7CA"
+    ]
+  }
+]

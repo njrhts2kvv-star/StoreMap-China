@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新安镇中心商圈",
+    "description": "位于灌南县新安镇核心区域，集中了多个主要商业设施，包括利群时代、恒基广场、新东商城及新安商城多个区，构成县城最繁华的商业集聚区。",
+    "mall_codes": [
+      "MALL_2723E4F4",
+      "MALL_7D91242B",
+      "MALL_DDB0B8A1",
+      "MALL_6E0809F8",
+      "MALL_BA47A6ED",
+      "MALL_5DB7D662",
+      "MALL_694C415A",
+      "MALL_8DF18DE9",
+      "MALL_688EB71A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "人民路-海州路商圈",
+    "description": "位于新安镇人民中路与海州北路交汇地带，以新街口商贸城为核心，靠近国贸大厦和万年达商业广场，是老城区重要商业节点。",
+    "mall_codes": [
+      "MALL_6B68F1E2",
+      "MALL_CFAC8384",
+      "MALL_F2DC3149",
+      "MALL_33ADACB1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "长茂-田楼新区商圈",
+    "description": "覆盖田楼镇与长茂镇半岛新区，包含嘉润商贸城和长茂商城，服务于东部新兴城镇区域，地理位置相对独立。",
+    "mall_codes": [
+      "MALL_36FAAB2C",
+      "MALL_03FBA8AB"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "百禄镇商圈",
+    "description": "位于灌南县南部百禄镇周边，由百禄商城和百禄裕丰商业广场组成，服务当地居民，形成区域性乡镇商业中心。",
+    "mall_codes": [
+      "MALL_108816E1",
+      "MALL_D7B2B960"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北部乡镇商圈",
+    "description": "分布于灌南县北部及西北部乡镇，包括宝成购物中心、好又多购物中心和昌龙购物中心，分别服务于北陈集、李集及周边农村市场。",
+    "mall_codes": [
+      "MALL_FE3BDC02",
+      "MALL_76818FA6",
+      "MALL_75A0C9D0"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "西部城乡结合部商圈",
+    "description": "位于灌南县西部城乡交界地带，以多多超市生鲜购物中心为代表，临近县道交叉口，服务流动人口与周边社区。",
+    "mall_codes": [
+      "MALL_6502D333"
+    ]
+  }
+]

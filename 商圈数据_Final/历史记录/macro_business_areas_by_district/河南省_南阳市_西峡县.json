@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "白羽路商圈",
+    "description": "以白羽南路和白羽中路为核心，覆盖县城中心区域的商业集聚区，集中了多个百货与购物中心，是西峡县传统商业中心。",
+    "mall_codes": [
+      "MALL_0AA30E8B",
+      "MALL_87C82254",
+      "MALL_BF16E39C",
+      "MALL_1DF80B1C",
+      "MALL_8117F49B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "莲花路-伏牛路商圈",
+    "description": "位于县城东部莲花北路与伏牛东路交汇区域，分布有生活广场、建材及综合购物中心，服务周边居民区。",
+    "mall_codes": [
+      "MALL_7EDBC869",
+      "MALL_527EAE0B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "七一东路商圈",
+    "description": "依托七一东路沿线形成的商业节点，拥有多尔玛时代广场等主要商业体，构成县城北部的重要消费区域。",
+    "mall_codes": [
+      "MALL_7EF7A3C2"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "人民西路商圈",
+    "description": "位于人民西路与北大街、五里桥街交汇地带，聚集禄康源时代广场和龙都商贸城，形成西部新兴商业集群。",
+    "mall_codes": [
+      "MALL_6BABF26A",
+      "MALL_EA26CB03"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西坪镇商圈",
+    "description": "位于西峡县下辖西坪镇的本地化商业中心，以家家乐购物广场为代表，服务于镇域居民。",
+    "mall_codes": [
+      "MALL_A62F42C2"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "鹳河大道商圈",
+    "description": "位于建设西路与鹳河大道交叉口附近，由西峡邻里中心构成的社区型商业节点，辐射周边住宅区。",
+    "mall_codes": [
+      "MALL_0B8E8960"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "老君洞旅游商圈",
+    "description": "依托老君洞景区设立的旅游配套购物中心，主要服务于游客群体，具有明显旅游商业特征。",
+    "mall_codes": [
+      "MALL_31B32C3E"
+    ]
+  }
+]

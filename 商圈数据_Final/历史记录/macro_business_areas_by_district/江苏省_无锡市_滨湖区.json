@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "河埒口商圈",
+    "description": "以梁溪路沿线为核心的传统商业中心，涵盖万达广场及周边社区商业，辐射荣巷、大丁桥等居住区。",
+    "mall_codes": [
+      "MALL_E0162FCD",
+      "MALL_BAFC8A93"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "太湖新城商圈",
+    "description": "依托市民中心地铁站与金融商务区形成的新兴城市级商圈，集中布局海岸城系列项目及万象汇，是滨湖区高端商业集聚地。",
+    "mall_codes": [
+      "MALL_82638B9A",
+      "MALL_CC9D5183",
+      "MALL_8B1B0193",
+      "MALL_881702E5",
+      "MALL_EF010AF6",
+      "MALL_557A748E",
+      "MALL_10780BB8",
+      "MALL_1B40B9AA"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "华庄商圈",
+    "description": "服务于华庄街道及周边居民的区域性商业中心，以华庄商业广场为核心，覆盖瑞景道沿线社区配套商业。",
+    "mall_codes": [
+      "MALL_E54BB45B",
+      "MALL_241C2D8C",
+      "MALL_6C70EC7A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "融创文旅商圈",
+    "description": "依托融创文化旅游城形成的主题文旅型消费区域，以融创茂为核心，服务旅游客流及南部片区居民。",
+    "mall_codes": [
+      "MALL_F6F6F440"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "胡埭商圈",
+    "description": "位于滨湖区西北部的镇级商业中心，围绕富安商业广场形成，服务胡埭镇本地居民为主。",
+    "mall_codes": [
+      "MALL_B2FD2565",
+      "MALL_EB0817F2",
+      "MALL_B2FD2565"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "蠡湖大道商圈",
+    "description": "沿蠡湖大道与高浪路交叉口发展的新兴商业节点，以江南大悦城为标志性项目，承接城市南拓带来的消费增长。",
+    "mall_codes": [
+      "MALL_2780E1C2"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "大箕山商圈",
+    "description": "位于太湖畔的区域性商业配套，服务于大箕山片区及周边住宅项目，以大箕山商业广场和太湖新光招商中心为主要载体。",
+    "mall_codes": [
+      "MALL_26FB61CD",
+      "MALL_33A97331"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "尚锦城商圈",
+    "description": "小型社区型商业点位，依托地铁塘铁桥站服务尚锦城及周边小区居民，以IN有街市为代表。",
+    "mall_codes": [
+      "MALL_1C7B5094"
+    ]
+  }
+]

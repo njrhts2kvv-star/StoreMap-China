@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中心街商圈",
+    "description": "以全福元系列商场为核心，覆盖圣城街、广场街及渤海路周边的商业集聚区，包含多个全福元体系商场及世纪广场、国贸商场等传统商业体，是寿光市最核心的商业中心。",
+    "mall_codes": [
+      "MALL_4A2B9FC7",
+      "MALL_01675138",
+      "MALL_ECF006DB",
+      "MALL_42471542",
+      "MALL_BAFBED5D",
+      "MALL_02C9E0CE",
+      "MALL_F8D7BBD6",
+      "MALL_A38C8DF2",
+      "MALL_C44E7490",
+      "MALL_45894A9A",
+      "MALL_E3BE2298",
+      "MALL_699C46C4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "学院路-万达商圈",
+    "description": "位于学院路沿线，以万达广场为标志性商业项目，结合东郭商贸广场和全福元A座等，形成寿光市东部新兴的城市级商业中心。",
+    "mall_codes": [
+      "MALL_8A5B0FB9",
+      "MALL_78C85E4A",
+      "MALL_01675138",
+      "MALL_ECF006DB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "银海路商圈",
+    "description": "沿银海路分布，以中百大厦购物中心和银座商城为主要载体，服务于南部居住区，是寿光市南北向主干道上的重要商业节点。",
+    "mall_codes": [
+      "MALL_94C73D59",
+      "MALL_32307CF7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "洛城全福元中心商圈",
+    "description": "位于洛城街道，以山东全福元商业集团所在地为中心，辐射周边乡镇，是寿光市北部区域性的商业中心。",
+    "mall_codes": [
+      "MALL_2670A6D6"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "侯镇商圈",
+    "description": "位于寿光市东北部侯镇，以新兴商场为代表，服务本地居民，属于县域下辖镇级商业中心。",
+    "mall_codes": [
+      "MALL_59F4FDC0"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "台头镇商圈",
+    "description": "位于寿光市西部台头镇，由全福元寿光百货大楼构成，是典型的乡镇级商业节点。",
+    "mall_codes": [
+      "MALL_3EB08BDA"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "石马路商圈",
+    "description": "集中于石马路一带，包括圣达生活广场、温馨购物广场、时代广场及时代百货批发城，形成区域性的生活消费与批发集散地。",
+    "mall_codes": [
+      "MALL_BAFBED5D",
+      "MALL_C44E7490",
+      "MALL_45894A9A",
+      "MALL_E3BE2298"
+    ]
+  }
+]

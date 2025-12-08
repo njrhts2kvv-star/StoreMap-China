@@ -1,0 +1,30 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇中心商圈",
+    "description": "位于云梦县城区核心地带，涵盖梦泽大道与建设路交汇区域，聚集了多家主要购物中心，是县城最繁华的商业集中区。",
+    "mall_codes": [
+      "MALL_3A64D1E3",
+      "MALL_C9220053",
+      "MALL_AFEEF9CD",
+      "MALL_B3A160DC",
+      "MALL_5ED499C3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "吴铺镇左岸商圈",
+    "description": "位于吴铺镇杨坝曲阳河附近，以左岸购物广场为核心，服务吴铺镇及周边居民，属新兴区域性商业节点。",
+    "mall_codes": [
+      "MALL_307D0DEF"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南部乡镇边缘商圈",
+    "description": "位于云梦县南部外围区域，远离城区中心，以湖田街商城为代表，服务于沙隔线沿线乡镇基础消费需求，商业集聚度较低。",
+    "mall_codes": [
+      "MALL_15FB79A2"
+    ]
+  }
+]

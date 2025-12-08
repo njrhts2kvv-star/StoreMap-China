@@ -1,0 +1,32 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "肇州镇中心商圈",
+    "description": "位于肇州县肇州镇核心区域，集中分布在油田北路与八厂西街交叉口周边，涵盖多个传统商场与购物广场，是县城主要商业聚集区。",
+    "mall_codes": [
+      "MALL_0A67B9B4",
+      "MALL_A780D80C",
+      "MALL_7F1A8673",
+      "MALL_7841CEAB",
+      "MALL_AEA36BF9",
+      "MALL_F1487FC3",
+      "MALL_10720DF1"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "兴城片区商圈",
+    "description": "位于肇州县兴城镇，地理位置相对独立，以海燕商城为核心，服务于当地居民的基础商业需求。",
+    "mall_codes": [
+      "MALL_974C75F2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "外围乡镇商圈",
+    "description": "位于肇州县外围乡镇区域，仅包含中心商场一处，地处乡道交叉口附近，服务周边乡镇居民。",
+    "mall_codes": [
+      "MALL_061FE3C0"
+    ]
+  }
+]

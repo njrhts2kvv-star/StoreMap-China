@@ -1,0 +1,92 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "铁西广场商圈",
+    "description": "以铁西广场为核心，聚集多个大型商业体，地铁换乘便利，是铁西区传统商业中心。",
+    "mall_codes": [
+      "MALL_CD984700",
+      "MALL_66FDA0CA",
+      "MALL_A5DCAE8D",
+      "MALL_E612B14D",
+      "MALL_14A285FC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "云峰街商圈",
+    "description": "位于云峰北街沿线，靠近地铁站，商业氛围成熟，以社区型和区域型商场为主。",
+    "mall_codes": [
+      "MALL_11D73051",
+      "MALL_BDED5CD3"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "沈辽路商圈",
+    "description": "沿沈辽路分布，连接地铁站点，包含奥莱、生活广场等多元业态，服务西部城区居民。",
+    "mall_codes": [
+      "MALL_1C5B583C",
+      "MALL_43B69AE2",
+      "MALL_BD878CFC",
+      "MALL_A6AB1FFF",
+      "MALL_25BD97C6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "兴顺/友谊奥莱商圈",
+    "description": "以友谊奥莱为标志，临近兴顺夜市，形成集折扣购物与本地消费于一体的特色商业片区。",
+    "mall_codes": [
+      "MALL_94613275"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "启工街-建设西路商圈",
+    "description": "位于启工街与建设西路交汇区域，拥有龙之梦大都汇等商业项目，具备一定规模集聚效应。",
+    "mall_codes": [
+      "MALL_7F31710D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "中央大街商圈",
+    "description": "地处经济技术开发区中央大街沿线，配套荣信财富广场与太阳狮星悦荟，服务于新兴城区。",
+    "mall_codes": [
+      "MALL_55E562A6",
+      "MALL_0D96F730"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "杉杉奥莱商圈",
+    "description": "以杉杉奥特莱斯为核心，独立成片，主打品牌折扣，辐射城市西南方向客群。",
+    "mall_codes": [
+      "MALL_93F651C0"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "工人村商圈",
+    "description": "位于肇工南街工人村片区，新商场服务本地居民，属社区级商业配套。",
+    "mall_codes": [
+      "MALL_AC98EA79"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "重工街商圈",
+    "description": "坐落于重工南街，鑫家隆购物广场服务周边密集居住区，形成区域性生活消费节点。",
+    "mall_codes": [
+      "MALL_3E3E975C"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "北一中路万达商圈",
+    "description": "以北一中路万达广场为单一核心，独立形成北部片区商业焦点。",
+    "mall_codes": [
+      "MALL_75AF74AB"
+    ]
+  }
+]

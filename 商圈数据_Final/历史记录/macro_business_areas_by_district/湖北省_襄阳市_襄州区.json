@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "航空路商圈",
+    "description": "以航空路为核心街道，聚集了军翔百货、晋锋购物广场等商业体，位于襄州区主城区西部，是区域传统商业集中带之一。",
+    "mall_codes": [
+      "MALL_A8DF29D4",
+      "MALL_8508443F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "钻石大道商圈",
+    "description": "依托钻石大道主干道形成，涵盖万达广场A区（装修中）和张湾义乌商贸城33栋，地处襄州城区中心地带，具备较强人流集聚效应。",
+    "mall_codes": [
+      "MALL_DE6B020B",
+      "MALL_44C61340"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "金源路商圈",
+    "description": "以民发世纪广场为核心，位于襄州主城区南部，金源路沿线为新兴商业发展轴线，具备综合消费潜力。",
+    "mall_codes": [
+      "MALL_FE8FEC46"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东风汽车大道商圈",
+    "description": "沿东风汽车大道分布，包含和信·奥特莱斯购物公园，定位为品牌折扣与特色零售结合的近郊型商业节点。",
+    "mall_codes": [
+      "MALL_BC1E8EA2"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "黄集镇商圈",
+    "description": "位于襄州区北部黄集镇，以余家商城为代表，服务本地居民的基础型乡镇商业集聚区。",
+    "mall_codes": [
+      "MALL_102E9A1B"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "朱集镇商圈",
+    "description": "覆盖朱集镇区域，以襄运商城为主要商业载体，服务于周边乡镇的区域性基础商业中心。",
+    "mall_codes": [
+      "MALL_54B82EC8"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "黄龙镇商圈",
+    "description": "位于襄州区西南部黄龙镇，由陈祖平时尚购物中心构成，属于典型乡镇级零售服务点。",
+    "mall_codes": [
+      "MALL_D49C12CB"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "何岗商圈",
+    "description": "位于襄州区东部何岗片区，依托何岗爱家购物中心服务周边农村及城乡结合部居民，属新兴村级/社区级商业节点。",
+    "mall_codes": [
+      "MALL_CC1F6C5C"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "汉江奇幻大道商圈",
+    "description": "位于汉江南岸奇幻大道沿线，以汉江park（装修中）为代表项目，处于开发或筹备阶段，未来可能形成滨水特色商业带。",
+    "mall_codes": [
+      "MALL_B9ED86A8"
+    ]
+  }
+]

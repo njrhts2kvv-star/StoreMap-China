@@ -1,0 +1,89 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "柳城商圈",
+    "description": "位于南安市城区柳城街道及周边，涵盖成功街、汽贸南路等主干道沿线的商业集聚区，是南安市区核心商业中心之一。",
+    "mall_codes": [
+      "MALL_F6CC64F1",
+      "MALL_D43EA6DA",
+      "MALL_6343F883"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "美林商圈",
+    "description": "位于南安市美林街道，以中骏世界城为核心，覆盖江北路与美林路交汇区域，是近年来快速发展的新兴城市商圈。",
+    "mall_codes": [
+      "MALL_8BF0F2F2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "水头商圈",
+    "description": "依托水头镇大盈片区及奎峰路交叉口一带形成的区域性商业中心，聚集多个本地购物中心，服务水头镇及周边石材产业人群。",
+    "mall_codes": [
+      "MALL_73C55B02",
+      "MALL_C62C8D52"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "官桥商圈",
+    "description": "以官桥镇温泉新都城为中心，辐射金庄街周边的生活消费圈，主要满足城镇居民日常购物需求。",
+    "mall_codes": [
+      "MALL_FCC01589"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "石井商圈",
+    "description": "位于南安南部沿海的石井镇，沿延平西路分布，服务于本地居民和临近厦门的跨界消费人群。",
+    "mall_codes": [
+      "MALL_E881FFE2",
+      "MALL_9C20AA9D",
+      "MALL_CB1D7D98"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "罗东商圈",
+    "description": "以罗东镇银河东路源昌银河广场为核心的东部乡镇级商业中心，覆盖罗东及周边村落。",
+    "mall_codes": [
+      "MALL_8DC9709A"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "诗山商圈",
+    "description": "位于南安北部诗山镇，依托新街及茗荟购物广场形成的地方性消费节点，服务当地居民。",
+    "mall_codes": [
+      "MALL_CCF52A1F",
+      "MALL_3B930DC1"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "洪梅商圈",
+    "description": "位于洪梅镇三梅小学旁的家乐惠购物中心为该区域主要商业设施，构成小型乡镇生活圈。",
+    "mall_codes": [
+      "MALL_F87A2E40"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "码头商圈",
+    "description": "位于码头镇中心钟楼街一带，依托佳汉购物商场形成的传统集镇商业点。",
+    "mall_codes": [
+      "MALL_2194FAE3"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "金淘商圈",
+    "description": "覆盖金淘镇盖溪路口及东石线交叉区域，由嘉联购物商场和金盛购物广场共同支撑的乡镇级消费中心。",
+    "mall_codes": [
+      "MALL_FF99EC40",
+      "MALL_7978DDC9"
+    ]
+  }
+]

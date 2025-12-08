@@ -1,0 +1,34 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中心广场商圈",
+    "description": "以三城时代广场为核心，覆盖文化路与加尔布拉克路交叉区域，邻近县政府及行政中心，是额敏县城区中部的主要商业聚集区。",
+    "mall_codes": [
+      "MALL_5544DCFA",
+      "MALL_93C28F54",
+      "MALL_9D3AFD8B",
+      "MALL_5E6FD79B",
+      "MALL_A7C30BB2",
+      "MALL_E25B781A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "农九师商圈",
+    "description": "位于农九师片区，集中分布在建安北路及客运站周边，以额河商场、汇银广场等为代表，服务农九师居民及中学师生，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_9CE87E86",
+      "MALL_7CEC0060",
+      "MALL_E0E8C155",
+      "MALL_26B2CCA4"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新华路商圈",
+    "description": "位于县城南部新华路附近，以百佳购物为唯一已知商业点，虽独立但具备南部城区基础配套功能，构成小型生活服务型商圈。",
+    "mall_codes": [
+      "MALL_0ABEFD32"
+    ]
+  }
+]

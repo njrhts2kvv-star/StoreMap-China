@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城东商圈",
+    "description": "位于玉山县东部，以三清山大道沿线为核心，聚集多个商业广场和购物中心，是玉山县较为集中的商业片区之一。",
+    "mall_codes": [
+      "MALL_1460C504",
+      "MALL_D4C92324",
+      "MALL_CD94DE4D",
+      "MALL_610B3A61"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "冰溪中心商圈",
+    "description": "围绕冰溪镇核心区域分布，涵盖金山大道、甘溪路及附近住宅区，包含多个主要购物中心，地理位置集中，构成县城中心商业带。",
+    "mall_codes": [
+      "MALL_7EC4CCB7",
+      "MALL_E334B54E",
+      "MALL_424F969B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东门商圈",
+    "description": "位于玉虚路附近的东门片区，以东门商业广场为核心，服务老城区居民，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_609B8728"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "下镇商圈",
+    "description": "位于下镇片区，依托下镇购物中心服务周边乡镇居民，属于外围乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_35F0DD5A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "临湖商圈",
+    "description": "地处临湖街附近，以临湖购物中心为主要载体，覆盖临湖镇及周边农村地区，为区域性基础商业服务点。",
+    "mall_codes": [
+      "MALL_EBE67BC5"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "必姆商圈",
+    "description": "位于玉占线与647县道交汇区域，以千百惠购物中心为核心，服务于必姆镇及周边乡村，属外围乡镇商业节点。",
+    "mall_codes": [
+      "MALL_DC894223"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "南山商圈",
+    "description": "位于松县段西侧，以新世纪超市为主要商业设施，服务南部城乡结合区域，形成基础生活配套商圈。",
+    "mall_codes": [
+      "MALL_45A9483A"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金山新城商圈",
+    "description": "位于金山新城核心区域，包含多个大型商业综合体",
+    "mall_codes": [
+      "MALL_D8CCA1DD",
+      "MALL_29FF9ADE",
+      "MALL_F979D260",
+      "MALL_E9E8A9F3",
+      "MALL_7DD408E0",
+      "MALL_FC47D43E",
+      "MALL_06B40E74",
+      "MALL_8774D846",
+      "MALL_F8F10A0B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "石化商圈",
+    "description": "位于石化街道周边，以百联金山为核心",
+    "mall_codes": [
+      "MALL_6427F54A",
+      "MALL_17021B83",
+      "MALL_51D0EA91",
+      "MALL_DC73EE7F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "朱泾商圈",
+    "description": "朱泾镇中心商业区域",
+    "mall_codes": [
+      "MALL_FEBA98BB",
+      "MALL_D1321B70"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "枫泾商圈",
+    "description": "枫泾镇及周边商业区域",
+    "mall_codes": [
+      "MALL_09FC9480",
+      "MALL_2EAA2585"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "亭林商圈",
+    "description": "亭林镇商业区域",
+    "mall_codes": [
+      "MALL_EE8E169F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "张堰商圈",
+    "description": "张堰镇商业区域",
+    "mall_codes": [
+      "MALL_38A9736E"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "金水湖商圈",
+    "description": "金水湖周边商业区域",
+    "mall_codes": [
+      "MALL_8FCF87F4"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "五福商圈",
+    "description": "临仓街周边商业区域",
+    "mall_codes": [
+      "MALL_C414610A"
+    ]
+  }
+]

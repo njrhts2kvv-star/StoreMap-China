@@ -1,0 +1,62 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "龙山大道商圈",
+    "description": "位于东乡区核心主干道龙山大道沿线，聚集多个商贸城与购物中心，是区内主要商业走廊之一。",
+    "mall_codes": [
+      "MALL_EEA58571",
+      "MALL_A47F45F8",
+      "MALL_324864ED"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城区中心商圈",
+    "description": "围绕雄岚大道与子山路等城区主干道分布，涵盖广场商厦、巧巧购物中心等，构成东乡老城区核心消费区域。",
+    "mall_codes": [
+      "MALL_455585A8",
+      "MALL_0D431D96",
+      "MALL_89B345CC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大富大道商圈",
+    "description": "位于大富大道与南英大道交汇区域，以星福购物中心为核心，服务东部片区居民。",
+    "mall_codes": [
+      "MALL_9C5C3286"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "宏鑫商贸城商圈",
+    "description": "以宏鑫商贸城为集聚点，形成区域性专业市场与小型零售结合的商贸型商圈。",
+    "mall_codes": [
+      "MALL_FAF5CF8B"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "店前片区商圈",
+    "description": "位于区西部店前地区，依托农村信用社周边配套形成乡镇级基础商业中心。",
+    "mall_codes": [
+      "MALL_80DECEA7"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "红星商贸商圈",
+    "description": "地处县道交汇处，以红星商贸中心为节点，服务于城乡结合部及周边乡镇。",
+    "mall_codes": [
+      "MALL_BCF29E8C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "德政路商圈",
+    "description": "位于德政路锦绣时代广场一带，盛旺客购物广场为该片区主要商业载体。",
+    "mall_codes": [
+      "MALL_2E3412BA"
+    ]
+  }
+]

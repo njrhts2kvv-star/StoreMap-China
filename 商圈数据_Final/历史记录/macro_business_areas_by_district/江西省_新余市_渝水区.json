@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城北核心商圈",
+    "description": "位于新余市渝水区城北街道，涵盖劳动北路、平安路及赣西大道周边，聚集了御天城商业广场、丰欧购物中心、联发时代广场等主要商业体，是渝水区北部的城市级商业中心。",
+    "mall_codes": [
+      "MALL_1147BF9C",
+      "MALL_B74D4FB4",
+      "MALL_5228BFEE",
+      "MALL_01D7ED09",
+      "MALL_927D94A0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南老城区商圈",
+    "description": "分布于解放东路、青年路、胜利南路等老城区主干道，包括东风商场、万悦汇购物广场、地王城市广场等，是渝水区传统商业集聚区，服务本地居民为主。",
+    "mall_codes": [
+      "MALL_2E4F04F1",
+      "MALL_D7CECD1C",
+      "MALL_EBAE470E",
+      "MALL_4C4E2B70",
+      "MALL_C0BA442F",
+      "MALL_299F5B4A",
+      "MALL_F2FCBD22"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新亚新商城商圈",
+    "description": "以新亚新时尚中心城为核心，覆盖劳动南路与亚新北路交叉区域，包含国贸地下商城及新亚新百货等配套商业，形成区域性零售集聚带。",
+    "mall_codes": [
+      "MALL_C0BA442F",
+      "MALL_4C4E2B70",
+      "MALL_299F5B4A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "赛维大道新兴商圈",
+    "description": "位于赛维大道沿线的融信新天地生活广场及其附属商业海嘟城，地处城西工业与居住融合区域，为近年发展起来的新兴社区型商业中心。",
+    "mall_codes": [
+      "MALL_4EB53DA4",
+      "MALL_01CE58EC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "罗坊镇区商圈",
+    "description": "服务于罗坊镇及周边乡镇居民，以罗坊商贸广场和罗福广场A栋为代表，构成渝水区西部乡镇级综合商业节点。",
+    "mall_codes": [
+      "MALL_784DD5BF",
+      "MALL_B815DD26"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "高铁站/兴和路商圈",
+    "description": "位于渝州大道与兴和路交汇区域，毗邻铜锣湾广场，靠近城市交通枢纽，具备一定门户商业特征，辐射周边流动人群。",
+    "mall_codes": [
+      "MALL_36AB5B04"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "城东边缘商圈",
+    "description": "位于612县道北侧的盛达购物中心，地处渝水区东部远郊，独立性强，服务范围偏向城乡结合部及附近村落。",
+    "mall_codes": [
+      "MALL_D6CF9C8A"
+    ]
+  }
+]

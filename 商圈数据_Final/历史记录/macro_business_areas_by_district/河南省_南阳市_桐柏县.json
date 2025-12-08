@@ -1,0 +1,48 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇中心商圈",
+    "description": "位于桐柏县城区核心区域，涵盖新华街、大同路及淮河路周边，集中分布多个商贸城和购物中心，是县城主要商业聚集区。",
+    "mall_codes": [
+      "MALL_CD6416C5",
+      "MALL_4C57F8CD",
+      "MALL_CA247ACA",
+      "MALL_4187B650",
+      "MALL_5D2F6C6C",
+      "MALL_6CE82DA2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "312国道沿线商圈",
+    "description": "沿312国道与010乡道交叉口附近布局，包含新世纪购物中心和老周购物中心，服务于过境交通与城乡结合部消费群体。",
+    "mall_codes": [
+      "MALL_9C227694",
+      "MALL_9298E8A0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "平氏镇商圈",
+    "description": "位于桐柏县下辖平氏镇，以万信购物中心为代表，服务乡镇本地居民，商业规模较小，辐射范围有限。",
+    "mall_codes": [
+      "MALL_AAA2127E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "淮源镇商圈",
+    "description": "位于桐柏县淮源镇，依托鸿鑫购物中心形成区域性小型商业节点，服务于当地及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_DFEB58AE"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "月河镇商圈",
+    "description": "位于桐柏县北部月河镇附近，以鑫玛特时代广场为核心，覆盖北部区域的零售需求。",
+    "mall_codes": [
+      "MALL_662AFD84"
+    ]
+  }
+]

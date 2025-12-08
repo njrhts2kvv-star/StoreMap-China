@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "海阳中心商圈",
+    "description": "位于海阳市老城区核心地带，集中分布在海政路、海阳路交汇区域，涵盖多个传统百货与商贸中心，是城市主要商业聚集区。",
+    "mall_codes": [
+      "MALL_70667E96",
+      "MALL_69768376",
+      "MALL_8F0D0A97",
+      "MALL_BA32045E",
+      "MALL_738AC5A3",
+      "MALL_F9F974A3",
+      "MALL_9C74FAFC",
+      "MALL_E32E53ED",
+      "MALL_F2F246AF",
+      "MALL_051EC067"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "温州商贸城商圈",
+    "description": "以海阳温州商贸城多栋建筑为核心，集中于东凤大道北路与海宁路交叉口附近，形成专业市场与批发零售为主的商业集聚区。",
+    "mall_codes": [
+      "MALL_C4ABAD30",
+      "MALL_CFC97CC9",
+      "MALL_6497079E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "度假区商圈",
+    "description": "位于海阳市东部沿海的旅游度假区域，依托丽达购物广场和假日湾商业等设施，服务游客及周边居住区。",
+    "mall_codes": [
+      "MALL_893EE34C",
+      "MALL_B147CEAE"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "凤城新区商圈",
+    "description": "分布于城市北部扩展区域，包括凤都街、黄海大道沿线的商业项目，如凤都商业广场和盛华国际美食广场，代表新兴城市发展带。",
+    "mall_codes": [
+      "MALL_41DCA52A",
+      "MALL_2FA21604"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "碧城工业园商圈",
+    "description": "位于城市外围工业配套区，以兄弟百货为代表，服务于工业园区内职工与居民的基础型商业点。",
+    "mall_codes": [
+      "MALL_3772D33C"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "辛政街商圈",
+    "description": "位于海阳市西南部辛政街沿线，以倬芬商场为唯一代表，属区域性小型商业节点。",
+    "mall_codes": [
+      "MALL_11492116"
+    ]
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "正阳县城中心商圈",
+    "description": "以正阳县城区核心区域为主，覆盖东顺河街、西顺河街及正阳大道周边，是县城内商业聚集度较高的区域，包含多个生活广场和购物中心。",
+    "mall_codes": [
+      "MALL_8D9DC985",
+      "MALL_C165447B",
+      "MALL_82D5B032",
+      "MALL_B153D3E0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "傅寨乡商圈",
+    "description": "位于正阳县傅寨乡，依托乐购广场形成区域性乡镇商业节点，服务本地居民日常消费。",
+    "mall_codes": [
+      "MALL_AE2F4B13"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "铜钟镇商圈",
+    "description": "分布于铜钟镇乡道与省道交叉口附近，由易达购物广场和购物广场构成双点布局，服务于镇域及周边农村市场。",
+    "mall_codes": [
+      "MALL_E99BAB34",
+      "MALL_F7A47FD5"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "王勿桥乡商圈",
+    "description": "位于正阳县东部的王勿桥乡，富民购物中心为该区域主要商业设施，辐射周边乡镇。",
+    "mall_codes": [
+      "MALL_213D99C3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "陡沟镇商圈",
+    "description": "地处正阳县南部陡沟镇，胜利商城为该区域代表性商业场所，服务于南部边缘乡镇居民。",
+    "mall_codes": [
+      "MALL_62923879"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "杨店乡商圈",
+    "description": "位于确山县杨店交界附近，农家乐购物广场服务于跨县交界地带的乡村消费群体。",
+    "mall_codes": [
+      "MALL_8892688F"
+    ]
+  }
+]

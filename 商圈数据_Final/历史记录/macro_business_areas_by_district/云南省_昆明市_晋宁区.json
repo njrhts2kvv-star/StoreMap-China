@@ -1,0 +1,40 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "晋城商圈",
+    "description": "位于晋城镇核心区域，以传统商业步行街为中心",
+    "mall_codes": [
+      "MALL_C0662708",
+      "MALL_7C6DB377",
+      "MALL_E5169595"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "昆阳中心商圈",
+    "description": "以昆阳街道永乐大街为核心，集中了多个现代商业综合体",
+    "mall_codes": [
+      "MALL_BF810110",
+      "MALL_45AE1655",
+      "MALL_AC2A7314",
+      "MALL_8AE1B726",
+      "MALL_03A6EDF7"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "十堰路商圈",
+    "description": "位于十堰路周边的商业区域",
+    "mall_codes": [
+      "MALL_D199C709"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东凤路商圈",
+    "description": "东凤路周边的商业聚集区",
+    "mall_codes": [
+      "MALL_5B592E43"
+    ]
+  }
+]

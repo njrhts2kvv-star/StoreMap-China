@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "渔峡口商圈",
+    "description": "以渔峡口镇夷城路为核心的区域商业中心，覆盖YICHENG购物中心，服务于渔峡口镇及周边居民。",
+    "mall_codes": [
+      "MALL_9CE4E0A8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "龙舟坪城区商圈",
+    "description": "涵盖金龙路与二桥街周边商业节点，包括aaa生活广场和佰惠购物中心，位于长阳土家族自治县县城核心发展区域，是县域内主要的商业集聚区。",
+    "mall_codes": [
+      "MALL_BC4ACCFB",
+      "MALL_E7F57561"
+    ]
+  }
+]

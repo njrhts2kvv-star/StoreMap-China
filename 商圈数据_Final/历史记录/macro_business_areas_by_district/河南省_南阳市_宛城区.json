@@ -1,0 +1,93 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "人民路-中州路商圈",
+    "description": "位于南阳市中心城区核心交叉口，聚集了豪盛城、大统百货及HD时代广场等商业体，是宛城区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_DDB8F3EA",
+      "MALL_40BEF10B",
+      "MALL_615C1AD2",
+      "MALL_2D6DD38B",
+      "MALL_69EDB7A7",
+      "MALL_97EE19D2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "新华东路-万达商圈",
+    "description": "以南阳万达广场为核心，辐射周边建设东路和新华东路沿线商业，是近年来发展迅速的城市级商业中心。",
+    "mall_codes": [
+      "MALL_0FFF7163",
+      "MALL_07AC62B6",
+      "MALL_E0D8EA2D",
+      "MALL_691D7BBF"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "独山大道南段商圈",
+    "description": "位于城市南部拓展区域，以中达·天润城市广场和枣林商城为代表，服务南部居民区的区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_0BD5E5F9",
+      "MALL_3931032D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "瓦店镇商圈",
+    "description": "服务于宛城区下辖瓦店镇本地居民的生活型商业集聚点，以佳和购物中心和嘉年华时代广场为主。",
+    "mall_codes": [
+      "MALL_7ACB550C",
+      "MALL_2AA73623"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "官庄镇商圈",
+    "description": "位于宛城区北部边缘的官庄工区范围内，以健强大卖场和大时代生活广场为代表，服务于当地城镇消费群体。",
+    "mall_codes": [
+      "MALL_9A099A05",
+      "MALL_FB0D38E3"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "新店乡商圈",
+    "description": "位于宛城区东北部的新店乡区域，以大唐时代广场为主要商业载体，覆盖周边乡镇的基层商业节点。",
+    "mall_codes": [
+      "MALL_02ED24DF"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "汉冶西路商圈",
+    "description": "位于人民北路与汉冶西路交汇区域，以盛德美购物广场为核心，服务北部城区居民的社区型商业中心。",
+    "mall_codes": [
+      "MALL_A862A446"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "五里堡-南阳路商圈",
+    "description": "位于城市西部城乡结合部，以新龙达购物中心为支点，覆盖五里堡及周边片区的区域性商业节点。",
+    "mall_codes": [
+      "MALL_F979EDF1"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "溧河乡-103省道商圈",
+    "description": "位于宛城区东部外围的交通干道沿线，依托天润生活广场形成服务于过境客流与周边乡村的边缘型商业集聚区。",
+    "mall_codes": [
+      "MALL_9432B724"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "黄台岗镇商圈",
+    "description": "位于宛城区南部乡镇区域，以锦绣商城为主要商业设施，服务于黄台岗镇及周边农村市场的基层商业节点。",
+    "mall_codes": [
+      "MALL_1A6254F8"
+    ]
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五堰商圈",
+    "description": "以五堰街道为核心的传统商业中心，集中了多座商场和购物广场，覆盖人民中路、北京路及周边区域，是茅箭区最成熟的商圈之一。",
+    "mall_codes": [
+      "MALL_A8A1E95B",
+      "MALL_5D3C232B",
+      "MALL_A7BB3BA9",
+      "MALL_8EA50676",
+      "MALL_1641B361",
+      "MALL_56260AC5",
+      "MALL_87FA098C",
+      "MALL_E2B525C7",
+      "MALL_805BA75C",
+      "MALL_317A97CF",
+      "MALL_9E9BB271"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "三堰/火车站商圈",
+    "description": "依托十堰火车站与三堰客运站的交通枢纽地位，聚集了服务于流动人群和本地居民的商业设施，位于城区北部交通门户位置。",
+    "mall_codes": [
+      "MALL_5BC50847",
+      "MALL_5484CA9A",
+      "MALL_549143F6",
+      "MALL_3FFB39DA"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "武当路商圈",
+    "description": "分布于武当路沿线，覆盖顾家岗及南部城区，服务城市主干道沿线居民，具有较强的社区型商业特征。",
+    "mall_codes": [
+      "MALL_61BE44B9",
+      "MALL_485FD64A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "白浪开发区商圈",
+    "description": "位于经济开发区白浪中路，是茅箭区东部工业与居住配套的商业节点，辐射范围以本地居民为主。",
+    "mall_codes": [
+      "MALL_C3E854AD"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "江苏路商圈",
+    "description": "位于江苏路附近，靠近城市北部居住区，商业体量较小，主要服务于周边社区。",
+    "mall_codes": [
+      "MALL_CDB5AA03"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "人民北路商圈",
+    "description": "沿人民北路分布，集中于彩源广场至香港城一带，是五堰商圈向北延伸的组成部分，具备一定商业密度。",
+    "mall_codes": [
+      "MALL_911F7AA1"
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "王府井商圈",
+    "description": "以王府井大街为核心，聚集了多家知名商业体，包括东方新天地、北京apm、东安市场及王府中环等，是北京传统的核心商业区之一。",
+    "mall_codes": [
+      "MALL_CA2736CC",
+      "MALL_97CA3B2F",
+      "MALL_BBFB6F5B",
+      "MALL_7B095637",
+      "MALL_C05B5F5B",
+      "MALL_206D9BCE",
+      "MALL_4A313205",
+      "MALL_029AF507",
+      "MALL_823BC410",
+      "MALL_6CFFE6C9",
+      "MALL_1445B9D7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "崇文门商圈",
+    "description": "位于崇文门外大街沿线，涵盖国瑞购物中心、搜秀购物广场、新世界百货二期等商业项目，是东城区南部的重要消费区域。",
+    "mall_codes": [
+      "MALL_2381D5B7",
+      "MALL_03839989",
+      "MALL_1414A339"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东直门商圈",
+    "description": "依托东直门交通枢纽，汇聚来福士中心、银河SOHO及银座mall等现代商业与办公综合体，形成集商务、零售于一体的新兴商业节点。",
+    "mall_codes": [
+      "MALL_105D2BE1",
+      "MALL_23FD9366",
+      "MALL_80C88420"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "永定门/木樨园商圈",
+    "description": "位于南二环外侧，以百荣世贸商城及其二期、南广场为主体，红桥市场为补充，构成以批发零售和大众消费为主的南部商贸集聚区。",
+    "mall_codes": [
+      "MALL_519F54ED",
+      "MALL_D9702A82",
+      "MALL_4256EEEE",
+      "MALL_91DFBE8B"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "金宝街商圈",
+    "description": "坐落于金宝街高端商业带，以金宝汇购物中心为代表，毗邻王府井但定位更趋精致化与小众化，服务于周边高端住宅与商务人群。",
+    "mall_codes": [
+      "MALL_9B1ED74D"
+    ]
+  }
+]

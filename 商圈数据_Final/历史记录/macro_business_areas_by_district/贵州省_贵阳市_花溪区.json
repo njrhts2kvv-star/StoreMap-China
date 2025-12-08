@@ -1,0 +1,82 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "黄河路商圈",
+    "description": "位于花溪区北部黄河路沿线，集中分布万达广场、海纳广场等商业体，是花溪老城区核心商业带之一。",
+    "mall_codes": [
+      "MALL_C7FAA234",
+      "MALL_FFCE3DE0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "珠江路/万科商圈",
+    "description": "依托地铁珠江路站及万科社区发展形成的新兴商业集聚区，包含万科广场及其周边mall，地理位置高度集中。",
+    "mall_codes": [
+      "MALL_770171E9",
+      "MALL_88222880"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "霞晖路商圈",
+    "description": "以四季花溪社区为核心的生活配套商业区，涵盖四季花溪商场A、B区及周边多个小型商业体，服务本地居民。",
+    "mall_codes": [
+      "MALL_3B45D124",
+      "MALL_14690C64",
+      "MALL_45B30F51",
+      "MALL_8FE9ED30",
+      "MALL_3367F331",
+      "MALL_7B12B9A4"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "花溪大学城商圈",
+    "description": "位于花溪南部高校聚集区附近，依托贵州民族大学等院校形成的学生消费型商业中心，包括四海万隆购物中心等。",
+    "mall_codes": [
+      "MALL_324CF8F3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "贵安大道奥莱商圈",
+    "description": "地处贵安新区交界地带，以天河潭奥特莱斯为代表，主打 outlet 模式的郊区型商业中心。",
+    "mall_codes": [
+      "MALL_4D6C951F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "开发大道商圈",
+    "description": "位于花溪中西部开发大道沿线，富华购物广场为该区域主要商业节点，辐射周边工业园区及住宅区。",
+    "mall_codes": [
+      "MALL_A703C860"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "孟关商圈",
+    "description": "位于花溪东部孟关汽车贸易城附近，惠万多购物中心服务于汽贸产业带及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_5B768D0E"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "航天工业园商圈",
+    "description": "服务于航天工业园职工及家属的生活配套商业点，以航天购物中心为代表，功能偏基础保障型。",
+    "mall_codes": [
+      "MALL_B2BBBDEB"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "思雅路商圈",
+    "description": "位于花溪最南端思雅路沿线，贵澳时代广场和顺枫购物中心分布于此，覆盖南部乡镇消费人群。",
+    "mall_codes": [
+      "MALL_051F2050",
+      "MALL_D0791216"
+    ]
+  }
+]

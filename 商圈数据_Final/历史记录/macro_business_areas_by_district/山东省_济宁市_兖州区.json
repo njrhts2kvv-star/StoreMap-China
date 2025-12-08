@@ -1,0 +1,59 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "兖州老城中心商圈",
+    "description": "位于兖州区核心城区，涵盖中御桥北路、建设东路沿线的多个传统购物中心和商厦，是区内历史最悠久、商业最密集的区域。",
+    "mall_codes": [
+      "MALL_EC8A1202",
+      "MALL_4CC9B069",
+      "MALL_89DC0002",
+      "MALL_E6018B6B",
+      "MALL_45566643",
+      "MALL_497847B6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "龙桥路商圈",
+    "description": "沿龙桥北路分布，集中了乐百嘉、海润广场、龙贵购物广场等商场，是兖州区近年来发展较快的新兴商业带。",
+    "mall_codes": [
+      "MALL_7A209E2E",
+      "MALL_9F514362",
+      "MALL_30AB16D6",
+      "MALL_536E116B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "九州大道商圈",
+    "description": "依托九州大道主干道布局，包含和美购物广场等商业项目，服务周边大型居住区，形成区域性消费节点。",
+    "mall_codes": [
+      "MALL_745D742C"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新城区西片商圈",
+    "description": "位于城区西部外围，以百意财富广场购物中心为代表，覆盖宝新路与新金路交叉区域，服务本地居民。",
+    "mall_codes": [
+      "MALL_543CEA45",
+      "MALL_8CE5BE3E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "颜店镇商圈",
+    "description": "位于兖州区下辖颜店镇，以爱客佳购物广场为中心，服务于乡镇居民的基础商业需求。",
+    "mall_codes": [
+      "MALL_EB659B17"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "新驿镇商圈",
+    "description": "位于兖州区北部新驿镇，依托旭之商城大卖场形成镇级商业中心，满足周边乡镇消费。",
+    "mall_codes": [
+      "MALL_BB9FE594"
+    ]
+  }
+]

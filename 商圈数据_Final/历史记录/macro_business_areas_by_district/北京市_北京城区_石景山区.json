@@ -1,0 +1,48 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "苹果园-金安桥商圈",
+    "description": "以京西大悦城为核心，覆盖喜隆多、金安环宇荟及周边多个商业项目，位于石景山西部交通节点，依托地铁6号线、S1线及11号线形成区域级商圈。",
+    "mall_codes": [
+      "MALL_4990C308",
+      "MALL_6A826194",
+      "MALL_3BD08C3A",
+      "MALL_C3E730AC",
+      "MALL_286CCC10",
+      "MALL_B589E93B",
+      "MALL_5B057C9C",
+      "MALL_5AF8A6FF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "首钢园商圈",
+    "description": "依托首钢工业遗址改造形成的新兴商业片区，以六工汇购物广场为主要商业载体，定位为文化与商业融合的特色消费空间。",
+    "mall_codes": [
+      "MALL_F2B9A6D7"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "古城-鲁谷商圈",
+    "description": "涵盖古城、鲁谷一带的传统居住区配套商业，包括万达广场、华荣商场、天大商城等，服务本地居民，分布相对分散。",
+    "mall_codes": [
+      "MALL_2C935733",
+      "MALL_2170465B",
+      "MALL_6F0C6769",
+      "MALL_3856F100",
+      "MALL_7C6C98A4",
+      "MALL_B5DEE5A5",
+      "MALL_C0F80DD2"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "北辛安-模式口商圈",
+    "description": "位于石景山北部更新区域，包含当代商城与宏天商场，服务于北辛安及模式口地区城市更新后的消费人群。",
+    "mall_codes": [
+      "MALL_ABF36FDE",
+      "MALL_1D8E456F"
+    ]
+  }
+]

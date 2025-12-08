@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "大河路商圈",
+    "description": "位于积石山县大河路沿线，集中了旭云商厦、嘉龙商业广场、宏达购物中心、添源百货、积石商厦、积石商贸城等多个商业设施，是县城核心商业聚集区。",
+    "mall_codes": [
+      "MALL_A82A7D9F",
+      "MALL_FF50FA19",
+      "MALL_C8FCAEED",
+      "MALL_F9BA2E65",
+      "MALL_73F94022",
+      "MALL_9F7117B8",
+      "MALL_ED9328F6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中学路商圈",
+    "description": "位于积石山县中学路与临大路交叉口周边，聚集了三联商厦、君悦商厦、步步高商城和联谊购物广场，是县城东部的重要商业节点。",
+    "mall_codes": [
+      "MALL_FACFAA63",
+      "MALL_13FF9B3D",
+      "MALL_3765B8A2",
+      "MALL_C8556C02"
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "石路商圈",
+    "description": "以石路步行街为核心的传统商业中心，聚集多个中小型商场，覆盖友新路、广济南路一带，是姑苏区西部主要消费区域。",
+    "mall_codes": [
+      "MALL_800F09FA",
+      "MALL_8643464F",
+      "MALL_E1099EF0",
+      "MALL_8CF34D41",
+      "MALL_35A368AF",
+      "MALL_26E6FFBC",
+      "MALL_C4198865"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "观前街商圈",
+    "description": "苏州最核心的传统商业街区之一，集中于观前街及周边人民路北段，商业密度高，历史底蕴深厚，为姑苏区东部核心消费带。",
+    "mall_codes": [
+      "MALL_D08C9207",
+      "MALL_A02A621C",
+      "MALL_A58038C6",
+      "MALL_BB8B7EF9",
+      "MALL_9F79A369"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南门/人民路中轴商圈",
+    "description": "沿人民路中段分布，以南门地铁站为中心，涵盖泰华商城、汇邻广场等社区型商业体，服务城市南部居民生活需求。",
+    "mall_codes": [
+      "MALL_8CF34D41",
+      "MALL_30E9A8E6",
+      "MALL_F70C7298",
+      "MALL_CB423FB6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "平江新城商圈",
+    "description": "位于姑苏区北部平江新城板块，依托平泷路、苏站路沿线交通节点，分布有少量新兴或专业市场型商业设施。",
+    "mall_codes": [
+      "MALL_712A5F30",
+      "MALL_B6F14F96",
+      "MALL_4CF4755D"
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，聚集于项王东路与庐山路周边的商业集聚区，涵盖宿迁市区东部主要商业设施。",
+    "mall_codes": [
+      "MALL_5FFEE9BE",
+      "MALL_9CC937BB",
+      "MALL_6DD9D1CE",
+      "MALL_397AED4D",
+      "MALL_9DC6E10F",
+      "MALL_64B16E1D",
+      "MALL_BD3D73BC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "关庙路商圈",
+    "description": "位于宿豫区东部关庙路沿线，以欧特福购物中心和生活购物中心为节点，服务周边乡镇居民的区域型商业中心。",
+    "mall_codes": [
+      "MALL_BEF546D0",
+      "MALL_3ECC0376"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "顺河-曹集片区",
+    "description": "分布于宿豫区北部顺河镇与曹集乡的社区型生活购物中心，覆盖城乡结合部基础消费需求。",
+    "mall_codes": [
+      "MALL_438C3872",
+      "MALL_BDE7F783"
+    ]
+  }
+]

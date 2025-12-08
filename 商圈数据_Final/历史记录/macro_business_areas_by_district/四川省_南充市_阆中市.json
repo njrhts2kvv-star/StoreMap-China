@@ -1,0 +1,73 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "古城中心商圈",
+    "description": "位于阆中古城核心区域，涵盖东方广场、广场路及周边主要商业节点，是传统人流聚集区，代表商场包括九点利时尚街和俊豪阆中购物中心。",
+    "mall_codes": [
+      "MALL_3EF348D2",
+      "MALL_CFF5A156"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "七里新区商圈",
+    "description": "集中于七里大道与长公大道交汇地带，覆盖多个住宅配套商业体，如汇洋购物广场、新世纪商城、熊猫商业广场等，构成七里新城主要消费带。",
+    "mall_codes": [
+      "MALL_A56AC6F6",
+      "MALL_503E0E8A",
+      "MALL_D465FC7F",
+      "MALL_FF9E7E30",
+      "MALL_D6179C89",
+      "MALL_8A0490E1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南池路商圈",
+    "description": "依托南池路与巴都大道交叉口形成的新兴商业集聚区，以时代天街为核心，辅以金汇购物中心，具备一定品牌聚合效应。",
+    "mall_codes": [
+      "MALL_10F0BC11",
+      "MALL_7A5CCF12"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "滨江商圈",
+    "description": "沿阆水东路布局，靠近嘉陵江滨水地带，以滨江新天地为代表，服务滨江居住区。",
+    "mall_codes": [
+      "MALL_F2F6E72E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西城区商圈",
+    "description": "位于城市西部一元街与商城路西段附近，以西环广场为支点，辐射周边社区。",
+    "mall_codes": [
+      "MALL_AB1B40D1"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "汉王祠路商圈",
+    "description": "分布于汉王祠路南池三期周边，地理位置偏南，以华鲜森购物中心为主要载体。",
+    "mall_codes": [
+      "MALL_B7D1323B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "柏垭镇商圈",
+    "description": "位于阆中市下辖柏垭镇，远离主城区，服务于乡镇居民，代表项目为柏垭天罡街新天地购物中心。",
+    "mall_codes": [
+      "MALL_0EBDC051"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "东北外围商圈",
+    "description": "地处城市东北方向347国道与322乡道交界处，位置偏远，以奉国商场为唯一商业节点，服务农村及过境人群。",
+    "mall_codes": [
+      "MALL_529EE863"
+    ]
+  }
+]

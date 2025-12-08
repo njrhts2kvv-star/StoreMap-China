@@ -1,0 +1,108 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "藤县河东商圈",
+    "description": "位于藤县河东片区，涵盖米兰国贸商业广场、国贸大厦、安泰购物城等商场，是藤县较为集中的商业聚集区之一。",
+    "mall_codes": [
+      "MALL_7CF74E06",
+      "MALL_DE8A6EA8",
+      "MALL_DF7C206C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "藤县登俊路商圈",
+    "description": "以登俊路为核心，集中了同裕富商城、文化宫商城、新世纪商厦等多个商场，形成藤县城区内重要的沿街商业带。",
+    "mall_codes": [
+      "MALL_5EF79A30",
+      "MALL_BDFCBD96",
+      "MALL_CDECEEB4",
+      "MALL_3FF57F08",
+      "MALL_A5F4AD1B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "藤县威林城市广场商圈",
+    "description": "围绕威林城市广场布局，包含人本购物中心和藤县威林城市广场，地处县城较繁华地段，具备一定商业集聚效应。",
+    "mall_codes": [
+      "MALL_87B4FFE0",
+      "MALL_98919299"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "藤县中心大道商圈",
+    "description": "位于藤州大道及周边区域，包括地王商业中心、壹方茂商业中心等，地处交通要道交叉口，具有较强区位优势。",
+    "mall_codes": [
+      "MALL_D41C470F",
+      "MALL_C415C5E9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "太平镇商圈",
+    "description": "位于藤县下辖的太平镇，涵盖太平商业中心和太平镇百货大楼，是藤县北部的重要区域性商业节点。",
+    "mall_codes": [
+      "MALL_E64A4862",
+      "MALL_38981F02"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "埌南商圈",
+    "description": "位于藤县埌南镇附近，以上好佳商场为代表，服务当地乡镇居民，属于乡镇级商业点。",
+    "mall_codes": [
+      "MALL_610A705B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "新庆商圈",
+    "description": "位于藤县新庆乡，以新庆供销社商厦为主要商业设施，服务于本地乡镇市场。",
+    "mall_codes": [
+      "MALL_1E696F43"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "蒙江商圈",
+    "description": "位于藤县蒙江镇，以蒙城电器商场为主要商业载体，属乡镇级零售中心。",
+    "mall_codes": [
+      "MALL_0D5401A0"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "大黎商圈",
+    "description": "位于藤县大黎镇，以家多福购物中心为主要商业设施，覆盖周边乡镇消费群体。",
+    "mall_codes": [
+      "MALL_365315D3"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "津北商圈",
+    "description": "位于藤县津北片区，以津北钜隆商贸城为主要商业节点，地处国道沿线，具有一定物流与商贸结合特征。",
+    "mall_codes": [
+      "MALL_FEE329C2"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "怡海商圈",
+    "description": "位于绣江路一带，以怡海商贸城为核心，服务于周边社区，属于区域性小型商业聚集点。",
+    "mall_codes": [
+      "MALL_EA2A06A8"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "藤县南部外围商圈",
+    "description": "位于县城南部边缘，以恒元商厦和裕平商城为代表，分布相对分散，服务于局部居住区。",
+    "mall_codes": [
+      "MALL_593933FB",
+      "MALL_7357D931"
+    ]
+  }
+]

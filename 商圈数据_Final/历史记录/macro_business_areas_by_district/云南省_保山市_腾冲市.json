@@ -1,0 +1,73 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "腾冲老城商圈",
+    "description": "位于腾冲老城区核心地段，以光华路、忠勇路为主要商业轴线，聚集了多个传统商贸城和购物广场",
+    "mall_codes": [
+      "MALL_D3C0091B",
+      "MALL_6D1A3788",
+      "MALL_FDCE970C",
+      "MALL_873115BD",
+      "MALL_8ECFDEE2",
+      "MALL_02C20C5D",
+      "MALL_0C75F674",
+      "MALL_75B7BBE1",
+      "MALL_91FB90F4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "热海路商圈",
+    "description": "位于热海路与翡翠路交汇区域，以永兴财富中心为核心的新兴商业聚集区",
+    "mall_codes": [
+      "MALL_99269612",
+      "MALL_11B44A3A",
+      "MALL_6DA871FB",
+      "MALL_71F3D2C6",
+      "MALL_0EA54288"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "元兴商圈",
+    "description": "位于元吉街与东方路周边，以元兴商业广场为核心的小型商业区",
+    "mall_codes": [
+      "MALL_DE0E0B28"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "砚湖商圈",
+    "description": "位于玉泉路与文星街交汇处，以砚湖花园为核心的商业区域",
+    "mall_codes": [
+      "MALL_72428E8A",
+      "MALL_A13B4154"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西山坝商圈",
+    "description": "位于西山坝区域，包括宝峰商场和腾冲国际商贸城等",
+    "mall_codes": [
+      "MALL_F99778DB",
+      "MALL_DF06C06F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "绮罗商圈",
+    "description": "位于热海社区绮罗片区，以绮罗商贸城为核心",
+    "mall_codes": [
+      "MALL_407B3EAC"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "猴桥商圈",
+    "description": "位于猴桥镇边境经济合作区，服务于边境贸易的商业区域",
+    "mall_codes": [
+      "MALL_F1E92582",
+      "MALL_778C7C04"
+    ]
+  }
+]

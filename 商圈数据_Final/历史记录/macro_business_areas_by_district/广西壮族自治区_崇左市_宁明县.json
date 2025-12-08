@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城中镇商圈",
+    "description": "以宁明县城区核心区域为主，涵盖城中镇南华街及周边主要商业节点，是县城传统商业中心。",
+    "mall_codes": [
+      "MALL_8EE07A8C",
+      "MALL_40E5F06A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "兴宁大道商圈",
+    "description": "位于兴宁大道西与城西路交叉区域，依托万晟集团所在地块形成的城市新区商业集聚点。",
+    "mall_codes": [
+      "MALL_0748A1A7"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "桐棉镇商圈",
+    "description": "服务于桐棉镇本地居民的区域性综合商场，位于乡镇中心地带，承担基础商业服务功能。",
+    "mall_codes": [
+      "MALL_AE27C64A"
+    ]
+  }
+]

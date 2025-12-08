@@ -1,0 +1,33 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "市区中心商圈",
+    "description": "位于乌苏市中心城区核心区域，涵盖塔里木河西路与乌鲁木齐北路交汇地带，聚集较多商业设施，是本地传统商业集中区。",
+    "mall_codes": [
+      "MALL_AB8A1E1C",
+      "MALL_040A8B31",
+      "MALL_D6E99265",
+      "MALL_1F9C9191",
+      "MALL_256690EA",
+      "MALL_61A242B8",
+      "MALL_5DC2E134"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "黄河路东段商圈",
+    "description": "位于乌苏市东部黄河路沿线，靠近青岛路与黄河东路，分布有明盛时代广场、鑫福源商业广场等项目，属城市拓展区域的新兴商业集聚带。",
+    "mall_codes": [
+      "MALL_8C8CBCFD",
+      "MALL_80EB6DBC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "127团团部商圈",
+    "description": "位于127团驻地启明大道，以国风时代广场为核心，服务于团场居民的区域性商业节点，具有团场城镇配套特征。",
+    "mall_codes": [
+      "MALL_456A7B9A"
+    ]
+  }
+]

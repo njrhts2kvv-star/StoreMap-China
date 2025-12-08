@@ -1,0 +1,54 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "山湖路商圈",
+    "description": "以山湖路为核心轴线，聚集了东北亚广场、大商新玛特购物广场等主要商业体，是桃山区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_6EE2321F",
+      "MALL_E2A0A0FD",
+      "MALL_C5A28999",
+      "MALL_3FD6B0E5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "温州大街商圈",
+    "description": "位于温州大街沿线，集中了友谊商厦、新天地购物广场等商场，形成区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_73182B4D",
+      "MALL_A61ECC29"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "步行街地下商圈",
+    "description": "依托城市步行街地下空间布局，以中央商城为代表，构成小型地下商业节点。",
+    "mall_codes": [
+      "MALL_13E229A1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "大同人防商圈",
+    "description": "以大同人防商城为核心，服务于周边居民区，规模较小但具备一定社区商业功能。",
+    "mall_codes": [
+      "MALL_6A804043"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东方花园商圈",
+    "description": "位于城市东部东方花园片区，由哈信购物中心构成单一核心的社区级商业中心。",
+    "mall_codes": [
+      "MALL_780CE1B0"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "昆仑商城商圈",
+    "description": "地处山湖路北段与和谐巷附近，昆仑商城独立成点，服务北部居住区域，形成边缘型商业节点。",
+    "mall_codes": [
+      "MALL_1EA6AB43"
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中枢商圈",
+    "description": "位于陆良县城中心区域，以中枢大厦为核心的传统商业聚集区",
+    "mall_codes": [
+      "MALL_A7777CD2",
+      "MALL_ACB18FCD",
+      "MALL_1B3FBC00",
+      "MALL_67F41458"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北门商圈",
+    "description": "位于县城北部，以爨乡路沿线为主的商业发展区域",
+    "mall_codes": [
+      "MALL_3CC58AB6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城南商圈",
+    "description": "位于县城南部，以真理街、同乐大道为主的商业区域",
+    "mall_codes": [
+      "MALL_64733CE4",
+      "MALL_5A6F6829"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城西商圈",
+    "description": "位于县城西部，西华路沿线的商业配套区域",
+    "mall_codes": [
+      "MALL_EB44BDA5"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "遮岛镇中心商圈",
+    "description": "位于遮岛镇核心区域，包含振兴商贸城和阳光家园大型购物中心等商业设施",
+    "mall_codes": [
+      "MALL_50085BD5",
+      "MALL_3711C7FC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "龙兴路商圈",
+    "description": "位于556国道与龙兴路交汇区域，以好人家时代广场为主要商业体",
+    "mall_codes": [
+      "MALL_0B4B06AC"
+    ]
+  }
+]

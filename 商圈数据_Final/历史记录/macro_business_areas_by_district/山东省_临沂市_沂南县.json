@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "县城中心商圈",
+    "description": "位于沂南县城区核心区域，集中了历山路与永兴路周边多个传统购物中心和商贸场所，是本地主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_6F46DC07",
+      "MALL_8378CD0D",
+      "MALL_301660C5",
+      "MALL_DBE10F42",
+      "MALL_470F4C63"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "澳柯玛路商圈",
+    "description": "位于澳柯玛路与朝阳路交汇地带，以东岳国际广场为核心，覆盖城区西部交通节点附近的商业布局。",
+    "mall_codes": [
+      "MALL_04812BC5",
+      "MALL_459E4113"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "北部居住区商圈",
+    "description": "分布于府前路及团山路北部区域，服务于城市北部居民区，商业配套以社区型生活服务为主。",
+    "mall_codes": [
+      "MALL_835FA07F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东部新城商圈",
+    "description": "位于城区东部，靠近227省道沿线，包含新世纪超市等分散式商业点，辐射外围城乡结合区域。",
+    "mall_codes": [
+      "MALL_E6D04ADD"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "花山南路商圈",
+    "description": "位于文化路与花山路延伸带，以金城商贸和沂南鞋材市场为支点，形成专业市场与区域商贸混合业态。",
+    "mall_codes": [
+      "MALL_69E53761"
+    ]
+  }
+]

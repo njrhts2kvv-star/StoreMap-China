@@ -1,0 +1,98 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南大街商圈",
+    "description": "以南大街为核心的传统商业中心，聚集多个振华系商场及购物城，位于芝罘区核心地段，商业密度较高。",
+    "mall_codes": [
+      "MALL_051348D8",
+      "MALL_5E01011B",
+      "MALL_3FB7F05E",
+      "MALL_EDEE33D6",
+      "MALL_AB9473D8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "三站市场商圈",
+    "description": "依托三站批发市场形成的商贸集聚区，包含三站汇通广场、九申购物中心及韩国城等，主打批发与平价零售。",
+    "mall_codes": [
+      "MALL_5254C392",
+      "MALL_BAC4B5F0",
+      "MALL_6D2B4541",
+      "MALL_BAAF1D48"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "世茂广场商圈",
+    "description": "以世茂广场为单一核心的现代商业中心，位于解放路主干道，品牌集中度和商场能级在区域内相对突出。",
+    "mall_codes": [
+      "MALL_63C84A39"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心的综合商业体聚集区，地处西关南街，是芝罘区西部的重要商业节点。",
+    "mall_codes": [
+      "MALL_FE024817"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大悦城商圈",
+    "description": "依托烟台大悦城形成的滨河商业带，位于北马路，靠近市中心但独立成片，具备一定辐射能力。",
+    "mall_codes": [
+      "MALL_26408BDB"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "芝罘吾悦广场商圈",
+    "description": "以芝罘吾悦广场为主体的新兴商业中心，位于芝罘屯路，服务周边居住区。",
+    "mall_codes": [
+      "MALL_D784D778"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "幸福商圈",
+    "description": "覆盖幸福中路一带的社区型商业，以振华广场为代表，满足北部城区居民日常消费需求。",
+    "mall_codes": [
+      "MALL_FB84F3AC"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "黄务商圈",
+    "description": "位于黄务立交桥周边的外围商业节点，包括新城国际广场和现代国际新城，地处城区南部边缘。",
+    "mall_codes": [
+      "MALL_BB5F5A1C",
+      "MALL_6B95B5A2"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "南尧商圈",
+    "description": "服务于南尧片区的区域性商业中心，以南尧新都汇为主要载体，覆盖机场路沿线居民。",
+    "mall_codes": [
+      "MALL_0AE41C56"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "电厂东路商圈",
+    "description": "位于城区西北部的零星商业点，以中裕商业广场为代表，商业活跃度较低。",
+    "mall_codes": [
+      "MALL_01252613"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "二马路商圈",
+    "description": "东部城区沿二马路分布的独立商业点，盈沣国际广场为唯一代表，周边商业配套较弱。",
+    "mall_codes": [
+      "MALL_CE2F9BA2"
+    ]
+  }
+]

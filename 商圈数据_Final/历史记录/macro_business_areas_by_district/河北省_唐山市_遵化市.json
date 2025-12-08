@@ -1,0 +1,45 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "遵化市中心商圈",
+    "description": "以文化南路与通华街交汇区域为核心，聚集了钟楼商场、八方购物、西单时尚购物商场等多个商业体，是遵化市传统商业中心。",
+    "mall_codes": [
+      "MALL_9B5DC334",
+      "MALL_C68AD4C0",
+      "MALL_DAC5C17E",
+      "MALL_6E503F4D",
+      "MALL_23138F6F",
+      "MALL_1D4DA0D3",
+      "MALL_D1AE2EF0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "遵化北部新城商圈",
+    "description": "位于华明北路至北二环西路沿线，涵盖富力商城、遵化购物广场、金缘购物等较新商业项目，代表城市向北扩展的新兴消费区域。",
+    "mall_codes": [
+      "MALL_3285A355",
+      "MALL_C0A02914",
+      "MALL_8224974D",
+      "MALL_C0750E0A",
+      "MALL_6BEAA925"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "平安城商圈",
+    "description": "位于遵化市西部平安城区域，以佰润时尚商场为主要商业节点，服务周边乡镇居民。",
+    "mall_codes": [
+      "MALL_A0344780"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "马兰峪商圈",
+    "description": "位于遵化市东南部马兰峪镇附近，依托马兰峪百货大楼和兰阳商场，服务于当地及周边农村市场。",
+    "mall_codes": [
+      "MALL_2AE5D119",
+      "MALL_3B236C86"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城区中心商圈",
+    "description": "覆盖南和区主城区核心地段，包含府前街、振兴路与宋璟大街周边商业聚集区，是区内传统人流集中区域。",
+    "mall_codes": [
+      "MALL_1EA8188A",
+      "MALL_E465215A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "平安大街商圈",
+    "description": "位于南和区东部平安大街沿线，以澳林城市之窗为核心，辐射祥和路周边新兴商业节点。",
+    "mall_codes": [
+      "MALL_762B7A72"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "昌平街商圈",
+    "description": "地处南和区南部昌平街与新村路交汇区域，为区内南部主要商业配套点之一。",
+    "mall_codes": [
+      "MALL_BC008DBC"
+    ]
+  }
+]

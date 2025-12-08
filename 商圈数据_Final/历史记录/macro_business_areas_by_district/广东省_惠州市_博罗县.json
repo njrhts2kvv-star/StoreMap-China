@@ -1,0 +1,68 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "龙溪商圈",
+    "description": "位于博罗县龙溪街道及周边，涵盖龙桥大道、岗湖路沿线的多个购物广场，是龙溪镇核心商业集聚区。",
+    "mall_codes": [
+      "MALL_0D9E126B",
+      "MALL_C6F63F34",
+      "MALL_AF72F720",
+      "MALL_96D27B7A",
+      "MALL_D680792B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "园洲商圈",
+    "description": "集中于园洲镇刘屋村及园洲大道沿线，包含多个社区型购物广场，服务园洲本地居民为主。",
+    "mall_codes": [
+      "MALL_588131B5",
+      "MALL_C15D7F95",
+      "MALL_1982E41C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "石湾商圈",
+    "description": "位于博罗县石湾镇兴业大道与建设东路交汇区域，以天地MALL为核心，辐射周边工业城镇消费群体。",
+    "mall_codes": [
+      "MALL_E3816EA4"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "罗阳商圈",
+    "description": "博罗县城所在地罗阳街道的核心商业区域，聚集正家、金铂、梅花等购物广场，是全县最成熟的商圈。",
+    "mall_codes": [
+      "MALL_DEB280D9",
+      "MALL_CC16D5E1",
+      "MALL_9D6DBF14"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "杨侨-福田-湖镇商圈",
+    "description": "覆盖博罗县中北部多个乡镇，包括杨侨镇嘉业商场、福田镇新世界德森广场、湖镇镇惠美购购物广场，属分散型乡镇商业节点组合。",
+    "mall_codes": [
+      "MALL_1E72D844",
+      "MALL_8046AC01",
+      "MALL_3BBC1623"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "长宁商圈",
+    "description": "位于罗浮山门户长宁镇，以现代中心城为主要商业载体，服务于旅游及本地生活配套需求。",
+    "mall_codes": [
+      "MALL_7CEF85A3"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "泰美-公庄商圈",
+    "description": "惠美购购物广场虽位于湖镇，但结合地理位置和区域商业空白，将其与邻近潜力镇区归为一组未来联动发展片区，暂以惠美购为唯一代表。",
+    "mall_codes": [
+      "MALL_1D1E752F"
+    ]
+  }
+]

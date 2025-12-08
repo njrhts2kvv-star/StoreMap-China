@@ -1,0 +1,18 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "九寨沟景区商圈",
+    "description": "位于九寨沟景区内部及周边，主要服务于景区游客，商业功能以旅游购物为主。",
+    "mall_codes": [
+      "MALL_2684CAA2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大录乡商圈",
+    "description": "位于九寨沟县大录乡，服务于当地居民和过境交通需求，商业配套较为基础。",
+    "mall_codes": [
+      "MALL_EC9CD4AF"
+    ]
+  }
+]

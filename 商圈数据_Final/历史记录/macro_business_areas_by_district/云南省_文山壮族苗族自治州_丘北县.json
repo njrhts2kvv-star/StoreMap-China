@@ -1,0 +1,20 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "县城中心商圈",
+    "description": "位于丘北县城核心区域，包含财富广场等商业设施",
+    "mall_codes": [
+      "MALL_659E83C5",
+      "MALL_B354258C",
+      "MALL_DCD49586"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "双龙营商圈",
+    "description": "位于双龙营镇区域，服务周边乡镇居民",
+    "mall_codes": [
+      "MALL_1DDF6506"
+    ]
+  }
+]

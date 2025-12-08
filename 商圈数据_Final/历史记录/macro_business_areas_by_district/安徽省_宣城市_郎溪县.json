@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城东商圈",
+    "description": "位于郎溪县东部，涵盖优尔乐商业广场、亚太广场、国购广场等主要商业载体，是县城近年来发展较快的商业集聚区。",
+    "mall_codes": [
+      "MALL_08068446",
+      "MALL_B5DB620F",
+      "MALL_ADAE70EA"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城中商圈",
+    "description": "以中港路与宁芜路交叉口为核心，聚集天泰商城、华润苏果购物广场A幢、百大·台客隆等传统商业设施，构成郎溪县中心商业地带。",
+    "mall_codes": [
+      "MALL_67D525A5",
+      "MALL_A22DE92A",
+      "MALL_823DAE72"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "老城区商圈",
+    "description": "集中在建平镇核心区域，包括广源商城、新东泉购物广场、贵夫人商场等本地老牌商贸场所，服务周边密集居民区。",
+    "mall_codes": [
+      "MALL_E3553FB8",
+      "MALL_AFF0713C",
+      "MALL_5D82D2EC"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "十字镇商圈",
+    "description": "位于郎溪县南部十字镇附近，以皖南十字商贸城为主要商业节点，辐射南部乡镇区域。",
+    "mall_codes": [
+      "MALL_CCF4232D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "定埠商圈",
+    "description": "地处郎溪县北部定埠地区，依托胥河商贸城形成区域性商业中心，服务于北部边缘乡镇及毗邻江苏部分区域。",
+    "mall_codes": [
+      "MALL_B3BEEDBB"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "凌笪商圈",
+    "description": "位于郎溪县西北部凌笪乡，以岗南购物中心为唯一商业载体，属于典型的乡村级商贸中心。",
+    "mall_codes": [
+      "MALL_A0212DEB"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "伍员路商圈",
+    "description": "位于伍员路与吉原路交汇区域，以义乌商贸城E2座为主要代表，属专业市场型商业集聚点。",
+    "mall_codes": [
+      "MALL_3D95EEEA"
+    ]
+  }
+]

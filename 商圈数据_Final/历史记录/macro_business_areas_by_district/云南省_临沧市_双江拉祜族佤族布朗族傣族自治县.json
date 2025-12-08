@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "勐勐镇中心商圈",
+    "description": "位于双江县城区核心区域，包含双江商贸城和锦丽广场等主要商业设施",
+    "mall_codes": [
+      "MALL_5AE4B349",
+      "MALL_A3D4563E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "勐忙线商圈",
+    "description": "位于勐忙线沿线，以超越购物中心为核心形成的商业区域",
+    "mall_codes": [
+      "MALL_2666F3E0"
+    ]
+  }
+]

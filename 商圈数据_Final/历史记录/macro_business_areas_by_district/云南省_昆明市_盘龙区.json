@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "白云路商圈",
+    "description": "位于白云路沿线，地铁2号线覆盖，包含多个大型购物中心和商业广场",
+    "mall_codes": [
+      "MALL_71D63383",
+      "MALL_5A54930D",
+      "MALL_2C2F22C1",
+      "MALL_34A26331",
+      "MALL_9C824E5E",
+      "MALL_0EC7AAAB",
+      "MALL_53110F9F",
+      "MALL_6670EFB5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北辰商圈",
+    "description": "北辰片区核心商业区，以财富中心和周边商业体为主",
+    "mall_codes": [
+      "MALL_1B7AEC83",
+      "MALL_54E6F497"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "北京路北段商圈",
+    "description": "北京路北段沿线商业聚集区，连接霖雨桥和北辰片区",
+    "mall_codes": [
+      "MALL_11618E9A",
+      "MALL_54E2B333",
+      "MALL_2F26561B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "白塔路商圈",
+    "description": "白塔路沿线商业区，靠近市中心，包含多个商业中心",
+    "mall_codes": [
+      "MALL_C3F0F344",
+      "MALL_C591E766"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东风东路商圈",
+    "description": "东风东路沿线商业区，靠近拓东体育馆",
+    "mall_codes": [
+      "MALL_357A26C7",
+      "MALL_420D602B",
+      "MALL_431F0EC6"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "沣源路商圈",
+    "description": "沣源路片区新兴商业区，位于盘龙区北部",
+    "mall_codes": [
+      "MALL_488F5F02",
+      "MALL_6ADFD859"
+    ]
+  }
+]

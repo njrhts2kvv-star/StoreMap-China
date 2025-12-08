@@ -1,0 +1,77 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "京源大道商圈",
+    "description": "以京源大道为核心轴线，集中分布多个购物中心与商超，涵盖中百广场、东方超市、华联商厦等，是京山市新城区主要商业集聚区。",
+    "mall_codes": [
+      "MALL_F4ECE664",
+      "MALL_259787F4",
+      "MALL_AFD6B241",
+      "MALL_DAED1C57",
+      "MALL_19B73C72",
+      "MALL_4229AE94",
+      "MALL_93563BA3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "新市镇中心商圈",
+    "description": "位于新市街道核心区，包含联合广场等地标性商业项目，地处交通路与新市大道交汇区域，为城市传统商业中心之一。",
+    "mall_codes": [
+      "MALL_CE947F28",
+      "MALL_35944259",
+      "MALL_802A5D09"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "五三大道商圈",
+    "description": "沿五三大道分布，覆盖万佳商城、发到家购物广场及屈家岭区域的宏达购物中心，服务于老城区及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_AF5D4450",
+      "MALL_5C9867C4",
+      "MALL_46C44D13"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "宋河镇商圈",
+    "description": "位于宋河镇区域内，包括富水商贸城和美隆生活广场，构成京山市北部重点城镇的本地化商业中心。",
+    "mall_codes": [
+      "MALL_AD3F5B43",
+      "MALL_59F185FA"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "石龙镇商圈",
+    "description": "坐落于石龙镇石太路附近，以石龙商贸城为代表，服务当地农村及周边社区的基础零售需求。",
+    "mall_codes": [
+      "MALL_D2B09EEF"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "坪坝镇商圈",
+    "description": "位于坪坝镇平安大道，由家乐美购物中心支撑，是京山市西部乡镇级商业节点。",
+    "mall_codes": [
+      "MALL_87C234BE"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "仟佰汇商圈",
+    "description": "位于仁和谢斌百货对面，依托仟佰汇购物中心形成局部商业聚集，地理位置相对独立。",
+    "mall_codes": [
+      "MALL_6271911B"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "子怡超市商圈",
+    "description": "位于杨堰湾路与任畈路交叉口，以子怡超市批发购物中心为核心，服务于周边居民区的小型商业点。",
+    "mall_codes": [
+      "MALL_9FA96D92"
+    ]
+  }
+]

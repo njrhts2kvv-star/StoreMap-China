@@ -1,0 +1,74 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南湖核心商圈",
+    "description": "以南湖天地为核心，覆盖南湖路周边高端商业与城市综合体，是南湖区新兴的高品质商业中心，兼具文化、旅游与时尚消费功能。",
+    "mall_codes": [
+      "MALL_3E52A31A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中山路-禾兴路传统商圈",
+    "description": "位于嘉兴老城区核心，涵盖八佰伴、戴梦得、江南大厦等传统百货与商厦，是南湖区历史最悠久、人流最密集的成熟商业带。",
+    "mall_codes": [
+      "MALL_F02DF75E",
+      "MALL_9C298E21",
+      "MALL_38A3111E",
+      "MALL_BB74C0FA"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "中环东路商圈",
+    "description": "沿中环东路分布，聚集协和广场、合乐城、信源商业城等区域性商业体，服务于城东居民区，形成中等规模的生活消费圈。",
+    "mall_codes": [
+      "MALL_68D7BFD7",
+      "MALL_2FB4EE89",
+      "MALL_26B164C2"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "万达广场商圈",
+    "description": "以广益路万达广场为单一核心，辐射周边社区，是南湖区西部重要的现代购物中心集聚点，配套较为完善。",
+    "mall_codes": [
+      "MALL_5ACC6C17"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "长水路-中环南路商圈",
+    "description": "覆盖星河COCO City、星禾广场、嘉城生活广场等中型商业项目，位于城市主干道交汇区域，服务南部及新城片区居民。",
+    "mall_codes": [
+      "MALL_3FAB39A4",
+      "MALL_0CDB9430",
+      "MALL_AB5F0843"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "文昌路-凌公塘路商圈",
+    "description": "位于城市东部拓展区域，包含泰富世界城、老佛爷购物中心等项目，商业密度较低，处于发展培育阶段。",
+    "mall_codes": [
+      "MALL_3E903B94",
+      "MALL_6365D106"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "七星路商圈",
+    "description": "位于南湖区北部七星街道，以大树·汇众广场北区为代表，服务本地居住人口，商业体量较小，属社区级商业中心。",
+    "mall_codes": [
+      "MALL_15B8F339"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "建国路商圈",
+    "description": "依托瑞洲购物等农贸市场配套商业，位于老城区北部，服务范围有限，属于区域性便民商业节点。",
+    "mall_codes": [
+      "MALL_AC4E7812"
+    ]
+  }
+]

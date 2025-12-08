@@ -1,0 +1,43 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "西海岸商圈",
+    "description": "位于海口市秀英区西部沿海地带，涵盖滨海大道沿线及长滨路周边主要商业项目，是近年来重点发展的新兴城市副中心，集中了大型购物中心与区域级商业综合体。",
+    "mall_codes": [
+      "MALL_DB80BFEF",
+      "MALL_89E0B8E5",
+      "MALL_D7E6F3F1",
+      "MALL_0A2AE9C3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "长流商圈",
+    "description": "以长流镇为核心辐射周边区域，包含长流镇政府附近及长天路沿线的商业设施，服务本地居民为主，具备一定社区型商业基础。",
+    "mall_codes": [
+      "MALL_6789BB06",
+      "MALL_CDCDAF08"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "秀英老城商圈",
+    "description": "覆盖秀英大道、秀华路一带的传统城区核心，聚集较早形成的商业广场和本地生活配套，是秀英区历史较久的商业集聚区。",
+    "mall_codes": [
+      "MALL_88D093CA",
+      "MALL_B8E9265F",
+      "MALL_2254FDB9",
+      "MALL_FACEB1DC",
+      "MALL_83AA646B",
+      "MALL_5181FBF8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "金地自在城商圈",
+    "description": "位于长滨路南段的社区型商业节点，依托住宅区配套发展，目前商业体量较小，以满足周边居民日常需求为主。",
+    "mall_codes": [
+      "MALL_E913514B"
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "安陵镇中心商圈",
+    "description": "以安陵镇老城区核心十字街及东大街、南大街一带为主，聚集多个购物广场和商业设施，是鄢陵县传统商业中心。",
+    "mall_codes": [
+      "MALL_2BF42DB4",
+      "MALL_56FFAA66",
+      "MALL_DC54A3D0",
+      "MALL_ABA21F7F",
+      "MALL_A7A1F508"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "金汇大道商圈",
+    "description": "位于鄢陵县城南部金汇大道与鄢陶路交叉区域，以金汇广场为核心，形成新兴的沿街商业集聚区。",
+    "mall_codes": [
+      "MALL_A2472088"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "223省道北部商贸区",
+    "description": "位于223省道与002县道交叉口附近，分布有万峰生活广场和陶城商贸城，属城乡结合部的区域性商贸集散地。",
+    "mall_codes": [
+      "MALL_94F80094",
+      "MALL_E3B9FBA1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "乾明寺路-西关街商圈",
+    "description": "位于乾明寺路与西关街交汇区域，依托东宝购物广场周边人流形成的小型社区商业圈。",
+    "mall_codes": [
+      "MALL_85AA035D"
+    ]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "巴州大道商圈",
+    "description": "以巴州大道为核心轴线，聚集了万达广场、中泉·国际购物广场等主要商业体，是巴州区较为集中的商业区域之一。",
+    "mall_codes": [
+      "MALL_6A504A74",
+      "MALL_BA27226E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "江北片区商圈",
+    "description": "位于江北街道一带，涵盖世纪隆生活广场、尚品国际购物中心及盛华堂百货等多个商场，构成江北区域的主要消费集聚区。",
+    "mall_codes": [
+      "MALL_5D5F8EB4",
+      "MALL_BC781E1E",
+      "MALL_BBD3D5C6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "老城中心商圈",
+    "description": "覆盖巴中老城区核心地段，包括七星商城、万家灯火商场、新惠裕商城等，地处插旗山路与南泉寺街周边，是传统人流密集的商业节点。",
+    "mall_codes": [
+      "MALL_41B5C5B4",
+      "MALL_C7944E38",
+      "MALL_181A8AC2",
+      "MALL_1EC6FF5D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "秦巴大道商圈",
+    "description": "沿秦巴大道分布，集中了万达影城、中国·巴中西部国际商贸城和优筑国际广场，形成连接经开区与主城区的重要商业带。",
+    "mall_codes": [
+      "MALL_FF6C1760",
+      "MALL_9AAB9ED5",
+      "MALL_A2ED793D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西城国际商汇商圈",
+    "description": "以西城国际商汇A区和B区为主体，位于后坝巷与红军路交界处附近，为区域性小型综合商业集群。",
+    "mall_codes": [
+      "MALL_341FBDCA",
+      "MALL_9BF952B5"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "九洲滨河路商圈",
+    "description": "依托九洲商业城，位于滨河路附近，服务于周边居民区，属局部社区型商业配套。",
+    "mall_codes": [
+      "MALL_EC3E896B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "龙睛街-通州街商圈",
+    "description": "位于龙睛街与通州街交叉口周边，以万客来购物中心为核心，辐射清江镇方向的壹陆捌购物中心，构成东部边缘性商业节点。",
+    "mall_codes": [
+      "MALL_2C9FC993",
+      "MALL_877C7D55"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "城西外围商圈",
+    "description": "位于城市西部外围区域，包含双惠超市购物中心，地理位置偏西南，服务特定城乡结合部人群。",
+    "mall_codes": [
+      "MALL_F22D0E5F"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "清江镇商圈",
+    "description": "位于清江镇范围内的富祥购物中心，独立成点，服务于乡镇本地消费市场。",
+    "mall_codes": [
+      "MALL_4442BC22"
+    ]
+  }
+]

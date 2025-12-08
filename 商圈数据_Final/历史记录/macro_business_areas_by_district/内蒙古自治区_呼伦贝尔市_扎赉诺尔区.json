@@ -1,0 +1,37 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中央街商圈",
+    "description": "以友谊购物中心为核心，覆盖中央街与天鹅路周边商业聚集区，是扎赉诺尔区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_8B455EED"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "人民路商圈",
+    "description": "沿人民路分布，涵盖中央商城及恒泰商贸城D区，形成东西向主要商业带，具备较强区域辐射能力。",
+    "mall_codes": [
+      "MALL_D32DB56B",
+      "MALL_C3F5B5BB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新华南路商圈",
+    "description": "位于新华南路沿线，集中发达百货、恒泰购物广场和福玛特购物中心，构成南部居民生活消费核心区域。",
+    "mall_codes": [
+      "MALL_775035D3",
+      "MALL_856E96C4",
+      "MALL_D81FAC2A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新区东商圈",
+    "description": "位于扎赉诺尔新区东部，以新政街与鑫湖路交叉口的综合购物商场为代表，服务新兴住宅片区。",
+    "mall_codes": [
+      "MALL_9C56EAC5"
+    ]
+  }
+]

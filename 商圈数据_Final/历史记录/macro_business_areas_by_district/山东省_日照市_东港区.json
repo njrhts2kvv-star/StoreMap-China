@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "日照老城区商圈",
+    "description": "以海曲中路为核心的传统商业集聚区，涵盖利群、银座、苏宁等老牌百货与购物广场，是东港区历史最悠久的商业中心。",
+    "mall_codes": [
+      "MALL_33A774FF",
+      "MALL_7573DC93",
+      "MALL_B4C23D70",
+      "MALL_3A783195",
+      "MALL_D5631205",
+      "MALL_4D2AC908"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "日照新市区商圈",
+    "description": "以济南路和烟台路交汇区域为中心，聚集万象汇、星河iCO、银座茂等新兴购物中心，是近年来发展迅速的城市级商业新中心。",
+    "mall_codes": [
+      "MALL_39A072F3",
+      "MALL_FCC7A388",
+      "MALL_AAECB271",
+      "MALL_03DB2A96",
+      "MALL_2EA25667"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "日照石臼商圈",
+    "description": "位于山东路沿线，以万达广场为核心，结合周边开泰、新丰商贸城等商业体，形成服务石臼片区居民的区域性商圈。",
+    "mall_codes": [
+      "MALL_8B291987",
+      "MALL_B0045BC7",
+      "MALL_3C7F9A24"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "日照秦楼商圈",
+    "description": "依托秦楼街道区位优势，集中日照百货大楼、凌云大厦、芒果时代广场等商业设施，服务于行政与居住核心区。",
+    "mall_codes": [
+      "MALL_8DA52AE0",
+      "MALL_A1832B9D",
+      "MALL_24961212"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "日照城南商圈",
+    "description": "位于黄海一路沿线，由海纳商城、瑞泰国际商城等组成，主要服务南部居民区，以中小型零售和专业市场为主。",
+    "mall_codes": [
+      "MALL_1BD19979",
+      "MALL_9796E3A2"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "日照两城商圈",
+    "description": "位于东港区北部两城镇，由日照凌云两城购物中心构成，服务于北部外围城镇的区域性商业节点。",
+    "mall_codes": [
+      "MALL_FFF8B19A"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "日照涛雒商圈",
+    "description": "位于东港区南部涛雒镇，由日照凌云涛雒购物中心单独构成，为远郊乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_4B138C8A"
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "荣家湾商圈",
+    "description": "以岳阳县城区核心区域为中心，覆盖荣家湾镇周边主要商业节点，是岳阳县主要的商贸集聚区。",
+    "mall_codes": [
+      "MALL_3190ED3A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "宝塔镇商圈",
+    "description": "位于岳阳县宝塔镇，服务本地居民的基础型商业聚集区。",
+    "mall_codes": [
+      "MALL_B049DEB4"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新墙镇商圈",
+    "description": "依托国道沿线商业布局，服务于新墙镇及周边乡镇的区域性商业节点。",
+    "mall_codes": [
+      "MALL_AD06D6E6"
+    ]
+  }
+]

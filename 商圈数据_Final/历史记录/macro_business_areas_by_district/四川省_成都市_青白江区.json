@@ -1,0 +1,44 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城厢镇商圈",
+    "description": "位于青白江区城厢镇片区，以建设中的国际名品购物中心为核心，覆盖南部较远的独立商业项目。",
+    "mall_codes": [
+      "MALL_5807260D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大弯老城区商圈",
+    "description": "围绕大弯东路、中路及青江中路分布，涵盖天美广场、大邦财富广场等，是青白江区传统商业中心。",
+    "mall_codes": [
+      "MALL_9127F82E",
+      "MALL_5A1EE77A",
+      "MALL_D557556A",
+      "MALL_38C9C2F7",
+      "MALL_00B2C37D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，聚集深业玫瑰广场、三桥商业广场等，位于政府南路至青江北路一带，是区域级新兴综合商业中心。",
+    "mall_codes": [
+      "MALL_EEA0ACEB",
+      "MALL_FA20F866",
+      "MALL_08872E83",
+      "MALL_EDB2DB3B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "俊翔市场商圈",
+    "description": "集中于正兴路与货运大道周边，由俊翔市场1至4区组成，形成以批发零售为主的集散型市场群。",
+    "mall_codes": [
+      "MALL_6DFCF0C4",
+      "MALL_56123089",
+      "MALL_68251731",
+      "MALL_9236F36A"
+    ]
+  }
+]

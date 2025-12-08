@@ -1,0 +1,54 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "泗城老街商圈",
+    "description": "位于泗县老城区核心地带，围绕老大街、铁市街及中城街分布，涵盖多个传统商贸与购物中心，是县城传统商业集聚区。",
+    "mall_codes": [
+      "MALL_4951E80E",
+      "MALL_A88FB48F",
+      "MALL_69143B5E",
+      "MALL_FD1D4AAF",
+      "MALL_73448886"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "泗城东部新城商圈",
+    "description": "位于泗县东部新城区，沿花园路、玉兰路等主干道布局，聚集奥特莱斯、新建超市等现代商业形态，代表城市新兴商业发展方向。",
+    "mall_codes": [
+      "MALL_F01A2EE0",
+      "MALL_F0849945",
+      "MALL_48CE2442"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "上海商贸城及北部乡镇商圈",
+    "description": "以上海商贸城为核心，覆盖北部惠丰、杨集等乡镇商贸中心，服务城乡结合部及周边乡镇居民，具有较强区域辐射性。",
+    "mall_codes": [
+      "MALL_FF3971E8",
+      "MALL_7AA86972",
+      "MALL_2AF81E1A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南部乡镇商贸圈",
+    "description": "涵盖草沟、桃源等南部乡镇的商贸城和购物中心，主要服务于本地乡镇消费群体，分布较分散，具典型县域乡镇商业特征。",
+    "mall_codes": [
+      "MALL_2C89542F",
+      "MALL_9786DCC7"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东部边缘乡镇商圈",
+    "description": "位于泗县最东侧边缘地带，包括黑塔、大庄等偏远乡镇的购物中心，地理位置远离城区，自成一体的基层商业网络。",
+    "mall_codes": [
+      "MALL_5CECB8CD",
+      "MALL_013CBAEE",
+      "MALL_41BFB624",
+      "MALL_20374865"
+    ]
+  }
+]

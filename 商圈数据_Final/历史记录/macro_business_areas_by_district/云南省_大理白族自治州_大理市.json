@@ -1,0 +1,51 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "下关老城商圈",
+    "description": "位于大理市下关镇核心区域，以建设路、人民街为中心的传统商业聚集区",
+    "mall_codes": [
+      "MALL_25903369",
+      "MALL_FF446E51",
+      "MALL_BF5C4026",
+      "MALL_7E124A18",
+      "MALL_54F27FF7",
+      "MALL_799E3353",
+      "MALL_D72677A4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "泰安路商圈",
+    "description": "以泰安路为核心的商业区域，包含多个购物中心和商业广场",
+    "mall_codes": [
+      "MALL_DF532160",
+      "MALL_E0ECD5CB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "满江开发区商圈",
+    "description": "大理经济技术开发区新兴商业区域，包含大型商业综合体和购物中心",
+    "mall_codes": [
+      "MALL_F6DBC2D6",
+      "MALL_AAF5626B",
+      "MALL_82F3F44F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "凤仪商圈",
+    "description": "凤仪镇区域商业中心，以供销社商场为主要商业设施",
+    "mall_codes": [
+      "MALL_F92155B9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大丽线商圈",
+    "description": "位于大丽线沿线，服务周边居民的区域性商业点",
+    "mall_codes": [
+      "MALL_743F9BC4"
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "虎林市中心商圈",
+    "description": "位于虎林镇核心区域，涵盖中心路、胜利西街与解放东路一带，聚集了虎林市购物中心、金街地下购物广场及百货大楼等主要商业设施，是虎林市传统商业中心。",
+    "mall_codes": [
+      "MALL_33511C4C",
+      "MALL_776C34FB",
+      "MALL_EC6FD72C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东方红商圈",
+    "description": "位于虎林市东方红镇，以东方红一商店楼为核心，服务本地居民，是东部片区的重要商业节点。",
+    "mall_codes": [
+      "MALL_40D00DFB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "迎春商圈",
+    "description": "位于迎春镇，依托迎春商厦形成区域性商业聚集点，服务于周边乡镇居民。",
+    "mall_codes": [
+      "MALL_140EB1FD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "杨岗商圈",
+    "description": "位于杨岗镇中心大街附近，以兴旺商场和新世纪超市为主要商业载体，构成南部乡镇的商业中心。",
+    "mall_codes": [
+      "MALL_B1531E10",
+      "MALL_29A91DBE"
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "右甸路商圈",
+    "description": "位于右甸西路与右甸东路周边的核心商业区域，包含昌宁商业广场、金樽时代广场等主要商业体",
+    "mall_codes": [
+      "MALL_5B669589",
+      "MALL_85C15ED8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "富德商圈",
+    "description": "以富德城市广场为中心，辐射周边的商业聚集区",
+    "mall_codes": [
+      "MALL_F24E6E46"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "武华路商圈",
+    "description": "田园镇武华路沿线的商业区域，以胜达购物广场为主要商业体",
+    "mall_codes": [
+      "MALL_9CA09A89"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "文昌街商圈",
+    "description": "文昌街与滨河西路交叉口周边的商业区域",
+    "mall_codes": [
+      "MALL_53C22F6C"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "龙华商圈",
+    "description": "位于县道周边的家居商业区域",
+    "mall_codes": [
+      "MALL_B481358C"
+    ]
+  }
+]

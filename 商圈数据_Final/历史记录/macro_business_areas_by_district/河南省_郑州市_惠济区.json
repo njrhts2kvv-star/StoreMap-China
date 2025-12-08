@@ -1,0 +1,56 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "惠济万达商圈",
+    "description": "以万达广场为核心，覆盖周边开元路与文化北路一带的商业集聚区，是惠济区较为成熟的商圈之一。",
+    "mall_codes": [
+      "MALL_40FEF5C9",
+      "MALL_47DA2D39",
+      "MALL_6BA8658A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南阳路商圈",
+    "description": "集中在南阳路沿线，包括刘砦、宋寨区域，涵盖多个中小型商业中心，形成区域性生活消费集聚带。",
+    "mall_codes": [
+      "MALL_5946D101",
+      "MALL_EBE536B5",
+      "MALL_5E1892F2",
+      "MALL_E384B89C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "惠济南部产业配套商圈",
+    "description": "位于惠济区南部，靠近宏达路、清华园路，以华商万汇城和艺茂国际仓为代表，服务于周边产业园区和居民区。",
+    "mall_codes": [
+      "MALL_416DB624",
+      "MALL_D94180F3"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "江山路北端商圈",
+    "description": "位于惠济区西北部江山路沿线，临近零六八村道，以生活广场为代表，服务周边城乡结合部及新建社区。",
+    "mall_codes": [
+      "MALL_9C66A1F1"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "金达路商圈",
+    "description": "位于惠济区东部金达路与乐飞街交叉口附近，以福都广场为节点，辐射周边新兴住宅区。",
+    "mall_codes": [
+      "MALL_1F8540AA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "黄河滩生态旅游商圈",
+    "description": "地处黄河富景生态世界内，依托旅游景区形成的特色购物点，具有较强旅游属性。",
+    "mall_codes": [
+      "MALL_ED39E36B"
+    ]
+  }
+]

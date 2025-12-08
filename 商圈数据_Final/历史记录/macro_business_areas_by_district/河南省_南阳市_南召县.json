@@ -1,0 +1,91 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关中心商圈",
+    "description": "位于南召县城关镇核心区域，涵盖人民路、健康路及文化路周边多个商业设施，是县城传统商业集中区，包含供销商城、兴隆购物中心、商业旗舰城等主要商场。",
+    "mall_codes": [
+      "MALL_7FC85DD2",
+      "MALL_A192290A",
+      "MALL_DD5A7CCF",
+      "MALL_521AE3D3",
+      "MALL_7F8F2B3A",
+      "MALL_32E7EB9A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "留山镇商圈",
+    "description": "以留山镇为核心辐射的乡镇级商业集聚区，包含奥利给购物广场、留山镇小香港等本地生活服务型商场，服务于周边居民日常消费。",
+    "mall_codes": [
+      "MALL_6681FAEE",
+      "MALL_F9B93D37"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "云阳镇商圈",
+    "description": "依托云阳镇老街及鹿明商业大道形成的区域性商业节点，包括康全商贸生活广场和老城购物中心，服务镇区及周边村落。",
+    "mall_codes": [
+      "MALL_8B593548",
+      "MALL_341286E1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东部新城商圈",
+    "description": "位于南召县东部发展带，覆盖盛世华城、金岭秀水等新兴居住片区，拥有万德隆购物中心和中景购物中心，体现城市向东扩展的商业布局。",
+    "mall_codes": [
+      "MALL_14C7EF33",
+      "MALL_F9B4DCBC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北部居住区商圈",
+    "description": "分布于县城北部美华小区一带，以家美购物中心为代表，服务于高纬度区域居民，属社区型商业配套。",
+    "mall_codes": [
+      "MALL_52CE2D2E"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "石门乡商圈",
+    "description": "位于南召县西南部石门乡政府周边，以源达购物中心为主要商业载体，服务乡域人口。",
+    "mall_codes": [
+      "MALL_3EFDF172"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "皇后乡商圈",
+    "description": "地处县域东南部皇后乡境内，由红阳厂百货楼构成单一商业点，反映偏远乡镇基础商业配置。",
+    "mall_codes": [
+      "MALL_F65C70B1"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "南河店商圈",
+    "description": "位于南河店镇人民路与207国道交汇处，依托交通节点形成区域消费中心，代表项目为金福源购物大卖场。",
+    "mall_codes": [
+      "MALL_90DF89AD"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "白土岗商圈",
+    "description": "地处南召县南部边缘，靠近白土岗方向，由金福源生活广场支撑当地商业需求，地理坐标偏南且独立性强。",
+    "mall_codes": [
+      "MALL_72E858B9"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "城东综合商圈",
+    "description": "位于县城东部345国道沿线，聚集全兴商厦和兴云商城，依托主干道形成带状商业分布，连接城乡过渡区域。",
+    "mall_codes": [
+      "MALL_0B6378B5",
+      "MALL_C3F12043"
+    ]
+  }
+]

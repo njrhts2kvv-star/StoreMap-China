@@ -1,0 +1,41 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "徐城中心商圈",
+    "description": "位于徐闻县徐城街道核心区域，涵盖东方一路及周边主要商业节点，包括东方城、人民商城、徐闻商贸城等，是县城传统商业集中地带。",
+    "mall_codes": [
+      "MALL_139BF72F",
+      "MALL_43A4FCBD",
+      "MALL_D0183C0D",
+      "MALL_8BBDAA90",
+      "MALL_073D82BE",
+      "MALL_EBE231E0",
+      "MALL_34E5FFFD"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "天润广场商圈",
+    "description": "以天润广场为核心，位于东方二路与清华园片区，品牌集聚度和商业活力相对较高，是徐闻县较新的商业增长点。",
+    "mall_codes": [
+      "MALL_8AD9BEBF"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "曲界镇商圈",
+    "description": "位于徐闻县曲界镇建安路，以曲界大悦购物广场为代表，服务当地乡镇居民，属于县域内区域性乡镇商业节点。",
+    "mall_codes": [
+      "MALL_55E36A32"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "龙兴镇商圈",
+    "description": "分布于龙兴镇及周边县道沿线，包含龙兴商场和龙兴购物广场，地理位置偏远离城区中心，服务于本地乡镇市场。",
+    "mall_codes": [
+      "MALL_6976F822",
+      "MALL_46706088"
+    ]
+  }
+]

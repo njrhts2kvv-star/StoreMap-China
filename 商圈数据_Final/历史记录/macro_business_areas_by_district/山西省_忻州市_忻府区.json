@@ -1,0 +1,94 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "长征街商圈",
+    "description": "位于忻州市忻府区核心地带，沿长征东街分布，聚集了多家主要购物中心和商业城，是区内人流最密集、商业活动最活跃的区域。",
+    "mall_codes": [
+      "MALL_541C1D3C",
+      "MALL_A5B83CD8",
+      "MALL_CF1760C2",
+      "MALL_6A70E336",
+      "MALL_D94D73F4",
+      "MALL_E45FFFAC",
+      "MALL_2A394555",
+      "MALL_C661C976"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "七一路商圈",
+    "description": "沿七一路南北向展开，覆盖体育馆周边及泛华大酒店附近，包含多个大型购物广场和传统商场，构成忻府区北部的重要商业带。",
+    "mall_codes": [
+      "MALL_0B30788F",
+      "MALL_835257C1",
+      "MALL_7C7DEA5F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新建路南段商圈",
+    "description": "集中于新建南路与长征东街交叉口以南区域，包括大欣城、汇都购物中心等，是集购物、生活服务于一体的成熟社区型商业集聚区。",
+    "mall_codes": [
+      "MALL_E0FD7463",
+      "MALL_31E0C51D",
+      "MALL_14DF405E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "和平街商圈",
+    "description": "位于城区西部，依托和平西街与建设南路交汇处，涵盖华美超级商场和开来欣悦购物广场，服务于周边居民区的日常消费。",
+    "mall_codes": [
+      "MALL_DE31A867",
+      "MALL_7AAEDB7E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "城北学府商圈",
+    "description": "位于城区北部学府雅苑一带，靠近居民区与教育配套，以学府世纪广场为核心，辐射周边中高端住宅区。",
+    "mall_codes": [
+      "MALL_5E4B7EBC"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "城西北奇村商圈",
+    "description": "位于忻府区西北部奇村镇，以紫东商城为代表，服务乡镇及周边农村地区，属于区域性基础商业中心。",
+    "mall_codes": [
+      "MALL_DAF2E772"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "城东北商圈",
+    "description": "位于城区东北部，新建北路与北大街交汇区域，由紫檀新天地带动形成新兴商业节点，连接老城与扩展新区。",
+    "mall_codes": [
+      "MALL_EFD42FA4"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "西南片区商圈",
+    "description": "位于城区西南方向，前进东街与新建南路交叉口附近，以燕兴商城为主要载体，服务于低密度居住区。",
+    "mall_codes": [
+      "MALL_08C58DC6"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "西北工业区商圈",
+    "description": "位于城区西北水利大厦周边，瑞洋商城所在地，临近工业与办公功能区，商业配套相对独立。",
+    "mall_codes": [
+      "MALL_E52E51C8"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "南部零散商业点",
+    "description": "位于城区南部边缘，三区西排二号位置，由忻州二海百货单独构成，规模较小且孤立分布。",
+    "mall_codes": [
+      "MALL_0C244B8E"
+    ]
+  }
+]

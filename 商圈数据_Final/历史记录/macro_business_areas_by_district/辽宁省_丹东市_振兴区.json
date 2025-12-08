@@ -1,0 +1,50 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达商圈",
+    "description": "以丹东万达广场为核心，包含其周边配套商业设施，位于锦山大街主干道附近，形成振兴区西部的重要商业集聚区。",
+    "mall_codes": [
+      "MALL_01F14408",
+      "MALL_16090414",
+      "MALL_6CF75A06",
+      "MALL_EA1EB11E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "七经街商圈",
+    "description": "集中于七经街沿线，涵盖多个传统商厦与商场，如新一百、恒兴商厦等，是振兴区中心地带的传统商业核心区。",
+    "mall_codes": [
+      "MALL_A803A424",
+      "MALL_BD733169",
+      "MALL_D1662586",
+      "MALL_D86F6637",
+      "MALL_8534127E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "银河大街商圈",
+    "description": "位于振兴区南部，以丹东国际商贸城为主要载体，依托交通与物流优势形成的区域性专业市场集聚区。",
+    "mall_codes": [
+      "MALL_DB4FC5BF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "华美商圈",
+    "description": "以华美·新天地为主体，位于锦山大街东段，周边商业密度较高，构成振兴区中部的独立商业节点。",
+    "mall_codes": [
+      "MALL_67E30B1D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "青年大街商圈",
+    "description": "分布于青年大街沿线，以韩国城大市场为代表，结合朝韩商品特色，形成具有边境城市特色的主题化商业区域。",
+    "mall_codes": [
+      "MALL_F63AEA66",
+      "MALL_C27D615E"
+    ]
+  }
+]

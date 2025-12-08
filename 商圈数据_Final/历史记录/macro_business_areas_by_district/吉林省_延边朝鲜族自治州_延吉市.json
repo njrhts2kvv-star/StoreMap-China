@@ -1,0 +1,58 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "延吉市中心商圈",
+    "description": "以延吉百货大楼、时尚广场等为核心，覆盖解放路、光明街、进学街一带的商业集聚区，是延吉市传统核心商业区，商场密集，人流集中。",
+    "mall_codes": [
+      "MALL_2374C0EB",
+      "MALL_8C871C2A",
+      "MALL_CD6ED1DA",
+      "MALL_3046C380",
+      "MALL_E2BEA907",
+      "MALL_3B437E14",
+      "MALL_53A6C7F1",
+      "MALL_D3AF6778",
+      "MALL_8B6517E4",
+      "MALL_A4237E5D",
+      "MALL_B4AC4B8D",
+      "MALL_5EE9268B",
+      "MALL_3E21A249",
+      "MALL_591C3C5C",
+      "MALL_FBA1FE45",
+      "MALL_675C5F45"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "万达广场商圈",
+    "description": "以延吉万达广场为主体，位于公园街道，是延吉市较新的城市级商业中心，辐射周边居住区，具备较强的品牌集聚效应。",
+    "mall_codes": [
+      "MALL_1B250EF6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "天池广场商圈",
+    "description": "位于公园路中段，以天池广场为节点，周边商业配套相对独立，服务北部城区居民，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_1C07EDEF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "万佳商城商圈",
+    "description": "位于海兰路一带，以万佳商城和豪柏购物广场为支点，构成延吉市西部局部生活型商业集聚区。",
+    "mall_codes": [
+      "MALL_12A8B1B2",
+      "MALL_A7790188"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "益华广场商圈",
+    "description": "位于爱丹路沿线，以益华广场为唯一主要商业体，服务于城东片区，独立成区，形成东部边缘性商业节点。",
+    "mall_codes": [
+      "MALL_F3CEDF6E"
+    ]
+  }
+]

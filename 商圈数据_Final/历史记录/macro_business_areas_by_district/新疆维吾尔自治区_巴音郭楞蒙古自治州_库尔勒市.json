@@ -1,0 +1,95 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "萨依巴格商圈",
+    "description": "位于库尔勒市中心区域，以萨依巴格路为核心，聚集了多家商业设施，是城市传统商业中心之一。",
+    "mall_codes": [
+      "MALL_4A8F213C",
+      "MALL_5413369D",
+      "MALL_E63700ED",
+      "MALL_6A57B48D",
+      "MALL_C765B09B",
+      "MALL_294B97FD",
+      "MALL_2263CC44",
+      "MALL_88E2B1C4",
+      "MALL_C9A23AC0",
+      "MALL_D7F1C976"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "朝阳路-延安路商圈",
+    "description": "依托朝阳路与延安路交汇地带形成的商业集聚区，涵盖多个商厦和广场，是库尔勒市重要的中部商业节点。",
+    "mall_codes": [
+      "MALL_BA201F0F",
+      "MALL_F5EAF3BE",
+      "MALL_510EF682",
+      "MALL_CB9CFD27"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新城街道石化大道商圈",
+    "description": "位于库尔勒市新城街道核心干道，沿石化大道分布的商业项目，构成城市北部新兴商业带。",
+    "mall_codes": [
+      "MALL_E15D85EF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "北山路商圈",
+    "description": "位于城市西北部，依托北山路沿线形成的生活配套服务中心，服务周边居民区。",
+    "mall_codes": [
+      "MALL_F3B838AE"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "新华路商圈",
+    "description": "沿新华路分布的商贸城与生活广场组合，形成服务于老城区及周边社区的区域性商业节点。",
+    "mall_codes": [
+      "MALL_23951EEE",
+      "MALL_439F1DDE"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "人民东路商圈",
+    "description": "沿人民东路延伸的重要商业走廊，包含多个标志性商场与综合广场，是城市东西向主轴上的关键商业段落。",
+    "mall_codes": [
+      "MALL_67CA6FBE"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "建国南路商圈",
+    "description": "位于城市南部，以建国南路为轴线发展的商业节点，辐射周边住宅区。",
+    "mall_codes": [
+      "MALL_1279D2BB"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "笙夏西路商圈",
+    "description": "位于库尔勒市西南部新兴发展区域，围绕笙夏西路与康博路交叉口形成的商业集聚点。",
+    "mall_codes": [
+      "MALL_1A5944B7"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "园中苑路商圈",
+    "description": "位于城市东南片区，依托园中苑路布局的幸福天地类综合商业项目，服务本地社区。",
+    "mall_codes": [
+      "MALL_410C0F6F"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "中环路商圈",
+    "description": "位于城市西部外围区域，靠近中环路与乡道交叉口，属边缘型生活服务点。",
+    "mall_codes": [
+      "MALL_E21C5913"
+    ]
+  }
+]

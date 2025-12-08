@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "太平桥商圈",
+    "description": "以东直路与南通大街交汇处为核心，聚集百盛购物中心、道外区太平桥百盛A(3座)等商业体，依托地铁太平桥站形成区域级商业中心。",
+    "mall_codes": [
+      "MALL_ABD1D5DA",
+      "MALL_C18FA3BE"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南马路/中华巴洛克商圈",
+    "description": "位于道外传统核心地带，涵盖青龙商贸城B栋、名优城等商场，紧邻中华巴洛克历史文化街区，具有浓厚的本地商业氛围和历史底蕴。",
+    "mall_codes": [
+      "MALL_FDC1D7AE",
+      "MALL_B4E5688A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南直路商圈",
+    "description": "沿南直路分布，包括益华商场(三棵树大街)、五禾商场及馨苑购物中心，服务于周边大型居民区，形成居住配套型商业集聚区。",
+    "mall_codes": [
+      "MALL_8E143E46",
+      "MALL_D03E82D7",
+      "MALL_F5212DDE"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "桦树街商圈",
+    "description": "围绕桦树街地铁站布局，涵盖生活汇·购物公园、金蟾商厦、金龙商厦等，结合地铁出入口打造社区型消费空间。",
+    "mall_codes": [
+      "MALL_3B5062D5",
+      "MALL_22E3DFB2",
+      "MALL_D6A575CA"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "温州城商圈",
+    "description": "以温州批发城为代表，集中于道外区东部，服务区域性批发零售需求，是传统集散型商贸功能的体现。",
+    "mall_codes": [
+      "MALL_4F38E65C"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "华南城商圈",
+    "description": "位于道外区南部边缘，由哈尔滨华南城B区与华盛奥特莱斯构成，主打大型专业市场与折扣零售，具备城市外围综合商贸特征。",
+    "mall_codes": [
+      "MALL_1BC2915C",
+      "MALL_56E026FF"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "保温城商圈",
+    "description": "位于东方红小区北区，以保温城单一商场为主，服务特定专业市场或社区人群，规模较小但功能明确。",
+    "mall_codes": [
+      "MALL_DB1663A5"
+    ]
+  }
+]

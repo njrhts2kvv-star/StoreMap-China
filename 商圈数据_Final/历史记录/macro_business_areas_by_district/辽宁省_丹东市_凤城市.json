@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "凤城中心商圈",
+    "description": "以振兴街与邓铁梅路交汇区域为核心，集中了多个商业广场和地下商城，是凤城市区主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_8285A532",
+      "MALL_13F35AFD",
+      "MALL_0786A730",
+      "MALL_BA738B5F",
+      "MALL_CDF17FF5",
+      "MALL_20E98942"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东汤商圈",
+    "description": "位于凤城市东部的东汤镇，以东汤时代广场为代表，服务于当地居民及温泉旅游客流。",
+    "mall_codes": [
+      "MALL_61E23808"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "青城子商圈",
+    "description": "位于凤城市西北部的青城子镇，以步行街周边商业为主，覆盖本地生活消费需求。",
+    "mall_codes": [
+      "MALL_8CCD6666"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "通远堡商圈",
+    "description": "位于凤城市北部的通远堡镇，依托交通要道形成区域性商贸节点，以通远路沿线商业为特征。",
+    "mall_codes": [
+      "MALL_8C415630"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "边门商圈",
+    "description": "位于凤城市南部的边门镇附近，供销商场（张庄线）代表该片区的基础商业配套。",
+    "mall_codes": [
+      "MALL_CD3B5FF7"
+    ]
+  }
+]

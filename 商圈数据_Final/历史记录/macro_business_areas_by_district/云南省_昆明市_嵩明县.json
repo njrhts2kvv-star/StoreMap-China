@@ -1,0 +1,46 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "嵩明县城商圈",
+    "description": "位于嵩明县城核心区域，包含多个购物中心和商业街区",
+    "mall_codes": [
+      "MALL_C64073E3",
+      "MALL_8020A0AC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "嘉玲片区商圈",
+    "description": "位于嘉玲片区，服务于周边居民和商业需求",
+    "mall_codes": [
+      "MALL_01640AA6",
+      "MALL_2A307B3C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "杨林职教园区商圈",
+    "description": "服务于杨林职教园区及周边区域的教育商业配套",
+    "mall_codes": [
+      "MALL_4383455D",
+      "MALL_EBCD9CFD",
+      "MALL_30837D92"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "牛栏江镇商圈",
+    "description": "位于牛栏江镇，服务当地居民的基础商业设施",
+    "mall_codes": [
+      "MALL_DE0D0D43"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "杭响片区商圈",
+    "description": "位于高速入口周边，服务过往车辆和周边居民",
+    "mall_codes": [
+      "MALL_FAB666A5"
+    ]
+  }
+]

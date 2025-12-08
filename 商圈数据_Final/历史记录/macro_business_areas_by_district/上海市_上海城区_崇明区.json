@@ -1,0 +1,30 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城桥商圈",
+    "description": "位于崇明区城桥镇核心区域，包含主要商业综合体",
+    "mall_codes": [
+      "MALL_83C95135",
+      "MALL_A03BC1A5",
+      "MALL_4F90B6FA"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "长兴岛商圈",
+    "description": "位于长兴岛区域，服务岛内居民日常消费",
+    "mall_codes": [
+      "MALL_EF52FA27",
+      "MALL_685ABBEA"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "堡镇商圈",
+    "description": "位于堡镇及周边区域，覆盖东部地区商业需求",
+    "mall_codes": [
+      "MALL_F669DD84",
+      "MALL_FD6465A9"
+    ]
+  }
+]

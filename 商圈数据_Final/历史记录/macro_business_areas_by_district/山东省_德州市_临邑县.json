@@ -1,0 +1,24 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "迎宾路核心商圈",
+    "description": "位于临邑县主干道迎宾路沿线，集中分布多家商场，包括信业商厦、鲁临商场、利客购物广场、新世纪商厦、正大购物中心、荣盛购物中心和阳光商城，是县城传统商业中心。",
+    "mall_codes": [
+      "MALL_FD5D9958",
+      "MALL_F1FCF474",
+      "MALL_343FFD1F",
+      "MALL_4F64CC65",
+      "MALL_600049D2",
+      "MALL_33AFFE38",
+      "MALL_617C1C8A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "迎宾南路奥特莱斯商圈",
+    "description": "位于迎宾南路南段，以临邑奥特莱S购物广场为核心，定位为特色折扣与品牌 outlet 聚集区，形成差异化商业形态。",
+    "mall_codes": [
+      "MALL_CEEF1C8F"
+    ]
+  }
+]

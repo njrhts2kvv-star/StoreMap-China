@@ -1,0 +1,32 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "古浪县城关商圈",
+    "description": "位于古浪县城区核心区域，涵盖昌松路与商业巷周边多个商贸场所，是县城主要的商业集中区。",
+    "mall_codes": [
+      "MALL_FCF1AB42",
+      "MALL_6C555940",
+      "MALL_1AB04350",
+      "MALL_59504B69"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大靖镇商圈",
+    "description": "位于古浪县大靖镇中心区域，覆盖瑞安路、靖兴路及东街沿线的购物中心和商贸场所，是镇级重要商业集聚区。",
+    "mall_codes": [
+      "MALL_4B177CF6",
+      "MALL_D1255023",
+      "MALL_5EEC9D21"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东关村商圈",
+    "description": "位于古浪县城区东关村商业街与衙门巷交叉口附近，聚集了东青商城和红太阳商厦等本地商业设施。",
+    "mall_codes": [
+      "MALL_F6CA7549",
+      "MALL_3461D584"
+    ]
+  }
+]

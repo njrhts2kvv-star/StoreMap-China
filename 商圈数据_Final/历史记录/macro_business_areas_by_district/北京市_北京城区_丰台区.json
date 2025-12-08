@@ -1,0 +1,93 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "丽泽商圈",
+    "description": "以丽泽金融商务区为核心，聚集了丽泽天地、丽泽16号等商业项目，是丰台区新兴的高端商务与商业融合区域。",
+    "mall_codes": [
+      "MALL_0C226BC5",
+      "MALL_1023EC7E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "草桥-大红门商圈",
+    "description": "覆盖草桥至大红门沿线，包括上品折扣、银泰百货、木樨园合生广场等，依托地铁4号线和10号线形成区域性商业带。",
+    "mall_codes": [
+      "MALL_3EF3E268",
+      "MALL_827869EA",
+      "MALL_A7254169",
+      "MALL_4B2C933B",
+      "MALL_13088DF5",
+      "MALL_6A015024"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "丰台科技园商圈",
+    "description": "位于丰台科技园区核心，以万达广场为代表，周边配套逐步完善，服务于产业园区的办公人群与居民。",
+    "mall_codes": [
+      "MALL_954113E5"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新宫-南苑商圈",
+    "description": "涵盖新宫地铁站周边及南三环以南区域，包括丰台大悦春风里、凯德MALL·大峡谷等，是丰台南部重要的居住区配套商业集群。",
+    "mall_codes": [
+      "MALL_470F72B6",
+      "MALL_67173860"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "方庄商圈",
+    "description": "传统成熟居住区方庄的核心商业配套，以北京方庄购物中心为代表，服务本地社区居民。",
+    "mall_codes": [
+      "MALL_6F86DC77"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "宋家庄商圈",
+    "description": "依托宋家庄地铁枢纽发展起来的区域商业节点，包含首开·福茂等项目，连接东南三环与亦庄方向。",
+    "mall_codes": [
+      "MALL_13088DF5"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "六里桥-万丰路商圈",
+    "description": "位于西三环至西四环之间，涵盖翠微百货、资和信百货、亿潼隆万丰购物中心、银座和谐广场等，是丰台区历史较久的商业集聚区之一。",
+    "mall_codes": [
+      "MALL_25D19789",
+      "MALL_4C0DABE4",
+      "MALL_63BB10C7",
+      "MALL_606F54DB",
+      "MALL_FB187738"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "成寿寺商圈",
+    "description": "位于东南三环成寿寺路沿线，以新业广场为主要商业体，服务于周边密集居住区。",
+    "mall_codes": [
+      "MALL_9B74DFBE"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "花乡奥莱商圈",
+    "description": "位于南四环外花乡地区，以赛尔花乡奥莱村为代表，主打奥特莱斯业态，吸引远距离客流。",
+    "mall_codes": [
+      "MALL_D3131C24"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "天坛南门商圈",
+    "description": "靠近天坛公园南侧，以天坛生活广场为典型社区型商业，主要满足周边居民日常消费需求。",
+    "mall_codes": [
+      "MALL_80B9BB74"
+    ]
+  }
+]

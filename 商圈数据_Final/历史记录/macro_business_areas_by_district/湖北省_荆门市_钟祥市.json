@@ -1,0 +1,75 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "郢中老城商圈",
+    "description": "以阳春大街和莫愁大道为核心的传统商业集聚区，集中了中亚商城、广厦商城、新华商场、笙源购物广场等多个老牌商场，是钟祥市历史最悠久的商业中心。",
+    "mall_codes": [
+      "MALL_6BDE7BB9",
+      "MALL_DD88F9A7",
+      "MALL_8B943F07",
+      "MALL_5857EF69",
+      "MALL_B2CDDC61",
+      "MALL_FDA6351E",
+      "MALL_B5BB7FAD",
+      "MALL_7A1A528B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "金都国际商圈",
+    "description": "围绕石城中路与莫愁大道交汇处的新兴综合商业体群，以金都国际广场及其A/B/C区为核心，形成集百货、零售于一体的区域级商圈。",
+    "mall_codes": [
+      "MALL_B60F7B0B",
+      "MALL_A404AF8A",
+      "MALL_E36A2250",
+      "MALL_BA4DD668"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "王府大道-莫愁天地商圈",
+    "description": "位于王府大道沿线，以中百广场和莫愁天地为主要载体，辐射周边住宅区，是近年来发展较快的城市新商业带。",
+    "mall_codes": [
+      "MALL_7A1A528B",
+      "MALL_92ADE384",
+      "MALL_BA66171C"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "镜月湖大道商圈",
+    "description": "位于城市东部主干道镜月湖大道上的新兴商业节点，以世贸天阶商业广场为标志项目，具备一定城市门户特征。",
+    "mall_codes": [
+      "MALL_93A7842E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "胡集镇商圈",
+    "description": "服务于钟祥市北部重镇胡集的区域性商业中心，聚集东方百货、家和购物广场及湖北供销民生广场，满足本地居民日常消费需求。",
+    "mall_codes": [
+      "MALL_89D3448B",
+      "MALL_EF06FE54",
+      "MALL_9573492C",
+      "MALL_8A2090D3"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "石牌镇商圈",
+    "description": "位于钟祥市西南部石牌镇的本地化商业集聚区，由佳乐美购物广场、盛悦广场及石牌金晨购物广场共同构成，服务乡镇消费群体。",
+    "mall_codes": [
+      "MALL_7376578B",
+      "MALL_CE8B39D2",
+      "MALL_50362265"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "柴湖镇商圈",
+    "description": "位于钟祥市东南部柴湖镇的单一购物中心布局，以荣欣购物中心为主要商业设施，覆盖当地基础零售需求。",
+    "mall_codes": [
+      "MALL_0995B81A"
+    ]
+  }
+]

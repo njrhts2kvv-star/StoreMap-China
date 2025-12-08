@@ -1,0 +1,34 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "桦甸市中心商圈",
+    "description": "位于桦甸市核心城区，集中分布于大兴街、桦甸大街、人民路等主干道交汇区域，涵盖多个传统百货与商厦，是城市主要商业聚集区。",
+    "mall_codes": [
+      "MALL_7FE5AB4C",
+      "MALL_3CFF407A",
+      "MALL_40682CFB",
+      "MALL_8F460228",
+      "MALL_A56C11EE",
+      "MALL_1B6EB3F5",
+      "MALL_08B8E929",
+      "MALL_A026A11C",
+      "MALL_CE9E36B9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "八道河子镇商圈",
+    "description": "位于桦甸市下辖的八道河子镇，为乡镇级商业节点，服务本地居民，商业体量较小，以供销系统商场为主。",
+    "mall_codes": [
+      "MALL_485A2142"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "上海花园商圈",
+    "description": "位于桦甸市上海花园片区，依托住宅区配套商业形成的小型商业点，以百姓城市广场为代表，辐射周边社区。",
+    "mall_codes": [
+      "MALL_84E4B9B1"
+    ]
+  }
+]

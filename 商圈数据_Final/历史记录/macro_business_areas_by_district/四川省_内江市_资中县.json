@@ -1,0 +1,44 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "重龙镇商圈",
+    "description": "位于资中县老城区核心区域重龙镇，聚集了多个商业项目，包括CityArts、重龙商业广场等，依托传统街道形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_2FAFF69A",
+      "MALL_0F9015DF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "和鸣大道商圈",
+    "description": "以城市主干道和鸣大道为核心发展起来的新兴商业集聚区，拥有城市茂购物广场等项目，服务周边居住区。",
+    "mall_codes": [
+      "MALL_7AC3DD00"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "水南镇商圈",
+    "description": "位于资中县水南镇区域，以时代广场为代表商业体，地处城区南部，承担连接新老城区的商业功能。",
+    "mall_codes": [
+      "MALL_433549A6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "顺朱路-仁顺路商圈",
+    "description": "位于资中县西部乡镇发展带，涵盖文阅购物中心与百姓购物中心，分布于顺朱路与仁顺路附近，服务于西部城乡结合区域。",
+    "mall_codes": [
+      "MALL_AA16B586",
+      "MALL_ACBACE0E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "乐双路商圈",
+    "description": "位于资中县北部外围交通节点，依托401省道与乐双路交叉口形成的商贸集聚点，以双合盛购物中心为代表。",
+    "mall_codes": [
+      "MALL_9093729A"
+    ]
+  }
+]

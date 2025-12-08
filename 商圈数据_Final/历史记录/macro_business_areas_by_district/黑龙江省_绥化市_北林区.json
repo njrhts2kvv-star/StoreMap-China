@@ -1,0 +1,48 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中兴东大街商圈",
+    "description": "以中兴东大街为核心轴线，集中分布多个商场和商业体，包括世纪华辰、华辰商都、中兴春天、绥化一百等，是北林区主要的商业聚集带。",
+    "mall_codes": [
+      "MALL_18106DE9",
+      "MALL_5A7C012B",
+      "MALL_CD497D45",
+      "MALL_EADD84AE",
+      "MALL_93465FC8",
+      "MALL_A47B3700",
+      "MALL_7CC8C845",
+      "MALL_E0482D90",
+      "MALL_C2272805",
+      "MALL_DF64A42D",
+      "MALL_DF607548",
+      "MALL_9B8BA7EF",
+      "MALL_2E90E8FD"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，位于新华街华德乐府附近，独立于中兴东大街主商业带，形成北林区新兴的单点商业中心。",
+    "mall_codes": [
+      "MALL_ACB28372"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "站前商圈",
+    "description": "位于城区南部站前区域，依托交通枢纽位置形成商业配套，以站前百货商场为代表，服务流动人群及周边居民。",
+    "mall_codes": [
+      "MALL_DDAB598F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城西乡镇商圈",
+    "description": "分布于北林区西部乡镇地带，如绥胜、永安等地，商场多为本地化小型商贸设施，服务乡镇居民，商业密度较低。",
+    "mall_codes": [
+      "MALL_2AAAE5F0",
+      "MALL_5E127B10",
+      "MALL_0050A35D"
+    ]
+  }
+]

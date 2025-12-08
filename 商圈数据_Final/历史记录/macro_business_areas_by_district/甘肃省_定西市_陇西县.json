@@ -1,0 +1,36 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "文峰商圈",
+    "description": "位于陇西县文峰开发区，以交通路与长安大道沿线为核心，聚集了多个商贸城和商业城，是文峰镇的主要商业集聚区。",
+    "mall_codes": [
+      "MALL_D7D8C7AD",
+      "MALL_AF63279E",
+      "MALL_2323FB26",
+      "MALL_C0498CAB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "巩昌镇中心商圈",
+    "description": "集中在巩昌镇老城区核心地带，覆盖东大街、南大街、崇文路及人民广场周边，是陇西县传统商业中心，商场密集度高。",
+    "mall_codes": [
+      "MALL_CC931932",
+      "MALL_4A2E3372",
+      "MALL_333F2AEA",
+      "MALL_362510F9",
+      "MALL_29741360",
+      "MALL_910FA686",
+      "MALL_0EBE47A5",
+      "MALL_C9F08498"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "药都大道新区商圈",
+    "description": "位于陇西县新兴拓展区域药都大道沿线，靠近中天路，布局较新，代表项目为里奥特莱斯，具备一定城市扩展商业特征。",
+    "mall_codes": [
+      "MALL_13BE07B7"
+    ]
+  }
+]

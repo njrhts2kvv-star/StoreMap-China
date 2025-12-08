@@ -9,7 +9,7 @@ from typing import List, Sequence, Tuple
 
 import requests
 
-from store_schema import STORE_CSV_HEADER, StoreItem, validate_store_province
+from spiders.store_schema import STORE_CSV_HEADER, StoreItem, validate_store_province
 
 
 class BaseStoreSpider(ABC):
@@ -116,4 +116,3 @@ class BaseStoreSpider(ABC):
     @abstractmethod
     def fetch_items(self) -> List[StoreItem]:
         """子类需实现的抓取逻辑。"""
-

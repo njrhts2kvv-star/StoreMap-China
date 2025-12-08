@@ -1,0 +1,55 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南街镇中心商圈",
+    "description": "位于广宁县南街镇核心区域，集中了中华中路、新宁南路及周边多个商业载体，是县城传统商业中心，涵盖万汇城、华中购物城、大地商贸城等主要商场。",
+    "mall_codes": [
+      "MALL_130CF4E4",
+      "MALL_5637BBBE",
+      "MALL_353472E2",
+      "MALL_38EA180F",
+      "MALL_48AA58E7",
+      "MALL_4EA47AC4",
+      "MALL_86415BE8",
+      "MALL_1DB3B780",
+      "MALL_CB2DB255",
+      "MALL_07AA6E29",
+      "MALL_4B716EDF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南片区商圈",
+    "description": "位于南街镇南部延伸区域，以南东三路和平路一带为主，包括华鸿商城、君悦湾商城等，属于城区南部的居住配套型商业集聚区。",
+    "mall_codes": [
+      "MALL_E23F1960",
+      "MALL_871E5B2C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城东广场商圈",
+    "description": "依托鸣翠花园及城东广场形成的东部新兴商业节点，聚集百花广场、幸福之城天福商场等社区型商业设施，服务城东居住区。",
+    "mall_codes": [
+      "MALL_2451C777",
+      "MALL_07AA6E29",
+      "MALL_4B716EDF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "排沙镇区商圈",
+    "description": "位于广宁县下辖排沙镇，以百信商场为代表，服务于本地乡镇居民的基础生活消费，规模较小且独立于县城主商圈体系。",
+    "mall_codes": [
+      "MALL_50FB12C7"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "江屯-潭布沿线商圈",
+    "description": "位于广宁县北部省道沿线的新城路与263省道交汇区域，以众惠商场为代表，服务于城乡结合部及周边乡镇的过渡型商业点。",
+    "mall_codes": [
+      "MALL_0E6ABA4C"
+    ]
+  }
+]

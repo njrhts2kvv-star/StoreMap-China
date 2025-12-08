@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达广场商圈",
+    "description": "以东胜万达广场为核心，覆盖周边鄂托克西街沿线的商业集聚区，包括万达广场及其附属商业体，是东胜区较为集中的现代商业中心之一。",
+    "mall_codes": [
+      "MALL_C876CEB0",
+      "MALL_C9224C15",
+      "MALL_78AB71ED",
+      "MALL_37C327E7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "铁西商圈",
+    "description": "位于东胜区西部，以星河COCOCity为活跃商业代表，聚集多个中小型商场和传统商城，如每天百货都市、时达商城等，形成区域性生活消费中心。",
+    "mall_codes": [
+      "MALL_FFF1D930",
+      "MALL_094754FE",
+      "MALL_2BFF51A4",
+      "MALL_139DBFE2",
+      "MALL_E3FC3686",
+      "MALL_96E16904",
+      "MALL_380A2DA8",
+      "MALL_9067C03C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "天骄路商圈",
+    "description": "沿天骄路南北分布，涵盖万博广场、赛特商场等，地处东胜老城区主干道，保留一定传统商业基础，但整体商业活力相对有限。",
+    "mall_codes": [
+      "MALL_8D2A3919",
+      "MALL_0E66B524",
+      "MALL_D2DC4A15"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东兴时代广场商圈",
+    "description": "位于东胜区东南部，以东兴时代广场为核心，辐射富兴路与民族东街一带，包含万家惠G区及百联百胜大卖场，属社区型商业集聚区。",
+    "mall_codes": [
+      "MALL_63FFDC48",
+      "MALL_972FA0D1",
+      "MALL_F5BFFEEC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "华研园区商圈",
+    "description": "位于城市边缘的华研物流园区内，仅有卓远时代广场一个商业点，远离主城区，商业配套稀疏，服务范围局限。",
+    "mall_codes": [
+      "MALL_3A255A34"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "西贸路商圈",
+    "description": "位于城区西北部，以恒信精恒商业广场为代表，周边商业设施较少，独立成点，尚未形成连片效应。",
+    "mall_codes": [
+      "MALL_A9E50AFD"
+    ]
+  }
+]

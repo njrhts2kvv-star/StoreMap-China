@@ -1,0 +1,40 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中央商业步行街商圈",
+    "description": "以中央商业步行街为核心，聚集了华富商城、商联大厦、盛世春天商城等多个商业体，是爱辉区传统的商业中心。",
+    "mall_codes": [
+      "MALL_E512AF85",
+      "MALL_805B57EA",
+      "MALL_32FAD82E",
+      "MALL_DCF0DD98",
+      "MALL_0ADFB357"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "兴安街-海华商城商圈",
+    "description": "位于兴安街沿线，以海华购物商城为载体，包含中方国贸城等商贸设施，形成区域性零售与贸易节点。",
+    "mall_codes": [
+      "MALL_DBC341E6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "王肃街商圈",
+    "description": "依托王肃街主干道交通优势，布局有俄罗斯商品购物中心等特色商业项目，服务于本地居民与边境游客。",
+    "mall_codes": [
+      "MALL_4FB5F9AD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "大黑河岛-中俄贸易核心区",
+    "description": "坐落于大黑河岛区域，集中分布中俄自由贸易城、中国黑河国际商贸中心及远东商业采购中心，是面向俄罗斯贸易的核心功能区。",
+    "mall_codes": [
+      "MALL_3F39774F",
+      "MALL_E329EEB8",
+      "MALL_17C12EF3"
+    ]
+  }
+]

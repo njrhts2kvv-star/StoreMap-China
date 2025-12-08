@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "远洋国际中心商圈",
+    "description": "以嘉华国际商业中心及其东区、西区为核心，涵盖未来广场和新开路沿线商业体，地处远洋国际中心地铁站周边，是河东区重要的商务与商业集聚区。",
+    "mall_codes": [
+      "MALL_B376E3D0",
+      "MALL_BA1FBBB8",
+      "MALL_9DDEAF7A",
+      "MALL_728372FE",
+      "MALL_52DA7E50",
+      "MALL_138788D8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "津滨大道商圈",
+    "description": "沿津滨大道分布，聚集天津河东万达广场、中储生活广场、优腾商业广场及红星大厦等项目，依托地铁泰昌路站和万东路站形成区域级商业带。",
+    "mall_codes": [
+      "MALL_4F807D13",
+      "MALL_9D8F6F5B",
+      "MALL_B1D709D5",
+      "MALL_BABB1F64",
+      "MALL_CEDE0C12",
+      "MALL_B2A58B1A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "六纬路商圈",
+    "description": "位于六纬路沿线，覆盖嘉里汇、天津金茂汇和新生活广场，紧邻大王庄、六纬路和十一经路地铁站，是河东区传统核心商业走廊之一。",
+    "mall_codes": [
+      "MALL_E12A440C",
+      "MALL_EF46FC57",
+      "MALL_3766F0FA"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "天山路-龙山道商圈",
+    "description": "集中在河东区北部的天山路与龙山道周边，包括喜悦购物公园、凤山商业广场、津东广场和非尚购物中心，服务大型居住区，具备社区型商业集群特征。",
+    "mall_codes": [
+      "MALL_D637783D",
+      "MALL_0B6BA8E6",
+      "MALL_F9C6A42B",
+      "MALL_C028C3BB"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "棉3创意街区商圈",
+    "description": "以海河东路棉3创意街区为载体，包含美岸广场5号楼，定位文创与休闲商业，毗邻海河，具有特色主题商业氛围。",
+    "mall_codes": [
+      "MALL_1C760499"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "一号桥商圈",
+    "description": "位于河东区东部津塘路沿线，以金地广场为代表，依托一号桥地铁站辐射周边居民区，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_FFEDE90E"
+    ]
+  }
+]

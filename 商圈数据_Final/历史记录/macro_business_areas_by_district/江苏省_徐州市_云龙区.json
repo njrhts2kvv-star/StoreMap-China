@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "彭城广场商圈",
+    "description": "位于徐州市中心核心地带，以彭城广场地铁站为中心，聚集了多家传统百货与商业广场，是云龙区乃至全市最繁华的商业核心区之一。",
+    "mall_codes": [
+      "MALL_D570E6CF",
+      "MALL_C54F682E",
+      "MALL_87E92FD6",
+      "MALL_D1B861F0",
+      "MALL_93F6B7CF",
+      "MALL_19EECFD9",
+      "MALL_D35878B6",
+      "MALL_1395ADBA"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "和平大道商圈",
+    "description": "沿和平大道分布，以万达广场和爱琴海购物中心为核心，涵盖周边多个住宅配套商业体，是云龙区东部重要的现代商业带。",
+    "mall_codes": [
+      "MALL_0B07B00C",
+      "MALL_AB721BF5",
+      "MALL_6CAFF726",
+      "MALL_FFBEBF1F",
+      "MALL_A97EB67C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "郭庄路-世茂商圈",
+    "description": "以世茂广场为引领，覆盖郭庄路沿线商业项目，服务周边大型居住区，形成区域性综合消费中心。",
+    "mall_codes": [
+      "MALL_B648404E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新城区商圈",
+    "description": "位于徐州新城区核心发展轴，依托招商花园城、绿地缤纷城、美的广场等大型综合体，辐射汉风路、昆仑大道周边新兴城区，是城市东扩背景下的重点商业增长极。",
+    "mall_codes": [
+      "MALL_B1C889C7",
+      "MALL_B54C47FB",
+      "MALL_4C518390",
+      "MALL_FF6C9613"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "解放路商圈",
+    "description": "沿解放路南北走向布局，包含中山堂、戏马台时尚广场等项目，连接老城区南北商业节点，具有较强的历史街区与社区商业融合特征。",
+    "mall_codes": [
+      "MALL_C6BBBC75"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "宣武商贸城商圈",
+    "description": "以宣武商贸城及内部细分商铺为主体，集中于建国东路与黄河西路交叉区域，主打批发零售与平价商品交易，构成区域性专业市场型商业集聚区。",
+    "mall_codes": [
+      "MALL_06606D7A"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "楚岳广场商圈",
+    "description": "位于城东快速路沿线，依托楚岳山庄周边配套，形成服务于城东片区居民的独立商业节点，地理位置相对独立。",
+    "mall_codes": [
+      "MALL_9700C01C"
+    ]
+  }
+]

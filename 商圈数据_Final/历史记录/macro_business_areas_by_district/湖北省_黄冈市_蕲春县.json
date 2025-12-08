@@ -1,0 +1,70 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "漕河大道商圈",
+    "description": "位于蕲春县中心城区漕河镇核心主干道漕河大道沿线，聚集多个购物中心和商业大楼，是县城最主要的商业集中区。",
+    "mall_codes": [
+      "MALL_8035728A",
+      "MALL_9D1D0E75",
+      "MALL_92030E20",
+      "MALL_D7290265",
+      "MALL_49B63AA8",
+      "MALL_B0C1F7EB",
+      "MALL_DB9D842F",
+      "MALL_8938AE2B",
+      "MALL_4B5388EA"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东壁大道商圈",
+    "description": "位于漕河镇东壁大道与滨河路交汇区域，以华中国际时尚城为核心，构成县城东部的重要商业节点。",
+    "mall_codes": [
+      "MALL_217DBB23"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "刘河镇商圈",
+    "description": "覆盖刘河镇中心区域，依托刘河大道及周边道路布局，包含佳美购物中心、好乐多及黄商刘河商贸中心，服务本地居民。",
+    "mall_codes": [
+      "MALL_73DCF676",
+      "MALL_14E43ED9",
+      "MALL_3B3C1A1F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "向桥-檀林片区商圈",
+    "description": "分布于蕲春县北部乡镇，包括向桥中心商场与檀林镇的百家购物中心，属于乡镇级基础商业配套节点。",
+    "mall_codes": [
+      "MALL_CED304C7",
+      "MALL_EEDFDDD5"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "蕲州镇商圈",
+    "description": "位于蕲春县南部蕲州镇中心，以蕲州百货大楼为代表，服务于蕲州老城区及周边居民。",
+    "mall_codes": [
+      "MALL_4D43542A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "赤东镇商圈",
+    "description": "位于县城西部赤东片区，以一加一超市和百信购物中心为主要商业设施，覆盖城乡结合部日常消费需求。",
+    "mall_codes": [
+      "MALL_F8947A99",
+      "MALL_DC384F3C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "张榜-株林片区商圈",
+    "description": "位于蕲春县西部偏北的张榜、株林一带，目前仅有时代商城作为主要商业载体，属区域性乡镇商业点。",
+    "mall_codes": [
+      "MALL_CB066415"
+    ]
+  }
+]

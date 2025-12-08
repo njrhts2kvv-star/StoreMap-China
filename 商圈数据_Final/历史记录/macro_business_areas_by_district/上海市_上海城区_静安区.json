@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "静安寺商圈",
+    "description": "位于南京西路核心地段，以静安寺地铁站为中心，聚集了多个高端购物中心和百货商场",
+    "mall_codes": [
+      "MALL_48172A43",
+      "MALL_C6BEC589",
+      "MALL_981B7A0A",
+      "MALL_F85E08AB",
+      "MALL_A70E0382",
+      "MALL_05C29E6B",
+      "MALL_C3516D4B",
+      "MALL_4A5AFB4B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南京西路中段商圈",
+    "description": "南京西路中段区域，包含多个知名购物中心和百货商场",
+    "mall_codes": [
+      "MALL_DC25D55E",
+      "MALL_D6E1735B",
+      "MALL_D9E8B108",
+      "MALL_9DD14A7E",
+      "MALL_9F19DCBA",
+      "MALL_85425620"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "苏河湾商圈",
+    "description": "苏州河沿岸区域，以苏河湾万象天地为核心的新兴商业区",
+    "mall_codes": [
+      "MALL_D29996A8",
+      "MALL_6FBC8A16",
+      "MALL_98F1B2F4",
+      "MALL_33657A6E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "大宁商圈",
+    "description": "静安北部大宁区域，包含大宁国际商业广场和久光中心等大型购物中心",
+    "mall_codes": [
+      "MALL_357F4CCA",
+      "MALL_F6AE35B6"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "江宁路商圈",
+    "description": "江宁路沿线商业区域，以MOHO等新兴商业体为主",
+    "mall_codes": [
+      "MALL_DE235F7F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "中兴路商圈",
+    "description": "中兴路周边商业区域，包含金融街购物中心和五月花生活广场",
+    "mall_codes": [
+      "MALL_43584720",
+      "MALL_9CB63EF7",
+      "MALL_10CE2128"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "彭浦商圈",
+    "description": "静安北部彭浦区域，以静安大融城为主要商业体",
+    "mall_codes": [
+      "MALL_BDDC3D0A"
+    ]
+  }
+]

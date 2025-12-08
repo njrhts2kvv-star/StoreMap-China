@@ -1,0 +1,44 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "綦江城区核心商圈",
+    "description": "以万达广场、女人广场、尚城名都生活广场等为核心，覆盖文龙街道及通惠大道沿线的商业集聚区，是綦江区主要的消费中心之一。",
+    "mall_codes": [
+      "MALL_EB088494",
+      "MALL_E576D640",
+      "MALL_87467D1F",
+      "MALL_5F734AB0",
+      "MALL_ED8C70C1",
+      "MALL_47EC3B52",
+      "MALL_3299CBC9",
+      "MALL_DBE3BCB7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "九龙大道商圈",
+    "description": "位于九龙大道沿线，以九龙商业中心和时代商场为代表，服务于周边居民区，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_0A2AD095",
+      "MALL_5F734AB0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "万盛经开区商圈",
+    "description": "集中于万盛经开区松林路与东城大道交汇区域，以国能天街-B馆、国能奥特莱斯、富华商城为主要载体，构成万盛片区的主要商业集群。",
+    "mall_codes": [
+      "MALL_972FF3CD",
+      "MALL_3D1DC194",
+      "MALL_29D2646B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "传綦世界文旅城商圈",
+    "description": "依托传綦世界文旅城项目发展起来的新兴商业区域，以果壳龙购物公园为主要商业配套，定位为文旅融合型消费空间。",
+    "mall_codes": [
+      "MALL_EDE4F32D"
+    ]
+  }
+]

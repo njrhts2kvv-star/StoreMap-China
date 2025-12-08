@@ -1,0 +1,35 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "镇远古城商圈",
+    "description": "以镇远古城景区为核心，涵盖周边商业设施，服务于游客和本地居民，具有旅游商贸特征。",
+    "mall_codes": [
+      "MALL_7C272455",
+      "MALL_F6FEEAC9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "青溪镇商圈",
+    "description": "位于青溪镇区域，依托青溪商贸城形成的地方性商业集聚区，服务青溪及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_1C83D3DC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "羊坪镇商圈",
+    "description": "位于羊坪镇区域，以家乐多购物中心为代表，服务于羊坪镇及附近农村地区的日常消费。",
+    "mall_codes": [
+      "MALL_CA8008A8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "㵲阳镇商圈",
+    "description": "位于㵲阳镇城区外围，以亿家人购物中心为节点，覆盖县城北部的居民生活配套商业。",
+    "mall_codes": [
+      "MALL_4BF8A368"
+    ]
+  }
+]

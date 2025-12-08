@@ -1,0 +1,39 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五胡路商圈",
+    "description": "以多美汇购物中心和大旺城为核心，位于五胡路与常青路交汇区域，是杨陵区西部较为集中的商业节点。",
+    "mall_codes": [
+      "MALL_C43E4494",
+      "MALL_531A9C7B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "康乐路商圈",
+    "description": "集中分布在康乐路沿线，包括天成商场、新时代广场、新茂广场及杨陵商场，构成杨陵区中部连片的传统商业街区。",
+    "mall_codes": [
+      "MALL_CBC45445",
+      "MALL_5F8DABF6",
+      "MALL_707DE823",
+      "MALL_C1AD3EA8"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "渭惠路商圈",
+    "description": "位于渭惠路主干道附近，涵盖杨凌万达广场和盛世阳光生活购物广场，是杨陵区东部具有一定规模的现代商业聚集区。",
+    "mall_codes": [
+      "MALL_DC9DA733",
+      "MALL_1198DA31"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "神农路商圈",
+    "description": "位于神农路与东环线交叉口附近，以银泰为主要商业载体，处于城区东北部的发展区域。",
+    "mall_codes": [
+      "MALL_A8C42D2D"
+    ]
+  }
+]

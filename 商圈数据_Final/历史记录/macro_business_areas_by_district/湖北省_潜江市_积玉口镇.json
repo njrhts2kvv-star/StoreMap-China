@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "园林路商圈",
+    "description": "以园林北路、东风路及章华中路为核心，覆盖潜江市中心城区主要商业聚集区，包含多个城市广场和购物商城，是潜江市主城区内商业密度最高的区域。",
+    "mall_codes": [
+      "MALL_BDC0D747",
+      "MALL_F1B4629F",
+      "MALL_58475F6D",
+      "MALL_40725D87",
+      "MALL_BA0CDF0D",
+      "MALL_A57E2D1C",
+      "MALL_A078786C",
+      "MALL_9C9242B7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "广华大道商圈",
+    "description": "位于广华大道及周边区域，集中分布多个商场与商业广场，服务于江汉油田片区居民，是积玉口镇东部的重要商业节点。",
+    "mall_codes": [
+      "MALL_CBF61801",
+      "MALL_25F53C55",
+      "MALL_9CFA2E71",
+      "MALL_34FA71CF"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "兴盛路商圈",
+    "description": "依托兴盛路与紫月湖桥东侧交通节点形成的新兴商业带，涵盖凯盛奇·慢生活广场与潜江万达广场，邻近高速公路服务区，具备一定区域辐射能力。",
+    "mall_codes": [
+      "MALL_1858679E",
+      "MALL_3B954A20"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "浩口-白鹭湖商圈",
+    "description": "分布于积玉口镇南部外围的区域性商业点，包括富迪商业广场、白鹭湖商贸城等，服务范围覆盖乡镇边缘社区及过境客流。",
+    "mall_codes": [
+      "MALL_5CFA27F4",
+      "MALL_F102F2F4"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "龙湾-河中商圈",
+    "description": "位于积玉口镇西南方向的乡镇级商业集聚区，包含河中和龙湾广场超市、章华台购物广场等，主要服务于本地居民日常消费。",
+    "mall_codes": [
+      "MALL_0F45FC78",
+      "MALL_2D8945BB",
+      "MALL_3F244438"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "五七大道商圈",
+    "description": "以建昌商场为核心，位于江汉油田五七大道沿线，为局部居住区提供基础商业配套。",
+    "mall_codes": [
+      "MALL_AF42EB70"
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "贾汪城区中心商圈",
+    "description": "位于贾汪区核心城区，涵盖前委路、将军大街周边主要商业体，包括万达广场、乐尚新天地、百大购物广场等，是区内最集中的商业聚集区。",
+    "mall_codes": [
+      "MALL_ADE61A3E",
+      "MALL_D055A1DA",
+      "MALL_0905BC9F",
+      "MALL_03B85DC3",
+      "MALL_797E1CC0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "潘安湖新城商圈",
+    "description": "依托潘安湖片区发展形成的新兴商业集聚区，包含吾悦广场、佳润商场及周边社区商业，服务潘安湖街道及南部城区居民。",
+    "mall_codes": [
+      "MALL_76E05B24",
+      "MALL_4AE3ACFC",
+      "MALL_07CDDAC6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大庙-夏庄片区商圈",
+    "description": "位于贾汪区北部大庙街道及周边，以夏庄商场为代表，覆盖区域性基础商业服务，辐射周边乡镇居民。",
+    "mall_codes": [
+      "MALL_BFC85431"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "塔山镇区商圈",
+    "description": "服务于塔山镇本地居民的镇级商业中心，以塔山商城为核心，满足基础购物与生活需求。",
+    "mall_codes": [
+      "MALL_41C1B01A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "汴塘镇区商圈",
+    "description": "位于贾汪区东北部汴塘镇，以百佳百货店为主要商业载体，服务镇域消费人群。",
+    "mall_codes": [
+      "MALL_CC33CDB8"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "徐州经开区环球港商圈",
+    "description": "位于徐州经济技术开发区徐海路沿线，以淮海环球港为核心，集合奥特莱斯、环球港·尚座、淮海环球商业中心A区等项目，形成区域级商业集群。",
+    "mall_codes": [
+      "MALL_42656CAA",
+      "MALL_52BCB98E",
+      "MALL_B34D4AD7",
+      "MALL_EA9AA68B",
+      "MALL_135C79DF"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "石庄社区商圈",
+    "description": "服务于贾汪区中部石庄村周边农村地区的基层商业节点，以石庄百货商场为代表。",
+    "mall_codes": [
+      "MALL_42DB866E"
+    ]
+  }
+]

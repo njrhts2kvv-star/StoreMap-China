@@ -1,0 +1,18 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金顶镇商圈",
+    "description": "位于兰坪县金顶镇核心区域，以万达商场为主要商业中心",
+    "mall_codes": [
+      "MALL_964C1781"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "翠屏街道商圈",
+    "description": "位于兰坪县翠屏街道中心地段，以星泰商场为主要商业设施",
+    "mall_codes": [
+      "MALL_115F759D"
+    ]
+  }
+]

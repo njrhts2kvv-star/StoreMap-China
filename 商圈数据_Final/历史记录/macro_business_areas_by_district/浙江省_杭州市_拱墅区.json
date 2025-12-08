@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "武林商圈",
+    "description": "以杭州大厦、杭州中心等高端商业体为核心，覆盖延安路与武林广场周边，是拱墅区乃至杭州市最核心的传统商圈之一，聚集了大量高端零售与城市地标。",
+    "mall_codes": [
+      "MALL_3C2878D9",
+      "MALL_DAC44B89",
+      "MALL_E4BAF5C4",
+      "MALL_3004419F",
+      "MALL_83A5EFBB",
+      "MALL_5340249B",
+      "MALL_5DAE9BE4",
+      "MALL_2CFB6342",
+      "MALL_3F860095"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大关/运河新城商圈",
+    "description": "位于拱墅区中北部，依托运河上街购物中心、远洋乐堤港等项目，服务大关、上塘及运河新城片区，是区域型综合消费中心。",
+    "mall_codes": [
+      "MALL_A8BB1E33",
+      "MALL_31497D07",
+      "MALL_71322F50"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城西银泰城商圈",
+    "description": "以城西银泰城为核心，辐射三墩、古荡等西部居住区，是拱墅区西侧的重要商业节点。",
+    "mall_codes": [
+      "MALL_404358CB"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新天地商圈",
+    "description": "以新天地购物中心为核心，结合东兴天地、万达广场（杭行路）等项目，形成集办公、居住、商业于一体的东部新兴都市综合体集群，服务于申花、田园板块。",
+    "mall_codes": [
+      "MALL_B7AC80A9",
+      "MALL_55CCC0CA",
+      "MALL_24B3B543"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "桃源/吾悦商圈",
+    "description": "位于拱墅区东北部，以拱墅吾悦广场和拱墅宝龙广场为主要商业载体，服务桃源、半山等新兴居住区，形成区域性消费中心。",
+    "mall_codes": [
+      "MALL_31E46B55",
+      "MALL_E1156EEA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "西联广场商圈",
+    "description": "依托西联广场DP-LIVE中心，结合周边社区配套，服务东新路沿线居民，是中等规模的社区型商业中心。",
+    "mall_codes": [
+      "MALL_E67DDA6B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "中大银泰城商圈",
+    "description": "以中大银泰城为单一核心，覆盖文晖街道周边居住区，形成具有一定影响力的区域商业节点。",
+    "mall_codes": [
+      "MALL_8DA73F8F"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "海外海商圈",
+    "description": "以海外海·杭州商城为代表的老牌综合市场型商业，位于石祥路沿线，服务城北及临近区域客群。",
+    "mall_codes": [
+      "MALL_2B732954"
+    ]
+  }
+]

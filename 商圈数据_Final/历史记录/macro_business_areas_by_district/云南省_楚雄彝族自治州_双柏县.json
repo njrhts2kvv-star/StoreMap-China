@@ -1,0 +1,20 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "妥甸镇中心商圈",
+    "description": "以妥甸镇核心商业街区为中心，覆盖兴贸路、工农路与文昌路周边的多个购物场所，是双柏县最主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_72C7DEEC",
+      "MALL_AA38C0D1",
+      "MALL_3F8BA444"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "水弥线外围商圈",
+    "description": "位于双柏县城区外围，依托水弥线与虎山路交叉区域形成的交通型商业节点，目前以惠购购物中心为代表。",
+    "mall_codes": [
+      "MALL_DA4E8BEB"
+    ]
+  }
+]

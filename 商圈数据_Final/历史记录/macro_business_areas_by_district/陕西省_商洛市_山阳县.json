@@ -1,0 +1,37 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "山阳县城关商圈",
+    "description": "以山阳县城关镇为核心，覆盖北大街、南大街及东城路周边的商业集聚区，是县城主要的传统商业中心，集中了多家购物广场与商厦。",
+    "mall_codes": [
+      "MALL_6D7E94DA",
+      "MALL_CF57D927",
+      "MALL_16421BD6",
+      "MALL_F67DFD0A",
+      "MALL_D6447733",
+      "MALL_F9F20680",
+      "MALL_0366F953",
+      "MALL_123DFCFC",
+      "MALL_DB774C2F",
+      "MALL_2C5FDB3E",
+      "MALL_C97C8CF6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中村片区商圈",
+    "description": "位于山阳县中村镇中延路与郭山路交汇区域，以中村供销社综合商城为代表，服务于当地乡镇居民的基础生活消费。",
+    "mall_codes": [
+      "MALL_BD2B5E90"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "高坝店镇商圈",
+    "description": "位于242国道沿线的高坝店镇附近，包含众合购物中心和佰惠购物广场，服务于国道沿线乡镇居民的日常购物需求。",
+    "mall_codes": [
+      "MALL_F58E4BA9",
+      "MALL_ED7A18BC"
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，包含其北区，位于皋城路与球拍东路、八公山北路交汇区域，是金安区较为集中的商业中心之一。",
+    "mall_codes": [
+      "MALL_28CCB885",
+      "MALL_1B206B10"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中环新世界商圈",
+    "description": "围绕中环新世界及其A区形成，位于皖西大道与梅山路交叉口附近，聚集了多个传统百货与购物中心，是城区西部的重要商业集聚区。",
+    "mall_codes": [
+      "MALL_80986303",
+      "MALL_67EAC175",
+      "MALL_551EAC35",
+      "MALL_CBF9DE89",
+      "MALL_723D1EE2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "市中心人民路商圈",
+    "description": "位于解放路与人民路交叉口一带，涵盖商之都、白云商厦等老牌百货，处于城市传统核心地段，交通便利，人流密集。",
+    "mall_codes": [
+      "MALL_9E6E887D",
+      "MALL_783523EF",
+      "MALL_E6F2A93E",
+      "MALL_FA2D6BA6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "迎宾大道新兴商圈",
+    "description": "分布于迎宾大道与皋城路、佛子岭路交口周边，包括在建的旭辉Cmall、金凤凰财富广场及山水奥莱，属于城市向东扩展形成的新兴商业带。",
+    "mall_codes": [
+      "MALL_16676183",
+      "MALL_AD1C48B2",
+      "MALL_80707B33"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "三十铺镇商圈",
+    "description": "位于金安区三十铺镇金安大道与凤凰路交口，覆盖环月商业广场，服务于城镇居民，是外围城镇级商业节点。",
+    "mall_codes": [
+      "MALL_F5BA3B73"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "东部新城商贸城商圈",
+    "description": "地处城区东部边缘，以好上市广场和商贸城为代表，靠近工业区与物流通道，侧重批发零售与区域性商贸功能。",
+    "mall_codes": [
+      "MALL_27CF99B6",
+      "MALL_E4AEF5D1"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "北部外围商贸点",
+    "description": "位于金安区北部较远区域，仅含星星商贸城，远离主城区，服务范围有限，属独立分布的边缘商业点。",
+    "mall_codes": [
+      "MALL_19AD9B06"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "老城区西南片商贸点",
+    "description": "位于老城区西南方向，包含金桥商贸城综合商品市场，临近居住区，服务于局部社区，规模较小。",
+    "mall_codes": [
+      "MALL_8B7F62E3"
+    ]
+  }
+]

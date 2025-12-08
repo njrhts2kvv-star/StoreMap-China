@@ -1,0 +1,136 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇中心商圈",
+    "description": "位于临泉县城关镇核心区域，涵盖前进路、光明路、解放路与兴泉大道交汇地带，聚集多个主要购物中心，是县城最繁华的商业集中区。",
+    "mall_codes": [
+      "MALL_DC827AA1",
+      "MALL_363840DC",
+      "MALL_15D6F510",
+      "MALL_EADCFF8C",
+      "MALL_2B9F0B49",
+      "MALL_D759C3AE",
+      "MALL_5F328320"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "鲖阳新城商圈",
+    "description": "位于临鲖路与光明北路周边，以新百鲖阳商贸中心为核心，辐射周边新兴居住与商业街区，是城北片区的重要消费节点。",
+    "mall_codes": [
+      "MALL_363840DC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "杨桥镇商圈",
+    "description": "覆盖杨桥镇及周边区域，以荣庆购物广场为代表，服务乡镇居民日常消费，属于县域次级商业中心。",
+    "mall_codes": [
+      "MALL_E3A850FC"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "宋集镇商圈",
+    "description": "位于宋集镇区域，以曹飞购物中心为主要商业载体，服务于本地乡镇市场，商业集聚度较低。",
+    "mall_codes": [
+      "MALL_988DBC7D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "范集-汇海商圈",
+    "description": "位于县境东部范长路一带，依托汇海购物中心形成局部商业节点，辐射周边农村地区。",
+    "mall_codes": [
+      "MALL_2A086BF9"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "义乌商贸城商圈",
+    "description": "围绕义乌商贸城二街形成的批发零售集聚区，以盛梅百货为代表，兼具小商品批发与零售功能。",
+    "mall_codes": [
+      "MALL_1C5A5C0F"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "老集-亚洲购物中心商圈",
+    "description": "位于062县道北侧，以亚洲购物中心为核心，服务城乡结合部及周边村落，属区域性便民商业点。",
+    "mall_codes": [
+      "MALL_3E9E32E8"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "滑集-辉隆大市场商圈",
+    "description": "位于教育路与黄庄路交叉口附近，依托辉隆大市场B区形成区域性商贸集散地，具有较强批发属性。",
+    "mall_codes": [
+      "MALL_D759C3AE"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "谭棚-商都商圈",
+    "description": "位于314省道与050县道交叉口附近，以临泉商都为代表，服务于西部乡镇交通节点上的商业需求。",
+    "mall_codes": [
+      "MALL_457B4F9C"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "姜寨-亿泉金街商圈",
+    "description": "位于步行街与光明路交叉区域，亿泉金街为典型街铺式商业形态，服务于老城区局部消费人群。",
+    "mall_codes": [
+      "MALL_DC827AA1"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "鲖城-艺权商圈",
+    "description": "位于城南偏西区域，艺权购物中心地处相对独立位置，服务周边社区和过境人流。",
+    "mall_codes": [
+      "MALL_5510F8B6"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "庙岔-辉煌商圈",
+    "description": "位于422省道与黄庆路交叉口北部，地理位置偏僻，辉煌购物中心为偏远乡镇提供基础商业服务。",
+    "mall_codes": [
+      "MALL_256F950B"
+    ]
+  },
+  {
+    "area_id": 13,
+    "area_name": "鲖城-汇鑫奥特莱斯商圈",
+    "description": "位于杨小街路与杏林路交汇处，汇鑫奥特莱斯时代广场定位略高于周边，尝试引入品牌折扣业态。",
+    "mall_codes": [
+      "MALL_78319078"
+    ]
+  },
+  {
+    "area_id": 14,
+    "area_name": "高塘-和家乐商圈",
+    "description": "人民东路与220国道交叉口附近，和家乐商贸购物中心服务于东部进出城要道沿线居民。",
+    "mall_codes": [
+      "MALL_4FE54AAC"
+    ]
+  },
+  {
+    "area_id": 15,
+    "area_name": "鲖城-百货大楼商圈",
+    "description": "和谐路与220国道交汇处，百货大楼作为传统零售代表，支撑局部片区基本商业功能。",
+    "mall_codes": [
+      "MALL_1E24E8A4"
+    ]
+  },
+  {
+    "area_id": 16,
+    "area_name": "长官-两元起商圈",
+    "description": "位于科教路北侧，两元起购物中心反映低价零售模式在偏远乡镇的分布特征。",
+    "mall_codes": [
+      "MALL_ED809622"
+    ]
+  }
+]

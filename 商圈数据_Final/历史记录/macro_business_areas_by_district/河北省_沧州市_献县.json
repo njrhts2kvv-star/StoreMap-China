@@ -1,0 +1,37 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新华路商圈",
+    "description": "以新华路为核心街道，聚集了泰昌购物及其分期项目，同时涵盖周边主要商业节点，是献县城区内较为集中的商业区域。",
+    "mall_codes": [
+      "MALL_AC341086",
+      "MALL_660AA61D",
+      "MALL_DCBCA1C7",
+      "MALL_7A809D3F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "本斋路商圈",
+    "description": "位于本斋路沿线，以明珠商贸大世界为代表，地处交叉路口附近，具备一定区位集聚效应，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_509DECE7"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "育才路商圈",
+    "description": "位于城区西部育才路一带，以银都荟为标志，独立分布，远离其他商场群，构成城西方向的单一商业点。",
+    "mall_codes": [
+      "MALL_040EE71D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "泊淮路商圈",
+    "description": "位于泊淮路附近，距离城区中心较远，以鑫汇商城为唯一代表，地理位置孤立，自成一个边缘型商业片区。",
+    "mall_codes": [
+      "MALL_D2BEBA15"
+    ]
+  }
+]

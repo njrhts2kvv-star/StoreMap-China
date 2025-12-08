@@ -1,0 +1,90 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "会城中心商圈",
+    "description": "位于新会区会城街道核心区域，涵盖大新路、冈州大道东等主干道沿线的多个商业载体，是区内传统商业集聚地。",
+    "mall_codes": [
+      "MALL_024405E6",
+      "MALL_9309771A",
+      "MALL_08176E81",
+      "MALL_B88F6FB1",
+      "MALL_4C90678B",
+      "MALL_1C81E164"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "启超大道商圈",
+    "description": "沿启超大道分布，以大型现代商业综合体为核心，辐射周边新兴居住与商务区，是新会近年重点发展的城市新商圈。",
+    "mall_codes": [
+      "MALL_FE31CE62",
+      "MALL_4B6F3829"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "双水镇商圈",
+    "description": "服务于双水镇本地居民的区域性商业聚集区，位于镇中心附近，包含振兴大道及康宁街周边商业设施。",
+    "mall_codes": [
+      "MALL_C601A222",
+      "MALL_3E6772FC"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "古井商圈",
+    "description": "位于新会区西南部古井镇，依托乡道与市场形成的基层商业节点，服务周边乡镇居民。",
+    "mall_codes": [
+      "MALL_40C84F0A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "司前镇商圈",
+    "description": "位于司前镇国道沿线，依托交通干道形成的小型区域商业中心，覆盖周边工业区与居住区。",
+    "mall_codes": [
+      "MALL_B9F1513F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "南朗商圈",
+    "description": "位于X540县道南朗市场附近，属于乡村级基础零售服务点，满足当地村民日常购物需求。",
+    "mall_codes": [
+      "MALL_446085FF"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "江会路商圈",
+    "description": "位于冈州大道东与奇兴路交汇处附近，依托江会时代城等新兴商业项目形成的东部扩展型商圈。",
+    "mall_codes": [
+      "MALL_ACFD0027"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "帝临南路商圈",
+    "description": "集中于帝临南路14号一带，虽有多个注册商业实体但实际商业活跃度较低，属老城区待更新商业点。",
+    "mall_codes": [
+      "MALL_D05A0F2A",
+      "MALL_DF0C0938"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "城南商圈",
+    "description": "位于会城城南村委会对面市场周边，依托社区市场形成的底层生活服务型商业聚集区。",
+    "mall_codes": [
+      "MALL_77FC4639"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "三和大道商圈",
+    "description": "位于三和大道北段的新会食品城所在区域，为专业性较强的食品类商业载体，配套周边社区。",
+    "mall_codes": [
+      "MALL_06DA3B68"
+    ]
+  }
+]

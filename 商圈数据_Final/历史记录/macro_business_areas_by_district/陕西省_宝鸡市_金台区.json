@@ -1,0 +1,46 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金台大道商圈",
+    "description": "以金台大道为核心发展轴，聚集了万达广场、唐潮城、银泰百货及东岭新天地等多个商业项目，是金台区现代商业最集中的区域。",
+    "mall_codes": [
+      "MALL_C5CB438A",
+      "MALL_EFB0D7C8",
+      "MALL_68085FA0",
+      "MALL_DCEF4513"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "三迪广场商圈",
+    "description": "位于陈仓大道的三迪广场周边，以三迪PARK主题购物公园为核心，依托红星美凯龙形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_D5BD1F6F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大庆路商圈",
+    "description": "位于大庆路沿线，以泰森·乐街Life为主要商业载体，服务周边居民区，形成生活型消费集聚区。",
+    "mall_codes": [
+      "MALL_6148D6BA"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "中山东路商圈",
+    "description": "地处老城区中山东路，汇聚华通商厦和宝鸡市百货大楼，是金台区传统商业发源地之一，具有较高人气和历史积淀。",
+    "mall_codes": [
+      "MALL_CB3B508D",
+      "MALL_0A34F4C3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "新福路商圈",
+    "description": "位于新福路与玉涧堡西路交叉口附近，以轩苑盛世生活广场为支点，辐射北部新城居住片区。",
+    "mall_codes": [
+      "MALL_D44E16CF"
+    ]
+  }
+]

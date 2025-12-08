@@ -1,0 +1,21 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "大仓商圈",
+    "description": "位于大仓镇核心区域，集中了多个商贸中心和购物场所",
+    "mall_codes": [
+      "MALL_A586BAFB",
+      "MALL_F42DFC45",
+      "MALL_8D744C3E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南诏商圈",
+    "description": "位于南诏镇中心区域，是县城主要商业聚集区",
+    "mall_codes": [
+      "MALL_77526120",
+      "MALL_881F5A8C"
+    ]
+  }
+]

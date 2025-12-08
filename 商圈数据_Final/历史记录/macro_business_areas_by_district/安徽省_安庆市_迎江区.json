@@ -1,0 +1,50 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "人民路商圈",
+    "description": "以人民路步行街为核心，聚集多个传统商场与地下商业体，是安庆市迎江区历史悠久的商业中心。",
+    "mall_codes": [
+      "MALL_E8AFF08B",
+      "MALL_EFCE9846",
+      "MALL_3D203476",
+      "MALL_388C3686",
+      "MALL_1EE6C513",
+      "MALL_59BB0502",
+      "MALL_D7E05531",
+      "MALL_57430461",
+      "MALL_C22AD09D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "吾悦广场商圈",
+    "description": "以吾悦广场为核心，位于菱湖南路，是近年来形成的新兴商业节点，辐射周边居住区。",
+    "mall_codes": [
+      "MALL_2B5B06DD"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "苏宁广场商圈",
+    "description": "位于独秀大道与皖江大道交叉口附近，依托苏宁广场（建设中）形成的新规划商业区域。",
+    "mall_codes": [
+      "MALL_2164B533"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "万达广场商圈",
+    "description": "位于天柱山东路与港口路交叉口，以万达广场（装修中）为标志，属于城市东部的发展型商业片区。",
+    "mall_codes": [
+      "MALL_427A28E0"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "C66购物体验公园商圈",
+    "description": "位于人民东路，以C66购物体验公园为唯一核心，定位年轻化、体验式消费场所。",
+    "mall_codes": [
+      "MALL_336D0A7F"
+    ]
+  }
+]

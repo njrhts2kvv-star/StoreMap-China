@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金湖镇商圈",
+    "description": "以金湖镇核心区域为主，涵盖太湖路与中山路沿线的商业聚集区，包括Everrich Golden Lake Plaza和Wind Lion Plaza两个主要商业点，是金门县金湖镇的重要商业服务区域。",
+    "mall_codes": [
+      "MALL_49EF4496",
+      "MALL_5B9E5831"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "金城镇商圈",
+    "description": "位于金门县金城镇光前路一带，依托城区主干道形成的小型商业节点，以本地特色零售门店如名記貢糖-光前門市为代表，服务于周边居民及游客，构成金城老城区的商业组成部分。",
+    "mall_codes": [
+      "MALL_6DAF3CED"
+    ]
+  }
+]

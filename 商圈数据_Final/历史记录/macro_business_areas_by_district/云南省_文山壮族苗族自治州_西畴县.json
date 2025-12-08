@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "兴街镇商圈",
+    "description": "位于西畴县兴街镇核心区域，包含在建商业项目及现有购物中心",
+    "mall_codes": [
+      "MALL_B17FB4E8",
+      "MALL_7D3518E4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "法斗乡商圈",
+    "description": "位于西畴县法斗乡集镇区域，服务周边居民日常购物需求",
+    "mall_codes": [
+      "MALL_21978E33"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "鸡街乡商圈",
+    "description": "位于西畴县鸡街乡集镇区域，为当地居民提供商业服务",
+    "mall_codes": [
+      "MALL_2B444D1E"
+    ]
+  }
+]

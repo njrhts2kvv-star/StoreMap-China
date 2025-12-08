@@ -1,0 +1,23 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "人民路商圈",
+    "description": "以人民路为主轴，集中了华天广场、多元广场、新世纪购物城等商业体，是隆德县核心商业聚集区，周边人流密集，商业氛围浓厚。",
+    "mall_codes": [
+      "MALL_A0E26319",
+      "MALL_D43EBE72",
+      "MALL_9857DF9F",
+      "MALL_0B6A2189",
+      "MALL_24056B8D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "解放街东段商圈",
+    "description": "位于解放街东段及渝河路交叉区域，涵盖渝河商贸广场和浙商商贸城，地处城区东部，具有一定区域辐射能力。",
+    "mall_codes": [
+      "MALL_A750D0FB",
+      "MALL_4CDC9DCF"
+    ]
+  }
+]

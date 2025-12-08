@@ -1,0 +1,58 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "南湖商圈",
+    "description": "以南湖第壹MALL为核心，覆盖金鹏世纪新都汇、红河奥林匹克广场等项目，位于蒙自市中心城区南部，临近南湖公园，是城市传统商业中心之一。",
+    "mall_codes": [
+      "MALL_CCC58772",
+      "MALL_4DAB6A6B",
+      "MALL_7AB0949D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "天马路商圈",
+    "description": "沿天马路主干道分布，聚集翔升休闲购物广场、金方购物广场等商业体，地处城市核心发展轴，交通便利，商业氛围浓厚。",
+    "mall_codes": [
+      "MALL_055FC104",
+      "MALL_2C57E69D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "北京路商圈",
+    "description": "位于北京路沿线，以锦隆购物广场为代表，辐射周边商贸配套，是蒙自近年来重点发展的新兴商业带之一。",
+    "mall_codes": [
+      "MALL_951B6FE1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "上海路商圈",
+    "description": "以上海路与天马路交叉口为节点，涵盖红河时光广场，地理位置居中，连接多个居住区，具备区域级商业服务功能。",
+    "mall_codes": [
+      "MALL_4C4ACFBC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "吉庆路-龙井路商圈",
+    "description": "集中于吉庆路与龙井路周边，包括新世纪超市、福兴商贸城A区、蒙自商都批发城等多个中小型商业点，服务于本地居民日常消费。",
+    "mall_codes": [
+      "MALL_B53BC74E",
+      "MALL_C69391F8",
+      "MALL_FDF067D4",
+      "MALL_41B73F60",
+      "MALL_93688A76"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "城西商贸区",
+    "description": "位于城市西部，包含蒙自中南国际商贸城和捷尔多购物中心，侧重批发贸易与基础零售，具有较强的物流与集散属性。",
+    "mall_codes": [
+      "MALL_6E7B7DA1",
+      "MALL_096C9094"
+    ]
+  }
+]

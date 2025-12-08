@@ -1,0 +1,13 @@
+﻿mall_code,name,province_name,city_name,district_name,address,lat,lng,city_tier,city_tier_bucket,mall_lux_segment,mall_price_segment,mall_category,mall_level,brand_score_total,brand_score_luxury,brand_score_light_luxury,opened_year,revenue_bucket_value,revenue_bucket_confidence,revenue_bucket_source_type
+MALL_92DADD7D,成都SKP,四川省,成都市,武侯区,天府大道北段2001号,30.569005,104.070442,新一线,top12,重奢,高端,shopping_mall,D,3,1,1,UNKNOWN,10-20,medium,model_estimation
+MALL_6077CFF0,恒隆广场-西翼,山东省,济南市,历下区,泉城路188号,36.663841,117.023082,二线,top12,重奢,高端,shopping_mall,D,0,0,0,UNKNOWN,UNKNOWN,low,unknown
+MALL_2544CEAA,济南恒隆广场,山东省,济南市,历下区,泉城路188号,36.663817,117.023715,二线,top12,重奢,高端,shopping_mall,D,1,0,0,UNKNOWN,10-20,medium,model_estimation
+MALL_FE5956B0,济南恒隆广场东翼,山东省,济南市,历下区,泉城路188号,36.663856,117.024482,二线,top12,重奢,高端,shopping_mall,D,0,0,0,UNKNOWN,10-20,medium,model_estimation
+MALL_1EEEF5A6,南京德基广场,江苏省,南京市,玄武区,中山路18号,32.044077,118.784902,新一线,top12,重奢,高端,shopping_mall,D,3,2,1,UNKNOWN,10-20,medium,model_estimation
+MALL_0B46EF10,恒隆购物中心,江苏省,无锡市,江阴市,龙山大街155号,31.919798,120.355219,二线,top12,重奢,高端,shopping_mall,D,0,0,0,UNKNOWN,UNKNOWN,low,unknown
+MALL_F2734DDC,武汉恒隆广场,湖北省,武汉市,硚口区,京汉大道668号(利济北路地铁站B1口步行190米),30.577843,114.273815,新一线,top12,重奢,高端,shopping_mall,D,0,0,0,UNKNOWN,UNKNOWN,low,unknown
+MALL_13E3C07C,武汉恒隆广场东区,湖北省,武汉市,硚口区,京汉大道668号武汉恒隆广场,30.578095,114.274308,新一线,top12,重奢,高端,shopping_mall,D,0,0,0,UNKNOWN,UNKNOWN,low,unknown
+MALL_5C5BA8A0,武汉恒隆广场西区,湖北省,武汉市,硚口区,京汉大道668号武汉恒隆广场,30.577714,114.272808,新一线,top12,重奢,高端,shopping_mall,D,0,0,0,UNKNOWN,UNKNOWN,low,unknown
+MALL_86D136FD,市府恒隆广场,辽宁省,沈阳市,沈河区,青年大街1号(市府广场地铁站A口旁),41.801098,123.43387,二线,top12,重奢,高端,shopping_mall,D,0,0,0,2013,20-40,medium,news_media
+MALL_29F3AD2D,皇城恒隆广场,辽宁省,沈阳市,沈河区,中街路128号,41.802346,123.455091,二线,top12,重奢,高端,shopping_mall,D,0,0,0,UNKNOWN,UNKNOWN,low,unknown
+MALL_F3501F1B,西安SKP,陕西省,西安市,碑林区,长安北路261号(永宁门地铁站出入口旁),34.247559,108.948733,新一线,top12,重奢,高端,shopping_mall,D,6,1,3,UNKNOWN,UNKNOWN,low,unknown

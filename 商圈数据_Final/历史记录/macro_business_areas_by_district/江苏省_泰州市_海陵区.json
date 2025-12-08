@@ -1,0 +1,70 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万象城商圈",
+    "description": "以永定东路399号为核心的商业集群，包含万象城A馆、B馆、C馆及泰州万象城，形成海陵区东部新兴的集中式商业中心。",
+    "mall_codes": [
+      "MALL_2072A638",
+      "MALL_3CDDA938",
+      "MALL_2DCA59C3",
+      "MALL_87EF85A6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "坡子街商圈",
+    "description": "位于海陵北路沿线的传统核心商业区，聚集坡子街商业中心、时尚莱迪购物广场、中欣广场等商场，是海陵区历史最悠久的商业集聚带。",
+    "mall_codes": [
+      "MALL_7E86D677",
+      "MALL_A4870F82",
+      "MALL_352A572F",
+      "MALL_45B7C784",
+      "MALL_BC7BE388"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东进东路商圈",
+    "description": "沿东进东路分布的现代商业带，涵盖金鹰国际购物中心、华侨商场、锦泰购物广场等项目，构成海陵区中部重要的消费走廊。",
+    "mall_codes": [
+      "MALL_B3C1A5D8",
+      "MALL_6DE7FCD4",
+      "MALL_EF8F815A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城东新城商圈",
+    "description": "以迎春东路和南通路交汇区域为核心的发展中商圈，包括中骏世界城、茂业天地、苏北商业广场，体现城东新城区的商业拓展格局。",
+    "mall_codes": [
+      "MALL_BC39EDCD",
+      "MALL_A630ECC9",
+      "MALL_D181D987"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大学城邻里商圈",
+    "description": "位于口泰路高教园区的生活配套商圈，由华融生活广场与教育教学区邻里中心组成，主要服务周边师生及居民。",
+    "mall_codes": [
+      "MALL_DB763CAA",
+      "MALL_1ED1188C"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "永定西路商圈",
+    "description": "位于海陵西部的区域性商业节点，以丝绸之路泰州广场为代表，覆盖永定西路周边消费需求。",
+    "mall_codes": [
+      "MALL_D9075069"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "梅兰东路商圈",
+    "description": "海陵北部梅兰东路沿线的独立商业点，以鑫海城市广场为核心，服务于北部居住区。",
+    "mall_codes": [
+      "MALL_C5D2A3AD"
+    ]
+  }
+]

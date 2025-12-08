@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "秀屏路商圈",
+    "description": "位于县城核心区域，包含现代阳光购物中心和禄劝财富中心等主要商业设施",
+    "mall_codes": [
+      "MALL_F1B8DE94",
+      "MALL_01173AE0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "紫溪星谷商圈",
+    "description": "位于县城东部紫溪星谷片区，以紫溪星谷商业广场为核心",
+    "mall_codes": [
+      "MALL_6154F631"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "禄大路商圈",
+    "description": "位于县城南部禄大路沿线，以铜锣湾广场为主要商业体",
+    "mall_codes": [
+      "MALL_FDC1807D"
+    ]
+  }
+]

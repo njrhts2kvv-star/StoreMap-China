@@ -1,0 +1,69 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五角场商圈",
+    "description": "位于杨浦区核心商业区，以五角场为中心，聚集了多个大型购物中心和商业广场",
+    "mall_codes": [
+      "MALL_9B8B31C9",
+      "MALL_981776C7",
+      "MALL_B682B0F3",
+      "MALL_C54427B8",
+      "MALL_EE81B029",
+      "MALL_BD296837",
+      "MALL_D96D7B37",
+      "MALL_8CBB7BD9",
+      "MALL_D4EEC7A3",
+      "MALL_AC5F77D6",
+      "MALL_F687339A",
+      "MALL_64C0BBC4",
+      "MALL_E0BF849E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "新江湾城商圈",
+    "description": "位于杨浦区北部新江湾城区域，服务周边居民的生活购物需求",
+    "mall_codes": [
+      "MALL_5279F7E5",
+      "MALL_6E77111C",
+      "MALL_16D15498"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "杨浦滨江商圈",
+    "description": "沿杨浦滨江区域分布的商业设施，包括时尚中心和滨江购物中心",
+    "mall_codes": [
+      "MALL_2B25DC19",
+      "MALL_DD3870B3"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "鞍山商圈",
+    "description": "位于杨浦区南部鞍山新村周边，服务周边社区居民",
+    "mall_codes": [
+      "MALL_137ABD2C",
+      "MALL_23A0BCAE"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大学路商圈",
+    "description": "围绕复旦大学和同济大学周边的商业设施，服务高校师生群体",
+    "mall_codes": [
+      "MALL_3CF3BE77",
+      "MALL_C75B89B0"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "殷行商圈",
+    "description": "位于杨浦区东部殷行路周边的生活商业区",
+    "mall_codes": [
+      "MALL_E83995E1",
+      "MALL_EB9317AC",
+      "MALL_E028B6C9"
+    ]
+  }
+]

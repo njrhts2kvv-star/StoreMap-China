@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "府前大街商圈",
+    "description": "以华林商厦为核心，位于府前大街沿线，是保德县传统商业集中区域之一。",
+    "mall_codes": [
+      "MALL_FBF8ACAD"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "新大街-东关镇商圈",
+    "description": "涵盖国贸购物广场与河滨商城，地处新大街及东关镇友谊桥附近，构成保德县东部主要商业聚集区。",
+    "mall_codes": [
+      "MALL_722EBB87",
+      "MALL_A2CF554E"
+    ]
+  }
+]

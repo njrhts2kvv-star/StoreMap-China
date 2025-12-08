@@ -1,0 +1,25 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "铜陵镇商圈",
+    "description": "位于东山县铜陵镇核心区域，涵盖演武街、团结路周边多个商业设施，是老城区主要的商业集聚区。",
+    "mall_codes": [
+      "MALL_EE2825C6",
+      "MALL_A83E76EE",
+      "MALL_1A7740C6",
+      "MALL_69717A01",
+      "MALL_EDD14B46"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "西埔中心商圈",
+    "description": "位于东山县西埔镇及周边，覆盖中兴街、541县道沿线商业项目，是县城新区的重要商业节点。",
+    "mall_codes": [
+      "MALL_96F8BE99",
+      "MALL_355A7090",
+      "MALL_4528574D",
+      "MALL_67F14BF3"
+    ]
+  }
+]

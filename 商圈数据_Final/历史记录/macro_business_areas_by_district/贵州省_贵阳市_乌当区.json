@@ -1,0 +1,23 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新天寨商圈",
+    "description": "位于乌当区新添寨核心区域，集中分布于新添大道沿线，涵盖多个社区型购物中心和地下商场，服务周边密集居住区。",
+    "mall_codes": [
+      "MALL_38ACFA34",
+      "MALL_425801A7",
+      "MALL_FC0935DF",
+      "MALL_3F01E606",
+      "MALL_3EC06D88",
+      "MALL_AE425282"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "隆昌商圈",
+    "description": "位于乌当区外围的隆昌片区，地理位置相对独立，以区域性生活配套为主，辐射周边乡镇及居民点。",
+    "mall_codes": [
+      "MALL_06A5387D"
+    ]
+  }
+]

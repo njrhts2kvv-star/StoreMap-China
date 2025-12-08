@@ -1,0 +1,52 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "铭基商贸城商圈",
+    "description": "位于丹徒区宜城街道核心区域，以铭基商贸城多个分区为主体，集中分布于驸马街与架鼓山路周边，是区域内规模较大的综合性商贸集聚区。",
+    "mall_codes": [
+      "MALL_FE51ECC1",
+      "MALL_AE14C0AF",
+      "MALL_02F689EC",
+      "MALL_FD904CC0",
+      "MALL_058C7E9C",
+      "MALL_A0F79F13",
+      "MALL_F17BC1C8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "丹徒新城商圈",
+    "description": "覆盖丹徒新区主要商业节点，包括恒冠宝地汇、新天地广场和金谷商厦等，地处谷阳中大道与长香路沿线，是丹徒区近年来重点发展的城市商业中心。",
+    "mall_codes": [
+      "MALL_BDDFF1CF",
+      "MALL_CE4FAABC",
+      "MALL_0DED9963"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "上党-辛丰镇区商圈",
+    "description": "涵盖上党镇、辛丰镇等乡镇驻地的分散型商业设施，包括易购生活广场、财富广场及暂停营业的上党供销社商场，服务于本地居民日常生活需求。",
+    "mall_codes": [
+      "MALL_A7B62CE8",
+      "MALL_EAD41198",
+      "MALL_573C1820"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "宝堰镇区商圈",
+    "description": "位于丹徒区南部的宝堰镇，以购物广场为代表，服务周边乡镇居民，属于区域性基础商业配套。",
+    "mall_codes": [
+      "MALL_FD7E80BE"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "上会镇区商圈",
+    "description": "位于丹徒区西北部的上会片区，以上会大鹏商场为代表，属小型乡镇级商业点。",
+    "mall_codes": [
+      "MALL_6E48D81C"
+    ]
+  }
+]

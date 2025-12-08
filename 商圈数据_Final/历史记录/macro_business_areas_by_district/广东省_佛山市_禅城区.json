@@ -1,0 +1,52 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "季华路商圈",
+    "description": "以季华五路、季华四路为核心，沿季华路东西向分布的商业集聚区，涵盖多个大型购物中心和城市综合体，是禅城区现代商业最密集的区域之一。",
+    "mall_codes": [
+      "MALL_A162FD56",
+      "MALL_41954870",
+      "MALL_828CBC76",
+      "MALL_ABFA5CEC",
+      "MALL_E130CC25"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "祖庙-百花商圈",
+    "description": "位于禅城区老城核心，依托祖庙地铁站及祖庙路沿线，聚集传统商场与地标性商业体，是佛山历史最悠久的商业中心之一。",
+    "mall_codes": [
+      "MALL_77E17A82",
+      "MALL_D1C321A2",
+      "MALL_6A5C99DB",
+      "MALL_725AF5C9",
+      "MALL_010605AA",
+      "MALL_7D10D1F5"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "魁奇路商圈",
+    "description": "以魁奇一路、魁奇二路为主轴，靠近地铁魁奇路站和湾华站，分布有区域性购物中心，服务城南居住片区。",
+    "mall_codes": [
+      "MALL_1D488C93",
+      "MALL_3FA6E82A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "智慧新城商圈",
+    "description": "位于禅西片区季华一路沿线，依托智慧新城地铁站及东基·禅西环宇城项目，是新兴的城市更新型商业节点。",
+    "mall_codes": [
+      "MALL_7749058D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "南庄商圈",
+    "description": "位于禅城区西部南庄镇中心，服务于本地居民的区域性商业聚集地，地理位置相对独立。",
+    "mall_codes": [
+      "MALL_295AC41B"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "凯通路商圈",
+    "description": "位于凯通路沿线，包含东川区主要商业设施",
+    "mall_codes": [
+      "MALL_A6A5C40F",
+      "MALL_3A4285A9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "铜都商圈",
+    "description": "以古铜路为核心的传统商业区域",
+    "mall_codes": [
+      "MALL_D1834C85"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "白玉路商圈",
+    "description": "白玉路与兴玉路交叉口周边商业区域",
+    "mall_codes": [
+      "MALL_9EB302CB"
+    ]
+  }
+]

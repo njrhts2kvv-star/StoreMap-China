@@ -1,0 +1,53 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "滇池路商圈",
+    "description": "位于滇池路沿线，涵盖南亚风情第一城及周边商业项目",
+    "mall_codes": [
+      "MALL_67811C53",
+      "MALL_0A93F132",
+      "MALL_073F252E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "前兴路商圈",
+    "description": "前兴路沿线商业集聚区，包括万达广场及周边商业体",
+    "mall_codes": [
+      "MALL_CB928C75",
+      "MALL_862E9BA2",
+      "MALL_6B6E1754"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "云纺商圈",
+    "description": "环城南路云纺商业区核心地带，集中多个商业综合体",
+    "mall_codes": [
+      "MALL_2BD3E0E4",
+      "MALL_7CBFF37B",
+      "MALL_0B36D8FF",
+      "MALL_F9A6E13C",
+      "MALL_9FCCEAFA",
+      "MALL_5DFAEE38"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "广福路商圈",
+    "description": "广福路沿线新兴商业区，以爱琴海购物公园为核心",
+    "mall_codes": [
+      "MALL_765B219D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "云山路商圈",
+    "description": "云山路周边商业集聚区，包括三江世纪市场和云善时尚广场",
+    "mall_codes": [
+      "MALL_F59761AE",
+      "MALL_8B5E5F7D",
+      "MALL_1B573F43"
+    ]
+  }
+]

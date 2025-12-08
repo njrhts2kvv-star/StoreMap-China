@@ -1,0 +1,13 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "阿图什市中心商圈",
+    "description": "位于阿图什市核心城区，涵盖帕米尔路与松他克路沿线多个商业节点，是市区主要的商贸聚集区。",
+    "mall_codes": [
+      "MALL_AB1E1A7B",
+      "MALL_3E756730",
+      "MALL_D038E581",
+      "MALL_FDBD0FDA"
+    ]
+  }
+]

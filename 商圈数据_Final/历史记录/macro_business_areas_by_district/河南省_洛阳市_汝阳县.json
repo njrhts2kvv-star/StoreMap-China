@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "汝阳县城关商圈",
+    "description": "位于汝阳县城中心区域，涵盖人民路沿线的核心商业设施，是县城主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_DEEDB78F",
+      "MALL_B05AC064"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "付店镇商圈",
+    "description": "位于汝阳县付店镇，依托乡镇交通枢纽和本地商贸中心形成的基础型商业节点。",
+    "mall_codes": [
+      "MALL_4AF230EB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "柏树乡商圈",
+    "description": "位于汝阳县柏树乡附近，依托区域交叉路口形成的区域性商贸城，服务周边乡镇居民。",
+    "mall_codes": [
+      "MALL_9FE5EA0F"
+    ]
+  }
+]

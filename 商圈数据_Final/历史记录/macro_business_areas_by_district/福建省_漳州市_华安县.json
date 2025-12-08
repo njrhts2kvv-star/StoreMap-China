@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "华丰镇商圈",
+    "description": "以九龙国际商贸中心为核心，覆盖华丰镇主要商业节点，是华安县城区的主要商业聚集区。",
+    "mall_codes": [
+      "MALL_8D8F4A63"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "仙中路商圈",
+    "description": "位于仙中路沿线，集中了商业广场和铭都商品城，构成华安县中心城区东部的重要商业组团。",
+    "mall_codes": [
+      "MALL_FF0ABC4A",
+      "MALL_9CEC55D1"
+    ]
+  }
+]

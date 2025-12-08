@@ -1,0 +1,55 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "崇州万达商圈",
+    "description": "以万达广场为核心，覆盖永康东路沿线的商业集聚区，是崇州市较为现代化的综合商业中心。",
+    "mall_codes": [
+      "MALL_09204FA2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "崇州老城商圈",
+    "description": "位于崇州老城区核心地带，涵盖唐安西路、大东街、永康西路一带的传统商业集中区域，包含多个本地百货与生活广场。",
+    "mall_codes": [
+      "MALL_B975C463",
+      "MALL_C6B8982E",
+      "MALL_51460831",
+      "MALL_53CEF680",
+      "MALL_AAE85E59"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "崇州西部新城商圈",
+    "description": "位于永康西路西段至云星路一带，包含云庭商业广场和河之洲国际广场，属于城市拓展方向的新建商业聚集区。",
+    "mall_codes": [
+      "MALL_33BFDE10",
+      "MALL_3BA2752F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "元通古镇商圈",
+    "description": "位于元通镇麒麟街附近，依托古镇文旅资源形成的区域性商贸中心，服务本地居民与游客。",
+    "mall_codes": [
+      "MALL_95B1D686"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "金鸡创新产业配套商圈",
+    "description": "位于宏业大道南段创新路一带，服务于周边产业园区与新兴居住区的生活型商业广场。",
+    "mall_codes": [
+      "MALL_0FC10DF8"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "永安西路食品城商圈",
+    "description": "以崇州食品城1区为代表，集中于永安西路的特色专业市场型商业节点。",
+    "mall_codes": [
+      "MALL_92F17D5D"
+    ]
+  }
+]

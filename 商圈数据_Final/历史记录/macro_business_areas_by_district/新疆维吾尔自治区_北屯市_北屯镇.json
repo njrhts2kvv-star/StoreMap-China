@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "博望东街商圈",
+    "description": "位于北屯镇核心居住区，沿博望东街分布，涵盖得仁商厦与百兴园购物广场，服务于周边居民日常购物需求。",
+    "mall_codes": [
+      "MALL_6D9D4CBB",
+      "MALL_A220BC47"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "多尔布尔津街商圈",
+    "description": "位于多尔布尔津街沿线，以北屯商贸城为核心，地处城镇传统商业街道，具备一定本地消费基础。",
+    "mall_codes": [
+      "MALL_895F3FFE"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "西北路商圈",
+    "description": "位于西北路沿线，靠近阿勒泰博爱医院，分布有西北路商场，服务医疗配套及周边社区客流。",
+    "mall_codes": [
+      "MALL_2D58A1C1"
+    ]
+  }
+]

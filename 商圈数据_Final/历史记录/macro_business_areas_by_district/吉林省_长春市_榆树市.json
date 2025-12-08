@@ -1,0 +1,82 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "榆树市中心商圈",
+    "description": "位于榆树市主城区核心区域，集中了多个主要商业设施，包括天悦城、恒基购物广场、榆树百货大楼等，是榆树市商业密度最高、人流最集中的区域。",
+    "mall_codes": [
+      "MALL_8F5F2AAE",
+      "MALL_EBE1D2BF",
+      "MALL_9160B983",
+      "MALL_81541E1D",
+      "MALL_46FE0F13",
+      "MALL_AFA4059A",
+      "MALL_F39A75FB",
+      "MALL_03444D0B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "五棵树镇商圈",
+    "description": "位于榆树市下辖的五棵树镇，以广源商都和盛世购物广场为核心，服务于当地居民，是榆树市南部的重要区域性商业节点。",
+    "mall_codes": [
+      "MALL_3A759B99",
+      "MALL_8C7FC7BC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "于家镇商圈",
+    "description": "位于榆树市于家镇，以东北亚商城为主要商业载体，覆盖周边乡镇消费人群，属于外围乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_5E986FC7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "大坡镇商圈",
+    "description": "位于榆树市大坡镇，以阳光商场为支撑，提供基础零售服务，辐射本地及周边农村地区。",
+    "mall_codes": [
+      "MALL_1DF8EFBC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "泗河街道商圈",
+    "description": "位于榆树市泗河街道，依托泗河城商贸中心开展商业活动，服务于当地居民，属偏远乡镇型商业点。",
+    "mall_codes": [
+      "MALL_208A2338"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "青山乡商圈",
+    "description": "位于榆树市青山乡附近，以和平商场为主要商业设施，服务范围较小，属于基层乡镇商业节点。",
+    "mall_codes": [
+      "MALL_AE948EB3"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "新立城镇商圈",
+    "description": "位于榆树市西北部育民路附近，以旺盛隆购物商城为主，覆盖周边乡村消费群体，属边缘乡镇商业点。",
+    "mall_codes": [
+      "MALL_C8CA0531"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "环城乡商圈",
+    "description": "位于榆树市东部鸿升供销商厦所在地，地处乡道交汇处，服务本地村民，商业规模小，属典型农村集镇商业形态。",
+    "mall_codes": [
+      "MALL_D623D574"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "刘家镇商圈",
+    "description": "位于榆树市西南部212省道与松江路交叉口附近，以兴业时代广场为核心，服务于过路客流及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_6726CA75"
+    ]
+  }
+]

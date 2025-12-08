@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "建设路商圈",
+    "description": "位于弥城镇建设路沿线，毗邻毗江路，是县城核心商业区域",
+    "mall_codes": [
+      "MALL_00AF01B4",
+      "MALL_E0D71213"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "光明街商圈",
+    "description": "位于弥城镇光明街周边，传统商业集中区域",
+    "mall_codes": [
+      "MALL_3C6BE46E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "果河路商圈",
+    "description": "位于果河公路与弥巍线交汇处，新兴商贸区域",
+    "mall_codes": [
+      "MALL_AE573561"
+    ]
+  }
+]

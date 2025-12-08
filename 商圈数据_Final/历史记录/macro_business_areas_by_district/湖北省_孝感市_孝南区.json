@@ -1,0 +1,56 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城南商圈",
+    "description": "以万达广场为核心，覆盖孝武大道沿线的商业集聚区，是孝南区南部较具规模的现代商业中心。",
+    "mall_codes": [
+      "MALL_DD7D06E1"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城北商圈",
+    "description": "以乾坤新城及周边多个商业项目聚集形成的北部综合商业区，涵盖长征南路、乾坤大道一带，是城区北部主要消费区域。",
+    "mall_codes": [
+      "MALL_D9432600",
+      "MALL_B54BF201",
+      "MALL_2508369F",
+      "MALL_401104F4",
+      "MALL_13784F1B",
+      "MALL_62372DD1",
+      "MALL_B02D1795"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "老城中心商圈",
+    "description": "位于孝感老城区核心地带，集中于北正街、城站路、解放街等传统商业街道，包含多个老牌商场和市场，商业密度高。",
+    "mall_codes": [
+      "MALL_4B0F6AD9",
+      "MALL_FAE783A4",
+      "MALL_EC190BCB",
+      "MALL_C96C0131",
+      "MALL_6429E619",
+      "MALL_A5C7BFAF",
+      "MALL_FBA9FE65",
+      "MALL_36E66218"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "高速公路服务区商圈",
+    "description": "分布于G4和G70高速沿线的服务区配套商业，主要服务于过境旅客，非城市日常消费核心区域。",
+    "mall_codes": [
+      "MALL_276F4C78",
+      "MALL_98D4ECCA"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "新华街商圈",
+    "description": "位于新华街大东门一带，以金华时尚广场为代表的小型商业点，属于区域性社区级商业补充。",
+    "mall_codes": [
+      "MALL_B38C17E9"
+    ]
+  }
+]

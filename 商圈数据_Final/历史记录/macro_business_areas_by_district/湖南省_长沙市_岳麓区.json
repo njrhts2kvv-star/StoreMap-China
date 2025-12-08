@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "梅溪湖商圈",
+    "description": "以金茂览秀城为核心，覆盖梅溪湖路沿线的商业集聚区，包含部分金星中路西侧中高端商业项目。",
+    "mall_codes": [
+      "MALL_7AA5C350",
+      "MALL_652A1B38",
+      "MALL_FC686987",
+      "MALL_91BBF213"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "溁湾镇商圈",
+    "description": "位于岳麓区东部，依托溁湾镇地铁站形成的传统商业节点，涵盖枫林路与潇湘北路交汇区域。",
+    "mall_codes": [
+      "MALL_4BCA4E91",
+      "MALL_A8612F62",
+      "MALL_CE8D8308"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "洋湖商圈",
+    "description": "围绕洋湖湿地地铁站布局的新兴商业集群，以龙湖天街和Livat荟聚为主要载体，形成南岳麓核心商业带。",
+    "mall_codes": [
+      "MALL_C7E5D3A7",
+      "MALL_C37B3D03",
+      "MALL_A8B61B81"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "观沙岭商圈",
+    "description": "位于岳麓区北部，以观沙岭招商花园城和24品生活中心为支点，服务周边大型居住区。",
+    "mall_codes": [
+      "MALL_5785E4EB",
+      "MALL_71D3C201"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "市府/茶子山商圈",
+    "description": "依托市政府板块发展起来的现代商业中心，涵盖凯德壹中心、保利时光汇等项目，地铁茶子山站与六沟垅站联动辐射。",
+    "mall_codes": [
+      "MALL_A8FC2862",
+      "MALL_EB27380E",
+      "MALL_CE8D8308"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "河西金星路商圈",
+    "description": "沿金星中路纵向分布的核心商业走廊，集中了步步高广场、王府井、湘腾城市广场等多个老牌商业体，构成岳麓区最成熟的零售带。",
+    "mall_codes": [
+      "MALL_6D5A6D80",
+      "MALL_BA93D5EB",
+      "MALL_3F77F9FC",
+      "MALL_234DF1C8",
+      "MALL_85056B98"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "大学城商圈",
+    "description": "依托湖南师范大学等高校资源形成的区域性消费中心，以悦购广场为代表，服务师生及周边居民。",
+    "mall_codes": [
+      "MALL_1912AEA7"
+    ]
+  }
+]

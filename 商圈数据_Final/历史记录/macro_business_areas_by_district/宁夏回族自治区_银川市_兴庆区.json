@@ -1,0 +1,66 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新华街商圈",
+    "description": "以新华东街为核心，聚集了国芳百货、建发东方红广场、星华汇购物中心等多个商业体，是兴庆区传统核心商业带之一。",
+    "mall_codes": [
+      "MALL_C4EB252D",
+      "MALL_67927B7C",
+      "MALL_E8BE934C",
+      "MALL_955FF85F",
+      "MALL_44F8DF70",
+      "MALL_8BDCFB0B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南薰路商圈",
+    "description": "位于南薰东路沿线，涵盖银川商城、温州商城等老牌商贸市场，形成区域性集散型商业集聚区。",
+    "mall_codes": [
+      "MALL_026A30F0",
+      "MALL_40E4A2F1",
+      "MALL_E3288281"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "丽景街商圈",
+    "description": "依托兴庆万达广场与兴庆商贸城的联动效应，地处丽景街与宝湖东路交汇区域，构成东部新兴商业中心。",
+    "mall_codes": [
+      "MALL_35D44332",
+      "MALL_80DDC592"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "北京路商圈",
+    "description": "位于北京东路与友爱街交叉口附近，以吾悦广场为标志性商业项目，辐射周边居民区，形成北部重要商业节点。",
+    "mall_codes": [
+      "MALL_3F62E580"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "凤凰北街商圈",
+    "description": "分布于凤凰北街与康平路交汇处，以永滢购物中心为代表，服务城市北部居住片区。",
+    "mall_codes": [
+      "MALL_B64FB082"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "胜利街商圈",
+    "description": "位于胜利街与宝湖东路交叉口附近，以王府井百货为主要商业载体，形成局部商业聚集。",
+    "mall_codes": [
+      "MALL_DA5B9FBA"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "城东南远郊商圈",
+    "description": "地处佳木东路与星河街交汇区域，位置相对偏远，以景城商业广场为单一商业点，服务特定社区。",
+    "mall_codes": [
+      "MALL_E08F8011"
+    ]
+  }
+]

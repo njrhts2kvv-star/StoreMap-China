@@ -1,0 +1,86 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "凯旋路商圈",
+    "description": "以凯旋路与民主路、神火大道交汇区域为核心，聚集了万达广场、中环广场、乐铺百货等多个商业项目，是梁园区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_2BA7E539",
+      "MALL_1D140950",
+      "MALL_C8C02159",
+      "MALL_B6733C66",
+      "MALL_430C0837",
+      "MALL_14F4EE69",
+      "MALL_129CF8A9",
+      "MALL_8AC0944F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "神火大道商圈",
+    "description": "沿神火大道分布，涵盖正弘汇、大千商业等商场，形成南北向重要商业带，连接多个住宅区与交通枢纽。",
+    "mall_codes": [
+      "MALL_A8864FF0",
+      "MALL_1618F338",
+      "MALL_3BA76651"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "胜利路-睢阳大道商圈",
+    "description": "位于城市东部，以白云世贸商城1区、红立鸽鸟购物中心为代表，依托主干道交汇形成新兴商业集聚区。",
+    "mall_codes": [
+      "MALL_F04435A4",
+      "MALL_A07FDE13"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "黄河东路商圈",
+    "description": "集中在黄河东路与光彩四路附近，以中州世贸商城为主要代表，周边配套专业市场，具有批发零售融合特征。",
+    "mall_codes": [
+      "MALL_7F2B4B1A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "佳海商贸城商圈",
+    "description": "位于商均路中原佳海国际商贸城东南角，以佳海生活广场为核心，服务大型综合商贸市场及周边工业物流区。",
+    "mall_codes": [
+      "MALL_6795980D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "西部城区商圈",
+    "description": "分布于民主西路与车城大道交叉口附近，百悦广场为该区域主要商业节点，覆盖西部居民区。",
+    "mall_codes": [
+      "MALL_ACBA7046"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "北部乡镇商圈",
+    "description": "位于梁园区北部外围，包括刘庄购物中心、晓卿购物中心等，服务于乡镇及城乡结合部消费群体。",
+    "mall_codes": [
+      "MALL_23184779",
+      "MALL_FEB0FCC6"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "南部乡镇商圈",
+    "description": "集中在水池铺乡一带，以天润福购物广场和学超购物中心为主，辐射南部农村地区。",
+    "mall_codes": [
+      "MALL_995A29E9",
+      "MALL_A3E2EEB7"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "民主路西段商圈",
+    "description": "位于民主路西侧，怡和新天地为该区域核心商业点，周边以社区型消费为主。",
+    "mall_codes": [
+      "MALL_B9AD0EE7"
+    ]
+  }
+]

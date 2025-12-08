@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "徐家汇商圈",
+    "description": "徐汇区核心商业区，汇集高端购物中心和百货商场",
+    "mall_codes": [
+      "MALL_354D6075",
+      "MALL_FB477D9A",
+      "MALL_3AD5222F",
+      "MALL_5944CAC1",
+      "MALL_EC7F8403",
+      "MALL_66D1F4B2",
+      "MALL_7424956F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "龙华商圈",
+    "description": "龙华地区新兴商业聚集区，包含多个现代化购物中心",
+    "mall_codes": [
+      "MALL_96A66E9B",
+      "MALL_791C2CB8",
+      "MALL_27CD8CA9"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "漕河泾商圈",
+    "description": "漕河泾开发区周边商业配套，服务周边居民和办公人群",
+    "mall_codes": [
+      "MALL_D4415C6D",
+      "MALL_2B492169",
+      "MALL_78B3F86B",
+      "MALL_EBEF10F0"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "西岸商圈",
+    "description": "徐汇滨江地区文化艺术与商业融合的特色商圈",
+    "mall_codes": [
+      "MALL_BD652B01"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "淮海路商圈",
+    "description": "淮海路沿线高端商业聚集区，连接徐汇与黄浦商圈",
+    "mall_codes": [
+      "MALL_EF80A369",
+      "MALL_1A53517A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "上海南站商圈",
+    "description": "上海南站交通枢纽周边商业配套",
+    "mall_codes": [
+      "MALL_C20D21E9",
+      "MALL_F60D0B2C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "华泾商圈",
+    "description": "徐汇南部华泾地区社区商业中心",
+    "mall_codes": [
+      "MALL_32AFDF8D"
+    ]
+  }
+]

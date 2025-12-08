@@ -1,0 +1,60 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "东方红大道商圈",
+    "description": "以东方红大道为核心主干道，聚集多个百货商场和商业广场，包括一弘百货、中华门、怡和摩尔城等，是浉河区传统商业中心。",
+    "mall_codes": [
+      "MALL_D38B0B5E",
+      "MALL_ACB545AA",
+      "MALL_10B35054",
+      "MALL_30337852",
+      "MALL_CF3F71BE",
+      "MALL_E2E65724",
+      "MALL_883D17B7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中山路-新华东路商圈",
+    "description": "位于中山路及新华东路沿线，涵盖上海商场等传统商业点，靠近步行街与居民区，具备一定人流基础。",
+    "mall_codes": [
+      "MALL_8EFDF349",
+      "MALL_CB2E460A",
+      "MALL_48C9C9D8"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南虹广场商圈",
+    "description": "以南虹广场为核心，包含其1号楼和2号楼，地处申城大道附近，形成区域性新兴商业集聚点。",
+    "mall_codes": [
+      "MALL_74169DA5",
+      "MALL_85FE495B",
+      "MALL_AF3BC031"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "民权街-人民路商圈",
+    "description": "位于民权街与人民路交汇区域，涵盖天润广场等商业节点，服务于周边社区。",
+    "mall_codes": [
+      "MALL_9C9A978B"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北京大街商圈",
+    "description": "分布于北京大街与广场路交叉口一带，以幸福里生活超市为代表，服务城市北部居住区。",
+    "mall_codes": [
+      "MALL_9908D2EA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "湖东商圈",
+    "description": "位于鸡公山大街湖东片区，依托信合湖东春天等住宅配套，形成湖东美悦广场为代表的社区型商业。",
+    "mall_codes": [
+      "MALL_FC2265E7"
+    ]
+  }
+]

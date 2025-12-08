@@ -1,0 +1,87 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "幸福路商圈",
+    "description": "以幸福路为核心的传统商业集聚区，集中了人民商场、苏宁广场、万客来服装超市等老牌商业设施，是宿城区中心地带的主要消费场所。",
+    "mall_codes": [
+      "MALL_B63B84E2",
+      "MALL_E169A0E8",
+      "MALL_FDB8A7A1",
+      "MALL_76C413FA",
+      "MALL_7A37A380",
+      "MALL_3A293FA9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "宝龙城市广场商圈",
+    "description": "以宝龙广场和大商百货为核心的现代综合商业体聚集区，位于西湖路主干道，配套成熟，是宿城区重要的中高端商业节点。",
+    "mall_codes": [
+      "MALL_1F99A007",
+      "MALL_9F59FA2E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "双庄-吾悦广场商圈",
+    "description": "以吾悦广场为地标，覆盖青海湖路沿线的新兴商业中心，辐射双庄街道及周边居住区，具备较强的区域吸引力。",
+    "mall_codes": [
+      "MALL_C6E5FBBD",
+      "MALL_2EC14CC1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "市府东路-凤凰城商圈",
+    "description": "位于宿城老城区东部，涵盖凤凰城、大光明商业广场等社区型商业项目，服务本地居民为主，生活配套完善。",
+    "mall_codes": [
+      "MALL_735CB90F",
+      "MALL_B8337165",
+      "MALL_4A701118"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "河滨新城商圈",
+    "description": "覆盖恒昌乐活广场、时代广场等点位，地处宿城北部发展带，连接医院与住宅区，形成以社区消费为基础的商业集群。",
+    "mall_codes": [
+      "MALL_458801F4",
+      "MALL_30156013",
+      "MALL_FFA4A383"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "洋河新区商圈",
+    "description": "位于洋河新区仓集镇的区域性商业节点，以佳又美购物中心为代表，服务于洋河镇及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_DE4FB0DC"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "南片区商圈",
+    "description": "分布于宿城区南部的发展大道沿线，包括华地万象购物中心、大华商城、新上海大世界等分散型商业点，整体呈带状布局，服务南部工业区与新建住宅。",
+    "mall_codes": [
+      "MALL_C17AE051",
+      "MALL_291AFFAA",
+      "MALL_B7B16FCB"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "西片区商圈",
+    "description": "位于宿城区西部，以西楚生活广场为主要商业载体，覆盖苏州路与富民大道交叉区域，服务城西新兴居住板块。",
+    "mall_codes": [
+      "MALL_FF7AD31A"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "龙河镇商圈",
+    "description": "位于宿城区西南部的龙河镇，以好又多生活购物中心为代表，服务于乡镇级消费市场，属于外围边缘商业点。",
+    "mall_codes": [
+      "MALL_90EB9E69"
+    ]
+  }
+]

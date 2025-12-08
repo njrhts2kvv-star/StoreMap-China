@@ -1,0 +1,29 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇中心商圈",
+    "description": "以城关镇核心街道兴华路、府前街及建新街交汇区域为中心，聚集了大悟商都、孝武春华百货、莱迪时尚广场等多个商业节点，是大悟县传统的商业集中区。",
+    "mall_codes": [
+      "MALL_71FDCD3C",
+      "MALL_E599EC80",
+      "MALL_B4E68FFF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "二桥西头商圈",
+    "description": "位于城关镇西部，以二桥西头为核心，涵盖华庭百货和福新商城，依托发展大道交通干道形成区域性商业集聚点。",
+    "mall_codes": [
+      "MALL_C48A30E1",
+      "MALL_E65BBDE1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "丰乐街商圈",
+    "description": "位于丰乐街与丰富路交叉口附近，以供销商场为代表，服务于周边居民区，形成局部生活型商业节点。",
+    "mall_codes": [
+      "MALL_A739CCDB"
+    ]
+  }
+]

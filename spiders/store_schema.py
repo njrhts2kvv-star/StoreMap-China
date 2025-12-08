@@ -13,19 +13,46 @@ from typing import Any, Dict, List, Optional, Tuple
 import requests
 
 
+# 为了兼容老数据，保留 uuid/lat/lng 等，同时新增规范化字段
 STORE_CSV_HEADER: List[str] = [
+    "id",
     "uuid",
     "brand",
+    "brand_id",
+    "brand_slug",
     "name",
+    "name_raw",
     "lat",
     "lng",
+    "lat_gcj02",
+    "lng_gcj02",
+    "lat_wgs84",
+    "lng_wgs84",
+    "coord_system",
+    "coord_source",
     "address",
+    "address_raw",
+    "address_std",
     "province",
+    "province_code",
     "city",
+    "city_code",
+    "district",
+    "district_code",
+    "region_id",
+    "mall_id",
+    "distance_to_mall",
     "phone",
     "business_hours",
+    "store_type_raw",
+    "store_type_std",
     "opened_at",
+    "closed_at",
+    "first_seen_at",
+    "last_seen_at",
+    "is_active",
     "status",
+    "source",
     "raw_source",
 ]
 
@@ -342,16 +369,53 @@ class StoreItem:
     lat: Optional[float]
     lng: Optional[float]
     address: str
+    # 新增可选字段（保持默认值以兼容现有爬虫）
+    id: Optional[str] = None
+    brand_id: Optional[str] = None
+    brand_slug: Optional[str] = None
+    name_raw: Optional[str] = None
+    address_raw: Optional[str] = None
+    address_std: Optional[str] = None
     province: Optional[str] = None
+    province_code: Optional[str] = None
     city: Optional[str] = None
+    city_code: Optional[str] = None
+    district: Optional[str] = None
+    district_code: Optional[str] = None
+    region_id: Optional[str] = None
+    mall_id: Optional[str] = None
+    distance_to_mall: Optional[float] = None
     phone: Optional[str] = None
     business_hours: Optional[str] = None
+    store_type_raw: Optional[str] = None
+    store_type_std: Optional[str] = None
     opened_at: str = "historical"
+    closed_at: Optional[str] = None
+    first_seen_at: Optional[str] = None
+    last_seen_at: Optional[str] = None
+    is_active: Optional[bool] = None
     status: str = "营业中"
+    coord_system: Optional[str] = None
+    coord_source: Optional[str] = None
+    lat_gcj02: Optional[float] = None
+    lng_gcj02: Optional[float] = None
+    lat_wgs84: Optional[float] = None
+    lng_wgs84: Optional[float] = None
+    source: Optional[str] = None
     raw_source: Dict[str, Any] = field(default_factory=dict)
 
     def to_row(self) -> Dict[str, Any]:
         data = asdict(self)
+        # 兼容：若未单独赋值，name_raw/address_raw/address_std 回填原始字段
+        data["name_raw"] = data.get("name_raw") or data.get("name")
+        data["address_raw"] = data.get("address_raw") or data.get("address")
+        data["address_std"] = data.get("address_std") or data.get("address")
+        # 坐标：默认把 lat/lng 回填到 gcj02，以便下游统一读取
+        data["lat_gcj02"] = data.get("lat_gcj02") or data.get("lat")
+        data["lng_gcj02"] = data.get("lng_gcj02") or data.get("lng")
+        data["coord_system"] = data.get("coord_system") or "unknown"
+        data["coord_source"] = data.get("coord_source") or data.get("source") or None
+        data["source"] = data.get("source") or data.get("coord_source")
+        data["id"] = data.get("id") or data.get("uuid")
         data["raw_source"] = json.dumps(self.raw_source, ensure_ascii=False)
         return data
-

@@ -1,0 +1,35 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "正阳大街商圈",
+    "description": "位于肇东市核心城区正阳大街沿线，聚集了多家传统商贸城和购物中心，是肇东市区主要的商业集中区域。",
+    "mall_codes": [
+      "MALL_73EC3AD3",
+      "MALL_3E0E239E",
+      "MALL_9935E9A7",
+      "MALL_0558752B",
+      "MALL_7D38CA7B",
+      "MALL_9501ABC3",
+      "MALL_1272018E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "昌五镇商圈",
+    "description": "位于肇东市昌五镇，依托301国道与地方道路交叉口布局，分布有供销购物广场、荣兴商场等区域性商业设施，服务本地城镇居民。",
+    "mall_codes": [
+      "MALL_BF843D5E",
+      "MALL_736916EF",
+      "MALL_06CF3703"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城北新区商圈",
+    "description": "位于肇东市区北部，临近展望北路与301国道交汇区域，包含新时代购物商城等较外围的商业节点，覆盖城市扩展区域消费人群。",
+    "mall_codes": [
+      "MALL_17C66A6D",
+      "MALL_EF60F626"
+    ]
+  }
+]

@@ -1,0 +1,89 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "沂蒙山路商圈",
+    "description": "位于沂水县核心城区，沿沂蒙山路分布，聚集了万德广场、万信商厦、恒茂广场、银座商城等多个商业项目，是县城主要的商业中心之一。",
+    "mall_codes": [
+      "MALL_0DEFF786",
+      "MALL_85A259F1",
+      "MALL_BD28A15D",
+      "MALL_13D3C8DE",
+      "MALL_895CD8CF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中心街-正阳路商圈",
+    "description": "以中心街与正阳路交叉区域为核心，涵盖五环运动城、百成汇时尚广场和富民商城，形成县城中部的重要商业集聚区。",
+    "mall_codes": [
+      "MALL_C0470BD1",
+      "MALL_5B6EE504",
+      "MALL_610322EB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "鑫华路商圈",
+    "description": "位于县城西部，以东方购物中心为代表，周边配套成熟，服务鑫华路沿线居民，是区域性商业节点。",
+    "mall_codes": [
+      "MALL_CAB3C901"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "沂河路商圈",
+    "description": "分布在沂河路与小河路附近，以世纪广场为主要载体，覆盖县城北部部分居住区的商业需求。",
+    "mall_codes": [
+      "MALL_D3315AD2"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "莲旺街北段商圈",
+    "description": "位于县城东北方向，以北坛购物广场为核心，辐射周边社区，形成次级商业节点。",
+    "mall_codes": [
+      "MALL_5701220D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "龙家圈商圈",
+    "description": "位于县城西南部龙家圈街道，依托金座购物中心服务当地居民，属于外围居住区配套商业。",
+    "mall_codes": [
+      "MALL_2830E63B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "东部新城商圈",
+    "description": "位于沂水县东部发展区域，包括天和购物中心和兴达商场，分布较分散，服务于东部新兴居住板块。",
+    "mall_codes": [
+      "MALL_15358387",
+      "MALL_D66A31ED"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "富官庄商圈",
+    "description": "位于沂水县南部乡镇区域，以宜万家购物中心为主要商业设施，服务乡镇本地消费人群。",
+    "mall_codes": [
+      "MALL_183B444B"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "鲁洲路商圈",
+    "description": "位于县城西北部，以惠强批发超市为代表，偏向批发零售功能，满足基础生活消费需求。",
+    "mall_codes": [
+      "MALL_49B8CBC9"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "九州大道商圈",
+    "description": "位于县城北部九州大道沿线，以九州商业大厦为核心，服务北部片区居民，形成独立商业节点。",
+    "mall_codes": [
+      "MALL_21ED03BD"
+    ]
+  }
+]

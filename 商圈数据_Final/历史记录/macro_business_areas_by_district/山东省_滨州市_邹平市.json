@@ -1,0 +1,57 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "黄山二路商圈",
+    "description": "位于邹平市核心城区，以黄山二路为主干道，聚集了银座商城、供销大厦购物广场、圣豪购物等传统商业设施，是市区内较为成熟的商业集中区域。",
+    "mall_codes": [
+      "MALL_B01AF029",
+      "MALL_30947CBA",
+      "MALL_977AED25",
+      "MALL_DFEDACBD",
+      "MALL_E409DE0A",
+      "MALL_B9A25AE1"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "会仙二路商圈",
+    "description": "位于邹平市西部新兴商业带，围绕会仙二路与魏纺路交叉区域，集中了国际商贸城、新玛特购物中心、淄博商厦等多个大型商业体，形成集购物、商贸于一体的综合商圈。",
+    "mall_codes": [
+      "MALL_998FC8B4",
+      "MALL_0452ACD8",
+      "MALL_AEC9054E",
+      "MALL_26AC1FAB",
+      "MALL_255AF96D",
+      "MALL_231FB049",
+      "MALL_21D56EA2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东城及外围商圈",
+    "description": "分布于城市东部及边缘区域，包括东城商场、德宝商城、豪盛精品购物中心等，位置相对分散，服务各自周边社区，商业集聚度较低。",
+    "mall_codes": [
+      "MALL_6D90EF4A",
+      "MALL_2DF049A3",
+      "MALL_91DDBE98",
+      "MALL_AC488CBC"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "鹤伴四路商圈",
+    "description": "位于邹平市南部居住区，以奥林匹克生活城为代表，配套社区型商业，整体商业体量较小，主要满足本地居民日常生活需求。",
+    "mall_codes": [
+      "MALL_297EEF4A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "黄山三路商圈",
+    "description": "沿黄山三路分布，包含华洋城市广场、有来有往购物中心等项目，靠近市中心但商业开发尚不密集，处于发展过渡阶段。",
+    "mall_codes": [
+      "MALL_0E79438B",
+      "MALL_54071741"
+    ]
+  }
+]

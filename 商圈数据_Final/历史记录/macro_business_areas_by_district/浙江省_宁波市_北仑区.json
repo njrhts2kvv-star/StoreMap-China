@@ -1,0 +1,67 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新碶中心商圈",
+    "description": "以新大路、中河路为核心，覆盖银泰城、蓝山时尚广场、滨港商业广场等主要商业体，是北仑区新碶街道的商业中心区域。",
+    "mall_codes": [
+      "MALL_6D594F35",
+      "MALL_B9D067BC",
+      "MALL_AE8A21A2",
+      "MALL_B6CA468A",
+      "MALL_CBB3CA94",
+      "MALL_563C3BA5",
+      "MALL_9224DE80",
+      "MALL_9F762E3F",
+      "MALL_159F887B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "小港-戚家山社区商圈",
+    "description": "涵盖小港街道和戚家山街道的社区型商业，包括印乐集、三江购物等，服务于本地居民，商业密度较低。",
+    "mall_codes": [
+      "MALL_CF548937",
+      "MALL_6BD0547D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大碶文化商务商圈",
+    "description": "位于大碶街道核心区域，依托博地影秀城形成集文化、娱乐、商务于一体的新兴商圈，具有较强区域辐射力。",
+    "mall_codes": [
+      "MALL_CA565F98"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "春晓滨海商圈",
+    "description": "位于北仑东部春晓片区，以春晓欧谱滨海广场为代表，服务于滨海新城居住与产业人群，属外围成长型商圈。",
+    "mall_codes": [
+      "MALL_5BA9BC99"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "长江南路商务配套商圈",
+    "description": "围绕长江南路沿线布局，以宁波北仑利时广场为核心，配套金澜名庭等商务楼宇，形成区域性商务生活服务圈。",
+    "mall_codes": [
+      "MALL_920D59D6"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "中河南路生活商圈",
+    "description": "位于中河南路沿线，以环球东方港城商业广场为代表，服务周边住宅区，属于基础生活服务型商圈。",
+    "mall_codes": [
+      "MALL_58626151"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "镇大路社区商圈",
+    "description": "依托镇大路沿线传统街铺与镇大商场构成，服务于老城区局部居民，规模较小，属社区级商业节点。",
+    "mall_codes": [
+      "MALL_1F53C6A2"
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "上下九/华林寺商圈",
+    "description": "以华林寺地铁站为核心，覆盖上下九路及康王中路沿线的多个商业体，是荔湾区传统商贸中心之一，包含珠宝、零售等业态。",
+    "mall_codes": [
+      "MALL_44512D34",
+      "MALL_EBE5F795",
+      "MALL_D11C2C4F",
+      "MALL_BCE3C7A3",
+      "MALL_DA394D8E",
+      "MALL_EA256D7A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "陈家祠商圈",
+    "description": "围绕陈家祠地铁站布局，集中在康王中路与荔湾路交界区域，涵盖多个社区型商业项目，具备一定客流集聚效应。",
+    "mall_codes": [
+      "MALL_BEF93693",
+      "MALL_4420E514",
+      "MALL_A99D7DB7",
+      "MALL_FB1B865C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "西门口商圈",
+    "description": "位于中山七路西门口地铁站附近，分布有小型社区商业体，服务于老城区居民日常消费。",
+    "mall_codes": [
+      "MALL_8AB61FE4",
+      "MALL_4BC3765F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "芳村花地商圈",
+    "description": "集中在芳村地区花地大道及周边，包括坑口地铁站附近的商业设施，主要服务本地居住人群。",
+    "mall_codes": [
+      "MALL_DAC5D63A",
+      "MALL_2E01AC48",
+      "MALL_D30CBEAD",
+      "MALL_75C0F400"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "白鹅潭商务区（东沙）商圈",
+    "description": "位于荔湾区南部东沙一带，依托健康港等新兴开发项目形成的新商业节点，目前商业配套尚在发展中。",
+    "mall_codes": [
+      "MALL_26F75183"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "西湾路商圈",
+    "description": "以悦汇城为核心，分布在西湾路沿线，是荔湾区北部较具规模的现代购物中心聚集区。",
+    "mall_codes": [
+      "MALL_32601046",
+      "MALL_ABD493E0"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "长寿路/逢源路商圈",
+    "description": "位于荔湾区中部偏北的老城区，涵盖长寿路与逢源路交叉区域的小型商业体，属社区级商业配置。",
+    "mall_codes": [
+      "MALL_26DCFED4",
+      "MALL_805B77B6"
+    ]
+  }
+]

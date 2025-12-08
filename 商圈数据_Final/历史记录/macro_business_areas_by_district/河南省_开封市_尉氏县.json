@@ -1,0 +1,74 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "尉氏县城中心商圈",
+    "description": "位于尉氏县主城区核心区域，集中了人民中路、工业路、健康路等主干道交汇地带的多个购物中心，是县域内商业密度最高的片区。",
+    "mall_codes": [
+      "MALL_78B7CD6B",
+      "MALL_8220EBA5",
+      "MALL_A50D127D",
+      "MALL_EE536412",
+      "MALL_1E475832",
+      "MALL_D9ABB40B",
+      "MALL_6AA5D941"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北三环社区商圈",
+    "description": "位于尉氏县北部城区，以邢庄社区及周边居住区为依托，服务本地居民的社区型商业集聚区。",
+    "mall_codes": [
+      "MALL_0D2A725E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大营镇-航空港商圈",
+    "description": "分布于大营镇及航空港区范围内，涵盖大营村、102省道沿线等位置，属于城镇结合部的区域性商业节点。",
+    "mall_codes": [
+      "MALL_2721E91B",
+      "MALL_B4A9B248",
+      "MALL_A532AD6E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "洧川镇商圈",
+    "description": "位于尉氏县南部的洧川镇，依托240国道和集贸市场形成的乡镇级商业中心，服务于周边乡镇居民。",
+    "mall_codes": [
+      "MALL_CEDCC0F7"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "水坡镇商圈",
+    "description": "位于尉氏县东部的水坡镇，以新凯利购物广场为核心，构成服务本地乡镇人口的区域性商业点。",
+    "mall_codes": [
+      "MALL_86FAFFBC"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "邢庄-保台线商圈",
+    "description": "位于343国道与保台线交叉区域，地理位置偏西南，服务于过境交通人流及周边村落的乡镇商业节点。",
+    "mall_codes": [
+      "MALL_9360813C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "朱曲镇-219省道商圈",
+    "description": "位于219省道东侧，靠近新军购物广场，属尉氏县西北方向的外围乡镇商业布局点。",
+    "mall_codes": [
+      "MALL_B203A608"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "产业园区配套商圈",
+    "description": "位于230国道与福聚路交叉口附近，毗邻工业或物流园区，主要服务于园区职工及周边流动人群。",
+    "mall_codes": [
+      "MALL_DB428784"
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城区中心商圈",
+    "description": "位于利川市主城区核心区域，集中了龙船大道、清江大道沿线多个主要购物场所，是城市商业活动最密集的区域。",
+    "mall_codes": [
+      "MALL_F6E2FF26",
+      "MALL_9CA30310",
+      "MALL_19240CE2",
+      "MALL_34D6FF0E",
+      "MALL_AB9D2CC4",
+      "MALL_B9663A71",
+      "MALL_D92D106D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东城路商圈",
+    "description": "位于城区东部，以东城路与东方城商业步行街交汇处为核心，分布有谭生活购物广场等社区型商业设施。",
+    "mall_codes": [
+      "MALL_2E9745CF"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "凉雾乡商圈",
+    "description": "位于利川市凉雾乡区域，包含两汇路及周边的凉雾老商场、金鑫购物中心等本地生活配套商业。",
+    "mall_codes": [
+      "MALL_72491A71",
+      "MALL_E031474A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "团堡镇商圈",
+    "description": "位于利川市下辖的团堡镇，以石龙百货日杂为代表，服务当地居民的基础商业消费。",
+    "mall_codes": [
+      "MALL_A65FFAC7"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "苏马荡商圈",
+    "description": "位于苏马荡景区附近，依托旅游和避暑人口发展起来的区域性商业广场，以苏马荡商业广场为主要载体。",
+    "mall_codes": [
+      "MALL_87D0EF2B"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "北部新城商圈",
+    "description": "位于利川市北部新开发区域，涵盖丽凤大道沿线的佰汇购物中心及黄金路附近的佳加宜购物中心，属于新兴城市拓展区商业节点。",
+    "mall_codes": [
+      "MALL_3053C50A",
+      "MALL_27AAF981"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "马前村商圈",
+    "description": "位于凉雾乡更偏远的马前村区域，以马前购物中心为唯一商业点，服务于周边乡村居民。",
+    "mall_codes": [
+      "MALL_FD4A30CD"
+    ]
+  }
+]

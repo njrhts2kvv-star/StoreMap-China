@@ -1,0 +1,28 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "大城城区中心商圈",
+    "description": "位于大城县主城区核心区域，涵盖津保路沿线的明珠大厦、圣仑奥莱生活广场及鑫达新天地购物广场，是县城内商业聚集度最高的片区。",
+    "mall_codes": [
+      "MALL_43F970E5",
+      "MALL_0CA962F2",
+      "MALL_AC8BFBCB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南赵扶镇商圈",
+    "description": "位于大城县南部的南赵扶镇片区，以哈娜好购物广场为代表，服务本地居民的区域性商业节点。",
+    "mall_codes": [
+      "MALL_B9D4B4F0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "里坦镇商圈",
+    "description": "位于大城县北部里坦镇，以起点商城为主要商业载体，覆盖周边乡镇的基础消费需求。",
+    "mall_codes": [
+      "MALL_6AB2363C"
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "仙林湖商圈",
+    "description": "位于仙林大学城西部，以南京万达茂和万达广场为核心，覆盖周边大型商业综合体，服务仙林湖片区居民及高校人群。",
+    "mall_codes": [
+      "MALL_7954E0F7",
+      "MALL_40A79B71"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "仙林中心商圈",
+    "description": "依托地铁站与文苑路沿线密集商业布局，涵盖东城汇、九霄梦天地、金鹰湖滨天地等项目，是仙林大学城核心商业集聚区。",
+    "mall_codes": [
+      "MALL_630730CE",
+      "MALL_F8A7829E",
+      "MALL_64DBEFA8",
+      "MALL_8875C5BC",
+      "MALL_42E8832B",
+      "MALL_5F572EDE",
+      "MALL_761E401A",
+      "MALL_B4B10393"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "迈皋桥/万寿商圈",
+    "description": "栖霞区老城区北部主要商业节点，集中于迈化路与栖霞大道交汇区域，包括万寿购物中心、城北万象汇系列及高桥商场，交通便利，服务城北居住区。",
+    "mall_codes": [
+      "MALL_36F35767",
+      "MALL_072D26BF",
+      "MALL_6B29CE40",
+      "MALL_17A6709D",
+      "MALL_A2FCC6E2",
+      "MALL_ED83DD73"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "马群商圈",
+    "description": "位于栖霞区南部马群板块，以中山门大街为主轴，依托地铁马群站形成区域型商业中心，代表项目为马群招商花园城和健康·大融城。",
+    "mall_codes": [
+      "MALL_FC3D44B7",
+      "MALL_41C9934D"
+    ]
+  }
+]

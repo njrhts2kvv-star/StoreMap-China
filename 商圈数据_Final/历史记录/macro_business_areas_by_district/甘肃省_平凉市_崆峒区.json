@@ -1,0 +1,54 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "东大街商圈",
+    "description": "位于崆峒区核心城区，以东大街及中街周边为主，聚集了世纪金鼎购物广场、星泰广场等商业体，是平凉市传统商业中心之一。",
+    "mall_codes": [
+      "MALL_1E44B803",
+      "MALL_5A65E0CF",
+      "MALL_B262CEE4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中山街商圈",
+    "description": "以中山街为核心，辐射解放路与工贸巷一带，集中分布新世纪商厦系列、温州商厦、华联商厦等多个商场，是崆峒区人流最密集的成熟商业片区。",
+    "mall_codes": [
+      "MALL_CD89883C",
+      "MALL_92847525",
+      "MALL_07F7063D",
+      "MALL_46819275",
+      "MALL_9B677013",
+      "MALL_C6A277D3",
+      "MALL_CEC051CA",
+      "MALL_128B0BA1",
+      "MALL_5B02AEF2",
+      "MALL_2DC543B5"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "泾滩路商圈",
+    "description": "位于城市东部拓展区域，依托世纪商业广场西区和金润国际购物中心形成新兴商业集聚点，服务周边居民区。",
+    "mall_codes": [
+      "MALL_96BB47A0",
+      "MALL_53855FFB"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城西外围商圈",
+    "description": "位于主城区西部偏南，远离市中心，仅清福购物中心一个商业点，地理位置独立，服务特定区域居民。",
+    "mall_codes": [
+      "MALL_8A85AA54"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "园巷汪家园商圈",
+    "description": "位于崆峒大道东段与园巷交汇处附近，以天丰商厦为代表，形成局部小型商业节点，覆盖周边社区。",
+    "mall_codes": [
+      "MALL_CC3BE094"
+    ]
+  }
+]

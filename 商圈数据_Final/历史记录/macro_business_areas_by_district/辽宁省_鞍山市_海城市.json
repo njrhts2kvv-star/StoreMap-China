@@ -1,0 +1,114 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "海州大街商圈",
+    "description": "以海州大街为核心干道，聚集了大和购物广场、天和广场、巨伦购物广场、百货大楼等多个商业体，是海城市区主要的商业集中带。",
+    "mall_codes": [
+      "MALL_BF270DB3",
+      "MALL_384EA7AF",
+      "MALL_A9A450A7",
+      "MALL_8DADDC16",
+      "MALL_6AF74272"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "西柳商贸城商圈",
+    "description": "位于西柳镇，依托西柳服装城综合楼、西柳商贸城N次方、西柳国贸皮革城等专业市场形成的专业化商贸集群，是区域性服装与箱包批发中心。",
+    "mall_codes": [
+      "MALL_D5CC5070",
+      "MALL_0A3CA0C9",
+      "MALL_41F3DF63"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "文化路-中心路商圈",
+    "description": "位于海城市老城区核心交叉口附近，以商贸城为代表，周边人流密集，传统商业氛围浓厚，是本地居民日常消费的重要节点。",
+    "mall_codes": [
+      "MALL_749A506D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "淮河路商圈",
+    "description": "位于城区西部淮河路沿线，以名汇城购物中心为主要载体，服务周边居住区，形成区域性生活消费中心。",
+    "mall_codes": [
+      "MALL_E8B4FF38"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "向阳大街商圈",
+    "description": "位于城市北部向阳大街与新昌大街交汇区域，以宏德箱包市场为代表，具有一定的专业市场特征，辐射周边乡镇。",
+    "mall_codes": [
+      "MALL_9D05BD4E"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "兴海大街商圈",
+    "description": "位于兴海大街沿线，以海昕明珠商业广场为主要商业节点，结合凯爵田商场等形成新兴商业带，服务新城区发展。",
+    "mall_codes": [
+      "MALL_C233EFA1",
+      "MALL_367635A0"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "中街路商圈",
+    "description": "位于海城市中心区域中街路，太和广场坐落于此，地处城市传统商业轴线，具备一定区位优势。",
+    "mall_codes": [
+      "MALL_F10EA44B"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "新东方名品商圈",
+    "description": "位于海州管理区新东方首府片区，以新东方名品广场为唯一商业载体，服务于高端住宅区，定位相对独立。",
+    "mall_codes": [
+      "MALL_AAA6A6F2"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "市场五号路商圈",
+    "description": "位于西柳镇市场五号路与七号路交汇区域，以巨伦商场和春雷商城A座为主要商业设施，属于西柳专业市场群的延伸配套。",
+    "mall_codes": [
+      "MALL_3BEB3CF0",
+      "MALL_3946DD8A"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "腾鳌商圈",
+    "description": "位于海城市下辖腾鳌镇，以腾鳌国际商品城为核心，覆盖保安路沿线，服务于腾鳌镇及周边地区的消费与商贸需求。",
+    "mall_codes": [
+      "MALL_D1B301D5"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "福安路商圈",
+    "description": "位于海城市北部福安路，以首座生活广场为主要商业项目，地理位置偏北，服务局部社区。",
+    "mall_codes": [
+      "MALL_01D2C9E0"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "101省道商圈",
+    "description": "位于101省道沿线，以罗老大家电商场为代表，依托交通干线形成零散分布的商业点，具有沿路商业特征。",
+    "mall_codes": [
+      "MALL_B72D8A88"
+    ]
+  },
+  {
+    "area_id": 13,
+    "area_name": "海什线商圈",
+    "description": "位于海什线南侧，明洋商业城所在地，地处城乡结合部，服务沿线居民与过境人流，商业集聚度较低。",
+    "mall_codes": [
+      "MALL_13691B5B"
+    ]
+  }
+]

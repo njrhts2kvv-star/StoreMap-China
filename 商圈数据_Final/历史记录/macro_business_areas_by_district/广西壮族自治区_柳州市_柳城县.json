@@ -1,0 +1,37 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "柳城中心商圈",
+    "description": "以金时代购物公园、鼎丰商业城广场为核心，覆盖白阳中路及周边主要商业节点，位于县城中心地带，是柳城县传统商业集聚区。",
+    "mall_codes": [
+      "MALL_C4C7F2DB",
+      "MALL_E83C960B",
+      "MALL_EBBDD1F4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城东大道商圈",
+    "description": "依托桂泰商业广场布局于城东大道沿线，代表城东新兴商业发展带，地理位置偏东，辐射新城区居民。",
+    "mall_codes": [
+      "MALL_E34A5409"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "柳糖路商圈",
+    "description": "集中在柳糖路沿线，包括柳城商贸城1期和隆升商城，形成区域性集散型商贸市场，具有批发与零售混合特征。",
+    "mall_codes": [
+      "MALL_FB3240BD",
+      "MALL_CF91DCF4"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "海润广场商圈",
+    "description": "位于文昌路海润广场内，以朝阳购物中心为代表，虽当前商业数据为空，但依托城市综合体形成独立商业点位。",
+    "mall_codes": [
+      "MALL_68A64B54"
+    ]
+  }
+]

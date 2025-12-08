@@ -1,0 +1,53 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "倴城中心商圈",
+    "description": "位于滦南县倴城镇核心区域，集中分布于和平路、中大街、南大街及周边主干道交叉口，涵盖中和购物城、中红购物城、银隆购物广场等主要商业设施，是县城最密集的商业聚集区。",
+    "mall_codes": [
+      "MALL_E941D844",
+      "MALL_0AEFD434",
+      "MALL_A9272C89",
+      "MALL_429D4AC9",
+      "MALL_6E79F68E",
+      "MALL_3AB2107B",
+      "MALL_FD52B33E",
+      "MALL_2CD204AE",
+      "MALL_C9B3720E",
+      "MALL_51AD6BCE"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "友谊路商圈",
+    "description": "沿友谊路分布，以滦南购物广场和弘亚商城为核心，覆盖县城西部居民区商业配套，形成区域性生活消费节点。",
+    "mall_codes": [
+      "MALL_7418C9E7",
+      "MALL_18EEB250"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "西北街商圈",
+    "description": "位于倴城镇西北街附近，以世纪商厦(影后巷)为代表，服务周边社区的基础商业功能区。",
+    "mall_codes": [
+      "MALL_F07737FF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "司各庄商圈",
+    "description": "位于滦南县司各庄镇，以司各庄供销社综合商场为唯一商业载体，服务于乡镇本地居民。",
+    "mall_codes": [
+      "MALL_898A346D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "南部乡镇商圈",
+    "description": "分布于倴城镇以南的乡镇区域，包括中心商场和供销大厦，地理位置偏南且远离城区中心，各自独立服务所在乡镇市场。",
+    "mall_codes": [
+      "MALL_3EDB0FD2",
+      "MALL_99C253D4"
+    ]
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "龙岗中心城商圈",
+    "description": "以龙岗大道与龙翔大道交汇区域为核心，聚集了万科里、世贸中心、宝能all city、岁宝Shirble Plaza、深圳龙岗万科广场等多个商业项目，是龙岗区行政与商业核心地带。",
+    "mall_codes": [
+      "MALL_8143FA56",
+      "MALL_D8307010",
+      "MALL_AED1F37B",
+      "MALL_63E699F8",
+      "MALL_7BDC2D6F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "爱联-愉园商圈",
+    "description": "位于龙岗中心城东部，涵盖星河COCO Park（爱联）、仁恒梦中心（愉园）等中高端商业体，依托地铁3号线形成片区级消费中心。",
+    "mall_codes": [
+      "MALL_B88717B3",
+      "MALL_076B1339"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "布吉-坂田商圈",
+    "description": "覆盖布吉与坂田交界区域，包含坂田万科广场、江南时代广场、百佳华佳漾里、星河WORLD·COCO Park等，服务于高新园区及密集居住区。",
+    "mall_codes": [
+      "MALL_8B7FCF95",
+      "MALL_74539453",
+      "MALL_725EC483",
+      "MALL_5E8F7470"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "平湖商圈",
+    "description": "位于龙岗区西北部平湖街道，以融湖广场为核心商业配套，辐射周边大型居住社区和物流园区。",
+    "mall_codes": [
+      "MALL_8530BFC4"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "华南城商圈",
+    "description": "依托华南城大型综合商贸物流体，聚集华盛奥特莱斯购物中心、深圳龙岗万达广场、佳兆业广场等大型商业设施，形成集购物、休闲、展贸于一体的东部新兴商圈。",
+    "mall_codes": [
+      "MALL_9A1702D6",
+      "MALL_2A542679",
+      "MALL_99212D13"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "双龙商圈",
+    "description": "位于龙岗老城区双龙片区，以天虹商场为核心传统商业节点，服务龙岗南部成熟居住人口。",
+    "mall_codes": [
+      "MALL_C92D784B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "坪地商圈",
+    "description": "位于龙岗东北部坪地街道，创城·ccone为区域内代表性商业项目，服务于偏远街道的本地消费需求。",
+    "mall_codes": [
+      "MALL_21FEEE74"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "布吉万象汇商圈",
+    "description": "以深圳布吉万象汇为单一核心，定位区域品质生活中心，服务于布吉罗岗片区改善型居住人群。",
+    "mall_codes": [
+      "MALL_BCA1B395"
+    ]
+  }
+]

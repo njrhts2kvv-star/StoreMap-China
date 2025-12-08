@@ -1,0 +1,107 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达商圈",
+    "description": "以万达广场为核心，包含万达F区及原万达广场（暂停营业）在内的建华南大街沿线商业集聚区，是裕华区成熟的综合商业中心之一。",
+    "mall_codes": [
+      "MALL_A1980852",
+      "MALL_7EE4BAB7",
+      "MALL_648FF9BA"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "怀特商圈",
+    "description": "围绕怀特商业广场、怀特国际商城和怀特聚星城形成的高密度商业片区，位于槐安东路与富强大街一带，是裕华区传统且活跃的消费中心。",
+    "mall_codes": [
+      "MALL_D51D7B3E",
+      "MALL_745DC306",
+      "MALL_CF7B87CC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "建华大街南二环商圈",
+    "description": "位于建华大街与南二环交汇区域，涵盖中冶盛世国际广场·和悦汇及世茂363，形成连接市区与东南片区的重要商业节点。",
+    "mall_codes": [
+      "MALL_7BFF48BC",
+      "MALL_B8C25C08"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "翟营南大街商圈",
+    "description": "沿翟营南大街分布，聚集信誉楼百货、城投商贸广场和联邦购物广场，构成服务于周边大型居住区的区域性商业带。",
+    "mall_codes": [
+      "MALL_E3F7FD19",
+      "MALL_4D671AE9",
+      "MALL_A4610443"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东岗路-谈固南大街商圈",
+    "description": "以龙湖石家庄裕华星悦荟和欢乐汇100FUN CITY为主要载体，位于东岗路与谈固南大街交叉区域，是近年来新兴的城市活力商业片区。",
+    "mall_codes": [
+      "MALL_9B0F4026",
+      "MALL_E9FA2093"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "五洲MOCO商圈",
+    "description": "以五洲MOCO为核心，地处东部城区，辐射周边住宅与办公人群，形成特色化、小而美的社区型商业中心。",
+    "mall_codes": [
+      "MALL_5D8BEB2D"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "大马集团帝福源商圈",
+    "description": "依托大马集团帝福源广场，位于谈固东街，服务本地居民，为区域性生活配套商业节点。",
+    "mall_codes": [
+      "MALL_F5FEC1D0"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "惠买商城商圈",
+    "description": "以惠买商城(槐安东路辅路)为主体，位于谈固东街与槐安路交叉口东侧，属于社区级零售商业点。",
+    "mall_codes": [
+      "MALL_0B31A810"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "新世隆商圈",
+    "description": "以新世隆广场为唯一核心，坐落于建设南大街，靠近地铁站，是连接桥西与裕华区的便捷商业入口。",
+    "mall_codes": [
+      "MALL_A399AEA7"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "高新区昆仑大街商圈",
+    "description": "位于高新区昆仑大街沿线，涵盖富力城市广场和石家庄高新万象汇，是石家庄东部高新技术产业区的主要现代商业集群。",
+    "mall_codes": [
+      "MALL_DD1392CC",
+      "MALL_5B8BC31C"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "胜利南街商圈",
+    "description": "以润德商贸城为代表，位于胜利南街，靠近南部交通枢纽，主打批发与大众消费结合的商业模式。",
+    "mall_codes": [
+      "MALL_2C8881AD"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "东明国际商圈",
+    "description": "以东明国际广场单独构成，地处建华南大街与槐岭路交叉口附近，毗邻万达商圈，具备一定独立商业功能。",
+    "mall_codes": [
+      "MALL_1F07F833"
+    ]
+  }
+]

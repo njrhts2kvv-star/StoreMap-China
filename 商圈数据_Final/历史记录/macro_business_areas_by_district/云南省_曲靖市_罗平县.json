@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "振兴街商圈",
+    "description": "位于罗平县城核心区域，以振兴街为主轴，聚集了多个商业设施",
+    "mall_codes": [
+      "MALL_E1D744E8",
+      "MALL_BC7FE783",
+      "MALL_665269A1",
+      "MALL_4E2662DA",
+      "MALL_F7CE5479",
+      "MALL_C4B5F502"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东屏街商圈",
+    "description": "位于县城东部，以东屏街为核心的小型商业区",
+    "mall_codes": [
+      "MALL_7A860636"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "云贵路商圈",
+    "description": "位于县城西部云贵路沿线，连接学田路和振兴街的商业聚集区",
+    "mall_codes": [
+      "MALL_E4F51D40"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "红星街商圈",
+    "description": "位于县城北部红星街与龙门街交汇处的商业点",
+    "mall_codes": [
+      "MALL_08ED94AB"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北部乡镇商圈",
+    "description": "位于罗平县北部乡镇区域的商业设施",
+    "mall_codes": [
+      "MALL_EF0A4184"
+    ]
+  }
+]

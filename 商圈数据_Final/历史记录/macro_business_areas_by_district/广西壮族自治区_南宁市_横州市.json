@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "横州镇中心商圈",
+    "description": "位于横州市主城区核心区域，涵盖城司南路、公园路及宝华西路周边多个商业项目，是横州市主要的商业集聚区。",
+    "mall_codes": [
+      "MALL_DD30E749",
+      "MALL_47967FB2",
+      "MALL_EB285C10",
+      "MALL_BFF7BBFF",
+      "MALL_C6FFF919",
+      "MALL_38CFCE8D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "陶圩镇商圈",
+    "description": "位于横州市陶圩镇永乐北街附近，服务陶圩镇及周边乡镇居民，属区域性乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_B8D5D9DD"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "云表镇商圈",
+    "description": "位于横州市云表镇G209国道沿线，依托金天地现代商贸城形成乡镇级商业节点，辐射周边农村地区。",
+    "mall_codes": [
+      "MALL_1F6E1260"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "莲塘镇商圈",
+    "description": "位于横州市莲塘镇579县道与474县道交汇区域，以东圩商贸中心为核心，服务于本地乡镇消费市场。",
+    "mall_codes": [
+      "MALL_8A2C7C58"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "校椅镇商圈",
+    "description": "位于横州市校椅镇新城街与602乡道交叉口附近，依托百货大楼形成小型乡镇商业点，覆盖周边村落。",
+    "mall_codes": [
+      "MALL_F885E5AC"
+    ]
+  }
+]

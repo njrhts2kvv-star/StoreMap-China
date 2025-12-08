@@ -1,0 +1,95 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "旧宫商圈",
+    "description": "位于大兴区北部旧宫地区，以旧宫地铁站为核心，聚集万科广场、旧宫商厦等商业项目，服务旧宫镇及周边大型居住区。",
+    "mall_codes": [
+      "MALL_E98B1D19",
+      "MALL_49B70F59"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "亦庄河西/瀛海商圈",
+    "description": "覆盖瀛海地铁站周边区域，包括瀛海环宇坊等新兴社区型商业，服务于亦庄新城河西板块的居民。",
+    "mall_codes": [
+      "MALL_FA387F8F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "黄村中芯商圈",
+    "description": "围绕黄村核心区兴丰大街、黄村西大街一带，集中了兴悦汇、吉星德亿生活广场、大兴大悦春风里、帝园商城、星城商厦等多个商业体，是大兴老城区最密集的商业集聚区。",
+    "mall_codes": [
+      "MALL_D4A8348E",
+      "MALL_7B9BFBAA",
+      "MALL_0C5AD381",
+      "MALL_3808CEB7",
+      "MALL_F2772AB7",
+      "MALL_29E8634B",
+      "MALL_1FF55184",
+      "MALL_9CB972EF",
+      "MALL_B4F7C51E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "西红门商圈",
+    "description": "位于大兴区西红门地区，依托地铁4号线与多条主干道交汇优势，聚集北京荟聚、鸿坤广场购物中心、西红门新光界等重点项目，形成区域级商业中心。",
+    "mall_codes": [
+      "MALL_93149274",
+      "MALL_19835EEA",
+      "MALL_EF43D00D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "高米店商圈",
+    "description": "以地铁高米店南站为核心，分布有绿地缤纷城、兴悦汇等商业设施，服务于高米店街道及金星西路沿线住宅区。",
+    "mall_codes": [
+      "MALL_BEB07BB5",
+      "MALL_B4F7C51E"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "生物医药基地商圈",
+    "description": "位于大兴新城南部，靠近生物医药基地地铁站，以龙湖北京大兴天街为代表，服务于产业园区及周边新兴居住社区。",
+    "mall_codes": [
+      "MALL_9F332737"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "亦庄核心商圈",
+    "description": "位于亦庄经济技术开发区核心地带，涵盖荣京东街、瀛海等地，拥有大族广场Mall&More、龙湖北京亦庄天街等项目，服务高端产业人群和城市副中心消费群体。",
+    "mall_codes": [
+      "MALL_7CF6D350",
+      "MALL_8153C47E"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "天宝路-上海沙龙商圈",
+    "description": "位于大兴区中部天宝南街附近，以上海沙龙新天地天宝商业中心为主要载体，辐射周边成熟社区。",
+    "mall_codes": [
+      "MALL_E729B0F7"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "德贤路奥莱商圈",
+    "description": "位于大兴区东部德贤路与久敬庄路交汇处，以北京大兴王府井奥莱UP TOWN为核心，主打奥特莱斯业态，吸引区域远端客流。",
+    "mall_codes": [
+      "MALL_1D9333B6"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "新源大街商圈",
+    "description": "位于大兴新城西部新源大街与华佗路交汇区域，以凯德MALL·大兴为标志，虽当前活跃度较低，但具备规划意义上的商圈基础。",
+    "mall_codes": [
+      "MALL_41B9A5AE"
+    ]
+  }
+]

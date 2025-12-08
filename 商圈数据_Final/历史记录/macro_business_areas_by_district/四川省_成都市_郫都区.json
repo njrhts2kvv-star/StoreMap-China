@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "郫筒老城商圈",
+    "description": "以郫筒镇为核心的传统城区商业集聚区，覆盖周边主要社区型购物中心和本地商业广场，服务老城区居民日常消费。",
+    "mall_codes": [
+      "MALL_8DE22634",
+      "MALL_85FA2F0B",
+      "MALL_6C208F56"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "红光商圈",
+    "description": "位于红光街道及周边区域，集中了多个社区型商业项目，依托高校和居住区形成的生活配套商业带。",
+    "mall_codes": [
+      "MALL_030039EE",
+      "MALL_02852D7F",
+      "MALL_CD079870",
+      "MALL_C8A340AD",
+      "MALL_629E5125"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "犀浦商圈",
+    "description": "依托犀浦地铁站及交通节点形成的区域级商业中心，聚集多个中型商业体，服务于通勤人群与周边密集居住区。",
+    "mall_codes": [
+      "MALL_9CB23BF2",
+      "MALL_883EE10F",
+      "MALL_7EE045CE",
+      "MALL_05C91D78",
+      "MALL_AA08FF23"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "高新西区商圈",
+    "description": "位于高新西区核心发展带，以龙湖蜀新天街为标志项目，辐射周边产业园区与新兴住宅区，是近年来快速成长的新兴商业集聚区。",
+    "mall_codes": [
+      "MALL_EFA939FC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "佛罗伦萨名品奥特莱斯商圈",
+    "description": "以佛罗伦萨小镇为核心的高端折扣商业集群，包含一期、二期及奥特莱斯主体，定位旅游购物，自成一体形成特色商圈。",
+    "mall_codes": [
+      "MALL_EA988F90",
+      "MALL_8DE22634",
+      "MALL_44B1FD9E"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "东南山商圈",
+    "description": "位于郫都区东南部，靠近绕城高速，以万达广场为核心带动的区域性综合商业中心，配套成熟居住区。",
+    "mall_codes": [
+      "MALL_7343B645"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "四季城-林湾商圈",
+    "description": "位于郫都区东部边缘，由四季城商业广场与林湾摩尔购物中心共同构成，服务于城乡结合部及沿线社区。",
+    "mall_codes": [
+      "MALL_501786AD",
+      "MALL_E28A713F"
+    ]
+  }
+]

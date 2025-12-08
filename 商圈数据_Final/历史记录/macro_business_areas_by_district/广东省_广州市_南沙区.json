@@ -1,0 +1,109 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "蕉门河中心商圈",
+    "description": "以南沙区政府所在地蕉门河为核心，集中了南沙万达广场、南沙悠方天地及其东西区、滨海隽城商业广场等主要商业体，是南沙区当前最核心的商业集聚区。",
+    "mall_codes": [
+      "MALL_41A6973A",
+      "MALL_544A9353",
+      "MALL_752766D9",
+      "MALL_C39AD429",
+      "MALL_CE513126",
+      "MALL_F185FC26"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "金洲商圈",
+    "description": "位于南沙老城区金洲片区，涵盖今洲新天地、南都淘金城、星河COCO Garden及周边商业，是南沙较早发展的成熟商业区域。",
+    "mall_codes": [
+      "MALL_819A1803",
+      "MALL_D6CCEFA0",
+      "MALL_AB472300",
+      "MALL_98120C3B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "黄阁商圈",
+    "description": "覆盖黄阁镇主要商业项目，包括广州南沙星河COCO Park、悦方城、麒麟广场等，服务于黄阁本地及周边产业人口。",
+    "mall_codes": [
+      "MALL_2ECAAD98",
+      "MALL_2E1466E1",
+      "MALL_F02AB712"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "横沥商圈",
+    "description": "以横沥镇粤海广场为核心，辐射周边新兴居住区，是横沥镇内主要商业节点。",
+    "mall_codes": [
+      "MALL_E78A56A3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大岗商圈",
+    "description": "位于南沙区西南部的大岗镇，包含锦绣商业中心、阳光城市广场等本地化商业设施，服务大岗镇居民。",
+    "mall_codes": [
+      "MALL_36E814FB",
+      "MALL_95072235"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "东涌商圈",
+    "description": "位于东涌镇，以天汇百汇为主要商业载体，配套本地社区需求。",
+    "mall_codes": [
+      "MALL_8DD1460F"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "南沙旧镇商圈",
+    "description": "位于珠江街南部的旧镇区域，以南奥荟为标志，服务老城区居民。",
+    "mall_codes": [
+      "MALL_478F7ECD"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "大涌商圈",
+    "description": "依托地铁大涌站发展起来的商业节点，以星河COCO Garden商场为核心，连接蕉门河与金洲片区。",
+    "mall_codes": [
+      "MALL_E25B3FCF"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "万顷沙商圈",
+    "description": "位于南沙北部边缘，以泰石商业购物中心为代表，服务万顷沙镇及周边区域。",
+    "mall_codes": [
+      "MALL_3B8BFAC5"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "蝴蝶洲商圈",
+    "description": "位于进港大道沿线，毗邻蝴蝶洲公园，以蝴蝶洲商场为主要商业配套。",
+    "mall_codes": [
+      "MALL_C86DA349"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "大元商圈",
+    "description": "位于南沙西部，以大元商业中心为核心，服务周边社区。",
+    "mall_codes": [
+      "MALL_CE6E8272"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "电力广场商圈",
+    "description": "位于东涌镇市南路附近，以电力广场为主要商业载体。",
+    "mall_codes": [
+      "MALL_770420F4"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中央大街商圈",
+    "description": "以中央大街为核心，聚集了新世纪商城、龙凤商场等传统商业体，是孙吴县城区的主要商业中心之一。",
+    "mall_codes": [
+      "MALL_DE42405C",
+      "MALL_A1B72426"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "解放路商圈",
+    "description": "位于解放路沿线，以万合商厦为代表，服务于城区东部居民，是孙吴县重要的区域性商业节点。",
+    "mall_codes": [
+      "MALL_1E6EECFD"
+    ]
+  }
+]

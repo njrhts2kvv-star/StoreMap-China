@@ -1,0 +1,38 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "巧家县城商圈",
+    "description": "位于巧家县城核心区域，包含多个购物中心和商贸城",
+    "mall_codes": [
+      "MALL_68482149",
+      "MALL_C927CDD6",
+      "MALL_3421B0DB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北部乡镇商圈",
+    "description": "覆盖巧家县北部乡镇的商业设施",
+    "mall_codes": [
+      "MALL_FEC89D89",
+      "MALL_8727CE43"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东部乡镇商圈",
+    "description": "位于巧家县东部乡镇的商业聚集区",
+    "mall_codes": [
+      "MALL_8D2227DF",
+      "MALL_346E7AD9"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南部乡镇商圈",
+    "description": "覆盖巧家县南部乡镇的商业网点",
+    "mall_codes": [
+      "MALL_8AB238B0"
+    ]
+  }
+]

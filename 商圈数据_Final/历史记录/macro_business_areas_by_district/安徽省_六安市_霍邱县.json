@@ -1,0 +1,91 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇中心商圈",
+    "description": "位于霍邱县城关镇核心区域，集中了万达广场、家之都、巾华购物中心、银房商城、金城时代广场、金红百货等多个商业体，是县城最主要的商业聚集区。",
+    "mall_codes": [
+      "MALL_F7CE3CD0",
+      "MALL_6F3DCC63",
+      "MALL_6613E7A7",
+      "MALL_0B586CAC",
+      "MALL_1F64BFA4",
+      "MALL_0E5A49F5",
+      "MALL_06F76060",
+      "MALL_9BB2C001"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南片区商圈",
+    "description": "位于县城南部，以利民购物中心为代表，服务城南及周边居民，商业密度相对较低，属于区域性生活配套商业。",
+    "mall_codes": [
+      "MALL_C5691E21"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城东片区商圈",
+    "description": "位于县城东部，涵盖广源财富广场等项目，地处新老城区结合部，具备一定发展潜力，目前商业体量较小。",
+    "mall_codes": [
+      "MALL_9BB2C001"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "马店镇商贸区",
+    "description": "位于霍邱县马店镇，以马店孝安商贸城为核心，服务于乡镇居民，属于典型的乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_85D9790C"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "临淮岗乡商业点",
+    "description": "位于临淮岗乡，以晨鸣购物广场为主要商业设施，辐射周边乡村地区，规模较小，功能基础。",
+    "mall_codes": [
+      "MALL_BA9D2002"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "孟集镇周边商业区",
+    "description": "位于霍邱县西南部孟集镇附近，由宜美乐购物中心和天福源购物广场组成，服务于乡镇及农村消费群体。",
+    "mall_codes": [
+      "MALL_3F3A7F10",
+      "MALL_937D8098"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "潘集-沈路口商业点",
+    "description": "位于潘沈路与245省道交汇区域，以惠家购物中心为主要载体，地理位置偏外围，服务过境人流及局部居民。",
+    "mall_codes": [
+      "MALL_17FAE489"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "城北商业补充区",
+    "description": "位于县城北部边缘，伊楼百货为该区域主要商业节点，服务范围有限，属社区型商业配置。",
+    "mall_codes": [
+      "MALL_2A786F22"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "西南乡镇过渡带商业点",
+    "description": "位于霍邱县西南角，靠近省道沿线，由新世纪超市构成，位置较偏远，服务功能单一。",
+    "mall_codes": [
+      "MALL_9053AC36"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "西部边缘乡镇商业点",
+    "description": "位于县域西部边缘地带，曼曼购物中心和购物中心（赵王路）分布于此，远离城区，服务于零散乡镇市场。",
+    "mall_codes": [
+      "MALL_337DCF7D",
+      "MALL_D58D4ABE"
+    ]
+  }
+]

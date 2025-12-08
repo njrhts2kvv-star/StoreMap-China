@@ -1,0 +1,53 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "义州大道商圈",
+    "description": "以义州大道82号为核心的商贸集聚区，集中了多个商贸城和商业中心，是岑溪市岑城镇的主要商业节点之一。",
+    "mall_codes": [
+      "MALL_3934A23F",
+      "MALL_6FE4CD22",
+      "MALL_A1AC08D5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "工农路商圈",
+    "description": "位于岑城镇工农路沿线，分布有穗丰商贸城、红日百货等商业设施，构成岑城镇东部的生活配套商业带。",
+    "mall_codes": [
+      "MALL_8EDB2D24",
+      "MALL_531FA3E0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "解放大道商圈",
+    "description": "坐落于解放大道与沿江三路交汇区域，以汇洋广场购物中心为标志，辐射周边居民区，形成城市南部的重要商业节点。",
+    "mall_codes": [
+      "MALL_87774D95"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城中路商圈",
+    "description": "位于城中路与广场一街交叉口附近，地理位置靠近市中心，欧尼里等小型商业点布局于此，服务于本地客流。",
+    "mall_codes": [
+      "MALL_725FE97F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "归义镇商圈",
+    "description": "位于归义镇新兴街与324国道交汇处附近，是岑溪市下辖归义镇的区域性商业中心，服务乡镇居民。",
+    "mall_codes": [
+      "MALL_DCC5F0B3"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "中苑一路商圈",
+    "description": "位于中苑一路与中苑一街交叉口南侧，虽仅有南宁市盛世商业中心一处商业点，但具备独立区位特征。",
+    "mall_codes": [
+      "MALL_88ECECD5"
+    ]
+  }
+]

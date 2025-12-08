@@ -1,0 +1,45 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "田州古城商圈",
+    "description": "以田州古城购物中心为核心，覆盖周边解放中路及百东路一带的商业集聚区，地处田阳区中心地段，是区域传统商业中心之一。",
+    "mall_codes": [
+      "MALL_BFE2EA65",
+      "MALL_A8F91E94",
+      "MALL_7D63A0CF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "敢壮大道商圈",
+    "description": "位于敢壮大道与百色大道交汇区域，以田阳万和商业广场为主要载体，辐射周边新兴城市功能区，具备一定交通枢纽优势。",
+    "mall_codes": [
+      "MALL_BCFA892B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "荣鑫路商圈",
+    "description": "集中在荣鑫路田州镇隆平村一带，以长盛商业综合广场为代表，毗邻华迅城等住宅项目，服务本地居民为主的新兴社区型商圈。",
+    "mall_codes": [
+      "MALL_53FB9DEF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "百育镇商圈",
+    "description": "位于百育镇新街东盟财富城及其F1层商业广场，形成镇级核心商业节点，服务于百育镇及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_01A5AFAE",
+      "MALL_648628C5"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "头塘镇商圈",
+    "description": "依托323国道沿线布局，以好乐购为主要商业设施，靠近头塘镇人民政府，服务于头塘镇及周边农村地区。",
+    "mall_codes": [
+      "MALL_804DC2BE"
+    ]
+  }
+]

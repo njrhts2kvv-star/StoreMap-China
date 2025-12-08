@@ -1,0 +1,69 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "大学路商圈",
+    "description": "位于长清城区核心主干道大学路沿线，聚集多个成熟商业项目，涵盖生活广场、购物广场及城市综合体，是长清区主要的商业集聚带。",
+    "mall_codes": [
+      "MALL_0D4609F5",
+      "MALL_8D5B959B",
+      "MALL_6786FD29",
+      "MALL_D867E775",
+      "MALL_5C76C02D",
+      "MALL_14DC99C0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "五峰路商圈",
+    "description": "分布于五峰路沿线，包含星辰商场与未来时代购物广场等本地社区型商业设施，服务周边居民区，形成区域性生活消费节点。",
+    "mall_codes": [
+      "MALL_FF0FBBD4",
+      "MALL_642EBBEC",
+      "MALL_07DA8C3A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "归德镇商圈",
+    "description": "位于长清西部归德镇区域，以归德商场为核心，辐射乡镇消费人群，属于外围城镇级商业节点。",
+    "mall_codes": [
+      "MALL_39349CCC"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "张衡路-紫薇路商圈",
+    "description": "集中于长清大学城片区东部，涵盖三庆青年城、双创时代广场等载体，依托青年城住宅与创新园区发展社区及青年消费商业。",
+    "mall_codes": [
+      "MALL_3B9C8286",
+      "MALL_2717BBDF",
+      "MALL_7674D10C",
+      "MALL_9F18C12D"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "万德-张夏商圈",
+    "description": "分布于长清南部山区沿线，包括万德灵岩商贸城与莲台山商场，服务于南部旅游及乡镇居民，属远郊特色商业节点。",
+    "mall_codes": [
+      "MALL_299DFCBA",
+      "MALL_CFF97C45"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "文昌路商圈",
+    "description": "位于城区北部文昌路沿线，以银东商城为代表，覆盖区政府周边居住区，构成局部生活配套商业组团。",
+    "mall_codes": [
+      "MALL_1007804E"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "九方商圈",
+    "description": "以九方商业广场为核心，地处卓成路与德彦街交汇区域，独立成片，定位为新兴专业商业广场，形成独立微观商圈。",
+    "mall_codes": [
+      "MALL_5482CF87"
+    ]
+  }
+]

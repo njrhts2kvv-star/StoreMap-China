@@ -1,0 +1,32 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "县城中心商圈",
+    "description": "位于东阿县城区核心区域，涵盖府前街、文化街、青年街交汇地带，是本地传统商业聚集区，集中多个老牌商城和商贸城。",
+    "mall_codes": [
+      "MALL_51C70A6A",
+      "MALL_24918E39",
+      "MALL_B9B59368",
+      "MALL_B8CBEC30",
+      "MALL_E10077AB",
+      "MALL_3BCA67F5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "铜城东部商圈",
+    "description": "位于东阿县铜城街道东部，靠近前进街北段及金牛路一带，分布有区域性商贸城和大商场，服务东部居民为主。",
+    "mall_codes": [
+      "MALL_C6F21694",
+      "MALL_337C41EE"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "鱼山镇商圈",
+    "description": "位于东阿县下辖的鱼山镇，为乡镇级商业节点，以本地生活配套为主，辐射周边农村地区。",
+    "mall_codes": [
+      "MALL_00092982"
+    ]
+  }
+]

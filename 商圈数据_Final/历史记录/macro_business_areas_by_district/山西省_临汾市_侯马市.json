@@ -1,0 +1,41 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新田路商圈",
+    "description": "以新田路为核心干道，集中分布多个购物广场和商业体，包括华翔购物广场、庆丰新天地、悦华名店等，是侯马市传统商业中心之一。",
+    "mall_codes": [
+      "MALL_FEF3E479",
+      "MALL_36280E71",
+      "MALL_6BBA930B",
+      "MALL_4D2948C5",
+      "MALL_85D74723",
+      "MALL_69EECF71"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "花园街商圈",
+    "description": "位于花园北街与花园南街沿线，聚集印象奥莱城、宏江运动城等商场，靠近火车站，形成区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_AC1B9A16",
+      "MALL_CD6A655B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "程王路商圈",
+    "description": "以程王路与中心街交叉区域为核心，依托家和购物广场和锦都商业广场双店布局，服务周边居民区，构成东部生活型商圈。",
+    "mall_codes": [
+      "MALL_79AF89DE",
+      "MALL_1578E8C7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "张村商圈",
+    "description": "位于大张路与大上线交汇区域，以张村供销购物中心为唯一核心，辐射周边乡镇及农村地区，属于外围基础型商业节点。",
+    "mall_codes": [
+      "MALL_C0F5BAD8"
+    ]
+  }
+]

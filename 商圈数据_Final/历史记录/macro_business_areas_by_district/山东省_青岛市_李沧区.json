@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "李村商圈",
+    "description": "以李村地铁站为核心，聚集了万达广场、乐客城、和谐广场等多个商业体，是李沧区最核心的商业中心。",
+    "mall_codes": [
+      "MALL_5E70E761",
+      "MALL_70C470D8",
+      "MALL_917265D5",
+      "MALL_4D6EC7A3",
+      "MALL_87764511",
+      "MALL_5B798C9D",
+      "MALL_CE34C90F",
+      "MALL_FFEA9917",
+      "MALL_CE999018"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "中防商街商圈",
+    "description": "位于李村核心区北侧地下商业街，由多个出入口构成，依托人流主干道形成独立商业集群。",
+    "mall_codes": [
+      "MALL_78B3A3D3",
+      "MALL_13A5ABB9"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "九水路商圈",
+    "description": "沿九水路分布的社区型商业集聚区，包含顺和汇购物中心及周边配套商业体，服务南部居住区。",
+    "mall_codes": [
+      "MALL_47C13823",
+      "MALL_5199C0FF",
+      "MALL_278F5678"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "金液泉路商圈",
+    "description": "位于李沧西部主干道沿线，涵盖维客广场与正合茂，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_7BA79882",
+      "MALL_AC4F1FAC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东部新城商圈",
+    "description": "覆盖李沧东部新兴发展区域，包括丽达购物中心、松乐汀商业广场等，服务于高端住宅区。",
+    "mall_codes": [
+      "MALL_229F9119",
+      "MALL_D233398F",
+      "MALL_E95D416E"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "峰山路商圈",
+    "description": "以峰山路为主轴的传统商业带，星光大道时尚购物广场为该片区主要商业载体。",
+    "mall_codes": [
+      "MALL_47171957"
+    ]
+  }
+]

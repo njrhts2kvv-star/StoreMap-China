@@ -1,0 +1,1249 @@
+uuid,brand,name,chosen_mall_id,confidence,reason
+803d6f7f-d839-409d-bb8b-00069fced05e,NIO,蔚来中心 | 兰州黄河之滨,MALL_00478,medium,兰州万达茂距离门店仅1154米，是所有候选商场中最近的；品牌NIO通常入驻大型购物中心，万达茂符合这一特征；虽然门店位于七里河区而万达茂在西固区，但距离接近且同城匹配
+dac27c7c-ded2-4972-b480-b7e8739d858b,NIO,蔚来体验中心 | 西安丈八,none,low,门店位于雁塔区丈八街道，但候选商场均无明确关联证据。虽然所有候选都在同城且距离3-5公里，但门店名称和地址中的'高科智慧智造园'与候选商场名称无匹配，且门店district为长安区与商场实际区域不完全一致
+0243ce50-3526-4c66-99b1-9971679639bc,NIO,蔚来中心 | 西安创意谷,,error,error: Expecting value: line 1 column 1 (char 0)
+b13aafb9-27ac-4fe4-925b-ee8bb5f74d8c,NIO,蔚来体验中心 | 西安曲江,,error,error: Expecting value: line 1 column 1 (char 0)
+e0e12766-3798-471e-96ea-fe538178b4c9,NIO,蔚来体验中心 | 银川德胜,none,low,门店名称明确标注'银川德胜'，但所有候选商场均位于金凤区，与门店所在兴庆区不匹配，且最近商场距离超过4.6公里，区级地理位置差异明显
+e266c352-5f17-4f63-a48a-13324ed845b7,NIO,蔚来体验中心 | 德阳八角,MALL_00616,medium,城市匹配且距离较近(11km)，但门店名称中未提及万达广场，品牌NIO与商场类型有一定匹配度
+6e5c2508-341e-49e9-b0e9-1c6251f6b529,NIO,蔚来中心 | 成都天府艺术公园,,error,error: Expecting value: line 1 column 1 (char 0)
+c1e07827-bf79-4487-8702-db6d8873477f,NIO,蔚来体验中心 | 成都锦江三圣乡,,error,error: Expecting value: line 1 column 1 (char 0)
+ce266b95-40fd-4ce5-819c-8903eb0be92d,NIO,蔚来体验中心 | 成都高新机场路,MALL_00288,medium,门店位于成都武侯区益园三路，候选商城中仁和新城距离最近（2.3公里），且同在成都市武侯区，区域匹配度较高。虽然门店名称含'机场路'而商场名称无直接关联，但基于距离和行政区划的匹配，选择置信度为中等。
+daf6c15a-5027-497f-9a86-32c6301d5528,NIO,蔚来中心 | 成都大源,none,low,门店地址显示位于成都教科院附属学校初中部，这并非传统商场环境。候选商场中虽有多家位于成都且距离较近（如世豪广场仅1公里），但门店名称和地址均未提及任何商场名称，且门店类型标注为mall_store_no_match，表明其可能不在商场内。
+e8f7d551-9332-4701-8bff-f7ac03369ec0,NIO,蔚来城市展厅 | 运城诺维兰,,error,error: Expecting value: line 1 column 1 (char 0)
+384aa1f0-6936-4278-a971-644684f09aa8,NIO,蔚来空间 | 眉山华信汽车城,none,low,门店位于眉山市东坡区汽车城，名称含'华信汽车城'；候选商场中仅万达广场同城但距离3.8公里且城市未匹配，其余商场均位于50公里外的成都市，品牌定位与汽车城场景不符，无合适候选。
+3f6e0fb5-97d4-4527-b5b4-6294e833a806,NIO,蔚来体验中心 | 重庆万州沙龙路,,error,error: Expecting value: line 1 column 1 (char 0)
+2dbb095a-24bd-47c0-81b3-5d11e9b9067e,NIO,蔚来体验中心 | 重庆回兴,,error,error: Expecting value: line 1 column 1 (char 0)
+9d141938-0353-4913-aacf-1c06b9e7163a,NIO,蔚来体验中心 | 乐山长青路,none,low,门店位于乐山市市中区，而所有候选商场均在眉山、成都、自贡等不同城市，距离门店56-112公里，跨城市且距离过远，不符合同城匹配条件
+b57220e9-792d-4eb2-af96-ad59506e9741,NIO,蔚来城市展厅 | 介休白龙马,none,low,候选商场距离过远（106公里），且门店名称和地址中的'介休市'与商场的'晋中市'虽同城但实际距离超出合理范围，品牌和商场类型也不匹配
+42735314-d366-4079-8e49-c0eabd0bc487,NIO,蔚来体验中心 | 鄂尔多斯新能源汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+031bb968-69ef-4333-aa29-07f2a38febbe,NIO,蔚来体验中心 | 泸州兴业路,none,low,门店位于纳溪区，而候选商场泸州万象汇距离8.5公里，距离较远且区域不匹配。虽然品牌和城市相同，但门店地址缺失无法进一步验证，无法确认是否为该商场的门店。
+b07c9770-fcba-491b-b79e-1f5aa789e0f2,NIO,蔚来体验中心 | 鄂尔多斯铜川汽车博览园,none,low,门店位于鄂尔多斯铜川汽车博览园，而候选商场万达广场距离较远(约12公里)，且门店名称明确指向汽车博览园而非购物中心，品牌匹配度低
+0bd3e98c-b2e1-4a22-aea8-5974a7cb5bf7,NIO,蔚来城市展厅 | 鄂尔多斯铜川,none,low,门店地址缺失，无法进行精确匹配。虽然候选商场万达广场位于同一城市且品牌NIO通常入驻大型商场，但距离较远(约12公里)，且门店名称中的'鄂尔多斯铜川'与商场所在的东胜区可能存在区域差异，缺乏足够证据确认匹配。
+ca5027a6-ba39-4b81-ba51-c5e47f1d0743,NIO,蔚来城市展厅 | 泽州中凡,none,low,门店位于山西省晋城市泽州县，所有候选商场均在河南省（焦作、郑州、洛阳），城市不匹配且距离过远（42-100公里），名称中也无相关商场词对应
+f02c637c-899b-41f0-932f-61af7f97f361,NIO,蔚来空间 | 南阳张衡大道,,error,error: Expecting value: line 1 column 1 (char 0)
+73fa4fb9-5042-480b-ad7a-57434ffa2c0e,NIO,蔚来体验中心 | 襄阳光彩,none,low,门店位于襄州区张湾街道，距离民发世纪广场约8公里，距离较远且不在同一行政区（樊城区）。门店名称中的'光彩'与商场名称'民发世纪广场'无直接关联，品牌NIO在民发广场的可能性存在但证据不足。
+53da4c85-b793-4905-8132-71d674ce7791,NIO,蔚来体验中心 | 太原平阳路,MALL_00177,medium,太原万象城距离最近(2.2公里)，位于同一城市，品牌NIO通常入驻大型购物中心，万象城符合其定位。虽然门店名称未明确提及具体商场，但基于距离和品牌匹配度较高。
+26ee7757-9a4c-4b4a-a374-ea56e468e675,NIO,蔚来空间 | 太原新汇众,,error,error: Expecting value: line 1 column 1 (char 0)
+3e5124dd-e363-498c-9486-5527db7a2caa,NIO,蔚来体验中心 | 包头稀土路,,error,error: Expecting value: line 1 column 1 (char 0)
+e3fd0b5b-4d0d-4cce-a705-ec44a539cfc3,NIO,蔚来体验中心 | 郑州航海东路,none,low,门店地址位于管城回族区紫辰路，名称含'航海东路'，但所有候选商场均位于二七区，距离较远（3.7-7.9公里），且名称和地址无直接关联，无法确认匹配
+f48cb21e-fed4-40ed-9100-3990037d2830,NIO,蔚来体验中心 | 郑州滨湖,,error,error: Expecting value: line 1 column 1 (char 0)
+9233a6ac-f120-4a28-9f45-df35a2126aea,NIO,蔚来体验中心 | 新乡金穗大道,none,low,门店位于新乡市红旗区，所有候选商场均在郑州市，城市不匹配且距离过远（60公里以上），无法满足门店-商场匹配要求
+742c59e3-4cb0-47e0-b9e8-df93d457b839,NIO,NM凉山彝族自治州,,error,error: Expecting value: line 1 column 1 (char 0)
+09071193-d0e4-4aa5-9f64-3b9de4598b13,NIO,蔚来城市展厅 | 遵义吾悦广场,MALL_00733,high,门店名称明确包含'吾悦广场'，与候选商场名称完全匹配；位于同一城市且距离仅783米，地址区域一致
+23033c27-4887-438b-b38a-2bcda80748b1,NIO,蔚来体验中心 | 安阳豫北车城,none,low,门店名称包含'豫北车城'但候选商场均无此名称；城市匹配度低（仅1个安阳候选但距离4.6km较远且地址缺失无法验证）；其他候选跨市距离过远（63-141km）
+d0099369-85df-4d12-bcd5-4a4a3a68a289,NIO,蔚来体验中心 | 邯郸联华,none,low,门店名称包含'联华'但候选商场为'新世纪中心'，品牌和名称关键词不匹配；距离4281米较远，且门店地址信息缺失无法进一步验证
+b010f1c0-8e49-4fa1-bafe-744da8d6cef7,NIO,蔚来城市展厅 | 怀仁鸿昇光能,none,low,所有候选商场均不在朔州市怀仁市，距离最近的大同万达广场也有38.6公里，远超合理范围；门店名称中的'城市展厅'暗示独立门店属性，与商场匹配度低
+f973c744-c102-4a0d-8663-18cfdad88d92,NIO,蔚来体验中心 | 石家庄裕华汽车科创园,none,low,门店地址位于栾城区楼底镇，而所有候选商场均在裕华区，区域不匹配；最近商场距离3.2公里，但门店名称中的'汽车科创园'表明其为独立园区而非商场内店铺，品牌定位与候选商场类型不符
+de8c3644-86bc-45d8-89fb-1fc195082797,NIO,蔚来体验中心 | 贵阳龙洞堡机场,none,low,门店位于贵阳龙洞堡机场内，地址明确为机场相关建筑，而所有候选商场均为市区商业综合体，距离门店7-9公里，品牌和名称均无机场相关匹配，因此没有合适的候选商场
+4880670b-7324-41b3-9896-88194e10fda2,NIO,蔚来体验中心 | 菏泽定陶汽车小镇,none,low,门店位于定陶区汉源路汽车小镇，而候选商场佳和城距离17.5公里过远，且门店名称和地址均未提及该商场，缺乏关联依据
+4350c66d-de77-4939-bf94-5b3d5338c92a,NIO,蔚来体验中心 | 武汉黄金口,,error,error: Expecting value: line 1 column 1 (char 0)
+fd8cc1c8-9887-422f-8bda-6570ad25f454,NIO,蔚来城市展厅 | 汉口站北广场,,error,error: Expecting value: line 1 column 1 (char 0)
+48c208ff-5506-42aa-a176-d97dd4824867,NIO,蔚来中心 | 武汉龙阳大道,none,low,门店位于汉阳区龙阳大道，而所有候选商场距离较远（8-12公里），且名称中无'龙阳大道'相关线索。虽然城市匹配，但距离过远且无明确关联证据。
+fdf4d6cb-7b2f-45f7-bb1d-1ed11cf6605f,NIO,蔚来空间 | 武汉万科未来中心,none,low,门店名称明确包含'武汉万科未来中心'，但候选商场列表中无此商场。所有候选商场距离门店4.7-9.6公里，且名称与门店提示不匹配，无法确定对应关系
+84dc3c9e-eef5-4a9f-a402-f941c362e9b7,NIO,蔚来空间 | 武昌万象城,,error,error: Expecting value: line 1 column 1 (char 0)
+63418d93-32f7-4e10-a49c-f7bf73a6ea44,NIO,蔚来体验中心 | 武汉光谷一路,,error,error: Expecting value: line 1 column 1 (char 0)
+7ed26a39-a0ee-4c74-8dff-e4bb7de74193,NIO,蔚来城市展厅 | 阜阳商厦中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f95cc1d9-2604-4716-95e4-69bcec6b9e5a,NIO,蔚来体验中心 | 长沙市府,,error,error: Expecting value: line 1 column 1 (char 0)
+ded4f81b-9201-4ccc-8c04-b0d505cd9d10,NIO,蔚来体验中心 | 济南玉清湖,none,high,门店位于济南市槐荫区腊山街道周朱路，而所有候选商场距离门店均超过6公里，最近的龙湖济南奥体天街也相距6.1公里，且门店名称和地址未提及任何候选商场名称，品牌NEO与商场无明确关联，无合适匹配
+0fabfea6-3ee2-4b37-93f3-9e24fb8571d0,NIO,蔚来体验中心 | 株洲汽博园,none,low,候选商场距离过远(10.5km)，且门店名称和地址均指向汽博园/工业园区，与王府·星Mall定位不符。品牌和地理特征不匹配。
+3298df98-d074-471c-84aa-4cb92c6de0bb,NIO,蔚来体验中心 | 徐州南城,none,low,门店位于铜山区，所有候选商场距离均超过12公里，距离过远；且门店名称中的'南城'与候选商场名称无明显关联，地址信息缺失无法进一步验证
+635488a4-0b61-4f55-9d23-46eaa32b4063,NIO,蔚来中心 | 昆明公园1903,,error,error: Expecting value: line 1 column 1 (char 0)
+57dde465-75b6-4d8c-bdc8-25bdd7f41ec4,NIO,蔚来体验中心 | 昆明经开汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+872250c9-d475-4eba-a4e8-a610bbdf87a5,NIO,蔚来中心 | 北京中关村,,error,error: Expecting value: line 1 column 1 (char 0)
+13c2a69c-8e55-40f6-8694-839e842d2f54,NIO,蔚来体验中心 | 北京上地,,error,error: Expecting value: line 1 column 1 (char 0)
+37999a97-5a55-4ac1-8ae8-64db56b63974,NIO,蔚来城市展厅 | 北苑龙湖天街,none,low,门店名称包含'北苑龙湖天街'，但候选商场中无龙湖天街相关商场；所有候选距离较远（5.7-10.6公里），且无品牌、地址或名称直接匹配
+7660593c-444b-4263-af95-c4e510750d5c,NIO,蔚来体验中心 | 北京亚市,none,low,门店位于昌平区北七家镇，而候选商场均距离较远（9-13公里），且无品牌匹配或名称包含'亚市'的商场。门店区域与候选商场区域不一致，匹配可能性低。
+84fbc376-adbf-4d86-af44-bcf10c2517bb,NIO,蔚来体验中心 | 北京未来科学城,,error,error: Expecting value: line 1 column 1 (char 0)
+ae5cfe5f-7c12-43ee-8e13-5f7e45168168,NIO,蔚来体验中心 | 北京金港汽车公园,none,low,门店位于金港汽车公园，是独立的汽车体验中心，与候选商场（创意园、机场、购物中心等）类型不匹配，且距离均较远（5-8公里），无合适候选
+1cd47f0b-4207-468e-acde-f257152d902e,NIO,蔚来城市展厅 | 瑞昌瑞民,none,low,门店位于瑞昌市，而候选商场在九江市，距离28.6公里过远；品牌和名称中无匹配商场词，地址也无关联
+5dffea95-e266-438b-a020-248fe2394acf,NIO,蔚来体验中心 | 北京后沙峪,MALL_00281,medium,品牌匹配度一般，但距离最近（2.6公里），且同在顺义区，名称中的'祥云小镇'与'后沙峪'地理位置相近，其他候选距离过远或类型不匹配
+f0b04151-d221-4947-bac5-5a64168f715a,NIO,蔚来体验中心 | 蚌埠宏业南路,none,low,品牌和名称无关联，地址完全不同，距离较远(2.3km)，虽同城但无明显匹配证据
+95a752e7-0c08-4197-9af7-0325472d4b1f,NIO,蔚来体验中心 | 天津大寺,none,low,门店地址明确位于天津西青保时捷中心，而候选商场距离均在9-16公里外，位置差异过大；且门店名称和地址均未包含任何候选商场的关键词，无法建立有效关联
+e7f47ac3-ea0d-4157-a1a6-e8281f1a9eea,NIO,蔚来空间 | 合肥高新银泰,,error,error: Expecting value: line 1 column 1 (char 0)
+d9f672f3-caec-43b5-ae12-8af09633b3a3,NIO,蔚来中心 | 滨州渤海二十四路,,error,error: Expecting value: line 1 column 1 (char 0)
+ef3bd93e-6343-4413-835a-f912b9d9035a,NIO,蔚来体验中心 | 天津空港,,error,error: Expecting value: line 1 column 1 (char 0)
+c6bb5cf2-6a26-473c-aa12-a8046c19b250,NIO,蔚来体验中心 | 淄博山泉路,MALL_00305,medium,门店与商场同城且距离4.6km在合理范围内，但门店名称和地址均未明确提及该商场，需进一步确认是否位于万象汇内
+9441876a-c3e3-4dab-97d9-63ba941d0002,NIO,蔚来体验中心 | 桂林真龙汽车园,,error,error: Expecting value: line 1 column 1 (char 0)
+0a724e1a-23a4-4628-b44f-4503651ca155,NIO,蔚来城市展厅 | 宜春懂车帝,,error,error: Expecting value: line 1 column 1 (char 0)
+a0c34cee-4ce7-4ebd-bf47-ff72c05b0745,NIO,蔚来体验中心 | 合肥先进制造基地,none,low,门店位于肥西县先进制造基地，名称明确指向独立体验中心而非商场内部店铺；所有候选商场距离均在8-19公里外，远超常规商场覆盖范围；品牌'NIO'多为独立选址，与商场匹配度低
+f77394a3-80d2-4802-bc24-68c59b5cda48,NIO,蔚来体验中心 | 合肥包河,,error,error: Expecting value: line 1 column 1 (char 0)
+90fe27d7-0384-4be1-9b74-cea9c167ccae,NIO,蔚来城市展厅 | 保山汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+f14af46e-e20a-431a-b5fb-1a612ae1b13e,NIO,蔚来空间 | 潍坊谷德锦,MALL_00634,medium,门店名称中包含'谷德锦'，而候选商场中'泰华城新天地'是知名连锁商场品牌，虽然名称不完全匹配，但距离较近(4.3km)且在同一个城市。其他候选商场名称与'谷德锦'关联度较低。
+b14ff5b6-c1a1-409a-91d8-f58b61400e2e,NIO,蔚来城市展厅 | 潍坊潍州路,,error,error: Expecting value: line 1 column 1 (char 0)
+7d02e882-4342-4b72-b69a-093fe8f9589c,NIO,蔚来城市展厅 | 万安三丰中央城,none,low,门店位于上饶市鄱阳县，所有候选商场均在南昌市，城市不匹配且距离过远（84-88公里），不符合同城匹配要求
+9fdc3427-6ee5-4f30-aafd-11ea487b942a,NIO,蔚来体验中心 | 潍坊寒亭,none,low,门店名称为'蔚来体验中心 | 潍坊寒亭'，但候选商场名称均无'寒亭'相关关键词；门店地址缺失无法比对；最近商场距离3.1公里，但无品牌入驻或名称关联证据；城市匹配但缺乏其他支持信息
+40d754a5-4a98-43e9-9dff-247244c9cf0c,NIO,蔚来体验中心 | 连云港振兴,none,low,所有候选商场均不在连云港市，距离最近也超过90公里，远超正常商场匹配范围。品牌NIO虽可能入驻这些商场，但城市不匹配且距离过远
+74bbc1a3-bf96-494e-b62f-8492a095cd58,NIO,蔚来城市展厅 | 千里行,none,low,所有候选商场均不在景德镇市，距离最近商场超过120公里，城市不匹配且距离过远
+fc63edf6-a149-47d9-be1c-ddb8a86955b3,NIO,蔚来城市展厅 | 浮梁县车之家,,error,error: Expecting value: line 1 column 1 (char 0)
+e17013e6-0e3b-47d2-847a-c49005dc8a3e,NIO,蔚来体验中心 | 南京九龙湖,,error,error: Expecting value: line 1 column 1 (char 0)
+0d67c4a2-454c-40b5-891e-e24e1b6c05db,NIO,蔚来体验中心 | 青岛黄岛江山中路,,error,error: Expecting value: line 1 column 1 (char 0)
+4d4543df-315a-4d1e-8bde-c756854da30b,NIO,蔚来体验中心 | 赣州金潭南大道,none,low,门店名称中未包含商场关键词，地址位于蟠龙镇宝福南路，距离最近候选商场万达广场2.1公里，但门店定位为独立体验中心而非商场内店铺，品牌蔚来多为独立门店运营
+0cec0011-2824-4cfd-967f-b8c48db27af6,NIO,蔚来中心 | 青岛海天中心,,error,error: Expecting value: line 1 column 1 (char 0)
+82f60fc1-b178-492c-a16d-12e67ed3e4c5,NIO,蔚来体验中心 | 南宁白沙大道,,error,error: Expecting value: line 1 column 1 (char 0)
+47b17c3d-1a70-487e-a6b1-e283112a698e,NIO,蔚来体验中心 | 南宁荔滨大道,MALL_00449,medium,门店位于良庆区荔滨大道，五象万象汇同在良庆区且距离相对较近（6.4公里），品牌匹配度较高；其他候选商场距离更远且区域匹配度较低
+52ef96c0-897f-4928-947b-9f53e9a6da8b,NIO,蔚来体验中心 | 青岛奥帆,,error,error: Expecting value: line 1 column 1 (char 0)
+4d53aa1c-63fe-49fa-85ca-dde7a93e31cb,NIO,蔚来中心 | 常州溧阳,,error,error: Expecting value: line 1 column 1 (char 0)
+0ae55768-f22c-4111-8895-03b3d6452fcb,NIO,蔚来城市展厅 | 上饶月亮湾,none,low,所有候选商场均不在上饶市，距离均超过100公里，不符合同城匹配要求。门店名称中的'月亮湾'可能是具体地点而非商场名称，无法与候选商场建立有效关联。
+5df3abbe-62e3-4c37-9987-6fd4ba926666,NIO,蔚来体验中心 | 常州武进汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+782604f4-007d-45e5-9e90-8e328127d250,NIO,蔚来空间 | 靖江印象城,,error,error: Expecting value: line 1 column 1 (char 0)
+5d91c51e-b661-4acc-8732-71ba6eb626e9,NIO,蔚来体验中心 | 江阴森茂,none,low,门店位于江阴市澄江街道，距离最近的八佰伴A馆也有4.5公里，且门店名称中的'江阴森茂'与候选商场名称均不匹配，所有候选商场距离较远，不符合门店实际位置
+8639acc6-720f-44c7-a1a1-9cc8c0e6b2ac,NIO,蔚来体验中心 | 衢州浙西汽车城,none,low,门店位于荷花东路花港家园，名称指向'浙西汽车城'，而候选商场'吾悦广场'距离6.4公里，品牌和名称均不匹配，且地址无关联，不符合门店实际所在商场
+d1ee6085-c0fa-488f-9f3e-26db46af122b,NIO,蔚来体验中心 | 清远城西大道,,error,error: Expecting value: line 1 column 1 (char 0)
+abc06b35-7d1c-46ea-8b71-e1b7ecca872b,NIO,蔚来空间 | 无锡荟聚,MALL_00171,high,门店名称中包含'荟聚'，与候选商场'Livat荟聚'名称高度匹配；城市一致；距离仅1071.5米，非常接近
+ae7910df-05cd-4a24-b1f0-cfa862351da2,NIO,蔚来体验中心 | 无锡先锋,none,low,门店地址在新吴区梅村街道锡群路，而候选商场均不在新吴区且距离较远（最近2.2公里）。门店名称中的'无锡先锋'与候选商场名称无关联，品牌'NIO'在候选商场中无明确匹配。
+ef427708-761b-40e6-855c-957d35d74cfc,NIO,蔚来中心 | 张家港览秀城,,error,error: Expecting value: line 1 column 1 (char 0)
+f301bae1-6160-47f6-9eb9-0e831ba17faf,NIO,蔚来空间 | 湖州德清银泰城,,error,error: Expecting value: line 1 column 1 (char 0)
+18b8890b-858d-4c4a-a11b-2abf328ea49b,NIO,蔚来体验中心 | 湖州吴兴,,error,error: Expecting value: line 1 column 1 (char 0)
+82dc9a76-a2e4-4f48-acd2-7874a92a21d3,NIO,蔚来体验中心 | 杭州富阳,none,low,门店位于富阳区，所有候选商场均在杭州市区，距离过远（21-30公里），且门店名称和地址均未提及候选商场名称，品牌匹配度低
+13dba68c-4536-44ef-b595-b1c4b4b0f1b6,NIO,蔚来体验中心 | 杭州五常,,error,error: Expecting value: line 1 column 1 (char 0)
+bbce6768-9d42-4602-8211-66a797169062,NIO,蔚来体验中心 | 苏州相城汽车城,MALL_00383,medium,门店位于相城区，名称含'汽车城'且地址在相城区元和街道，龙湖苏州相城天街A馆同在相城区，距离4公里相对较近，品牌NIO通常在大型商场设体验中心。其他候选商场距离较远或区域不匹配。
+f701f13f-6110-4359-b4f1-3dfe98d3b5e7,NIO,蔚来体验中心 | 肇庆大道,MALL_00286,medium,城市匹配，距离约3公里在合理范围内，但门店名称中未包含商场名称，地址也未直接提及，因此置信度为中等
+d43f4937-1739-4639-94da-b19300081d77,NIO,蔚来空间 | 常熟凤凰城,none,low,门店位于常熟市，所有候选商场均在苏州市区，距离超过30公里，且门店名称'常熟凤凰城'与候选商场名称无匹配，无合适的候选商场
+edd72d54-be0e-485c-a23f-582080649c82,NIO,蔚来体验中心 | 杭州绍兴路汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+da3442d3-928b-4b80-8dff-c3edc491aa08,NIO,蔚来中心 | 常熟汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+cb0d48a9-4e5f-4869-b98f-f03c85a84d47,NIO,蔚来中心 | 南通紫琅湖,,error,error: Expecting value: line 1 column 1 (char 0)
+b7debb64-ff1a-43b3-8710-b89653853264,NIO,蔚来中心 | 杭州滨江宝龙城,,error,error: Expecting value: line 1 column 1 (char 0)
+1397674b-8915-45fe-ab4c-d1d590bdd63d,NIO,蔚来中心 | 杭州临平,,error,error: Expecting value: line 1 column 1 (char 0)
+c9d54944-9240-4070-a6f7-e8e7f59b7aee,NIO,蔚来空间 | 杭州亚奥万象天地,,error,error: Expecting value: line 1 column 1 (char 0)
+06331676-b40f-406d-8a7f-24e2e5a7c64a,NIO,蔚来城市展厅 | 昆山万象汇,MALL_00018,high,门店名称明确包含'昆山万象汇'，与候选商场MALL_00018名称完全一致；距离仅948.8米，位置接近；城市、区域匹配
+403fdcaa-57e5-422d-8634-8ba6e31fdd44,NIO,蔚来中心 | 昆山万象汇,,error,error: Expecting value: line 1 column 1 (char 0)
+ea4c5d0b-65f0-4253-a3b5-f5a855c6b8a7,NIO,蔚来体验中心 | 广州白云大道,none,low,门店位于白云区新广从汽配城，候选商场中虽有同区商场，但名称和地址均未发现直接关联。距离最近的商场（3.7km）名称仅为'白云区机场'，与汽配城环境不匹配；其他商场距离更远且无明显关联证据。
+58282481-e43b-447f-a91c-7a5247faf396,NIO,蔚来中心 | 昆山山姆,none,low,门店名称中包含'昆山山姆'，但候选商场中没有山姆会员店或相关商场。所有候选商场距离较远(最近2.8公里)，且名称、品牌均不匹配。
+455e4438-ab56-48f4-b7c1-35411abe211c,NIO,蔚来体验中心 | 绍兴诸暨汽车城,none,low,门店位于诸暨市汽车城商圈，名称和地址均明确指向汽车城业态；候选商场均为市区综合购物中心，距离过远（46-60公里），业态不匹配且无品牌关联
+a0b380c9-e8f3-4b74-aa92-ede016f503fb,NIO,蔚来中心 | 佛山海八路,,error,error: Expecting value: line 1 column 1 (char 0)
+189061fc-e424-4f55-bab1-bd023e051f35,NIO,蔚来城市展厅 | 佛山樵盈星元汇路演,,error,error: Expecting value: line 1 column 1 (char 0)
+ece8f850-1e65-4293-b5f8-652550badfae,NIO,蔚来体验中心 | 昆山城东汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+1187472c-0157-400a-831b-ab2103e88146,NIO,蔚来体验中心 | 义乌新业云谷,,error,error: Expecting value: line 1 column 1 (char 0)
+dabbf158-ba4e-4a88-922e-df114fcc4f91,NIO,蔚来空间 | 广州天河智汇Park,,error,error: Expecting value: line 1 column 1 (char 0)
+16b8077f-bd7a-4418-9286-4eae13416aaa,NIO,蔚来体验中心 | 佛山平洲车城,,error,error: Expecting value: line 1 column 1 (char 0)
+fa3eb194-41fa-4cb8-b668-f84b5b05425b,NIO,蔚来体验中心 | 义乌五洲大道,,error,error: Expecting value: line 1 column 1 (char 0)
+fe42fdc2-2ddf-458b-ab85-4ccd0f0a7e0c,NIO,蔚来中心 | 广州广粤天地,,error,error: Expecting value: line 1 column 1 (char 0)
+f0b393c4-9c6e-41a6-b48e-df2ebc9f748d,NIO,蔚来中心 | 广州塔,,error,error: Expecting value: line 1 column 1 (char 0)
+1686188b-9fc2-46a5-a982-7f2656a09286,NIO,蔚来体验中心 | 佛山大道,,error,error: Expecting value: line 1 column 1 (char 0)
+0c4a3e01-45e1-431c-9f3a-3d5dd9aeb283,NIO,蔚来中心 | 广州美林天地,,error,error: Expecting value: line 1 column 1 (char 0)
+ad53b48c-da1e-42b7-bf76-e1b2ce33a8ee,NIO,蔚来中心 | 广州番禺迎宾路,,error,error: Expecting value: line 1 column 1 (char 0)
+38d915fc-7dc4-4b58-a4ea-582d58e9e226,NIO,蔚来体验中心 | 威海青岛路,,error,error: Expecting value: line 1 column 1 (char 0)
+4c8d8ece-68a7-4288-8216-68a95ddf6d43,NIO,蔚来体验中心 | 东阳世贸大道,,error,error: Expecting value: line 1 column 1 (char 0)
+de24c6fe-0428-47e4-9ef6-37eea5c6e3c2,NIO,蔚来体验中心 | 上海嘉定南翔,MALL_00106,high,门店名称明确包含'南翔'，且距离上海南翔印象城MEGA仅2.6公里，品牌定位与大型购物中心匹配度高
+9f617acf-21b9-4588-a1a4-54c7fe214564,NIO,蔚来体验中心 | 东莞高埗,,error,error: Expecting value: line 1 column 1 (char 0)
+f74a9203-1ed5-41c6-8f41-a0092cadad89,NIO,蔚来中心 | 上海天空万科广场,,error,error: Expecting value: line 1 column 1 (char 0)
+b5ec372b-4384-49b4-9f42-aab029cb9ef7,NIO,蔚来体验中心 | 广州番禺桥南,MALL_00498,medium,门店位于番禺区桥南街道，番禺奥园广场距离最近（3.6公里），同在番禺区，地理匹配度最高；其他候选商场距离过远（11-19公里）且位于不同区域
+07d56298-d639-4447-b1b6-a9487493aa2e,NIO,蔚来中心 | 永康皇城里,,error,error: Expecting value: line 1 column 1 (char 0)
+cce9b933-be83-48be-897a-94c543eff1c6,NIO,蔚来城市展厅 | 上海九淦公路168,none,low,门店位于松江区泗泾镇，但候选商场中仅有松江印象城在松江区，距离约9公里较远。其他候选商场位于青浦区、闵行区，距离6-9公里且行政区不匹配，均不合适。
+431612b9-fcb0-4879-b0bd-2fe771f12879,NIO,蔚来中心 | 佛山顺德顺峰山,,error,error: Expecting value: line 1 column 1 (char 0)
+ec1bbb65-3966-4bdc-b4f7-0289b5ed4cb7,NIO,蔚来体验中心 | 上海虹桥,,error,error: Expecting value: line 1 column 1 (char 0)
+434988be-27c3-476f-bcfa-09364309485d,NIO,蔚来体验中心 | 上海北松公路,,error,error: Expecting value: line 1 column 1 (char 0)
+196dbc65-86ad-4fb2-895e-74e1838dc292,NIO,蔚来空间 | 东莞汇一城,,error,error: Expecting value: line 1 column 1 (char 0)
+f7ccf2a3-019e-4f50-a18b-749ca39e2f76,NIO,蔚来中心 | 上海宝杨宝龙广场,MALL_00679,high,门店名称明确包含'宝杨宝龙广场'，与候选商场'MALL_00679'名称完全一致；地址位于宝山区杨行镇，与商场位置匹配；距离仅937米，非常接近
+b3da1a5b-25b7-4ba7-ae3f-081a1b8a92c4,NIO,蔚来城市展厅 | 中庚漫游城,none,low,门店名称中包含'中庚漫游城'，但候选商场列表中无此商场。所有候选商场距离门店较远（5-9公里），且名称、地址均不匹配。门店位于闵行区报春路，候选商场位于不同区域，匹配度低。
+4b9b555b-18aa-44e5-849e-b4373fd4b67f,NIO,蔚来空间 | 上海中庚漫游城,none,low,门店名称明确指向'上海中庚漫游城'，但候选商场列表中无此商场；虽然候选商场都在同城且距离在5-9公里内，但品牌、名称和地址均无匹配，无法确认任一候选商场为正确匹配
+c9e1bfd8-5918-4e5e-848a-46be3c0e1795,NIO,蔚来体验中心 | 东莞厚街,MALL_00820,medium,门店位于东莞厚街，但district显示为虎门镇，与虎门万达广场距离最近（约6公里）。品牌NIO通常在大型商场设店，但地址与商场名称存在区域不一致，故置信度为中等
+4bfa56ab-1a1b-4fb7-b0e2-f34c367dcd58,NIO,蔚来空间 | 广州南沙环宇城,MALL_00473,high,门店名称中包含'环宇城'，与候选商场'中国铁建·南沙环宇城'名称高度匹配；地址均位于广州南沙区，距离仅878米，地理位置非常接近；品牌和区域信息完全一致
+14899302-1153-4164-936b-8198e3bc9541,NIO,蔚来城市展厅 | 上海陆家嘴金融中心,MALL_00550,high,门店名称包含'陆家嘴'，与陆家嘴中心L+mall名称高度匹配；地址位于陆家嘴街道，距离仅866米，城市完全匹配，品牌定位与高端商场相符
+2ebee836-8117-4c09-80f7-d78896774327,NIO,蔚来中心 | 东莞虎门,,error,error: Expecting value: line 1 column 1 (char 0)
+a9a3d6c7-1273-4f60-a3c5-9b95b1ac8e51,NIO,蔚来城市展厅 | LCM置汇旭辉广场,none,low,门店名称明确指向LCM置汇旭辉广场，但候选商场列表中不包含该商场。所有候选商场名称与门店名称中的商场词不匹配，且距离较远（最近约1.5公里），城市匹配度低。
+586149b0-7dbc-4bc2-bbea-23c79702cf21,NIO,蔚来体验中心 | 上海金桥,none,low,门店位于浦东新区金桥，但所有候选商场均无明确金桥区域匹配。最近商场为浦东嘉里城，但距离1.2-3公里且无品牌关联，其他商场距离更远且区域不符。
+6ee2b898-1cd2-49d8-a732-d1c6086f645b,NIO,蔚来体验中心 | 上海联达路,,error,error: Expecting value: line 1 column 1 (char 0)
+a7192d85-348e-4274-835e-1532624c11be,NIO,蔚来体验中心 | 梅州梅县,,error,error: Expecting value: line 1 column 1 (char 0)
+c61cf8bb-d98c-4840-aa15-b2c277a19294,NIO,蔚来体验中心 | 中山港口,,error,error: Expecting value: line 1 column 1 (char 0)
+945b9eb8-e9cc-4d85-b2cf-b1ba26747752,NIO,蔚来体验中心 | 宁波慈溪,none,low,门店位于慈溪市坎墩街道，所有候选商场距离均在46-53公里之外，远超合理范围。虽然品牌为蔚来且城市匹配，但距离过远，无法确定任何候选商场为正确匹配
+b7203030-b96b-4def-a125-8fa61508df6f,NIO,蔚来空间 | 中山富逸城,,error,error: Expecting value: line 1 column 1 (char 0)
+eb9987c6-7f9d-4574-a4aa-5ad73c995453,NIO,蔚来空间 | 阳江新江东路,,error,error: Expecting value: line 1 column 1 (char 0)
+1595b9bb-2553-4085-ac1b-897484a26a52,NIO,蔚来空间 | 慈溪吾悦广场,none,high,门店名明确包含'慈溪吾悦广场'，但候选商场列表中无此商场，且所有候选距离门店超过39公里，不在合理范围内。
+20ca4f9a-9d00-4759-9230-2bb35f4ea6a7,NIO,蔚来体验中心 | 东莞塘厦,none,low,门店位于清溪镇，所有候选商场距离均较远（22-37公里），且名称和品牌均无直接关联。无法确定门店所属的具体商场。
+ffa7344e-1adf-4bae-a4e3-241dba1a8804,NIO,蔚来体验中心 | 惠州三栋,none,low,门店位于惠城区三栋镇，而候选商场中港惠新天地东区（8.9km）和华贸天地（12.9km）距离较远且无证据表明蔚来在此设店；惠州大亚湾万达广场距离26km过远。缺乏地址细节和品牌入驻信息支持匹配
+d783f5f3-8055-4a58-b566-86608da05bbf,NIO,蔚来中心 | 深圳龙华,MALL_00523,high,品牌NIO通常入驻大型购物中心，壹方天地C区距离仅948.9米且在龙华区，与门店地址中的'金皇大酒店'同属民治街道，地理位置高度匹配
+43c974bb-3bd5-49e5-ac04-5a4a80db6d16,NIO,蔚来空间 | 深圳华侨城欢乐港湾,,error,error: Expecting value: line 1 column 1 (char 0)
+8218d790-3e04-4ccd-a35a-ed01e36ec969,NIO,蔚来空间 | 深圳西丽宝能环球汇,,error,error: Expecting value: line 1 column 1 (char 0)
+7ba9c4e8-a3c7-4b33-98a0-6ee315f6d198,NIO,蔚来城市展厅 | 福田山姆广场,none,low,门店名称中包含'福田山姆广场'，但候选商场列表中没有名称匹配的商场。虽然所有候选商场都在同一城市且距离较近(2-5公里)，但品牌、商场名称和地址均无直接关联，无法确定匹配关系。
+7d491576-8da7-414f-97fb-b62e2ce52498,NIO,蔚来中心 | 深圳后海,,error,error: Expecting value: line 1 column 1 (char 0)
+2e4e46d6-da7b-42f4-a21c-46925b95888a,NIO,蔚来城市展厅 | 临港蓝鲸世界,MALL_00323,high,门店名称包含'临港蓝鲸世界'，而候选商场'龙湖·上海奉贤天街'位于奉贤区，与门店所在区一致，距离37.5公里在合理范围内，品牌匹配度较高
+c660283a-7606-46ef-ab00-04e720635cbf,NIO,蔚来中心 | 深圳欢乐海岸,MALL_00597,high,门店名称中明确包含'深圳欢乐海岸'，与候选商场MALL_00597名称完全一致；距离仅1.09公里，位置接近；城市和区域（南山区）匹配
+d3e0f7b2-1fa8-4ad6-a8db-61b8e36a5aab,NIO,蔚来体验中心 | 深圳竹子林,,error,error: Expecting value: line 1 column 1 (char 0)
+5ca2e3cb-ed91-4665-b0f8-1f4e6666f4ec,NIO,蔚来中心 | 深圳深业上城,,error,error: Expecting value: line 1 column 1 (char 0)
+1e67c13e-3222-4ea3-abda-963ddafe2ba3,NIO,蔚来空间 | 深圳太子湾K11,,error,error: Expecting value: line 1 column 1 (char 0)
+ff05ed2f-cebe-407f-bdf0-efc6060c42f7,NIO,蔚来中心 | 珠海情侣海湾,MALL_00609,medium,门店名'蔚来中心 | 珠海情侣海湾'与'珠海富华里'地理位置相近，均在珠海情侣路商圈范围内，距离4335米在合理商业辐射范围内。其他候选商场距离更远且无明显名称关联。
+4cf1db85-ece9-4afc-8d64-ad255438ef71,NIO,蔚来空间 | 珠海环宇城,,error,error: Expecting value: line 1 column 1 (char 0)
+8efaec70-d462-4f95-bdcd-3e37a9337738,NIO,蔚来城市展厅 | 珠海金湾华发商都,MALL_00380,high,门店名称明确包含'珠海金湾华发商都'，与候选商场'金湾华发商都A馆'名称高度匹配，且距离仅887.9米，同在金湾区，品牌NIO适合在大型商场设店
+c6fb6658-f947-4e86-a64a-dd3467885156,NIO,蔚来空间 | 宁波高新宝龙广场,none,low,门店名称包含'高新宝龙广场'，但候选商场中无'宝龙广场'；门店位于鄞州区但系统标注为江北区，存在区域矛盾；所有候选商场距离较远且名称不匹配
+894073ac-1f3b-4a77-8797-2b2768d7f810,NIO,蔚来城市展厅 | 临海紫阳街,none,low,门店位于临海市紫阳街，候选商场银泰百货在温岭市，距离过远（55公里），且名称中无明确关联词，品牌匹配度低
+f05ab4aa-ab2b-444e-af03-b3bfeaf02573,NIO,蔚来中心 | 温州万象城,,error,error: Expecting value: line 1 column 1 (char 0)
+8b624e1c-2f1c-4780-9dda-b19c64c1630f,NIO,蔚来城市展厅 | 瑞安瑞祥汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+6cb4e719-c7e8-422e-a39c-8df819f3e61f,NIO,蔚来中心 | 台州永宁,none,low,门店位于黄岩区，而候选商场银泰百货在温岭市，距离超过30公里，位置匹配度低；品牌名称中的'永宁'与商场名无关联；虽同属台州市但区域跨度大，不符合门店实际位置
+0ed9d979-81f1-41a8-90a2-a7f3ae0fe872,NIO,蔚来体验中心 | 漳州龙文北,MALL_00702,medium,吾悦广场位于漳州龙文区，与门店区域一致；距离仅2.5公里，在合理范围内；商场名称与门店地址区域高度匹配。但品牌信息未直接关联，且城市匹配标记为false，故置信度为中等。
+289da114-e2db-43da-b82b-a523ff69fdec,NIO,蔚来城市展厅 | 城南ASC,none,low,门店位于乐清市柳市镇，所有候选商场均在温州市区，距离均超过23公里且不在同一行政区划，匹配度低
+491291cc-459a-48b2-aa05-ceb75edc09d0,NIO,蔚来城市展厅 | 乐清红源,,error,error: Expecting value: line 1 column 1 (char 0)
+2ff2960d-cafb-4040-a6ca-740c4722446e,NIO,蔚来中心 | 乐清湾,none,low,门店位于乐清市，而所有候选商场均在温州市区，距离过远（25-30公里），不符合门店实际位置需求
+617bb925-281e-4d2e-bbc9-f4e4259df2c9,NIO,蔚来体验中心 | 福州仓山,none,low,门店地址位于仓山区螺洲镇，但所有候选商场距离较远（4.5-8.7公里），且门店名称中无商场词匹配。虽然城市匹配，但门店district为台江区与地址实际仓山区矛盾，增加了不确定性。
+7a57226a-24b9-4b93-84df-7843d562ce21,NIO,蔚来体验中心 | 厦门海沧,MALL_00094,medium,品牌为蔚来体验中心，名称和地址明确位于厦门海沧区，候选商场中仅SM厦门海沧城市广场位于海沧区且距离最近(7.9公里)，城市匹配度高，但距离仍较远，置信度为中等。
+41e31577-8a5b-428a-a379-b49c7643793b,NIO,蔚来体验中心 | 泉州南环,,error,error: Expecting value: line 1 column 1 (char 0)
+02ce8ea6-c3c9-49cf-b857-0e85106e2b0c,NIO,蔚来体验中心 | 厦门高崎,none,low,门店地址位于高崎北路3157号厦门顺天优选供应链有限公司，所有候选商场距离门店均超过5公里且位于不同区域，品牌和名称中均未发现与候选商场直接关联的线索，匹配度很低
+21bbe807-35c9-40f1-98a5-66faece5a1d7,NIO,蔚来体验中心 | 泉州晋江,none,low,门店位于晋江市，但所有候选商场距离均较远（8.7-20.1公里），且门店名称中无明确商场词匹配，无法确定具体所在商场
+2e3e5c1a-c7ff-4820-af2f-7d7b5047bfd2,NIO,蔚来中心 | 海口世纪,,error,error: Expecting value: line 1 column 1 (char 0)
+7345c59b-6e3a-4b0f-a6a5-a5e488df6acd,NIO,蔚来空间 | 沈阳皇姑万象汇,,error,error: Expecting value: line 1 column 1 (char 0)
+aa7d030f-350d-46c7-aad1-4b94fb5b6f5d,NIO,蔚来体验中心 | 长春净月,,error,error: Expecting value: line 1 column 1 (char 0)
+3ea35487-b6b5-45ae-909a-11cd9b98d68d,NIO,蔚来中心 | 哈尔滨道里,,error,error: Expecting value: line 1 column 1 (char 0)
+5127dd84-7fd3-4f42-ba68-39231a3afa41,NIO,蔚来服务中心 | 成都东门,none,low,门店地址明确位于成华区龙潭街道，但所有候选商场均不在该区域。最近的滨江天街距离2.9公里，不符合服务中心通常位于商圈内的特征。门店名称中无商场关键词，且候选商场品牌定位与汽车服务中心不匹配。
+f6d3c585-e093-493c-b1c0-d5134d405d9a,NIO,蔚来服务中心 | 洛阳乾元润和,,error,error: Expecting value: line 1 column 1 (char 0)
+05b8d5e6-8d4a-4044-af4e-76188864dc68,NIO,蔚来服务中心 | 宜宾大道,,error,error: Expecting value: line 1 column 1 (char 0)
+ea5e94a9-c392-4c82-803a-a7b225cb0ab8,NIO,蔚来服务中心 | 太原平阳路,,error,error: Expecting value: line 1 column 1 (char 0)
+db233893-4606-4fdd-b785-0070ed508ca2,NIO,蔚来服务中心 | 忻州奥源奥众,none,low,门店位于忻州市忻府区，所有候选商场均在太原市，城市不匹配且距离过远（65-74公里），门店名称中的'奥源奥众'与候选商场名称也无明显关联
+a098cf6f-8b8e-49ff-86e7-34126c6bbbc3,NIO,蔚来服务中心 | 许昌恒力汽贸园,,error,error: Expecting value: line 1 column 1 (char 0)
+731889a7-b2e8-4a17-98f1-bf97ce34f88f,NIO,蔚来服务中心 | 安阳高新,,error,error: Expecting value: line 1 column 1 (char 0)
+196f881c-172d-4440-9e7b-fd43542fe1f3,NIO,蔚来服务中心 | 驻马店驿城,none,low,门店位于驻马店市驿城区，候选商场中仅玖隆茂购物中心在同一城市且距离较近(2.3km)，但门店名称和地址均未包含该商场信息，且门店类型为服务中心而非商场店铺，无明显匹配依据
+fc57e38f-aaec-4f84-9dcc-5cb2ef9a8823,NIO,蔚来服务中心 | 石家庄裕华汽车科创园,,error,error: Expecting value: line 1 column 1 (char 0)
+7814136d-8955-45b7-a543-300d20d30efb,NIO,蔚来服务中心 | 贵阳林城东路,,error,error: Expecting value: line 1 column 1 (char 0)
+f03b461e-5c2c-4759-8abc-61995f70e664,NIO,蔚来服务中心 | 怀化鹤城华策,,error,error: Expecting value: line 1 column 1 (char 0)
+61ccc268-b677-46b4-b91e-9b7c26812117,NIO,蔚来服务中心 | 德州德城,,error,error: Expecting value: line 1 column 1 (char 0)
+83d4ebab-1c38-4509-98c4-47ed3d7a1209,NIO,蔚来服务中心 | 长沙金霞,none,low,门店位于开福区青竹湖街道，所有候选商场距离均超过10公里且位于不同区域，没有明显的品牌、名称或地址关联
+2db88de4-79b3-42b8-b379-60e6297800e0,NIO,蔚来服务中心 | 黄冈黄州,,error,error: Expecting value: line 1 column 1 (char 0)
+8eae2f8c-ef6b-428b-9c30-7112a47be0e9,NIO,蔚来服务中心 | 昆明经开汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+fa542c1a-2dd9-4d4f-9dd7-82e9277e49ca,NIO,蔚来服务中心 | 大理宜源,none,low,门店品牌为蔚来服务中心，候选商场昆百大·泰业城距离5.7公里较远，且门店名称和地址信息不明确，缺乏足够证据支持匹配
+1c1a4f19-f3fc-49cf-b6a0-da1545e099e4,NIO,蔚来服务中心 | 北京百旺绿谷,MALL_00521,medium,门店名称包含'百旺绿谷'，而候选商场'西北旺万象汇'位于同一区域（西北旺），距离最近（1427米），区域匹配度较高。但门店地址具体位置为停车场，可能并非位于商场内部，因此置信度为中等。
+990897e6-c2f5-45a7-8199-d80696248ae0,NIO,蔚来服务中心 | 北京后沙峪NSC,,error,error: Expecting value: line 1 column 1 (char 0)
+f0413317-5fe3-46ba-894c-b476b0890b66,NIO,蔚来服务中心 | 桂林临桂,,error,error: Expecting value: line 1 column 1 (char 0)
+f0b6c624-1dda-4cb8-b054-ce2ee844e1df,NIO,蔚来服务中心 | 柳州城中汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+ce2d3e3f-005b-49c6-b059-2c001b3e4e9b,NIO,蔚来服务中心 | 景德镇珠山,none,low,门店位于景德镇市珠山区，而所有候选商场均位于其他城市（九江、安庆、南昌），距离超过130公里，城市不匹配且距离过远，无合适候选
+b25e7097-7ee1-40c5-8f8e-d5c3e103f976,NIO,蔚来服务中心 | 抚州临川,MALL_00258,medium,品牌匹配（蔚来通常在商场设店），城市完全匹配，距离仅1.2公里合理，但门店名称未直接包含商场名
+455b3422-b8eb-4ae7-afbf-5cf6f812fc57,NIO,蔚来服务中心 | 宣城昭亭北路汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+79a0b41c-ef62-4fe9-90e1-99fff1120e39,NIO,蔚来服务中心 | 青岛黄岛江山中路,none,low,门店名称为'蔚来服务中心'且地址为NaN，所有候选商场距离均在9-20公里之间较远，品牌与商场名称无明显关联，无法确定匹配关系
+713a845d-b31b-4c51-916a-0cd515bf2e03,NIO,蔚来服务中心 | 青岛奥帆,none,low,门店名称包含'奥帆'但候选商场均无奥帆相关名称；门店地址为青岛大学附属医院生殖中心，与所有商场地址不匹配；最近商场距离超过2.3公里且无品牌关联
+781219f6-4d5d-479b-b2e5-2267abb0d524,NIO,蔚来服务中心 | 常州武进汽车城,none,low,门店名称为'蔚来服务中心|常州武进汽车城'，地址在武进区湖塘镇，而所有候选商场均位于钟楼区、天宁区或新北区，距离最近4.5公里，区域不匹配且门店名称明确指向汽车城而非购物中心
+a67750bd-5354-48bd-a942-3f3f7a3a0a05,NIO,蔚来服务中心 | 拉萨康奥,none,low,门店地址明确指向加油站，名称中无商场关键词；候选商场距离过远（9.5-17公里），且品牌定位为汽车服务中心，与购物中心功能不匹配
+dfa0a9c2-de06-4783-b533-62f195f75b6e,NIO,蔚来服务中心 | 赤峰鑫港,,error,error: Expecting value: line 1 column 1 (char 0)
+03d8e71a-5b15-4184-95be-df1a4d956ec1,NIO,蔚来服务中心 | 无锡钱桥,none,low,门店位于惠山区钱桥街道，但所有候选商场距离较远（7.8-16.3公里），且名称和地址中均无明确匹配的商场词。虽然同城，但距离和区域匹配度不足。
+909d0efb-3bd0-48d7-bc41-8ae644992a22,NIO,蔚来服务中心 | 衢州浙西汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+0d183776-30ed-4740-8529-b397897edd93,NIO,蔚来服务中心 | 苏州张家港楷德,MALL_00249,medium,曼巴特购物广场距离门店仅3.3公里，位于同一城市且品牌匹配，但门店名称和地址未直接提及该商场，故置信度为中等
+0b4048a3-adf2-4dc1-8891-75b4fe7e585f,NIO,蔚来服务中心 | 杭州良渚,none,low,门店位于拱墅区良渚，但所有候选商场距离较远（最近约4公里），且名称中无'良渚'相关词，品牌匹配度不高，没有合适的商场匹配
+484ed59c-025a-4143-808a-21baa5580819,NIO,蔚来服务中心 | 杭州五常,,error,error: Expecting value: line 1 column 1 (char 0)
+92192655-34e7-4017-ab4a-1cfbdc5ecd56,NIO,蔚来服务中心 | 苏州相城汽车城,none,low,门店名称为'蔚来服务中心'且地址指向具体街道和小学，属于独立服务网点而非商场内店铺。虽然候选商场城市匹配且距离较近，但品牌类型和门店功能与商场业态不符。
+1af12c6f-acc3-4076-b3cf-f7b10987dbaf,NIO,蔚来服务中心 | 杭州绍兴路,,error,error: Expecting value: line 1 column 1 (char 0)
+743dce03-193f-44d0-9098-fc830c3b53df,NIO,蔚来服务中心 | 苏州吴中,none,low,门店名称为'蔚来服务中心'，明确为汽车服务中心而非商场店铺；地址位于工业区(苏州三信机器制造有限公司)，与商场环境不符；所有候选商场距离均在10公里以上，超出合理范围
+c573f497-b49e-4639-801a-8b3137e8f38a,NIO,蔚来服务中心 | 苏州若水,,error,error: Expecting value: line 1 column 1 (char 0)
+d1e3f613-4383-4d93-8bba-1523a111864b,NIO,蔚来服务中心 | 广州白云大道,,error,error: Expecting value: line 1 column 1 (char 0)
+509ec548-e6c9-4cbe-b88c-916737540bdb,NIO,蔚来服务中心 | 绍兴诸暨汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+17e76990-dbd8-4f1b-a376-b9c08dc09e62,NIO,蔚来服务中心 | 海宁经开,none,low,候选商场距离过远（约25公里），且门店名称和地址中未包含商场相关词汇，门店位于海宁市而候选商场在嘉兴市区，区域不匹配
+2ca7b760-5def-49c3-926a-7ff620adb4ab,NIO,蔚来服务中心 | 三明三元,none,low,所有候选商场均位于其他城市（龙岩、福州、莆田），与门店所在的三明市不匹配，距离均超过140公里，品牌名称中也没有与候选商场相关的线索
+ab91ac1d-b92a-42f2-9648-5e17141d89ec,NIO,蔚来服务中心 | 昆山城东汽车城,,error,error: Expecting value: line 1 column 1 (char 0)
+bfb951ed-3934-4aee-9184-56a4efcd3c3e,NIO,蔚来服务中心 | 威海青岛路,,error,error: Expecting value: line 1 column 1 (char 0)
+1b7f6589-f04b-4986-99fb-ca8da6f1fa84,NIO,蔚来服务中心 | 广州万博,none,low,门店名称含'万博'但候选商场均无万博相关名称；地址为'祥和陵园'非常规商场位置；最近候选距离1.8公里但名称不匹配；品牌NIO服务中心可能为独立选址
+f67aea67-761c-46f1-a516-fb24b87d2438,NIO,蔚来服务中心 | 东阳世贸大道,none,low,门店名称包含'世贸大道'但候选商场名称不匹配，且距离最近的义乌之心(12.5km)超出通常服务中心选址范围，永盛购物中心(56km)距离过远，品牌和地址信息均无法提供足够匹配证据
+0fbcf253-822e-4fa1-8bd3-67356d7142c5,NIO,蔚来服务中心 | 金华永康,,error,error: Expecting value: line 1 column 1 (char 0)
+c5cb6649-1055-4e72-b9d4-5d3db395215e,NIO,蔚来服务中心 | 上海普陀红柳路,,error,error: Expecting value: line 1 column 1 (char 0)
+7ea589a9-1a9c-4b8e-a115-5290f832d9d6,NIO,蔚来服务中心 | 深圳南山前海,,error,error: Expecting value: line 1 column 1 (char 0)
+7f452210-bf65-4001-bb5b-e4b356a88361,NIO,蔚来服务中心 | 深圳竹子林,,error,error: Expecting value: line 1 column 1 (char 0)
+abbbc4ec-badc-45a5-8bf4-7dea4aa9bca4,NIO,蔚来服务中心 | 宁波姜山,,error,error: Expecting value: line 1 column 1 (char 0)
+0fc67a05-35c8-4c7e-a528-bee6a2a2f131,NIO,蔚来服务中心 | 漳州龙文北,,error,error: Expecting value: line 1 column 1 (char 0)
+9e735277-c563-4a2f-8f6c-a75be3670b3d,NIO,蔚来服务中心 | 泉州南环路,,error,error: Expecting value: line 1 column 1 (char 0)
+9134dbb9-d5f5-4c90-8df3-e63071c50fd3,NIO,蔚来服务中心 | 牡丹江阳明,MALL_00670,medium,品牌NIO通常在商场设店；门店名称和地址均未明确指向具体商场，但候选商场距离门店3.3公里且在同一个城市，是唯一可用选项
+2f9d789d-9903-49ca-9481-92a7fd113c0e,Tesla,温州万象城体验店,MALL_00210,high,门店名称和地址均明确包含'温州万象城'，且距离仅865米，城市完全匹配
+ff4d896d-010c-4b1d-a101-a58ab6f3d3c1,Tesla,秦皇岛北港大街城市展厅,none,low,门店位于秦皇岛市海港区，而所有候选商场均在唐山或天津，城市不匹配且距离超过120公里，超出合理范围。门店名称中的'城市展厅'与候选商场类型不符。
+bcef9341-eee9-4b7e-86ad-e78e56bf4474,Tesla,温州乐清银泰百货城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+5ae5b261-7171-41f2-82e7-278f49ed1e3c,Tesla,长沙运达汇城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+26107cca-9de6-4a38-8e3d-13e27f045b44,Tesla,乐山世豪广场城市展厅,none,low,门店位于乐山市市中区，而所有候选商场均在不同城市（眉山、成都、自贡），距离过远（50-100公里），且门店名称中的'世豪广场'与候选商场名称无匹配
+c1e98001-abba-4f28-b3c5-d0f320955dc9,Tesla,深圳深业上城城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+83a1bfce-47a2-4cd9-9154-3688122fa2c4,Tesla,重庆巴南万达广场城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+8af842b2-c14c-4602-aa84-ed02b6d546e4,Tesla,汉中吾悦城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+4ba7ebe4-060a-4f81-b13a-25a3e3bb48ad,Tesla,昆明海乐世界城市展厅,MALL_00037,high,门店名称中明确包含'海乐世界'，与候选商场MALL_00037名称完全一致；地址同属昆明市官渡区，且距离仅1公里，匹配度最高
+4e68efaf-048a-45ff-a86f-7d7a25fa756c,Tesla,郑州福塔特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+78283231-6ee9-4ae6-adaf-d45bb0462073,Tesla,呼和浩特海西路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+592ca23f-925f-4a31-9f65-7b47e43b0dfc,Tesla,德阳八角井特斯拉中心,none,low,门店名称和地址均未包含商场相关词汇，且距离万达广场约9.7公里较远，虽然城市匹配但缺乏足够关联证据支持门店位于该商场内
+78f3a77a-0cee-4191-9546-ed6712469599,Tesla,天津滨海万达体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+2f75cfb9-a791-419d-b90d-ddd8b327c1d9,Tesla,乌鲁木齐CCmall体验店,none,low,门店名称和地址中明确提到'CC MALL·时代广场'，但候选商场列表中无匹配名称的商场。虽然所有候选都在同城乌鲁木齐市，但最近的商场距离2.4公里且名称不匹配，无法确定对应关系。
+02839ff5-2930-4630-b870-53bb5e8489d7,Tesla,郑州正弘城体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+17e67988-da82-4719-8bf6-656980d7ede1,Tesla,南通永旺梦乐城体验店,none,high,门店名称和地址明确指向'永旺梦乐城'，但候选商场中只有CBD大有境和万象城，品牌、名称和地址均不匹配，且距离较远
+3d4892b2-001f-4948-b4fe-a04096c11f58,Tesla,重庆万州特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+20c15c9e-ec80-4479-ad05-b3f24bb6dd6e,Tesla,长沙天心特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+80d5af67-4ce9-4da5-8e4a-6765345d3505,Tesla,常熟富春江路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+12b75697-eb4f-4371-8fdf-8073e8a23ece,Tesla,杭州临平特斯拉中心,none,low,门店为特斯拉中心，属于独立展厅而非商场内店铺。候选商场距离较远（最近4.9公里），且名称和地址均无关联。门店地址明确为独立建筑，不符合商场店铺特征。
+734ec976-5ab1-4fb3-82f5-4482b4efd40e,Tesla,佛山顺德万象汇体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+83a76613-3987-4050-a2fe-e0497c084488,Tesla,Zhejiang - Taizhou Huangyan Tesla Center,none,low,候选商场位于温岭市，距离门店33公里过远，且门店地址明确位于黄岩区汽车广场，与银泰百货品牌和定位不匹配
+47aad554-cf38-4946-b892-d249b0218708,Tesla,重庆人和特斯拉中心,none,low,门店名称为'重庆人和特斯拉中心'，地址位于两江新区香锦路6号，属于独立门店而非商场内店铺。候选商场距离均较远（2.6-4.7公里），且门店名称和品牌均未体现与任何商场的关联。
+d79dd162-cc39-48de-8bfa-b1373a70d2d6,Tesla,金华永康特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f45039bc-0bab-4b39-bc50-b7552f97b05c,Tesla,昆山城东特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a912d7a3-b78f-4640-9fce-4663490f5fb1,Tesla,包头稀土路特斯拉中心,none,low,门店位于青山区稀土高新区，万达广场距离3.7公里较远，且门店名称和地址均未指向该商场，品牌特斯拉通常为独立门店
+58de5290-a93e-4dab-8cf8-6c8203591a54,Tesla,广州塔广场体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+e4b1db91-a3ed-40ce-8f52-2332ca8e058d,Tesla,上海虹桥特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8437f101-ab4a-4765-a0d3-1f1b776e556d,Tesla,深圳宝安会展中心特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+23e6c56c-6bba-4abd-9c2e-95f3189b4775,Tesla,上海唐镇特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f44101ee-b108-49e6-a64b-4b7e00723e40,Tesla,上海外高桥特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+784a7219-b8bd-4463-90a5-c85c63748443,Tesla,佛山南海特斯拉中心,none,low,门店地址明确位于'华南世纪车城'，而候选商场均为普通购物中心，品牌、名称和地址均不匹配，距离最近的商场也有4.4公里，无合适选择
+e76794f2-65bc-4327-8feb-66284715617b,Tesla,佛山千灯湖环宇城体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+0cec276a-656c-4ef3-9bd1-ea3ea48877a5,Tesla,烟台机场路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+fd27d98b-b30c-4b26-9041-cbe7ce163da9,Tesla,青岛黑龙江中路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+169b4564-92b3-4ab5-a826-f10584005b67,Tesla,广州花都特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+4c551e9f-3ef8-4953-aaa9-5a8038bcf1c4,Tesla,成都五龙山特斯拉中心,none,low,门店位于新都区五龙山路，而所有候选商场均在金牛区或其他区域，距离较远（13-15公里），且门店名称和地址中未发现与候选商场名称相关的匹配线索。
+f4df484c-a686-4b2c-924b-abc624392c6f,Tesla,常德德山特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+29e7b18e-7eab-4785-8868-0c698f6aba28,Tesla,乌鲁木齐特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+2796be84-a7dc-4dc9-a40d-1b8df715a28e,Tesla,郑州南三环特斯拉中心,none,low,门店地址明确位于云时代广场，但候选商场中均未包含该商场。虽然所有候选商场都在同城，但距离较远（8公里以上），且门店名称和地址均指向特定商场，与候选商场不匹配。
+f7a3703c-eac4-40bb-b732-2a4dd0de8a64,Tesla,张家口经开区特斯拉中心,none,high,所有候选商场均位于北京市，与门店所在城市张家口市不匹配，且距离超过120公里，不符合同城匹配要求
+87582889-624b-41f2-ae7e-4b5ef9ddc66a,Tesla,菏泽特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8dbd4e7f-4158-4fe7-8924-5857f6d342c2,Tesla,宿迁洪泽湖东路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+13b18b7e-2b89-4dcc-bf4b-d118ddb5cafb,Tesla,北京学院路特斯拉中心,none,low,门店为特斯拉中心，属于独立品牌门店而非商场内店铺。候选商场名称均与门店品牌无关，且距离较远(最近约3公里)，无明确商场匹配线索。
+6cf7dc49-ce28-4586-adbd-e8ee1b4fc7a5,Tesla,榆林高新特斯拉中心,none,low,门店位于高新区，候选商场在榆阳区，距离超过9公里；品牌Tesla通常为独立门店，且名称中无万达相关词汇，匹配度低
+37c7e222-0925-4dc4-ab2f-a0df67fcf6bf,Tesla,唐山开越路特斯拉中心,none,low,门店为特斯拉中心，属于独立汽车展厅，候选商场均为普通购物中心或数码广场，品牌和业态不匹配；门店名称和地址中均无对应商场名称；虽然同城且距离在7-9公里范围内，但商业类型差异过大
+edc42fb1-1fca-4eca-aeee-cb97da6453ef,Tesla,上海丰翔特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+2baf7b01-083a-464c-a85e-122ba98a11b5,Tesla,济南特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d2950911-bed3-4921-a3ce-801711ec3568,Tesla,鄂尔多斯铜川特斯拉中心,none,low,品牌Tesla通常为独立门店，且候选商场距离过远（12.7公里），名称和地址均未显示与万达广场关联
+0a504ca3-0f9e-47c8-81cc-a504cd231fe0,Tesla,徐州鼓楼特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+47aeaabb-fb88-44aa-a3fc-56701a944cf7,Tesla,宁波慈溪特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+e39d5765-7743-4f51-9fca-d2e2ed1e3a15,Tesla,成都龙潭寺特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+4f6dfe36-b61b-4529-9108-1b2bdb20dbb2,Tesla,中山城南特斯拉中心,none,low,门店名称为'中山城南特斯拉中心'，地址为'城南四路一号之三'，位于中山市南区街道，但候选商场均未在名称或地址中包含'城南'相关词汇，且距离最近的商场（石岐万象汇）约6.4公里，匹配度较低。门店可能为独立展厅，未入驻所列商场。
+d4b9e155-aa6e-44af-8063-54a884d883aa,Tesla,深圳观澜特斯拉直营钣喷中心,none,low,门店为特斯拉直营钣喷中心，属于汽车维修服务性质，而候选商场均为购物中心，业态不匹配；虽然城市相同且距离在7.5-15.8公里范围内，但无商场名称或地址直接关联证据
+aa7f25b6-ab1e-4418-a838-1ed96988e32b,Tesla,南宁五象交付中心,MALL_00449,medium,门店名称包含'五象'，地址位于五象新区，与候选商场'五象万象汇'名称中的区域词匹配；虽然距离较远(约546km)，但城市匹配且区域名称一致
+0ef107a6-ebb9-46e8-b164-2f52096407da,Tesla,长沙河西特斯拉中心,none,high,门店位于岳麓区含浦北路，与所有候选商场距离较远（3.8-8.2公里），且门店名称和品牌（Tesla）未与商场名称匹配，门店district（天心区）与商场位置不一致
+c40b4a48-612a-4886-bcf6-e885c584980c,Tesla,西宁昆仑东路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a1820ab4-b047-43b3-a724-64112d411a3a,Tesla,绍兴市诸暨市特斯拉中心,none,low,门店地址在诸暨市，而候选商场均在绍兴市区（距离45-59公里），距离过远不符合商场门店的常规分布；且特斯拉中心通常是独立展厅而非商场内店铺
+9f3ac508-afc1-48ce-8561-64a3c5054161,Tesla,北京居然之家北四环店城市展厅,none,low,门店名称明确指向'居然之家北四环店'，但候选商场列表中无居然之家相关商场。所有候选商场距离较远(2.5-9.4公里)，且门店位于朝阳区而行政区划显示为东城区，存在区域不一致。品牌Tesla虽可能入驻多个商场，但无直接证据支持与候选商场的关联。
+c5118a8e-d9fe-47d9-aaa6-0783b90a5f6b,Tesla,重庆悦荟购物中心城市展厅,MALL_00188,high,门店名称和地址中均明确包含'悦荟购物中心'，与候选商场MALL_00188名称完全一致；距离仅814米且同城匹配，品牌Tesla与商场类型相符
+9588e808-f0e2-4c76-a8d8-fc6cb3c53b48,Tesla,上海万科天空之城城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+5c921577-c55d-4db8-abcc-aa71ee919d59,Tesla,孝感吾悦广场城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+5ec31dac-a9d3-4e59-9151-d0f96677c7ef,Tesla,上海环宇城城市展厅,MALL_00408,high,门店名称和地址中明确包含'环宇城'，与候选商场'上海真如环宇城MAX'高度匹配；距离仅1公里，且位于同一区域（普陀区），品牌Tesla通常入驻大型购物中心
+9db43eec-caa5-4ddb-ae6a-e611baf38787,Tesla,上海浦江特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c0e374cb-1669-48fa-89e6-191aef48d0eb,Tesla,扬州荷叶特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+00a5ce91-41cf-4a68-b499-9518eacb603a,Tesla,上海美能达路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+27a96374-1458-492f-a3fd-a92b4c7ce601,Tesla,上海宝山万达广场体验店,MALL_00005,high,门店名称和地址明确包含'宝山万达广场'，与候选商场'万达广场(上海宝山店)'名称高度匹配；距离仅917米，城市一致，品牌Tesla通常入驻万达广场
+f23e0ccf-cb63-4206-85c4-edc7992c4132,Tesla,邯郸北环路特斯拉中心,none,low,门店名称明确为'特斯拉中心'且地址为'北环路88号'，而候选商场'新世纪中心'距离5367米较远，且无品牌关联或名称相似性，匹配度低
+b66b247c-0655-4bec-85b0-73b9a0ef4c17,Tesla,长春硅谷大街特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+7e299630-c5f8-4f49-ac32-d8d02b6aea75,Tesla,绵阳高新特斯拉中心,none,low,门店位于绵阳市安州区，所有候选商场均在不同城市（德阳、成都），距离超过39公里，城市不匹配且距离过远
+515ec6db-9b08-42e1-94c3-d0cbce1ec2be,Tesla,西安浐灞特斯拉中心,none,low,门店位于灞桥区，而所有候选商场均在曲江区或其他区域，距离较远(4.3-7.8公里)，且门店名称'特斯拉中心'与商场名称无直接关联，品牌特斯拉通常为独立门店
+2097d3ff-f991-4395-86c6-73f69ecb6d6e,Tesla,东莞寮步特斯拉中心 东莞市 广东省,none,low,门店位于东莞市寮步镇，但所有候选商场距离都在7公里以上，且门店名称和地址中未明确提及候选商场。虽然同城匹配，但距离较远且无直接关联证据，匹配度低。
+5b449db1-fec8-4d1b-9bcf-45ca41123b15,Tesla,深圳龙华壹方天地体验店,MALL_00523,high,门店名称和地址明确指向壹方天地D区，而候选商场中有壹方天地C区，虽然分区不同但同属壹方天地综合体，距离仅1.2公里，城市区域完全匹配
+539732ba-6f5d-4dcf-ada5-c37287c14fff,Tesla,乐山苏稽特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+390febd0-aa12-474a-9769-b8c6523fcce6,Tesla,南通宏兴路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f1948de3-cb07-4c02-9f1c-30e8b586a108,Tesla,江门蓬江特斯拉中心,MALL_00135,high,门店位于蓬江区建设三路，与汇悦大融城距离最近（3.1公里），同属江门市蓬江区，品牌Tesla通常入驻大型购物中心，名称和地址均高度匹配
+14badb49-53c2-445d-b9bd-6ff90c4567db,Tesla,北京通州万达体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+1bafb18b-26f8-4db7-8c60-2288d4ed102f,Tesla,厦门集美特斯拉中心,none,low,门店名称为'特斯拉中心'，地址为独立地址'集美区岩隆路33-3号'，无商场关联词；所有候选商场距离较远（5.3-18.3公里），且无品牌或名称关联，特斯拉通常为独立门店
+2c74c4c3-72f3-45d5-af9b-96d32a9ea3a4,Tesla,上海LCM置汇旭辉广场体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+e771daf8-f76d-4c3d-8a03-82aba1658f2f,Tesla,上海松江科创云廊城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+d983e849-d951-4534-9fbb-fe31b0698577,Tesla,上海普陀特斯拉中心 上海市 上海市,,error,error: Expecting value: line 1 column 1 (char 0)
+0fe628ac-8665-47dc-92e9-c6350eadad8e,Tesla,衡水振华新路特斯拉中心,none,low,门店品牌为特斯拉，但候选商场爱琴海购物广场距离较远（9.6公里），且门店名称和地址中未包含商场相关词汇，无法确认门店位于该商场内
+ee6a99a2-ab0f-49c8-b390-346ef1be5638,Tesla,盐城亭湖特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+2f6039f4-676d-4aa4-9d05-cdb55dac12d5,Tesla,宁波高新特斯拉中心,none,low,门店地址位于高新区，而所有候选商场均位于不同区域（阪急在鄞州区、天街在鄞州区、来福士在江北区但距离7.8公里较远），且门店名称'特斯拉中心'未明确指向商场，距离最近的候选商场也有3.1公里，匹配度低
+dc237a42-7c9f-4c36-a703-2f452dd3869b,Tesla,杭州萧山特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+77c1ccab-38da-49d7-83f8-a18241800af4,Tesla,上海SK大厦城市展厅,none,low,门店地址明确指向SK大厦，但候选商场中无名称包含'SK'的商场；门店位于浦东新区，而候选商场均不在同一行政区；虽然世博源距离最近(1.36km)，但品牌和地址匹配度不足
+808fdad0-6b29-4058-b2f0-97f686114916,Tesla,深圳李朗特斯拉中心,none,low,门店地址在龙岗区南湾街道，但district字段显示为罗湖区，存在区域不一致。候选商场中万达广场距离4.1km最近，但特斯拉通常为独立展厅而非商场内店铺，且名称中无商场词匹配。
+6b96c503-fee7-4875-a30c-badae2577730,Tesla,南充高坪特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+fe2d1f3c-c700-4a19-a859-e60b35ec4740,Tesla,杭州城北特斯拉中心,MALL_00479,medium,门店名称含'城北'，候选商场中'杭州城北万象城'名称高度匹配且距离最近（3公里），但门店地址在余杭区而商场在拱墅区存在区域差异
+d7ed1082-6e08-469c-983f-fecdcbc9a089,Tesla,天津旺港特斯拉中心,none,low,门店地址位于津南区旺港路，但所有候选商场距离较远（8.9-12.7公里），且商场名称与'旺港'无关联。特斯拉中心通常为独立展厅，与购物中心业态差异较大。
+c730754c-feb4-416c-b8bb-3912b5437a24,Tesla,上海向阳特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d3702fb9-6a94-47ec-8505-697d09a8e91e,Tesla,上海世纪汇体验店,MALL_00550,medium,门店名称含'世纪汇'而候选商场名称无直接匹配，但上海陆家嘴中心L+mall距离最近(1.76km)，且同属浦东新区，品牌Tesla常见于高端商场
+659ac42c-4287-4656-b795-e43642367449,Tesla,无锡兴昌路特斯拉中心,none,low,门店地址在新吴区兴昌南路308号，但候选商场均距离较远（最近约2.2公里），且门店名称中无明确商场词匹配。虽然同城匹配，但距离超出合理范围，无法确定与任一商场的关联。
+ee9e3878-c767-435e-9eb2-de7cb5186adb,Tesla,杭州西溪特斯拉中心,MALL_00143,medium,门店名称含'西溪'，地址在西湖区西溪路，与候选商场'杭州西溪印象城A座'名称中的'西溪'高度匹配，且距离最近(约3公里)，城市匹配，但特斯拉通常为独立展厅而非商场内店铺，故置信度为中等
+781d3c7e-cc35-4376-aee8-d43b73d50cca,Tesla,无锡先锋特斯拉中心,none,low,门店名称为'特斯拉中心'，地址位于锡东新区，且所有候选商场距离较远（最近3.1公里），品牌Tesla通常为独立展厅而非商场内店铺，无明确商场匹配证据
+c1f4a788-491d-482c-b61b-dce40d469c9a,Tesla,廊坊特斯拉中心,MALL_00101,medium,品牌Tesla通常在独立位置而非商场内，但门店与万达广场同属廊坊市广阳区，距离约3.6公里相对较近，且名称'特斯拉中心'暗示独立门店性质，因此匹配置信度为中等
+fd5a0f37-3cec-4e95-9740-579c3f0e508f,Tesla,合肥包河特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+42abf8fa-b1d3-404b-8033-b5e54db50c87,Tesla,台州温岭特斯拉中心,none,low,门店地址为温岭市温峤镇华祥路11号，与银泰百货(温岭店)距离4.7公里较远，且门店名称中无商场相关词汇，特斯拉通常为独立门店，距离超出合理范围，匹配度低
+f92d4bb2-9bd0-472e-bc12-2b0313e57e91,Tesla,淮安清江浦特斯拉中心,none,medium,门店位于淮阴区水渡口大道，与候选商场距离较远（7.7-9.2公里），且门店名称和品牌未体现与候选商场的关联，地址和商场名称也无明显匹配
+d67c4140-8dd3-4ee2-9836-2b35aac5f88a,Tesla,西安航天城特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d2201c78-5313-4bc8-821d-8f9028de39a2,Tesla,沧州渤海西路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+efdd0005-19de-46b2-9031-23ddeb52ddc8,Tesla,广州龙美特斯拉直营钣喷中心,none,low,门店为特斯拉直营钣喷中心，属于汽车维修服务类，而非商场内零售店。所有候选商场距离均在4公里以上，且门店名称和地址均未包含商场词汇，与商场业态不匹配。
+cc7ab056-b9f3-42c8-b5c1-b7e94a355e66,Tesla,株洲汽博园特斯拉中心,none,low,虽然城市匹配且距离在9公里内，但门店名称和地址均明确指向独立门店（株洲汽博园特斯拉中心），与候选商场'王府·星Mall'无品牌或名称关联，且距离较远，不符合特斯拉中心通常位于独立展厅的特征
+8134f55d-d2b6-4cbb-9ff1-3c66dd4aa906,Tesla,上海南桥特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+bf4d24e2-ae62-4641-b41d-d01babcdd63b,Tesla,宁波鄞州特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+263055d6-65b7-4e38-91dd-f06eb8f1ce32,Tesla,莆田特斯拉中心,none,low,门店位于涵江区，与商场距离8.9公里较远；品牌为特斯拉中心，通常为独立门店；名称和地址均未体现万达广场关联
+e40fcf00-8eee-4679-b71b-9f9a47420048,Tesla,北京蟹岛特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+bdbddfde-d86d-4ff6-95f2-206ce2468063,Tesla,阜阳特斯拉中心,none,low,门店品牌为特斯拉汽车专卖店，而候选商场'阜阳商厦中心'距离8.6公里较远，且商场名称与汽车销售中心性质不匹配，无明确证据表明特斯拉门店位于该商场内
+32edf097-f53f-455c-8c47-e47a56f9e622,Tesla,温州龙湾特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+97cd4ec0-0c20-4d0e-8f19-0037e3b340b2,Tesla,昆明经开特斯拉中心,none,low,门店名称为'昆明经开特斯拉中心'，地址位于经开区出口加工区，是独立门店而非商场内店铺。候选商场距离较远（4.7-10.3公里），且名称和地址均无关联，不匹配。
+2690126f-4b19-4827-953c-074f774ef20c,Tesla,惠州惠城特斯拉中心,none,low,所有候选商场距离门店过远（11-48公里），特斯拉中心通常为独立展厅而非商场内门店，且名称和地址未显示与任何商场的直接关联
+26c4da11-82f2-45f0-8827-c14bda84bf70,Tesla,Zhejiang - Jiaxing Tongxiang Tesla Center,none,low,门店位于桐乡市汽车商贸城，候选商场在嘉兴市区，距离超过21公里，位置不匹配
+2b97cecc-2488-4050-a3dc-d33e54457d4b,Tesla,青岛银川西路特斯拉中心,none,low,门店名称为'特斯拉中心'，地址为独立地址'银川西路29号'，而非商场内店铺；候选商场距离均在3-4公里外，且无品牌入驻证据；特斯拉多为独立展厅，与商场门店特征不符
+6ddc1f70-bd6e-424b-8e03-eafc66ab4623,Tesla,荆州特斯拉中心,none,low,门店地址在荆州区荆沙大道北侧安盛国际大酒店旁，而候选商场荆州万达距离2.37公里且位于不同区域，地址无明显关联，品牌Tesla通常为独立门店，与商场匹配度低
+9c980a01-7c4c-491f-b5ab-448809ae7a57,Tesla,长春净月特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+58714607-5e64-40dd-85c6-7d631a804dc5,Tesla,北京通州万达城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+be00e3fe-0ee7-4bf3-bcb8-9cb61fb26702,Tesla,成都高新特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+97e74986-01d4-403d-9cf1-e56241d55b60,Tesla,上海金桥特斯拉中心,none,low,门店名称为'特斯拉中心'而非商场内店铺，且所有候选商场距离均较远（3.2-7.5公里），无明确证据表明该特斯拉中心位于这些商场内。
+aa81eeda-8cd4-4b30-9fb8-668655438990,Tesla,商丘金桥北路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+7394d1c4-a92e-4707-b8d3-3b9c05aa6076,Tesla,深圳竹子林特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+59a29e16-9732-4e27-98de-25c57bdde848,Tesla,昆明宜家荟聚城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+eea4db90-06a8-48e6-9a0e-de1ea988bc00,Tesla,鄂尔多斯康巴什城市展厅,none,low,门店位于康巴什区，候选商场位于东胜区，距离27.5公里过远；品牌Tesla为独立展厅，名称和地址均未指向万达广场
+7794e515-0894-4043-8d21-4cb7a6ddad7b,Tesla,湖州德清银泰城城市展厅,none,low,门店名称明确包含'银泰城'但候选商场为'新浙北大厦'，品牌和商场名称不匹配；距离达40公里，远超一般商场范围；虽同属湖州市但不在同一区域
+cbf8fd39-e732-4cbb-ac8d-f67a05388bfb,Tesla,遵义吾悦广场城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+b61b8dcd-b4d0-4022-b806-40e44f538a83,Tesla,北京丽泽天街城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+6f3221b5-e29b-4781-9b28-e1eb4f2b1687,Tesla,榆林万达城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+fd4c9cb6-c9e5-4316-9408-67992e6ae6e4,Tesla,兴义通源宝源城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+121ae448-ec42-481b-a1a4-dc5198ee5c16,Tesla,武汉武昌万象城城市展厅,MALL_00104,high,门店名称和地址均明确指向'武汉武昌万象城'，与候选商场MALL_00104名称完全匹配，且同城距离最近（2.8公里），品牌一致
+551fead9-b043-402e-a74c-4e4a01145105,Tesla,杭州临安汽车城城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+8d92065e-c7cb-4f18-8945-fd42eed48101,Tesla,济宁济水大道特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+20dc4fbd-0662-4252-b835-21709f731762,Tesla,南阳信臣东路特斯拉中心,MALL_00064,medium,门店地址明确提到位于玉悦广场，但候选商场是万悦城。虽然名称不完全一致，但同在南阳市宛城区，距离仅2.6公里，品牌Tesla通常入驻大型商场，有一定匹配可能性
+0bbfc6d6-101c-42a3-b328-b6d9ca73ca44,Tesla,合肥高新银泰百货体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+015056d4-73d2-460c-baa2-88c6578c4479,Tesla,马鞍山雨山万达广场城市展厅,none,low,门店名称和地址明确指向万达广场，但候选列表中只有金鹰购物中心，距离2.3公里且品牌不匹配，无合适选项
+dadbb7a2-ef71-4339-a9a7-ea37a828f051,Tesla,郑州正弘汇体验店,,error,error: Expecting value: line 1 column 1 (char 0)
+024c6a44-9f03-46e2-b687-00dad6eff6cd,Tesla,秦皇岛茂业天地体验店,none,low,门店位于秦皇岛市海港区，所有候选商场均在唐山或天津，城市不匹配且距离过远（120km+）。门店名称中的'茂业天地'与候选商场名称无关联。
+e08b263c-5da3-4283-b97d-880c37e072f8,Tesla,聊城特斯拉中心,none,low,所有候选商场均位于济南市，与门店所在聊城市不匹配，且距离过远（80-91公里），不符合同城匹配要求
+80bd5595-f83b-466d-907a-04578d23a79d,Tesla,绍兴袍江特斯拉中心,none,low,所有候选商场距离门店均超过10公里，不符合距离约束；门店地址明确为独立地址，名称中无商场词，品牌特斯拉通常设独立展厅
+c103a07e-697f-4018-bc89-a11147424aec,Tesla,衢州柯城特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+6e08e68a-2eb6-4d25-9340-6b9b6124a59a,Tesla,杭州金沙湖特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+86078567-7b90-47ef-9b5c-52b28b368392,Tesla,湛江特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c0c368c0-6db3-4ed5-b318-70f9c2d977b4,Tesla,长沙北辰体验店,MALL_00579,high,门店名称包含'北辰'，地址在大悦城，而候选商场'长沙北辰荟'名称高度匹配，距离仅912米，同在开福区，品牌Tesla适合高端商场
+36819cf3-400a-49ba-b944-8ef80f938a8a,Tesla,柳州万象城城市展厅,MALL_00507,high,门店名称和地址均明确指向柳州万象城，品牌Tesla与该商场定位匹配，距离898.8米在合理范围内，城市和区完全一致
+5431aa75-21c0-4fc4-a38c-50aadaef0c29,Tesla,岳阳临港特斯拉中心,none,low,门店位于岳阳市岳阳楼区，所有候选商场均在不同城市（益阳、长沙、荆州），距离超过120公里，城市不匹配且距离过远
+12f88ed8-9224-45c3-a85b-48d99dc6d69d,Tesla,珠海金湾特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+1135288e-00f5-4f5d-a9a0-fa6688b221cc,Tesla,深圳海上世界体验店,none,high,门店名称明确包含'海上世界体验店'，而候选商场列表中没有任何一个商场的名称包含'海上世界'。虽然所有候选商场都在深圳市且距离在合理范围内，但名称完全不匹配，因此没有合适的候选商场。
+3463daac-c27d-4df6-b327-b9690c45b13d,Tesla,珠海香洲前山特斯拉直营钣喷中心,,error,error: Expecting value: line 1 column 1 (char 0)
+123be94d-f22f-4f6a-9f71-7a177be9bb53,Tesla,义乌北苑特斯拉中心,none,low,门店名含'中心'而非商场专有名词，地址未提商场，距离最近商场3.2公里但无品牌入驻证据，无法确认匹配
+45281356-c769-451a-9ff2-ef59289e2cc6,Tesla,厦门湖里特斯拉中心,none,low,门店地址为湖里区兴隆路88号，而候选商场均位于思明区或其他区域，距离最近的SM新生活广场也有2公里，且门店名称中未包含候选商场名称，品牌匹配度低。
+eca7b5aa-1dc9-4982-abfd-a6a2a593c354,Tesla,广州番禺迎宾路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+068bbd9a-00be-4a1a-9be6-a2edbc69c215,Tesla,洛阳建设路特斯拉中心,none,low,门店名称为'特斯拉中心'且品牌为Tesla，属于独立门店而非商场内店铺；候选商场距离均较远(2.4-8.6公里)，且名称和地址均无关联
+a20541b9-3509-47cc-b1fa-d2618c814533,Tesla,杭州亚奥万象天地体验店,MALL_00296,high,门店名称和地址中明确包含'亚奥万象天地'，与候选商场MALL_00296名称完全一致，且距离仅955米，城市匹配，品牌Tesla通常入驻大型购物中心
+651145b2-016a-4e44-a3ab-a2cee87d7137,Tesla,Shenzhen - Shenzhen Longgang Delivery Center,none,low,门店地址在龙岗区，但行政区标记为龙华区，存在区域矛盾。候选商场中，龙岗万达广场距离最近(2.2km)且名称含'龙岗'，但无法确认门店实际位置。其他商场距离过远(7-10km)且无明显关联证据。
+615f28c6-9925-437b-a464-20122764dabf,Tesla,台州椒江特斯拉中心,none,low,门店位于台州湾新区经通路，而候选商场银泰百货(温岭店)距离27.9公里过远，且所在区域（温岭市与椒江区）不匹配，品牌Tesla通常为独立门店而非商场内店铺
+f802ff18-d052-483f-8410-267e82a0c6e4,Tesla,成都北星大道特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a41fb859-da01-4fe4-8456-0dd6fc359888,Tesla,苏州马运路特斯拉中心,none,low,门店地址位于高新区马运路，而候选商场均在不同区域（狮山、相城、苏州中心等），距离较远（3.7-19.5公里），且特斯拉中心通常为独立门店而非商场内店铺，品牌和名称特征均不匹配任何候选商场
+33ee9363-df28-400f-a2f9-5251ecf53f0e,Tesla,柳州特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b76385d0-2cd6-4862-8d53-b5ec01326d63,Tesla,德州特斯拉中心,MALL_00465,medium,门店与商场同属德州市，距离3.4公里在合理范围内。虽然门店名称中未明确提及该商场，但特斯拉常入驻大型商业中心，且这是唯一候选且城市匹配。
+3ef78452-0505-4c66-a359-36f91cf7004a,Tesla,无锡江海西路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ab1f9845-c24e-4006-a346-d98883dd10ed,Tesla,潍坊特斯拉中心,none,low,所有候选商场名称与特斯拉品牌无关，且距离较远（4-9公里），地址匹配度低，无法确认门店位于任一候选商场内
+265a8e08-cd61-4101-963f-ca71faba5379,Tesla,广州番禺市桥特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+cc15d7b1-62c9-43d8-83a0-d2e09ef094f9,Tesla,福州青口特斯拉中心,none,high,门店地址位于闽侯县尚干镇，而所有候选商场均在福州市区，距离较远（9-16公里）。门店名称'特斯拉中心'表明这是独立展厅而非商场内店铺，与候选商场品牌定位不匹配
+8891d9a8-64c8-462d-8883-025496deaed9,Tesla,Nanjing - Nanjing Zhengtai Tesla Center,,error,error: Expecting value: line 1 column 1 (char 0)
+f9c7b48d-00f2-493f-bfea-4dfb989b56f6,Tesla,深圳宝安大铲湾特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b57d94f0-fa71-4234-8c78-0913c11aea08,Tesla,成都犀浦特斯拉中心,none,low,门店地址为高新西区迪康大道3号，位于郫都区；所有候选商场均位于金牛区或较远区域，距离最近商场超过4公里，且名称中无匹配商场词，品牌特斯拉通常为独立门店
+b36fcef5-d8cf-4de4-9894-a7c2cc33dce2,Tesla,成都三圣乡特斯拉中心,none,low,特斯拉通常设立独立门店而非商场内店铺，候选商场名称与'特斯拉中心'无关联，且所有候选距离均超过4.5公里，地址和品牌特征均不匹配
+b6228dd3-e055-4826-adbf-79d22cf16b3e,Tesla,宁波余姚特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+e7e2bfd5-f62f-4df2-a223-acf2261c8eb6,Tesla,南宁青秀特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+6896f9fe-e1bd-40e2-9592-b3d3f51a096c,Tesla,上海国和路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9293de2c-a874-4426-9376-c974bfdc45c3,Tesla,郑州中原特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b2b9ba8c-2b94-4601-9cea-a05193feef9b,Tesla,东莞高埗特斯拉中心,none,low,门店位于高埗镇，候选商场均在8-23公里外的其他区域，距离过远；门店名称为'特斯拉中心'而非商场内店铺，品牌Tesla多为独立门店；无明确证据表明该门店位于任一候选商场内
+c8aa1a05-c3c8-4d84-b3fc-ddc3df5ddcd0,Tesla,湖州吴兴特斯拉中心,MALL_00599,medium,门店与商场同属湖州市，距离约2.9公里在合理范围内。虽然商场名称'新浙北大厦'与特斯拉门店名称无直接关联，但地址区域一致（吴兴区），且是唯一候选，匹配可能性中等。
+c270082f-f220-4163-be80-511257ee67ca,Tesla,珠海环宇城体验店,MALL_00011,high,门店名称和地址中明确包含'环宇城'，与候选商场'珠海环宇城'名称完全匹配；城市、区域一致；距离仅603.8米，非常接近
+51bd8c2d-dde3-43a6-a22f-f868069c6711,Tesla,保定中冀汽车园城市展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+15aa0f47-e3af-4431-8580-3f9e866a1d72,Tesla,深圳龙岗特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+7599dd43-b750-4382-ac29-de48c4065c94,Tesla,漳州特斯拉中心,none,low,门店位于漳州市芗城区，所有候选商场均不在漳州（4个在厦门，1个城市未知），距离最近6.5公里但城市不匹配，品牌Tesla通常独立设店而非入驻商场
+6a9c85f0-bbdd-40ca-9dd1-b0f96c64df25,Tesla,郑州前程特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+0761bb12-8a5e-4a4d-a4ed-69c6bd59bd07,Tesla,重庆渝航特斯拉中心,none,low,所有候选商场距离门店均超过7公里，且门店名称和地址中未明确提及候选商场名称，品牌Tesla通常为独立展厅而非商场内店铺
+ccc32daf-41d0-4439-a080-1aec13531f37,Tesla,重庆汇金特斯拉中心,none,low,门店名称为'重庆汇金特斯拉中心'，地址在'渝北区汇金路3号'，未包含任何候选商场的名称关键词。所有候选商场距离较远（3.4-8.3公里），且无品牌、地址或名称的直接关联，无法确定匹配关系。
+fde54f48-4530-499e-869d-6e60ee5ad6d1,Tesla,淄博山泉路特斯拉中心,none,low,门店名称和地址中均未包含商场相关词汇，且与唯一候选商场'淄博万象汇'距离较远（2.5公里），品牌特斯拉通常为独立门店。无充分证据表明门店位于该商场内。
+48435a11-22b0-46ad-add8-4eb4229b8481,Tesla,天津北辰特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+1de745ec-9a76-47ac-b956-3306f56df5ce,Tesla,北京亦庄特斯拉中心 北京市 北京市,,error,error: Expecting value: line 1 column 1 (char 0)
+f0a5ebb8-f2b2-4abc-9bfe-ca0a58bdb5c8,Tesla,北京来广营特斯拉中心 北京市 北京市,,error,error: Expecting value: line 1 column 1 (char 0)
+3f7f190b-b28c-429e-a297-bea71a661979,Tesla,沈阳北二路特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+13c138c2-e62c-4b1c-9462-ab4f61d371eb,Tesla,深圳南山西丽特斯拉中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9cd3cf7e-5190-4c17-9daf-027e08c31336,Li Auto,理想汽车上海天空之城零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+1d0e65ba-7d6f-4959-b426-d61cdbd1c290,Li Auto,理想汽车泸州万象汇零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+5adcaf2a-4393-43de-a255-4351b25625a0,Li Auto,理想汽车南京雨花万象天地零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+4c571801-78b2-458f-b135-e9eedfc4fb23,Li Auto,理想汽车苏州绿宝广场零售展厅,none,low,门店名称明确包含'绿宝广场'但候选商场中无此商场；所有候选商场名称与门店提示不匹配，且最近商场距离超过4公里，匹配度低
+42afa6be-e9d6-4401-b00e-4fd1a1973a75,Li Auto,理想汽车合肥庐阳万象汇零售展厅,none,low,门店名称明确包含'万象汇'但候选商场中没有万象汇；距离最近的候选商场(苏宁广场)距离约2公里，名称不匹配；其他候选商场在品牌、名称和距离上均无明显关联
+978caad6-d50e-439c-a0c5-ed23403e0389,Li Auto,理想汽车天津津南吾悦广场零售展厅,MALL_00862,high,门店名称明确包含'吾悦广场'，与候选商场'MALL_00862'名称完全匹配；地址同属津南区，距离仅566米极近；城市匹配均为天津。其他候选商场名称不匹配且距离较远。
+117ccfa2-53d1-4b09-be0a-2896fb8aef1f,Li Auto,理想汽车宿迁泗阳吾悦广场零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+a7fb81bd-9b3b-4b9b-be1a-a0454f0a5fbc,Li Auto,理想汽车深圳福田印力山姆零售展厅,none,low,门店地址明确位于印力中心，但候选商场列表中无印力中心，最近商场茂业天地距离7.5公里过远，品牌名称和地址均不匹配其他候选
+64d9f05a-86a8-4814-87e7-3e21b78e8bec,Li Auto,理想汽车河源源城零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+8c9b8b9e-269c-4c3e-a77e-94fd85751329,Li Auto,理想汽车高岭香江汽车城零售展厅,none,low,候选商场仅有一个，距离门店11.2公里较远，且门店名称明确指向'高岭香江汽车城'而非'星沙万象汇'，品牌匹配度低，无合适候选
+73bb5b85-f243-42da-a642-d25b722673ff,Li Auto,理想汽车宁波鄞州山姆零售展厅,none,low,门店名称和地址明确指向山姆会员店（沃尔玛旗下），而候选商场是银泰百货，品牌和商场类型不匹配。虽然城市和距离符合，但核心商场名称不一致。
+3c07737c-e649-4b00-9639-e9e5634efd15,Li Auto,理想汽车太原空港零售展厅,none,low,门店名称为'理想汽车太原空港零售展厅'，地址位于龙城大街与太榆路交叉口，所有候选商场距离均在7公里以上且不在同一行政区（小店区），门店类型为零售展厅而非商场内店铺，无明显商场名称匹配
+9653bf33-72df-4d0e-870f-a90999343fa1,Li Auto,理想汽车沈阳皇姑万象汇零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+d2a852d8-176f-4220-865d-935a3fa2ba1e,Li Auto,理想汽车葫芦岛大江奥莱零售展厅,none,low,门店地址明确指向葫芦岛市大江奥莱，但候选商场均位于营口、鞍山、大连等不同城市，距离超过120公里且城市不匹配，没有合适的候选商场
+0a14a20d-a5fa-42f6-a3e2-83e2bd92a495,Li Auto,理想汽车东莞常平翔龙天地零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+f216d357-c842-4798-a407-7a0c7c26e33d,Li Auto,理想汽车青岛凯德Mall零售展厅,none,medium,门店名称明确包含'凯德Mall'但候选商场中无凯德Mall，万达广场距离1.6公里较近但品牌不匹配，其他商场距离更远且无关联证据
+06424631-9171-4a31-9249-45dce8bcc71b,Li Auto,理想汽车青锋国际汽车城零售展厅,none,low,门店名称和地址明确指向'青锋国际汽车城'，而候选商场均为普通购物中心，无汽车城相关特征，品牌定位和场所类型不匹配
+e6c1e9fd-805f-4366-a00e-911f88275ec7,Li Auto,理想汽车嘉兴华府八佰伴零售展厅,none,low,门店地址明确指向'嘉兴八佰伴'，但候选商场为'桐乡万象汇'，品牌和商场名称不匹配，距离超过20公里较远，虽然同城但匹配度低
+ec26080d-ea5c-42af-98b9-bbdc3e6d579f,Li Auto,理想汽车重庆巴南万达零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+efee0ac2-ac88-4339-811d-70c79c155b00,Li Auto,理想汽车深圳龙岗坪地零售展厅,none,low,门店位于龙岗区坪地街道，候选商场中深圳坪山益田假日世界虽在同城且距离相对较近(8.7km)，但名称和地址均无坪地相关词，其他候选距离更远且区域不匹配，无明显证据表明门店位于这些商场内
+3cf8f93c-22ca-4b53-a96d-a597a2058baa,Li Auto,理想汽车佛山南海车天地,none,low,门店位于佛山市南海区，但所有候选商场均不在同一行政区（最近的三水万达距离76.7公里，且城市不匹配），且门店名称中的'车天地'与候选商场名称无关联
+09366f1c-34c9-47af-acdd-65c81228de6c,Li Auto,理想汽车漯河湘江西路零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+ca6978d4-5aa9-457e-893f-e7152b9d9e6a,Li Auto,理想汽车广州黄埔科学城零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+b25afe39-e861-4d0f-bc25-bb3d97ca2f68,Li Auto,理想汽车柳州万象城,,error,error: Expecting value: line 1 column 1 (char 0)
+5b174ff0-e32e-4aa9-b5ff-14f93af17016,Li Auto,理想汽车濮阳万达零售展厅,none,low,门店明确位于濮阳经开万达广场，但候选商场中万达广场(安阳店)虽品牌匹配但城市不匹配且距离过远(70公里)，其他商场品牌、城市均不匹配，距离均超过65公里，无合适候选
+e84f7c82-f4b6-4b69-8092-b35be4f489b0,Li Auto,理想汽车周口开元万达零售展厅,none,low,门店位于河南周口，名称包含'开元万达'，但所有候选商场均位于不同城市（大同、北京、呼和浩特），距离超过150公里且城市不匹配，无合适选项
+6f0e0535-13f5-49d0-bbf3-94be0487054f,Li Auto,理想汽车黄石港万达零售中心（外展店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b4f4be64-e84e-442f-9d6a-f4e168644de1,Li Auto,理想汽车湛江赤坎瀚龙车城零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+68b2368b-ff71-4d60-9a91-7a37295937d7,Li Auto,理想汽车深业车城零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+f6f379f7-74f8-4476-b906-66b37ab18a89,Li Auto,理想汽车许昌万达零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+b53745df-532b-4bcd-a9f9-ce65cc5bbf6b,Li Auto,理想汽车滁州天长吾悦广场零售展厅,none,low,门店位于滁州天长市吾悦广场，但所有候选商场均在江苏省（扬州、南京），城市不匹配且距离过远（47-62公里），无合适的候选商场
+4cd1e2f0-6435-43d8-996a-05aa0cf254bc,Li Auto,理想汽车万象汇零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5138981a-64be-4060-a076-b661ec6d1956,Li Auto,理想汽车马鞍山万达广场零售展厅,none,low,门店名称明确指向'万达广场'，但候选商场中无万达广场。距离最近的金鹰购物中心(2.8km)虽在同城，但品牌不匹配；其他候选商场城市不匹配且距离过远(37-42km)。
+833d3610-e6f2-4bf7-a28b-86a41b536f08,Li Auto,理想汽车温州乐清正大广场零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+7397ad57-8163-4cec-bc6d-eed90d3398ca,Li Auto,通化新胜北路零售中心,none,low,所有候选商场均位于沈阳市（辽宁省），而门店在通化市（吉林省），城市不匹配，且距离超过200公里，不符合同城匹配条件
+c70f4233-70fa-4853-9dbe-79330c4a527f,Li Auto,理想汽车佛山金沙洲金铂天地零售展厅,MALL_00167,high,门店名称包含'金沙洲金铂天地'，与候选商场名称完全匹配；距离仅422.9米非常近；虽然城市行政划分不完全一致（门店在佛山南海区，商场在佛山市），但地理位置相邻，属于同一都市圈
+f6c66f1d-565c-4df0-8b99-7eaf8f5d2224,Li Auto,理想汽车湖州东吴银泰城零售展厅,none,high,门店地址明确指向'东吴银泰百货'，但候选列表中无此商场。最近候选'新浙北大厦'虽距离仅830米，但名称和品牌均不匹配，其他候选距离过远且城市不匹配
+6fa55884-0aaf-447d-8f54-eb6eeef5226a,Li Auto,理想汽车荆门漳河万达零售展厅,MALL_00716,high,门店名称和地址均明确指向'漳河万达广场'，与候选商场'万达广场(漳河店)'名称高度匹配；城市一致，距离3.2公里在合理范围内
+fe693f5a-0f4c-4b09-9c34-6aaea107777e,Li Auto,理想汽车北海零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+25878ddc-ac73-4189-b78b-5d432be1094e,Li Auto,理想汽车连云港东海汽车城零售展厅,none,low,所有候选商场均不在同一城市（连云港），距离过远（70-106公里），且门店名称中明确指向'东海汽车城'而非购物中心
+8fff76ae-1180-418f-bad6-81e093584a36,Li Auto,理想汽车南通万象城零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+321811f9-05de-4943-ba8e-eac3e7f2e3c1,Li Auto,理想汽车泰州靖江印象城零售展厅,none,low,门店名称和地址明确指向'靖江印象城'，但候选商场中无此商场，且所有候选均不在泰州市，距离最近的无锡八佰伴A馆也超过8公里，城市不匹配
+8e9fa684-e08a-4ee7-8260-863fd66ac502,Li Auto,理想汽车张家港金茂览秀城零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+e004e85b-6bb5-493c-9d52-26785ef04b0d,Li Auto,理想汽车威海金蚂蚁零售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+20b972f2-5d15-4a43-8e4d-dc74013a34b3,Li Auto,理想汽车淄博富力万达零售展厅,none,low,门店地址明确指向'富力万达广场'但候选商场中无此商场，其他万达广场距离过远且城市不匹配，最近的淄博万象汇虽同城但品牌名称不匹配
+0f549e6d-7b65-420d-b511-65c02028a506,Li Auto,理想汽车青岛重庆南路零售展厅,none,low,门店名称中无明确商场词，地址未提及商场，且所有候选商场距离较远（3.6-4.8公里），无法确认位于任一商场内
+18605e82-604a-4432-88de-6969b887687b,Li Auto,理想汽车四平铁东零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8c8b57fd-a65b-4842-8582-8f0c553465df,Li Auto,理想汽车湖州德清银泰城零售展厅,none,low,门店位于湖州市德清县，名称包含'银泰城'，但所有候选商场均在杭州市，城市不匹配，且距离均超过20公里，无合适选项
+ad0f95c0-b6f3-454d-b831-00c1e942eb7a,Li Auto,理想汽车江门蓬江建设三路零售中心,none,low,门店位于广东江门，所有候选商场均在北京，城市不匹配且距离过远（7.6-15.7公里），品牌和名称也无明显关联
+d6bfc436-915f-4b66-a1c9-517a8730287d,Li Auto,理想天水万达零售展厅,none,low,门店名称为'理想天水万达零售展厅'，地址为'甘肃天水秦州万达广场'，明确指向天水万达广场。但候选商场列表中没有天水市的商场，最近的是139公里外的宝鸡市商场，城市不匹配且距离过远。
+74f95be9-919f-4d3a-8808-9c861c901e5d,Li Auto,理想汽车牡丹江万达广场零售展厅,MALL_00670,high,门店名称明确包含'万达广场'，且地址与候选商场'万达广场(牡丹江店)'在同一城市，距离仅3.6米，品牌和地理位置高度匹配
+0c32dbd9-6d35-412a-a121-f4f5becf4097,Li Auto,理想汽车佛山顺德陈村交付零售展厅,none,low,门店位于佛山市顺德区陈村镇，地址明确在顺联机械城16座。候选商场均在10公里外，且城市/区不匹配（门店在顺德区，候选在南海区或广州市）。名称中无商场词匹配，距离过远且地理位置不符。
+111a0922-06c2-4846-a3ee-eb4d0d014250,Li Auto,理想汽车北京石景山国际汽贸园零售中心,none,low,门店位于石景山区国际汽车贸易服务园区，名称和地址均明确指向专业汽车贸易园区而非购物中心。候选商场中无任何位于石景山区的选项，且距离最近商场超过8公里，品牌和地址特征均不匹配
+80efa638-4f1e-47b2-a9cf-7606bca3f862,Li Auto,理想汽车北京博瑞汽车园零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+e21c5a34-e444-4e8a-a571-339c7e8eaa4e,Li Auto,理想汽车天津滨海万达零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+85fd6a54-a351-477b-8b35-282f0517746b,Li Auto,理想汽车天津空港零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+0efc2b17-0ed1-4d1c-8599-7914b9b2a2ae,Li Auto,理想汽车天津滨海第五大街零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+98cb7cbd-e0b9-44b0-aa2e-69cf3765a1fa,Li Auto,理想汽车天津西青中北镇零售中心,none,low,门店位于西青区中北镇，但所有候选商场距离过远（最近7.4公里），且名称和地址均无明确关联，无法确认门店位于这些商场内
+4932983f-6f1a-475b-9dc6-3c160a34f4b6,Li Auto,理想汽车霸州益昌路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a534423b-e87a-4d1c-9593-d06dcc51462a,Li Auto,理想汽车廊坊三河零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+87b7f38c-1924-4b14-94a7-f748a2aeeb89,Li Auto,理想汽车邢台华北汽车公园零售中心,none,low,门店位于邢台市襄都区的华北汽车公园内，品牌为理想汽车，属于汽车零售中心。候选商场中，邢台北国商城虽然同城且距离最近（约9.2公里），但门店名称和地址均明确指向独立汽车园区而非购物中心；其他候选位于邯郸或石家庄，距离过远（57-102公里）且城市不匹配。因此无合适商场候选。
+51d06796-6c96-4898-aa64-b025707709a2,Li Auto,理想汽车秦皇岛经开零售中心,none,low,所有候选商场均位于唐山或天津，与门店所在城市秦皇岛不匹配，且距离过远（均超过100公里），没有合适的商场可匹配
+0326a1b2-5368-4f9b-b9e7-8517a58ed57a,Li Auto,理想汽车衡水昌明南大街零售中心,none,high,门店位于衡水市桃城区，而候选商场中唯一同城的爱琴海购物广场距离3.4公里，但门店名称和地址均未提及该商场，且门店类型为独立零售中心。其他候选商场均在不同城市，距离超过70公里，明显不匹配。
+7c981133-3926-4cf9-925c-9dea7be0c03b,Li Auto,理想汽车唐山开平零售中心,none,low,门店位于唐山开平区，候选商场中唐山数码广场、万达广场、爱琴海购物中心均在唐山市但距离较远（6-8公里），且门店名称无明确商场关联；天津的两个商场距离过远（80+公里）且城市不匹配。无合适候选。
+856f2f7f-a7f6-4ab3-aad0-da0a213f6670,Li Auto,理想汽车大同庞大汽车园零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f8a553af-0073-465b-9845-062d0b29a162,Li Auto,理想汽车太原新汇众零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b6fe6acd-07c3-4c5c-9d76-5e1a92c1a30f,Li Auto,理想汽车鄂尔多斯铜川零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+72800e3e-d1c6-4d94-a5ab-e91052e40903,Li Auto,理想汽车呼和浩特海西路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+4c9db4d0-5a21-4710-8b07-750d1ddcd650,Li Auto,理想汽车包头稀土路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+302c0827-b202-4ea9-aa51-9cdeeebe0ab3,Li Auto,理想汽车通辽科尔沁创业大道零售中心,none,low,门店位于通辽市科尔沁区，候选商场中只有万达广场在通辽且距离较近（4.9公里），但city_matched为false且品牌名称无商场关联；其他商场均在沈阳，距离过远（200+公里）且城市不匹配
+1e9be900-4bb2-4f9b-91fd-50d14bc884cb,Li Auto,理想汽车沈阳东陵路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+703e3ca0-be02-471e-af07-583105045797,Li Auto,理想汽车大连华北路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ea9d15ff-d3af-4cc0-8f6f-4f5516c818c4,Li Auto,理想汽车鞍山建设大道零售中心,none,low,门店位于鞍山市铁西区，但所有候选商场中唯一同城的鞍山万象汇距离过远(5.3公里)，且门店名称和地址均未显示与任何候选商场关联。其他候选商场位于不同城市，距离更远(76-80公里)，不符合匹配条件。
+94593151-e5e7-40e3-a518-96bb0961835b,Li Auto,理想汽车长春欧亚卖场零售中心,MALL_00505,high,门店名称和地址中均明确包含'欧亚卖场'，且与候选商场'长春欧亚卖场'名称完全匹配，距离仅248.9米，位置高度吻合
+6fe00aea-f5a9-411c-b0dd-4e007925ed08,Li Auto,理想汽车长春自由大路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+27aa6b76-7657-4f1f-8bae-8867b7193db5,Li Auto,理想汽车通化新胜北路零售中心,none,low,门店位于通化市，所有候选商场均在沈阳市，城市不匹配且距离超过200公里，不符合同城要求
+6d02cd06-8a3e-4f97-acf7-a640c59b1244,Li Auto,理想汽车长春净月零售中心,none,low,门店位于长春市南关区，但所有候选商场距离均在7.5-13.4公里之间，过远；且门店名称'零售中心'暗示可能是独立展厅而非商场内店铺；城市虽匹配但无地理位置接近的商场
+af0952ad-e965-4186-92bf-88d851051413,Li Auto,理想汽车长春景阳大路零售中心,none,medium,门店名称为'零售中心'而非商场店，且所有候选商场距离较远（4.6-6.8公里），无品牌、名称或地址直接关联
+5aa4311c-ab0f-4530-a162-7eba9e6b45b0,Li Auto,理想汽车哈尔滨南岗零售中心,none,low,门店位于哈尔滨市香坊区哈平路162号，而候选商场万达广场在哈西店距离5.3公里，融创茂距离17.9公里，均较远且无品牌关联；门店名称中无商场词匹配，地址也无明显关联
+9bb7d141-710b-4331-9cfb-da7c6db7c1f3,Li Auto,理想汽车哈尔滨机场路零售中心,none,low,门店位于道里区机场路，距离最近的万达广场(哈尔滨哈西店)约2.8公里但位于不同商圈，且门店名称和地址均未体现与候选商场的关联；哈尔滨融创茂距离过远(11.6公里)。无充分证据支持匹配任一商场。
+1418deb8-b4fa-4011-a99e-e513f3082118,Li Auto,理想汽车大庆安萨路零售中心,none,low,门店位于大庆市高新区，而候选商场中距离最近的百脑汇和万达广场萨尔图店距离均超过4公里且区域不匹配，其他商场距离过远或位于不同城市，没有合适的商场匹配
+054ce6fa-bc6a-4c86-987c-49e7ae9ddea6,Li Auto,理想汽车上海红柳路汽车城零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+09ba5134-e196-48be-b8e6-1d3ccd56c3f5,Li Auto,理想汽车上海蟠龙天地零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+0b17d7c4-e7eb-4c39-ac25-8d91f9aad81d,Li Auto,理想汽车上海张杨路零售中心,none,low,门店地址明确为张杨路2761号，但所有候选商场距离均在4.7-8.3公里外，远超常规商场内店铺距离范围（通常<500米）。虽城市匹配，但无商场名称或地址线索表明关联性。
+18dfaf83-5e76-435b-9e21-488279f75671,Li Auto,理想汽车上海杨浦中心零售中心,none,low,门店位于杨浦区民庆路202号，但候选商场中百联又一城距离最近（1.8km）却在杨浦区，而门店行政区显示为虹口区，存在区域不一致；其他商场距离均超过6km且无明显品牌关联，匹配度低
+827e8798-d1d2-4d8a-9836-bb52abbba00d,Li Auto,理想汽车上海松江手拉手汽车港零售中心,none,low,门店地址在松江区泗泾镇，而候选商场中九亭金地广场虽距离最近(2.5km)但在九亭镇，其他商场距离过远(7km+)。门店名称明确指向'手拉手汽车港'这一汽车园区而非传统商场，候选商场均不匹配该专业汽车零售场所特征。
+10d5986d-6ed0-40f9-8ca4-026e7d614509,Li Auto,理想汽车苏州工业园区零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5db43e4a-f68b-4086-9e4d-f9f42882bedd,Li Auto,理想汽车徐州万科新淮中心零售中心,none,high,门店名称明确指向'新淮中心'，但候选商场列表中无此商场。所有候选商场的名称均不包含'新淮中心'，且距离最近的候选商场(万达广场徐州云龙店)也有1.8公里，不符合门店实际位置。
+e4d59029-22fb-481e-baf6-1ad2bda9a63a,Li Auto,理想汽车苏州常熟永旺零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-76f6a6c0-1a7a-4a6c-bca7-9e9a504a821b', 'request_id': '76f6a6c0-1a7a-4a6c-bca7-9e9a504a821b'}"
+a4489bb4-59c7-488b-a210-50ae701ca23b,Li Auto,理想汽车南京浦珠北路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-7d73dbde-ecf8-4f39-9bb4-011d49e1930a', 'request_id': '7d73dbde-ecf8-4f39-9bb4-011d49e1930a'}"
+daf9bc61-d9e4-4865-84a9-312567855a7e,Li Auto,理想汽车南京建邺金鹰零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-c3746b58-9420-4cb1-9473-14cb0a569d68', 'request_id': 'c3746b58-9420-4cb1-9473-14cb0a569d68'}"
+2252cc7d-4f6f-44cd-a86d-787a91445992,Li Auto,理想汽车淮安旺旺路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-2b40c694-daa2-438c-b66d-3910577f03dc', 'request_id': '2b40c694-daa2-438c-b66d-3910577f03dc'}"
+0f0b7412-c293-4c72-ab44-25f14440d840,Li Auto,理想汽车苏州高新国际汽车城零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-641828ef-a5c2-4ee6-a6dc-b079658ca899', 'request_id': '641828ef-a5c2-4ee6-a6dc-b079658ca899'}"
+e0d03d04-f163-4410-85c8-1da7708141c9,Li Auto,理想汽车张家港攀华国际广场零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8691a543-a2dc-4b4a-a8d9-bb60c56831ab,Li Auto,理想汽车南通经开零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-c0e1826c-0b34-4dc3-b2b4-50719bff2ebe', 'request_id': 'c0e1826c-0b34-4dc3-b2b4-50719bff2ebe'}"
+57d07a78-da99-4a6b-996a-9b260696729c,Li Auto,理想汽车无锡先锋零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-f44fa7cb-b9d5-4af0-ab20-c30c0e255a22', 'request_id': 'f44fa7cb-b9d5-4af0-ab20-c30c0e255a22'}"
+065359d7-36cb-4815-9ef2-5a426e996e89,Li Auto,理想汽车南京溧星路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-ba172a9a-e4b7-4e15-9f43-d2bc277a1364', 'request_id': 'ba172a9a-e4b7-4e15-9f43-d2bc277a1364'}"
+98759292-593c-4c40-a9dd-85adf135c561,Li Auto,理想汽车无锡滨湖零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-7e35932c-cb8e-42bc-8a78-a05154dc2d5f', 'request_id': '7e35932c-cb8e-42bc-8a78-a05154dc2d5f'}"
+510c5cbe-b4dd-4fb5-9fc1-d9268cd7b857,Li Auto,理想汽车镇江丁卯汽车城零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-25521f68-1c5e-4fcc-9295-35db084f6583', 'request_id': '25521f68-1c5e-4fcc-9295-35db084f6583'}"
+f7bb7e78-7e64-4ad8-8971-245d1532064b,Li Auto,理想汽车南京仙尧路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-d248fe68-e944-4ab1-a2a2-894a48b78b36', 'request_id': 'd248fe68-e944-4ab1-a2a2-894a48b78b36'}"
+bd88f095-0863-4da4-bd1b-8f6eab351404,Li Auto,理想汽车嘉兴海宁文苑路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-c1f7667c-afe2-4e06-9e3a-2bb336bdabbc', 'request_id': 'c1f7667c-afe2-4e06-9e3a-2bb336bdabbc'}"
+b4dd21de-2541-4e75-9ea0-1dbf2040e9d0,Li Auto,理想汽车台州温岭城西大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-a7f75e1c-d58c-44fc-8050-784830344e52', 'request_id': 'a7f75e1c-d58c-44fc-8050-784830344e52'}"
+c71c3520-9bf5-46f7-8b1b-fd05dba0aeb1,Li Auto,理想汽车宁波余姚零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-795f627e-6a2a-43f9-96a4-82e589aefa81', 'request_id': '795f627e-6a2a-43f9-96a4-82e589aefa81'}"
+a153b341-b94a-480d-b861-58b301fe44c5,Li Auto,理想汽车温州万象城零售展厅,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-12cf0416-71ce-4c0e-9e63-9326df720fa8', 'request_id': '12cf0416-71ce-4c0e-9e63-9326df720fa8'}"
+fea24841-4797-46b6-be22-3f95ef4ba4bd,Li Auto,理想汽车衢州吾悦广场零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-cf2d5755-81b5-432a-ae93-11d45024bf21', 'request_id': 'cf2d5755-81b5-432a-ae93-11d45024bf21'}"
+21750eef-ad26-472f-a88c-622dd7063b33,Li Auto,理想汽车杭州文一西路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-a85131e2-f66b-4ac9-be2d-25d517bd3edb', 'request_id': 'a85131e2-f66b-4ac9-be2d-25d517bd3edb'}"
+ae287a71-296d-4d25-bebf-469ae29d260f,Li Auto,理想汽车杭州西溪路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-46418c19-50a5-47df-a2cc-62ef31699a68', 'request_id': '46418c19-50a5-47df-a2cc-62ef31699a68'}"
+68b2fb68-aaa5-42bd-b59c-a8a15a6f2178,Li Auto,理想汽车温州乐清零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-b829464e-0a1b-4ef6-ba8d-b21254e0cab1', 'request_id': 'b829464e-0a1b-4ef6-ba8d-b21254e0cab1'}"
+07ab91ba-b2eb-4657-a77c-08a99dce6f96,Li Auto,理想汽车杭州T-Car汽车公园零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-6aa8cb1d-2461-4099-ac8b-31c201ba9ff3', 'request_id': '6aa8cb1d-2461-4099-ac8b-31c201ba9ff3'}"
+9e1fa720-b78b-49a2-b8f1-7edf6cdb1c23,Li Auto,理想汽车宁波江北大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-42eb7c26-dc5b-45eb-9be9-bb9b416974db', 'request_id': '42eb7c26-dc5b-45eb-9be9-bb9b416974db'}"
+e48b191f-db82-4efa-9192-8dec226dfe2d,Li Auto,理想汽车宁波慈溪杨梅大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-3f945f45-26ab-4ec1-8145-09205c226c46', 'request_id': '3f945f45-26ab-4ec1-8145-09205c226c46'}"
+fc64a06e-9d3a-46e1-846f-385b196397a3,Li Auto,理想汽车嘉兴南湖零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-59dd4940-b8df-4255-b60c-b28f7da9319d', 'request_id': '59dd4940-b8df-4255-b60c-b28f7da9319d'}"
+563844f0-ccec-42bd-a66c-bb3b86cb23e9,Li Auto,理想汽车宁波下应北路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-ade96c91-43e0-4e39-b772-aa39fe1dca90', 'request_id': 'ade96c91-43e0-4e39-b772-aa39fe1dca90'}"
+fb5441ea-bbe9-47bc-b2f9-b401ba558219,Li Auto,理想汽车绍兴金柯桥大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-cda74546-ebf6-40f7-86ef-74a4037f70a8', 'request_id': 'cda74546-ebf6-40f7-86ef-74a4037f70a8'}"
+ce7c4c36-5afd-4625-a00b-a85427f5aaf1,Li Auto,理想汽车杭州梦马小镇零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-ba85ec15-2db4-4efe-b6c9-c293d6c68bf0', 'request_id': 'ba85ec15-2db4-4efe-b6c9-c293d6c68bf0'}"
+ab0ea047-a458-40a1-962d-c1ac07ddcabc,Li Auto,理想汽车衢州衢江零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-5ae23282-43f3-4dde-a04f-f756a6e2906f', 'request_id': '5ae23282-43f3-4dde-a04f-f756a6e2906f'}"
+6102cacc-7193-4113-b1af-e20a9f1d587c,Li Auto,理想汽车杭州临平零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-2a6566e8-dd4d-4287-b6f1-48704da059fd', 'request_id': '2a6566e8-dd4d-4287-b6f1-48704da059fd'}"
+17692cf6-9f4c-4e73-b036-569c35173ed6,Li Auto,理想汽车台州黄岩零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-0a9c6fd8-90d5-460f-ae05-ba69f9a75ea6', 'request_id': '0a9c6fd8-90d5-460f-ae05-ba69f9a75ea6'}"
+fff727f3-ca18-4df4-815f-cb9c6b7cca13,Li Auto,理想汽车嘉兴嘉杭路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-8c04b09d-4155-4eac-bb7f-5416c3f6e4ef', 'request_id': '8c04b09d-4155-4eac-bb7f-5416c3f6e4ef'}"
+68f2a598-4412-4a45-9387-e0c6b132f68d,Li Auto,理想汽车滁州醉翁西路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-eb25670c-894b-47a8-89d6-3e2c510e5b2c', 'request_id': 'eb25670c-894b-47a8-89d6-3e2c510e5b2c'}"
+c70ddff0-45f6-47e7-8920-2ad4a29f5cfd,Li Auto,理想汽车合肥长江西路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-b416844d-462e-488b-aee1-45bf70300af0', 'request_id': 'b416844d-462e-488b-aee1-45bf70300af0'}"
+dc22fbf1-6144-4ea8-af49-54269b95ca25,Li Auto,理想汽车阜阳国际汽车城零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-cec5c053-679f-4770-80df-15d58cbedc4f', 'request_id': 'cec5c053-679f-4770-80df-15d58cbedc4f'}"
+f9de30c9-9c69-48d0-88fe-3c8c6fd2616c,Li Auto,理想汽车阜阳阜南路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-a071ced0-f02a-4c39-a600-b5c0bf3744aa', 'request_id': 'a071ced0-f02a-4c39-a600-b5c0bf3744aa'}"
+2cdf8bc4-388d-4202-b374-9db84bb5ddaa,Li Auto,理想汽车亳州药都大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-51f65762-cbdd-4ab1-a4ba-411f063322a8', 'request_id': '51f65762-cbdd-4ab1-a4ba-411f063322a8'}"
+c29c8354-390f-41d8-a5b5-e279a6ca46bf,Li Auto,理想汽车马鞍山佳达汽车园零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-2affda89-8a28-4bd3-b1f1-513e28fe7651', 'request_id': '2affda89-8a28-4bd3-b1f1-513e28fe7651'}"
+caa39957-e258-4aac-b594-135745c00f55,Li Auto,理想汽车合肥蜀山新粮仓KUKU PARK零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-a023edb1-488d-4d4a-939f-c62b6d80546f', 'request_id': 'a023edb1-488d-4d4a-939f-c62b6d80546f'}"
+7d6cfa42-79d9-46e1-b5d7-10187df731dd,Li Auto,理想汽车合肥瑶海国际汽车城零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-510a7bb5-9712-42a1-988f-543c68c7f406', 'request_id': '510a7bb5-9712-42a1-988f-543c68c7f406'}"
+72d5c16e-d204-49e9-b31a-ca4244551db0,Li Auto,理想汽车合肥滨湖方圆荟零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-6e6015b5-50d3-4ec8-a544-51e04bc94aa6', 'request_id': '6e6015b5-50d3-4ec8-a544-51e04bc94aa6'}"
+07960f5c-6cd5-4efa-aa3d-ce2341f68b73,Li Auto,理想汽车合肥包河零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-1021124b-69ae-40bf-a161-f87640f2e417', 'request_id': '1021124b-69ae-40bf-a161-f87640f2e417'}"
+3f605c1c-175d-4ca6-b7e7-60f57eed9710,Li Auto,理想汽车合肥庐阳蒙城北路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-b87ba012-f4cd-4349-89b6-007793b67e17', 'request_id': 'b87ba012-f4cd-4349-89b6-007793b67e17'}"
+46954b84-c318-4571-89e7-37294ff3689e,Li Auto,理想汽车厦门湖里翔远路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-459c9153-e558-484d-a459-458c4b740735', 'request_id': '459c9153-e558-484d-a459-458c4b740735'}"
+0a15287e-178f-4744-90cb-4605d46201f7,Li Auto,理想汽车泉州洛江零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-b3678416-d167-46ed-90e1-5e0db0264030', 'request_id': 'b3678416-d167-46ed-90e1-5e0db0264030'}"
+594ffaa1-75c4-4c2a-ba46-188bddb99e84,Li Auto,理想汽车厦门海沧马青路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-6ed40dd8-3693-46fa-b449-fff9873433f0', 'request_id': '6ed40dd8-3693-46fa-b449-fff9873433f0'}"
+61feae5e-d180-42d3-b3bf-cd32c7478845,Li Auto,理想汽车漳州龙文北路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-cc355b46-0211-43d1-8e7e-6d08203d9d27', 'request_id': 'cc355b46-0211-43d1-8e7e-6d08203d9d27'}"
+06740f01-078b-4acd-a7ee-56c962e8f87c,Li Auto,理想汽车福州榕泰零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-969982ac-b02a-48d4-914e-55aa3537db29', 'request_id': '969982ac-b02a-48d4-914e-55aa3537db29'}"
+de05b82f-c669-4972-85c3-c4d175ada9d5,Li Auto,理想汽车厦门集美岩兴路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-b68b8388-314a-4070-8533-7b590c09efc1', 'request_id': 'b68b8388-314a-4070-8533-7b590c09efc1'}"
+a8d6521c-d00b-4305-adfb-42f98a883f43,Li Auto,理想汽车九江九瑞大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-0b001f02-7417-449f-aa89-6db306c85a76', 'request_id': '0b001f02-7417-449f-aa89-6db306c85a76'}"
+04f238ed-e3ce-4375-878f-57df08ff5be5,Li Auto,理想汽车南昌高新大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-57141f9e-f401-4d3a-af5f-4b4f4c135f97', 'request_id': '57141f9e-f401-4d3a-af5f-4b4f4c135f97'}"
+e8f08b72-b56b-4dd3-ad74-c4c05810da2c,Li Auto,理想汽车赣州章贡零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-eb8c51c9-1a6f-49c9-9a97-3d5f05d49bba', 'request_id': 'eb8c51c9-1a6f-49c9-9a97-3d5f05d49bba'}"
+76b0d31e-f834-42cd-bf21-05f52d4e8c9e,Li Auto,理想汽车上饶月亮湾零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-9a5431f5-2395-471d-bcca-3e071098b6f9', 'request_id': '9a5431f5-2395-471d-bcca-3e071098b6f9'}"
+d03936e6-38a0-4009-9d1c-5b1e015844a8,Li Auto,理想汽车抚州临川零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-a69c8ba2-7f3f-481a-b4d9-4c9752c427e5', 'request_id': 'a69c8ba2-7f3f-481a-b4d9-4c9752c427e5'}"
+d22dea19-0e66-42d7-acad-aec7cd04b4dc,Li Auto,理想汽车枣庄光明大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-73426839-1ab3-4d64-8e16-c0429b07402e', 'request_id': '73426839-1ab3-4d64-8e16-c0429b07402e'}"
+1989ef54-517a-4679-84bd-b084e75a15e2,Li Auto,理想汽车淄博富力万达零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-3d22c1cd-c53c-426f-8b13-1d2dc4b441b4', 'request_id': '3d22c1cd-c53c-426f-8b13-1d2dc4b441b4'}"
+46d10863-f1c1-412d-81db-94c6f1c05eb7,Li Auto,理想汽车济南凤凰路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-d95a60fe-9c83-4f49-9cfd-fffa0b8aada1', 'request_id': 'd95a60fe-9c83-4f49-9cfd-fffa0b8aada1'}"
+65c52249-03db-4d30-b4e6-22578318c5db,Li Auto,理想汽车济南经十西路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-5e3b376a-d689-4ae9-85b3-b04b7fd08775', 'request_id': '5e3b376a-d689-4ae9-85b3-b04b7fd08775'}"
+82371606-b581-4079-8f6c-deea5bccade1,Li Auto,理想汽车烟台北京南路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-dae0a997-2966-4fe0-ac8b-0e22080f2a32', 'request_id': 'dae0a997-2966-4fe0-ac8b-0e22080f2a32'}"
+36cb1a13-4f39-4950-ba35-d8fe9a22ef87,Li Auto,理想汽车东营北二路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-b6249442-f86d-4458-96e7-dbed4dfd3996', 'request_id': 'b6249442-f86d-4458-96e7-dbed4dfd3996'}"
+a5ad9a31-f1b0-412a-b716-610763ad882c,Li Auto,理想汽车淄博金晶大道零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-38c7c68d-04f0-4f1f-9b8b-2bcfc33d014c', 'request_id': '38c7c68d-04f0-4f1f-9b8b-2bcfc33d014c'}"
+e808955e-86c7-4169-8493-d719f82fbe95,Li Auto,理想汽车临沂河东零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-67d1727e-5bdb-4b07-a420-2ff1756ab899', 'request_id': '67d1727e-5bdb-4b07-a420-2ff1756ab899'}"
+04a7fa91-9496-4883-9449-e9c7934385c7,Li Auto,理想汽车青岛福州北路零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-1f238d69-e9a8-4dc8-a6e9-6082c18398d9', 'request_id': '1f238d69-e9a8-4dc8-a6e9-6082c18398d9'}"
+9d3a5b78-f51a-4d7a-8b0c-6ca94141167d,Li Auto,理想汽车济南CBD零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-be6597ac-db4a-4e85-8909-8348456f71c8', 'request_id': 'be6597ac-db4a-4e85-8909-8348456f71c8'}"
+d863c603-ad89-4ef1-8cfe-8361efc3e526,Li Auto,理想汽车临沂义堂零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-06da9815-7791-462e-8157-f4d5372a6e02', 'request_id': '06da9815-7791-462e-8157-f4d5372a6e02'}"
+21853f83-e31b-48c5-8a88-41e4648eb21e,Li Auto,理想汽车青岛李沧万达零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-20880bdd-c5d4-480f-b110-22e20cd1cd41', 'request_id': '20880bdd-c5d4-480f-b110-22e20cd1cd41'}"
+c79d047b-b496-418d-a5c5-a8b69f5e4a0d,Li Auto,理想汽车淄博经开零售中心,,error,"error: Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-0274fd46-90dc-4939-9566-8505143cbc7f', 'request_id': '0274fd46-90dc-4939-9566-8505143cbc7f'}"
+76d7bd5f-c061-41e5-9d9f-ab508d572b01,Li Auto,理想汽车德州德百汽车城零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+3b5ef9fe-1817-4386-a756-1946eb415b24,Li Auto,理想汽车青岛银川西路零售中心,none,low,门店地址明确在银川西路25号，但候选商场均无银川西路相关名称或位置匹配。虽然同城且距离较近，但品牌门店通常有明确位置指向，现有候选缺乏关联依据。
+ac6f2cc1-3d6a-4547-949e-516c672998f2,Li Auto,理想汽车郑州经开零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d73ba580-8ca5-4197-976f-ab5ae1713def,Li Auto,理想汽车南阳北京大道零售中心,none,low,门店位于南阳市卧龙区，候选商场中仅万悦城同在南阳市但距离7.8公里较远，且城市匹配标记为false；其余候选均在不同城市，距离超过100公里不适用。门店名称无明确商场词匹配，综合考虑无合适候选。
+c5c5be00-48b4-4992-a5eb-f739537d7e3c,Li Auto,理想汽车洛阳涧西零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+efa7fa63-b0e4-43b2-a42f-43a09d119ec2,Li Auto,理想汽车漯河湘江西路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c2d79060-b553-45a2-b670-5db2d8689508,Li Auto,理想汽车开封金明大道零售中心,none,low,门店位于开封市，所有候选商场均在郑州市，城市不匹配且距离过远（约49-56公里），不符合同城匹配要求
+f1be9c0c-0303-47bd-ab83-a128c237e45e,Li Auto,理想汽车郑州高新零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+096d2b29-ed7d-45c5-8777-7018f4289f0b,Li Auto,理想汽车信阳南京大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b1252b20-b87f-49d0-b21d-97c2f0b2095a,Li Auto,理想汽车商丘梁园零售中心,none,low,候选商场中唯一同城的MALL_00230距离门店5.7公里，且其名称'UDV 河南商丘正弘汇'与门店名称'理想汽车商丘梁园零售中心'无直接关联，地址也不匹配；其他候选商场均在不同城市，距离过远
+64009e3a-e519-4aca-bec3-899a8e66e4c7,Li Auto,理想汽车郑州南三环零售中心,none,low,门店名称和地址均未提及丹尼斯百货，距离较远(8.7公里)，虽然同城但缺乏品牌入驻和地理位置关联证据
+3465fe85-dc57-4cc8-874a-da78cb28476e,Li Auto,理想汽车郑州省汽贸零售中心,none,low,门店地址明确指向'省汽贸中心'，候选商场丹尼斯百货距离11.8公里且品牌类型不匹配，没有合适的商场候选
+eca53689-ca09-4992-86e3-83dd32f9921c,Li Auto,理想汽车驻马店开源大道零售中心,MALL_00712,medium,城市匹配且距离较近（2.5公里），但商场名称与门店名称无直接关联，且门店地址未提及该商场
+36a23767-7af7-4c85-9447-d755ec53d035,Li Auto,理想汽车宜昌西陵发展大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+710e8185-e4a5-4241-8406-816b025b9f49,Li Auto,理想汽车襄阳钻石大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+6f8f43a7-4b49-4827-87f5-f9d7db721e24,Li Auto,理想汽车孝感孝汉大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+6ccfd7c7-70c6-46d8-9417-36cbc08c928c,Li Auto,理想汽车荆州荆沙大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d794bc48-bad1-4f82-935d-9cc399d78a9d,Li Auto,理想汽车武汉白沙洲零售中心,none,low,门店地址明确指向'智电新能源汽车产业园'，而非传统购物中心。候选商场距离较远(8-12公里)，且名称中无'白沙洲'相关关键词，品牌入驻可能性低。
+23da2376-ff5f-4a47-8797-09147035d9ee,Li Auto,理想汽车武汉东西湖零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8e1ece29-133d-4640-bc53-53e6b03bbea7,Li Auto,理想汽车荆门国际汽车城零售中心,none,low,门店地址明确指向'荆门国际汽车城'，而候选商场是'万达广场(漳河店)'，两者品牌、名称和定位完全不同。虽然同城且距离较近(8.1公里)，但汽车零售中心与购物广场的业态差异太大，不匹配。
+749c4746-6b9a-4252-a91e-7d27c2fd3e3d,Li Auto,理想汽车武汉光谷一路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+2e58e147-9e99-4a2d-bd1b-64e10f6c1984,Li Auto,理想汽车湘潭九华汽车大世界零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c9810f95-2910-4fe2-833a-86a7b5c97371,Li Auto,理想汽车长沙岳麓区阳光100零售中心,none,low,门店位于岳麓区，候选商场星沙万象汇距离过远（约19公里），且区域不匹配。门店名称中的'阳光100'与候选商场名称无关联，品牌匹配度低
+110791b2-5e35-4cf1-aeeb-187134be62ca,Li Auto,理想汽车长沙雀园路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+0d7c344b-fed5-461f-ab53-c08dd7a006e8,Li Auto,理想汽车长沙中南汽车城零售中心,MALL_00814,medium,品牌匹配为Li Auto，距离较近(2.6km)，同城匹配。但门店名称明确指向'中南汽车城'而非'星沙万象汇'，地址区域不完全一致，故置信度为中等
+0838acfe-98ca-46bf-854c-549e0b173e47,Li Auto,理想汽车长沙望城金星北路零售中心,none,low,候选商场位于星沙区，与门店所在的望城区距离较远（20公里），且商场名称'星沙万象汇'与门店名称'金星北路零售中心'无关联，品牌和地址信息也不匹配
+a6c40669-6155-4c62-9753-c38ed60a418e,Li Auto,理想汽车广州荔湾零售中心,none,low,门店名称和地址中均无商场名称匹配，候选商场距离过远（20km+），且品牌为汽车零售中心可能独立选址而非入驻商场
+d8a13acf-1260-45c4-97b1-a26536f83aa8,Li Auto,理想汽车东莞南城莞太路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ea399c9c-1bd6-448f-ac39-d559320ebcdc,Li Auto,理想汽车佛山顺德大良广珠路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b191f4f1-fb9a-49a3-b3c5-5ff52dbe84e3,Li Auto,理想汽车揭阳环市北路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+1a183b58-db38-4047-a0ec-0810bbb8cd35,Li Auto,理想汽车佛山海八路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f005d7f5-1646-40a1-be36-422efd30b05c,Li Auto,理想汽车广州花都零售中心,none,low,门店位于花都区，距离最近的候选商场超过22公里，且候选商场名称与门店地址区域不匹配，无直接关联证据
+01cf2daa-a73e-4636-a6b3-7b9b9291b55e,Li Auto,理想汽车广州天河广园路零售中心,none,low,门店位于天河区广园路，候选商场云门New Park距离13.6公里过远，永旺梦乐城(新塘店)距离25.7公里更远且位于新塘，与门店所在区域不匹配。门店名称和地址均未提及候选商场，无合适匹配。
+3519ff7f-e707-4b5e-948a-7d2154816093,Li Auto,理想汽车潮州潮安零售中心,none,low,门店位于潮州市潮安区，所有候选商场均不在同一城市（揭阳、汕头、梅州、漳州），距离最近的揭阳榕城万达广场也超过20公里，不符合同城匹配要求。
+c6af28c4-bb9f-4c32-981b-00a518f69383,Li Auto,理想汽车珠海香洲零售中心,none,low,候选商场位于斗门区，距离门店23.98公里过远，且门店位于香洲区，区域不匹配。商场名称'万达广场'与门店名称'零售中心'无关联，品牌'Li Auto'也非该商场典型租户。
+24ef054f-f431-42df-b543-f36a913995a7,Li Auto,理想汽车东莞厚街零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a3739830-047e-48d0-a91a-69513a7fc8ed,Li Auto,理想汽车深圳宝安西乡零售中心,none,low,门店位于宝安区西乡，但所有候选商场距离过远（最近约25公里），且商场名称和地址均无关联。门店地址明确指向独立建筑而非商场内部。
+2234f52d-0f6a-4f1e-b263-4dc7fac42551,Li Auto,理想汽车广州黄埔科学城零售中心,none,high,门店地址明确指向'黄埔大悦汇'商场，但候选商场的名称均不包含该关键词，且距离较远（超过16公里），无法匹配
+a88879fe-f0e6-4b70-85c5-72e5d2055be7,Li Auto,理想汽车佛山南海平洲零售中心,none,low,门店位于佛山市南海区平洲，候选商场中距离最近的千灯湖环宇城约2.6公里，但名称和地址均无明显关联。其他商场距离更远且无品牌匹配证据，无法确认具体归属商场。
+2f2691e4-5fec-4960-8e36-fc43212fa587,Li Auto,理想汽车佛山顺德陈村零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+738d2f78-a5c3-493b-b56c-62df0f501c39,Li Auto,理想汽车广州番禺大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9a76afeb-4370-4719-a628-be604cf403a3,Li Auto,理想汽车南山嘉进隆零售中心店,none,low,门店地址明确指向'嘉进隆汽车城'，但候选商场名称中均无相关关键词，且距离最近商场(茂业天地)也有18.7公里，品牌为汽车零售中心与候选商场类型不匹配
+62cd93a7-23e0-4fba-9a97-1b63fe1a2642,Li Auto,理想汽车深圳福田竹子林零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+98f436bc-b7aa-432a-963d-ad947d68864f,Li Auto,理想汽车广州白云大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+6faf3d3d-f5b0-4ebb-a333-b6427fd19bb1,Li Auto,理想汽车惠州汝湖零售中心,none,low,门店地址明确位于惠城区汝湖镇高速出口处，而候选商场港惠购物中心距离14公里过远，不符合零售中心通常位于商场内的特征，且品牌门店多为独立展厅而非商场店铺
+3bd32e26-7cf7-48ed-904b-ca4582959d22,Li Auto,理想汽车中山彩虹大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+67d0f945-a825-4fb6-a837-6146c94f3760,Li Auto,理想汽车玉林万达零售中心,MALL_00411,high,门店地址明确位于玉林万达广场，且候选商场万达广场(玉林店)名称匹配，距离仅72米，城市一致，品牌和位置高度吻合
+b5b22125-fc80-497b-b692-95167d720828,Li Auto,理想汽车南宁荟聚零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+29ba584a-8bd9-4bc1-bdc9-0e4b37db9efc,Li Auto,理想汽车南宁白沙大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+0707553f-6caa-4a5b-aff4-ea294cc68ade,Li Auto,理想汽车桂林灵川八里七路零售中心,none,high,门店地址明确位于桂林灵川八里七路的中通新能源汽车文化城，而候选商场距离门店较远（最近约11公里），且名称、地址均无匹配，没有合适的候选商场
+5ca6ee31-f291-4e0c-8b68-f0ec0ae4b07e,Li Auto,理想汽车南宁南站大道零售中心,none,low,候选商场位于青秀区，与门店所在的江南区距离较远（21公里），且商场名称'龙湖南宁青秀天街'与门店名称'理想汽车南宁南站大道零售中心'无品牌或位置关联
+2d8bf9e7-4534-4774-8c4f-0d00df8d4340,Li Auto,理想汽车南宁秀厢大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9d2eaf79-eb47-4e54-acf3-7876b6892b7b,Li Auto,理想汽车三亚吉阳综合零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9ad77e16-cf9c-41b9-acd4-ad20f944bd7d,Li Auto,理想汽车重庆八公里零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+150baec2-4cbf-4c3d-a1df-a4d587d8ac53,Li Auto,理想汽车重庆红锦大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+522b7b63-30df-486e-96f8-8a91233ed52d,Li Auto,理想汽车重庆永川零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+03553891-e976-4c0e-87a4-3a89c7fd3c0d,Li Auto,理想汽车重庆汽博零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b58be97b-b2d9-482b-ad7b-14ce91f317e6,Li Auto,理想汽车德阳零售中心,none,low,门店位于德阳市旌阳区，但唯一德阳候选商场距离11.4公里过远，其余候选均位于成都且距离超过49公里，城市不匹配且距离超出合理范围
+16f105cd-22fb-4f81-b18e-bf1331665fa7,Li Auto,理想汽车南充江东大道零售中心,none,low,门店品牌'理想汽车'为汽车零售中心，而候选商场'王府井广场'为百货商场，业态不匹配；虽然同在南充市且距离3公里尚可，但地址中无商场相关词且门店类型为独立店铺
+b17bb561-d7dc-4ed7-b168-150cbdcd0055,Li Auto,理想汽车泸州零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c60dd9e0-8a59-44ee-9b55-eef49cf17f71,Li Auto,理想汽车绵阳经开机场路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+da7da90f-3e26-4fb5-8075-d96cd34f5689,Li Auto,理想汽车眉山零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+317206a4-ab5f-4bcc-8fcc-307e3dc7cb97,Li Auto,理想汽车绵阳永兴零售中心,none,low,门店位于绵阳市安州区，所有候选商场都在德阳或成都，城市不匹配且距离过远（最近39公里），没有合适的候选商场
+50e0c5c0-6c51-43ed-91c5-3813e2d409dd,Li Auto,理想汽车成都羊西零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ef3e3819-8a35-4702-a9af-ff310622a8a1,Li Auto,理想汽车成都五龙山零售中心,none,low,门店位于新都区五龙山路，所有候选商场距离均在11-21公里之外，位置过远。门店名称中的'五龙山'与候选商场名称无关联，且品牌'Li Auto'为汽车零售中心，与候选商场的购物中心业态可能不匹配。
+f52b956f-b238-43a6-bed7-0e4f3b0640f8,Li Auto,理想汽车成都锦江大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+4359805b-195c-4ccc-9238-439fa69dd2c7,Li Auto,理想汽车乐山长青路零售中心,none,low,所有候选商场均位于其他城市（眉山、成都、自贡），与门店所在城市（乐山）不匹配，且距离过远（55-110公里），不符合门店-商场匹配要求
+7f2c5f2f-4bcb-4f0f-8dc1-121aaa5a8b1a,Li Auto,理想汽车成都龙潭零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+14278298-e4d1-47a9-9c24-9214279c9e43,Li Auto,理想汽车自贡零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+02f50da9-2381-4ea4-94a7-f2d2981e38ee,Li Auto,理想汽车成都高新机场路零售中心,MALL_00749,high,门店地址位于高新区火车南站西路，距离环球中心仅3.9公里，是候选中最接近的商场。城市匹配且品牌为汽车零售，通常位于独立店铺或大型商业体附近，环球中心作为大型商业综合体符合定位。
+9e024f87-aade-4f72-87c6-533c905eaa65,Li Auto,理想汽车成都天府111零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5101b7ca-0a8f-4559-a304-1eaacae0b4f2,Li Auto,理想汽车成都麓山大道零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+bcfa0ed9-5c89-4d9a-a7c1-4262b4124e4d,Li Auto,理想汽车遵义董公寺零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+fd0aae92-2fa9-4f7e-af89-e35dbaa5931d,Li Auto,理想汽车贵阳孟关零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a2eaf8dd-3479-4be8-bba4-fc83053d6148,Li Auto,理想汽车遵义忠庄零售中心,none,low,门店位于遵义市红花岗区，最近候选商场'吾悦广场'距离2.35公里但城市未匹配；其他候选距离过远（10公里以上）或位于贵阳，不符合同城要求
+6b7b25e2-3419-4023-acc5-66dd03d78e94,Li Auto,理想汽车昆明园博零售中心,MALL_00744,medium,品牌匹配度低（理想汽车通常在独立门店），但距离较近（1.5公里）、城市一致，且门店名称含'零售中心'可能位于购物中心，商场名称'购物公园'与汽车展示厅有一定兼容性
+3955577f-5546-47b8-a299-26141a2107a9,Li Auto,理想汽车曲靖三江大道零售中心,MALL_00012,medium,门店位于曲靖市，距离曲靖麒麟万达广场仅1.8公里，城市匹配且距离最近；但门店名称无明确商场词，且品牌为汽车零售中心，可能独立存在
+a2a94e74-1fcb-4db7-b320-5c4612dac3aa,Li Auto,理想汽车昆明公园1903零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8529f653-44c4-4eb9-9714-21a907818503,Li Auto,理想汽车西安量子晨零售中心,none,low,门店地址明确指向量子晨步行街，而候选商场名称均不包含量子晨相关信息。距离最近的MOMOPARK艺术购物中心距离3.9公里，西安西咸吾悦广场距离14.4公里过远，且无品牌入驻或名称关联证据
+8b3aedca-9f22-4916-9ca6-65043d185ff6,Li Auto,理想汽车西安浐灞零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+7dae52fd-e1b0-424e-ae81-563b9c746ac8,Li Auto,理想汽车西安高新零售中心,none,low,门店位于雁塔区沣惠南路，品牌为理想汽车零售中心。候选商场MOMOPARK距离4.2公里，西安西咸吾悦广场距离7.2公里，均较远且名称/地址无直接关联。门店类型为商场店但无明确匹配线索，故无合适候选。
+ceb1c7d9-4269-4b70-8db4-e03d8870128c,Li Auto,理想汽车西安灞桥零售中心,none,low,门店位于灞桥区东三环与南三环交汇处，而候选商场MOMOPARK距离11.3公里，西咸吾悦广场距离21.6公里，均过远；且商场名称与门店地址中的'灞桥东城汽车主题公园'无关联，品牌也无明确匹配
+39974733-9aea-4e2a-b465-661d586bd3d3,Li Auto,理想汽车渭南高新零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d302bfc9-347d-4094-a669-7f72bc221378,Li Auto,理想汽车汉中吾悦广场零售展厅,MALL_00526,high,门店名称和地址均明确包含'吾悦广场'，与候选商场'吾悦广场(汉中店)'品牌完全匹配，且同城距离仅1公里，城市和区级信息一致
+18d9a114-b114-4e29-9a14-c46407d1a0ab,Li Auto,理想汽车汉中天汉大道零售中心,none,low,门店位于汉中市汉台区，而唯一同城候选商场'吾悦广场(汉中店)'距离3.4公里，但城市匹配标记为false且品牌名称中无商场词。其他候选商场均在不同城市，距离超过130公里，不符合匹配条件。
+2d68cfee-838a-4c6a-b3e2-fa0e9aa63f46,Li Auto,理想汽车西安经开零售中心,none,low,品牌为理想汽车零售中心，但候选商场名称和地址均不匹配。MOMOPARK艺术购物中心和西安西咸吾悦广场距离门店超过12公里，且位于不同区域（未央区 vs 西咸新区），距离过远不符合零售中心常选址。
+2bde7a23-6e47-4f78-8f24-fb20fe57b5a2,Li Auto,理想汽车西安未央北辰大道零售中心,none,high,门店地址明确位于未央区欧亚一路，而候选商场MOMOPARK和西咸吾悦广场距离较远（13-18公里），且未在未央区，地理位置不匹配
+cc57d29c-b947-414a-a691-7c17f29a6733,Li Auto,理想汽车西安长安零售中心,none,low,门店位于长安区东长安街，与候选商场距离较远（8-17公里），且门店名称和地址中未包含候选商场名称，品牌匹配度不足
+45ea0240-1f45-4db7-a2a5-c24041f1687b,Li Auto,理想汽车西安西三环零售中心,none,low,门店地址在西三环与石化大道东北角（未央区），而候选商场距离较远（7.9公里和13.5公里），且商场名称与门店地址无直接关联，品牌专营店通常位于汽车商圈而非购物中心，无合适匹配
+6bfd6b99-3be0-4b71-bf41-9fa3075c39b4,Li Auto,理想汽车西宁金岛汽车城零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+bb15256b-9765-4f8d-a4dd-87748a916181,Li Auto,理想汽车银川金凤零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+7947c5d5-7bcd-4764-b21e-87545b8e03f0,Li Auto,理想汽车银川德胜零售中心,none,high,门店位于贺兰县工业园区，地址明确为独立位置而非商场内；所有候选商场距离较远（6.7-300公里），且均未匹配到贺兰县区域；门店名称'零售中心'暗示其为独立门店而非商场专柜
+0f90197e-0df3-4be5-bbeb-d9862f179c2f,Li Auto,理想汽车乌鲁木齐市经开综合中心,MALL_00356,medium,门店名称含'经开'，地址位于头屯河经济开发区，与万达广场乌鲁木齐经开区店名称和区域高度匹配，距离仅2.8公里，但城市匹配字段为false
+e35e2651-3450-41f8-ac42-ccbd63a63abc,Li Auto,理想汽车乌鲁木齐水磨沟区友好汽车城零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8500630e-3ed0-4061-a0bc-f7cdc161954b,Li Auto,理想汽车孝义市府前街零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ab9d8e64-11f0-495b-bf46-d93405bfa8ae,Li Auto,理想汽车临汾尧都秦蜀路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a2acb69a-e71b-45fb-a5a9-fb4d6bc69bfe,Li Auto,理想汽车大连虹城路零售中心,none,low,门店位于甘井子区虹城路，两个候选商场距离较远（11.9km和26.1km），且商场名称与门店地址区域不匹配，无直接关联证据
+a35ab54c-9b3d-442f-b329-5539548cdca6,Li Auto,理想汽车鹿城零售中心,none,low,门店位于鹿城区，而候选商场分别位于瓯海区和龙湾区，区域不匹配。虽然城市相同，但距离较远（5km和17km），且门店名称和地址中未提及候选商场品牌。
+7984f6fa-27cb-427d-9901-0f53de10e232,Li Auto,理想汽车金华永康康庄路零售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+46e8c547-5cc9-4bcb-8dff-0b08e3bdcd3b,Li Auto,理想汽车怀化永通汽车城零售中心,none,low,候选商场为万达广场，与门店名称中的'永通汽车城'不匹配。虽然城市匹配且距离较近(1.4km)，但品牌和商场类型不符，理想汽车通常入驻汽车城而非购物中心
+e38973a8-a026-49fc-943a-6c6e3aae3485,Li Auto,理想汽车北京顺义高丽营交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+78f537bb-26f9-482c-b42b-33ea8d665fe8,Li Auto,天津滨海第五大街临时交付中心,none,low,门店名称为'临时交付中心'且地址为独立门牌号，不属于商场内部店铺。候选商场距离均在28公里以上，过远且无品牌关联证据。
+9ba16894-8e92-4d01-b39a-cb3764742736,Li Auto,理想汽车邯郸经开交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+20484222-3144-4b49-82df-7d76a169d229,Li Auto,理想汽车保定竞秀交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d966f542-5b4c-4cea-bbb3-7e52f937ab30,Li Auto,理想汽车廊坊新源道交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+853b3275-bb1c-4a34-8765-9c8e19a6980c,Li Auto,理想汽车秦皇岛经开交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f2c3ea07-88cd-4f69-bb04-4554d5af6cd4,Li Auto,理想汽车唐山开平交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+0906d3a0-3d94-43de-b299-c42c532536d8,Li Auto,理想汽车承德狮子园临时交付中心,none,low,所有候选商场均不匹配：城市不一致（门店在承德，候选在北京/唐山），距离过远（140-155公里），且商场名称与汽车交付中心业务无关
+9406d30a-2847-4bcd-a551-ef44cb72f45a,Li Auto,理想汽车石家庄高新交付中心,none,low,门店地址明确位于高新区方亿电子科技园，而候选商场勒泰中心距离13公里且位于不同区域，品牌为汽车交付中心而非商场零售店，无合理匹配依据
+6c089d50-3a83-46ff-96e7-204d02374096,Li Auto,理想汽车大同庞大临时交付中心,none,low,门店位于大同市平城区，而所有候选商场均在呼和浩特市，城市不匹配且距离过远（最近商场距离7.8公里，但城市不匹配）。门店地址明确指向'庞大汽车文化园林广场'，并非候选商场中的任何一家。
+205a9014-4c74-42bb-b3b2-d17dd80adf0f,Li Auto,理想汽车太原小店交付中心,none,high,门店明确位于'山西汇众汽车家园内'，这是一个独立的汽车销售园区而非购物中心。所有候选商场距离较远（7.7-14.5公里），且城市匹配度低，与汽车交付中心的定位不符
+1dda9902-7988-4b8a-a609-ff0a4f9a77a1,Li Auto,理想汽车通辽科尔沁创业大道临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+339d1712-4827-44a5-855c-22cfd28a01ad,Li Auto,理想汽车鞍山铁西交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+4eea0bba-2572-4705-b4ab-ba0efa0c5c7d,Li Auto,理想汽车沈阳大东交付中心,none,low,门店位于大东区，但候选商场分别为沈北新区和太原街，行政区不匹配；门店为汽车交付中心，与购物商场业态差异大；距离较远（12-17公里），无明显关联证据
+ecd0b025-eeae-486c-ab8e-c23023737366,Li Auto,理想汽车大连甘井子交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+3b1c6b19-4f4a-429e-86cc-e24bdb62d32c,Li Auto,理想汽车长春汽开交付中心,none,low,门店为理想汽车交付中心，地址位于汽车经济开发区捷达大路，属于专业汽车服务场所而非商场零售店。候选商场均为购物中心，距离较远（5-17公里），且品牌和功能定位不匹配，无合适候选。
+37bcd99a-66c7-4263-9bde-4a5b70c56e71,Li Auto,理想汽车哈尔滨南岗交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f32b38b7-19c1-44b4-a829-fd069f1a4452,Li Auto,理想汽车大庆安萨路临时交付中心,none,low,门店位于大庆市高新区，而所有候选商场中只有大庆市的三个距离较近（5.7-23.2公里），但门店名称明确为'临时交付中心'且品牌为理想汽车，属于汽车销售服务场所，与购物中心业态不匹配。哈尔滨的两个商场距离过远（130+公里）且城市不同。
+481d5124-6281-4235-9a78-3d6954d1eb8e,Li Auto,理想汽车上海浦东交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+2e47690c-2a94-4838-9a37-dd4b530a3983,Li Auto,理想汽车徐州铜山交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+09a495f5-d3f4-44e4-9391-656d229e6000,Li Auto,理想汽车南通崇川交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+748ef886-72ce-4f48-8450-fbee87dbd569,Li Auto,理想汽车南京雨花台交付中心,none,low,门店地址位于雨花台区，而候选商场均在15公里外的建邺区/新街口区域，距离过远（15-19公里）；门店名称为交付中心而非商场店铺，与购物中心业态不匹配；无品牌关联或名称相似性
+2f65485c-161b-416d-99b5-1ab963a4669f,Li Auto,理想汽车常州武进交付中心,none,low,候选商场距离过远(18.3公里)，且品牌'理想汽车'为汽车交付中心，与百货商场类型不匹配
+17eb7141-bffe-4b35-920b-38ee6521beb6,Li Auto,理想汽车苏州相城交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c67b6c96-5832-41ff-b98b-9076004c9a15,Li Auto,理想汽车扬州江都交付中心,none,low,门店位于扬州江都区，所有候选商场距离过远（17-30公里），且城市区域不匹配（候选商场主要位于扬州市区、镇江、泰州），无法满足理想汽车交付中心的商场匹配需求
+29b20c35-63ab-47fe-87f6-9047e00bea4f,Li Auto,理想汽车无锡锡山交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f3910540-68e8-4492-95a4-f46925dc268f,Li Auto,理想汽车淮安清江浦临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d44547e6-9632-41c3-8a0c-6406e952261a,Li Auto,理想汽车杭州萧山交付中心,none,low,门店为汽车交付中心，名称和品牌均不匹配商场业态；候选商场距离较远（10-35公里），且无地址或品牌关联证据
+ca21f8cd-7a88-4423-9d8e-2a42315dcd1f,Li Auto,理想汽车杭州拱墅交付中心,none,low,门店位于拱墅区沈半路，而候选商场均在滨江和余杭区，距离过远（14-20公里），且门店名称为交付中心而非商场店铺，品牌定位不符
+be365454-b86e-4606-a072-b46aecea1a4b,Li Auto,理想汽车嘉兴秀洲交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8e4e29be-2059-4a25-816e-eb4d8553f59e,Li Auto,理想汽车绍兴越城交付中心,none,low,品牌为汽车交付中心，与商场业态不匹配；候选商场距离过远（26公里），远超正常商场服务范围；尽管城市匹配，但业态和距离均不合适
+24ee1bc7-8cd8-46d6-b9ad-f119e2bb4a51,Li Auto,理想汽车台州路桥交付中心,none,low,门店位于路桥区迎宾大道，而候选商场在椒江区，距离超过13公里且不在同一行政区，品牌为汽车交付中心与购物商场业态不匹配
+b7673153-db6c-4dca-b24b-6a96edce17d5,Li Auto,理想汽车宁波鄞州交付中心,none,low,门店品牌'Li Auto'为汽车交付中心，与候选商场'银泰百货'业态不匹配；地址距离较远(6.4公里)；虽城市匹配但无品牌关联证据
+f2148234-9e9f-4118-9c7e-682d5f471d81,Li Auto,理想汽车金华金东交付中心,none,low,门店为汽车交付中心，名称和地址中无商场相关词汇；所有候选商场距离较远（最近5.7公里），且城市区域不匹配（门店在金东区，候选在市区或其他城市）
+30d4501e-e306-4f51-9487-6895bb11fea2,Li Auto,理想汽车合肥包河交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+04b6352d-2cb2-4a18-92de-ecc79690e393,Li Auto,理想汽车合肥肥东交付中心,none,low,门店为汽车交付中心，地址明确在肥东县包公大道与护城路交口，而候选商场均为市区购物中心，距离过远（13-20公里），且类型不匹配，没有合适的商场对应
+3f127788-1e11-4422-bdf5-4900e8710746,Li Auto,理想汽车漳州龙文临时交付中心,none,low,候选商场距离门店3.5公里较远，且门店名称为'临时交付中心'，品牌'Li Auto'通常为独立展厅而非商场内店铺，地址无明确商场关联，匹配度低
+ce3db820-c5eb-40c8-84f3-6ebb58f364ea,Li Auto,理想汽车福州青口交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d3c763e5-5b5b-4176-830d-b1fb07b4f4b0,Li Auto,理想汽车泉州鲤城交付中心,none,low,门店名称为'交付中心'且地址明确，与商场门店特征不符；候选商场距离均较远（6-13公里），且名称中无匹配线索，品牌'Li Auto'在商场列表中也无关联
+9c5d0a3e-6ea9-47ac-a3c6-ac3c685e2419,Li Auto,理想汽车赣州章贡交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+42ae7501-2b24-4e0b-924b-446cd25df088,Li Auto,理想汽车枣庄光明大道交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+0daeb62b-54a8-48dd-8a72-3f0e59f71466,Li Auto,理想汽车滨州赛博交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+58d83efe-bb9e-42f7-90d7-31c961a765a7,Li Auto,理想汽车东营垦利临时交付中心,none,low,品牌为理想汽车交付中心，与万达广场业态不匹配；门店位于垦利区而商场在东营区，行政区不匹配；距离较远达9.3公里，不符合临时交付中心的就近选址逻辑
+90200fca-73be-451f-87a2-178ee3c62750,Li Auto,理想汽车济南槐荫交付中心,none,low,门店名称为'理想汽车济南槐荫交付中心'，明确为汽车交付中心而非商场店铺；所有候选商场距离较远(8.5-18.8公里)，且无品牌入驻关联；地址位于槐荫区经十西路，与候选商场区域不匹配
+4d2c01b2-8771-4138-9c8a-148f1e26b95a,Li Auto,理想汽车泰安岱岳临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+1a9b5150-e88a-478a-bd42-ba72784f82e7,Li Auto,理想汽车潍坊潍城交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f88dd131-0b48-415f-be2a-57461104eac6,Li Auto,理想汽车德州德百临时交付中心,none,low,门店位于德州德城区晶华大道，候选商场中仅澳德乐时代广场距离较近(3.1km)，但城市字段不匹配(德州市vs德州)，且门店名称明确为'临时交付中心'而非商场店铺，地址指向科创园区而非购物中心，品牌特性更适合独立展厅
+5ccdc8a4-e7ad-404d-a501-e0917757f81b,Li Auto,理想汽车青岛市北交付中心,none,low,门店为汽车交付中心，与候选商场业态不匹配。虽然城市匹配且距离在3-6公里内，但商场名称和品牌均未体现汽车相关特征，无法确认属于任一商场
+a563757d-a441-47d7-8ad4-d13951ed2c73,Li Auto,理想汽车淄博经开交付中心,none,low,门店位于淄博市，但候选商场中仅淄博万象汇在同一城市，距离4.4公里较远；其他商场均在不同城市，距离超过50公里，不符合门店实际位置。门店名称为'交付中心'而非商场内店铺，无品牌或名称直接匹配。
+8338eb14-bad3-4ee1-848c-bb537acb0aa9,Li Auto,理想汽车菏泽定陶交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c4f39e38-37ed-4c96-9997-e5c960cee24d,Li Auto,理想汽车济宁高新交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+173e7904-660e-44cc-8a4e-ea53b3919fe9,Li Auto,理想汽车济南高新交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b23cb644-a6b2-4879-8f6f-b8ca7d50e0b6,Li Auto,理想汽车郑州惠济交付中心,none,low,候选商场丹尼斯百货与理想汽车门店的品牌和功能不匹配，距离较远（12.8公里），且商场名称和地址中无相关汽车园区信息
+0e2c169c-abcc-45f1-8df2-99a20f140960,Li Auto,理想汽车洛阳洛龙交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+94097b28-7ce2-4325-9cb7-0b7cf305683e,Li Auto,理想汽车平顶山建设路临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+23b5bca3-a0a4-4c06-a453-ec4cd845e3bf,Li Auto,理想汽车郑州经开交付中心,none,low,门店名称为'理想汽车交付中心'，属于汽车销售服务中心而非商场店铺。候选商场丹尼斯百货距离较远(12.8公里)，且品牌和业态类型不匹配。
+5e566708-32df-4ecc-a3c9-a0134ddd114f,Li Auto,理想汽车南阳卧龙临时交付中心,none,low,候选商场均不在南阳市，最近商场万悦城距离8公里但城市不匹配，其他商场距离更远且跨城市，门店为临时交付中心可能独立存在
+ad55fbd2-7d0b-42e1-823b-5b52a5aa9ba6,Li Auto,理想汽车信阳平桥临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+92afadf9-5fa5-4606-bade-7f7233baf492,Li Auto,开封龙亭临时交付中心,none,low,门店位于开封市，而所有候选商场均在郑州市，城市不匹配；距离较远（48-56公里），超出合理范围；门店名称为临时交付中心，与商场类型不符
+0d94faf2-ed0c-45ff-a501-a5a1f1442cf7,Li Auto,理想汽车商丘梁园交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+227add67-d2a5-49db-a162-8fb7836307e4,Li Auto,理想汽车驻马店驿城临时交付中心,none,low,门店名称为临时交付中心，地址明确指向独立零售中心而非商场；候选商场距离2.5公里较远，且品牌理想汽车通常设独立门店，与购物中心业态不匹配
+2d673447-646f-435c-ad35-340e43da1c89,Li Auto,理想汽车武汉江夏交付中心,none,low,门店是汽车交付中心，与购物商场性质不符；且所有候选商场距离较远（约18-19公里），不在合理范围内
+c1f90bd5-eabd-4e43-9f3d-740592a320d3,Li Auto,理想汽车中山南区交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f850d141-73c1-4267-a962-4bab35c28bff,Li Auto,理想汽车汕头金平交付中心,none,high,门店位于汕头市金平区，但所有候选商场均不在汕头市，距离最近商场超过6公里且城市不匹配，不符合交付中心的选址逻辑
+5feeed77-608d-47bc-9a62-66231892311b,Li Auto,理想汽车佛山南海交付中心,none,high,门店位于佛山南海区，但候选商场均不匹配：1) 同城商场距离过远（4.8-7.1公里），且门店地址已明确在'臻盛车生活广场'；2) 跨城商场（广州）距离更远且城市不匹配。品牌为汽车交付中心，通常独立选址而非入驻购物中心。
+e0b3768f-3d4a-4c7f-911e-81bcb41b5807,Li Auto,理想汽车深圳南山交付中心,none,low,门店位于宝安区松白路，而候选商场均在龙华区、福田区、坪山区，距离过远（17-42公里），且名称中无匹配商场词，品牌定位为汽车交付中心而非商场店铺
+f885083d-5791-4844-8fbc-e069f1a291fd,Li Auto,理想汽车深圳龙岗交付中心,none,low,门店地址在龙岗区，但候选商场均在龙华区、福田区或坪山区，区域不匹配；门店为汽车交付中心，名称和品牌与商场业态差异较大；最近商场距离超过9公里，较远
+056a511e-22a5-4355-a27f-6011112b3043,Li Auto,理想汽车广州黄埔交付中心,none,low,门店为汽车交付中心，功能特殊，不太可能位于购物中心内。候选商场距离较远（13.9-21.5公里），且名称和品牌均无关联，匹配度低。
+b1f493b4-0c7a-4378-903b-8617a84b82ed,Li Auto,理想汽车广州荔湾交付中心,none,low,门店名称明确为'交付中心'而非商场店铺，且候选商场距离过远（最近20公里），品牌定位不符，无合适匹配
+975456c9-e0d3-48d6-8b34-1cb177d3762c,Li Auto,理想汽车珠海金湾交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b14edc7c-dabc-405a-9b84-e8f0be235df9,Li Auto,理想汽车桂林灵川临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+6d4bdded-39c5-4f85-b273-0826c4e3dd34,Li Auto,理想汽车柳州西江路临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+16dafbf5-5e8c-4efd-89b7-80bf0bf4dbfe,Li Auto,理想汽车海口江东交付中心,none,low,门店是汽车交付中心，而非商场内店铺；所有候选商场距离较远（7-11公里），且门店地址位于琼山大道海瑞大桥附近，与商场位置不匹配；品牌'理想汽车'通常设独立门店而非入驻商场
+7b50a02b-1e08-44ad-a5cf-a64e16ab3fe1,Li Auto,理想汽车三亚吉阳交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5df2ccd4-0502-422e-a4d2-c90bd539c046,Li Auto,理想汽车重庆渝北交付中心,none,low,门店地址位于两江新区出口加工区，而所有候选商场距离较远（7-25公里），且门店名称明确为'交付中心'而非商场店铺，品牌'理想汽车'的交付中心通常独立选址，与商场关联度低
+92efb887-9f58-4db1-94ea-6a377986bb4e,Li Auto,理想汽车成都龙泉驿交付中心,none,low,门店为理想汽车交付中心，位于龙泉驿区，与候选商场距离较远（最近约5.8公里），且名称和地址均无商场相关词汇，无法匹配到任一候选商场
+552ff1e2-cc56-42e0-b6e8-39ea573f27e1,Li Auto,理想汽车自贡南环路临时交付中心,none,low,门店位于自贡市贡井区，所有候选商场均不在同城：最近的自贡华商爱琴海购物中心虽在自贡但距离5.7公里且城市匹配为false，其他商场位于宜宾、泸州等外地，距离60公里以上，不符合门店实际位置
+69e8778b-dd03-4b35-bb3f-41c5328e69d8,Li Auto,理想汽车达州达川临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+419558d5-1fbc-4003-aa12-f1da6fe61b11,Li Auto,理想汽车南充高坪交付中心,none,low,门店为理想汽车交付中心，与购物中心业态不匹配；候选商场距离较远(6.8公里)，且门店名称和地址均未提及该商场
+9da3f345-46a3-4f48-a63e-6cf94bbfc9fb,Li Auto,理想汽车成都高新西交付中心,none,high,门店位于郫都区工业物流园，是汽车交付中心而非零售店铺，所有候选商场距离过远(16-28公里)且类型不匹配，没有合适的商场选项
+8b41e8f8-d06f-4e88-9fcb-92a7c4a4a4c0,Li Auto,理想汽车遵义红花岗交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d392dbc8-573b-49c9-aeed-5edfc0aaacb8,Li Auto,理想汽车贵阳观山湖交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+841674b5-b817-4516-b50e-d81ed60561e6,Li Auto,理想汽车贵阳花溪临时交付中心,none,low,门店位于花溪区孟关乡，而候选商场均距离过远（23-29公里），且名称和品牌（理想汽车交付中心）与购物中心业态不匹配
+338ec840-ae81-4706-a9be-b4cf24d67aa1,Li Auto,理想汽车滇西区域临时交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+3235aaa0-07de-4b28-8f40-a99f7f17290c,Li Auto,理想汽车拉萨堆龙德庆临时交付中心,none,low,候选商场距离过远（7.5公里），且门店名称和地址明确指向独立的临时交付中心而非购物中心，品牌特征不匹配
+8afa9dc7-74e8-435a-b62a-238403cc556c,Li Auto,理想汽车榆林榆阳交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+69f4d7d7-7879-4eae-b4bd-a3e84f1234e5,Li Auto,理想汽车西安浐灞国际港交付中心,none,low,门店名称为'理想汽车西安浐灞国际港交付中心'，地址位于国际港务区，属于汽车交付中心而非商场店铺。候选商场MOMOPARK和西咸吾悦广场距离过远（20-26公里），且品牌和功能类型不匹配。
+027fd414-3bf0-477a-8e9e-699f53605c54,Li Auto,理想汽车宝鸡陈仓交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+63123eab-fb16-46c2-8b4e-22551face717,Li Auto,理想汽车渭南高新临时交付中心,none,low,门店位于渭南市临渭区，所有候选商场均在西安市，城市不匹配且距离过远（42-48公里），无法建立合理的门店-商场关联
+41fd4386-69fe-41e7-8388-3d900144c2d3,Li Auto,理想汽车兰州西固交付中心,none,low,门店地址明确指向'汇金国际智慧汽车城'，而候选商场'吾悦广场(兰州安宁店)'名称、地址均不匹配，且距离超过5公里，不在同一区域
+d4982282-9d5c-4df1-b9bf-aa62a1f95542,Li Auto,理想汽车西宁金岛汽车城交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+cf099651-e4d8-4713-8884-a4e7663a051a,Li Auto,理想汽车银川市金凤区创业街交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5ce5060e-6827-49e1-a6f7-107644b96cb7,Li Auto,理想汽车乌鲁木齐经开交付中心,none,low,门店为汽车交付中心，不是商场内店铺。所有候选商场距离较远（3-10公里），且城市匹配度低。门店名称和地址均无明确商场关联词。
+54ad49cd-c0f2-4171-ad01-612a4f34e048,Li Auto,理想汽车北京朝阳直营钣喷中心（来广营店）,none,low,门店地址在朝阳区来广营，但候选商场均位于海淀区、朝阳区其他位置，距离较远（7-13公里），且门店为汽车钣喷中心，与购物商场业态不匹配
+7fb5409f-a8c8-4e2a-bf5f-42f2ccd52c53,Li Auto,理想汽车北京顺义直营钣喷中心（高丽营店）,,error,error: Expecting value: line 1 column 1 (char 0)
+4cf23fb6-e861-4332-addd-f9fcca946720,Li Auto,理想汽车天津东丽直营钣喷中心（空港店）,,error,error: Expecting value: line 1 column 1 (char 0)
+94ec617a-f8a9-4ba6-9871-f0cd3a58e3df,Li Auto,理想汽车天津滨海服务中心（第五大街店）,,error,error: Expecting value: line 1 column 1 (char 0)
+6d089f17-c53c-40f4-9fc0-79f4ffc5c45b,Li Auto,理想汽车天津东丽服务中心（空港店）,,error,error: Expecting value: line 1 column 1 (char 0)
+7be5a8f8-d7ed-4869-a8f4-4e91daffed8e,Li Auto,理想汽车大同云冈服务中心（南环西路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+cc0a21cd-4e43-4650-adff-60b9420b607d,Li Auto,理想汽车呼和浩特回民服务中心（海西路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+697da2a9-24fa-40d6-b0ae-6f4548df4c2a,Li Auto,理想汽车包头高新服务中心（幸福南路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+21615a8c-eace-4dd0-9d9f-573785211f02,Li Auto,理想汽车长春汽开服务中心（景阳大路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+24c35e6b-de4e-4bb1-a6c2-238184731b89,Li Auto,理想汽车长春南关直营钣喷中心（自由大路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+f12a2f57-f8cf-416a-bef8-65b7da546004,Li Auto,理想汽车长春南关服务中心（自由大路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+89ca646f-450c-4a32-9c77-f4fe865547c2,Li Auto,理想汽车哈尔滨道里服务中心（崂山路店）,none,low,门店位于道里区崂山路，但候选商场万达广场哈西店距离4.9公里且位于哈西区域，哈尔滨融创茂距离10.6公里更远；门店名称和地址均未包含商场名称关键词，且距离较远，匹配可能性低
+9513c305-efc9-463a-bc45-1725330ff7bc,Li Auto,理想汽车上海红柳路汽车城服务中心,none,low,门店名称为'理想汽车上海红柳路汽车城服务中心'，地址位于红柳路235号，属于独立的汽车服务中心。候选商场均为购物中心，距离较远（最近约6公里），且门店名称和品牌均未包含商场相关词汇，不匹配商场店特征。
+5c7cd2ed-caff-4a40-baed-dec96a4e34a7,Li Auto,理想汽车上海松江直营钣喷中心（九淦路店）,none,low,门店为汽车钣喷中心，属于独立维修厂类型，非典型商场店铺。候选商场均为购物中心，距离最近的金地广场也有2.5公里，且名称和地址无明显关联。门店所在行政区为松江区，而district字段错误标注为闵行区，进一步降低匹配可靠性。
+cab7bdae-5136-4dec-aa09-67e218e8fd60,Li Auto,理想汽车常州新北服务中心（黄河西路店）,none,low,候选商场位于常州市区，但距离门店7.6公里过远，且门店名称和地址均未包含商场相关词汇，品牌'Li Auto'为汽车服务中心，与百货商场业态不匹配
+bcc1a612-dcae-425f-8239-af8044a5cbbd,Li Auto,理想汽车无锡惠山服务中心（盛岸路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+9c8e6853-e44a-4fd0-bc73-bdde04762054,Li Auto,理想汽车南京栖霞直营钣喷中心（仙尧路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+4a634fd4-f200-4ee1-8c0b-ea62e8b4f416,Li Auto,理想汽车南京浦口服务中心（浦珠北路店）,none,low,门店位于南京江北新区浦珠北路，而所有候选商场均在7-10公里外的其他区域（如玄武区、建邺区等），距离过远且无地理位置相关性。门店名称为'服务中心'而非商场店铺，候选商场名称中也无匹配线索。
+4ca3b31b-a533-4cce-bd06-e224b1bd2beb,Li Auto,理想汽车苏州高新直营钣喷中心（马运路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+7ac0ed7c-bd9a-4311-b5b5-28066c7a1361,Li Auto,理想汽车苏州高新服务中心（马运路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+4c98660c-95cf-414f-8edb-aa0730d967c0,Li Auto,理想汽车泰州海陵服务中心（吴陵南路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+99f3e1e1-0a30-4246-a858-adbba720f802,Li Auto,理想汽车镇江京口服务中心（丁卯汽车城店）,none,low,门店位于镇江京口区，但候选商场中唯一镇江的八佰伴距离7.7公里且不在京口区；其他候选均位于扬州/泰州，距离26-52公里，城市不匹配。门店名称含'汽车城'而非商场，可能为独立汽车服务中心。
+3184a0b2-4747-4542-934f-713542f58da6,Li Auto,理想汽车绍兴诸暨服务中心（北二环路店）,none,low,候选商场距离过远(73公里)，且品牌与商场类型不匹配（理想汽车服务中心与购物中心性质不符）
+cea0b823-a61a-4bf4-a32b-fc79b4645022,Li Auto,理想汽车嘉兴海宁服务中心（文苑路店）,none,low,候选商场位于桐乡市，与门店所在海宁市距离较远（15公里），且商场名称'桐乡万象汇'与门店名称、地址中的'海宁'信息不匹配，品牌定位也不符
+0bc96197-fada-4bc1-85f3-3bda76c9b32c,Li Auto,理想汽车宁波海曙直营钣喷中心（鄞县大道店）,none,low,门店品牌为理想汽车钣喷中心，与银泰百货业态不匹配；门店地址在鄞州区，而商场在海曙区，区域不一致；距离超过9公里较远，且商场名称和地址中无相关匹配词
+1bbcf62a-c86d-4763-bf9c-2faf2fb86ac4,Li Auto,理想汽车温州乐清服务中心（宁康西路店）,none,low,门店位于乐清市宁康西路，而候选商场均在温州其他区（龙湾区、瓯海区），距离过远（25-38公里），品牌为汽车服务中心而非百货商场，无明显关联
+3d20a5e7-f70f-49b8-b3e9-14f0c2c797a2,Li Auto,理想汽车杭州余杭直营钣喷中心（闲林店）,none,low,门店是汽车钣喷中心，与商场业态不匹配。虽然万达广场在余杭区且距离较近(5.4公里)，但汽车维修服务通常不在商场内；银泰百货距离过远(23.8公里)且在滨江区。
+892ec381-9a47-4868-b2b3-b3319d358207,Li Auto,理想汽车杭州余杭服务中心（闲林店）,none,low,门店位于余杭区嘉企路，与候选商场万达广场(余杭店)距离约5.4公里较远，且门店名称和地址均未指向具体商场；另一候选银泰百货(滨江店)距离过远(23.8公里)且区域不匹配
+9488416d-f938-49d7-81c5-1ad3cadc9473,Li Auto,理想汽车宁波江北服务中心（江北大道店）,none,low,候选商场距离过远（15.4公里），且门店名称和地址中未包含商场相关词汇，门店为汽车服务中心而非零售百货，与银泰百货类型不匹配
+ed060691-3af5-4aec-b08d-6ea342cd24a2,Li Auto,理想汽车合肥瑶海服务中心（北二环店）,none,low,门店为理想汽车服务中心，位于汽车城内，与候选商场（苏宁广场、之心城、万科广场等）业态不符。虽然城市匹配且距离在6.5-16公里范围内，但门店名称和地址均指向汽车专业市场而非综合购物中心，无明显关联性。
+867b7b16-ffe9-4cd1-92ca-a6a68c601201,Li Auto,理想汽车合肥瑶海直营钣喷中心（北二环店）,,error,error: Expecting value: line 1 column 1 (char 0)
+451ec1b6-efed-4717-ae8a-7467b3bacbcc,Li Auto,理想汽车滁州南谯服务中心（丰乐大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+dd4ef931-e38d-4426-a642-ebdf9ebdd261,Li Auto,理想汽车厦门湖里服务中心（翔远路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+684e9cae-6293-4201-86c1-fc0b206ea03f,Li Auto,理想汽车漳州龙文服务中心（龙文北路店）,none,low,门店名称和地址均未提及'吾悦广场'，且距离较远(3.47公里)，虽然城市匹配但缺乏直接关联证据
+2e9a7bf2-fe0c-4f38-852c-8b6b496c96d4,Li Auto,理想汽车福州晋安服务中心（后屿路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+17f5dcdb-01e0-423c-81c6-4c0a2df1834a,Li Auto,理想汽车厦门海沧服务中心（马青路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+379c7952-807f-4db8-b012-7f3722c1a08f,Li Auto,理想汽车厦门海沧直营钣喷中心（马青路店）,none,low,门店位于海沧区马青路，而候选商场万达广场在湖里区，距离超过16公里，区域不匹配且距离过远。门店为汽车钣喷中心，与购物商场业态不符。
+371f5d8b-3304-49eb-b39a-96c11e2526b0,Li Auto,理想汽车福州仓山服务中心（南三环路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c3b84f2f-f492-4060-a03a-924b8960e83d,Li Auto,理想汽车南昌新建直营钣喷中心（望城店）,,error,error: Expecting value: line 1 column 1 (char 0)
+2e75b79a-3296-4660-8abf-85bdceda2e56,Li Auto,理想汽车上饶广信服务中心（月亮湾汽车城店）,none,low,所有候选商场均不在上饶市，距离最近108公里以上，且门店名称中的'月亮湾汽车城'并非候选商场，无法匹配
+aa5defbc-8d88-4bc9-908b-e443723c988d,Li Auto,理想汽车上饶广信服务中心（三清山西大道店）,none,low,门店位于上饶市广信区，而所有候选商场均在不同城市（衢州、抚州、金华、南昌），距离超过100公里且城市不匹配，无合适候选
+d2844866-d886-4b11-8b36-664f34ced925,Li Auto,理想汽车济南历城直营钣喷中心（高新店）,,error,error: Expecting value: line 1 column 1 (char 0)
+8d144d33-b4cc-439b-985c-a5cc93abeb58,Li Auto,理想汽车青岛西海岸直营钣喷中心（江山北路店）,none,low,门店为汽车钣喷中心，属于独立服务设施而非商场内店铺；所有候选商场距离较远（19-27公里），且门店名称和地址均未体现与任一商场的关联
+5b01146a-1826-4ad7-9274-592f3dde3e6d,Li Auto,理想汽车潍坊奎文服务中心（潍洲路店）,none,low,门店明确标注为服务中心且地址与商场无关，两个候选商场距离较远（6.9km和54.5km），且品牌'理想汽车'通常为独立门店，与购物中心业态不匹配
+ff75bd27-be10-4b9b-85c4-17452d775b22,Li Auto,理想汽车德州德城服务中心（德百汽车城店）,,error,error: Expecting value: line 1 column 1 (char 0)
+d3335217-0c72-4391-a945-accd94f60ec5,Li Auto,理想汽车郑州经开服务中心（经北一路店）,none,low,门店名称和地址均未包含商场相关词汇，且唯一候选商场距离过远(9公里)，品牌为汽车服务中心与百货商场类型不匹配
+9fd25252-5a4a-45d2-a3b6-ee89a21d2812,Li Auto,理想汽车南阳卧龙服务中心（北京大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+2f3f83ce-c7b3-4790-88c1-a01dad7b2057,Li Auto,理想汽车洛阳涧西服务中心（一拖青创产业园店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1df145ff-a0ac-4282-93ae-b044b58aabfe,Li Auto,理想汽车开封龙亭服务中心（金明大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+a90039ca-691c-4384-a483-3925afdc7ecf,Li Auto,理想汽车商丘梁园服务中心（中原车城店）,,error,error: Expecting value: line 1 column 1 (char 0)
+0d7969e9-264d-48af-b743-9984720854ef,Li Auto,理想汽车武汉汉阳直营钣喷中心（黄金口店）,,error,error: Expecting value: line 1 column 1 (char 0)
+78875902-5320-40d5-8e0e-f3495e097973,Li Auto,理想汽车长沙经开服务中心（中南汽车世界店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c5768804-cc14-42c4-ae3f-043f8750f118,Li Auto,理想汽车长沙开福服务中心（高岭店）,none,low,门店位于开福区高岭国际商贸城，而候选商场星沙万象汇距离超过11公里且位于不同区域，品牌和名称均不匹配
+c1e87b68-0f5f-4ca5-a16a-ee2ed7902005,Li Auto,理想汽车佛山顺德直营钣喷中心（陈村店）,,error,error: Expecting value: line 1 column 1 (char 0)
+fa69be2e-7dcb-4a66-96cf-ef1d8ea03329,Li Auto,理想汽车东莞南城服务中心（南城莞太路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+0a6c9005-f8b6-45ed-ae21-078cf25d7a28,Li Auto,理想汽车广州白云服务中心（白云大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c6c623e9-c941-428e-bca9-f7ea4a7399d9,Li Auto,理想汽车广州黄埔直营钣喷中心（光谱西路店）,none,low,门店为理想汽车钣喷中心，属汽车维修服务类，与购物商场业态不符；且所有候选商场距离较远（16-20公里），超出常规商场服务范围
+f51fdeed-0f08-4000-a553-d9421c7ff88c,Li Auto,理想汽车珠海香洲服务中心（华宇路店）,none,low,门店位于香洲区华宇路，而唯一候选商场在斗门区，距离23.9公里过远，且商场名称'万达广场'与汽车服务中心不匹配
+aeb99ca7-705e-4177-afb8-ae56bb219ca6,Li Auto,理想汽车佛山顺德服务中心（陈村店）,,error,error: Expecting value: line 1 column 1 (char 0)
+a111a1ab-0c68-42df-9ccb-1d206c804a4e,Li Auto,理想汽车汕头潮阳服务中心（广汕路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+f8757d3a-93cc-4a77-a0fd-05912c765b00,Li Auto,理想汽车深圳宝安服务中心（机场路店）,none,low,门店地址位于宝安区工业区，而候选商场距离过远（最近25公里），且名称和品牌特征均不匹配
+add43464-7bd4-4dc2-801f-1efdbfb53de9,Li Auto,理想汽车深圳福田服务中心（竹子林店）,none,low,门店位于福田区竹子林，地址指向福田汽车站附近，但候选商场中茂业天地在较远的华强北(7.2km)，观澜湖新城和坪山益田假日世界距离更远(22km+)，均不符合服务中心通常选址逻辑。门店名称和地址均未与候选商场匹配。
+df7837be-0a68-4595-a772-51aa3e167e67,Li Auto,理想汽车深圳龙岗坪地服务中心（龙岗大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1675763c-0eae-4af4-bda5-3a18890e9724,Li Auto,理想汽车重庆万州服务中心（沙龙路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b394b212-3ea2-46ce-98c0-2893f3c943c6,Li Auto,理想汽车成都天府直营钣喷中心（麓山大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+147b23c3-5582-489d-87ee-78cdb2fbf983,Li Auto,理想汽车成都锦江直营钣喷中心（锦江大道店）,none,low,门店为汽车钣喷中心，属于专业服务设施而非商场零售店；所有候选商场距离较远（5-11公里），且名称、品牌均无关联；虽然城市匹配但业务类型不符
+88af233f-e5db-4685-b9c2-9eba437f8a9e,Li Auto,理想汽车眉山东坡服务中心（兴业路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+d0103d0b-cbbe-4cda-a919-ec1fe1249617,Li Auto,理想汽车贵阳孟关直营钣喷中心（孟关大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+cce716f4-25d9-451f-bd6b-f02e6499856d,Li Auto,理想汽车贵阳孟关服务中心（孟关大道店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1d9ec32a-ce08-4cbb-89ff-b81097d9bfd8,Li Auto,理想汽车贵阳云岩服务中心（百花大道店）,MALL_00786,medium,门店位于观山湖区，万达广场(贵阳观山湖店)区域匹配且距离最近（约5公里），虽然品牌和名称未直接匹配，但地理位置较为合理
+d58f591c-25d5-4253-8a50-04fb306869bd,Li Auto,理想汽车昆明官渡直营钣喷中心（金陵车市店）,none,low,候选商场距离过远（10.3公里），且门店名称和地址中均未包含与候选商场相关的关键词，品牌类型（汽车钣喷中心）与购物中心不匹配
+cdbeda43-178f-4939-89e9-bed1915899f9,Li Auto,理想汽车昆明园博服务中心（白龙路店）,MALL_00744,medium,品牌匹配度高（汽车展厅通常位于购物中心），距离较近（约1.5公里），城市匹配，但商场名称与门店名称无明显关联
+22040c8a-f6e3-45aa-81ef-63c27c660ea5,Li Auto,理想汽车西安高新直营钣喷中心（普洛斯园区店）,none,low,门店名称为'理想汽车西安高新直营钣喷中心（普洛斯园区店）'，明确指向独立钣喷中心而非商场店铺；候选商场'西安西咸吾悦广场'和'MOMOPARK艺术购物中心'距离较远（7.6km/10.5km），且品牌类型与商场业态不匹配
+eb2cbe51-7cdb-45bc-ba03-fa0135b3acaf,Li Auto,理想汽车宝鸡陈仓服务中心（会展中心店）,,error,error: Expecting value: line 1 column 1 (char 0)
+73c45698-7457-4b1c-8a85-5c8df2277241,Li Auto,理想汽车西宁城东服务中心（东湖汽车城店）,none,low,门店名称为'理想汽车西宁城东服务中心（东湖汽车城店）'，明确指向东湖汽车城，但候选商场均为百货商场或购物中心，无汽车城类商场。所有候选商场距离门店均超过9公里，城市区域不匹配。品牌为汽车服务中心，与候选商场类型不符。
+bc36968d-01a1-42a3-9ccd-695f52b4dd5b,Li Auto,理想汽车银川贺兰服务中心（德胜工业园店）,,error,error: Expecting value: line 1 column 1 (char 0)
+6c7b87ed-133f-49e3-accc-c0be54163905,Li Auto,理想汽车乌鲁木齐经开直营钣喷中心（喀纳斯湖北路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+553a4805-0910-4dd1-bd50-e03e15804814,Li Auto,理想汽车乌鲁木齐新市服务中心（净水路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+8e40c546-f20e-44b9-bb1d-5d601e0d86fb,Li Auto,理想汽车乌鲁木齐水磨沟服务中心（友好汽车城店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c78fbfee-8ecc-46bd-aa1e-b468c01e0f61,Li Auto,理想汽车北京海淀服务中心（祥龙博瑞临时店）,,error,error: Expecting value: line 1 column 1 (char 0)
+7ad45f31-23f5-4358-93db-4759ae891793,Li Auto,理想汽车衡水桃城服务中心（昌明大街临时店）,none,low,门店位于衡水市桃城区，但候选商场中唯一同城商场（爱琴海购物广场）距离3.3公里，品牌为汽车服务中心与购物广场类型不匹配，其他候选商场均位于不同城市且距离过远（72-103公里）
+597098a2-64d9-40fe-9e01-a047348ecb86,Li Auto,理想汽车延吉市区服务中心（长白山西路临时店）,none,low,所有候选商场均不在同一城市（延吉市），距离过远（最近187公里），且门店名称中无明确商场匹配词，无法确定合适的商场匹配
+adb79872-2410-45ed-b6c7-17da7cabebea,Li Auto,理想汽车上海嘉定服务中心（丰翔路临时店）,none,low,门店位于嘉定区昌翔路，而所有候选商场均位于普陀、长宁、虹口等不同区域，距离较远（8-14公里），且门店名称明确标注为'丰翔路临时店'，更可能是独立门店而非商场内的店铺
+d55c2f18-9b74-4a77-ae1a-4df80b09f778,Li Auto,理想汽车安庆宜秀服务中心（中兴大道临时店）,none,low,候选商场距离4.5公里较远，且门店名称明确标注为临时店，与商场门店特征不符
+357c1d02-16b7-4a78-94ec-122fe0308996,Li Auto,理想汽车黄山经开服务中心（丹霞路临时店）,,error,error: Expecting value: line 1 column 1 (char 0)
+66a256e3-d743-47a6-9792-bfb786d7f023,Li Auto,理想汽车抚州临川服务中心（王安石大道临时店）,,error,error: Expecting value: line 1 column 1 (char 0)
+bca45649-7cf6-411f-a9dc-41fa39259d9e,Li Auto,理想汽车十堰茅箭服务中心（天津路临时店）,,error,error: Expecting value: line 1 column 1 (char 0)
+861fe434-157f-44b2-8559-13aecb5850c6,Li Auto,理想汽车邵阳双清服务中心（经开区临时店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b468eaaf-c14b-4ecc-ab28-e0b5d41dd3b0,Li Auto,理想汽车昆明官渡服务中心（官南大道临时店）,,error,error: Expecting value: line 1 column 1 (char 0)
+d5212c66-8abd-4f43-a6a4-f26d97935bad,Li Auto,理想汽车拉萨经开区服务中心（博达路临时店）,none,low,候选商场距离过远（7.5公里），且门店名称和地址均未包含商场相关词汇，门店类型为汽车服务中心而非购物中心，与候选商场王府井购物中心业态不匹配
+debbb683-cf24-4cc7-8343-09348e4a88ed,Li Auto,理想汽车北京朝阳授权钣喷中心（金驰之星店）,none,low,门店位于金港汽车公园，是专门的汽车服务场所，而候选商场均为普通购物中心，品牌和业态不匹配。距离最近的商场也有8公里，且门店名称和地址均未提及任何候选商场名称。
+ea50f45b-84c0-4b99-a899-46f925eac77f,Li Auto,理想汽车北京海淀授权钣喷中心（祥龙博瑞店）,,error,error: Expecting value: line 1 column 1 (char 0)
+52d9c99e-d5d1-427c-8eb0-89e461304f2b,Li Auto,理想汽车北京石景山授权钣喷中心（兰德金业店）,none,low,门店为理想汽车授权钣喷中心，位于石景山区永引渠北路，是独立的汽车维修服务中心。所有候选商场均为购物中心或商业广场，距离较远（6.5-20公里），且门店名称和地址中无商场相关词汇，与购物中心业态不匹配
+fa857e5d-45a9-4fa0-86d3-a03574bb6ea0,Li Auto,理想汽车天津西青授权钣喷中心（盛德宝店）,,error,error: Expecting value: line 1 column 1 (char 0)
+720724b3-9ce1-4bac-bdfe-7bb9ca574f37,Li Auto,理想汽车天津西青授权钣喷中心（沃德宏安店）,,error,error: Expecting value: line 1 column 1 (char 0)
+a4ba9aec-096a-4e5a-a012-1e25b6b073b3,Li Auto,理想汽车天津滨海授权钣喷中心（诚信通店）,none,low,门店位于滨海新区第五大街，而所有候选商场距离都在28-48公里外，远超常规商场服务范围；门店名称明确为'授权钣喷中心'，功能定位与购物商场不匹配
+a949f9d5-9d6f-4825-8ae5-3a1c33a7e64c,Li Auto,理想汽车唐山开平授权钣喷中心（翔羽店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b128ed75-dc84-440d-8193-d71c4a9c6dfb,Li Auto,理想汽车保定莲池授权钣喷中心（凤栖街店）,none,low,门店名称为'理想汽车保定莲池授权钣喷中心'，明确为汽车钣喷维修中心而非零售店；候选商场万达广场和保百购物广场均为综合购物中心，功能定位不匹配；虽然距离较近且城市匹配，但业务性质差异显著
+656161b8-a1fa-4636-a5ba-1719ac65c92d,Li Auto,理想汽车廊坊安次授权钣喷中心（众奥通店）,,error,error: Expecting value: line 1 column 1 (char 0)
+08bdc244-0fa3-4626-a8e9-f667b70f3998,Li Auto,理想汽车张家口桥西授权钣喷中心（惠通陆华店）,none,low,门店位于河北张家口市，所有候选商场均在北京，城市不匹配且距离过远（120-140公里），品牌和名称也无关联
+04a6a5b6-468d-4262-9aa9-8490c74d897f,Li Auto,理想汽车秦皇岛经开授权钣喷中心（登岚店）,none,low,所有候选商场均位于唐山或天津，与门店所在城市秦皇岛不匹配，且距离过远（最近约118公里），门店名称和地址中也没有与候选商场相关的关键词
+3e9f7df3-8989-44c2-b716-f49d19f82b8c,Li Auto,理想汽车衡水桃城授权钣喷中心（联奥店）,none,low,门店位于衡水市桃城区，而候选商场中唯一的衡水商场'爱琴海购物广场'距离3.3公里但城市不匹配（显示为false），其他商场均在不同城市且距离过远（72-103公里）。门店名称'联奥店'未在候选商场名称中找到对应关系。
+7d38d33b-75ea-4b4b-a659-ee916201d12d,Li Auto,理想汽车廊坊三河授权钣喷中心（乐河店）,none,high,门店位于河北廊坊三河市，所有候选商场均在北京，城市不匹配且距离较远（28-33公里），不符合同城匹配要求
+06967ac6-3500-448a-bbf0-5b2ac7568226,Li Auto,理想汽车承德双滦授权钣喷中心（兴蓝店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c88eb8f2-2c80-40b6-b058-5813adba381f,Li Auto,理想汽车廊坊霸州授权钣喷中心（登岚店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ed9bef20-64aa-4556-9d45-567b8e818473,Li Auto,理想汽车晋城城区授权钣喷中心（星驰店）,none,low,所有候选商场均位于河南省（焦作市、洛阳市、郑州市），与门店所在城市晋城市不匹配，且距离均超过49公里，不符合同城距离约束条件
+82bc1b79-55c1-44dd-8d1a-b7e2e89e3c1c,Li Auto,理想汽车晋中榆次授权钣喷中心（驰宝店）,none,low,门店品牌为汽车钣喷中心，与购物中心业态不匹配；所有候选商场均位于太原市，与门店所在晋中市榆次区不符；最近商场距离超过4公里，超出合理范围
+bb44c0f2-95f8-494e-bc7b-ac177969b05d,Li Auto,理想汽车忻州忻府授权钣喷中心（奥源奥众店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b9fc1d87-9e50-40ff-a47f-44bcd5731616,Li Auto,理想汽车临汾尧都授权钣喷中心（广本店）,,error,error: Expecting value: line 1 column 1 (char 0)
+f0c008bb-f6d0-4db9-82b6-4f4d57b4d11f,Li Auto,理想汽车大同云冈授权钣喷中心（驰宝店）,none,low,门店位于大同市云冈区，候选商场中只有万达广场在大同市但距离8公里且在平城区，其他商场均在呼和浩特市距离超过150公里。品牌为汽车钣喷中心，与商场业态不匹配，且所有候选商场城市匹配度低，无合适选项。
+3184eb44-1e52-4382-885d-43b07dca8325,Li Auto,理想汽车吕梁孝义授权钣喷中心（晋鹏捷店）,none,low,门店位于吕梁市孝义市，所有候选商场均在太原市或晋中市，城市不匹配且距离过远（96-102公里），超出合理范围
+7e6ff51c-b173-4b22-b3b7-bb85590fe101,Li Auto,理想汽车鄂尔多斯东胜授权钣喷中心（奥捷通店）,none,low,门店地址位于鄂尔多斯东胜区，但所有候选商场均不匹配：最近的万达广场(鄂尔多斯东胜店)距离12公里且城市不匹配(鄂尔多斯市vs东胜区)，其他商场距离过远(99-174公里)且品牌、名称无关联
+52ec4876-f0d1-4b31-8430-fc3f43d4f525,Li Auto,理想汽车包头高新授权钣喷中心（万乘康迪店）,,error,error: Expecting value: line 1 column 1 (char 0)
+47c72f4f-2590-440d-bf5c-69de9da8700b,Li Auto,理想汽车呼和浩特新城授权钣喷中心（利丰店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1629daad-3a42-4101-8acc-942c42c038e7,Li Auto,理想汽车巴彦淖尔临河授权钣喷中心（奥灵店）,none,low,门店位于巴彦淖尔市临河区，所有候选商场均在包头、鄂尔多斯或银川，距离过远（200-276公里），且城市不匹配。门店名称中的'奥灵店'与候选商场名称无关联，无法找到合适的商场匹配。
+ac1f1b12-fe69-4cb7-bdc1-32f93862838a,Li Auto,理想汽车大连甘井子授权钣喷中心（宝时保时捷店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ae344523-ac32-4c74-b43e-49482830bb41,Li Auto,理想汽车沈阳浑南授权钣喷中心（柒捌玖店）,,error,error: Expecting value: line 1 column 1 (char 0)
+81398b9e-7794-4fe6-9804-951667692c39,Li Auto,理想汽车鞍山铁西授权钣喷中心（鑫卡迪店）,,error,error: Expecting value: line 1 column 1 (char 0)
+62f1a9ab-7aee-4cbb-aba8-4412850bef3c,Li Auto,理想汽车锦州经开授权钣喷中心（奥星越秀店）,,error,error: Expecting value: line 1 column 1 (char 0)
+f086af17-73d2-4469-b7b9-91abea57036f,Li Auto,理想汽车大连甘井子授权钣喷中心（柒捌玖店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b16e18e4-3836-46a1-8540-e746a1576f5f,Li Auto,理想汽车丹东振兴授权钣喷中心（惠华新业店）,,error,error: Expecting value: line 1 column 1 (char 0)
+a259d8ac-ed74-4478-8ef1-a954b2a72dac,Li Auto,理想汽车盘锦兴隆台授权钣喷中心（路新店）,,error,error: Expecting value: line 1 column 1 (char 0)
+3806885c-c29f-4dc7-be3f-bad815bb2b65,Li Auto,理想汽车延吉授权钣喷中心（新里程店）,none,low,门店位于延吉市，所有候选商场均在不同城市（牡丹江、吉林市、长春市），距离过远（187-352公里），且门店名称中无商场相关词汇，无法匹配任何候选商场
+68ab3dc8-48eb-4765-aa47-83d6d3d42b4a,Li Auto,理想汽车长春绿园授权钣喷中心（通立商贸店）,,error,error: Expecting value: line 1 column 1 (char 0)
+4e09cae0-d4aa-4139-9114-78ca00e92134,Li Auto,理想汽车通化东昌授权钣喷中心（宸闻店）,none,low,所有候选商场均位于沈阳市（辽宁省），距离门店200公里以上，而门店在通化市东昌区（吉林省），城市不匹配且距离过远，不适合作为钣喷中心的匹配商场
+5d49cffc-841e-40ef-84fa-97e10e3e03c3,Li Auto,理想汽车哈尔滨道外授权钣喷中心（先锋路店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1712ed5c-8573-43e2-9ab7-8a9bd1b4ceee,Li Auto,理想汽车哈尔滨道里授权钣喷中心（鑫欧冠店）,none,low,门店位于道里区崂山路，而候选商场万达广场(哈西店)距离4.9公里且位于哈西区域，融创茂距离10.6公里更远；门店名称含'鑫欧冠店'但候选商场名称无匹配关键词，地址和区域匹配度低，无法确认关联性
+bb65cfa5-4ca2-4323-bcec-e0ad0c0dcf1a,Li Auto,理想汽车佳木斯郊区授权钣喷中心（安诚店）,,error,error: Expecting value: line 1 column 1 (char 0)
+209fbd69-c37c-4515-8da7-89687236af4b,Li Auto,理想汽车绥化北林授权钣喷中心（龙奥达店）,none,low,门店位于绥化市北林区，所有候选商场均在哈尔滨市，城市不匹配且距离过远（95-97公里），品牌和名称也无关联
+cc11d735-d1f1-4ca4-a4f6-8ecd4cef214c,Li Auto,理想汽车牡丹江阳明授权钣喷中心（中信恒业店）,none,low,门店位于牡丹江市阳明区，而候选商场中只有万达广场在牡丹江市，但距离8.8公里较远，且门店名称'中信恒业店'未体现万达广场关联。其他候选均在不同城市，距离超过200公里完全不匹配。
+848d9b22-cf7b-4576-b580-2ae759d9f008,Li Auto,理想汽车上海浦东授权钣喷中心（箴能店）,none,low,门店为理想汽车授权钣喷中心，属于汽车维修服务类型，而候选商场均为购物中心或商业广场，业态不匹配。虽然城市和区域一致，但最近的商场距离也超过9公里，门店名称和地址均未指向特定商场。
+1617e25c-b215-4686-9c5e-c949dbda3263,Li Auto,理想汽车上海嘉定授权钣喷中心（万联店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b093b555-d39d-4d12-b479-94fe62568283,Li Auto,理想汽车上海闵行授权钣喷中心（实田双柏路店）,none,high,门店为汽车钣喷中心，属于专业维修服务类，而非零售购物中心。所有候选商场均为大型购物中心，与门店业务类型不匹配。虽然城市匹配且距离在5-8公里范围内，但功能定位差异显著，无合适候选。
+1754e863-2a8c-410d-a69c-39d86aeee1a8,Li Auto,理想汽车南京东山授权钣喷中心（天德车业店）,none,low,门店为理想汽车钣喷中心，属于汽车维修服务性质，而候选商场均为零售购物中心，业态不匹配。虽然城市和区域匹配，但5-10公里的距离较远，且商场名称和门店业务无关联。
+93f9043c-b879-4f16-a114-9631a9640689,Li Auto,理想汽车南通通州授权钣喷中心（圣驰店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b4a24184-f354-4fa9-b4fa-a827c793680b,Li Auto,理想汽车淮安经开授权钣喷中心（华胜店）,,error,error: Expecting value: line 1 column 1 (char 0)
+2f0b1c04-cca9-4be0-b795-c35cd39428d0,Li Auto,理想汽车镇江新区授权钣喷中心（德创店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c816a97b-5f96-43cf-b769-321fe8b4bd68,Li Auto,理想汽车泰州海陵授权钣喷中心（悦航店）,,error,error: Expecting value: line 1 column 1 (char 0)
+63bd3f75-36d2-4cec-ac7d-cb7dcc2c9edf,Li Auto,理想汽车徐州铜山授权钣喷中心（华胜店）,,error,error: Expecting value: line 1 column 1 (char 0)
+477e1d4f-3204-4dd7-b760-2f642b969e03,Li Auto,理想汽车盐城亭湖授权钣喷中心（亿嘉通店）,none,low,门店地址在盐城亭湖区，所有候选商场城市不匹配（泰州、淮安），最近商场距离9公里但城市未匹配，且门店名称为授权钣喷中心，与购物中心业态差异较大
+4d431803-8f2a-4025-8d21-2d9033608264,Li Auto,理想汽车无锡惠山授权钣喷中心（鑫德店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ff08fdad-6c0d-4a2d-805e-b1bade2da0e9,Li Auto,理想汽车常州新北授权钣喷中心（丰硕店）,,error,error: Expecting value: line 1 column 1 (char 0)
+0a391c54-649b-45ba-96b8-d0231ad2207d,Li Auto,理想汽车无锡江阴授权钣喷中心（琥珀荟店）,none,high,门店位于江阴市澄江街道，而两个候选商场均在无锡主城区，距离过远（37-44公里），且门店名称和地址中均无与候选商场相关的信息，品牌类型为汽车钣喷中心，与购物中心业态不匹配
+dc99f7c5-ae5d-4222-9036-a02c05fed338,Li Auto,理想汽车张家港经开授权钣喷中心（信楚店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1d0fa6d3-2355-4abb-a73f-8a02de599018,Li Auto,理想汽车南京浦口授权钣喷中心（冠松裕林店）,,error,error: Expecting value: line 1 column 1 (char 0)
+7f370ed2-9233-497c-8349-3dccaf2fe6c1,Li Auto,理想汽车南京江宁授权钣喷中心（德创店）,none,low,门店名称为'授权钣喷中心'，属于汽车维修服务中心而非零售店铺，与候选商场的零售业态不匹配。虽然所有候选商场都在南京且距离在4-13公里内，但门店性质与商场定位差异过大，无法合理匹配。
+cf070115-46e3-41e3-9e32-e75ad648d833,Li Auto,理想汽车杭州余杭授权钣喷中心（星奥店）,none,low,门店位于余杭区，而候选商场中万达广场虽在余杭但距离过远（17公里），银泰百货在滨江区区域不匹配。门店名称中的'星奥店'与候选商场名称无关联，品牌也无明显对应关系。
+9f0fac9c-9591-422e-b1c0-1cbcc048a5d1,Li Auto,理想汽车舟山定海授权钣喷中心（红旗店）,,error,error: Expecting value: line 1 column 1 (char 0)
+2411184c-d33c-4b70-a52f-e522e969a25d,Li Auto,理想汽车宁波鄞州授权钣喷中心（畅想店）,,error,error: Expecting value: line 1 column 1 (char 0)
+782ecee5-3d65-48f6-ac01-4cb68da56870,Li Auto,理想汽车嘉兴秀洲授权钣喷中心（帅想店）,none,low,门店位于嘉兴市秀洲区，候选商场桐乡万象汇虽在同城但距离较远（约17公里），且门店名称和地址均未提及该商场，品牌匹配度低，无明确关联证据
+ec9deea2-0640-472e-b310-575f1391f03b,Li Auto,理想汽车绍兴越城授权钣喷中心（骏广店）,,error,error: Expecting value: line 1 column 1 (char 0)
+2bbca3b2-b3d1-4af7-9dfd-a57f4a6760c4,Li Auto,理想汽车义乌稠江授权钣喷中心（豪想店）,,error,error: Expecting value: line 1 column 1 (char 0)
+a00ec344-ba57-4b83-96e8-38b279ec2461,Li Auto,理想汽车金华婺城授权钣喷中心（德胜店）,,error,error: Expecting value: line 1 column 1 (char 0)
+e4c9a36e-3406-43b5-84bb-92171599360c,Li Auto,理想汽车杭州萧山授权钣喷中心（信恒店）,none,low,门店是理想汽车授权钣喷中心，属于汽车维修服务类，而候选商场银泰百货和万达广场均为零售购物中心，业态不匹配；虽然城市匹配，但距离较远（11-37公里），且门店名称和地址中均无商场相关词汇
+cf608033-3009-474a-b10f-c08357046b08,Li Auto,理想汽车湖州吴兴授权钣喷中心（康禾店）,,error,error: Expecting value: line 1 column 1 (char 0)
+da47be01-7b87-41dc-8cc8-c45aad369eb1,Li Auto,理想汽车台州路桥授权钣喷中心（信祥店）,,error,error: Expecting value: line 1 column 1 (char 0)
+14f6cd43-0d2e-47f4-ba86-5d4f83db8c7d,Li Auto,理想汽车杭州拱墅授权钣喷中心（新想店）,,error,error: Expecting value: line 1 column 1 (char 0)
+52159291-9bec-47c3-a255-8061d4bd75c8,Li Auto,理想汽车杭州上城授权钣喷中心（信原店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1efb2d8b-3c63-413a-9d89-c7a45abaf1c1,Li Auto,理想汽车宁波慈溪授权钣喷中心（大昌行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+4aa1becf-82ed-410c-a2ca-1838d781cbcd,Li Auto,理想汽车宁波江北授权钣喷中心（沃龙店）,none,low,门店为理想汽车授权钣喷中心，属于汽车服务类店铺，而候选商场银泰百货为百货商场，业态不匹配。虽然城市匹配，但距离超过15公里较远，且门店名称和地址均未包含商场相关词汇。
+a73f0080-a1df-44dd-bb1f-ff67b5643c90,Li Auto,理想汽车温州龙湾授权钣喷中心（新想店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b9b5d492-ffe7-4bc2-a5d0-eeeb9d343cb6,Li Auto,理想汽车衢州衢江授权钣喷中心（鑫想店）,,error,error: Expecting value: line 1 column 1 (char 0)
+5a038aca-2636-4953-8213-a863ccdff8a8,Li Auto,理想汽车杭州萧山授权钣喷中心（南星店）,none,low,门店名称为'理想汽车授权钣喷中心'，属于汽车维修服务类型，与购物商场性质不符。候选商场银泰百货和万达广场均为零售购物中心，距离分别达10.8km和34km，且门店地址明确位于工业区（吉利路8号杭州世马纱线有限公司），与商场定位不匹配。
+b0e0223b-e5b7-4267-a85e-04c9e667f51b,Li Auto,理想汽车绍兴柯桥授权钣喷中心（琥珀荟店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c43c361d-6007-4d39-8bc2-cfd94afbc1d7,Li Auto,理想汽车马鞍山雨山授权钣喷中心（康奥店）,none,high,门店位于马鞍山市雨山区，而所有候选商场中，唯一同城的马鞍山金鹰购物中心距离4.3公里，但门店名称为钣喷中心，属于汽车维修服务性质，与购物中心功能不匹配；其他候选商场均位于不同城市且距离过远（36-44公里）
+a73ba460-d749-4ac4-b955-94d8b6613035,Li Auto,理想汽车合肥包河授权钣喷中心（卓星店）,,error,error: Expecting value: line 1 column 1 (char 0)
+f6224f6d-fe09-4af8-b724-cb3cda66fbe6,Li Auto,理想汽车合肥经开授权钣喷中心（悦合店）,none,low,门店名称包含'悦合'但候选商场中仅有'悦方ID MALL'名称部分相似，且距离较远(6.4km)；门店地址在经开区天都路，而候选商场均无明确地址匹配，品牌为汽车钣喷中心与购物中心业态差异大
+63b14625-831a-4a77-a13b-4ce1ee7f37bf,Li Auto,理想汽车亳州高新授权钣喷中心（谯路捷店）,,error,error: Expecting value: line 1 column 1 (char 0)
+052dc4ae-6e2c-40ff-a6b1-2ee044c9769d,Li Auto,理想汽车芜湖弋江授权钣喷中心（华胜店）,,error,error: Expecting value: line 1 column 1 (char 0)
+d2ea54bb-b3a2-4c77-92b5-a5662804d38c,Li Auto,理想汽车淮南经开区授权钣喷中心（盛州店）,none,low,门店位于淮南市大通区，所有候选商场均位于蚌埠或合肥，城市不匹配且距离过远（最近42公里）。门店名称为钣喷中心，属于汽车维修服务类，与百货商场类型不符。
+bd984773-0dde-4ead-af89-590824c3e895,Li Auto,理想汽车宿州埇桥授权钣喷中心（德劲店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ae5e4f93-d6dd-42b6-97cd-ae5b6f4c34ad,Li Auto,理想汽车六安金安授权钣喷中心（红理店）,MALL_00409,medium,门店位于六安市金安区，候选商场中只有六安金安万达同属六安市，距离9.5公里相对较近，且名称中都包含'金安'区域标识，品牌匹配度一般但地理位置最相符
+a778c67b-cd80-4f82-9f28-b21ec2eea066,Li Auto,理想汽车淮北烈山授权钣喷中心（永奥店）,,error,error: Expecting value: line 1 column 1 (char 0)
+f5b4eff2-c678-4a91-8e2d-3b9bac44f645,Li Auto,理想汽车滁州南谯授权钣喷中心（泓申店）,none,low,门店位于安徽滁州，所有候选商场都在江苏南京，城市不匹配且距离过远（36-47公里），不符合门店地址信息
+2f4acfdf-f20f-4a88-bca1-fe64adab760e,Li Auto,理想汽车黄山屯溪授权钣喷中心（昱众店）,none,low,所有候选商场均不在黄山市，距离过远（最近104公里），城市不匹配。门店位于黄山经济开发区，候选商场分布在衢州、安庆、金华、杭州、芜湖等不同城市，无法合理匹配。
+3e6d37b0-8fec-4884-b3b4-c79b67fc300c,Li Auto,理想汽车安庆宜秀授权钣喷中心（恒新广本店）,none,low,门店地址在宜秀区，而候选商场距离较远(4.5公里)且品牌、名称中无明确关联；门店类型为钣喷中心，与购物商场匹配度低
+f3f5891b-5cdd-4d72-bf7a-97fcf35fefa5,Li Auto,理想汽车铜陵铜都大道授权钣喷中心（山水店）,none,low,所有候选商场均不在铜陵市，距离最近商场也在72公里外，城市不匹配且距离过远，不符合门店实际位置
+56b9ee16-2345-4f95-8ce1-e76413ed6162,Li Auto,理想汽车福州晋安授权钣喷中心（宾士店）,,error,error: Expecting value: line 1 column 1 (char 0)
+8707de83-1ba3-48c0-82e4-5cdfe4349c07,Li Auto,理想汽车泉州洛江授权钣喷中心（宾士行店）,none,low,门店地址位于洛江区万虹路，与所有候选商场距离较远（最近约12公里），且门店名称和地址中未包含商场名称关键词，品牌为汽车钣喷中心，与购物商场业态不匹配
+fce55e10-9ada-4258-8e5f-6789b4df669d,Li Auto,理想汽车龙岩经开授权钣喷中心（德邦行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+466a0132-e498-4ca3-9c5e-f9ff7658f473,Li Auto,理想汽车漳州龙文授权钣喷中心（美理店）,none,low,门店名称包含'钣喷中心'，显示是汽车维修服务点而非商场内零售店；与唯一候选商场'吾悦广场'距离3.5公里较远，且门店地址明确指向独立临街位置，与商场入驻特征不符
+8a983e25-3731-41c3-95e3-02b95dec7dae,Li Auto,理想汽车莆田荔城授权钣喷中心（奇奇店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b1b6902e-12a0-452f-9687-dac363972960,Li Auto,理想汽车宁德蕉城授权钣喷中心（铭江店）,,error,error: Expecting value: line 1 column 1 (char 0)
+6a77783a-8587-44e3-b6d2-ee1ab235b937,Li Auto,理想汽车南昌高新授权钣喷中心（广志店）,none,low,门店名称为'授权钣喷中心'，是汽车维修服务场所而非商场零售店；候选商场距离较远（11.8-16公里）且品牌和功能不匹配；虽然城市匹配，但门店类型与商场属性不符
+51b02759-f885-497b-abed-e2ab1c3195f9,Li Auto,理想汽车上饶广信授权钣喷中心（信卓店）,none,low,门店位于上饶市广信区，所有候选商场均位于其他城市（衢州、抚州、金华、南昌），距离均超过100公里，城市不匹配且距离过远
+09a36351-7535-43b8-830b-47c2333f0d24,Li Auto,理想汽车抚州临川授权钣喷中心（富美店）,none,low,门店位于抚州临川区，所有候选商场均在南昌市，距离超过90公里，城市不匹配且距离过远。门店名称中的'富美店'和'众鑫名车汇'与候选商场名称无关联。
+2e6e8b53-d935-4df6-ad01-ed38d26f5ca0,Li Auto,理想汽车宜春袁州授权钣喷中心（驷马店）,none,low,门店为理想汽车钣喷中心，与购物中心业态不匹配；距离9.3公里较远，且门店地址明确指向独立位置而非商场内
+58827ab1-2bd2-4505-be3b-01dc02404cbb,Li Auto,理想汽车景德镇浮梁授权钣喷中心（尚峰店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ab31f4e9-84db-48c2-82cd-093c3399c4c5,Li Auto,理想汽车潍坊奎文授权钣喷中心（和谐汽车店）,none,low,门店名称和地址中未包含候选商场的明显关联词（谷德广场、中百大厦），且距离较远（6.9km和54.5km），缺乏品牌入驻或位置关联证据
+9b3adcff-0820-4541-b15f-35b22899868b,Li Auto,理想汽车淄博张店授权钣喷中心（一修哥店）,,error,error: Expecting value: line 1 column 1 (char 0)
+44a04609-cff5-4098-9ba3-a89814473097,Li Auto,理想汽车东营授权钣喷中心（元泰复原店）,none,low,门店为理想汽车钣喷中心，属于汽车维修服务，而候选商场万达广场为购物中心，业态不匹配；虽然同在东营且距离较近，但品牌和业务类型差异显著
+4548e49c-c4b6-46c8-a3b6-eeac1706af5a,Li Auto,理想汽车济宁高新授权钣喷中心（润华店）,none,low,门店名称为'润华店'但候选商场中无'润华'相关商场；品牌为汽车钣喷中心，与购物商场业态不匹配；最近商场距离3.3公里但城市匹配度低，其他候选距离过远（70+公里）
+85bc61e5-8aca-4d4a-8a37-daae594cd000,Li Auto,理想汽车菏泽牡丹授权钣喷中心（奔宝行店）,none,low,唯一同城候选商场佳和城距离4.8公里，但门店名称和地址均未提及该商场，且门店为汽车钣喷中心，与购物商场业态不匹配；其他候选商场距离过远且城市不匹配
+233a31fd-66ce-44dc-8084-06d686749b8d,Li Auto,理想汽车泰安岱岳授权钣喷中心（双龙国泰店）,,error,error: Expecting value: line 1 column 1 (char 0)
+aba6a7b6-1195-4167-894b-f81e236cd21a,Li Auto,理想汽车威海环翠授权钣喷中心（菲达店）,,error,error: Expecting value: line 1 column 1 (char 0)
+db5c0b42-cc29-4e5e-8a6e-dda3d2b58baa,Li Auto,理想汽车德州德城授权钣喷中心（驿通店）,,error,error: Expecting value: line 1 column 1 (char 0)
+857b701b-744c-4562-ac24-cb72d4143237,Li Auto,理想汽车青岛李沧授权钣喷中心（一修哥店）,none,low,门店为汽车钣喷中心，业务性质与购物商场不匹配；候选商场距离较远（最近2.4公里），且名称和地址中均无关联证据
+46c4296a-a553-4eee-a8bb-8720c8c5bbbf,Li Auto,理想汽车枣庄薛城授权钣喷中心（领克店）,none,low,门店地址位于枣庄高新区，而候选商场万达广场距离16公里过远；门店名称显示为授权钣喷中心，功能与购物商场不匹配
+b49edda4-6537-42b7-a663-cfb06679004e,Li Auto,理想汽车洛阳涧西授权钣喷中心（玖逸行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+749d15b2-cf6d-4601-acca-9a99e706149d,Li Auto,理想汽车安阳安东授权钣喷中心（中鑫之宝店）,none,low,门店地址在龙安区铁西路，万达广场距离约5公里且位于不同区域，门店名称和品牌均未体现与万达广场关联，距离较远且无明确匹配依据
+829f3ef8-7dc0-4dc6-a783-46ac97fb423b,Li Auto,理想汽车郑州高新授权钣喷中心（翔羽店）,,error,error: Expecting value: line 1 column 1 (char 0)
+aa983e43-11a0-4612-bde8-d8d6b1603302,Li Auto,理想汽车南阳卧龙授权钣喷中心（燕宝行店）,none,low,门店位于南阳市卧龙区，而候选商场中唯一同城的万悦城距离7.8公里较远，且其他商场均位于不同城市（襄阳、平顶山等），距离超过100公里，品牌和名称也无直接关联
+0d13e5b2-0fdb-4b66-b87b-6153e54b4b56,Li Auto,理想汽车平顶山卫东授权钣喷中心（燕宝行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+0be12081-d9e9-48c1-b465-f110c7e87c1a,Li Auto,理想汽车商丘梁园授权钣喷中心（和悦店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c9a26f16-7640-449e-9589-8eefdb298b3f,Li Auto,理想汽车濮阳华龙授权钣喷中心（通达店）,,error,error: Expecting value: line 1 column 1 (char 0)
+9d36ed6e-ff6d-46fd-9e10-79d4e7109246,Li Auto,理想汽车郑州经开授权钣喷中心（和悦店）,none,low,候选商场丹尼斯百货与理想汽车门店的品牌、名称和定位不匹配，且距离较远（9公里），虽然同城但无明显关联证据
+930e6bb8-0fce-45a1-9351-acc226ed004e,Li Auto,理想汽车开封龙亭授权钣喷中心（开美店）,,error,error: Expecting value: line 1 column 1 (char 0)
+52e0e466-9e87-4018-84d1-7724de421522,Li Auto,理想汽车漯河源汇授权钣喷中心（盛世店）,,error,error: Expecting value: line 1 column 1 (char 0)
+96e35840-d2fc-46a0-a70e-458558f9d394,Li Auto,理想汽车襄阳襄州授权钣喷中心（鑫天奥店）,none,low,门店位于襄阳市襄州区，所有候选商场城市不匹配且距离较远（最近7.6公里）。门店名称含'鑫天奥店'但候选商场名称无对应词，品牌和地址也无明显关联。
+d7d04370-79bd-4e19-93d5-926d66089ce4,Li Auto,理想汽车恩施舞阳坝授权钣喷中心（景荣店）,,error,error: Expecting value: line 1 column 1 (char 0)
+655c7cc5-0335-42c1-9303-56127c843224,Li Auto,理想汽车十堰茅箭授权钣喷中心（新粤海店）,,error,error: Expecting value: line 1 column 1 (char 0)
+5207cf07-6b5d-4a17-a403-4f10c7d3e5d9,Li Auto,理想汽车荆州授权钣喷中心（信茂店）,,error,error: Expecting value: line 1 column 1 (char 0)
+b0e89b04-bcca-4433-b29b-5b3f67d22aa0,Li Auto,理想汽车武汉光谷授权钣喷中心（华逸通店）,none,low,门店为汽车钣喷中心，属于工业厂房性质，与候选商场（凯德1818、K11、摩尔城等购物中心）业态完全不同。虽然同城且距离在可接受范围，但门店地址明确为'组装车间1号厂房'，与商场零售环境不匹配
+c9a81bef-8879-466f-b1ee-de2d9015618c,Li Auto,理想汽车宜昌西陵授权钣喷中心（琥珀荟店）,none,low,门店位于宜昌西陵区，但候选商场中唯一同城的国贸大厦距离3324米，名称和品牌特征不匹配；其他候选商场位于荆门、荆州、襄阳等不同城市，距离过远且城市不匹配
+61a43a10-0ca6-4631-a27b-67a8fa630997,Li Auto,理想汽车黄石授权钣喷中心（驰宇店）,none,low,所有候选商场均不在黄石市，距离最近37公里且城市不匹配；门店名称和地址未包含商场词，品牌为汽车服务店而非商场零售店
+1bad1955-7002-45c1-b818-da86dff347b2,Li Auto,理想汽车孝感孝南授权钣喷中心（同辉店）,,error,error: Expecting value: line 1 column 1 (char 0)
+e38087fc-3b22-42b6-b87d-09b349121567,Li Auto,理想汽车长沙天心授权钣喷中心（国想店）,none,low,候选商场距离门店约20公里，位于星沙区而非门店所在的天心区；商场名称'万象汇'与门店名称'国想店'无关联；品牌'Li Auto'与商场类型不匹配
+0e7e5b85-100c-4917-860b-b67610b65dad,Li Auto,理想汽车长沙望城授权钣喷中心（永通华诚店）,none,low,门店名称为'理想汽车长沙望城授权钣喷中心'且位于望城区永通大道，而候选商场'长沙星沙万象汇'位于星沙区域，距离超过20公里，地理位置不匹配，且门店类型为汽车钣喷中心与购物中心业态不符
+12a5dd48-0ad8-409c-b080-5483194a8463,Li Auto,理想汽车湘潭雨湖授权钣喷中心（捷信店）,,error,error: Expecting value: line 1 column 1 (char 0)
+aa45ae4e-6b75-472b-b15c-315e3f3b07bb,Li Auto,理想汽车株洲天元授权钣喷中心（嘉勤店）,none,low,门店位于株洲市天元区，所有候选商场中仅王府·星Mall位于株洲市，但距离较远(9.8公里)且城市匹配显示为false；其他候选均位于长沙或湘潭，距离更远(13-35公里)，与门店所在城市不匹配。门店为汽车钣喷中心，与购物商场性质差异较大，无合适匹配。
+19dc3cc7-4ceb-48d7-b5c8-dfed45ef1932,Li Auto,理想汽车娄底娄星授权钣喷中心（悦途店）,none,high,所有候选商场均不在娄底市，距离最近商场超过87公里，远超合理匹配范围。门店位于娄星区，而候选商场分布在湘潭、长沙、益阳等不同城市，城市完全不匹配
+49458ed8-6fae-4805-80a1-a1ca41aa4def,Li Auto,理想汽车郴州北湖授权钣喷中心（永通郴州华运通店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1e6e67fb-5e46-4ad9-909d-e2f711a3fc47,Li Auto,理想汽车邵阳双清授权钣喷中心（宝尊店）,,error,error: Expecting value: line 1 column 1 (char 0)
+6cf6f4b9-fef9-4f87-9860-8a6c9653fb9d,Li Auto,理想汽车长沙开福授权钣喷中心（国理店）,none,low,唯一候选商场'长沙星沙万象汇'距离门店11.5公里过远，且门店名称和地址中均无该商场相关词汇，品牌'Li Auto'与商场名称也无关联
+ad1141a1-0668-478f-a7e8-122eae818a9e,Li Auto,理想汽车茂名茂南授权钣喷中心（金成店）,,error,error: Expecting value: line 1 column 1 (char 0)
+3d45eba7-080b-4e18-afde-a9a4fab20632,Li Auto,理想汽车深圳龙岗布吉授权钣喷中心（捷信新能源店）,none,low,门店位于龙岗区布吉街道，但所有候选商场距离较远（9.8-25.4公里），且名称和地址均无明显关联。门店为汽车钣喷中心，与购物商场业态不匹配
+118cbdd0-eb2b-4a18-8c58-f23ff24aa2ab,Li Auto,理想汽车中山南区授权钣喷中心（保捷汽车店）,none,low,门店位于中山市南区街道，而候选商场虽在中山市但距离较远（最近约7.4公里），且名称和品牌无明显关联。考虑到汽车钣喷中心通常不设在商场内，无合适匹配。
+e18d40e7-2796-4dcd-9db0-2f6160a19bd7,Li Auto,理想汽车云浮云城授权钣喷中心（利泰店）,,error,error: Expecting value: line 1 column 1 (char 0)
+f78ee431-63d4-404a-bd4a-359d35bcae89,Li Auto,理想汽车东莞寮步授权钣喷中心（星跃店）,,error,error: Expecting value: line 1 column 1 (char 0)
+73f8ff9e-42d4-4f38-a955-8442ec63b0cb,Li Auto,理想汽车汕头龙湖授权钣喷中心（柏越店）,,error,error: Expecting value: line 1 column 1 (char 0)
+4863b7d2-dfc1-4b5a-9398-0cbbe23176f5,Li Auto,理想汽车珠海香洲授权钣喷中心（理智店）,none,low,门店位于香洲区华宇路，而唯一候选商场在斗门区，距离约24公里过远；商场名称'万达广场'与门店品牌'理想汽车'及名称'授权钣喷中心'无关联，且门店类型为汽车服务而非购物中心店铺
+7ac39fed-1ceb-421b-8e27-7cb74db58bbb,Li Auto,理想汽车中山西区授权钣喷中心（德熙店）,,error,error: Expecting value: line 1 column 1 (char 0)
+042f6b4f-ffc2-49a6-8cc9-4174f5fa216d,Li Auto,理想汽车广州天河授权钣喷中心（锦龙奥德店）,none,low,门店名称包含'锦龙奥德'但候选商场名称不匹配，且距离过远（最近商场13.6公里），品牌为汽车钣喷中心，与购物商场类型不符
+8bb71e23-b229-49a6-92c4-f10cb3e7d60a,Li Auto,理想汽车潮州潮安授权钣喷中心（柏程店）,,error,error: Expecting value: line 1 column 1 (char 0)
+3082fe78-2966-4a96-8dca-810ad2d1d9c2,Li Auto,理想汽车惠州江北授权钣喷中心（惠展新能源店）,none,low,候选商场距离过远（14公里），且门店名称和地址中均未包含商场相关词汇，门店为独立钣喷中心而非购物中心业态
+f28587c3-fb77-4b4d-9bc1-65d55f478af8,Li Auto,理想汽车深圳光明授权钣喷中心（捷信创展店）,,error,error: Expecting value: line 1 column 1 (char 0)
+88cd9f91-efe1-427a-bb57-a2a8d0b17112,Li Auto,理想汽车深圳宝安授权钣喷中心（宏熙店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c29f618f-919e-4022-95fe-2270726e2bf8,Li Auto,理想汽车清远清城授权钣喷中心（车坛盛世店）,none,low,门店位于清远市清城区，候选商场中仅清远万达在同一城市但距离较远（7.6公里），且门店为汽车钣喷中心，与购物商场业态不匹配；其他候选商场均在不同城市且距离超过30公里
+0711ca71-c9d3-4af3-bc13-431f65e53eb7,Li Auto,理想汽车广州白云授权钣喷中心（星驰店）,,error,error: Expecting value: line 1 column 1 (char 0)
+69ae6ad7-171d-4826-8f80-cff082b57e43,Li Auto,理想汽车东莞塘厦授权钣喷中心（华逸通店）,,error,error: Expecting value: line 1 column 1 (char 0)
+718bb40f-aeae-4785-888f-d2884964b15e,Li Auto,理想汽车湛江赤坎授权钣喷中心（保捷汽车店）,none,low,门店位于湛江赤坎区，候选商场中仅鼎盛广场在湛江但距离5.3公里较远，其他商场均在不同城市且距离超过70公里，品牌和名称均无明确关联，无合适匹配
+ad051b24-cdbe-49b4-862d-6220af4fa541,Li Auto,理想汽车东莞厚街授权钣喷中心（赤电店）,none,low,门店位于厚街镇，候选商场均在市区且距离较远（9-13公里），品牌为汽车钣喷中心与购物中心业态不匹配，无合适候选
+c9f8b89b-dc06-497b-8c16-dc34ce4a560e,Li Auto,理想汽车广州花都授权钣喷中心（南菱店）,,error,error: Expecting value: line 1 column 1 (char 0)
+4b445bc1-7b50-497d-935c-71f056c917d3,Li Auto,理想汽车东莞南城授权钣喷中心（嘉勤店）,,error,error: Expecting value: line 1 column 1 (char 0)
+313a47ef-01a5-40a4-9669-9e2b07714fe3,Li Auto,理想汽车阳江江城授权钣喷中心（嘉勤店）,,error,error: Expecting value: line 1 column 1 (char 0)
+a28533e1-eebe-4246-a93d-0e737d49dafa,Li Auto,理想汽车河源源城授权钣喷中心（源想店）,none,low,门店位于河源市源城区，所有候选商场均在惠州或东莞，城市不匹配且距离过远（70-115公里），不符合门店实际位置
+f2198082-380b-431c-b393-dce3c9f9100e,Li Auto,理想汽车深圳龙岗坪地授权钣喷中心（启创店）,,error,error: Expecting value: line 1 column 1 (char 0)
+8d0ce651-ff53-4a8c-bc52-74a84b751ea0,Li Auto,理想汽车深圳福田授权钣喷中心（安胜店）,none,low,门店地址明确指向福田汽车站东侧的独立汽车服务企业，而非购物中心。候选商场距离较远（最近7.2公里），且名称和业态（茂业天地、观澜湖新城等）与汽车钣喷中心不匹配
+bc71ba5f-5304-4902-a190-b44c90581a23,Li Auto,理想汽车汕头潮阳授权钣喷中心（粤宝店）,none,high,所有候选商场均不在潮阳区或潮南区，距离最近商场超过28公里且城市不匹配，门店地址明确位于汕头市潮阳区，与候选商场地理位置不符
+f8cfe928-d81f-4175-9970-3496241d3a15,Li Auto,理想汽车深圳南山授权钣喷中心（鸿康店）,,error,error: Expecting value: line 1 column 1 (char 0)
+94de201a-ebb6-48c9-834c-d5f78cace86c,Li Auto,理想汽车韶关武江授权钣喷中心（利本行店）,none,low,所有候选商场均不在韶关市，距离最近也在126公里外，不符合同城匹配要求。门店位于韶关市武江区，候选商场分布在清远、广州等地，城市不匹配且距离过远。
+1790a381-53b2-4bf8-9e28-f26d9d3d7483,Li Auto,理想汽车南宁西乡塘授权钣喷中心（道之煊店）,none,low,候选商场位于青秀区，与门店所在的西乡塘区距离较远（约20.5公里），且商场名称'天街'与门店名称中的'授权钣喷中心'业务类型不匹配
+a487024a-9261-4547-ad2c-029cd1a9d296,Li Auto,理想汽车桂林灵川授权钣喷中心（俊汇店）,none,low,门店位于桂林市灵川县，而候选商场中距离最近的桂林万象城和高新万达广场距离超过11公里，且城市区域不匹配；其他候选商场位于柳州、永州等不同城市，距离超过140公里，均不符合门店位置
+1871e455-da2a-4eea-aee5-7bcad41ffeef,Li Auto,理想汽车柳州鱼峰授权钣喷中心（俊汇店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ddf370b1-7287-488b-b9c6-4caea5d5af65,Li Auto,理想汽车重庆渝北授权钣喷中心（利丰行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+fe711a8c-6082-4192-947f-a58205575d86,Li Auto,理想汽车重庆万州授权钣喷中心（梦之星店）,none,low,门店位于万州区，所有候选商场距离过远（210-234公里），远超同城商场合理距离范围；且名称中'梦之星'与候选商场名称无关联
+075f1201-591d-4b79-8143-6f494984c16b,Li Auto,理想汽车成都成华授权钣喷中心（德奥店）,none,low,门店名称为'理想汽车成都成华授权钣喷中心'，属于汽车维修服务类店铺，而非商场内的零售店。所有候选商场距离均较远（8.5-14.3公里），且名称和品牌特征不匹配。门店位于成华区，而候选商场分布在金牛区等其他区域，无明显关联性。
+c4a9734e-29cf-4538-aac4-55ee9e440d36,Li Auto,理想汽车成都武侯授权钣喷中心（捷路店）,MALL_00749,medium,品牌为理想汽车，属于大型汽车服务门店，通常独立选址。候选商场均为购物中心，功能不匹配。选择环球中心因距离最近(4.3km)，且同属武侯区，但汽车钣喷中心与购物中心业态差异较大，故置信度中等。
+fe3caed7-2629-4548-904a-8816b188a066,Li Auto,理想汽车南充高坪授权钣喷中心（盛之和店）,none,low,门店为汽车钣喷中心，属于维修服务类，与购物中心业态不匹配；虽然城市一致且距离较近（3km），但门店名称和业务类型与商场定位不符
+dbe045e2-333a-4a82-aa9d-bdfbcc6306fc,Li Auto,理想汽车眉山东坡授权钣喷中心（德奥店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ec54f296-a98e-4714-a229-2a9bae9ea93b,Li Auto,理想汽车德阳旌阳授权钣喷中心（欣通店）,none,low,门店位于德阳市旌阳区，而所有候选商场均不在德阳市（城市不匹配），最近商场距离超过11公里，且门店为汽车钣喷中心，与购物商场业态不符
+18a351da-30d4-48e5-be81-3b9a9ee4c905,Li Auto,理想汽车泸州龙马谭授权钣喷中心（三和店）,,error,error: Expecting value: line 1 column 1 (char 0)
+ea69a6cb-35a2-4b9a-88c9-8f31df82cb26,Li Auto,理想汽车自贡贡井授权钣喷中心（大昌行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+a808dcce-ce85-4601-a5ff-deb90bd82def,Li Auto,理想汽车乐山市中授权钣喷中心（捷路店）,none,low,所有候选商场均不在乐山市，距离最近61公里（眉山万达），远超一般商场服务范围；门店地址明确位于乐山高新区，与候选商场城市不匹配
+58824856-0807-40b3-8058-cfb22437cc38,Li Auto,理想汽车内江市中授权钣喷中心（蓝池胜龙店）,,error,error: Expecting value: line 1 column 1 (char 0)
+2d9cb679-01a1-4d02-aba0-d2d15555257a,Li Auto,理想汽车绵阳高新授权钣喷中心（玖兴智行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+1f3656cf-8155-41df-b780-0c9e5e63afe9,Li Auto,理想汽车巴中巴州授权钣喷中心（金华泰店）,,error,error: Expecting value: line 1 column 1 (char 0)
+978ac383-ab6e-43d4-bc9c-ce51e57a24d3,Li Auto,理想汽车成都金牛授权钣喷中心（捷宝路店）,none,high,门店是汽车钣喷中心，属于独立的维修服务中心而非商场内店铺；所有候选商场距离均较远（5-17公里），且名称和品牌与汽车服务中心不匹配
+7055c70a-84cb-4130-b662-78683f3de18e,Li Auto,理想汽车贵阳观山湖授权钣喷中心（安信捷店）,none,low,门店地址明确位于大关高架桥下的钣喷中心，为独立维修场所而非商场店铺。候选商场距离较远(5-6公里)，且门店名称和业务性质与购物中心不匹配。
+347e8baf-47ef-40f8-a155-2f97d2ff2d9c,Li Auto,理想汽车遵义红花岗授权钣喷中心（理信店）,none,low,门店位于遵义市新浦新区嘉汇汽车广场，而候选商场中仅有两个位于遵义市（国贸购物中心和吾悦广场），但距离较远（13-19公里），且门店名称和地址均明确指向汽车广场而非购物中心，品牌为汽车服务，与购物中心业态不匹配。其他候选商场位于贵阳，距离过远且城市不匹配。
+affb1c00-a39a-4f14-a7cf-7b06fea0207c,Li Auto,理想汽车六盘水钟山授权钣喷中心（华胜店）,,error,error: Expecting value: line 1 column 1 (char 0)
+bfcdeff2-b5a6-43be-b995-25c0e780c2b4,Li Auto,理想汽车红河经开授权钣喷中心（中升店）,none,high,门店为汽车钣喷中心，位于蒙自市经济技术开发区加油站旁，与候选商场的购物中心、百货业态不匹配。最近商场距离5公里但城市不匹配，其他商场距离过远（136-188公里），均不适合
+678940a1-8da0-49c8-9e9b-45f0df491674,Li Auto,理想汽车昆明官渡授权钣喷中心（奔汇之星店）,,error,error: Expecting value: line 1 column 1 (char 0)
+84008f48-b48c-4d10-b01d-15044a6bc296,Li Auto,理想汽车曲靖麒麟授权钣喷中心（中致远店）,,error,error: Expecting value: line 1 column 1 (char 0)
+c290d649-8372-4d81-982a-a4c26648875d,Li Auto,理想汽车拉萨经开区授权钣喷中心（名腾名车店）,none,low,品牌为理想汽车授权钣喷中心，与购物中心业态不匹配；门店地址与商场距离较远（7.5公里），且名称中无商场相关词；虽然同城但无明显关联证据
+ca884613-44cd-40d5-8b41-a50a0e08c778,Li Auto,理想汽车西安灞桥授权钣喷中心（卡施达店）,,error,error: Expecting value: line 1 column 1 (char 0)
+891901b2-a113-43c0-8eb2-314a65d9dcc7,Li Auto,理想汽车渭南临渭授权钣喷中心（恒泰恒南店）,none,low,所有候选商场均位于西安市，而门店在渭南市，城市不匹配；且距离过远（43-49公里），不符合汽车钣喷中心的商场入驻逻辑
+f76efba5-f245-4bee-9316-b0c957963dfb,Li Auto,理想汽车汉中汉台授权钣喷中心（汉中三星店）,,error,error: Expecting value: line 1 column 1 (char 0)
+8654f856-1e12-4d60-8b95-a06728c53b42,Li Auto,理想汽车宝鸡陈仓授权钣喷中心（恒泰景明店）,,error,error: Expecting value: line 1 column 1 (char 0)
+6fed99d2-7da5-430a-b9a8-188171c38561,Li Auto,理想汽车武威凉州授权钣喷中心（华长信店）,,error,error: Expecting value: line 1 column 1 (char 0)
+7b769495-07ca-4cea-89e5-aa94bc465530,Li Auto,理想汽车酒泉肃州授权钣喷中心（金岛骄马店）,,error,error: Expecting value: line 1 column 1 (char 0)
+8d665462-f7fa-42ed-84ef-1638980a647e,Li Auto,理想汽车西宁城东授权钣喷中心（东湖汽车城店）,none,low,门店名称明确指向'东湖汽车城'，但候选商场中无此名称。所有候选商场距离门店较远(9-17公里)，且名称和品牌与汽车销售/服务不匹配。虽然同属西宁市，但无合适的商场候选。
+1ac46b49-4d12-420a-b816-3b87857e14f6,Li Auto,理想汽车乌鲁木齐水磨沟授权钣喷中心（鑫海新星店）,none,low,门店为汽车钣喷维修中心，并非购物中心内的零售店；所有候选商场距离较远（3.4-7.6公里），且名称和品牌均不匹配；门店位于南湖北路工业区，与商场定位不符
+73ef50fd-81f3-4a82-bd43-1ca20f1e359d,Li Auto,理想汽车乌鲁木齐高新授权钣喷中心（玖逸行店）,,error,error: Expecting value: line 1 column 1 (char 0)
+d6c22d29-2fb9-423d-ba90-9fe2f6e42cc9,XPeng,小鹏汽车成都成洛大道销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+bc329a63-7f13-4cd0-ac67-515d71923832,XPeng,小鹏汽车黄冈明珠大道销售中心,none,low,候选商场万达广场与门店品牌和名称不匹配，小鹏汽车为独立销售中心而非商场内店铺，且距离虽近但品牌定位不符
+127e21dd-3720-4153-8148-ecd21a5cef62,XPeng,小鹏汽车眉山眉州大道销售服务中心,none,medium,万达广场距离最近(3公里)但城市不匹配(眉山vs眉山市)，其余候选均位于成都市，距离过远(48-57公里)，不符合门店实际位置
+954d9792-3156-4bf2-b569-04f9bf6b8ba1,XPeng,小鹏汽车三亚迎宾路销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+1a66e61f-65c8-42df-9c62-cf5917fa4c61,XPeng,小鹏汽车河源大道销售服务中心,none,low,门店位于河源市源城区，所有候选商场均在惠州市或东莞市，城市不匹配且距离过远（73-117公里），超出合理范围
+10bb1deb-f5f2-4160-8319-4ea2a0b21013,XPeng,小鹏汽车象山东陈汽车广场销售中心,none,low,门店位于象山县滨海大道8号，名称明确指向'象山东陈汽车广场'。所有候选商场距离均超过50公里且位于宁波市区，地址和名称均不匹配，无合适商场候选。
+62620be7-9cff-4b8f-84bd-ac8ad255c7e5,XPeng,小鹏汽车无锡江溪销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+65ed2bfb-032a-451a-b209-757a7869941d,XPeng,小鹏汽车平湖汽车商贸城销售展厅,none,low,门店位于平湖市汽车商贸城，而候选商场在嘉兴市区，距离超过31公里，品牌和名称均无关联，城市虽同属嘉兴市但区域不匹配
+c2c134e3-14fa-4057-a92e-a0438b2f4257,XPeng,小鹏汽车上饶月亮湾汽车城销售服务中心,none,low,门店位于上饶市，所有候选商场均位于不同城市（衢州、抚州、金华、南昌），距离超过100公里，且门店名称和地址中未提及候选商场名称，无法匹配
+dbced744-4e25-4893-bdee-3e250224999d,XPeng,小鹏汽车衢州吾悦广场销售中心,MALL_00698,high,门店名称和地址均明确指向'吾悦广场'，候选商场名称完全匹配，城市一致，距离仅107.6米，品牌与商场类型契合
+1fc301a1-4eeb-4ff8-805d-69608b126bb1,XPeng,小鹏汽车萍乡长运汽车城销售服务中心,none,low,门店位于萍乡市安源区，而所有候选商场均在宜春、株洲、湘潭、长沙等不同城市，距离超过50公里且城市完全不匹配，不符合门店的商场匹配要求
+49feda22-30bc-419f-a4c7-40cd75aed24a,XPeng,小鹏汽车南宁白沙大道销售中心,MALL_00260,medium,门店位于江南区白沙大道，与万达广场(南宁江南店)同属江南区，距离仅1151米，品牌为汽车销售中心，通常不会在大型商场内部，但该商场是距离最近且区域匹配的候选
+5a6fb84e-626b-4309-8993-126c1a182ad3,XPeng,小鹏汽车湘潭河东汽车城销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+46ba6223-58f8-459e-a00c-f6e280db92fd,XPeng,小鹏汽车都匀茂盛汽车城销售服务中心,none,low,门店位于都匀茂盛汽车城，品牌为小鹏汽车专卖店，而候选商场黔南都匀万达广场是综合购物中心，类型不匹配；虽然距离较近且同城，但汽车专卖店通常不会设在综合购物中心内
+45f70f82-fcc1-48a6-abbe-fb1ee8a3dc5d,XPeng,小鹏汽车上海临港蓝鲸世界销售中心,none,low,门店地址明确指向'龙光蓝鲸世界购物中心'，但候选商场列表中无此商场。最近候选距离较远(29-47公里)，且名称、地址均不匹配。
+cf5e856c-3d88-40e6-aae3-2d89dbef55e2,XPeng,小鹏汽车南宁南站大道销售服务中心,none,low,门店位于江南区沙井大道，名称和地址均未明确提及商场，且所有候选商场距离较远（6-14公里），缺乏品牌入驻证据支持，匹配度低
+ad1eeeaf-dd3d-4df2-ab7a-579f3f5be4b5,XPeng,小鹏汽车诸暨北二环销售服务中心,none,low,门店位于诸暨市北二环路，距离最近的候选商场超过45公里，远超一般商场辐射范围。品牌为小鹏汽车销售服务中心，通常位于独立商业区而非大型商场内部
+4225d499-5f5b-42c6-85a3-2701787d04bb,XPeng,小鹏汽车无锡盛岸西路销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+83f9ba9f-a7f6-441c-b8b5-b3b1f3c24c5f,XPeng,小鹏汽车佛山南海平洲销售中心,none,low,门店地址为独立销售中心，名称和地址均未提及商场；候选商场距离最近也超过2.6公里，且无品牌或位置关联证据，不适合匹配
+00436f8c-30a1-4c8f-9ac3-5304de522063,XPeng,小鹏汽车长沙中南汽车城销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c402d544-41fa-4117-9b80-38fdc732903d,XPeng,小鹏汽车湛江粤西国际车城销售中心,none,low,候选商场'鼎盛广场购物中心'距离门店约12.7公里，远超常规商场门店距离范围；门店名称和地址明确指向'粤西国际车城'而非购物中心，品牌为汽车销售中心与购物中心业态不匹配
+4ab50bcb-905a-4ca6-9f34-5e8125975e1a,XPeng,小鹏汽车广州白云销售服务中心,MALL_00035,medium,门店位于白云区白云大道北，凯德广场·云尚同在白云区且距离最近（约6.9公里），名称中的'云尚'与白云区有一定关联，但门店名称未明确提及商场名，品牌为独立汽车展厅可能不在商场内
+4f6d2c32-2fe1-4cd1-8d7b-b8a490641d19,XPeng,小鹏汽车红河观福汽车城销售服务中心,none,low,门店是汽车销售服务中心，位于工业园区，而候选商场是购物中心，业态不匹配；虽然同城且距离约5公里，但门店名称和地址均指向工业区而非购物中心
+dca8076d-2abe-4771-a26a-616ef82c454a,XPeng,小鹏汽车盐城东台吾悦销售展厅,none,low,门店名称和地址明确指向'吾悦广场'，但候选商场中只有'金鹰购物中心'，品牌、商场名称和地址均不匹配，且距离较远(58公里)
+0b48e9ed-7205-4bbb-a632-74b480eebb5a,XPeng,小鹏汽车怀化国际汽车城销售服务中心,none,low,门店位于怀化市鹤城区，候选商场中仅怀化鹤城万达广场在同一城市且距离较近(1.6公里)，但门店地址明确指向'恒裕汽车大楼'而非万达广场，且品牌为汽车销售服务中心，与购物中心业态不匹配
+7fee7827-1763-4c9c-acc4-732aca3bf071,XPeng,小鹏汽车九江万达广场销售中心,none,low,门店名称和地址明确指向万达广场，但候选商场中只有联盛快乐城，距离4.3公里且品牌不匹配，没有合适的万达广场候选
+e8bb82ee-c256-4a85-ad1d-3bdb494909ad,XPeng,小鹏汽车武汉临空港大道销售中心,none,low,门店位于临空港汽车智能小镇，地址明确为独立汽车销售中心而非商场内。候选商场距离均在4-15公里外，名称和定位与汽车小镇不匹配，无合适商场可选。
+1b70e0cc-c4c7-4785-97f7-54212e7361e4,XPeng,小鹏汽车兰州雁滩汽车城销售中心,none,low,门店名称为'小鹏汽车兰州雁滩汽车城销售中心'，明确指向独立的汽车城而非综合商场。候选商场均为综合购物中心，与汽车销售中心业态不符。虽然距离最近的是万达广场(2101米)，但品牌定位和经营业态差异较大。
+01a2c5c2-eec1-4692-8208-0a56a9723e30,XPeng,小鹏汽车杭州西溪销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+a28049ca-c341-41a3-a588-0f58983d4a1a,XPeng,小鹏汽车重庆东原悦荟销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+8a276d80-1fb7-4b7d-a802-285b372bfd14,XPeng,小鹏汽车郑州高新万达销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ccef039e-deeb-4fd7-8334-c1244190238d,XPeng,小鹏汽车柳州东环路销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+94bfe2d3-21af-4e8c-aad5-4528433be262,XPeng,小鹏汽车长沙雀园路销售中心,none,low,门店名称为'销售中心'且地址为独立门牌号，与候选商场名称无关联。距离最近的商场(德思勤城市广场)也超过2.9公里，不符合商场内店铺特征。
+9841b24e-c099-40ba-8c28-812666d760f4,XPeng,小鹏汽车内江甜城大道销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+297f50b5-abd1-44fe-bd16-d4f529f88736,XPeng,小鹏汽车成都锦江大道销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+241d9d35-100a-44d0-a2e7-b796afeca1dd,XPeng,小鹏汽车上海普陀桃浦销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+74ea441a-e407-4cf8-93a2-98c9ffabcba3,XPeng,小鹏汽车邹平新兴汽贸城销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+33b040ae-8ac8-4775-908a-61ca53a8103c,XPeng,小鹏汽车南阳北京大道销售中心,none,low,候选商场万悦城与门店距离过远（7.8公里），且门店名称和地址均未提及该商场，品牌入驻关联性弱
+0f507a94-3ae1-4fe3-9ae6-39d51333896f,XPeng,小鹏汽车全球旗舰销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+fee1d1f0-4782-42d8-bb6e-7a2d634e5a91,XPeng,小鹏汽车濮阳西环销售中心,none,low,所有候选商场与门店不在同一城市，且距离过远（最近63公里），品牌和商场名称也无明显关联
+be440e52-5e1a-4587-8c77-196188852935,XPeng,小鹏汽车兴化汽车城销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+9ad648fb-c723-4ac0-9fe7-dedf5d9771bb,XPeng,小鹏汽车呼和浩特海西路销售服务中心,none,low,门店地址明确指向'内蒙古汽车中心'而非商场，且所有候选商场距离较远(4-7公里)，无直接品牌或名称关联，匹配度低
+c363d991-4e8e-49cb-929a-f2dad1d00cc5,XPeng,小鹏汽车永康城西销售中心,none,low,门店位于永康市，距两个候选商场均超过40公里，距离过远；门店名称含'销售中心'而非商场专柜，且品牌为汽车销售，与购物中心业态不匹配
+19aa39d4-5c39-485b-bf5a-b19658e7ccd2,XPeng,小鹏汽车杭州华兴汽车城销售中心,none,low,门店位于临安区玲珑街道，而所有候选商场均位于杭州市区，距离较远（35-44公里），且门店名称中的'华兴汽车城'与候选商场品牌不匹配，没有合适的商场候选
+42ecb997-3ce5-4b03-94f9-79dd65bfaaa9,XPeng,小鹏汽车常州武进汽车城销售服务中心,none,low,门店位于武进汽车城专业市场，候选商场均为城市商业综合体，品牌类型和位置特征不匹配，且最近商场距离超过4公里
+878a27c4-be91-40ae-a4f3-3ddc987e43d5,XPeng,小鹏汽车晋城迎宾街汽车城销售服务中心,none,low,门店位于山西晋城市，所有候选商场都在河南省（焦作、洛阳、郑州），城市不匹配且距离过远（45-100公里），名称中'汽车城'与候选商场类型也不符
+d44e0d36-0c5b-46d7-8c3d-b10ef9ee1e32,XPeng,小鹏汽车武汉张家湾汽车园销售服务中心,none,low,门店名称和地址明确指向'张家湾国际汽车科技园'，而候选商场均为普通购物中心，品牌、名称和地址均不匹配，距离也较远（6-10公里）
+85135202-8c93-4972-9e1f-f6ff013af319,XPeng,小鹏汽车邵阳天娇国际汽车城销售服务中心,none,low,所有候选商场均不在邵阳市，距离最近的水州万达广场也超过90公里，远超合理范围；门店名称中的'天娇国际汽车城'与候选商场品牌不匹配
+d5ce0b55-b869-4980-99aa-56b1a2106d49,XPeng,小鹏汽车义乌后宅汽车城销售服务中心,none,low,门店位于义乌市后宅街道汽车城，名称和地址均指向专业汽车城，而非传统购物中心。候选商场'义乌之心'距离6.4公里但为综合商场，'永盛购物中心'距离48公里过远且类型不匹配。无合适的汽车城候选。
+7abd6b1a-b426-48f4-919b-784e9e3e6d13,XPeng,小鹏汽车南京江北新区销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5ee2145d-2bea-409a-84e1-501f0aed2bb6,XPeng,小鹏汽车温州龙湾销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9d164c92-ad12-49ac-8f09-f0a093513cbf,XPeng,小鹏汽车兴义桔山汽车城销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+3eb4ed53-5aec-410b-9cee-e9fced5dca81,XPeng,小鹏汽车鞍山达道湾销售中心,none,low,门店地址为铁西区建设大道767号，而候选商场鞍山万象汇距离4.6公里，位置差异较大；门店名称中无商场词匹配，且品牌为独立汽车销售中心，通常不在综合商场内
+b79b5f71-77ea-4c53-bbd5-15a203523907,XPeng,小鹏汽车滁州城南万泓美众销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+725f1308-5485-42d7-acb1-68766bf1d089,XPeng,小鹏汽车阜阳朝阳大道销售服务中心,none,low,门店品牌为小鹏汽车4S店，地址位于开发区汽贸路附近，而候选商场阜阳商厦中心距离较远(7.9公里)，且名称和地址均无关联，不符合汽车4S店通常位于汽贸商圈而非购物中心的特征
+cfaf9ae3-6ed3-48e2-b0fa-fb7106e0987a,XPeng,小鹏汽车上海康桥360广场销售中心,MALL_00137,high,门店名称包含'康桥360广场'，而候选商场中万达广场(上海周浦店)距离最近(1270米)，且位于同一城市和区，品牌小鹏汽车通常入驻大型购物中心，匹配度高
+3875b1ec-8ef1-44b8-8afa-b57b3c62f5f3,XPeng,小鹏汽车金华宾虹西路销售中心,none,low,门店名称和地址中均未包含商场相关词汇，且两个候选商场距离较远（4公里和50公里），与汽车销售中心通常独立选址的模式不符
+82d425a5-a78e-4e44-85c3-9d5ffd68265e,XPeng,小鹏汽车成都空港销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+09d627a8-43cc-406d-be30-d1e8ffd93cc2,XPeng,小鹏汽车郴州南岭路销售中心,none,low,门店位于郴州市北湖区，但所有候选商场均在不同城市（衡阳、永州、赣州），距离过远（131-194公里），且品牌、名称、地址均无关联
+575aeb55-d6f8-4385-abc8-8a03fe0841ef,XPeng,小鹏汽车嘉兴汽车商贸园销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c1c64073-43d7-423f-9230-f1b3661d2c68,XPeng,小鹏汽车烟台机场路销售服务中心,none,low,门店名称为'小鹏汽车烟台机场路销售服务中心'，地址为'烟台市机场路126号'，明确指向独立门店位置。候选商场距离较远（5.3-11.4公里），且名称和地址均无商场关联词，应为独立汽车销售服务中心。
+a1a8fecf-57f0-4296-a40e-3c8c437c4184,XPeng,小鹏汽车荆州荆沙大道销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+56d6a247-53a8-414a-81a7-2c0727ae43bb,XPeng,小鹏汽车深圳欢乐海岸销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+12787849-034c-48ff-b93e-e6c7bb3f060e,XPeng,小鹏汽车深圳前海销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+22b1b03b-98f1-4788-ae74-6fee19d35b48,XPeng,小鹏汽车杭州桐庐世纪车城销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+25981e63-8bc7-4146-935e-18c7376266b8,XPeng,小鹏汽车厦门海沧销售服务中心,MALL_00094,medium,门店位于厦门海沧区，名称含'海沧'，SM厦门海沧城市广场名称直接匹配海沧区，距离8.2公里相对较近，品牌为汽车销售服务中心更可能位于独立建筑而非传统商场，但该商场是候选中最符合区域特征的
+5dbf520b-0353-4555-aedc-db66c8bf0d28,XPeng,小鹏汽车东莞长安万科广场销售展厅,MALL_00040,high,门店名称和地址明确包含'长安万科广场'，与候选商场'万科广场(东莞长安店)'名称高度匹配；距离仅72.9米，且城市、区域一致
+0f0ca6c3-d7c2-4883-9d17-0cc3ff572d73,XPeng,小鹏汽车喀什新怡发销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9f97e8b6-3766-4ccc-a993-6571db0c51b8,XPeng,小鹏汽车南宁秀厢大道销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+41ce3cda-5425-4dd5-90c4-bfa42de0b204,XPeng,小鹏汽车宜宾安鸿销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+98c124f7-d6c5-40b7-b6a3-c3b9b8818e51,XPeng,小鹏汽车大同汽车文化广场销售服务中心,none,low,门店位于庞大汽贸园，主营汽车销售，而候选商场万达广场距离7.8公里，虽同城但无品牌入驻关联且业态不匹配
+a69ef895-a016-4b6e-bef4-61d0a0384c40,XPeng,小鹏汽车佛山顺德陈村销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+522bbf77-cc34-43d4-978e-cf075cb08887,XPeng,小鹏汽车德州德百汽贸城销售服务中心,none,low,门店名称包含'德百汽贸城'但候选商场是'澳德乐时代广场'，品牌和名称关键词不匹配，虽然城市相同且距离较近(3.5km)，但门店明确指向汽贸城而非购物广场，类型不符
+63e821b9-aec3-48f0-9887-5223987051a0,XPeng,小鹏汽车开封博奥汽车城销售中心,none,low,门店位于开封市，而所有候选商场都在郑州市，城市不匹配且距离较远（约49-56公里），不符合同城匹配要求
+7d1d661e-a971-4c44-b96e-745ceea0f538,XPeng,小鹏汽车清镇吾悦销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+770039dc-596f-424a-99e6-bb93677502dc,XPeng,小鹏汽车钦州扬帆大道销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f5e53712-d5d8-4f49-8d6c-c45fa8f38553,XPeng,小鹏汽车西安西部车城销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+cc9c5a41-b7b6-48e4-9eac-627b83977728,XPeng,小鹏汽车海宁城北销售服务中心,none,low,门店品牌为小鹏汽车，名称中含'销售服务中心'而非商场，地址位于海宁市经济开发区，与候选商场嘉兴八佰伴距离约24公里过远，且不在同一行政区（海宁市vs嘉兴市本级），匹配度低
+6f093e9d-ed1c-4eb7-b910-625656d29538,XPeng,小鹏汽车南宁五象汽车广场销售服务中心,none,low,门店地址明确位于五象汽车生活广场，而候选商场中五象万象汇虽名称含'五象'但距离较远(3.7公里)，其他商场距离更远且无明确关联。门店可能位于独立的汽车专业市场而非综合商场。
+2bec9226-8dd2-440e-a3cb-1ef51ca72034,XPeng,小鹏汽车大庆高新区销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+b696ca40-e301-4a67-8370-2978026059e7,XPeng,小鹏汽车西安凤城五路销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+51d3e10a-cbd3-401d-a10a-46785103e238,XPeng,小鹏汽车天津空港销售服务中心,none,low,门店位于天津东丽区空港经济区，而所有候选商场距离门店超过14公里且位于不同商圈，门店名称中无商场词匹配，品牌为汽车销售服务中心，与候选商场类型不匹配
+736f2194-c598-4a6d-ba07-3c36a32f2fc0,XPeng,小鹏汽车安阳文昌大道销售中心,MALL_00710,medium,品牌为独立汽车销售中心，非典型商场门店；候选商场中仅万达广场(安阳店)位于同城且距离最近(3.1km)，但城市匹配标记为false，地址中无商场关联词，故置信度中等
+4e885414-6ac8-4f3c-b3c9-c4b8cf0f23c6,XPeng,小鹏汽车西安高新万达销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+69d5bfca-b9c7-4cac-bd79-1accdcdc836d,XPeng,小鹏汽车绵阳高新汽博销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+133ac88b-9f44-4c26-a328-fef95dbb1e40,XPeng,小鹏汽车合肥瑶海汽车城销售中心,none,low,门店位于瑶海区安徽国际汽车城，是专门的汽车销售中心，而候选商场均为普通购物中心，品牌、名称和功能均不匹配。虽然城市相同，但距离较远且类型不符，无合适候选。
+3c76ef49-53b2-4c1d-bdfd-ff7680fda29b,XPeng,小鹏汽车徐州金山桥汽车城销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+c690bc56-20fd-4eec-8439-f6b02fa84e7b,XPeng,小鹏汽车德阳八角销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+31909b42-42ef-4061-8511-dbcf60634777,XPeng,小鹏汽车厦门湖里大道销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5a69b073-ddc1-4e4e-8021-391b7f665f06,XPeng,小鹏汽车都江堰晨明汽车总部港销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+9516f0ee-0ac1-4d99-aebc-3c5204ae4544,XPeng,小鹏汽车南通海安迎宾路汽车城销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+d85ca6fd-ecbb-415a-b53c-dba5dd35ceaa,XPeng,小鹏汽车乐清南虹广场销售展厅,none,low,门店地址明确指向乐清市南虹广场，但候选商场均位于温州市区，距离超过28公里且名称不匹配
+de53f237-0730-48bb-95af-82b1f2135983,XPeng,小鹏汽车绍兴城南销售展厅,MALL_00128,high,门店地址与会稽路576号匹配，距离金帝·银泰城仅3.3公里，品牌为汽车展厅，与银泰城业态相符，城市和区级匹配度高
+5f0a935a-a382-4385-907d-6eef76b414b0,XPeng,小鹏汽车中山港口销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+cd95aacb-1cd9-4bd9-889e-c2378a79447a,XPeng,小鹏汽车六安东方汽车城销售服务中心,none,low,门店位于汽车城，主营汽车销售服务；候选商场为万达购物中心，类型不匹配且距离较远(10公里)
+d4281dc7-b636-472f-b8d4-da5b83fb1d5f,XPeng,小鹏汽车盐城永宁销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+71f7d2ce-dc90-4b22-a075-2957cc3ff451,XPeng,小鹏汽车汕头潮南汽车街销售中心,none,low,候选商场距离过远（24公里），且门店名称和地址均未包含商场相关词汇，门店位于潮南区而候选商场在市区，品牌匹配度低
+aa467df8-f2b3-4119-8f61-b5ec0a8307e8,XPeng,小鹏汽车聊城东昌路销售中心,none,low,所有候选商场均在济南市，距离门店77-87公里，城市不匹配且距离过远；门店位于聊城市东昌府区，名称和地址均未显示与济南商场关联
+cdc73efc-c3a6-4d0a-9cea-134c05aeaf03,XPeng,小鹏汽车秦皇岛松花江西道销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+7a40427e-1678-43fb-95b6-bc0e98e091aa,XPeng,小鹏汽车淮安旺旺路车城销售中心,none,low,门店地址位于清江浦区旺旺路，而候选商场距离较远（7-8公里），且门店名称明确指向'车城销售中心'而非购物中心，品牌为汽车销售，与候选商场的业态不匹配
+81ed3598-7ad8-4bfe-bd65-a97f540e0ce3,XPeng,小鹏汽车宁波东部银泰城销售中心,none,low,门店名称明确包含'东部银泰城'，但候选商场列表中没有任何银泰城相关的商场。所有候选商场品牌均不匹配，且距离最近的宁波阪急也有1.2公里。
+a967fc31-e779-430c-83cc-582223274ade,XPeng,小鹏汽车北京北四环未来广场销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+75901ec4-cfa4-4c91-8ac7-0d79199a5ca8,XPeng,小鹏汽车嘉善世纪车城销售展厅,none,low,候选商场距离门店16.8公里过远，且门店名称和地址明确指向'世纪车城'而非八佰伴，品牌专营店与综合商场性质不匹配
+41b1f8b2-4efe-4939-9cdd-b19286fb14ee,XPeng,小鹏汽车大连华北路汽车城销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+8c469a64-31e8-450f-9326-5a4548e4f061,XPeng,小鹏汽车寿光圣城西路销售中心,none,low,门店品牌为小鹏汽车（汽车销售），候选商场均为普通购物中心且距离过远（37-42公里），名称和业态均不匹配
+9bfbb0cf-bf79-416c-9e6c-b3633bfdc933,XPeng,小鹏汽车临沂平邑销售展厅,none,low,门店位于平邑县，距离临沂万象汇约80公里，超出合理距离范围；门店名称和地址均指向独立展厅而非商场内店铺
+90ce79bc-fa0b-49b0-919d-82c424a67673,XPeng,小鹏汽车德州新河东路销售中心,none,low,候选商场澳德乐时代广场与门店品牌、名称无直接关联，且距离较远（2.3公里），门店地址明确位于新河路与长河大道交汇处而非商场内，无明显匹配依据
+84a0c308-80b3-4bdd-901b-01c0a4cc2307,XPeng,小鹏汽车太原长风东街销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+7ead1cdf-ca35-4993-b185-994ce862991e,XPeng,小鹏汽车株洲荷塘销售中心,MALL_00722,medium,门店与商场同城匹配，距离2.8km在合理范围内。虽然品牌名称未直接关联商场，但地址和城市信息一致，且是唯一候选。
+c9ad8a0b-c67c-422b-9121-04475c8169f4,XPeng,小鹏汽车重庆汽博销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f677ddc8-2f38-49e1-8d5c-9a035f5f78aa,XPeng,小鹏汽车菏泽黄河东路销售服务中心,none,low,门店名称和地址均未提及'佳和城'，且距离较远(10.4公里)，虽然城市匹配但缺乏其他支持证据
+602892a3-293f-4089-a0ef-30678c19b09f,XPeng,小鹏汽车临沂沂南销售中心,none,low,门店位于沂南县，而候选商场在临沂市区，距离超过50公里，区域不匹配；品牌专营店通常独立选址，与商场定位不符
+5cf152fa-ea89-436e-89af-df994dc5f00b,XPeng,小鹏汽车朔州振华汽车园销售中心,none,low,门店位于朔州市，而所有候选商场均位于大同市或太原市，城市不匹配且距离过远（最近约109公里），门店名称中的'振华汽车园'与候选商场品牌（万达、吾悦等）也不一致
+671bf023-a2e3-4180-bc3a-8da76ab3932d,XPeng,小鹏汽车重庆江津九江大道销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ba325af3-a735-4770-a77c-bb576933ea07,XPeng,小鹏汽车漯河107国道销售中心,none,low,门店在漯河市源汇区，所有候选商场均位于其他城市（许昌、驻马店、周口、平顶山、郑州），距离超过55公里且城市不匹配，无合适商场
+9b0ecb29-5abf-4fd4-949f-44ac727feb48,XPeng,小鹏汽车通辽瑞丰汽贸园销售服务中心,none,low,门店地址位于经济技术开发区创业大道，而候选商场万达广场距离4.9公里，距离较远；门店名称明确指向汽贸园而非购物中心，品牌为汽车销售服务，与商场业态不匹配
+83bb248e-44bb-4eaa-9c88-b04d35fa2b0d,XPeng,小鹏汽车大连香周路销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+75ac2c63-2064-44c8-8f74-7e878fd594ce,XPeng,小鹏汽车广州南沙环宇城销售中心,MALL_00473,high,门店名称中包含'环宇城'，与候选商场'中国铁建·南沙环宇城'名称高度匹配；地址均在广州市南沙区，距离仅95米；城市和区域完全一致
+0b164898-c4b3-4d17-8881-5543a4b1e96b,XPeng,小鹏汽车南通城港路销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+d9624a4a-b0d4-44ef-ba82-a4b2d41d8dde,XPeng,小鹏汽车佛山南海交付中心,none,low,门店是小鹏汽车交付中心，品牌定位为独立服务网点而非商场门店。候选商场距离较远（最近约2.7公里），且名称和地址均无直接关联。交付中心通常不设在商场内，匹配可能性低。
+77307f94-f846-448c-98a4-9ec991127cc4,XPeng,小鹏汽车南京紫金山科技城交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+47500f3d-a41f-46f8-8ac7-66ec8b1d4e95,XPeng,小鹏汽车朔州振华汽车园销售服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+19fed078-04fc-4c09-bbde-838122ff37b8,XPeng,小鹏汽车广州番禺钟村服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+5cd4846f-076b-40db-b99b-3e16249c4dc2,XPeng,小鹏汽车长春东部车城销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+fcf8105e-74ea-4104-bfd8-6e9157c7d7ed,XPeng,小鹏汽车苏州高新塔园路销售中心,none,low,门店地址在苏州高新区塔园路，但所有候选商场距离较远（3.1-20.4公里），且名称和地址中未发现与候选商场直接关联的证据。门店可能是独立展厅而非商场内店铺。
+60da7017-ad25-4292-9a01-5e7a771d3c27,XPeng,小鹏汽车深圳龙岗吉祥路服务中心,none,low,门店为小鹏汽车服务中心，名称和地址均无明确商场关联；候选商场距离较远（最近约4公里），且无品牌入驻或名称相关性证据
+56a9f608-a630-488c-96ce-2c9189706df9,XPeng,小鹏汽车苏州高新交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+f8252367-3d66-4910-a14a-35a571814526,XPeng,小鹏汽车普宁流沙大道销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+e79322dd-6225-4dfe-be0f-aeba7b1efebc,XPeng,小鹏汽车厦门集美服务中心,none,low,门店地址明确位于集美区汽车城，而所有候选商场均位于其他行政区，距离较远（4.7-17.9公里），且门店名称和地址均未提及任何候选商场名称
+1a1a511c-acd2-48f0-ab0c-acaaf47d6db2,XPeng,小鹏汽车哈尔滨高新区销售中心,none,low,门店位于哈尔滨高新区松北区太行路2号，而所有候选商场距离均较远（4.7-10.8公里），且门店名称和地址未明确指向任何候选商场品牌或位置，匹配度低。
+a022d18a-8d74-44a9-9116-c23af6c66619,XPeng,小鹏汽车宿迁远洋未来城销售展厅,,error,error: Expecting value: line 1 column 1 (char 0)
+34226804-6f3e-4f1c-83d6-a4f49168fdf2,XPeng,小鹏汽车张掖宇通汽车城服务中心,,error,error: Expecting value: line 1 column 1 (char 0)
+4aaa0e3d-1469-444f-aeb3-ee560083365e,XPeng,小鹏汽车北京顺义交付中心,,error,error: Expecting value: line 1 column 1 (char 0)
+75964108-3925-49cb-bd06-c673f4f793e8,XPeng,小鹏汽车深圳宝安沙井服务中心,none,low,门店位于深圳宝安沙井，但候选商场距离较远（最近5.8公里），且门店名称和地址中均未包含候选商场名称关键词，品牌为汽车服务中心，与购物中心类型不匹配
+5b097af5-d9d7-4119-9182-e57ff8a613d0,XPeng,小鹏汽车商丘平台车城销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+dda72a11-8b1b-4e78-8f45-0546fe496bf2,XPeng,小鹏汽车温州永嘉瓯嘉汽车园销售展厅,none,low,门店位于永嘉县瓯北街道瓯嘉汽车商业广场，而所有候选商场均在温州市区，距离超过10公里，且门店名称和地址明确指向瓯嘉汽车商业广场而非候选商场
+bd5452c9-7b9a-480a-8b8c-9a5a3fe74651,XPeng,小鹏汽车深圳龙华交付中心,none,low,门店名称为'小鹏汽车深圳龙华交付中心'，地址位于龙华区，但候选商场中龙华区的商场距离较远（超过8公里），而最近的后浪新天地虽距离3.2公里但名称和品牌无关联。门店所在区域为光明区，但光明大仟里距离12公里过远。整体匹配度低，无合适候选。
+e93bf01f-4692-4df5-b7ea-fdc146952316,XPeng,小鹏汽车太原平阳路销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+d147b5bf-5302-403e-89ba-740fe0c2e53f,XPeng,小鹏汽车石家庄桥西汽车园销售中心,,error,error: Expecting value: line 1 column 1 (char 0)
+cda229be-aaa5-4683-920d-826fba510ab1,XPeng,小鹏汽车上海闵行交付中心,none,low,门店为小鹏汽车交付中心，位于金都路538号，距离所有候选商场均超过7公里，且名称和地址中均未出现任何商场词汇，与购物中心属性不匹配
+3529dfc2-15df-4a23-b12c-0da6df8efcdc,XPeng,(新)小鹏汽车厦门集美服务中心(建设中）,none,low,门店名称为服务中心且标注建设中，地址位于工业区(铁山路)，而候选商场均为购物中心，品牌定位和业态不匹配；虽然同城且距离最近的大悦城约5公里，但服务中心与购物中心功能差异显著
+347b689b-1b1e-4509-b42e-4e93072e78fc,XPeng,小鹏汽车重庆礼嘉服务中心,MALL_00512,medium,门店地址位于礼洁路，商场名称包含'礼嘉'且距离最近（1.2公里），虽然门店为汽车服务中心而非典型商场店铺，但地理位置高度匹配
+56f27f09-8330-41a8-a858-268657701be6,XPeng,小鹏汽车忻州汽车城销售展厅,none,low,门店位于忻州市忻府区，而所有候选商场均在太原市，城市不匹配且距离较远（66-75公里），门店名称和地址均指向忻州本地汽车贸易园，与太原商场无关联
+16d4bb03-65be-4058-b1d1-096ca755bf0e,XPeng,小鹏汽车常德大道销售中心,none,low,门店位于鼎城区常德大道辅路，而候选商场万达广场距离5.6公里且位于不同区域，品牌为独立汽车销售中心，与商场业态不匹配
+475d85bd-2299-4b9f-8f1b-1e150a1e3d63,Louis Vuitton,路易威登 上海国金中心店,,error,error: Expecting value: line 1 column 1 (char 0)
+37418c25-4f3c-4357-a6ba-1f43b67f2ce7,Louis Vuitton,路易威登 上海前滩太古里店,,error,error: Expecting value: line 1 column 1 (char 0)
+9150fcf8-2726-49de-914f-5c3844ecd651,Louis Vuitton,路易威登 长沙国金中心店,none,low,门店名称明确指向'长沙国金中心'，而候选商场是'长沙星沙万象汇'，两者名称不匹配且距离较远(11.3公里)。虽然城市匹配，但品牌、地址和商场名称均无关联。
+3c5e27ce-f9ea-493d-98b0-3f0793f05dd5,Louis Vuitton,路易威登 北京王府井店,,error,error: Expecting value: line 1 column 1 (char 0)
+5ffb4a5a-9ad8-4a38-9853-22669572816f,Longchamp,昆明恒隆精品店,,error,error: Expecting value: line 1 column 1 (char 0)
+46b65554-00ed-4aa9-b835-f5b36c7ea537,Hugo Boss,BOSS呼和浩特如意小镇,,error,error: Expecting value: line 1 column 1 (char 0)
+dee2a8a0-a1c8-47ee-bc10-78b033bd16f1,Hugo Boss,BOSS哈尔滨杉杉奥特莱斯,,error,error: Expecting value: line 1 column 1 (char 0)
+1540df0c-1b72-4ab2-974d-9fbb89da7524,Hugo Boss,BOSS 南京建邺金鹰购物中心,MALL_00683,high,门店名称明确包含'金鹰购物中心'，与候选商场'金鹰国际广场(新街口店)'品牌名称高度匹配；地址'河西金鹰'进一步确认关联；虽距离3.9km稍远，但城市、区级区域一致，综合匹配度很高。
+0066d2a7-f1a3-4a5a-8da8-034184c1b1c9,Hugo Boss,BOSS苏州中心,,error,error: Expecting value: line 1 column 1 (char 0)
+ecd2f653-1ca9-4bc7-998c-6d05e35d01dd,Givenchy,BJS,,error,error: Expecting value: line 1 column 1 (char 0)
+f8addf84-11f0-45dd-8344-e8bbbee40472,Kenzo,KENZO Beijing China World,MALL_00100,high,门店地址明确指向国贸商城（China World Shopping Mall），与候选商场'国贸商城'名称完全匹配，且距离仅1.2公里，品牌和区域一致
+f28b9855-345c-453b-9b23-42d78effe8c4,Kenzo,KENZO Xian - Sasseur Outlet Pop Up,none,low,门店名称包含'Outlet'暗示为奥特莱斯类型，但所有候选商场均为普通购物中心，无奥特莱斯；距离均在7.8-10公里较远；城市虽匹配西安市但区域未直接对应。
+3faec8ac-6f7f-4c10-be75-615b7854d2da,Kenzo,KENZO成都时代奥莱,none,low,门店地址明确指向'成都时代奥特莱斯'，但候选商场列表中无此商场。所有候选商场名称与门店地址中的商场名不匹配，且距离较远（12-20公里），无法确认匹配。
+e018de14-2369-4b34-a20b-06623b0908b4,Kenzo,KENZO西安中大,none,low,门店地址明确指向中大国际商业中心，但候选商场中没有该商场。两个候选商场(MOMOPARK艺术购物中心、西安西咸吾悦广场)名称与地址中的商场名称不匹配，距离也较远，品牌关联性弱。
+0765adb1-c8fa-4358-baf3-1f8fac863e5f,Tory Burch,Beijing Badaling Outlet,,error,error: Expecting value: line 1 column 1 (char 0)
+4e46a180-d00d-4908-924c-9e639df41824,Michael Kors,Dlf Emporio  Mall,,error,error: Expecting value: line 1 column 1 (char 0)
+8515e572-8669-440e-91f5-e594f51f1f90,Michael Kors,Essentai Mall,,error,error: Expecting value: line 1 column 1 (char 0)
+a99bd764-8b86-4edb-a808-ec8d6a92f78c,Coach,北京SKP DT51,,error,error: Expecting value: line 1 column 1 (char 0)
+517b2db3-0d99-4660-a30e-a32a30ddf2aa,Coach,北京湾里王府井奥特莱斯,none,high,门店名称明确显示为'湾里王府井奥特莱斯'，地址在通州区颐瑞东路66号院，而候选商场列表中均无王府井相关商场，最近的万达广场(通州店)距离5.6公里但品牌和名称不匹配
+2518058e-9ada-401d-9125-35f8243e68c6,Coach,兰州杉杉奥特莱斯,none,low,门店名称为'兰州杉杉奥特莱斯'，明确指向特定奥特莱斯商场，但候选列表中均为万达、万象城等其他商场，无名称匹配且距离较远（6-20公里），品牌虽一致但无法确定门店所在商场
+7fa0a223-503b-4c03-a821-85b2c3c183f9,Coach,广州天汇广场,,error,error: Expecting value: line 1 column 1 (char 0)
+8cd57e2e-fea5-482d-9b6f-bb81f2bb4fb6,Coach,深圳杉杉奥特莱斯,,error,error: Expecting value: line 1 column 1 (char 0)
+5ff6c480-cbc0-4468-91e7-9eb71122fd95,Coach,唐山振华,none,low,门店地址明确指向'振华诚成购物中心'，但候选商场中无此商场。候选商场品牌、名称均不匹配，距离最近的商场也超过700米，且门店所在区为路南区，而候选商场均位于其他区域，匹配度低
+d851f2f6-a129-4612-9a35-27d77b3647b4,Coach,株洲百货,none,low,门店位于芦淞区株洲百货内，候选商场王府·星Mall距离较远(2.4公里)且不在同一行政区，品牌匹配度不足
+5fd6a0cd-2f42-4f11-8b6c-d649af1fb6a8,Coach,南通万象城,,error,error: Expecting value: line 1 column 1 (char 0)
+70771c3c-df74-410d-82a3-386493216756,Coach,济南百联奥特莱斯,,error,error: Expecting value: line 1 column 1 (char 0)
+dd5dbfbb-dc30-453b-bfc1-af0ad14a65d7,Coach,上海协信星光广场店,none,low,门店名称和地址明确指向'上海协信星光广场'，但候选商场列表中无此商场，其他候选商场名称与门店信息不匹配，且距离均较远（2.4-5.1公里）
+67cd4628-4615-438c-8d68-4317f0482597,Coach,上海奕欧来奥特莱斯,none,high,门店名称明确为'上海奕欧来奥特莱斯'，是独立的奥特莱斯购物村，而候选商场均为普通购物中心（万达广场、长泰广场等），品牌、名称和地址均不匹配，距离也较远（6.8-15公里）
+1983fb40-b2aa-4caf-a078-8378004d626c,Coach,上海安福路限时概念店,,error,error: Expecting value: line 1 column 1 (char 0)
+5afddb29-f31e-41e3-ad3e-8283c9dae961,Coach,弥敦道,,error,error: Expecting value: line 1 column 1 (char 0)
+f0802727-ebc7-4840-b0ff-c4fbdfda579b,Coach,朗豪坊,,error,error: Expecting value: line 1 column 1 (char 0)
+0bd2d69c-3e39-49e0-a4fb-94519512427b,Coach,新世纪广场,none,high,门店位于香港九龙旺角新世纪广场，所有候选商场均在深圳，城市不匹配且距离超过25公里，不符合同城匹配要求
+a8a57d51-9bea-46e4-b847-1c3880338bec,Coach,昆明恒隆,MALL_00194,high,门店名称'昆明恒隆'与商场'昆明恒隆广场'品牌一致，地址中明确包含'昆明恒隆广场'，距离仅320米，城市完全匹配
+b4991ba8-4346-4daa-a283-c707a0c048c1,Coach,昆明金格百货奥特莱斯,MALL_00400,high,门店名称包含'金格百货奥特莱斯'，而候选商场中公园1903商业广场距离仅490米，位于同一城市且距离极近，极有可能是该门店所在的商场
+09fc2406-7caa-4672-b202-8f6d42d26bfc,Coach,宁波杉井奥特莱斯广场,,error,error: Expecting value: line 1 column 1 (char 0)
+e18a8beb-606e-4d13-89c7-fbbb9531e5b8,Chanel,香奈儿上海国金中心腕表与高级珠宝店,,error,error: Expecting value: line 1 column 1 (char 0)
+a983120b-09b0-4bcf-9095-64521c1811b9,Chanel,香奈儿上海国金中心精品店,none,low,门店地址明确指向'国金中心商场'，但候选商场列表中无匹配。最近的上海第一八佰伴距离1.76公里，但品牌和名称均不匹配，其他候选距离更远且无关联。
+4c3441dd-933f-4abe-9c77-6e3d7201508b,Polo Ralph Lauren,苏州奕欧来精品旅游购物村奥特莱斯,none,low,门店名称为'苏州奕欧来精品旅游购物村奥特莱斯'，地址明确指向阳澄湖半岛度假区的奕欧来购物村，这是一个独立的奥特莱斯购物村而非传统商场。候选商场均为普通购物中心，名称和地址均不匹配，距离也较远（7.7-15.6公里）。虽然城市匹配，但门店本身就是一个完整的购物目的地，与候选商场性质不符。
+9dc4aa29-ee15-463e-acba-292a44a42a3c,Polo Ralph Lauren,北京朝阳合生汇Polo Ralph Lauren,MALL_00531,high,门店名称和地址中明确包含'北京朝阳合生汇'，与候选商场'MALL_00531'名称完全匹配，城市和区一致，距离仅1580米，品牌在合生汇内符合定位。
+595f325f-97e2-454a-8ab1-791e68472af0,Polo Ralph Lauren,上海国金中心Polo Ralph Lauren,MALL_00325,high,门店名称包含'上海国金中心'，而候选商场'上海ifc商场'正是国金中心的英文缩写IFC，且距离仅1156米，品牌和地址信息高度匹配
+a6d90f53-303a-445a-86ca-e9309557c455,Polo Ralph Lauren,重庆砂之船奥特莱斯,,error,error: Expecting value: line 1 column 1 (char 0)
+97a92c46-43ad-45da-883d-d18f5e75ea51,Polo Ralph Lauren,深圳杉杉奥特莱斯,none,high,门店名称和地址中明确显示为'深圳杉杉奥特莱斯广场'，但候选商场列表中无奥特莱斯类型商场，且所有候选商场距离较远（最近4.8公里），品牌定位与现有候选不匹配
+0d647b4c-7517-4352-87ab-2c5a605c73c0,Polo Ralph Lauren,深圳龙华壹方天地Polo Ralph Lauren,MALL_00523,high,门店名称和地址明确指向壹方天地C区，候选商场名称完全匹配，距离仅1.3公里，城市区域一致
+2097d00d-387c-41de-9f13-63da094bae70,Polo Ralph Lauren,郑州大卫城Polo Ralph Lauren,,error,error: Expecting value: line 1 column 1 (char 0)
+f1859e55-a9a2-4056-a69f-ff142ca57f5b,Polo Ralph Lauren,北京三里屯店 Ralph Lauren,,error,error: Expecting value: line 1 column 1 (char 0)
+f354d20f-2d77-4178-8dfe-e3a01e9d84cf,Polo Ralph Lauren,北京三里屯店Ralph's Coffee,,error,error: Expecting value: line 1 column 1 (char 0)
+4f7731ba-1003-4a51-9f1d-416066ad9804,Polo Ralph Lauren,郑州正弘汇Polo Ralph Lauren,,error,error: Expecting value: line 1 column 1 (char 0)
+8b7c028f-6082-420a-9034-672f0d3f36b7,Polo Ralph Lauren,China Return DC (Outlet)2,,error,error: Expecting value: line 1 column 1 (char 0)
+cb649b8a-9b33-4e0f-ad95-17292255affe,Polo Ralph Lauren,南通八佰伴(PRL),none,low,门店地址包含'八佰伴'但候选商场中无八佰伴；门店位于靖江市而候选商场位于崇川区，距离超过50公里不匹配；品牌为Polo Ralph Lauren但无商场品牌关联
+e606f92e-6d1f-4907-bf11-df092e16f2ee,Polo Ralph Lauren,上海八佰伴 Lauren,,error,error: Expecting value: line 1 column 1 (char 0)
+96d010cd-a484-4964-b4fb-21e31e46953b,Polo Ralph Lauren,Nanjing Sasseur Outlet 南京砂之船奥特莱斯,none,high,门店名称明确为'南京砂之船奥特莱斯'，但候选商场列表中无砂之船奥特莱斯。所有候选商场名称与门店地址中的商场名不匹配，且距离较远（最近6.9公里），无法确认门店所属商场。
+e83de305-8416-43a3-8118-ec622b44c37f,Polo Ralph Lauren,北京王府井Polo Ralph Lauren,,error,error: Expecting value: line 1 column 1 (char 0)

@@ -1,0 +1,62 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "方城县城关商圈",
+    "description": "位于方城县中心城区，集中于凤瑞路与人民路交叉口附近，涵盖多个商业设施，是县城核心商业聚集区。",
+    "mall_codes": [
+      "MALL_E92425B5",
+      "MALL_0DDA2693",
+      "MALL_9B6A342C",
+      "MALL_273A1789"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "券桥镇商圈",
+    "description": "位于方城县券桥镇，以万众购物中心和鸿发商场为核心，服务本地居民的区域性商业集聚点。",
+    "mall_codes": [
+      "MALL_EBF8941F",
+      "MALL_28D83D59"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "广阳镇商圈",
+    "description": "位于方城县广阳镇，以中南购物广场为主要商业载体，覆盖周边乡镇的基础生活服务配套。",
+    "mall_codes": [
+      "MALL_63CF56D0"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "杨集乡商圈",
+    "description": "位于方城县杨集乡，依托中基·万嘉生活广场形成的服务型商业节点，满足乡镇居民日常消费需求。",
+    "mall_codes": [
+      "MALL_776E7D97"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "独树镇商圈",
+    "description": "位于方城县独树镇，以独树镇商贸城为标志的乡镇级商业中心，辐射周边农村地区。",
+    "mall_codes": [
+      "MALL_8A5E1139"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "二郎庙商圈",
+    "description": "位于方城县二郎庙街附近，以好生活购物广场为核心的局部商业服务点，服务于当地社区。",
+    "mall_codes": [
+      "MALL_2CD9F769"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "黑山头商圈",
+    "description": "位于方城县黑山头区域，依托黑山头购物中心形成的偏远乡镇商业节点，服务特定地理范围内的居民。",
+    "mall_codes": [
+      "MALL_7CE612B1"
+    ]
+  }
+]

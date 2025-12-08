@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金牛大街商圈",
+    "description": "以金牛大街为核心，聚集了多个商贸中心和购物中心，是古交市主要的商业集中区域之一。",
+    "mall_codes": [
+      "MALL_38A10340",
+      "MALL_30D42AA1",
+      "MALL_98A504C7",
+      "MALL_50595B7A"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "大川西路商圈",
+    "description": "位于大川西路沿线，分布有多个商贸城和购物广场，构成古交市西部的重要商业带。",
+    "mall_codes": [
+      "MALL_66DB81DB",
+      "MALL_DA30262B",
+      "MALL_4E789FF2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "人民路商圈",
+    "description": "以新世纪广场为核心，位于人民路沿线，是古交市中心城区的传统商业节点。",
+    "mall_codes": [
+      "MALL_7BFF877C"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "明珠路商圈",
+    "description": "位于城市东部明珠路附近，依托汾河明珠商业广场形成新兴商业点。",
+    "mall_codes": [
+      "MALL_98CF3486"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "桃园路北段商圈",
+    "description": "位于桃园路北部区域，以新纪元商城为代表，服务周边居民区的区域性商业集聚。",
+    "mall_codes": [
+      "MALL_2B3D9CEA"
+    ]
+  }
+]

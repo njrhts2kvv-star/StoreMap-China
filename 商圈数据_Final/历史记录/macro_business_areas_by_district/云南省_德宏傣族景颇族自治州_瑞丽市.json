@@ -1,0 +1,57 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "姐告口岸商圈",
+    "description": "位于中缅边境口岸区域，集中了多个面向跨境贸易的商贸城",
+    "mall_codes": [
+      "MALL_E1CBCA68",
+      "MALL_57DB904B",
+      "MALL_5E1AE4B7",
+      "MALL_191C24A6",
+      "MALL_E5C2D48C",
+      "MALL_33C7B3B2"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "瑞宏路商圈",
+    "description": "瑞宏路沿线商业集中区域，涵盖多个大型商业设施",
+    "mall_codes": [
+      "MALL_E0DC1501",
+      "MALL_96C316F8",
+      "MALL_528ACE9B",
+      "MALL_D88EA05C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "人民路商圈",
+    "description": "人民路沿线商业聚集区，连接多个主要道路交叉口",
+    "mall_codes": [
+      "MALL_717E0531",
+      "MALL_428023B6",
+      "MALL_4F439094",
+      "MALL_2C6B0D9C"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "瑞江路商圈",
+    "description": "瑞江路沿线商业区域，连接556国道等重要交通要道",
+    "mall_codes": [
+      "MALL_60902FF2",
+      "MALL_1F134D28",
+      "MALL_AA045A8E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "芒沙商贸区",
+    "description": "芒沙国际商贸城周边商业区域",
+    "mall_codes": [
+      "MALL_61FE20F3",
+      "MALL_37ACA2EE",
+      "MALL_67375D3E"
+    ]
+  }
+]

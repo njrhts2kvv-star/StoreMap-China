@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "任固镇商圈",
+    "description": "位于汤阴县任固镇，包含任固金三角、供销商贸城、四方商贸城等商业点，是任固镇核心商业聚集区。",
+    "mall_codes": [
+      "MALL_A974A76C",
+      "MALL_703051E6",
+      "MALL_BA01267C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "汤阴县城关镇商圈",
+    "description": "位于汤阴县城区中心城关镇，涵盖江浙中央广场、商贸城、超时代广场等多个商业项目，为县城主要商业中心。",
+    "mall_codes": [
+      "MALL_D43EA33A",
+      "MALL_DCFA38D7",
+      "MALL_438E5F1E"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "汤阴东部新城商圈",
+    "description": "分布于汤阴县东部城区，包括大爱城、振宇商城等商业设施，服务东部居民区，形成新兴商业集聚带。",
+    "mall_codes": [
+      "MALL_C347206E",
+      "MALL_418C179F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "汤阴南部外围商圈",
+    "description": "位于汤阴县南部外围区域，以福鑫隆购物中心为代表，覆盖南部城乡结合部及周边乡镇消费人群。",
+    "mall_codes": [
+      "MALL_D03FAA4B"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "汤阴西部乡镇商圈",
+    "description": "位于汤阴县西部苏湖村附近，以金亮购物中心为核心，服务于西部乡村及村级行政单位的日常商业需求。",
+    "mall_codes": [
+      "MALL_294850D7"
+    ]
+  }
+]

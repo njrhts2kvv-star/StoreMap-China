@@ -1,0 +1,107 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "市中心商圈",
+    "description": "位于新沂市核心城区，集中了南京路沿线多个传统百货与商场，如新沂百货大楼、温州商城、红太阳商城等，是本地居民日常购物的主要区域。",
+    "mall_codes": [
+      "MALL_232CB2F9",
+      "MALL_CD508F2D",
+      "MALL_1B2F2C9B",
+      "MALL_67C10FB7",
+      "MALL_B3D01B16",
+      "MALL_95E3A408"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "钟吾路商圈",
+    "description": "以钟吾路为主轴，涵盖名商城、品尚多生活卖场等商业体，地处城区中部，连接南北，是区域性的生活消费聚集区。",
+    "mall_codes": [
+      "MALL_42E0FF56",
+      "MALL_C32C7367"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "吾悦广场商圈",
+    "description": "围绕大桥西路与上海路交汇处的吾悦广场为核心，包括其内部商户天空之城动漫体验世界，形成新兴的城市综合体消费区域。",
+    "mall_codes": [
+      "MALL_341A5A47",
+      "MALL_E0215C9D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "段家巷商圈",
+    "description": "位于临沭路与段家巷步行街交叉口附近，以新悦广场为代表，服务于老城区西部的社区型商业中心。",
+    "mall_codes": [
+      "MALL_2F35C7C9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "迎宾路东段商圈",
+    "description": "分布在迎宾路沿线东部区域，包括易特购、棋盘山水商贸城等，覆盖中东部乡镇居民的日常消费需求。",
+    "mall_codes": [
+      "MALL_CA64E7CD",
+      "MALL_AB87663A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "阿湖镇商圈",
+    "description": "位于新沂市北部阿湖镇，以聚美购物广场为代表，服务周边乡镇的基层商贸需求。",
+    "mall_codes": [
+      "MALL_1DC65071"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "邵店镇商圈",
+    "description": "位于新沂市南部邵店镇，依托汇源商贸城为载体，满足乡镇级零售和生活配套需要。",
+    "mall_codes": [
+      "MALL_59CAF070"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "棋盘镇商圈",
+    "description": "位于棋盘镇境内，由鑫华联购物中心构成，属于典型的乡镇级商业节点。",
+    "mall_codes": [
+      "MALL_D30AF5C6"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "合窑线边缘商圈",
+    "description": "地处新沂西部边缘地带，宝元商贸城位于此区域，地理位置偏僻，服务范围有限。",
+    "mall_codes": [
+      "MALL_2262395D"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "老城区南门商圈",
+    "description": "位于钟吾南路附近，以新港商贸城为代表，处于老城区南部入口位置，具有一定交通集散功能。",
+    "mall_codes": [
+      "MALL_5EFC9C84"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "东部新城商圈",
+    "description": "位于迎宾路与晶都路交叉口附近，温州商场和聚美购物广场分布于此，代表城市向东发展的商业延伸。",
+    "mall_codes": [
+      "MALL_A66BB64E"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "北郊工业区商圈",
+    "description": "位于经济开发区内，依托吾悦广场周边设施发展出初步商业配套，主要服务于工业园区人群。",
+    "mall_codes": [
+      "MALL_8B534711",
+      "MALL_227859CC"
+    ]
+  }
+]

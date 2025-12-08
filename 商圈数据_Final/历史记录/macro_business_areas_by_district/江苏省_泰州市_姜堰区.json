@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "姜堰城区中心商圈",
+    "description": "位于姜堰区罗塘街道核心区域，集中了人民商场、天虹商场、大洋百货、时代商业广场等多个商业设施，是姜堰老城区最主要的商业集聚区。",
+    "mall_codes": [
+      "MALL_194C0827",
+      "MALL_C29B6DEC",
+      "MALL_88D35AD2",
+      "MALL_BE96FAA6",
+      "MALL_CB321164",
+      "MALL_7B8CC43B",
+      "MALL_B7C3E336",
+      "MALL_CDF66DCF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "三水大道商圈",
+    "description": "位于姜堰新城三水大道沿线，以三水广场为核心，周边商业配套逐步完善，是姜堰近年来发展较快的新城商业带。",
+    "mall_codes": [
+      "MALL_E3A18331"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "姜堰大道商圈",
+    "description": "沿姜堰大道分布，以万家福广场和中天商贸城为代表，结合区域交通优势形成的一处集商贸与生活服务于一体的综合性商业片区。",
+    "mall_codes": [
+      "MALL_26D8E451",
+      "MALL_3D2784A2"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "溱潼镇商圈",
+    "description": "位于姜堰区溱潼镇，以溱潼人民商场和溱湖商业中心为主要商业节点，服务于溱潼古镇及周边居民，具有明显的城镇中心特征。",
+    "mall_codes": [
+      "MALL_5275C168",
+      "MALL_5121F7D9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "沈高镇商圈",
+    "description": "以沈高人民商场为核心，服务沈高镇本地居民的区域性商业中心，规模较小但具备基础商业功能。",
+    "mall_codes": [
+      "MALL_40EA3DEA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "白米镇/娄庄镇外围商圈",
+    "description": "位于姜堰东部偏远离城区位置，以七彩商城为代表，覆盖范围较广但商业集聚度较低，属于边缘乡镇级商业点。",
+    "mall_codes": [
+      "MALL_CC5CAA43"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "淤溪镇商圈",
+    "description": "位于姜堰西北部，以安达路与光明路交叉口附近的购物中心为代表，服务于当地乡镇居民的基础商业设施。",
+    "mall_codes": [
+      "MALL_EE5A8643"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "桥头镇商圈",
+    "description": "位于姜堰南部，以博信服饰购物中心和新世纪超市为节点，分布较为分散，主要满足乡镇日常消费需求。",
+    "mall_codes": [
+      "MALL_205F4032",
+      "MALL_33EE38ED"
+    ]
+  }
+]

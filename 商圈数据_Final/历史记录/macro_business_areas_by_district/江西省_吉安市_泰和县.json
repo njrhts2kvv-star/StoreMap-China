@@ -1,0 +1,37 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "县城中心商圈",
+    "description": "位于泰和县城区核心区域，涵盖工农兵大道沿线及周边主要商业设施，是县城传统商业集聚区。",
+    "mall_codes": [
+      "MALL_F827EA3D",
+      "MALL_AB4A2239",
+      "MALL_52C3E984",
+      "MALL_92CF410E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城西商贸区",
+    "description": "位于县城西部，依托县道与省道交汇处的交通优势，以专业市场和商贸城为主导功能。",
+    "mall_codes": [
+      "MALL_2DED65D3"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城东发展区",
+    "description": "位于县城东部外围，靠近乡道与主干道交叉区域，处于发展中阶段，具有一定的区域辐射能力。",
+    "mall_codes": [
+      "MALL_FDD3D886"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "塘洲镇区商圈",
+    "description": "位于泰和县下辖的塘洲镇，服务于本地乡镇居民，属于县域内非中心城区的独立镇级商业节点。",
+    "mall_codes": [
+      "MALL_8951CC89"
+    ]
+  }
+]

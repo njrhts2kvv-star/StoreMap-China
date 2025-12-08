@@ -1,0 +1,51 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "唐海镇中心商圈",
+    "description": "位于曹妃甸区唐海镇核心区域，涵盖垦丰大街、大通路与新城大街交汇地带，聚集了唐海百货大楼、兴海名都广场、百信购物中心等多个商业节点，是区内传统商业中心。",
+    "mall_codes": [
+      "MALL_504E4615",
+      "MALL_82C79CBE",
+      "MALL_5E02B39C",
+      "MALL_2508D3AE",
+      "MALL_B601EBA0",
+      "MALL_A89DF2C4",
+      "MALL_6AA8171F",
+      "MALL_2DAC13F8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "曹妃甸新城商圈",
+    "description": "位于曹妃甸新城区域，以渤海大道和华安道周边为核心，包含在建的王府井购物中心和静安荟奥特莱斯，代表新区未来商业发展方向。",
+    "mall_codes": [
+      "MALL_FB83227D",
+      "MALL_1450FBE2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南堡片区商圈",
+    "description": "位于曹妃甸工业区及南源路沿线，服务工业区及周边居民，包括益丰商贸城、宜乐美购物中心等社区型商业设施。",
+    "mall_codes": [
+      "MALL_60236BE0",
+      "MALL_979B9B52"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "曹妃甸工业区商圈",
+    "description": "位于曹妃甸工业区内部，主要服务于产业园区人群，以新世纪超市为代表，配套基础商业功能。",
+    "mall_codes": [
+      "MALL_2563DBCF"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "唐海西南居住区商圈",
+    "description": "位于唐海镇西南部，覆盖尚源年华广场周边居住区，服务本地居民的基础生活消费。",
+    "mall_codes": [
+      "MALL_AC0769D5"
+    ]
+  }
+]

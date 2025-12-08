@@ -1,0 +1,85 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "钟家村商圈",
+    "description": "位于汉阳区东部，以钟家村地铁站为核心，涵盖汉商银座购物中心及周边商业体，是汉阳区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_590D709A",
+      "MALL_528C7F3E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "王家湾商圈",
+    "description": "位于汉阳大道与龙阳大道交汇区域，覆盖武汉摩尔城、海天欢乐购等项目，是汉阳区重要的现代商业集聚区。",
+    "mall_codes": [
+      "MALL_F2C3C460",
+      "MALL_C3C978FC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "四新商圈",
+    "description": "以四新大道为核心发展轴线，聚集万达广场、方圆荟·奥特莱斯等大型商业体，形成汉阳区新兴的综合商业板块。",
+    "mall_codes": [
+      "MALL_92BA6B35",
+      "MALL_0B411D85",
+      "MALL_788C50A7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "龙阳村商圈",
+    "description": "依托龙阳村地铁站形成的商业集群，包括人信汇及其附属楼宇、时代广场等，构成汉阳区西部活跃的消费节点。",
+    "mall_codes": [
+      "MALL_9FE8E1DB",
+      "MALL_66A9CFD4",
+      "MALL_6A8E6416",
+      "MALL_CA55EA97"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "芳草路商圈",
+    "description": "位于汉阳区西南部，以芳草路沿线的唔哈生活及其C馆为代表，服务周边社区居民的生活配套型商业区。",
+    "mall_codes": [
+      "MALL_CEB7EF2D",
+      "MALL_AEA52187"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "滨江商圈",
+    "description": "沿长江南岸滨江大道布局，以世茂52+为主要代表，结合高端住宅与商务配套，打造汉阳区滨江风貌商业带。",
+    "mall_codes": [
+      "MALL_65026E0C"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "马鹦路商圈",
+    "description": "分布于马鹦路沿线，包含季佳里·美好广场和江腾广场，服务于汉阳区南部多个居住片区的基础商业需求。",
+    "mall_codes": [
+      "MALL_B6B28B6F",
+      "MALL_B02C9D30"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "经开永旺商圈",
+    "description": "位于武汉经济技术开发区，以永旺梦乐城经开店为核心，涵盖A馆、B馆及武汉经开永旺梦乐城，形成区域级大型综合商业中心。",
+    "mall_codes": [
+      "MALL_3B8A7C73",
+      "MALL_5C43802D",
+      "MALL_FCDFA570"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "沌口奥莱商圈",
+    "description": "聚焦武汉杉杉奥特莱斯广场，地处青枫路，是汉阳区西南方向主要的奥特莱斯主题购物目的地。",
+    "mall_codes": [
+      "MALL_C78540EA"
+    ]
+  }
+]

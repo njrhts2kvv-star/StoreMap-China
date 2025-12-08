@@ -1,0 +1,31 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "新华路商圈",
+    "description": "以新华路为核心轴线，集中分布多个传统商场与购物场所，包括大金宝商城、时代商城、百货大楼等，构成塔城市中心主要商业集聚区。",
+    "mall_codes": [
+      "MALL_AC0F25BE",
+      "MALL_BC43589A",
+      "MALL_682A2F9E",
+      "MALL_0DB1CBC0",
+      "MALL_5044876C",
+      "MALL_65AC87DE"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "光明路商圈",
+    "description": "位于城市西部，依托元盛市场形成区域性商业节点，核心商场为西部国际商城，服务周边居民区。",
+    "mall_codes": [
+      "MALL_CF23ADEB"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "闻琴路商圈",
+    "description": "位于塔城市东部，以卓悦百盛购物公园为主要商业载体，独立成片，辐射东部城区。",
+    "mall_codes": [
+      "MALL_F7D7568F"
+    ]
+  }
+]

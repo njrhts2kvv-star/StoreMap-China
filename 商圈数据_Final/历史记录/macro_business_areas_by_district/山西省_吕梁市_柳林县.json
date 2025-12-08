@@ -1,0 +1,29 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "柳林县城中心商圈",
+    "description": "位于柳林县城区核心区域，集中了贺昌大街沿线多个主要商业设施，是县城内传统且活跃的商业聚集区。",
+    "mall_codes": [
+      "MALL_AC6F9B27",
+      "MALL_FCC07AFD",
+      "MALL_A951E582"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "青龙大街商圈",
+    "description": "依托青龙大街沿线布局的购物场所，涵盖青龙片区的主要商业项目，形成服务于城东及周边居民的区域性商圈。",
+    "mall_codes": [
+      "MALL_5F8F818E",
+      "MALL_38F1596D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "穆村商圈",
+    "description": "位于柳林县穆村镇的核心区域，以本地生活服务为主，辐射镇区及周边乡村的基层商业中心。",
+    "mall_codes": [
+      "MALL_0036F0E7"
+    ]
+  }
+]

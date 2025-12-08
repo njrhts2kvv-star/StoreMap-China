@@ -1,0 +1,55 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "荥阳新城商圈",
+    "description": "以吾悦广场、正上豪布斯卡为核心，覆盖周边广武路、国泰路一带的新兴商业集聚区，是荥阳市近年来重点发展的城市新中心。",
+    "mall_codes": [
+      "MALL_8F1CB56C",
+      "MALL_7C7D0023",
+      "MALL_F611AC30",
+      "MALL_A966CEF0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "光明荟商圈",
+    "description": "位于荥阳老城北部，以光明逸荟和荥阳美际广场为主要载体，依托光明荟区域形成的生活配套商业圈。",
+    "mall_codes": [
+      "MALL_A14A1344",
+      "MALL_ED8D5733"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "万山路商圈",
+    "description": "以万山路与索河路交叉口为节点，围绕荥阳建业百货形成的传统城区商业核心带。",
+    "mall_codes": [
+      "MALL_F83708E8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "五洲城商圈",
+    "description": "位于中原西路沿线，依托五洲城项目A3区形成的区域性商贸集聚区，具有较强的专业市场属性。",
+    "mall_codes": [
+      "MALL_6714B46F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "贾峪奥特莱斯商圈",
+    "description": "地处贾峪镇，以首创奥特莱斯为唯一核心，服务郑州西南片区的大型郊区型购物目的地。",
+    "mall_codes": [
+      "MALL_F50BFAB9"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "王村-广武外围商圈",
+    "description": "分布于荥阳北部边缘地带，包括家园购物中心和新亚鞋服批发城，服务于乡镇及周边居民的基础商业节点。",
+    "mall_codes": [
+      "MALL_BF7BE010",
+      "MALL_5CAD19C8"
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "博城五路商圈",
+    "description": "位于博兴县核心城区，以博城五路与胜利三路交汇处为核心，聚集了万客来服饰广场、华联商厦、博兴再就业商城、奥特莱斯等多个商业设施，是县城传统商业中心。",
+    "mall_codes": [
+      "MALL_1D6B761C",
+      "MALL_58DF3D6B",
+      "MALL_C343CFA9",
+      "MALL_A36BD8F8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "乐安大街商圈",
+    "description": "沿乐安大街发展形成的重要商业带，以天元购物广场为代表，服务周边居民区，具备一定规模的零售和生活配套功能。",
+    "mall_codes": [
+      "MALL_BC8FDB17"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新城三路商圈",
+    "description": "位于城区西部新城三路沿线，以泰丰广场为核心，辐射周边新兴居住区，是近年来逐步发展的次级商业节点。",
+    "mall_codes": [
+      "MALL_1575CED7"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "湖滨商圈",
+    "description": "位于博兴县南部湖滨镇区域，以湖滨供销商场为代表，服务于乡镇居民，属于区域性基础商业配套。",
+    "mall_codes": [
+      "MALL_070416B2"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "曹王商圈",
+    "description": "位于博兴县北部曹王镇附近，依托三名购物广场形成的小型镇级商业中心，主要满足本地居民日常消费需求。",
+    "mall_codes": [
+      "MALL_7879C02B"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "陈户商圈",
+    "description": "位于博兴县东部陈户镇方向，以信鸽超市购物中心为主要商业载体，服务于周边乡镇及农村地区。",
+    "mall_codes": [
+      "MALL_960CFF7B"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "店子商圈",
+    "description": "位于博兴县西南部店子镇区域，幸福广场为该片区主要商业设施，承担乡镇级综合服务功能。",
+    "mall_codes": [
+      "MALL_C9E9949A"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "庞家商圈",
+    "description": "位于博兴县东南部庞家镇附近，家家乐商场为该区域主要商业节点，服务于当地居民日常生活需求。",
+    "mall_codes": [
+      "MALL_FFB5EB1E"
+    ]
+  }
+]

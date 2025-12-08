@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "东盟商务区商圈",
+    "description": "以民族大道沿线为核心，覆盖南宁万象城、三祺广场等高端商业项目，是青秀区现代商务与商业集聚区。",
+    "mall_codes": [
+      "MALL_7731F0F3",
+      "MALL_2BE5E2AA",
+      "MALL_88C5186F",
+      "MALL_F4A84A94",
+      "MALL_C4A535A1",
+      "MALL_4000C160",
+      "MALL_1F7B557B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "埌东CBD商圈",
+    "description": "围绕金湖路、东葛路一带形成的传统中央商务区，聚集梦之岛百货、绿地中央广场等综合商业体，商业成熟度高。",
+    "mall_codes": [
+      "MALL_E6198F09",
+      "MALL_5BA6EC5A",
+      "MALL_02BA363D",
+      "MALL_181B2647",
+      "MALL_6283521A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "凤岭北商圈",
+    "description": "位于凤岭南路及高坡岭路周边，涵盖龙湖青秀天街、凤岭万达广场等新兴商业项目，服务大型居住区。",
+    "mall_codes": [
+      "MALL_32141A40",
+      "MALL_67917936"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "长湖路商圈",
+    "description": "以长湖路为核心的社区型商业集聚带，包括凤岭生活广场市场等配套商业，侧重居民日常生活服务。",
+    "mall_codes": [
+      "MALL_A60D8DAF"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "江南-医科大商圈",
+    "description": "位于双拥路与通泰路一带，邻近广西医科大学，分布又一城商业广场等区域性商业设施，辐射高校及老城区人群。",
+    "mall_codes": [
+      "MALL_5FFB3748",
+      "MALL_4744C37B",
+      "MALL_65B2F001"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "民族共和路商圈",
+    "description": "位于民族大道西段与共和路交汇区域，以国贸购物中心为代表的老牌商业点，承载部分传统零售功能。",
+    "mall_codes": [
+      "MALL_26461DB4"
+    ]
+  }
+]

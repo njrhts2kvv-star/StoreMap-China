@@ -1,0 +1,69 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城北商圈",
+    "description": "位于北流市城北街道及二环北路周边，集中了万达广场等较大型商业设施，是近年来城市扩展形成的新兴商业中心。",
+    "mall_codes": [
+      "MALL_750D37BD"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城中路商圈",
+    "description": "以城中路、新芝路一带为核心，聚集万顺商业广场、皇冠假日商厦等商场，地处老城区中心，交通便利，商业氛围浓厚。",
+    "mall_codes": [
+      "MALL_2CFD6165",
+      "MALL_533D1C20"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城南商圈",
+    "description": "位于城南一路及周边区域，涵盖万丰城9+2、国大商场等，服务于城南居民区，具备一定传统商业基础。",
+    "mall_codes": [
+      "MALL_925C3AAE",
+      "MALL_5C31C65F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "西宁街商圈",
+    "description": "以西宁街与庆安街交叉口为中心，供销社百货大楼坐落于此，属于北流老城区的传统商业节点之一。",
+    "mall_codes": [
+      "MALL_2AAD9B11"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "兴民路商圈",
+    "description": "位于市场西路与兴民路交汇区域，大统发购物中心为主要商业载体，服务周边密集居住区。",
+    "mall_codes": [
+      "MALL_16144E8B"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "民乐镇商圈",
+    "description": "依托民乐镇政府周边形成的乡镇级商业集聚点，包括微笑100购物广场和新丰供销社综合服务站，辐射本地居民。",
+    "mall_codes": [
+      "MALL_CBB78AEF",
+      "MALL_D0E38431"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "省道205沿线商圈",
+    "description": "沿205省道分布的北流市千万商厦，地理位置偏外围，服务于过境客流及周边城乡结合区域。",
+    "mall_codes": [
+      "MALL_A7F0F14B"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "民安西山商圈",
+    "description": "位于民安镇岑玉线与028乡道交叉口附近，民安供销社西山商场为区域性便民商业点，覆盖乡镇消费人群。",
+    "mall_codes": [
+      "MALL_70A2F2C7"
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "兰州新区中川商圈",
+    "description": "位于兰州新区中川镇及周边区域，涵盖兴隆山路、祁连山大道沿线的多个商业项目，是兰州新区核心商业集聚区之一。",
+    "mall_codes": [
+      "MALL_DD163473",
+      "MALL_D089408A",
+      "MALL_720C3B3F",
+      "MALL_C48360A7",
+      "MALL_3289C352",
+      "MALL_4137EF7B",
+      "MALL_BCD2DA44"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "秦川镇商圈",
+    "description": "集中于秦川镇五道岘及秦川街北侧，包含天瑞购物中心、武商鞋服购物中心等商业设施，服务于秦川镇本地居民。",
+    "mall_codes": [
+      "MALL_D76841CB",
+      "MALL_4707F661",
+      "MALL_40E9CAC6"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "皋兰县城北辰路商圈",
+    "description": "位于皋兰县石洞镇北辰路沿线，聚集了汇金城市商业广场、皋兰县百货大楼等传统商业设施，为皋兰县城核心商业地带。",
+    "mall_codes": [
+      "MALL_BD7E2A5A",
+      "MALL_C30A7BF4"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "中川镇兰泉路商圈",
+    "description": "分布于中川镇兰泉路及周边，包括武汉商贸城(兰泉路)等商贸型场所，具有较强的专业市场属性。",
+    "mall_codes": [
+      "MALL_0A5922A9",
+      "MALL_D33ABD75"
+    ]
+  }
+]

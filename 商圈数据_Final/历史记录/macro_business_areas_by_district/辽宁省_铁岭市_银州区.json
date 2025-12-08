@@ -1,0 +1,47 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "铁岭市中心商圈",
+    "description": "以南马路为核心，覆盖大商新玛特、三百商场、太古广场等传统商业聚集区，是银州区最核心的商业地段。",
+    "mall_codes": [
+      "MALL_06A7CD27",
+      "MALL_DF255474",
+      "MALL_4F77A7CE",
+      "MALL_5C25E60B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "柴河街南段商圈",
+    "description": "位于城市南部，以银南商业城和万家生活广场为代表，服务南部居民区，形成区域性商业节点。",
+    "mall_codes": [
+      "MALL_E190D6CB",
+      "MALL_9EE3421D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "汇工街-八中路商圈",
+    "description": "分布于城市西部的汇工街与八中路附近，包括凯隆义乌商城和哥伦布广场，以批发零售和社区商业为主。",
+    "mall_codes": [
+      "MALL_53559133",
+      "MALL_11B4980E"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "文化街东段商圈",
+    "description": "位于城市北部文化街与北市路交叉区域，以巴黎春天百货为核心，辐射周边居住区。",
+    "mall_codes": [
+      "MALL_E60B5568"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "客运中心商圈",
+    "description": "依托铁岭市客运中心交通节点，新世纪超市为该区域主要商业配套，服务于流动人群及周边社区。",
+    "mall_codes": [
+      "MALL_5D066744"
+    ]
+  }
+]

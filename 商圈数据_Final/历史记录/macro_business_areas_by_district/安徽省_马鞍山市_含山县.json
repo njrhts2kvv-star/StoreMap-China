@@ -1,0 +1,39 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "含城老城区商圈",
+    "description": "位于含山县环峰镇核心区域，涵盖人民街、鼓楼街及环峰路周边，是传统商业聚集区，包含万年台商场、时代购物广场等。",
+    "mall_codes": [
+      "MALL_6482EE5F",
+      "MALL_D519D1F9",
+      "MALL_A6C874B9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "含城新区商贸商圈",
+    "description": "集中于双拥大道、九连路及太湖山路一带，以新兴商贸城和城市广场为主，包括玉龙湖城市广场C区、荣兴万客隆购物中心等。",
+    "mall_codes": [
+      "MALL_B0CDE8B4",
+      "MALL_F2E9C2C9",
+      "MALL_33EBDF65"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "环峰南路文化商圈",
+    "description": "位于环峰南路及明贤街附近，融合文化与商贸功能，涵盖新天地商贸城、文化商场等，靠近含山商贸城。",
+    "mall_codes": [
+      "MALL_4DBEC1F5",
+      "MALL_EFE88CBF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "运漕镇中心商圈",
+    "description": "位于运漕镇下大街与东大街交汇区域，服务于当地居民的传统集镇商业中心，代表项目为运漕商城。",
+    "mall_codes": [
+      "MALL_0390F7E5"
+    ]
+  }
+]

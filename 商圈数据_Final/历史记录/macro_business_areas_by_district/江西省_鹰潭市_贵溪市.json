@@ -1,0 +1,42 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "老城中心商圈",
+    "description": "位于贵溪市老城区核心地带，涵盖站前路、雄石路、信江路交汇区域，是传统商业集聚区，包含多个早期建设的商城和购物广场。",
+    "mall_codes": [
+      "MALL_8BA4C476",
+      "MALL_34BFAC5D",
+      "MALL_09295AE0",
+      "MALL_F2C7DA61",
+      "MALL_4411DDF4"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南商贸商圈",
+    "description": "位于贵溪市南部，沿象山大道与种德街一带，以城南商贸广场为核心，辐射周边商业设施，定位为服务城南居住区的综合性商贸区域。",
+    "mall_codes": [
+      "MALL_D8CD5F3E",
+      "MALL_BEFCA5BE",
+      "MALL_D03B38F1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "铜都新城商圈",
+    "description": "位于贵溪市东部新城发展轴，依托冶金大道与铜都国际等新兴城市配套，聚集百佳盛、阳光时尚广场等较新商业体，服务于高端住宅区与城市扩展区域。",
+    "mall_codes": [
+      "MALL_D16B1A90",
+      "MALL_13CCFA74",
+      "MALL_0D0C95F6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "滨江外围商圈",
+    "description": "位于贵溪市区西北部边缘，靠近324县道，以美佳乐购物中心为代表，服务城乡结合部及周边乡镇居民，商业密度较低，辐射范围较广。",
+    "mall_codes": [
+      "MALL_B1FFBB23"
+    ]
+  }
+]

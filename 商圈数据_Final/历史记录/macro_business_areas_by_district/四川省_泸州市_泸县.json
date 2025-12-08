@@ -1,0 +1,19 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城西商圈",
+    "description": "以万福大都汇及A区为核心，位于玉蟾街道玉蟾大道西段，是泸县城区西部主要商业聚集区。",
+    "mall_codes": [
+      "MALL_4DA88ED6",
+      "MALL_4AF83BC5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东升商圈",
+    "description": "以东升购物中心为主，地处004县道与商贸一街交汇区域，代表泸县东部的商业节点。",
+    "mall_codes": [
+      "MALL_D113CD3E"
+    ]
+  }
+]

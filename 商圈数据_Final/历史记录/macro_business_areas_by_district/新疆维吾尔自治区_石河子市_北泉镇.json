@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "北子午路商圈",
+    "description": "以北子午路为核心轴线，集中分布多个商场，包括万都MALL、五星广场、友谊时尚生活广场、时代太百、百花村购物中心、百货大楼(北四路)、石河子市友谊商场等，是北泉镇商业密度最高的区域。",
+    "mall_codes": [
+      "MALL_2B7BDE6B",
+      "MALL_0DBAF79D",
+      "MALL_F9A6BCD0",
+      "MALL_49B70C86",
+      "MALL_570C858C",
+      "MALL_F5ADC871",
+      "MALL_452BD718"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "幸福路商圈",
+    "description": "位于幸福路沿线及周边交叉口，涵盖泰康商城、天宏商贸城、金世纪商场等，形成区域性的生活消费集聚区。",
+    "mall_codes": [
+      "MALL_E664974A",
+      "MALL_F72E3F9E",
+      "MALL_12706D8A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "西环路商圈",
+    "description": "分布在西环路与北环路交叉口附近，包含西环商场和金三角商贸城，地理位置相近，构成西部外围的商业节点。",
+    "mall_codes": [
+      "MALL_7E53DF69",
+      "MALL_24874EBE"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "北五路商圈",
+    "description": "位于北五路及北六路一带，涵盖5566广场和绿珠九鼎广场，虽商业活跃度较低，但具备一定空间集聚特征。",
+    "mall_codes": [
+      "MALL_AEB4EED2",
+      "MALL_AEDB92D3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北三路商圈",
+    "description": "位于北三路与东四路交叉口附近，仅有友好时尚购物中心单个项目，独立成点，形成局部商业标识。",
+    "mall_codes": [
+      "MALL_0F8BC02F"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "银燕路商圈",
+    "description": "位于银燕路的天富易通易嘉一站式购物中心，地处较远位置，独立构成东部边缘的商业点。",
+    "mall_codes": [
+      "MALL_55BDB6EA"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "国贸商城商圈",
+    "description": "位于北四路13小区的国贸商城，周边无其他商场，单独形成一个微型商业节点。",
+    "mall_codes": [
+      "MALL_3F159565"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "南部邻里中心商圈",
+    "description": "位于南端的邻里中心附近，地理位置明显偏离主城区域，孤立分布，自成一体。",
+    "mall_codes": [
+      "MALL_325A9242"
+    ]
+  }
+]

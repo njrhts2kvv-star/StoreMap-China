@@ -1,0 +1,64 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "县城中心商圈",
+    "description": "位于灌云县主城区核心区域，集中了伊山中路、中大街及胜利路周边多个商业设施，是县域传统商业中心。",
+    "mall_codes": [
+      "MALL_5061F830",
+      "MALL_4F202A5E",
+      "MALL_57AD7882",
+      "MALL_D46C0E60",
+      "MALL_906ABB99",
+      "MALL_8925EA4B",
+      "MALL_FF9304B8",
+      "MALL_386DB681",
+      "MALL_7A96C698"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东部新城商圈",
+    "description": "以万达广场为核心，覆盖人民东路沿线新兴商业节点，代表县城东部新发展带的商业集聚区。",
+    "mall_codes": [
+      "MALL_07A94666"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "侍庄片区商圈",
+    "description": "位于侍庄街道建设路附近，依托县政府西侧的九龙港广场形成的服务型商业集聚区。",
+    "mall_codes": [
+      "MALL_4735289A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "西部乡镇商贸圈",
+    "description": "涵盖县城西部及周边乡镇的多个区域性商贸城，分布较分散，服务于各自乡镇居民。",
+    "mall_codes": [
+      "MALL_E123CFBA",
+      "MALL_22C99E8A",
+      "MALL_94DFBC8F",
+      "MALL_30D06027",
+      "MALL_E6552E11",
+      "MALL_A991A356"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "杨集片区商圈",
+    "description": "位于长赵路南侧，由孙继军购物中心与明雷批发购物中心构成，服务杨集镇及周边区域。",
+    "mall_codes": [
+      "MALL_C07677DB",
+      "MALL_37A53ABF"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "沂北片区商圈",
+    "description": "位于县城北部振兴路附近，以振兴购物中心为代表，辐射伊利线沿线乡镇居民。",
+    "mall_codes": [
+      "MALL_D606B2CB"
+    ]
+  }
+]

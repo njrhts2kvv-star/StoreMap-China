@@ -1,0 +1,46 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城北商圈",
+    "description": "位于阜南县北部城区，集中分布于鹿城北路、南阳大道及周边区域，涵盖多个新兴商业广场与购物中心，是近年来重点发展的城市商业拓展区。",
+    "mall_codes": [
+      "MALL_A0BE8A08",
+      "MALL_6BDE4B79",
+      "MALL_BCF829CD",
+      "MALL_1DA85070",
+      "MALL_0DF58466"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "老城区商圈",
+    "description": "覆盖县城中心及传统主干道沿线，包括淮河路、地城北路等核心街道，聚集早期建设的商厦与生活购物中心，属于本地居民日常消费的主要区域。",
+    "mall_codes": [
+      "MALL_9B182AA2",
+      "MALL_DB5954A5",
+      "MALL_EF397221",
+      "MALL_C489C205"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东部乡镇商圈",
+    "description": "分布于阜南县东部外围乡镇，如田集镇、曹集镇、老观乡等地，以区域性生活购物中心和商贸城为主，服务周边乡镇居民。",
+    "mall_codes": [
+      "MALL_70C7EBD1",
+      "MALL_FB5F693C",
+      "MALL_9482BDAA",
+      "MALL_73A276BB"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "西部及南部乡镇商圈",
+    "description": "位于县域西南与西部边缘地带，涵盖赵集镇、朱寨镇等远郊区域，商业设施以社区型购物中心为主，辐射范围较小。",
+    "mall_codes": [
+      "MALL_02D79A49",
+      "MALL_ACEF9FB1",
+      "MALL_DE7E4A03"
+    ]
+  }
+]

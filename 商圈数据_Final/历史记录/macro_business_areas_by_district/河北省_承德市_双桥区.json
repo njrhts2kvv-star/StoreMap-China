@@ -1,0 +1,66 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "火神庙-南营子大街商圈",
+    "description": "位于双桥区核心城区，以南营子大街为主轴，集中了承德商厦、金龙购物广场、名都广场等多个传统商业体，是承德市最成熟的中心商圈。",
+    "mall_codes": [
+      "MALL_2877C183",
+      "MALL_218F3CC4",
+      "MALL_F6A45E20",
+      "MALL_3F28C14C",
+      "MALL_14AA0584",
+      "MALL_C474E6B5",
+      "MALL_6216D9BD",
+      "MALL_A3E5FF6C",
+      "MALL_0BE2A440",
+      "MALL_6698A6A4",
+      "MALL_4E0E75ED",
+      "MALL_3840F574",
+      "MALL_2D3BAD6F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东兴路-新华路商圈",
+    "description": "位于双桥区东部，涵盖东兴商贸城、双百购物广场等商场，服务周边居民区，形成区域性商业集聚。",
+    "mall_codes": [
+      "MALL_9297588F",
+      "MALL_9C640BC6",
+      "MALL_3ECB81F3"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "高新区商圈",
+    "description": "位于承德市高新区，以承德万达广场为核心，配套嘉和广场等商业项目，是新兴的城市副中心和现代化商业聚集区。",
+    "mall_codes": [
+      "MALL_FFFECDB3",
+      "MALL_090BF8BF"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "凤凰山大街商圈",
+    "description": "位于双桥区西南部凤凰山大街沿线，中诚·百乐汇与中诚左岸商场相邻布局，形成社区型商业中心。",
+    "mall_codes": [
+      "MALL_7859381C",
+      "MALL_68C44073"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "世纪城商圈",
+    "description": "位于双桥区西北部府前路附近，以世纪城购物中心为代表，辐射周边住宅区，属于新兴居住配套商业节点。",
+    "mall_codes": [
+      "MALL_4DE6C747"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "开发西区商圈",
+    "description": "位于双桥区南部开发西区，白楼宾馆购物中心为典型代表，服务于本地居民，规模较小且偏社区化。",
+    "mall_codes": [
+      "MALL_1D16B65C"
+    ]
+  }
+]

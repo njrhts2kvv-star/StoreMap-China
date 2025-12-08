@@ -18,15 +18,16 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-markdown": "^9.0.3",
-    "remark-gfm": "^4.0.0",
-    "react-virtuoso": "^4.14.1"
+    "react-router-dom": "^7.10.1",
+    "react-virtuoso": "^4.14.1",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
-    "@tailwindcss/typography": "^0.5.15",
     "@vitejs/plugin-react": "^5.1.1",
     "autoprefixer": "^10.4.22",
     "eslint": "^9.39.1",

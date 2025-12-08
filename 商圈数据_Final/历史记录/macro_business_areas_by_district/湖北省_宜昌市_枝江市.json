@@ -1,0 +1,36 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "民主大道商圈",
+    "description": "以民主大道为核心，聚集了中央商城、国贸大厦A栋和B栋等商业体，地处枝江市中心城区，是传统商业集聚区。",
+    "mall_codes": [
+      "MALL_55CD2131",
+      "MALL_0789B5F5",
+      "MALL_6F1AEDCC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南市场商圈",
+    "description": "位于团结路与城南市场周边，涵盖嘉谊商城，服务于城南居民区，具有较强的生活配套属性。",
+    "mall_codes": [
+      "MALL_7B2FA617"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "迎宾大道商圈",
+    "description": "分布于迎宾大道沿线，包括妙尚时尚广场，处于城市拓展区域，具备新兴商业活力。",
+    "mall_codes": [
+      "MALL_DA1F98DE"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "英郡年华商圈",
+    "description": "围绕英郡年华社区北侧布局，以枝江美悦广场为代表，服务大型居住区的区域性商业中心。",
+    "mall_codes": [
+      "MALL_90CCC928"
+    ]
+  }
+]

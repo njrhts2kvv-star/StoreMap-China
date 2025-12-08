@@ -1,0 +1,501 @@
+{
+  "generated_at": "2025-12-06T09:52:56.735800",
+  "summary": {
+    "total_stores": 58106,
+    "non_mall_stores": 30888,
+    "matched_stores": 27218,
+    "review_queue": 6191,
+    "auto_match_rate": 36.2
+  },
+  "confidence_distribution": {
+    "medium": 6273,
+    "none": 4990,
+    "high": 10732,
+    "low": 2998,
+    "medium_high": 2225
+  },
+  "brand_stats": {
+    "Gucci": {
+      "total": 2,
+      "high": 0,
+      "medium_high": 0,
+      "medium": 2,
+      "low": 0
+    },
+    "NIO": {
+      "total": 675,
+      "high": 188,
+      "medium_high": 14,
+      "medium": 50,
+      "low": 186
+    },
+    "Descente": {
+      "total": 219,
+      "high": 130,
+      "medium_high": 18,
+      "medium": 47,
+      "low": 9
+    },
+    "Dior": {
+      "total": 18,
+      "high": 9,
+      "medium_high": 2,
+      "medium": 6,
+      "low": 1
+    },
+    "Lancome": {
+      "total": 122,
+      "high": 86,
+      "medium_high": 2,
+      "medium": 24,
+      "low": 7
+    },
+    "Louis Vuitton": {
+      "total": 59,
+      "high": 32,
+      "medium_high": 0,
+      "medium": 5,
+      "low": 16
+    },
+    "LEGO": {
+      "total": 10,
+      "high": 0,
+      "medium_high": 0,
+      "medium": 6,
+      "low": 0
+    },
+    "Popmart": {
+      "total": 351,
+      "high": 189,
+      "medium_high": 43,
+      "medium": 83,
+      "low": 21
+    },
+    "Longchamp": {
+      "total": 22,
+      "high": 12,
+      "medium_high": 1,
+      "medium": 5,
+      "low": 3
+    },
+    "Hugo Boss": {
+      "total": 84,
+      "high": 44,
+      "medium_high": 1,
+      "medium": 23,
+      "low": 12
+    },
+    "Hermès": {
+      "total": 25,
+      "high": 5,
+      "medium_high": 1,
+      "medium": 10,
+      "low": 8
+    },
+    "Xiaomi": {
+      "total": 4972,
+      "high": 2145,
+      "medium_high": 682,
+      "medium": 528,
+      "low": 543
+    },
+    "Givenchy": {
+      "total": 18,
+      "high": 0,
+      "medium_high": 3,
+      "medium": 5,
+      "low": 9
+    },
+    "Kailas": {
+      "total": 268,
+      "high": 141,
+      "medium_high": 12,
+      "medium": 60,
+      "low": 27
+    },
+    "vivo": {
+      "total": 3418,
+      "high": 1424,
+      "medium_high": 66,
+      "medium": 1257,
+      "low": 273
+    },
+    "Salomon": {
+      "total": 2,
+      "high": 0,
+      "medium_high": 0,
+      "medium": 1,
+      "low": 0
+    },
+    "Apple Authorized": {
+      "total": 2186,
+      "high": 876,
+      "medium_high": 100,
+      "medium": 677,
+      "low": 239
+    },
+    "Tesla": {
+      "total": 526,
+      "high": 200,
+      "medium_high": 11,
+      "medium": 44,
+      "low": 87
+    },
+    "MCM": {
+      "total": 15,
+      "high": 11,
+      "medium_high": 0,
+      "medium": 4,
+      "low": 0
+    },
+    "Kenzo": {
+      "total": 44,
+      "high": 19,
+      "medium_high": 0,
+      "medium": 5,
+      "low": 8
+    },
+    "Li Auto": {
+      "total": 1328,
+      "high": 345,
+      "medium_high": 36,
+      "medium": 134,
+      "low": 182
+    },
+    "Arc'teryx": {
+      "total": 72,
+      "high": 1,
+      "medium_high": 0,
+      "medium": 44,
+      "low": 4
+    },
+    "Huawei": {
+      "total": 2802,
+      "high": 1090,
+      "medium_high": 294,
+      "medium": 410,
+      "low": 278
+    },
+    "XPeng": {
+      "total": 444,
+      "high": 119,
+      "medium_high": 23,
+      "medium": 57,
+      "low": 101
+    },
+    "Prada": {
+      "total": 43,
+      "high": 21,
+      "medium_high": 5,
+      "medium": 14,
+      "low": 3
+    },
+    "Estee Lauder": {
+      "total": 312,
+      "high": 170,
+      "medium_high": 19,
+      "medium": 67,
+      "low": 40
+    },
+    "Tory Burch": {
+      "total": 27,
+      "high": 2,
+      "medium_high": 0,
+      "medium": 13,
+      "low": 9
+    },
+    "Samsung": {
+      "total": 1067,
+      "high": 401,
+      "medium_high": 274,
+      "medium": 162,
+      "low": 126
+    },
+    "Michael Kors": {
+      "total": 2,
+      "high": 0,
+      "medium_high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "Dior Beauty": {
+      "total": 110,
+      "high": 79,
+      "medium_high": 1,
+      "medium": 23,
+      "low": 6
+    },
+    "Apple": {
+      "total": 34,
+      "high": 22,
+      "medium_high": 3,
+      "medium": 7,
+      "low": 0
+    },
+    "lululemon": {
+      "total": 7,
+      "high": 1,
+      "medium_high": 1,
+      "medium": 2,
+      "low": 1
+    },
+    "Honor": {
+      "total": 2799,
+      "high": 1095,
+      "medium_high": 465,
+      "medium": 482,
+      "low": 328
+    },
+    "Coach": {
+      "total": 325,
+      "high": 167,
+      "medium_high": 20,
+      "medium": 77,
+      "low": 43
+    },
+    "OPPO": {
+      "total": 4313,
+      "high": 1430,
+      "medium_high": 111,
+      "medium": 1817,
+      "low": 381
+    },
+    "The North Face": {
+      "total": 64,
+      "high": 36,
+      "medium_high": 5,
+      "medium": 16,
+      "low": 2
+    },
+    "Kolon Sport": {
+      "total": 38,
+      "high": 27,
+      "medium_high": 0,
+      "medium": 5,
+      "low": 4
+    },
+    "Chanel": {
+      "total": 25,
+      "high": 12,
+      "medium_high": 2,
+      "medium": 8,
+      "low": 1
+    },
+    "On": {
+      "total": 81,
+      "high": 41,
+      "medium_high": 3,
+      "medium": 19,
+      "low": 9
+    },
+    "Polo Ralph Lauren": {
+      "total": 289,
+      "high": 162,
+      "medium_high": 7,
+      "medium": 74,
+      "low": 31
+    }
+  },
+  "city_stats": {
+    "北京市": {
+      "total": 644,
+      "matched": 520
+    },
+    "上海市": {
+      "total": 563,
+      "matched": 446
+    },
+    "深圳市": {
+      "total": 487,
+      "matched": 345
+    },
+    "成都市": {
+      "total": 467,
+      "matched": 414
+    },
+    "重庆市": {
+      "total": 454,
+      "matched": 381
+    },
+    "广州市": {
+      "total": 382,
+      "matched": 284
+    },
+    "武汉市": {
+      "total": 373,
+      "matched": 324
+    },
+    "杭州市": {
+      "total": 338,
+      "matched": 282
+    },
+    "西安市": {
+      "total": 330,
+      "matched": 288
+    },
+    "郑州市": {
+      "total": 280,
+      "matched": 224
+    },
+    "天津市": {
+      "total": 271,
+      "matched": 230
+    },
+    "苏州市": {
+      "total": 257,
+      "matched": 169
+    },
+    "长沙市": {
+      "total": 250,
+      "matched": 214
+    },
+    "南京市": {
+      "total": 248,
+      "matched": 214
+    },
+    "Beijing": {
+      "total": 229,
+      "matched": 147
+    },
+    "Shanghai": {
+      "total": 224,
+      "matched": 150
+    },
+    "昆明市": {
+      "total": 204,
+      "matched": 164
+    },
+    "东莞市": {
+      "total": 200,
+      "matched": 81
+    },
+    "潍坊市": {
+      "total": 187,
+      "matched": 141
+    },
+    "佛山市": {
+      "total": 187,
+      "matched": 115
+    },
+    "济南市": {
+      "total": 186,
+      "matched": 161
+    },
+    "Shenzhen": {
+      "total": 181,
+      "matched": 123
+    },
+    "合肥市": {
+      "total": 178,
+      "matched": 141
+    },
+    "沈阳市": {
+      "total": 176,
+      "matched": 161
+    },
+    "石家庄市": {
+      "total": 169,
+      "matched": 146
+    },
+    "Chengdu": {
+      "total": 152,
+      "matched": 122
+    },
+    "青岛市": {
+      "total": 141,
+      "matched": 113
+    },
+    "温州市": {
+      "total": 140,
+      "matched": 89
+    },
+    "保定市": {
+      "total": 138,
+      "matched": 112
+    },
+    "上海": {
+      "total": 137,
+      "matched": 116
+    },
+    "无锡市": {
+      "total": 136,
+      "matched": 121
+    },
+    "长春市": {
+      "total": 135,
+      "matched": 116
+    },
+    "Taiyuan": {
+      "total": 135,
+      "matched": 129
+    },
+    "贵阳市": {
+      "total": 133,
+      "matched": 114
+    },
+    "宁波市": {
+      "total": 132,
+      "matched": 102
+    },
+    "厦门市": {
+      "total": 132,
+      "matched": 112
+    },
+    "Wuhan": {
+      "total": 130,
+      "matched": 108
+    },
+    "徐州市": {
+      "total": 128,
+      "matched": 112
+    },
+    "福州市": {
+      "total": 127,
+      "matched": 112
+    },
+    "北京": {
+      "total": 126,
+      "matched": 103
+    },
+    "大连市": {
+      "total": 125,
+      "matched": 111
+    },
+    "太原市": {
+      "total": 124,
+      "matched": 112
+    },
+    "哈尔滨市": {
+      "total": 121,
+      "matched": 114
+    },
+    "南昌市": {
+      "total": 117,
+      "matched": 100
+    },
+    "Nanjing": {
+      "total": 116,
+      "matched": 77
+    },
+    "临沂市": {
+      "total": 114,
+      "matched": 96
+    },
+    "运城市": {
+      "total": 113,
+      "matched": 98
+    },
+    "南宁市": {
+      "total": 112,
+      "matched": 80
+    },
+    "Xi'an": {
+      "total": 112,
+      "matched": 85
+    },
+    "兰州市": {
+      "total": 107,
+      "matched": 92
+    }
+  }
+}

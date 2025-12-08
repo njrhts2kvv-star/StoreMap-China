@@ -1,0 +1,27 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "文天路商圈",
+    "description": "位于文天线与210省道交汇处，靠近中越边境的商业聚集区",
+    "mall_codes": [
+      "MALL_79D26AA0",
+      "MALL_EA588373"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "熊大段商圈",
+    "description": "位于县城北部熊大段与新南段交汇区域的商业中心",
+    "mall_codes": [
+      "MALL_45BB148A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "玉尔贝路商圈",
+    "description": "位于玉尔贝路与临江路交叉口的商业区域",
+    "mall_codes": [
+      "MALL_2771C3E8"
+    ]
+  }
+]

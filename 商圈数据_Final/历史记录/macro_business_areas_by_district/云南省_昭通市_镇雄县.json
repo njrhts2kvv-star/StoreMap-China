@@ -1,0 +1,56 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "县城中心商圈",
+    "description": "位于镇雄县城核心区域，包含多个主要商业设施",
+    "mall_codes": [
+      "MALL_3C5C158C",
+      "MALL_F80499C2",
+      "MALL_F640A2CE",
+      "MALL_4A8D1006"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城南商圈",
+    "description": "位于县城南部区域，涵盖多个购物中心和商业广场",
+    "mall_codes": [
+      "MALL_3361D7A5",
+      "MALL_EB08EFB6",
+      "MALL_BE639DBA",
+      "MALL_53AFD689"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城北商圈",
+    "description": "位于县城北部及周边乡镇的商业聚集区",
+    "mall_codes": [
+      "MALL_AADB989E",
+      "MALL_65C71A11",
+      "MALL_56D763E0",
+      "MALL_EBDBB5CD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "西部乡镇商圈",
+    "description": "覆盖镇雄县西部各乡镇的商业设施",
+    "mall_codes": [
+      "MALL_528F1A32",
+      "MALL_B622DA07",
+      "MALL_32A6DEA9",
+      "MALL_A75EB67C",
+      "MALL_66DAF8A7"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "东部乡镇商圈",
+    "description": "覆盖镇雄县东部各乡镇的商业设施",
+    "mall_codes": [
+      "MALL_273E16C1",
+      "MALL_C75E747A"
+    ]
+  }
+]

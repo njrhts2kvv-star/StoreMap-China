@@ -1,0 +1,50 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "五四广场商圈",
+    "description": "以青岛万象城、海信广场等核心商业体为主，覆盖延安三路至澳门路一带，是市南区现代商业中心之一，地铁五四广场站周边聚集了多个中高端商场。",
+    "mall_codes": [
+      "MALL_A2571C15",
+      "MALL_7E8570DD",
+      "MALL_A869014B",
+      "MALL_5DE3B57A",
+      "MALL_A7D524F6",
+      "MALL_82FC4CF3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "奥帆中心商圈",
+    "description": "位于青岛东部滨海地带，依托奥帆中心旅游资源，分布有奥帆之星广场、海信广场二期等商业项目，定位休闲旅游与高端消费结合。",
+    "mall_codes": [
+      "MALL_9179481A",
+      "MALL_11E7CA2E",
+      "MALL_8A53E25D",
+      "MALL_41BE4A98"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "香港中路中段商圈",
+    "description": "集中在香港中路沿线，包括阳光百货、麦凯乐等传统百货及商业综合体，地处浮山所与燕儿岛之间，交通便利，商业密度高。",
+    "mall_codes": [
+      "MALL_F8402211",
+      "MALL_610D0A5F",
+      "MALL_68AC6B1B",
+      "MALL_33CDC49A",
+      "MALL_E2E78CF3"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "前海老城区商圈",
+    "description": "覆盖市南西部近海区域，包含悦喜客来、金茂湾、青铁畅享汇等社区型商业，服务本地居民为主，临近青岛站和团岛地铁站。",
+    "mall_codes": [
+      "MALL_E98C35B8",
+      "MALL_700A70DF",
+      "MALL_8D95D391",
+      "MALL_39B528B4",
+      "MALL_65E5F7D6"
+    ]
+  }
+]

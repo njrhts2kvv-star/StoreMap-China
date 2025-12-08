@@ -1,0 +1,75 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "钱江世纪城商圈",
+    "description": "位于萧山区北部，依托地铁钱江世纪城站和奥体中心，聚集高端商业与城市地标，是新兴的城市级核心商圈。",
+    "mall_codes": [
+      "MALL_4CA7A23F",
+      "MALL_7924AB2B",
+      "MALL_05097B4C",
+      "MALL_9E187DAF",
+      "MALL_23216971"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "市心路北干商圈",
+    "description": "以市心路为主轴，覆盖北干街道核心区域，集中多个成熟商业体，毗邻人民广场地铁站，是萧山传统政务与商业中心。",
+    "mall_codes": [
+      "MALL_7EC7BEEA",
+      "MALL_53E7922A",
+      "MALL_D566822D",
+      "MALL_022F4B01",
+      "MALL_87E1D4E0",
+      "MALL_5FD04C03"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "金城路核心区商圈",
+    "description": "沿金城路东西向分布，连接金鸡路与博奥路地铁站，汇聚加州阳光、星光天地等主力商场，是萧山南部人口密集区的消费中心。",
+    "mall_codes": [
+      "MALL_56D4A545",
+      "MALL_3053CDB5",
+      "MALL_3F3F0E1B",
+      "MALL_9CDA67CA"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "蜀山-新塘片区商圈",
+    "description": "位于萧山中部偏南，涵盖蜀山街道与新塘街道，商业布局相对分散，服务本地居民为主，包括南江商业中心、银泰百货等。",
+    "mall_codes": [
+      "MALL_19CAE887",
+      "MALL_49485310",
+      "MALL_1BEE3F94",
+      "MALL_9AE1CD82",
+      "MALL_B9AADE3E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "市北东-宁围商圈",
+    "description": "位于市心北路东侧延伸带，靠近宁围街道，商业处于发展阶段，以TT8号街、子夜广场等小型商业体为主。",
+    "mall_codes": [
+      "MALL_D64FDBCA",
+      "MALL_744D7070"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "空港新城-瓜沥外围商圈",
+    "description": "地处萧山东北部远郊，位置较偏远，商业配套稀疏，仅含金迪幸福里商业中心，主要服务于区域本地需求。",
+    "mall_codes": [
+      "MALL_253FCC35"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "市心南路南段商圈",
+    "description": "位于市心南路南端，靠近萧山老城区南缘，分布有融创·乐融荟等新兴社区型商业，辐射周边居住区。",
+    "mall_codes": [
+      "MALL_77D9E26A"
+    ]
+  }
+]

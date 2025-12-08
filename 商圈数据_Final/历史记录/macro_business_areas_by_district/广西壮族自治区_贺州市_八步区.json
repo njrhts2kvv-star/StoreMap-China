@@ -1,0 +1,60 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "八步老城商圈",
+    "description": "位于八步区核心老城区，集中于向阳路、建设中路及灵峰广场周边，涵盖多个传统百货与地下商城，是区内历史最悠久的商业聚集区。",
+    "mall_codes": [
+      "MALL_2406AD2C",
+      "MALL_602275EB",
+      "MALL_92742CDC",
+      "MALL_619AC50C",
+      "MALL_D746EFB3",
+      "MALL_DB81C2FA",
+      "MALL_D20F6B4B",
+      "MALL_6C94BFA0",
+      "MALL_94295F3C",
+      "MALL_651BB620",
+      "MALL_3B48DF4B",
+      "MALL_C06E12D8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "江南新城商圈",
+    "description": "位于贺州大道与钟山西路沿线，以万达广场和江南生活广场为核心，覆盖福宁路至太白西路一带，是近年来重点发展的新兴城市副中心商业带。",
+    "mall_codes": [
+      "MALL_BACCC96E",
+      "MALL_2EEE9684",
+      "MALL_6DC7C105",
+      "MALL_A8AA2BB6",
+      "MALL_F0203EF4"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "信都镇商圈",
+    "description": "位于八步区下辖的信都镇，以金星商贸城、鑫都大厦和龙庭灯城为主要载体，服务于本地居民的区域性小型商业集聚区。",
+    "mall_codes": [
+      "MALL_9BBE0FEA",
+      "MALL_33E700CC",
+      "MALL_C22D6EE4"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "莲塘-南乡边缘商圈",
+    "description": "分布于八步区东部乡镇，包括莲塘镇长湾村与南乡镇，德信购物商场和长湾惠万家购物广场为典型代表，属城乡结合部或乡镇级零售点。",
+    "mall_codes": [
+      "MALL_953EA95F",
+      "MALL_41B238AC"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "河东片区商圈",
+    "description": "位于八步区东北部河东街附近，依托供销商城形成的小型社区级商业节点，服务范围有限，辐射周边居民区。",
+    "mall_codes": [
+      "MALL_B1309FA9"
+    ]
+  }
+]

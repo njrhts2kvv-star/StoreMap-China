@@ -1,0 +1,43 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达商圈",
+    "description": "以洛阳涧西万达广场为核心，聚集周边商业项目，位于辽宁路沿线，是涧西区重要的现代商业中心之一。",
+    "mall_codes": [
+      "MALL_AFC3E3CB",
+      "MALL_AB58A7AB",
+      "MALL_CFEEDF16"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "上海市场商圈",
+    "description": "以上海市场步行街为中心，涵盖地铁站周边多个商厦和购物中心，是涧西区传统且密集的商业集聚区。",
+    "mall_codes": [
+      "MALL_F11A8331",
+      "MALL_A648FDA9",
+      "MALL_21352E27",
+      "MALL_99BFB4BC",
+      "MALL_36789D3F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南昌路商圈",
+    "description": "沿南昌路分布的丹尼斯百货、王府井购物中心等大型零售商业体集中区域，是涧西区核心商业带之一。",
+    "mall_codes": [
+      "MALL_470791AE",
+      "MALL_E895D5FF",
+      "MALL_5959A08B",
+      "MALL_A00646D8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "华夏路商圈",
+    "description": "位于涧西区西部的新兴商业节点，以北方生活广场为代表，服务周边居住区。",
+    "mall_codes": [
+      "MALL_C8BDBDB4"
+    ]
+  }
+]

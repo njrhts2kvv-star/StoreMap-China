@@ -1,0 +1,72 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "东部新城商圈",
+    "description": "以宁波阪急、保利悠悦汇为核心，覆盖东部新城核心商务区，辐射海晏北路地铁站周边高端商业，是鄞州区新兴的城市级商业中心。",
+    "mall_codes": [
+      "MALL_84750A05",
+      "MALL_5F96CB45",
+      "MALL_48ADAD15",
+      "MALL_EF8E19EB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南部商务区/万达商圈",
+    "description": "以万达广场、明州里、银泰百货、京东MALL等为核心，集中于天童南路与四明中路交汇区域，是鄞州区最成熟的综合性商圈之一，商业密度高，交通便利。",
+    "mall_codes": [
+      "MALL_1F160B5F",
+      "MALL_A6BB8E5B",
+      "MALL_A23D3BBF",
+      "MALL_49421315",
+      "MALL_4C012787"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "钱湖北路商圈",
+    "description": "围绕钱湖北路地铁站密集布局，汇聚宁波万象汇、鄞州印象城、宝龙广场、钱湖天地等项目，形成片区级家庭型购物中心集群，是鄞州中南部重要消费带。",
+    "mall_codes": [
+      "MALL_4EB85958",
+      "MALL_39BBB2B2",
+      "MALL_F36C7816",
+      "MALL_C2EA48BA"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "江东核心区商圈",
+    "description": "位于中山东路沿线，涵盖THE PARK by K11 Select、世纪东方广场、花园里、天伦时代广场、龙湖鄞州天街等，是原江东区传统商业中心，现为城市更新重点区域。",
+    "mall_codes": [
+      "MALL_8A4DA3D0",
+      "MALL_15A17F8C",
+      "MALL_57B113D3",
+      "MALL_86667EFD",
+      "MALL_FFC0A823"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "创新128及周边商圈",
+    "description": "以创新128广场为节点，地处启明路与四明中路交界，服务于周边产业园区与住宅区，商业体量较小但具备社区服务功能。",
+    "mall_codes": [
+      "MALL_3C67B916"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "东岸里社区商圈",
+    "description": "位于东和路东岸名邸小区附近，属小型社区型商业，主要服务本地居民，规模有限。",
+    "mall_codes": [
+      "MALL_1177F7CE"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "金沙码头奥莱商圈",
+    "description": "位于江南路2000号，定位奥特莱斯公园，地理位置偏北，临近高新区，是区域性的特色零售消费点。",
+    "mall_codes": [
+      "MALL_06DCF504"
+    ]
+  }
+]

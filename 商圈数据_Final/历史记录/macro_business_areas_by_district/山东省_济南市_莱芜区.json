@@ -1,0 +1,88 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "莱芜老城商圈",
+    "description": "以凤城西大街为核心的传统商业集聚区，集中了尚座时尚广场、洪海商贸城、莱芜商场等老牌商业设施，是莱芜区历史最悠久的商业中心。",
+    "mall_codes": [
+      "MALL_ECAE3BF5",
+      "MALL_87BB9446",
+      "MALL_D1DCC711",
+      "MALL_EE842366"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "文化路商圈",
+    "description": "沿文化北路至文化南路分布的现代商业带，涵盖万悦城、银座商城、茂业天地、城发广场等主要商场，是莱芜区当前核心商业走廊。",
+    "mall_codes": [
+      "MALL_6E2C3347",
+      "MALL_F765C09A",
+      "MALL_F7B5B64C",
+      "MALL_CA6CB5D6",
+      "MALL_F485A1BB",
+      "MALL_8C1564F4"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "龙潭东大街-世纪城商圈",
+    "description": "位于城区东部的发展中商圈，包括世纪购物中心和名嘉广场，依托主干道形成区域级商业配套。",
+    "mall_codes": [
+      "MALL_BA16BA42",
+      "MALL_E50B59D5"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "高新区商圈",
+    "description": "位于莱芜高新区的新兴商业节点，以在建的万虹广场为代表，未来将服务高新技术产业区及周边居住组团。",
+    "mall_codes": [
+      "MALL_D96AD653"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北部新城商圈",
+    "description": "覆盖莱芜北部新建城区的商业布局，包含在建的济莱世茂广场，定位为城市拓展方向的重点商业项目。",
+    "mall_codes": [
+      "MALL_92C07DEA"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "方下-张家洼商圈",
+    "description": "分布在城区西部与北部外围的区域性商业点，包括供销社百货大楼、信誉楼百货等，服务于近郊城镇居民。",
+    "mall_codes": [
+      "MALL_5C21E2C3",
+      "MALL_F765C09A"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "羊里-苗山外围商圈",
+    "description": "位于莱芜区边缘乡镇的独立商业体，如西峰商城、苗山供销社生活站商场、温州商城，辐射各自镇域范围。",
+    "mall_codes": [
+      "MALL_9054A1E8",
+      "MALL_BD51381E",
+      "MALL_2093E0F5"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "大桥路商圈",
+    "description": "依托大桥路南北向交通干线形成的商业聚集，包含新星大地和贵都购物中心，服务沿线居民。",
+    "mall_codes": [
+      "MALL_173AF51E",
+      "MALL_4C6B596A"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "汶河路-政昌路商圈",
+    "description": "位于城区西南部的局部商业节点，由众顺购物中心和温州商城构成，服务于特定社区或市场周边。",
+    "mall_codes": [
+      "MALL_9819C949",
+      "MALL_2093E0F5"
+    ]
+  }
+]

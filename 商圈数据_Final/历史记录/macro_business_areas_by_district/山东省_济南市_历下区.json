@@ -1,0 +1,50 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "泉城路商圈",
+    "description": "位于济南市中心，涵盖泉城路主干道沿线的多个商业项目，包括恒隆广场、世茂国际广场等核心商场，是历下区传统商业中心。",
+    "mall_codes": [
+      "MALL_D9FBB5FE",
+      "MALL_9C8DFD7E",
+      "MALL_6077CFF0",
+      "MALL_2544CEAA",
+      "MALL_FE5956B0",
+      "MALL_A5BC13A1",
+      "MALL_79E3E085",
+      "MALL_1712AB32",
+      "MALL_2056D881",
+      "MALL_D7235EF2",
+      "MALL_7C072BD0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "奥体中心/万象城商圈",
+    "description": "以济南万象城为核心，覆盖奥体西路及经十路沿线的新兴商业集聚区，包含龙湖奥体天街等项目，是东部新城主要消费中心。",
+    "mall_codes": [
+      "MALL_F9D3CE2C",
+      "MALL_D8CFEF47",
+      "MALL_9D7B4BC5"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "高新区商圈",
+    "description": "集中于工业南路与舜华路周边，涵盖丁豪广场、美莲广场、济高·世茂芯环中心等园区型商业体，服务于高新区产业人群。",
+    "mall_codes": [
+      "MALL_C938ADF3",
+      "MALL_C9EB268B",
+      "MALL_CC929B2A",
+      "MALL_AF0A0C58",
+      "MALL_71B86B3F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "龙鼎大道商圈",
+    "description": "位于龙鼎大道沿线，以全运村·中央广场为代表，目前商业配套尚处于培育阶段，辐射南部居住区。",
+    "mall_codes": [
+      "MALL_3CC42F46"
+    ]
+  }
+]

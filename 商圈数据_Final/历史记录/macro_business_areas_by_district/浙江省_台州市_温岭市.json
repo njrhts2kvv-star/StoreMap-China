@@ -1,0 +1,108 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万昌中路商圈",
+    "description": "位于温岭市核心城区，以万昌中路为主线，聚集了九龙万象城、时代广场、九龙新天地等多个商业项目，是温岭市最成熟的商业中心之一。",
+    "mall_codes": [
+      "MALL_6BF0AFC3",
+      "MALL_53BABC83",
+      "MALL_513B32C2",
+      "MALL_1B7B17E0",
+      "MALL_9FF7495B",
+      "MALL_82D3B89C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "太平老城商圈",
+    "description": "以中华路和锦屏路为核心的老城区商业带，涵盖银泰百货、锦江购物中心等传统商场，服务本地居民日常消费。",
+    "mall_codes": [
+      "MALL_8C238B70",
+      "MALL_B1739615",
+      "MALL_1F70103D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城东新城商圈",
+    "description": "依托横湖东路与东环路发展起来的新城区商业集聚区，包括万达广场等新兴商业体，代表城市向东拓展的商业方向。",
+    "mall_codes": [
+      "MALL_3BD316D8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "泽国镇商圈",
+    "description": "以泽国大道为轴线，覆盖嘉凯城城市客厅、泽国购物中心及日杂商场，是温岭西南部重点城镇的主要商业集群。",
+    "mall_codes": [
+      "MALL_8FD7A387",
+      "MALL_6BBCFF7C",
+      "MALL_BC898E6A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大溪商圈",
+    "description": "位于温岭西北部大溪镇，以登云南路为商业主干，包含多方里等本地商业项目，服务于大溪镇及周边区域。",
+    "mall_codes": [
+      "MALL_8CCD5E74"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "箬横商圈",
+    "description": "地处温岭东部箬横镇，由箬横商场和锦悦城组成，服务于东部乡镇居民的基础商业需求。",
+    "mall_codes": [
+      "MALL_E48BD764",
+      "MALL_D854BE59"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "西溪商圈",
+    "description": "位于城西大道与九龙大道交汇区域，以合岙商业楼为代表，处于城市西部新兴发展带，商业尚在培育阶段。",
+    "mall_codes": [
+      "MALL_F6023340"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "新河商圈",
+    "description": "位于温岭东北部新河镇，以万盛商厦为主要商业载体，服务于当地镇域经济与居民生活。",
+    "mall_codes": [
+      "MALL_2D5918AC"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "北城商圈",
+    "description": "位于温岭北部城北街道，依托城北大道布局，有温岭城北商业中心，服务于城市北部拓展区域。",
+    "mall_codes": [
+      "MALL_36A96771"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "耀达百货商圈",
+    "description": "以九龙汇商业街的耀达百货为核心，虽无其他大型商场，但作为独立商业节点存在，具有一定的品牌识别度。",
+    "mall_codes": [
+      "MALL_E9C47DCF"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "佳源豪成商圈",
+    "description": "位于环城北路与方山大道交叉口，以佳源豪成贝利商业广场为主体，辐射周边居住区，属区域性社区型商业。",
+    "mall_codes": [
+      "MALL_A78094FB"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "CC广场商圈",
+    "description": "位于星光南路明珠苑附近，以CC广场为唯一商业体，靠近地铁站，具备一定交通便利性，规模较小但位置明确。",
+    "mall_codes": [
+      "MALL_ECAAAEBE"
+    ]
+  }
+]

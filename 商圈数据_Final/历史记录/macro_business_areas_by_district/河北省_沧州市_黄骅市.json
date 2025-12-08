@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "黄骅市中心商圈",
+    "description": "以新华路与信誉楼大街交汇区域为核心，聚集了多家传统百货与商业大厦，是黄骅市历史最悠久、最成熟的商业中心。",
+    "mall_codes": [
+      "MALL_2FB52DD0",
+      "MALL_E74DDA55",
+      "MALL_586E6C54",
+      "MALL_497B15FA",
+      "MALL_ED9CD7DF",
+      "MALL_5B2BAEA0",
+      "MALL_207754FC",
+      "MALL_18E3E555"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "吕桥镇商圈",
+    "description": "位于黄骅市北部吕桥镇，依托府前路与文泰街交叉口分布的供销社和综合商场，服务当地居民的基础商业需求。",
+    "mall_codes": [
+      "MALL_96ED0E70",
+      "MALL_4BFCF702"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "旧城镇商圈",
+    "description": "位于黄骅市西南部旧城镇，以华信商厦和景云信誉商场为代表，服务于乡镇居民的区域性商业集聚区。",
+    "mall_codes": [
+      "MALL_B41C4B63",
+      "MALL_AA5B8248"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南排河/中捷片区商圈",
+    "description": "位于黄骅市东部沿海区域，覆盖盈丰源购物中心，服务于中捷产业园区及周边渔镇的居民消费。",
+    "mall_codes": [
+      "MALL_4232FA90"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "羊二庄镇商圈",
+    "description": "位于黄骅市西部，亿联生活广场地处该区域，为当地五金机电产业配套的生活服务型商业节点。",
+    "mall_codes": [
+      "MALL_5AF308AF"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "齐家务/常郭镇商圈",
+    "description": "位于黄骅市西北部，环宇购物中心地处乡道附近，辐射周边乡镇的基层零售消费市场。",
+    "mall_codes": [
+      "MALL_7169B532"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "开发区东区商圈",
+    "description": "位于黄骅市东北部，以耀华商厦（营业中）和金晟广场为核心的新兴商业聚集带，靠近盛源街，具备一定现代商业功能。",
+    "mall_codes": [
+      "MALL_F62353FB",
+      "MALL_FE256ED6"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "城区西部商圈",
+    "description": "位于黄骅市区西部，华丽百货楼独立坐落于振兴西街国际华府附近，服务于城西住宅区的日常购物需求。",
+    "mall_codes": [
+      "MALL_F52ED4B6"
+    ]
+  }
+]

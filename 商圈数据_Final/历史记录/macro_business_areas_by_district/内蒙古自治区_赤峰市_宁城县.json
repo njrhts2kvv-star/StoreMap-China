@@ -1,0 +1,44 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中京街商圈",
+    "description": "以中京街为核心的传统商业集聚区，集中了中京商场、中京地下商城及周边多个老商厦，是宁城县城区早期形成的商业中心。",
+    "mall_codes": [
+      "MALL_B0EB8514",
+      "MALL_E17F94EB",
+      "MALL_80E8C9C2",
+      "MALL_1FC0F970",
+      "MALL_3E416632",
+      "MALL_3C709A37",
+      "MALL_9A76FD74",
+      "MALL_A0948AB2",
+      "MALL_9520B791",
+      "MALL_A138B904"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "金三角商圈",
+    "description": "位于天旺路与契丹街交汇区域，以金三角商厦和宁城国际万商城为主要载体，构成县城西部的次级商业节点。",
+    "mall_codes": [
+      "MALL_FD7A433D",
+      "MALL_5F42C42F"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "三座店镇商圈",
+    "description": "位于宁城县下辖三座店镇的区域性小型商业点，以坤林商城为代表，服务本地乡镇居民。",
+    "mall_codes": [
+      "MALL_E2F814E6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "长青路商圈",
+    "description": "位于长青路沿线的独立百货点，正基百货为该区域代表性商业设施，远离主城核心但具局部影响力。",
+    "mall_codes": [
+      "MALL_1EC94CF3"
+    ]
+  }
+]

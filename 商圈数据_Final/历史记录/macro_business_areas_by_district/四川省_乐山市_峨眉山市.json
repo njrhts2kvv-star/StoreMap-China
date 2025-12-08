@@ -1,0 +1,49 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "水晶广场商圈",
+    "description": "以水晶广场为核心，包含其A座、A区、B区、C区、天街及摩尔妇女儿童生活馆等多个组成部分，位于旅博大道与滨湖东路周边，是峨眉山市区内集中度较高的商业集聚区。",
+    "mall_codes": [
+      "MALL_BCD1C21A",
+      "MALL_334E67E9",
+      "MALL_89C607F2",
+      "MALL_AA0B2887",
+      "MALL_DE78F2BC",
+      "MALL_2137B038",
+      "MALL_EED510FE"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城区北部商圈",
+    "description": "位于峨眉山市北部区域，涵盖明安生活广场和沃美购物广场，分布于金顶北路与名山东路一带，服务城区北部居民，具备基础商业功能。",
+    "mall_codes": [
+      "MALL_9656A4EA",
+      "MALL_1ACF3767"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "佛光东路商圈",
+    "description": "位于佛光东路沿线的润彩广场步行街，是城区中部具有一定人气的步行商业街区，具备零售与休闲功能。",
+    "mall_codes": [
+      "MALL_84C016D6"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "峨眉山景区商圈",
+    "description": "位于峨眉山景区内部的雷洞坪购物区，主要服务于登山游客，提供旅游配套商业服务。",
+    "mall_codes": [
+      "MALL_98DA4EFF"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "龙池镇商圈",
+    "description": "位于峨眉山市下辖龙池镇的龙池百货大楼，服务于当地乡镇居民，属于乡镇级商业节点。",
+    "mall_codes": [
+      "MALL_32295235"
+    ]
+  }
+]

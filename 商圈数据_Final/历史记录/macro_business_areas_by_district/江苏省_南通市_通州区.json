@@ -1,0 +1,80 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金沙湾商圈",
+    "description": "以通州区金沙镇为核心的传统商业集聚区，涵盖阳光城、上悦城及建设路沿线多个中小型商业体，是区域居民日常消费的主要集中地。",
+    "mall_codes": [
+      "MALL_AA3EEA82",
+      "MALL_3FDA0D03",
+      "MALL_920E92F1",
+      "MALL_CE711E06",
+      "MALL_6DA1EF68",
+      "MALL_616F2EB4",
+      "MALL_E44E502F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "高新区商圈",
+    "description": "位于南通高新区，以万达广场为核心，辐射周边新兴住宅与产业区，是近年来重点发展的城市副中心商业节点。",
+    "mall_codes": [
+      "MALL_C98812CE"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "三余镇商圈",
+    "description": "服务于通州区东部三余镇及湾示范区的区域性商业中心，包含万颐广场和德购购物广场，满足本地居民基础消费需求。",
+    "mall_codes": [
+      "MALL_88CD76D3",
+      "MALL_238405C4"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "平潮镇商圈",
+    "description": "覆盖平潮镇核心区域的商业集群，包括和润国际、好又多生活购物中心等，主要服务本地城镇居民。",
+    "mall_codes": [
+      "MALL_5734A512",
+      "MALL_CF43C8BF"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "石港-五甲商圈",
+    "description": "分布于通州区西北部乡镇的零散商业点，如文峰购物广场、新世纪大卖场、英雄供销大楼等，各自服务所在乡镇市场。",
+    "mall_codes": [
+      "MALL_E4484AC4",
+      "MALL_8855DD4E",
+      "MALL_E033F316"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "兴东商圈",
+    "description": "位于通州区西部边缘的冠杰商厦、华融和生国际商业广场、新天地生活广场、百财富广场等构成的局部商业节点，服务于兴东街道及周边社区。",
+    "mall_codes": [
+      "MALL_697CA912",
+      "MALL_C84D0B8C",
+      "MALL_41AB8BE2",
+      "MALL_CC37D244"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "世纪大道商圈",
+    "description": "依托世纪大道城市发展轴线形成的新兴商业带，包含万科·时代之光藤集和皇都两个项目，处于城市拓展方向上的潜力区域。",
+    "mall_codes": [
+      "MALL_D6A898A6",
+      "MALL_F742314B"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "海晏湖商圈",
+    "description": "位于通州区东部沿海区域的钱塘江路沿线，以海韵商贸广场为代表，服务于乐海大道周边新兴开发区域。",
+    "mall_codes": [
+      "MALL_CD0E9CFB"
+    ]
+  }
+]

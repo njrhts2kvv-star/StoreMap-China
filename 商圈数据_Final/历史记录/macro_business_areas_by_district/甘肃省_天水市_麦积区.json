@@ -1,0 +1,28 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "商埠路步行街商圈",
+    "description": "以商埠路步行街为核心，聚集多个商城，位于麦积区中心地带，是传统商业集中区域。",
+    "mall_codes": [
+      "MALL_D580A62E",
+      "MALL_14A69C30",
+      "MALL_F62A767A",
+      "MALL_0BEEE513",
+      "MALL_D1F7D6E6",
+      "MALL_2DDBB490",
+      "MALL_FA4AE7C6",
+      "MALL_24295BBC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "桥南商圈",
+    "description": "位于桥南片区，涵盖桥南服装小商品城及周边商业体，服务渭河南岸居民，具有一定规模的综合性购物区域。",
+    "mall_codes": [
+      "MALL_5C1144D0",
+      "MALL_B830564C",
+      "MALL_7CD35286",
+      "MALL_3D4BBD11"
+    ]
+  }
+]

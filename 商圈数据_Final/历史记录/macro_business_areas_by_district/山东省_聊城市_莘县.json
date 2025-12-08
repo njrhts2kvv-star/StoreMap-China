@@ -1,0 +1,98 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "莘县城区中心商圈",
+    "description": "位于莘县县城核心区域，集中分布在振兴街与燕塔广场周边，涵盖多个传统商贸与购物场所，是县城主要商业聚集区。",
+    "mall_codes": [
+      "MALL_59D9F9D8",
+      "MALL_4AD6CE8F",
+      "MALL_7258F6EB",
+      "MALL_8B6AECB0"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "古云镇商圈",
+    "description": "以古云镇为核心，包含裕鲁商城及东方商贸城等本地商贸设施，服务于古云镇及周边工业与居民区。",
+    "mall_codes": [
+      "MALL_1B926B99",
+      "MALL_457CE876"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "大张家镇商圈",
+    "description": "覆盖大张家镇区域，包含供销合作社购物中心和雨福轩购物中心，服务本地乡镇居民日常消费。",
+    "mall_codes": [
+      "MALL_BA5A1C8B",
+      "MALL_DCC05274"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "中原国际商贸港商圈",
+    "description": "位于兴旺路附近，由中原国际商贸港多栋建筑构成，形成区域性专业商贸集散地。",
+    "mall_codes": [
+      "MALL_DEBF1BE0",
+      "MALL_A931D8E9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "魏庄镇商圈",
+    "description": "以魏庄镇商贸街为中心，依托喜来登百货商城服务当地乡镇消费群体。",
+    "mall_codes": [
+      "MALL_B9E9F4FB"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "王庄集镇商圈",
+    "description": "位于王庄集镇振兴路与政府街交叉口附近，以王庄集镇商贸城为核心服务本地乡镇市场。",
+    "mall_codes": [
+      "MALL_A78158B9"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "妹冢镇商圈",
+    "description": "依托原化工厂改造的汇悦城购物广场，服务于妹冢镇及周边居民。",
+    "mall_codes": [
+      "MALL_F5F2C7D9"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "樱桃园镇商圈",
+    "description": "位于259省道红太阳生活广场旁的大东方商贸城与家多好商贸相邻，构成樱桃园镇附近主要商业节点。",
+    "mall_codes": [
+      "MALL_DE168E43",
+      "MALL_34E9C6DC"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "张鲁镇-徐庄片区商圈",
+    "description": "分布于247省道与032县道沿线，包括招弟购物中心与新世纪超市，服务于张鲁、徐庄等东部乡镇交界地带。",
+    "mall_codes": [
+      "MALL_72E50CA6",
+      "MALL_8AB67FBC"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "董杜庄-大王寨片区商圈",
+    "description": "位于聊濮大道与顺河东路交汇区域，聚客隆百姓餐饮购物广场为该片区主要商业设施。",
+    "mall_codes": [
+      "MALL_0F71500A"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "朝城镇商圈",
+    "description": "依托240国道西北侧的贾海购物中心，服务朝城及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_E8AF9291"
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "青浦老城商圈",
+    "description": "位于青浦老城区核心区域，以公园路沿线商业设施为主",
+    "mall_codes": [
+      "MALL_9704237D",
+      "MALL_70CD3D06",
+      "MALL_5CA5AD6E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "淀山湖大道商圈",
+    "description": "沿淀山湖大道分布，依托地铁站点形成的新兴商业集聚区",
+    "mall_codes": [
+      "MALL_5DE42BFF",
+      "MALL_E68AE5CA",
+      "MALL_3744EEA1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "赵巷奥特莱斯商圈",
+    "description": "嘉松中路与沪青平公路交汇处的奥特莱斯及周边商业集群",
+    "mall_codes": [
+      "MALL_F73AD9EC",
+      "MALL_CC823DD5",
+      "MALL_EB3DA89A",
+      "MALL_30F9A413",
+      "MALL_414D4290"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "华新商圈",
+    "description": "华新镇区域的商业中心，服务周边居民",
+    "mall_codes": [
+      "MALL_C6AF25E7",
+      "MALL_0E58DFB5",
+      "MALL_519D7E00"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "青浦新城商圈",
+    "description": "青浦新城核心区域，依托地铁站点发展的商业区",
+    "mall_codes": [
+      "MALL_4E1E1319",
+      "MALL_A7BDE3B1",
+      "MALL_81C02EF9"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "徐泾商圈",
+    "description": "位于沪青平公路东段的商业设施",
+    "mall_codes": [
+      "MALL_3008366F"
+    ]
+  }
+]

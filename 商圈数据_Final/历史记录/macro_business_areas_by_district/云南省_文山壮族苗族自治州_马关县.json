@@ -1,0 +1,28 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "马白镇商圈",
+    "description": "位于县城中心区域，以传统商业街区为核心",
+    "mall_codes": [
+      "MALL_FC2F6831"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北部乡镇商圈",
+    "description": "分布在县城北部乡镇，服务周边居民日常购物需求",
+    "mall_codes": [
+      "MALL_F8978F4F",
+      "MALL_FDFA94F0"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "南部乡镇商圈",
+    "description": "分布在县城南部乡镇，覆盖乡村地区商业服务",
+    "mall_codes": [
+      "MALL_3EF943D3",
+      "MALL_9C348A1D"
+    ]
+  }
+]

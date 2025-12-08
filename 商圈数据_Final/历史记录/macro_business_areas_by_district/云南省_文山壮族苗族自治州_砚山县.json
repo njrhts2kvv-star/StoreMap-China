@@ -1,0 +1,46 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "砚山县城商圈",
+    "description": "位于砚山县城核心区域，包含七都国际广场、龙腾商业中心等主要商业设施",
+    "mall_codes": [
+      "MALL_5BE44344",
+      "MALL_1E07E525",
+      "MALL_9A9FA01B"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "平远镇商圈",
+    "description": "位于平远镇商贸核心区，包含白云商场、蚂蚁歌儿童乐园商场等商业设施",
+    "mall_codes": [
+      "MALL_3A8E84B7",
+      "MALL_6606B5D2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "稼依镇商圈",
+    "description": "位于稼依镇核心区域，包含九一商场等商业设施",
+    "mall_codes": [
+      "MALL_A396878B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东部乡镇商圈",
+    "description": "位于砚山县东部乡镇区域，包含珍诚购物中心、美伴乐购物中心等商业设施",
+    "mall_codes": [
+      "MALL_C488A3B2",
+      "MALL_D612134E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "北部乡镇商圈",
+    "description": "位于砚山县北部乡镇区域，包含米多多购物中心等商业设施",
+    "mall_codes": [
+      "MALL_623EDB51"
+    ]
+  }
+]

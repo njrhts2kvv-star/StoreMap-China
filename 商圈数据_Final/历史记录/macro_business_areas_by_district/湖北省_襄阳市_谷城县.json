@@ -1,0 +1,65 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "城关镇商圈",
+    "description": "位于谷城县城关镇核心区域，集中了县府街、康乐路周边多个商场，是谷城县的主要商业中心之一。",
+    "mall_codes": [
+      "MALL_73BD095A",
+      "MALL_426E03F8",
+      "MALL_F9120431",
+      "MALL_F0855D09",
+      "MALL_2F920B44",
+      "MALL_443136FB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "石花镇商圈",
+    "description": "位于谷城县下辖的石花镇，以武当路和南大街为核心，聚集本地居民日常消费场所，形成镇级商业中心。",
+    "mall_codes": [
+      "MALL_62D22D5D",
+      "MALL_E89E36DD"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "东门街商圈",
+    "description": "位于谷城县城关镇东部，东大路与东门街交叉区域，分布有三合商场等传统零售点，构成老城区局部商业节点。",
+    "mall_codes": [
+      "MALL_A3197ACD",
+      "MALL_B71F4451"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "盛康镇商圈",
+    "description": "位于谷城县南部的盛康镇周边，依托庙盛路分布的凤凰商场服务当地乡镇居民，属于乡镇级商业节点。",
+    "mall_codes": [
+      "MALL_4B412E1E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "茨河镇商圈",
+    "description": "位于谷城县西部的茨河镇，白龙商厦依托镇区派出所附近人流形成小型商业聚集点，服务于本地社区。",
+    "mall_codes": [
+      "MALL_3EDE4332"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "五山镇/水南片区",
+    "description": "位于谷城县中部偏西的水南路一带，樱花谷购物中心所在区域，临近城乡结合部，服务范围覆盖周边多个乡镇。",
+    "mall_codes": [
+      "MALL_92C504A8"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "冷集镇商圈",
+    "description": "位于谷城县北部宣武街与夕照街交汇区域，联胜购物广场为该片区主要商业设施，服务于冷集及周边乡镇居民。",
+    "mall_codes": [
+      "MALL_F173C777"
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "后湖商圈",
+    "description": "以汉口城市广场为核心，覆盖后湖大道沿线多个商业体，包括新生活摩尔城、季佳·里华林等，形成后湖片区主要的集中消费区域。",
+    "mall_codes": [
+      "MALL_76C40988",
+      "MALL_72A44F4F",
+      "MALL_EDE28D56",
+      "MALL_025A3D50",
+      "MALL_9745407F",
+      "MALL_B20043D4",
+      "MALL_F9EF0017",
+      "MALL_ADCB10FB"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "武汉天地商圈",
+    "description": "以武汉天地壹方购物中心、武汉天地壹方南馆西座及武汉新天地北馆为核心，构成江岸区高端商业与潮流生活地标，位于永和路、中山大道与永泰路交汇区域。",
+    "mall_codes": [
+      "MALL_708D6A00",
+      "MALL_FB01A325",
+      "MALL_7553574D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "江汉路商圈",
+    "description": "以江汉路步行街为核心，聚集武汉X118、潮流盒子·武汉X118、马客茂Markmall及新长盛广场等商业项目，是武汉传统核心商业区之一。",
+    "mall_codes": [
+      "MALL_E3827291",
+      "MALL_FA68A36C",
+      "MALL_66629A32",
+      "MALL_BCC8CB89"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "建设大道商圈",
+    "description": "依托建设大道金融主轴，以武汉万象城为主要代表，结合地铁取水楼站周边商务配套，形成集高端零售与商务服务于一体的现代商业集聚区。",
+    "mall_codes": [
+      "MALL_47EAC7FD"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "黄浦路商圈",
+    "description": "位于黄浦路与头道街地铁站周边，以上东汇广场为代表，服务于周边居民及地铁通勤人群的小型商业节点。",
+    "mall_codes": [
+      "MALL_53DFE9A5"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "金桥大道商圈",
+    "description": "以金桥大道15号永旺梦乐城为核心，辐射周边居住区，是江岸区北部重要的大型综合购物中心所在片区。",
+    "mall_codes": [
+      "MALL_420B239B"
+    ]
+  }
+]

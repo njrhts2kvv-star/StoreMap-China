@@ -1,0 +1,74 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "向阳路-锦绣路商圈",
+    "description": "位于汝州市北部，以大张盛德美和贝贝购物广场为核心，集中在向阳路与锦绣路交汇区域，是城市北部较为集中的商业节点。",
+    "mall_codes": [
+      "MALL_D5F6A482",
+      "MALL_E09A6D1F",
+      "MALL_729D1FFE"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "丹阳中路商圈",
+    "description": "位于汝州市中心城区主干道丹阳中路沿线，聚集旺京华百货、正安购物等商场，商业密度较高，属于传统城区核心商业带。",
+    "mall_codes": [
+      "MALL_B4FAF37C",
+      "MALL_C87F1A21",
+      "MALL_C2E48AFB",
+      "MALL_92381972",
+      "MALL_B5B1E759"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "丹阳东路商圈",
+    "description": "沿丹阳东路分布，包含交通商场及多个老城系购物点，形成东部片区的生活消费集中区，服务周边居民为主。",
+    "mall_codes": [
+      "MALL_672BF662",
+      "MALL_1A3A813F",
+      "MALL_C1679512"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "城垣路-朝阳东路商圈",
+    "description": "位于城市东部发展轴线，以荣太世纪广场为代表，地处城垣路与朝阳东路交叉口附近，具备一定区域辐射能力。",
+    "mall_codes": [
+      "MALL_AE80AFC7"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "焦村紫云路商圈",
+    "description": "位于焦村乡紫云路，由乐万佳购物广场构成，属乡镇级独立商业中心，服务于焦村及周边地区。",
+    "mall_codes": [
+      "MALL_D1F0232D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "中大街商圈",
+    "description": "位于老城区中大街与信用街交叉口，以东兴购物中心为代表，处于传统街巷交汇处，具有本地生活服务属性。",
+    "mall_codes": [
+      "MALL_EA7BC162"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "242省道西商圈",
+    "description": "位于242省道西侧，由汇美购物广场构成，地理位置偏西，可能服务于过境交通及外围城乡结合区域。",
+    "mall_codes": [
+      "MALL_95C1468C"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "龙泉乡道商圈",
+    "description": "位于006乡道，依托龙泉购物广场形成的服务点，位置偏远，主要覆盖农村或边缘乡镇市场。",
+    "mall_codes": [
+      "MALL_705A8B97"
+    ]
+  }
+]

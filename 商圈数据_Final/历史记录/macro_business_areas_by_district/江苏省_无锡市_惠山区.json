@@ -1,0 +1,82 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达广场商圈",
+    "description": "以万达广场为核心，覆盖周边政和大道与吴韵路一带的商业集聚区，包含时代广场等配套商业，是惠山区较为成熟的综合型商圈。",
+    "mall_codes": [
+      "MALL_B4FE9739",
+      "MALL_AF897A2E"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "盛岸西路商圈",
+    "description": "位于盛岸西路沿线，涵盖五洲城惠生活广场与百乐广场，服务钱桥及北部居民，形成区域性生活消费中心。",
+    "mall_codes": [
+      "MALL_A253754C",
+      "MALL_E082B6AD"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "洛社镇商圈",
+    "description": "集中于洛社镇核心区域，包括兴达商场、嘉阳生活购物广场(中兴西路)、洛城商业中心3及洛社·哥伦布广场，构成洛社本地主要商业集群。",
+    "mall_codes": [
+      "MALL_CCD43DD4",
+      "MALL_583D825D",
+      "MALL_0C262AB4",
+      "MALL_C3D8C07C"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "前洲街道商圈",
+    "description": "以前洲五洲国际广场为核心，结合宏润商业广场、美特购物广场及环球港·汽车商业广场，形成前洲片区的商业聚集带。",
+    "mall_codes": [
+      "MALL_16860B55",
+      "MALL_62DD8D3F",
+      "MALL_4CD1FF8C",
+      "MALL_1CF0F94C",
+      "MALL_42AEDD84"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "长安春惠路商圈",
+    "description": "位于长安街道春惠路附近，由哥伦布广场、长安哥伦布广场南区与西区共同组成，形成以社区消费为主的商业组团。",
+    "mall_codes": [
+      "MALL_5FDB669F",
+      "MALL_42786430",
+      "MALL_99612901"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "天一新城商圈",
+    "description": "分布于天一新城及周边区域，包括藕乐汇2期、藕乐汇·天一MALL、新盛百邻广场、恒越商业及无锡悦尚奥莱，依托居住区发展形成的新兴商业集聚区。",
+    "mall_codes": [
+      "MALL_ACAB46C4",
+      "MALL_4F87EDA7",
+      "MALL_338ECFD9",
+      "MALL_FC0C4A16",
+      "MALL_06470B71"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "阳山镇商圈",
+    "description": "服务于阳山镇居民，以阳山嘉阳生活购物广场为主要商业载体，形成镇级基础消费中心。",
+    "mall_codes": [
+      "MALL_4AD9D62E"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "钱桥街道商圈",
+    "description": "位于钱桥街道核心区，包含天御青春假日与客都购物中心(文良路)，服务于本地居民日常购物需求。",
+    "mall_codes": [
+      "MALL_10668E4D",
+      "MALL_4CD1FF8C"
+    ]
+  }
+]

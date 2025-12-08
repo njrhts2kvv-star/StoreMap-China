@@ -1,0 +1,116 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "洪兴西路商圈",
+    "description": "以江南摩尔购物中心西区为核心，覆盖智富城购物中心、嘉兴中关村广场购物中心等，位于秀洲区核心居住区，是区域主要的生活消费聚集带。",
+    "mall_codes": [
+      "MALL_7BB14709",
+      "MALL_7CFCE4E2",
+      "MALL_B0B29670",
+      "MALL_73CFAACF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东升东路商圈",
+    "description": "沿东升东路分布，包含杉杉in象生活广场3号楼、欧乐发购物中心等，服务于高照街道及周边社区，具备一定生活配套功能。",
+    "mall_codes": [
+      "MALL_78A8F019",
+      "MALL_4620DCFD"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "中山西路商圈",
+    "description": "依托中山西路主干道形成，涵盖江南·年华商业中心、万隆广场等，连接新城与老城，具有交通与区位优势。",
+    "mall_codes": [
+      "MALL_693CC8CD",
+      "MALL_370458AF",
+      "MALL_E3476135"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "新塍镇商圈",
+    "description": "位于秀洲区西北部的新塍镇区域，以佳源·新塍中心广场为代表，服务本地居民，商业集中度较低。",
+    "mall_codes": [
+      "MALL_E3476135"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "王店镇商圈",
+    "description": "覆盖王店镇兴乐路的王店综合商场，服务于王店镇本地消费人群，属镇级商业节点。",
+    "mall_codes": [
+      "MALL_BBECB2E2"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "嘉洪大道商圈",
+    "description": "位于嘉洪大道沿线，包括星港汇、嘉兴毛衫城市场南区，靠近物流与专业市场集群，具备批发与零售结合特征。",
+    "mall_codes": [
+      "MALL_7C14EBB9",
+      "MALL_DAFFCAA9"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "正原路商圈",
+    "description": "位于秀洲新区东部，聚集星源广场购物中心、兴汇广场、恒大商业中心等，处于城市拓展方向，潜力较大但当前商业活跃度偏低。",
+    "mall_codes": [
+      "MALL_3345954D",
+      "MALL_E7B10DEB",
+      "MALL_24B3F38C"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "禾兴北路商圈",
+    "description": "沿禾兴北路布局，包含惠买得生活购物广场、龙庄润商业广场等，毗邻汽车北站，具备交通枢纽带动效应。",
+    "mall_codes": [
+      "MALL_E173FDB9",
+      "MALL_2FD4331B"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "建设街道商圈",
+    "description": "位于秀洲区西南部建设街道，以建设商场为代表，服务偏远乡镇基础消费需求，商业体量小且分散。",
+    "mall_codes": [
+      "MALL_96CFFA05"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "塘汇路商圈",
+    "description": "位于塘汇路与社区绿道交汇区域，仅有兴汇广场一处点位，属社区级微型商业设施，辐射范围有限。",
+    "mall_codes": [
+      "MALL_E7B10DEB"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "花甲路商圈",
+    "description": "位于花甲路附近，仅有博航购物中心一处，位置孤立，缺乏集群效应，为局部便民型商业点。",
+    "mall_codes": [
+      "MALL_4C677C60"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "和平街商圈",
+    "description": "位于城区南部和平街138号，仅东信广场一处，空置状态明显，暂未形成有效商业集聚。",
+    "mall_codes": [
+      "MALL_6FCB24AB"
+    ]
+  },
+  {
+    "area_id": 13,
+    "area_name": "寺浜路商圈",
+    "description": "位于良三幸福小区内部道路，仅设良三购物中心，属典型社区底商形态，规模极小。",
+    "mall_codes": [
+      "MALL_B9AB1846"
+    ]
+  }
+]

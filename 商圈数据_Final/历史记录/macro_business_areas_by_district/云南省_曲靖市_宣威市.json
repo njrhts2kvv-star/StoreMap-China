@@ -1,0 +1,48 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "建设街商圈",
+    "description": "位于宣威市中心建设街沿线，包含多个购物中心和百货商场",
+    "mall_codes": [
+      "MALL_59DB0B67",
+      "MALL_2378A154",
+      "MALL_B0EF5BF8",
+      "MALL_284D6E35"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "向阳街商圈",
+    "description": "位于向阳街周边区域，以传统商业街区为主",
+    "mall_codes": [
+      "MALL_B230DEC3",
+      "MALL_E646129C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "西河路商圈",
+    "description": "位于西河路与通祥路交叉口周边，新兴商业区域",
+    "mall_codes": [
+      "MALL_551DE2E2"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "文化路商圈",
+    "description": "文化路沿线商业区域",
+    "mall_codes": [
+      "MALL_44CD69C9"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "乡镇商圈",
+    "description": "分布在宣威市各乡镇的商业网点",
+    "mall_codes": [
+      "MALL_FCC7D939",
+      "MALL_C904DA2B",
+      "MALL_648B9AC1"
+    ]
+  }
+]

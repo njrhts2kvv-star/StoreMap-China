@@ -1,0 +1,93 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "伍家岭商圈",
+    "description": "以伍家岭生活广场为核心，覆盖华创国际广场、CFC富兴时代、泊富ICITY美好生活中心等，位于芙蓉中路沿线，是开福区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_2EB5810A",
+      "MALL_CBFD4721",
+      "MALL_B83D06D3",
+      "MALL_FB971CF7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "北辰三角洲商圈",
+    "description": "依托长沙北辰荟（南馆、北馆）、长沙方圆荟等项目，位于湘江畔，地铁1号线直达，形成集购物、文化、休闲于一体的新兴滨江商业集群。",
+    "mall_codes": [
+      "MALL_37F04375",
+      "MALL_2EC34CF1",
+      "MALL_39F2C5F4",
+      "MALL_4426819A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "四方坪商圈",
+    "description": "以四方商贸城B-1栋和B8栋为主体，结合周边社区配套商业，服务于大型居住区，是城北区域性的生活消费中心。",
+    "mall_codes": [
+      "MALL_B457B343",
+      "MALL_69B3D507"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "福元西路商圈",
+    "description": "沿福元西路分布，聚集万国城MOMA商业中心、五矿·长沙Live、珠江·星环购物中心、龙湾商业广场及彩虹park等多个社区型商业体，构成河东大型居住片区的核心消费带。",
+    "mall_codes": [
+      "MALL_DEBA9897",
+      "MALL_21995DDF",
+      "MALL_3E2B987A",
+      "MALL_45047CFE",
+      "MALL_F138C6D5"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "万达/西长街商圈",
+    "description": "以万达广场为单一核心，辐射周边老城区居民，地处湘江中路与西长街交汇区域，具备较强的品牌号召力和客流集聚效应。",
+    "mall_codes": [
+      "MALL_6F421F8A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "世纪金源商圈",
+    "description": "以世纪金源购物中心南广场为主导，位于开福区政府板块，服务大城北高端住宅群，是近年来新兴发展的城市副中心型商圈。",
+    "mall_codes": [
+      "MALL_6EEFAF1A"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "宜家汇商圈",
+    "description": "以宜家汇金广场为核心，靠近东风路主干道及湘雅医院地铁站，衔接医疗、交通节点，形成便利型社区商业节点。",
+    "mall_codes": [
+      "MALL_4883835B"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "99park商圈",
+    "description": "以99park项目为代表的小体量特色商业，临近湘雅医院，主打便捷服务与年轻化业态，属医疗配套型微型商圈。",
+    "mall_codes": [
+      "MALL_B5371603"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "福晟/金霞商圈",
+    "description": "以福晟MALL为核心，位于兴联路与芙蓉北路交汇处，靠近金霞经开区，服务于产业人群与外围拓展居住区，属城市拓展型边缘商圈。",
+    "mall_codes": [
+      "MALL_7D0F20D0"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "众乐商圈",
+    "description": "以众乐购物中心为主，地处开福大道与南一道交界，位置偏北，主要满足本地村镇及新建小区基础消费需求，属远郊社区型商业。",
+    "mall_codes": [
+      "MALL_036B3BFA"
+    ]
+  }
+]

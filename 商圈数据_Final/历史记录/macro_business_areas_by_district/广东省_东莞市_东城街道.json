@@ -1,0 +1,121 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "东城商圈",
+    "description": "以东城街道为核心的商业集聚区，涵盖民盈·国贸城、星河城购物中心、东莞东城万达广场等主要商业体，位于东莞城市中心区域，是东城街道最主要的消费中心。",
+    "mall_codes": [
+      "MALL_B6C82ECF",
+      "MALL_A5D7467E",
+      "MALL_7146AAC0",
+      "MALL_A3FA7C5D",
+      "MALL_F596A07D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "南城商圈",
+    "description": "东莞传统核心商业区之一，集中于鸿福路沿线，包括海德·汇一城三区、蜂汇广场等商业项目，毗邻市政府，商业氛围成熟，交通便利。",
+    "mall_codes": [
+      "MALL_1CCC3AB2",
+      "MALL_188A9C1B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "万江商圈",
+    "description": "位于万江街道的大型商业集聚区，以华南MALL为代表，曾为全球面积最大的购物中心之一，周边配套逐步完善，形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_6B25F58A"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "寮步商圈",
+    "description": "覆盖寮步镇及松山湖片区的商业组合，包含万润广场、东莞松山湖万象汇等项目，服务于寮步本地居民及松山湖科技园区就业人群，呈产城融合特征。",
+    "mall_codes": [
+      "MALL_F87031DD",
+      "MALL_702BB771"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "厚街商圈",
+    "description": "以东莞厚街万达广场为核心，服务于厚街镇及周边区域的商业节点，依托地铁交通优势，形成区域性消费目的地。",
+    "mall_codes": [
+      "MALL_4C0E7C0A"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "虎门商圈",
+    "description": "位于虎门镇的商业集聚区，包含东莞虎门万达广场和天虹购物中心，依托虎门强大客流基础，构成南部重要商业节点。",
+    "mall_codes": [
+      "MALL_404A594D",
+      "MALL_2AAC05F7"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "长安商圈",
+    "description": "以东莞长安万达广场为核心，服务长安镇密集人口和制造业就业群体，商业需求旺盛，是东莞西南部重要消费中心。",
+    "mall_codes": [
+      "MALL_2ADB98F2"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "樟木头商圈",
+    "description": "以天一城为主要商业载体，服务于樟木头镇本地居民，规模较小但具备区域基本服务能力。",
+    "mall_codes": [
+      "MALL_618CF1B8"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "常平商圈",
+    "description": "以百花时代广场为代表，覆盖常平镇中心区域的商业设施，依托交通枢纽地位吸引周边消费。",
+    "mall_codes": [
+      "MALL_CB8A5F39"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "大朗商圈",
+    "description": "以碧桂园·里悦里购物中心为核心，服务于大朗镇居民，定位社区型商业，填补区域中高端消费空白。",
+    "mall_codes": [
+      "MALL_9129FF5E"
+    ]
+  },
+  {
+    "area_id": 11,
+    "area_name": "石龙商圈",
+    "description": "以金沙湾购物广场为主要商业体，覆盖石龙镇中心区域，服务本地居民，具有较强社区属性。",
+    "mall_codes": [
+      "MALL_0A8AAAFA"
+    ]
+  },
+  {
+    "area_id": 12,
+    "area_name": "桥头商圈",
+    "description": "以上悦汇影城为代表，位于桥头镇核心地段，商业体量较小，以影院等体验业态为主导。",
+    "mall_codes": [
+      "MALL_C7EF26BD"
+    ]
+  },
+  {
+    "area_id": 13,
+    "area_name": "高埗-东城北商圈",
+    "description": "以滙星商业中心为核心，地处东城与高埗交界地带，辐射北部片区居民，属新兴发展中的区域级商业节点。",
+    "mall_codes": [
+      "MALL_25651387"
+    ]
+  },
+  {
+    "area_id": 14,
+    "area_name": "莞城商圈",
+    "description": "以莞城万科城市广场为代表，位于东莞老城区核心，承接历史商业基础，服务于莞城街道及周边老城区居民。",
+    "mall_codes": [
+      "MALL_A3FA7C5D"
+    ]
+  }
+]

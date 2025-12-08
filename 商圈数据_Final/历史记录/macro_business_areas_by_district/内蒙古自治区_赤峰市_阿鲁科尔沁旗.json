@@ -1,0 +1,24 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "天山中路商圈",
+    "description": "以天山商场为核心，聚集大世界商业城、天百商城、百货大楼、益民购物广场A区与B区及蓝天购物中心，位于汉林东街与天山路周边，是阿鲁科尔沁旗天山镇中心商业集聚区。",
+    "mall_codes": [
+      "MALL_E762C291",
+      "MALL_327ECBBA",
+      "MALL_F8AD5466",
+      "MALL_C8E5FC44",
+      "MALL_032986EC",
+      "MALL_33C444DD",
+      "MALL_76EF4EC7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "天元大街商圈",
+    "description": "以温州友谊商城为主要商业节点，位于天元大街沿线，构成阿鲁科尔沁旗另一处独立商业组团。",
+    "mall_codes": [
+      "MALL_9C66B3C2"
+    ]
+  }
+]

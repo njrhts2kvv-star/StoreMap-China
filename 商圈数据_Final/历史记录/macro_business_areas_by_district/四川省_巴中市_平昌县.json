@@ -1,0 +1,40 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "平昌县城中心商圈",
+    "description": "位于平昌县江口镇核心区域，集中了多个主要购物中心和商业设施，是县城内商业活动最密集的地带。",
+    "mall_codes": [
+      "MALL_F8220E34",
+      "MALL_8DAA4CD5",
+      "MALL_2D4C9042",
+      "MALL_F035FD0A",
+      "MALL_C3CBBFE7",
+      "MALL_3AF2B297",
+      "MALL_502DF0D5"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "平昌县东部乡镇商圈",
+    "description": "分布于平昌县东部乡镇区域，涵盖江家口镇等周边乡镇的购物中心，服务当地居民，商业集聚度相对较低。",
+    "mall_codes": [
+      "MALL_CEFD3E17"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "平昌县西部乡镇商圈",
+    "description": "位于平昌县西部乡镇，如粉壁镇等，包含服务于乡镇本地消费的独立购物中心，空间分布较分散。",
+    "mall_codes": [
+      "MALL_B06F86DA"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "平昌县南部乡镇商圈",
+    "description": "位于平昌县南部板庙乡及附近区域，以区域性小型购物中心为主，辐射周边乡镇居民。",
+    "mall_codes": [
+      "MALL_8BAE08E6"
+    ]
+  }
+]

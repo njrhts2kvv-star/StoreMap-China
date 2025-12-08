@@ -1,0 +1,55 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "罗山城关商圈",
+    "description": "以罗山县城关镇为核心，覆盖龙山大道与天元路周边商业聚集区，包含多个商贸城及购物中心，是罗山县主要的商业中心区域。",
+    "mall_codes": [
+      "MALL_940E940E",
+      "MALL_3C25C296",
+      "MALL_FBCE5E92",
+      "MALL_4EDCCEA2",
+      "MALL_75E3E0B7",
+      "MALL_F072B7A8"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "周党镇商圈",
+    "description": "位于罗山县周党镇，以小香港商场为代表，服务当地居民的基础商业需求，属于乡镇级商业节点。",
+    "mall_codes": [
+      "MALL_A38EA5F7"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "彭新镇商圈",
+    "description": "位于罗山县彭新镇曾店村，依托曾店西亚购物广场形成区域性乡镇商业点，辐射周边农村地区。",
+    "mall_codes": [
+      "MALL_681AE398"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "莽张镇商圈",
+    "description": "位于罗山县莽张镇，以莽张新华联购物广场为支点，服务于莽张镇及邻近区域的日常消费。",
+    "mall_codes": [
+      "MALL_BBACCE3E"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "灵山大道北延商圈",
+    "description": "位于罗山县北部219省道沿线，以华中购物中心为主要商业载体，结合交通干道形成外围商贸节点。",
+    "mall_codes": [
+      "MALL_206349F8"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "子路镇商圈",
+    "description": "位于罗山县西部032县道与030乡道交汇处附近，以家家乐购物中心为核心，服务西部乡镇居民。",
+    "mall_codes": [
+      "MALL_4062C631"
+    ]
+  }
+]

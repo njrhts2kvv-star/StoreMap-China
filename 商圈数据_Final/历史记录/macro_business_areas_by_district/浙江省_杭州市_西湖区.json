@@ -1,0 +1,57 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "三墩商圈",
+    "description": "以三墩镇为核心的生活商业集聚区，涵盖厚仁路、古墩路沿线多个社区型及区域型商场，形成服务城北居住区的主要商业节点。",
+    "mall_codes": [
+      "MALL_9A587241",
+      "MALL_74AE588D",
+      "MALL_60F88F19",
+      "MALL_F071F43C",
+      "MALL_BC0C21CC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "紫金港商圈",
+    "description": "围绕浙江大学紫金港校区及地铁站形成的新兴商业中心，集中了西溪银泰城系列项目与龙湖天街等大型综合体，是西湖区西北部核心商业带。",
+    "mall_codes": [
+      "MALL_A791FAE3",
+      "MALL_645DECB1",
+      "MALL_FED0D478",
+      "MALL_2ACBB3FF",
+      "MALL_9A9DD787"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "文教/文三路商圈",
+    "description": "依托文三路电子街与黄姑山路科技街区位，连接地铁文三路站周边商业载体，形成覆盖文教区的成熟城市级商圈。",
+    "mall_codes": [
+      "MALL_DE919C74",
+      "MALL_C2750476",
+      "MALL_A85B2014",
+      "MALL_1EC457BD",
+      "MALL_9907CC9F"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "之江商圈",
+    "description": "位于西湖区西南部转塘至之江板块，分布有西投银泰城、银泰百货等重点项目，服务于中国美院、象山艺术区及周边住宅群。",
+    "mall_codes": [
+      "MALL_564DAF6B",
+      "MALL_A29BB619",
+      "MALL_A31F2854"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "留下/小和山商圈",
+    "description": "地处西湖区西部边缘，以留下地铁站为枢纽，辐射浙江工业大学等高校及小和山高教园区，商业体量相对较小但具区域服务功能。",
+    "mall_codes": [
+      "MALL_718FC400",
+      "MALL_52EA4F61"
+    ]
+  }
+]

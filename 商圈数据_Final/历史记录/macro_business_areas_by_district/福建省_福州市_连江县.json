@@ -1,0 +1,74 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "贵安奥莱商圈",
+    "description": "以世纪金源奥特莱斯购物广场和世纪金源奥莱为核心，位于潘渡镇贵安新天地片区，是连江县北部的大型 outlet 购物集中区。",
+    "mall_codes": [
+      "MALL_56771D79",
+      "MALL_FED684B7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "凤城中心商圈",
+    "description": "位于连江县凤城镇核心区域，聚集安盛系商场、金星商场、新百货等传统商业体，是县城最成熟的商业中心。",
+    "mall_codes": [
+      "MALL_8A150456",
+      "MALL_BEDDE3CA",
+      "MALL_CE208DAC",
+      "MALL_2D7344FA",
+      "MALL_5705B5BA"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "敖江丹凤东路商圈",
+    "description": "位于敖江镇白沙社区丹凤东路沿线，涵盖时代广场、玉沙综合商场等，服务于敖江镇东部居民区的区域性商业集聚。",
+    "mall_codes": [
+      "MALL_D82846AA",
+      "MALL_F3E43464"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "文山北路-凤园路商圈",
+    "description": "分布于文山北路与凤园路周边，包括天都商厦、益运商业广场等，覆盖凤城西部及周边居住区的商业服务节点。",
+    "mall_codes": [
+      "MALL_7470C634",
+      "MALL_BF5EA6B8"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "龙芝商业圈",
+    "description": "以龙芝商业广场为单点核心，位于马祖西路，是连江城区南部具有一定规模的独立商业综合体。",
+    "mall_codes": [
+      "MALL_CEE23F83"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "江南大道-江滨路商圈",
+    "description": "位于凤城镇开放东路与江滨路交汇区域，包含供销商厦和在建的天麟·中央广场，处于城市沿江发展轴线上的重要商业节点。",
+    "mall_codes": [
+      "MALL_231AC4C0",
+      "MALL_521F6651"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "南竿乡离岛商业点",
+    "description": "位于连江县南竿乡介寿路，ALPACA羊駝为当地小型零售点，代表马祖列岛离岛地区的零星商业布局。",
+    "mall_codes": [
+      "MALL_102D1053"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "凤城便利商业点",
+    "description": "万嘉便利位于八一六南路主干道旁，属于社区型便利商店，反映基础层级的商业服务分布。",
+    "mall_codes": [
+      "MALL_CF2F2C8C"
+    ]
+  }
+]

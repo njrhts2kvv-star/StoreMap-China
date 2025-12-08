@@ -1,0 +1,71 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "万达商圈",
+    "description": "以万达广场和SW1960万达百货为核心，位于新华路50号附近，是广阳区传统商业中心之一，周边商业密集，交通便利。",
+    "mall_codes": [
+      "MALL_40D7955A",
+      "MALL_955109C4",
+      "MALL_FA29C277"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "爱民东道商圈",
+    "description": "沿爱民东道分布，涵盖乐晟广场、新朝阳购物中心及朝阳特价商城，是广阳区东部主要的商业聚集带，服务周边大型居住区。",
+    "mall_codes": [
+      "MALL_8777E9B1",
+      "MALL_BBD69D36",
+      "MALL_141E5F33"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "新世纪步行街商圈",
+    "description": "以中太商业广场为代表，位于新世纪步行街片区，是广阳区老牌商业街区，具有较强的本地消费基础和步行商业氛围。",
+    "mall_codes": [
+      "MALL_57BFB9BA"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "广阳道商圈",
+    "description": "集中在广阳道沿线，包括五味斋商厦、广阳商城等，覆盖南尖塔镇核心区域，是区域内历史较久的商业节点。",
+    "mall_codes": [
+      "MALL_D94E2FFF",
+      "MALL_3FB5623B"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "新世界商圈",
+    "description": "以新世界悦活里为中心，位于建设路与康庄道交汇区域，辐射周边新兴社区，形成区域性消费节点。",
+    "mall_codes": [
+      "MALL_E864236D"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "银河北路商圈",
+    "description": "以明珠大厦为代表，位于银河北路街道永兴路幸福城润园附近，服务于西部居住组团，商业配套相对独立。",
+    "mall_codes": [
+      "MALL_93B74F59"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "嘉华港湾商圈",
+    "description": "以嘉华港湾为核心，地处紫金城商住楼区域，规模较小，主要服务周边社区居民。",
+    "mall_codes": [
+      "MALL_DC432B22"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "荣盛环球中心商圈",
+    "description": "位于航盛道与翔安路交叉口东南侧，地理位置偏西，远离主城区核心商业带，为独立发展的商务商业节点。",
+    "mall_codes": [
+      "MALL_8EBAB79A"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "宜兴市中心商圈",
+    "description": "以宜兴主城区核心商业带为主，涵盖人民中路、解放东路沿线的多个商场和商业体，是宜兴市传统且密集的商业中心区域。",
+    "mall_codes": [
+      "MALL_072050E8",
+      "MALL_45BC1AAA",
+      "MALL_D624FED4",
+      "MALL_BAA4E720",
+      "MALL_F2EB7E8C",
+      "MALL_16D239E3",
+      "MALL_493B2A92",
+      "MALL_D5CE0D51",
+      "MALL_758E549C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东氿新城商圈",
+    "description": "位于宜兴东部新城东氿板块，依托万达广场等大型商业项目形成的新城核心商圈，代表城市新兴商业发展方向。",
+    "mall_codes": [
+      "MALL_37596BB5"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "丁蜀镇商圈",
+    "description": "位于宜兴市丁蜀镇城区，以丁山商厦、嘉华百货等本地商业为主，服务紫砂文化重镇及周边居民。",
+    "mall_codes": [
+      "MALL_22DF57C1",
+      "MALL_26B85F40",
+      "MALL_431205AD"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "阳泉路-太滆西路商圈",
+    "description": "位于宜兴市区北部，覆盖新天地广场、新苏南商厦、大统华超市等商业设施，服务城北居住区。",
+    "mall_codes": [
+      "MALL_8AFC3DA7",
+      "MALL_70C22D23",
+      "MALL_2802CCE3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "官林-张渚外围商圈",
+    "description": "分布于宜兴市下辖镇区，包括官林大梦想城和张渚大梦想城，属于乡镇级商业中心，辐射各自区域。",
+    "mall_codes": [
+      "MALL_ACD519FC",
+      "MALL_BE4F6FF7"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "氿滨南路商圈",
+    "description": "位于宜兴市区南部，以现代生活广场为代表，服务于氿滨南路沿线及南部城区居民。",
+    "mall_codes": [
+      "MALL_F63957D3"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "宝龙广场商圈",
+    "description": "依托宜兴宝龙广场独立形成的商业节点，位于东坡西路与白宕北路交汇处，周边配套逐步完善。",
+    "mall_codes": [
+      "MALL_5E3C2602"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "西郊-新怡华商圈",
+    "description": "位于宜兴市西部郊区，以新怡华购物广场为核心，服务聚缘名居及周边社区。",
+    "mall_codes": [
+      "MALL_0372CC3E"
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "中心街商圈",
+    "description": "以中心街为核心，覆盖新政路至汇鑫路之间的主要商业聚集区，集中了京都购物广场、供销商场、祥和商贸城等多个商业体，是茌平区传统核心商业地带。",
+    "mall_codes": [
+      "MALL_BE08064E",
+      "MALL_7B28B055",
+      "MALL_4E69A383",
+      "MALL_1887DF5E",
+      "MALL_B767C3D6"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "枣乡街商圈",
+    "description": "位于枣乡街与汇鑫路交汇区域，以信誉成和商厦为代表，服务周边居民区，形成区域性商业中心。",
+    "mall_codes": [
+      "MALL_C686A719"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "文昌街商圈",
+    "description": "分布于文昌街沿线，以文昌商场为主要商业节点，辐射南部城区居民生活区。",
+    "mall_codes": [
+      "MALL_C404D069"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "民生路商圈",
+    "description": "位于民生路附近，以旺中旺购物中心为支点，服务于名人府及周边社区，属社区型商业集聚。",
+    "mall_codes": [
+      "MALL_5242B29A"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "博平镇商圈",
+    "description": "位于博平镇西关西街，以博平供销大楼为核心，服务博平镇本地消费人群，属于乡镇级商业中心。",
+    "mall_codes": [
+      "MALL_24A16EBE"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "北关北街商圈",
+    "description": "地处北关北街与府前大街交叉口，由伴百购物中心构成主要商业支撑，覆盖城区西北部居民。",
+    "mall_codes": [
+      "MALL_F5DB1ABE"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "迎宾大道商圈",
+    "description": "位于新政东路与迎宾大道交叉口东侧，以茌平义乌商贸城B馆为代表，具备一定批发零售功能，是东部新兴商业节点。",
+    "mall_codes": [
+      "MALL_B4C8357E"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "温陈乡商圈",
+    "description": "位于温陈乡许刘大丁路沿线，依托果之缘购物中心服务当地农村及乡镇人口，属乡村级商业设施。",
+    "mall_codes": [
+      "MALL_68280933"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "赵屯商圈",
+    "description": "位于赵官屯街附近，以银航购物中心和金鼎购物中心共同构成，服务于赵屯小学及周边村落，形成局部商业聚集。",
+    "mall_codes": [
+      "MALL_551C4575",
+      "MALL_0EB70E79"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "郭草路商圈",
+    "description": "位于郭草路东侧，由益新购物中心独立支撑，地处城区西部边缘，服务范围有限，属偏远村级商业点。",
+    "mall_codes": [
+      "MALL_D7C9C737"
+    ]
+  }
+]

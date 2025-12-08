@@ -1,0 +1,63 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "人民大街商圈",
+    "description": "以人民大街为主轴，集中分布多个购物广场和商场，是龙山区核心商业带，涵盖从传统百货到现代购物中心的多种业态。",
+    "mall_codes": [
+      "MALL_C05A2554",
+      "MALL_808CAC59",
+      "MALL_042A19D2",
+      "MALL_B3BA79DA",
+      "MALL_8479EA5C",
+      "MALL_B5F53CDC",
+      "MALL_2F11BB27",
+      "MALL_941245EE",
+      "MALL_4B9C8B16"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "吉光路商圈",
+    "description": "位于吉光路沿线，聚集多个商贸城与购物广场，形成区域性综合消费节点，以中端零售和日常消费为主。",
+    "mall_codes": [
+      "MALL_DD23A49B",
+      "MALL_C7561BDC",
+      "MALL_BAEB09D0",
+      "MALL_4DA593A2"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "欧亚购物中心商圈",
+    "description": "以欧亚购物中心为核心，包含其一期、二期项目，位于财富大路至连阳路一带，是辽源市较具规模的现代化商业综合体集聚区。",
+    "mall_codes": [
+      "MALL_3031BA9F",
+      "MALL_8D34E543",
+      "MALL_03EB8DC9"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "东旺集贸商圈",
+    "description": "以东旺集贸为中心，结合周边零散商业设施，服务于本地居民日常生活需求，属于社区型集贸类商业片区。",
+    "mall_codes": [
+      "MALL_5E1E75F2"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "博纳广场商圈",
+    "description": "以博纳广场为单点核心，辐射育宁路周边区域，形成独立的小型商业节点，具备一定公共服务与商业配套功能。",
+    "mall_codes": [
+      "MALL_EE7CBAD1"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "龙源商贸城商圈",
+    "description": "以龙源商贸城为唯一核心，位于长寿街，服务老城区局部片区，属小型专业市场型商业点位。",
+    "mall_codes": [
+      "MALL_AF056CEA"
+    ]
+  }
+]

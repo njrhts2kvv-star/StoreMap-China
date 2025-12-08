@@ -1,0 +1,53 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "燕郊中心商圈",
+    "description": "以燕郊镇核心区域为主，涵盖天洋广场及其周边多个商业项目，位于燕顺路、汉王路、燕高路一带，是燕郊较为集中的商业聚集区。",
+    "mall_codes": [
+      "MALL_F1E46FB2",
+      "MALL_C3425652",
+      "MALL_D24CA846",
+      "MALL_20FFF787",
+      "MALL_B873AF63",
+      "MALL_EDFBF0B9",
+      "MALL_C2F5478A",
+      "MALL_05DFE2C5",
+      "MALL_4D52A7C8",
+      "MALL_200399D3"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "燕郊北部新城商圈",
+    "description": "位于燕郊北部，沿迎宾北路分布，包含永旺梦乐城等大型商业体，是近年来重点发展的新兴商业区域。",
+    "mall_codes": [
+      "MALL_B83C6C8A",
+      "MALL_ECFEE177",
+      "MALL_822D41B1",
+      "MALL_8A27372C",
+      "MALL_D3AAC90A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "三河老城区商圈",
+    "description": "集中在三河市老城区，以泃阳西大街、迎宾南路为核心，覆盖华联购物中心、碧乐汇、富达购物广场等传统商业设施，服务本地居民。",
+    "mall_codes": [
+      "MALL_02AAA0FF",
+      "MALL_20FFF787",
+      "MALL_E05402E2",
+      "MALL_8CA1ABF9",
+      "MALL_4D670561",
+      "MALL_7A446D37",
+      "MALL_C7A93FF1"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "高楼镇商圈",
+    "description": "位于三河市高楼镇，以嘉都茂Mall为代表，服务于周边乡镇及农村地区，商业体量较小，属于区域性基础商业配套。",
+    "mall_codes": [
+      "MALL_4F8FCED0"
+    ]
+  }
+]

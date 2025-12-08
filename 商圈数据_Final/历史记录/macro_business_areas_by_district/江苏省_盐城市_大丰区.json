@@ -1,0 +1,61 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "大丰城区中心商圈",
+    "description": "位于大丰区核心城区，涵盖人民南路、黄海东路周边多个商业体，是区内传统商业集聚区，包括美庐天地、哥伦布商业、新百百货大楼等主要商场。",
+    "mall_codes": [
+      "MALL_6E1A5B25",
+      "MALL_82CCF9A7",
+      "MALL_74578096",
+      "MALL_6F8422A1",
+      "MALL_9466FB83",
+      "MALL_49321F35",
+      "MALL_9F2C3E8C"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "城北综合商圈",
+    "description": "覆盖大丰城区北部及西团镇周边，包含万佳城市广场、欧蓓莎购物中心等较大型商业项目，服务城北居民为主。",
+    "mall_codes": [
+      "MALL_9971F9B3",
+      "MALL_E8D1B6B8",
+      "MALL_3B1863FB",
+      "MALL_9CF1A00C"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "城东发展商圈",
+    "description": "位于大丰城区东部延伸带，以吉佰盛百货大卖场为核心，辐射新阳路周边区域，处于发展中阶段。",
+    "mall_codes": [
+      "MALL_DA1FB32B"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "南部乡镇商圈",
+    "description": "分布于大丰南部乡镇区域，包括家家利、家乐美、朝阳商场等，服务于乡镇居民日常消费。",
+    "mall_codes": [
+      "MALL_7B1B7A20",
+      "MALL_3556D3E6"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西部外围商圈",
+    "description": "位于大丰区西部外围地带，如HOLLAND VILLAGE和供销社二商场，地理位置较偏远，商业集聚度较低。",
+    "mall_codes": [
+      "MALL_1730E6C7",
+      "MALL_527E4280"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "北部农业服务点",
+    "description": "位于大丰北部边缘区域，以小陆农药化肥种子为代表，主要服务于农业生产需求，非典型零售商圈。",
+    "mall_codes": [
+      "MALL_0F2E9FBE"
+    ]
+  }
+]

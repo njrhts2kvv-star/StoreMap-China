@@ -1,0 +1,50 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "东风路商圈",
+    "description": "以东风路沿线为核心，集中分布多个商业体，包括光大购物中心、东风时代、硕峰新天地等，是文山市区传统商业中心之一。",
+    "mall_codes": [
+      "MALL_2F9F39C5",
+      "MALL_6C91A912",
+      "MALL_FB08E75D",
+      "MALL_6BB7BE6B",
+      "MALL_573C0CA4",
+      "MALL_A6024981",
+      "MALL_509AFAA6",
+      "MALL_8EA6B5EF"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "开化中路商圈",
+    "description": "位于开化中路与普新路交汇区域，聚集金地广场、星光大道·购物中心等较具规模的商业项目，形成新兴城市商业节点。",
+    "mall_codes": [
+      "MALL_2CCEF8F3",
+      "MALL_0FDD13A1"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "三鑫片区商圈",
+    "description": "位于三鑫第一城周边，以三鑫开化商贸城三期为代表，配套相对独立，服务本地居住区的区域性商业集聚点。",
+    "mall_codes": [
+      "MALL_D25FA5F5"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "龙海路商圈",
+    "description": "地处城市北部龙海路沿线，以金光万象城为主要商业载体，辐射周边居民区，构成北部边缘型商业节点。",
+    "mall_codes": [
+      "MALL_AF02A49C"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "文华路商圈",
+    "description": "位于文华路长虹桥旁，依托中和商城形成的小型社区级商业点，服务周边住宅区。",
+    "mall_codes": [
+      "MALL_1C7FB71A"
+    ]
+  }
+]

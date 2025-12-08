@@ -1,0 +1,76 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "胶州老城商圈",
+    "description": "以郑州西路、郑州东路为核心的传统商业集聚区，集中了丽达集团、新世纪购物中心、胶州市百货大楼等老牌商场，是胶州市历史最悠久的商业中心。",
+    "mall_codes": [
+      "MALL_426744A8",
+      "MALL_5126EF31",
+      "MALL_AD788FE2",
+      "MALL_3DB58C42",
+      "MALL_B02722CC",
+      "MALL_3BF7488E",
+      "MALL_DD1515B9",
+      "MALL_1E2B1FCC"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "宝龙商圈",
+    "description": "以福州南路宝龙广场为核心的新兴商业片区，周边配套逐步完善，形成胶州城区南部的重要商业节点。",
+    "mall_codes": [
+      "MALL_1F7D255A"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "利群/天街商圈",
+    "description": "位于澳门路与海尔大道附近，由德泰利群购物中心和龙湖青岛胶州天街共同构成，是胶州城西近年来发展较快的现代商业集聚区。",
+    "mall_codes": [
+      "MALL_26F281DF",
+      "MALL_3156B4FF",
+      "MALL_12B666E3"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "李哥庄商圈",
+    "description": "位于胶州市北部李哥庄镇，以圣慧商厦为代表，服务本地居民的区域性商业中心。",
+    "mall_codes": [
+      "MALL_197C8DFB"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "西部新城商圈",
+    "description": "位于兰州西路沿线，涵盖融城生活广场（建设中）和南方家园商城，属于胶州城市向西拓展过程中形成的新兴商业带。",
+    "mall_codes": [
+      "MALL_C63BD72B",
+      "MALL_BA5D25AE"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "里岔/西南边缘商圈",
+    "description": "位于胶州西南方向，靠近311省道，以乡镇级购物中心为主，服务周边农村及交通节点人群。",
+    "mall_codes": [
+      "MALL_2A4DCD9E"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "铺集商圈",
+    "description": "位于胶州南部，幸福街附近，以如意广场为代表，服务于南部乡镇居民的区域性商业点。",
+    "mall_codes": [
+      "MALL_1EDB04D1"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "北关商圈",
+    "description": "位于胶州城区北部，爱河路与胶州西路交汇区域，以金泰广场为标志，辐射周边居住区。",
+    "mall_codes": [
+      "MALL_509F11E1"
+    ]
+  }
+]

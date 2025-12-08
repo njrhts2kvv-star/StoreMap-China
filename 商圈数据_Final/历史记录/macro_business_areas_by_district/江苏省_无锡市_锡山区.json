@@ -1,0 +1,89 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "荟聚商圈",
+    "description": "以Livat荟聚为核心，包含其北区和南区，位于锡山区中心位置，是区域级商业中心。",
+    "mall_codes": [
+      "MALL_78EED880",
+      "MALL_C0C4FA98",
+      "MALL_C24FD4D7"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "东亭商圈",
+    "description": "覆盖东亭路周边商业体，包括星叶生活广场等，服务于东亭街道居民。",
+    "mall_codes": [
+      "MALL_5E3D5FCC"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "安镇/查桥商圈",
+    "description": "位于安镇街道及查桥片区，聚集新时代购物、迎乐福生活购物中心等社区型商业。",
+    "mall_codes": [
+      "MALL_387173AA",
+      "MALL_FA7943C8"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "厚桥商圈",
+    "description": "以厚桥商城为代表，地处锡山区东部边缘，服务本地居民的区域性商业节点。",
+    "mall_codes": [
+      "MALL_703762A3"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "羊尖商圈",
+    "description": "涵盖欧特福购物中心，位于锡山区东北部羊尖镇，为镇级核心商业配套。",
+    "mall_codes": [
+      "MALL_3AAD18A7"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "东港商圈",
+    "description": "以红豆·万花城为中心，辐射东港镇区域，是锡山东北部的重要商业项目。",
+    "mall_codes": [
+      "MALL_9D04E932"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "锡北商圈",
+    "description": "包含八士天富广场、银乐福购物广场和天富购物广场，集中于锡北镇，构成镇级商业集群。",
+    "mall_codes": [
+      "MALL_07530FF1",
+      "MALL_BC91218E",
+      "MALL_510A4ACA"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "团结中路商圈",
+    "description": "位于华夏南路与团结中路一带，有丰汇欢乐广场和锡山商贸城，靠近主城区连接带。",
+    "mall_codes": [
+      "MALL_8763950F",
+      "MALL_41BC41B2"
+    ]
+  },
+  {
+    "area_id": 9,
+    "area_name": "九里商圈",
+    "description": "集中在新韵北路至先锋东路沿线，包括九里东韵生活广场和九里仓，形成新兴社区商业带。",
+    "mall_codes": [
+      "MALL_7027EFC9",
+      "MALL_15888B93"
+    ]
+  },
+  {
+    "area_id": 10,
+    "area_name": "云林商圈",
+    "description": "润发购物中心位于该片区，周边为成熟居住区，具备一定商业集聚效应。",
+    "mall_codes": [
+      "MALL_44ED9765"
+    ]
+  }
+]

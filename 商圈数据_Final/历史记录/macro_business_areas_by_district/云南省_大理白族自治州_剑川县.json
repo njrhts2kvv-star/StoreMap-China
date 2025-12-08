@@ -1,0 +1,18 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "金华镇商圈",
+    "description": "位于剑川县城区核心区域，包含腾龙商贸城等商业设施，是县城主要商业集中区",
+    "mall_codes": [
+      "MALL_30DE18C9"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "古城北路商圈",
+    "description": "靠近古城区域，以华艺购物中心为代表，连接滇藏路交通要道",
+    "mall_codes": [
+      "MALL_BE692EB8"
+    ]
+  }
+]

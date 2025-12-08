@@ -1,0 +1,82 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "炳草岗商圈",
+    "description": "位于攀枝花市东区核心区域炳草岗大街沿线，聚集了多个商业设施，是城市传统中心商业区之一。",
+    "mall_codes": [
+      "MALL_2CB333C1",
+      "MALL_28A3C8E2",
+      "MALL_DCFFE4C3",
+      "MALL_B717C89C",
+      "MALL_27D1938F",
+      "MALL_BE44C979",
+      "MALL_5CEA26BB",
+      "MALL_579DF43D"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "金瓯广场商圈",
+    "description": "以金瓯广场为核心，涵盖攀枝花大道东段中段的集中商业群，包括盛华堂百货、盛时美生活广场等配套商业。",
+    "mall_codes": [
+      "MALL_D04C7C1F",
+      "MALL_4B145577",
+      "MALL_85A6C46E",
+      "MALL_BCFB206B"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "弄弄坪商圈",
+    "description": "位于弄弄坪中路及周边区域，服务钢铁工业区居民，代表性商业为东风商场，辐射南山片区。",
+    "mall_codes": [
+      "MALL_E6879DF8",
+      "MALL_898C327D",
+      "MALL_46B2DA26"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "三线大道北段商圈",
+    "description": "依托三线大道北段发展起来的新商业带，包含太谷广场、奥林匹克购物中心和万达广场，具备现代商业综合体集聚特征。",
+    "mall_codes": [
+      "MALL_C649F4C5",
+      "MALL_6F8564EB",
+      "MALL_058DD96F"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "大渡口-马家田商圈",
+    "description": "位于东区东部边缘的大渡口街道马家田片区，主要服务于本地社区，代表商业为四川机电职业技术学院学苑商场。",
+    "mall_codes": [
+      "MALL_4F3BBCF0"
+    ]
+  },
+  {
+    "area_id": 6,
+    "area_name": "新福路-机场路商圈",
+    "description": "覆盖新福路与机场路交叉区域，连接城市交通枢纽与居住区，包含中环天地、奥林匹克购物中心等分散商业点。",
+    "mall_codes": [
+      "MALL_CE14167F",
+      "MALL_6F8564EB"
+    ]
+  },
+  {
+    "area_id": 7,
+    "area_name": "攀枝花大道东段延伸商圈",
+    "description": "位于攀枝花大道东段远端，靠近桃源街与金星巷，分布有台联锦绣时代、金福领秀商业城等小型商业体。",
+    "mall_codes": [
+      "MALL_F502A8F1",
+      "MALL_F7747412"
+    ]
+  },
+  {
+    "area_id": 8,
+    "area_name": "文景巷商圈",
+    "description": "以文景巷曼哈顿购物广场为中心的小型商业聚集点，服务周边住宅区。",
+    "mall_codes": [
+      "MALL_F3F4E7E9"
+    ]
+  }
+]

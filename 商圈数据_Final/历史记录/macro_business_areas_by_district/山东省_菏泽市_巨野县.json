@@ -1,0 +1,52 @@
+[
+  {
+    "area_id": 1,
+    "area_name": "巨野县城关商圈",
+    "description": "位于巨野县城区核心区域，集中了佳和购物广场、银座购物广场、天马商场等主要商业设施，是县城内人流最密集的商业中心。",
+    "mall_codes": [
+      "MALL_6F8BE47D",
+      "MALL_DC5904AD",
+      "MALL_1E4353C0",
+      "MALL_B7F009F8",
+      "MALL_6D6829AB",
+      "MALL_4840B4DB",
+      "MALL_4E3CBF5F"
+    ]
+  },
+  {
+    "area_id": 2,
+    "area_name": "柳林镇商圈",
+    "description": "覆盖柳林镇及周边区域，以家家乐超市和金果购物为代表，服务于镇级居民日常消费，属于县域次级商业节点。",
+    "mall_codes": [
+      "MALL_1E50664A",
+      "MALL_118C839D"
+    ]
+  },
+  {
+    "area_id": 3,
+    "area_name": "田庄-核桃园沿线商圈",
+    "description": "分布于巨野县西部乡镇沿线，包括田庄镇顺帆购物中心和核桃园贵和购物中心，地理位置相距较远但均属外围乡镇商业代表。",
+    "mall_codes": [
+      "MALL_A2020FB4",
+      "MALL_1AD21F2D"
+    ]
+  },
+  {
+    "area_id": 4,
+    "area_name": "万丰-张良片区商圈",
+    "description": "位于巨野县东部乡镇带，涵盖万丰商城、张良新世纪商贸城和阳光商城，服务于万丰、张良等乡镇居民，形成东部组团式商业布局。",
+    "mall_codes": [
+      "MALL_1D60C5D2",
+      "MALL_53690656",
+      "MALL_1F5CA5F0"
+    ]
+  },
+  {
+    "area_id": 5,
+    "area_name": "前进路北段商圈",
+    "description": "位于巨野县城北部前进路沿线，以筑美商贸城为核心，地处金港路交叉口附近，服务城北片区居民。",
+    "mall_codes": [
+      "MALL_B6887C99"
+    ]
+  }
+]
