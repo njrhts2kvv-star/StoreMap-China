@@ -167,6 +167,71 @@ export const recentUpdates = [
   { type: 'brand', name: 'Maison Luxe 更新门店类型', action: 'updated', time: '2025-12-06' },
 ];
 
+// 品牌详情补充聚合
+export const mockBrandCityTier = [
+  { tier: 'T1', value: 12 },
+  { tier: '新一线', value: 15 },
+  { tier: 'T2', value: 8 },
+  { tier: 'T3+', value: 6 },
+];
+
+export const mockBrandMallScatter = [
+  { mall: '星河广场', mallScore: 92, storeCount: 5, cityTier: 'T1', brandTotal: 140 },
+  { mall: '未来城', mallScore: 86, storeCount: 4, cityTier: 'T1', brandTotal: 110 },
+  { mall: '中心城', mallScore: 78, storeCount: 3, cityTier: '新一线', brandTotal: 90 },
+  { mall: '天街', mallScore: 74, storeCount: 3, cityTier: 'T2', brandTotal: 80 },
+];
+
+export const mockBrandDistrictTop = [
+  { district: '陆家嘴', stores: 12 },
+  { district: '南京东路', stores: 9 },
+  { district: '科技园', stores: 7 },
+];
+
+export const mockBrandChannel = [
+  { name: 'mall', value: 24 },
+  { name: 'street', value: 6 },
+  { name: 'counter', value: 4 },
+];
+
+// 城市页占位聚合
+export const mockCityCategoryShare = [
+  { name: '户外', value: 120 },
+  { name: '3C', value: 180 },
+  { name: '奢侈品', value: 60 },
+  { name: '轻奢', value: 90 },
+  { name: 'F&B', value: 150 },
+];
+
+export const mockCityDistrictBubbles = [
+  { name: '陆家嘴', bizLevel: 1, brandCount: 160, mallCount: 8, bizType: 'CBD' },
+  { name: '南京东路', bizLevel: 1, brandCount: 140, mallCount: 6, bizType: '商业步行街' },
+  { name: '科技园', bizLevel: 2, brandCount: 110, mallCount: 5, bizType: '科技园' },
+  { name: '大学城', bizLevel: 3, brandCount: 80, mallCount: 3, bizType: '校园' },
+];
+
+// 商场页占位聚合
+export const mockMallBrandCategory = [
+  { name: '奢侈品', value: 12 },
+  { name: '轻奢', value: 18 },
+  { name: '户外', value: 8 },
+  { name: '3C', value: 15 },
+  { name: 'F&B', value: 20 },
+];
+
+export const mockMallStoreType = [
+  { name: '旗舰店', value: 6 },
+  { name: '体验店', value: 10 },
+  { name: '标准店', value: 8 },
+  { name: '专柜', value: 5 },
+];
+
+// 对比页占位聚合
+export const mockCompareCityTier = [
+  { name: '品牌A', T1: 10, 新一线: 12, T2: 8, 'T3+': 6 },
+  { name: '品牌B', T1: 8, 新一线: 10, T2: 7, 'T3+': 5 },
+];
+
 export const mockCities: CityOverview[] = [
   {
     id: '310000',

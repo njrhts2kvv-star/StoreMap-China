@@ -1,20 +1,21 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { dataService } from '../../services/dataService';
 import { FilterBar } from '../../components/dashboard/FilterBar';
 import { TableCard } from '../../components/dashboard/TableCard';
 import { SectionHeader } from '../../components/dashboard/SectionHeader';
-import type { Brand } from '../../types/dashboard';
-import { useNavigate } from 'react-router-dom';
+import type { BrandAggregateStats, BrandListItem } from '../../types/dashboard';
+import { PATHS } from '../../routes/paths';
 
 export default function BrandListPage() {
-  const [brands, setBrands] = useState<Brand[]>([]);
+  const [brands, setBrands] = useState<(BrandListItem & { stats?: BrandAggregateStats })[]>([]);
   const [category, setCategory] = useState<string>('全部');
   const [country, setCountry] = useState<string>('全部');
-  const [positioning, setPositioning] = useState<string>('全部');
+  const [tier, setTier] = useState<string>('全部');
   const navigate = useNavigate();
 
   useEffect(() => {
-    dataService.listBrands().then(setBrands);
+    dataService.listBrands(true).then(setBrands);
   }, []);
 
   const filtered = useMemo(
@@ -22,19 +23,19 @@ export default function BrandListPage() {
       brands.filter((b) => {
         if (category !== '全部' && b.category !== category) return false;
         if (country !== '全部' && b.countryOfOrigin !== country) return false;
-        if (positioning !== '全部' && b.positioning !== positioning) return false;
+        if (tier !== '全部' && b.tier !== tier) return false;
         return true;
       }),
-    [brands, category, country, positioning],
+    [brands, category, country, tier],
   );
 
-  const categories = Array.from(new Set(brands.map((b) => b.category))).filter(Boolean);
-  const countries = Array.from(new Set(brands.map((b) => b.countryOfOrigin))).filter(Boolean);
-  const positions = Array.from(new Set(brands.map((b) => b.positioning))).filter(Boolean);
+  const categories = Array.from(new Set(brands.map((b) => b.category))).filter(Boolean) as string[];
+  const countries = Array.from(new Set(brands.map((b) => b.countryOfOrigin))).filter(Boolean) as string[];
+  const tiers = Array.from(new Set(brands.map((b) => b.tier))).filter(Boolean) as string[];
 
   return (
     <div className="space-y-4">
-      <SectionHeader title="品牌列表" description="按品类/定位/原产国筛选，支持跳转到品牌详情" />
+      <SectionHeader title="品牌列表" description="按品类/等级/原产国筛选，点击行跳转详情（API）" />
       <FilterBar>
         <label className="text-sm text-neutral-6 flex items-center gap-2">
           品类
@@ -50,14 +51,14 @@ export default function BrandListPage() {
           </select>
         </label>
         <label className="text-sm text-neutral-6 flex items-center gap-2">
-          定位
+          等级
           <select
-            value={positioning}
-            onChange={(e) => setPositioning(e.target.value)}
+            value={tier}
+            onChange={(e) => setTier(e.target.value)}
             className="border border-neutral-3 rounded-md px-2 py-1 bg-neutral-0"
           >
             <option>全部</option>
-            {positions.map((p) => (
+            {tiers.map((p) => (
               <option key={p}>{p}</option>
             ))}
           </select>
@@ -83,7 +84,7 @@ export default function BrandListPage() {
             <tr>
               <th className="py-2 px-1">品牌</th>
               <th className="py-2 px-1">品类</th>
-              <th className="py-2 px-1">定位</th>
+              <th className="py-2 px-1">等级</th>
               <th className="py-2 px-1">原产国</th>
               <th className="py-2 px-1">总门店</th>
               <th className="py-2 px-1">覆盖城市</th>
@@ -93,19 +94,26 @@ export default function BrandListPage() {
           <tbody>
             {filtered.map((b) => (
               <tr
-                key={b.id}
+                key={b.brandId}
                 className="border-t border-neutral-2 hover:bg-neutral-1/60 cursor-pointer"
-                onClick={() => navigate(`/dashboard/brands/${b.id}`)}
+                onClick={() => navigate(PATHS.brandDetail(b.brandId))}
               >
-                <td className="py-2 px-1">{b.name}</td>
-                <td className="py-2 px-1">{b.category}</td>
-                <td className="py-2 px-1">{b.positioning || '-'}</td>
+                <td className="py-2 px-1">{b.nameCn}</td>
+                <td className="py-2 px-1">{b.category || '-'}</td>
+                <td className="py-2 px-1">{b.tier || '-'}</td>
                 <td className="py-2 px-1">{b.countryOfOrigin || '-'}</td>
-                <td className="py-2 px-1">{b.stats.stores}</td>
-                <td className="py-2 px-1">{b.stats.cities}</td>
-                <td className="py-2 px-1">{b.stats.malls}</td>
+                <td className="py-2 px-1">{b.stats?.storeCount ?? '-'}</td>
+                <td className="py-2 px-1">{b.stats?.cityCount ?? '-'}</td>
+                <td className="py-2 px-1">{b.stats?.mallCount ?? '-'}</td>
               </tr>
             ))}
+            {!filtered.length && (
+              <tr className="border-t border-neutral-2">
+                <td className="py-2 px-1 text-neutral-5" colSpan={7}>
+                  暂无数据，检查 API 或筛选条件
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </TableCard>

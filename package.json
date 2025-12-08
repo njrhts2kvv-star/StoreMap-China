@@ -20,6 +20,7 @@
     "react-markdown": "^9.0.3",
     "react-router-dom": "^7.10.1",
     "react-virtuoso": "^4.14.1",
+    "recharts": "^3.5.1",
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {

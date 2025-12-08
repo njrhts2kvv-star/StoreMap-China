@@ -14,12 +14,13 @@ import DataDistrictsPage from '../pages/data-admin/DataDistrictsPage';
 import SettingsUsersPage from '../pages/settings/SettingsUsersPage';
 import SettingsProfilePage from '../pages/settings/SettingsProfilePage';
 import SettingsSystemPage from '../pages/settings/SettingsSystemPage';
+import { PATHS } from './paths';
 
 export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
-        <Route index element={<Navigate to="/dashboard/overview" replace />} />
+        <Route index element={<Navigate to={PATHS.overview} replace />} />
         <Route path="dashboard">
           <Route path="overview" element={<OverviewPage />} />
           <Route path="brands" element={<BrandListPage />} />
@@ -43,7 +44,7 @@ export function AppRoutes() {
           <Route path="system" element={<SettingsSystemPage />} />
         </Route>
       </Route>
-      <Route path="*" element={<Navigate to="/dashboard/overview" replace />} />
+      <Route path="*" element={<Navigate to={PATHS.overview} replace />} />
     </Routes>
   );
 }

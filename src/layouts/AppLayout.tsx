@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { LayoutDashboard, BarChart3, Map, GitCompare, Database, Settings } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { PATHS } from '../routes/paths';
 
 type NavItem = {
   label: string;
@@ -9,12 +10,12 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: '总览 Overview', icon: <LayoutDashboard className="h-4 w-4" />, to: '/dashboard/overview' },
-  { label: '品牌分析', icon: <BarChart3 className="h-4 w-4" />, to: '/dashboard/brands' },
-  { label: '商场 & 商圈', icon: <Map className="h-4 w-4" />, to: '/dashboard/cities/310000' },
-  { label: '对比分析', icon: <GitCompare className="h-4 w-4" />, to: '/dashboard/compare/brands' },
-  { label: '数据管理', icon: <Database className="h-4 w-4" />, to: '/data/brands' },
-  { label: '系统设置', icon: <Settings className="h-4 w-4" />, to: '/settings/users' },
+  { label: '总览 Overview', icon: <LayoutDashboard className="h-4 w-4" />, to: PATHS.overview },
+  { label: '品牌分析 Brand', icon: <BarChart3 className="h-4 w-4" />, to: PATHS.brands },
+  { label: '商场 & 商圈', icon: <Map className="h-4 w-4" />, to: PATHS.cities('310000') },
+  { label: '对比分析', icon: <GitCompare className="h-4 w-4" />, to: PATHS.compareBrands },
+  { label: '数据管理', icon: <Database className="h-4 w-4" />, to: PATHS.dataBrands },
+  { label: '系统设置', icon: <Settings className="h-4 w-4" />, to: PATHS.settingsUsers },
 ];
 
 export function AppLayout() {

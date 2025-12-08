@@ -9,6 +9,15 @@ import {
   overviewTopCities,
   recentUpdates,
   mockCities,
+  mockBrandCityTier,
+  mockBrandMallScatter,
+  mockBrandDistrictTop,
+  mockBrandChannel,
+  mockCityCategoryShare,
+  mockCityDistrictBubbles,
+  mockMallBrandCategory,
+  mockMallStoreType,
+  mockCompareCityTier,
 } from '../mocks/mockData';
 import type { Brand, Mall, BusinessDistrict, Store, CityOverview } from '../types/dashboard';
 
@@ -73,5 +82,51 @@ export async function getCity(id: string): Promise<CityOverview | undefined> {
 export async function listStores(): Promise<Store[]> {
   await sleep();
   return mockStores;
+}
+
+// 拓展 mock 聚合（仅前端演示用）
+export async function getBrandCityTierAgg() {
+  await sleep();
+  return mockBrandCityTier;
+}
+
+export async function getBrandMallScatter() {
+  await sleep();
+  return mockBrandMallScatter;
+}
+
+export async function getBrandDistrictTop() {
+  await sleep();
+  return mockBrandDistrictTop;
+}
+
+export async function getBrandChannel() {
+  await sleep();
+  return mockBrandChannel;
+}
+
+export async function getCityCategoryShare() {
+  await sleep();
+  return mockCityCategoryShare;
+}
+
+export async function getCityDistrictBubbles() {
+  await sleep();
+  return mockCityDistrictBubbles;
+}
+
+export async function getMallBrandCategory() {
+  await sleep();
+  return mockMallBrandCategory;
+}
+
+export async function getMallStoreType() {
+  await sleep();
+  return mockMallStoreType;
+}
+
+export async function getCompareCityTier() {
+  await sleep();
+  return mockCompareCityTier;
 }
 
