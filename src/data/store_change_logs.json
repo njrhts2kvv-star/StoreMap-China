@@ -7,7 +7,37 @@
     "province": "辽宁省",
     "city": "沈阳市",
     "changeType": "RELOCATE",
-    "timestamp": "2025-12-07T20:37:10.255639"
+    "timestamp": "2025-12-08T20:42:56.671847"
+  },
+  {
+    "id": "b8bf6878-b62b-4d92-b4f8-e14538c059c7",
+    "storeId": "b8bf6878-b62b-4d92-b4f8-e14538c059c7",
+    "brand": "DJI",
+    "storeName": "北京昌平悦荟授权体验店",
+    "province": "北京市",
+    "city": "北京市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-08"
+  },
+  {
+    "id": "96ed00be-fb8a-4e06-a558-35755dc222f5",
+    "storeId": "96ed00be-fb8a-4e06-a558-35755dc222f5",
+    "brand": "DJI",
+    "storeName": "北京东方新天地授权体验店",
+    "province": "北京市",
+    "city": "北京市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-08"
+  },
+  {
+    "id": "0a8084d2-b059-4b82-9add-213c38e4c269",
+    "storeId": "0a8084d2-b059-4b82-9add-213c38e4c269",
+    "brand": "DJI",
+    "storeName": "昆明瑞鼎城授权体验店",
+    "province": "云南省",
+    "city": "昆明市",
+    "changeType": "OPEN",
+    "timestamp": "2025-12-08"
   },
   {
     "id": "64afbd46-eb27-48ea-b209-0b7a226c3919",
@@ -176,6 +206,16 @@
     "storeName": "唐山超商店",
     "province": "河北省",
     "city": "唐山市",
+    "changeType": "CLOSE",
+    "timestamp": "2025-12-03T00:00:00"
+  },
+  {
+    "id": "CLOSE-3d751d5c-f52f-4779-be49-06f60755ab4e",
+    "storeId": "3d751d5c-f52f-4779-be49-06f60755ab4e",
+    "brand": "Insta360",
+    "storeName": "影石Insta360江西赣州京东授权专区",
+    "province": "江西省",
+    "city": "赣州市",
     "changeType": "CLOSE",
     "timestamp": "2025-12-03T00:00:00"
   },
